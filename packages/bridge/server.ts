@@ -102,7 +102,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
     } catch {
         /* none yet */
     }
-    const assets = await collectAssetFiles(dir);
+    const assets = await collectAssetFiles(dir, format);
     let lastTextHash = await hashTextDir(dir);
     let rev = 0;
     const history = new Map<number, { base: any; anchors: Record<string, AnchorMap> }>();

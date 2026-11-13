@@ -2,7 +2,7 @@
  * Pack the text project dir against an ARBITRARY base project object.
  *
  * packages/core/project-dir.ts `packDir` always reads `.agentwarp/base.json`
- * as the reconcile base. The bridge needs two extra modes core doesn't offer:
+ * as the reconcile base. The bridge needs two extra modes:
  *   1. agent-edit cycle: pack against the in-memory base (== base.json, but
  *      without racing another writer of that file);
  *   2. editor-edit merge: pack the (three-way merged) text against the
@@ -10,21 +10,19 @@
  *      ids, so anchors still resolve and untouched scripts reuse the
  *      editor's JSON verbatim, keeping the human's positions).
  *
- * This mirrors packDir's logic (readTargetDir + reconcile + meta + placeNew)
- * but takes the base project/anchors as parameters, accepts optional
- * per-target overrides (used by the merge for editor-only additions), and
- * returns the packed project object instead of writing an .sb3.
- *
- * NOTE (core change we'd like, see final report): readTargetDir is not
- * exported from project-dir.ts so its ~90 lines are duplicated here; exporting
- * it plus a `packAgainst(baseProject, baseText, anchors, ...)` entry point
- * from core would delete most of this file.
+ * Mode 1 delegates to core `packAgainst` (which owns readTargetDir +
+ * reconcile + sprite rename/layerOrder/minting logic); this file only
+ * persists minted ids back into target.json (like core `packDir`) and writes
+ * the sourcemap. Mode 2 packs already-merged in-memory IR (virtual
+ * editor-only targets have no dir yet, so `packAgainst` cannot read them);
+ * it still reads the disk via core `readTargetDir` for parse diagnostics and
+ * asset bytes.
  */
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { Diagnostic, Format } from '../core/ir.ts';
+import { packAgainst, readTargetDir, type MintedId } from '../core/project-dir.ts';
 import { reconcileProject, type Placement, type TargetDecls } from '../core/reconcile.ts';
-import { md5extFor } from '../core/assets.ts';
 import { placeNew } from '../core/layout.ts';
 import type { AnchorMap } from '../core/extract.ts';
 
@@ -34,6 +32,10 @@ export interface TextState {
     meta: { meta: any; extensions: any[]; monitors: any[]; extraTopLevel: Record<string, any> };
     /** Parse-level diagnostics (syntax errors etc.), before reconcile. */
     diagnostics: Diagnostic[];
+    /** Asset bytes keyed by md5ext (from core readTargetDir). */
+    files: Map<string, Uint8Array>;
+    /** Ids minted for id-less declarations (persisted on pack). */
+    mintedIds: MintedId[];
 }
 
 export interface PackOverrides {
@@ -51,87 +53,34 @@ export interface PackTextResult {
     diagnostics: Diagnostic[];
     placements: Placement[];
     changed: boolean;
+    mintedIds: MintedId[];
 }
 
 const TARGET_JSON = 'target.json';
 
-async function readTargetDir(
-    tdir: string,
-    targetName: string,
-    format: Format,
-    diagnostics: Diagnostic[],
-    stageJson?: any,
-): Promise<{ scripts: any[]; decls: TargetDecls } | null> {
-    let targetJson: any;
-    try {
-        targetJson = JSON.parse(await readFile(join(tdir, TARGET_JSON), 'utf8'));
-    } catch (e) {
-        diagnostics.push({ message: `target "${targetName}": cannot read target.json: ${(e as Error)?.message}`, severity: 'error' });
-        return null;
+/** Persist minted ids back into their target.json files (mirrors core packDir). */
+async function persistMintedIds(dir: string, mintedIds: MintedId[]): Promise<void> {
+    if (mintedIds.length === 0) return;
+    const byDir = new Map<string, MintedId[]>();
+    for (const m of mintedIds) {
+        const list = byDir.get(m.dir) ?? [];
+        list.push(m);
+        byDir.set(m.dir, list);
     }
-    const scriptsPath = join(tdir, `scripts.${format.ext}`);
-    let text: string;
-    try {
-        text = await readFile(scriptsPath, 'utf8');
-    } catch (e) {
-        diagnostics.push({
-            message: `target "${targetName}": cannot read scripts.${format.ext}: ${(e as Error)?.message}`,
-            severity: 'error',
-        });
-        return null;
-    }
-    const parsed = format.parse(text, { targetName, file: scriptsPath, targetJson, isStage: targetJson?.isStage === true, stageJson });
-    diagnostics.push(...parsed.diagnostics);
-    const decls: TargetDecls = { variables: [], lists: [], broadcasts: [], costumes: [], sounds: [], scalars: {} };
-    for (const v of Array.isArray(targetJson.variables) ? targetJson.variables : []) {
-        decls.variables.push({ name: String(v?.name ?? ''), id: String(v?.id ?? ''), value: v?.value, ...(v?.cloud === true ? { cloud: true as const } : {}) });
-    }
-    for (const v of Array.isArray(targetJson.lists) ? targetJson.lists : []) {
-        decls.lists.push({ name: String(v?.name ?? ''), id: String(v?.id ?? ''), items: Array.isArray(v?.items) ? v.items : [] });
-    }
-    for (const v of Array.isArray(targetJson.broadcasts) ? targetJson.broadcasts : []) {
-        decls.broadcasts.push({ name: String(v?.name ?? ''), id: String(v?.id ?? '') });
-    }
-    for (const c of targetJson.costumes ?? []) {
-        const file = String(c?.file ?? '');
-        let buf: Uint8Array | null = null;
+    const kindKey: Record<MintedId['kind'], string> = { variable: 'variables', list: 'lists', broadcast: 'broadcasts' };
+    for (const [dirEntry, list] of byDir) {
+        const p = join(dir, dirEntry, TARGET_JSON);
         try {
-            buf = await readFile(join(tdir, file));
+            const tj = JSON.parse(await readFile(p, 'utf8'));
+            for (const m of list) {
+                const arr = (tj as any)?.[kindKey[m.kind]];
+                if (Array.isArray(arr) && arr[m.index] && typeof arr[m.index] === 'object') arr[m.index].id = m.id;
+            }
+            await writeFile(p, JSON.stringify(tj, null, 2) + '\n');
         } catch {
-            buf = null;
+            /* leave diagnostics from the pack; don't add new ones */
         }
-        if (!buf) {
-            diagnostics.push({ message: `target "${targetName}": costume file "${file}" missing`, severity: 'error' });
-            continue;
-        }
-        const ext = file.includes('.') ? file.slice(file.lastIndexOf('.') + 1) : 'svg';
-        const md5ext = md5extFor(buf, ext);
-        const { file: _f, ...rest } = c ?? {};
-        void _f;
-        decls.costumes.push({ ...rest, assetId: md5ext.slice(0, md5ext.lastIndexOf('.')), dataFormat: ext, md5ext });
     }
-    for (const s of targetJson.sounds ?? []) {
-        const file = String(s?.file ?? '');
-        let buf: Uint8Array | null = null;
-        try {
-            buf = await readFile(join(tdir, file));
-        } catch {
-            buf = null;
-        }
-        if (!buf) {
-            diagnostics.push({ message: `target "${targetName}": sound file "${file}" missing`, severity: 'error' });
-            continue;
-        }
-        const ext = file.includes('.') ? file.slice(file.lastIndexOf('.') + 1) : 'wav';
-        const md5ext = md5extFor(buf, ext);
-        const { file: _f, ...rest } = s ?? {};
-        void _f;
-        decls.sounds.push({ ...rest, assetId: md5ext.slice(0, md5ext.lastIndexOf('.')), dataFormat: ext, md5ext });
-    }
-    for (const [k, v] of Object.entries(targetJson)) {
-        if (!['variables', 'lists', 'broadcasts', 'costumes', 'sounds'].includes(k)) decls.scalars[k] = v;
-    }
-    return { scripts: parsed.scripts, decls };
 }
 
 /** Read the text dir into reconcile inputs (no base needed). */
@@ -147,7 +96,12 @@ export async function readTextState(dir: string, format: Format): Promise<TextSt
     const entries = (await readdir(dir)).filter((e) => e !== '.agentwarp' && e !== 'agentwarp.json');
     const perTarget: TextState['perTarget'] = {};
     const declsByTarget: Record<string, TargetDecls> = {};
+    const files = new Map<string, Uint8Array>();
     const seenNames = new Set<string>();
+    const usedIds = new Set<string>();
+    const seenIds = new Set<string>();
+    const seenDetail = new Map<string, { kind: string; name: string }>();
+    const mintedIds: MintedId[] = [];
     let stageJson: any = undefined;
     for (const e of entries) {
         try {
@@ -171,44 +125,36 @@ export async function readTextState(dir: string, format: Format): Promise<TextSt
             continue;
         }
         seenNames.add(name);
-        const r = await readTargetDir(tdir, name, format, diagnostics, stageJson);
+        const r = await readTargetDir(tdir, name, format, diagnostics, stageJson, {
+            usedIds,
+            seenIds,
+            seenDetail,
+            mintedIds,
+        });
         if (!r) continue;
         perTarget[name] = { scripts: r.scripts, anchors: anchors[name] ?? {} };
         declsByTarget[name] = r.decls;
+        for (const [k, v] of r.files) {
+            if (!files.has(k)) files.set(k, v);
+        }
     }
     return {
         perTarget,
         declsByTarget,
         meta: { meta: meta?.meta, extensions: meta?.extensions ?? [], monitors: meta?.monitors ?? [], extraTopLevel: meta?.extraTopLevel ?? {} },
         diagnostics,
+        files,
+        mintedIds,
     };
 }
 
-/** All asset bytes under per-target costumes and sounds dirs, keyed by md5ext. */
-export async function collectAssetFiles(dir: string): Promise<Map<string, Uint8Array>> {
-    const out = new Map<string, Uint8Array>();
-    const entries = (await readdir(dir)).filter((e) => e !== '.agentwarp' && e !== 'agentwarp.json');
-    for (const e of entries) {
-        for (const sub of ['costumes', 'sounds']) {
-            let names: string[] = [];
-            try {
-                names = await readdir(join(dir, e, sub));
-            } catch {
-                continue;
-            }
-            for (const n of names.sort()) {
-                let buf: Uint8Array;
-                try {
-                    buf = await readFile(join(dir, e, sub, n));
-                } catch {
-                    continue;
-                }
-                const ext = n.includes('.') ? n.slice(n.lastIndexOf('.') + 1) : 'bin';
-                out.set(md5extFor(buf, ext), buf);
-            }
-        }
-    }
-    return out;
+/**
+ * Asset bytes keyed by md5ext, via core readTargetDir (no duplicated hashing
+ * walk). Kept for the server's startup asset load.
+ */
+export async function collectAssetFiles(dir: string, format: Format): Promise<Map<string, Uint8Array>> {
+    const ts = await readTextState(dir, format);
+    return ts.files;
 }
 
 export async function packTextAgainstBase(
@@ -219,27 +165,31 @@ export async function packTextAgainstBase(
     anchors: Record<string, AnchorMap>,
     overrides?: PackOverrides,
 ): Promise<PackTextResult> {
-    let perTarget: TextState['perTarget'];
-    let declsByTarget: Record<string, TargetDecls>;
-    let meta: TextState['meta'];
-    const diagnostics: Diagnostic[] = [];
-    if (overrides) {
-        perTarget = overrides.perTarget;
-        declsByTarget = overrides.declsByTarget;
-        meta = overrides.meta;
-        // Surface parse-level diagnostics for overridden text targets (the
-        // merge reuses already-parsed scripts, so re-read text for diags).
-        const ts = await readTextState(dir, format);
-        diagnostics.push(...ts.diagnostics);
-    } else {
-        const ts = await readTextState(dir, format);
-        diagnostics.push(...ts.diagnostics);
-        perTarget = ts.perTarget;
-        declsByTarget = ts.declsByTarget;
-        meta = ts.meta;
+    if (!overrides) {
+        const r = await packAgainst(dir, format, { baseProject, baseText, anchors });
+        await persistMintedIds(dir, r.mintedIds);
+        await mkdir(join(dir, '.agentwarp'), { recursive: true });
+        await writeFile(join(dir, '.agentwarp', 'sourcemap.json'), JSON.stringify(r.sourcemap, null, 2) + '\n');
+        return {
+            project: r.project,
+            projectText: r.projectText,
+            files: r.files,
+            diagnostics: r.diagnostics,
+            placements: r.placements,
+            changed: r.changed,
+            mintedIds: r.mintedIds,
+        };
     }
-    const files = await collectAssetFiles(dir);
-    if (overrides?.extraFiles) {
+    // Merge path: the caller already built merged IR (including virtual
+    // editor-only targets with no dir), so pack it in memory. Disk is only
+    // re-read for parse-level diagnostics and asset bytes.
+    const perTarget = overrides.perTarget;
+    const declsByTarget = overrides.declsByTarget;
+    const meta = overrides.meta;
+    const ts = await readTextState(dir, format);
+    const diagnostics: Diagnostic[] = [...ts.diagnostics];
+    const files = new Map<string, Uint8Array>(ts.files);
+    if (overrides.extraFiles) {
         for (const [k, v] of overrides.extraFiles) {
             if (!files.has(k)) files.set(k, v);
         }
@@ -287,7 +237,8 @@ export async function packTextAgainstBase(
         changed = true;
     }
     const projectText = changed ? JSON.stringify(project) : baseText;
+    await persistMintedIds(dir, ts.mintedIds);
     await mkdir(join(dir, '.agentwarp'), { recursive: true });
     await writeFile(join(dir, '.agentwarp', 'sourcemap.json'), JSON.stringify(reconciled.sourcemap, null, 2) + '\n');
-    return { project, projectText, files, diagnostics, placements: reconciled.placements, changed };
+    return { project, projectText, files, diagnostics, placements: reconciled.placements, changed, mintedIds: ts.mintedIds };
 }
