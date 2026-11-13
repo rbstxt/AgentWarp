@@ -5,3 +5,4 @@ node_modules/
 *.cleanup.sb3
 eval/runs/**/build/
 eval/runs/**/dist/
+.agentwarp/build.sb3
