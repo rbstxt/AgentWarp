@@ -1,0 +1,72 @@
+{
+  "formatVersion": 1,
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "0.2.0",
+    "agent": "agentwarp"
+  },
+  "extensions": [],
+  "monitors": [
+    {
+      "id": "mon-score",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "score"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": true
+    },
+    {
+      "id": "mon-lives",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "lives"
+      },
+      "spriteName": null,
+      "value": 3,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 30,
+      "visible": true
+    },
+    {
+      "id": "mon-stage",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "stage"
+      },
+      "spriteName": null,
+      "value": 1,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 55,
+      "visible": true
+    },
+    {
+      "id": "mon-hi",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "hiScore"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 80,
+      "visible": true
+    }
+  ],
+  "extraTopLevel": {}
+}

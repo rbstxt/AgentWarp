@@ -1,0 +1,24 @@
+{
+  "name": "Cloud",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": true,
+  "x": -100,
+  "y": 120,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "left-right",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "cloud",
+      "file": "costumes/cloud.svg"
+    }
+  ],
+  "sounds": []
+}

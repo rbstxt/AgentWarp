@@ -1,0 +1,13 @@
+{
+  "name": "コインでスコア+効果音",
+  "frames": 90,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "right arrow"},
+    {"frame": 85, "type": "keyup", "key": "right arrow"}
+  ],
+  "expect": [
+    {"probe": "Stage.variables.score", "op": "==", "value": 20},
+    {"probe": "Stage.variables.sfx", "op": "==", "value": "coin"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "敵を上から踏むと倒せる",
+  "frames": 110,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "right arrow"},
+    {"frame": 80, "type": "keydown", "key": "up arrow"},
+    {"frame": 82, "type": "keyup", "key": "up arrow"},
+    {"frame": 105, "type": "keyup", "key": "right arrow"}
+  ],
+  "expect": [
+    {"probe": "Stage.variables.score", "op": "==", "value": 40},
+    {"probe": "Stage.variables.sfx", "op": "==", "value": "stomp"},
+    {"probe": "Stage.variables.stage", "op": "==", "value": 1}
+  ]
+}

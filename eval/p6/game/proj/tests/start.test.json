@@ -1,0 +1,11 @@
+{
+  "name": "スタートボタンでゲーム開始",
+  "frames": 60,
+  "input": [{"frame": 5, "type": "click", "sprite": "StartBtn"}],
+  "expect": [
+    {"probe": "Stage.variables.state", "op": "==", "value": "playing"},
+    {"probe": "Stage.variables.lives", "op": "==", "value": 3},
+    {"probe": "Stage.variables.stage", "op": "==", "value": 1},
+    {"probe": "Player.visible", "op": "==", "value": true}
+  ]
+}

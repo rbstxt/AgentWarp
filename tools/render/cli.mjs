@@ -48,7 +48,7 @@ async function main() {
     try {
         const page = await browser.newPage({viewport:{width:480,height:360},deviceScaleFactor:1});
         const warnings = new Map();
-        page.on('console', m => { const match = m.text().match(/^(?:\S+ )?vm\s+(?:warn|warning|error)\s+(.+)$/i); if (match) { const message=match[1]; const old=warnings.get(message); if (old) old.count++; else warnings.set(message,{message,count:1}); } });
+        page.on('console', m => { const match = m.text().match(/^(?:\S+ )?vm\s+(?:warn|warning|error)\s+(.+)$/i); if (match && !/No audio engine/i.test(match[1])) { const message=match[1]; const old=warnings.get(message); if (old) old.count++; else warnings.set(message,{message,count:1}); } });
         page.on('pageerror', e => console.error('browser error:', e.stack));
         await page.route('**/*', route => route.abort());
         await page.setContent('<!doctype html><style>html,body{margin:0} canvas{width:480px;height:360px}</style><canvas width="480" height="360"></canvas>');

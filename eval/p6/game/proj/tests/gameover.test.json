@@ -1,0 +1,14 @@
+{
+  "name": "残機0でゲームオーバー・ハイスコア保存",
+  "frames": 500,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "right arrow"}
+  ],
+  "expect": [
+    {"probe": "Stage.variables.state", "op": "==", "value": "gameover"},
+    {"probe": "Stage.variables.lives", "op": "==", "value": 0},
+    {"probe": "Stage.variables.hiScore", "op": ">", "value": 0},
+    {"probe": "Stage.variables.score", "op": ">", "value": 0}
+  ]
+}

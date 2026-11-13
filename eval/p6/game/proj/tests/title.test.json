@@ -1,0 +1,11 @@
+{
+  "name": "タイトル画面とBGMの開始",
+  "frames": 30,
+  "input": [],
+  "expect": [
+    {"probe": "Stage.variables.state", "op": "==", "value": "title"},
+    {"probe": "StartBtn.visible", "op": "==", "value": true},
+    {"probe": "Player.visible", "op": "==", "value": false},
+    {"probe": "Stage.variables.bgmOn", "op": "==", "value": 1}
+  ]
+}

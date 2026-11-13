@@ -1,0 +1,4 @@
+[{"frame": 5, "type": "click", "sprite": "StartBtn"},
+ {"frame": 10, "type": "keydown", "key": "right arrow"},
+ {"frame": 80, "type": "keydown", "key": "up arrow"},
+ {"frame": 82, "type": "keyup", "key": "up arrow"}]

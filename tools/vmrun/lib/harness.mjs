@@ -677,7 +677,12 @@ export function resolveProbe(state, expr) {
             if (found === undefined) return undefined;
             cur = found;
         } else if (typeof cur === 'object' && p in cur) cur = cur[p];
-        else return undefined;
+        else if (cur && typeof cur === 'object' && 'variables' in cur && 'lists' in cur) {
+            // shorthand: "Stage.score" / "Player.items" → variables / lists of that target
+            if (cur.variables && p in cur.variables) cur = cur.variables[p];
+            else if (cur.lists && p in cur.lists) cur = cur.lists[p];
+            else return undefined;
+        } else return undefined;
     }
     return cur;
 }

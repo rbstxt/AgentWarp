@@ -1,0 +1,48 @@
+{
+  "name": "Enemy3",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 4,
+  "visible": true,
+  "x": 0,
+  "y": -110,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "left-right",
+  "variables": [
+    {
+      "name": "dir",
+      "value": 1,
+      "id": "lzae5uQ:oQ`H@eC0OWk:"
+    },
+    {
+      "name": "dead",
+      "value": 0,
+      "id": "gbCo{IVs{Awv%zf4[jH_"
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "enemy1",
+      "file": "costumes/enemy1.svg"
+    },
+    {
+      "name": "enemy2",
+      "file": "costumes/enemy2.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "damage",
+      "file": "sounds/damage.wav"
+    },
+    {
+      "name": "stomp",
+      "file": "sounds/stomp.wav"
+    }
+  ]
+}

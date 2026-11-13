@@ -1,0 +1,12 @@
+{
+  "name": "敵に横から当たると残機-1",
+  "frames": 90,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "right arrow"},
+    {"frame": 85, "type": "keyup", "key": "right arrow"}
+  ],
+  "expect": [
+    {"probe": "Stage.variables.lives", "op": "==", "value": 2}
+  ]
+}

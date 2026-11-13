@@ -1,0 +1,12 @@
+{
+  "name": "上キーでジャンプする",
+  "frames": 20,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "up arrow"},
+    {"frame": 12, "type": "keyup", "key": "up arrow"}
+  ],
+  "expect": [
+    {"probe": "Player.y", "op": ">", "value": -100}
+  ]
+}

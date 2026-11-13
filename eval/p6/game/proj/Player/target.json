@@ -1,0 +1,44 @@
+{
+  "name": "Player",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 5,
+  "visible": true,
+  "x": -200,
+  "y": -110,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "left-right",
+  "variables": [
+    {
+      "name": "vy",
+      "value": 0,
+      "id": "UhUpk;SJsJHyT{D_V(`a"
+    },
+    {
+      "name": "invT",
+      "value": 0,
+      "id": "C`-*E-%+`Mh[*x/~bFAx"
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "player1",
+      "file": "costumes/player1.svg"
+    },
+    {
+      "name": "player2",
+      "file": "costumes/player2.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "jump",
+      "file": "sounds/jump.wav"
+    }
+  ]
+}

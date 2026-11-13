@@ -237,6 +237,17 @@ function extOfFile(file: string, fallback: string): string {
 }
 
 /** Non-hidden regular files directly inside a subdir, sorted by name. */
+/** Parse-time view of target.json: omitted costumes/sounds lists are filled with names derived from files
+ *  (same rule as packing), so formats/validators don't report "unknown costume" for derived assets. */
+async function withDerivedAssetNames(tdir: string, tj: any): Promise<any> {
+    if (!tj || typeof tj !== 'object') return tj;
+    const stem = (f: string) => (f.includes('.') ? f.slice(0, f.lastIndexOf('.')) : f);
+    const out = { ...tj };
+    if (tj.costumes == null) out.costumes = (await listAssetFiles(tdir, 'costumes')).map((f) => ({ name: stem(f) }));
+    if (tj.sounds == null) out.sounds = (await listAssetFiles(tdir, 'sounds')).map((f) => ({ name: stem(f) }));
+    return out;
+}
+
 async function listAssetFiles(tdir: string, sub: string): Promise<string[]> {
     let entries;
     try {
@@ -278,7 +289,7 @@ export async function readTargetDir(
         });
         return null;
     }
-    const parsed = format.parse(text, { targetName, file: scriptsPath, targetJson, isStage: targetJson?.isStage === true, stageJson });
+    const parsed = format.parse(text, { targetName, file: scriptsPath, targetJson: await withDerivedAssetNames(tdir, targetJson), isStage: targetJson?.isStage === true, stageJson });
     diagnostics.push(...parsed.diagnostics);
     const used = opts.usedIds ?? new Set<string>();
     const seen = opts.seenIds ?? new Set<string>();
@@ -755,7 +766,7 @@ export async function packAgainst(dir: string, format: Format, opts: PackAgainst
     for (const e of entries) {
         try {
             const tj = JSON.parse(await readFile(join(dir, e, TARGET_JSON), 'utf8'));
-            if (tj?.isStage === true) stageJson = tj;
+            if (tj?.isStage === true) stageJson = await withDerivedAssetNames(join(dir, e), tj);
         } catch {
             /* not a target dir */
         }

@@ -1,0 +1,412 @@
+{
+  "file": "/path/to/agentwarp/eval/p6/game/proj/.agentwarp/build.sb3",
+  "ok": true,
+  "frames": 480,
+  "requestedFrames": 480,
+  "fps": 30,
+  "virtualSeconds": 16,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "ending",
+      "variables": {
+        "score": 90,
+        "lives": 1,
+        "hiScore": 90,
+        "stage": 3,
+        "state": "ending",
+        "enemySpeed": 4,
+        "bgmOn": 1,
+        "sfx": "clear",
+        "scrollX": 150,
+        "pyV": 0,
+        "invT": 90
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Cloud",
+      "isStage": false,
+      "isClone": false,
+      "x": -59,
+      "y": 120,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "cloud",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Coin",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 180,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "coin",
+      "variables": {
+        "taken": 1
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Coin2",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 180,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "coin",
+      "variables": {
+        "taken": 1
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Coin3",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 180,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "coin",
+      "variables": {
+        "taken": 1
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": false,
+      "x": 127,
+      "y": -110,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "enemy2",
+      "variables": {
+        "dir": 1,
+        "dead": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy2",
+      "isStage": false,
+      "isClone": false,
+      "x": -251,
+      "y": -110,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "enemy1",
+      "variables": {
+        "dir": 1,
+        "dead": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy3",
+      "isStage": false,
+      "isClone": false,
+      "x": -239,
+      "y": -110,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "enemy2",
+      "variables": {
+        "dir": 1,
+        "dead": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Goal",
+      "isStage": false,
+      "isClone": false,
+      "x": 90,
+      "y": -100,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "flag",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 65,
+      "y": -110,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "player1",
+      "variables": {
+        "vy": 0,
+        "invT": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "StartBtn",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -40,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "button",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Cloud",
+      "isStage": false,
+      "isClone": true,
+      "x": 141,
+      "y": 145,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "cloud",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "Cloud": 1
+  },
+  "monitors": {
+    "mon-score": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 90,
+      "params": {
+        "VARIABLE": "score"
+      }
+    },
+    "mon-lives": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 1,
+      "params": {
+        "VARIABLE": "lives"
+      }
+    },
+    "mon-stage": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 3,
+      "params": {
+        "VARIABLE": "stage"
+      }
+    },
+    "mon-hi": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 90,
+      "params": {
+        "VARIABLE": "hiScore"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 5,
+      "name": "startGame",
+      "target": null
+    },
+    {
+      "frame": 5,
+      "name": "startStage",
+      "target": null
+    },
+    {
+      "frame": 92,
+      "name": "stageClear",
+      "target": null
+    },
+    {
+      "frame": 122,
+      "name": "startStage",
+      "target": null
+    },
+    {
+      "frame": 205,
+      "name": "stageClear",
+      "target": null
+    },
+    {
+      "frame": 235,
+      "name": "startStage",
+      "target": null
+    },
+    {
+      "frame": 318,
+      "name": "stageClear",
+      "target": null
+    },
+    {
+      "frame": 318,
+      "name": "gameClear",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Cloud",
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenthisspriteclicked",
+      "target": "StartBtn",
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "startGame"
+      }
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "startStage"
+      }
+    },
+    {
+      "frame": 92,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "stageClear"
+      }
+    },
+    {
+      "frame": 122,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "startStage"
+      }
+    },
+    {
+      "frame": 205,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "stageClear"
+      }
+    },
+    {
+      "frame": 235,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "startStage"
+      }
+    },
+    {
+      "frame": 318,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "stageClear"
+      }
+    },
+    {
+      "frame": 318,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "gameClear"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "vmWarnings": [
+    {
+      "message": "No audio engine present; cannot load sound asset:  780e627b2640efc4aa0ff5354bec8dc4.wav",
+      "count": 1
+    },
+    {
+      "message": "No audio engine present; cannot load sound asset:  b4e7ae1253a9957c626f47faf85845ca.wav",
+      "count": 3
+    },
+    {
+      "message": "No audio engine present; cannot load sound asset:  4acd50efbb41ae4bec0a2ef51115e0b1.wav",
+      "count": 3
+    },
+    {
+      "message": "No audio engine present; cannot load sound asset:  847c46c45f6f0d4dc8dff0b90b103d91.wav",
+      "count": 3
+    },
+    {
+      "message": "No audio engine present; cannot load sound asset:  b4b6b2a19fc9f1731f77bf6eb00e3e3d.wav",
+      "count": 1
+    },
+    {
+      "message": "No audio engine present; cannot load sound asset:  76d14b08b6ae9e6d2ea836d166233682.wav",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ゴールの旗でステージクリア",
+  "frames": 160,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "right arrow"},
+    {"frame": 150, "type": "keyup", "key": "right arrow"}
+  ],
+  "expect": [
+    {"probe": "Stage.variables.stage", "op": "==", "value": 2},
+    {"probe": "Stage.variables.enemySpeed", "op": "==", "value": 3},
+    {"probe": "Stage.variables.state", "op": "==", "value": "playing"},
+    {"probe": "Enemy2.visible", "op": "==", "value": true},
+    {"probe": "Stage.variables.sfx", "op": "==", "value": "clear"}
+  ]
+}

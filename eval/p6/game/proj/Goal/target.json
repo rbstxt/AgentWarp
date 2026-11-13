@@ -1,0 +1,24 @@
+{
+  "name": "Goal",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 3,
+  "visible": true,
+  "x": 400,
+  "y": -95,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "left-right",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "flag",
+      "file": "costumes/flag.svg"
+    }
+  ],
+  "sounds": []
+}

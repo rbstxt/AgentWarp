@@ -1,0 +1,127 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "on",
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "name": "score",
+      "value": 0,
+      "id": "63OEm0L4O5DU)%+a;V!a"
+    },
+    {
+      "name": "lives",
+      "value": 3,
+      "id": "e(kS*~t=gXgEW~Z!@:~9"
+    },
+    {
+      "name": "hiScore",
+      "value": 0,
+      "id": "s7JY-n|`a1@7P}o@Kv|u"
+    },
+    {
+      "name": "stage",
+      "value": 1,
+      "id": "fN}/.u]XLVsOe]P-(-v/"
+    },
+    {
+      "name": "state",
+      "value": "title",
+      "id": "Iv.5z~p)Bf?uQv.twyVD"
+    },
+    {
+      "name": "enemySpeed",
+      "value": 2,
+      "id": "27u1PE`x0;`k(2.38=pa"
+    },
+    {
+      "name": "bgmOn",
+      "value": 0,
+      "id": "`GDyAxNCgiku:@u,~Ls6"
+    },
+    {
+      "name": "sfx",
+      "value": "",
+      "id": "-`aVwhh6TT)(=^^_kT^G"
+    },
+    {
+      "name": "scrollX",
+      "value": 0,
+      "id": "7YSkA=(zBQLbhG[Jucv,"
+    },
+    {
+      "name": "pyV",
+      "value": 0,
+      "id": "wQC.T~BB|dW:-HWiQT?0"
+    },
+    {
+      "name": "invT",
+      "value": 0,
+      "id": "jT*K]VO)2)9Gkp[SHC;V"
+    }
+  ],
+  "lists": [],
+  "broadcasts": [
+    {
+      "name": "startGame",
+      "id": "Vl/)vYcQ4p/1_p`20!h)"
+    },
+    {
+      "name": "startStage",
+      "id": "iatg;QC@Btj0CbPPq#vh"
+    },
+    {
+      "name": "stageClear",
+      "id": "Xu0zwCo%;GG]y*c2XiXU"
+    },
+    {
+      "name": "gameOver",
+      "id": "0V#~bS2kX[ieG:MI1,@U"
+    },
+    {
+      "name": "gameClear",
+      "id": "MNVdPMPU`kqTlD|E55G~"
+    }
+  ],
+  "costumes": [
+    {
+      "name": "ending",
+      "file": "costumes/ending.svg"
+    },
+    {
+      "name": "gameover",
+      "file": "costumes/gameover.svg"
+    },
+    {
+      "name": "stage1",
+      "file": "costumes/stage1.svg"
+    },
+    {
+      "name": "stage2",
+      "file": "costumes/stage2.svg"
+    },
+    {
+      "name": "stage3",
+      "file": "costumes/stage3.svg"
+    },
+    {
+      "name": "title",
+      "file": "costumes/title.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "bgm",
+      "file": "sounds/bgm.wav"
+    },
+    {
+      "name": "clear",
+      "file": "sounds/clear.wav"
+    }
+  ]
+}

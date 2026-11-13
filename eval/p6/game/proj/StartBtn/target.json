@@ -1,0 +1,24 @@
+{
+  "name": "StartBtn",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 10,
+  "visible": true,
+  "x": 0,
+  "y": -40,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "left-right",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "button",
+      "file": "costumes/button.svg"
+    }
+  ],
+  "sounds": []
+}

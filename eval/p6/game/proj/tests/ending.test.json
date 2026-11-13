@@ -1,0 +1,19 @@
+{
+  "name": "全3面クリアでエンディング・ハイスコア保存",
+  "frames": 500,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "right arrow"},
+    {"frame": 55, "type": "keydown", "key": "up arrow"},
+    {"frame": 57, "type": "keyup", "key": "up arrow"},
+    {"frame": 175, "type": "keydown", "key": "up arrow"},
+    {"frame": 177, "type": "keyup", "key": "up arrow"},
+    {"frame": 490, "type": "keyup", "key": "right arrow"}
+  ],
+  "expect": [
+    {"probe": "Stage.variables.state", "op": "==", "value": "ending"},
+    {"probe": "Stage.variables.stage", "op": "==", "value": 3},
+    {"probe": "Stage.variables.hiScore", "op": ">", "value": 0},
+    {"probe": "Stage.variables.score", "op": ">", "value": 0}
+  ]
+}

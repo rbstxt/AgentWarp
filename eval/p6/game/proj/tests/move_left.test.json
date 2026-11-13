@@ -1,0 +1,12 @@
+{
+  "name": "左キーで左へ進む",
+  "frames": 45,
+  "input": [
+    {"frame": 5, "type": "click", "sprite": "StartBtn"},
+    {"frame": 10, "type": "keydown", "key": "left arrow"},
+    {"frame": 40, "type": "keyup", "key": "left arrow"}
+  ],
+  "expect": [
+    {"probe": "Player.x", "op": "<", "value": -200}
+  ]
+}

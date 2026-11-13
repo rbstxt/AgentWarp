@@ -1,0 +1,33 @@
+{
+  "name": "3面は敵3体で速い",
+  "frames": 305,
+  "input": [
+    {
+      "frame": 5,
+      "type": "click",
+      "sprite": "StartBtn"
+    },
+    {
+      "frame": 10,
+      "type": "keydown",
+      "key": "right arrow"
+    }
+  ],
+  "expect": [
+    {
+      "probe": "Stage.variables.stage",
+      "op": "==",
+      "value": 3
+    },
+    {
+      "probe": "Stage.variables.enemySpeed",
+      "op": "==",
+      "value": 4
+    },
+    {
+      "probe": "Enemy3.visible",
+      "op": "==",
+      "value": true
+    }
+  ]
+}
