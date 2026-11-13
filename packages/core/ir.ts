@@ -92,6 +92,9 @@ export interface FormatCtx {
     targetName: string;
     /** Scripts file path (for diagnostics and locs). */
     file: string;
+    /** Parsed <Target>/target.json (variables, lists, broadcasts, costumes, sounds, …). */
+    targetJson?: any;
+    isStage?: boolean;
 }
 
 /** Pluggable script-text format (e.g. ir-json, scratchblocks, …). */

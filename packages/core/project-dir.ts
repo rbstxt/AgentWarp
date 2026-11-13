@@ -158,7 +158,7 @@ export async function unpackProject(
         const extracted = extractTarget(target, project, { file });
         diagnostics.push(...extracted.diagnostics);
         anchors[String(target?.name ?? dir)] = extracted.anchors;
-        await writeFile(join(tdir, scriptsFileName(format)), format.print(extracted.scripts, { targetName: String(target?.name), file }));
+        await writeFile(join(tdir, scriptsFileName(format)), format.print(extracted.scripts, { targetName: String(target?.name), file, targetJson, isStage: target?.isStage === true }));
     }
     await writeFile(join(outDir, '.agentwarp', 'anchors.json'), JSON.stringify(anchors, null, 2) + '\n');
     return { diagnostics };
@@ -200,7 +200,7 @@ async function readTargetDir(
         });
         return null;
     }
-    const parsed = format.parse(text, { targetName, file: scriptsPath });
+    const parsed = format.parse(text, { targetName, file: scriptsPath, targetJson, isStage: targetJson?.isStage === true });
     diagnostics.push(...parsed.diagnostics);
     const decls: TargetDecls = {
         variables: [],
