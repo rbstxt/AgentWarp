@@ -122,39 +122,67 @@ test('matched broadcast send/receive is quiet', () => {
     assert.ok(!rules(ds).includes('broadcast-received-never-sent'), JSON.stringify(rules(ds)));
 });
 
-test('= 0 on a decremented counter warns; set-to silences it', () => {
-    const mk = (withSet: boolean) => {
+test('= 0 on a decremented counter warns, even with a set-to init', () => {
+    const mk = (withWaitUntil: boolean) => {
         const blocks: Record<string, any> = {
-            a: blk('event_whenflagclicked', { topLevel: true, next: 'b' }),
+            a: blk('event_whenflagclicked', { topLevel: true, next: 's' }),
+            // Typical game init: set lives to 3 first. The set fixes the start
+            // value but cannot guarantee the counter lands exactly on 0, so
+            // the rule must still fire (regression: set-to used to silence it).
+            s: blk('data_setvariableto', {
+                parent: 'a', next: 'b',
+                fields: { VARIABLE: ['hp', 'v1'] }, inputs: { VALUE: num(3) },
+            }),
             b: blk('data_changevariableby', {
-                parent: 'a', next: 'c',
-                fields: { VARIABLE: ['hp', 'v1'] }, inputs: { VALUE: num(-2) },
+                parent: 's', next: withWaitUntil ? 'w' : 'c',
+                fields: { VARIABLE: ['hp', 'v1'] }, inputs: { VALUE: num(-1) },
             }),
-            c: blk('control_if', {
-                parent: 'b', inputs: { CONDITION: [2, 'e'], SUBSTACK: [2, 'd'] },
-            }),
-            e: blk('operator_equals', {
-                parent: 'c',
-                inputs: { OPERAND1: [2, 'v'], OPERAND2: [1, [4, '0']] },
+            ...(withWaitUntil ? {
+                w: blk('control_wait_until', { parent: 'b', inputs: { CONDITION: [2, 'e'] } }),
+                e: blk('operator_equals', {
+                    parent: 'w',
+                    inputs: { OPERAND1: [2, 'v'], OPERAND2: num(0) },
+                }),
+            } : {
+                c: blk('control_if', {
+                    parent: 'b', inputs: { CONDITION: [2, 'e'], SUBSTACK: [2, 'd'] },
+                }),
+                e: blk('operator_equals', {
+                    parent: 'c',
+                    inputs: { OPERAND1: [2, 'v'], OPERAND2: num(0) },
+                }),
             }),
             v: blk('data_variable', { parent: 'e', fields: { VARIABLE: ['hp', 'v1'] } }),
-            d: blk('looks_say', { parent: 'c', inputs: { MESSAGE: txt('dead') } }),
+            d: blk('looks_say', { parent: withWaitUntil ? 'w' : 'c', inputs: { MESSAGE: txt('dead') } }),
         };
-        if (withSet) {
-            blocks.b.next = 's';
-            blocks.s = blk('data_setvariableto', {
-                parent: 'b', next: 'c',
-                fields: { VARIABLE: ['hp', 'v1'] }, inputs: { VALUE: num(10) },
-            });
-        }
         const s = sprite('S', blocks);
-        s.variables = { v1: ['hp', 10] };
+        s.variables = { v1: ['hp', 3] };
         return proj([stage(), s]);
     };
-    const ds = lintProject(mk(false));
-    const d = ds.find((x) => x.rule === 'zero-equals-decrement');
-    assert.ok(d && /< 1/.test(d.hint ?? ''), JSON.stringify(ds));
-    assert.ok(!rules(lintProject(mk(true))).includes('zero-equals-decrement'));
+    for (const withWaitUntil of [false, true]) {
+        const ds = lintProject(mk(withWaitUntil));
+        const d = ds.find((x) => x.rule === 'zero-equals-decrement');
+        assert.ok(d && /< 1/.test(d.hint ?? ''), `waitUntil=${withWaitUntil}: ${JSON.stringify(ds)}`);
+    }
+});
+
+test('= 0 stays quiet when the counter can go up', () => {
+    const blocks: Record<string, any> = {
+        a: blk('event_whenflagclicked', { topLevel: true, next: 'b' }),
+        b: blk('data_changevariableby', {
+            parent: 'a', next: 'c',
+            fields: { VARIABLE: ['hp', 'v1'] }, inputs: { VALUE: num(-1) },
+        }),
+        c: blk('data_changevariableby', {
+            parent: 'b', next: 'd',
+            fields: { VARIABLE: ['hp', 'v1'] }, inputs: { VALUE: num(1) },
+        }),
+        d: blk('operator_equals', { parent: 'c', inputs: { OPERAND1: [2, 'v'], OPERAND2: num(0) } }),
+        v: blk('data_variable', { parent: 'd', fields: { VARIABLE: ['hp', 'v1'] } }),
+    };
+    const s = sprite('S', blocks);
+    s.variables = { v1: ['hp', 3] };
+    assert.ok(!rules(lintProject(proj([stage(), s]))).includes('zero-equals-decrement'));
 });
 
 test('touching a hidden sprite warns', () => {

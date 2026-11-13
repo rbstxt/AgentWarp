@@ -21,6 +21,8 @@ interface Ctx {
     project: any;
     sourcemap: Sourcemap;
     out: Diagnostic[];
+    /** block id -> parent block id (same target), for location fallback. */
+    parents: Map<string, string>;
     /** target name -> own variable ids. */
     vars: Map<string, Set<string>>;
     /** target name -> own list ids. */
@@ -45,10 +47,18 @@ interface Ctx {
 }
 
 function locOf(ctx: Ctx, blockId: string | null): { file?: string; line?: number; col?: number } {
-    if (!blockId) return {};
-    const l = ctx.sourcemap[blockId];
-    if (!l) return {};
-    return { file: l.file, line: l.line, col: l.col };
+    // Shadow/menu blocks (costume/sprite/sound menus, …) usually have no
+    // sourcemap entry of their own: climb to the nearest ancestor block
+    // that does, so menu errors still land on a file:line.
+    let cur: string | null | undefined = blockId;
+    const seen = new Set<string>();
+    while (typeof cur === 'string' && !seen.has(cur)) {
+        seen.add(cur);
+        const l = ctx.sourcemap[cur];
+        if (l) return { file: l.file, line: l.line, col: l.col };
+        cur = ctx.parents.get(cur);
+    }
+    return {};
 }
 
 function push(
@@ -416,6 +426,7 @@ export function validateProject(project: any, sourcemap: Sourcemap = {}): Diagno
         project,
         sourcemap,
         out: [],
+        parents: new Map(),
         vars: new Map(),
         lists: new Map(),
         varOwner: new Map(),
@@ -439,6 +450,9 @@ export function validateProject(project: any, sourcemap: Sourcemap = {}): Diagno
         const name = String(t?.name ?? '(unnamed)');
         const blocks: Record<string, any> = t?.blocks ?? {};
         checkDeclarations(ctx, name, t);
+        for (const [id, b] of Object.entries<any>(blocks)) {
+            if (!isCompact(b) && typeof b?.parent === 'string') ctx.parents.set(id, b.parent);
+        }
         for (const [id, b] of Object.entries<any>(blocks)) {
             if (isCompact(b)) continue;
             const opcode = typeof b?.opcode === 'string' ? b.opcode : null;

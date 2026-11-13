@@ -281,7 +281,6 @@ function ruleZeroEqualsDecrement(
         if (!varId || !zeroSide) continue;
         let sawChange = false;
         let onlyNegativeLiteral = true;
-        let sawSet = false;
         for (const ob of Object.values<any>(blocks)) {
             if (!ob || isCompact(ob)) continue;
             const fid = ob.fields?.VARIABLE;
@@ -291,11 +290,14 @@ function ruleZeroEqualsDecrement(
                 if (literalNumber(ob, 'VALUE') === null || (literalNumber(ob, 'VALUE') as number) >= 0) {
                     onlyNegativeLiteral = false;
                 }
-            } else if (ob.opcode === 'data_setvariableto') {
-                sawSet = true;
             }
+            // NOTE: a data_setvariableto elsewhere does NOT silence this rule:
+            // the set only fixes the start value, it cannot guarantee the
+            // counter still lands exactly on 0 (non-integer starts, several
+            // decrements per frame, resets from other scripts). The classic
+            // miss is `set lives to 3` + `change by -1` + `waitUntil(= 0)`.
         }
-        if (sawChange && onlyNegativeLiteral && !sawSet) {
+        if (sawChange && onlyNegativeLiteral) {
             const vname = varNames.get(varId) ?? varId;
             push(ctx, 'zero-equals-decrement', 'warning', target, id, 'operator_equals',
                 `variable "${vname}" is only decremented by "change by -n", so "= 0" can be skipped (5, 3, 1, -1, …)`,

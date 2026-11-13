@@ -93,6 +93,20 @@ test('costume menu naming a missing costume errors', () => {
     assert.ok(rules(ds).includes('unknown-costume'), JSON.stringify(ds));
 });
 
+test('menu error on a shadow block maps file:line via the owning block', () => {
+    const blocks = {
+        a: blk('event_whenflagclicked', { topLevel: true, next: 'b' }),
+        b: blk('looks_switchcostumeto', { parent: 'a', inputs: { COSTUME: [1, 'm'] } }),
+        m: blk('looks_costume', { parent: 'b', shadow: true, fields: { COSTUME: ['Ghost', null] } }),
+    };
+    // Only the real block has a sourcemap entry; the shadow menu does not.
+    const ds = validateProject(proj(blocks), { b: { file: 'Sprite1/scripts.ts', line: 9, col: 3 } });
+    const d = ds.find((x) => x.rule === 'unknown-costume');
+    assert.ok(d, JSON.stringify(ds));
+    assert.equal(d?.file, 'Sprite1/scripts.ts');
+    assert.equal(d?.line, 9);
+});
+
 test('unknown and cross-sprite variable references error', () => {
     const blocks = {
         a: blk('event_whenflagclicked', { topLevel: true, next: 'b' }),

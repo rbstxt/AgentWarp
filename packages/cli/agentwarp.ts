@@ -9,6 +9,9 @@
 //                                              machine JSON to stdout with --json; exit 1 on errors only
 //   agentwarp run [dir] [vmrun run options…]   pack, then run headless (see tools/vmrun/README.md);
 //                                              pure JSON on stdout, block ids mapped to file:line
+//   agentwarp test [dir] [pattern] [--json]    pack once, run tests/*.test.json scenarios headless;
+//                                              compact table to stderr (JSON to stdout with --json);
+//                                              exit 1 on failure
 //   agentwarp layout [dir]                     overlap report of the packed project (JSON on stdout)
 //   agentwarp tidy [dir] [--target NAME]       Clean-up-Plus all (or one) target's layout in place
 //   agentwarp costumes [dir]                   collision sizes of every costume (JSON on stdout)
@@ -21,9 +24,9 @@
 // (stored in <dir>/.agentwarp/format).
 import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
-import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { dirname, join, relative, resolve } from 'node:path';
+import { basename, dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { overlaps } from '../core/layout.ts';
 import { packDir, unpackSb3 } from '../core/project-dir.ts';
@@ -42,9 +45,13 @@ const USAGE = `usage: agentwarp <command> [args]
   check [dir] [--json]           pack + core validate + lint + vmrun check (+ tsc);
                                  human file:line:col lines on stderr, exit 1 on errors
   run [dir] [vmrun options…]     pack + headless run; pure JSON on stdout
+  test [dir] [pattern] [--json]  pack once + run tests/*.test.json; table on stderr
   layout [dir]                   overlap report (JSON on stdout)
   tidy [dir] [--target NAME]     Clean-up-Plus layout in place
   costumes [dir]                  costume collision sizes (JSON on stdout)
+  shot [dir] --frames N [--at f1,f2] [--input in.json] [--seed S] [--out DIR] [--gif]
+                                 render the stage with the real renderer (PNG frames / GIF,
+                                 pixel-accurate touching & pen); prints image paths + final state
   serve [dir] [--port N]         live-sync bridge for TurboWarp
   help                           this text`;
 
@@ -240,6 +247,229 @@ function mapRunError(error: string, sourcemap: Record<string, { file: string; li
     return mapped;
 }
 
+// ---------------------------------------------------------------------------
+// test: scenario files under <dir>/tests/*.test.json
+// ---------------------------------------------------------------------------
+
+interface TestExpect {
+    at?: number | 'end';
+    probe: string;
+    op?: string;
+    value: unknown;
+}
+
+interface TestScenario {
+    name?: string;
+    seconds?: number;
+    frames?: number;
+    input?: unknown[];
+    seed?: number;
+    until?: string;
+    expect?: TestExpect[];
+}
+
+interface TestExpectResult extends TestExpect {
+    ok: boolean;
+    actual: unknown;
+    /** file:line suspects that write the probed variable/list (best effort). */
+    locations?: string[];
+}
+
+function cmpTestValue(actual: unknown, op: string, expected: unknown): boolean {
+    if (op === '=' || op === '==') return actual === expected || String(actual) === String(expected);
+    if (op === '!=') return actual !== expected && String(actual) !== String(expected);
+    if (typeof actual !== 'number' || typeof expected !== 'number') return false;
+    if (op === '>') return actual > expected;
+    if (op === '<') return actual < expected;
+    if (op === '>=') return actual >= expected;
+    if (op === '<=') return actual <= expected;
+    return false;
+}
+
+/**
+ * Best-effort writer lookup for a failed probe: when the probe addresses a
+ * variable or list (`Sprite.vars.score`, `Sprite.variables.score`,
+ * `Sprite.lists.items`), list the scripts that write it as file:line via
+ * the pack sourcemap. Anything else (x/y/costume/…) has no static writers.
+ */
+function probeWriters(
+    project: any,
+    probe: string,
+    sourcemap: Record<string, { file: string; line: number; col: number }>,
+    dir: string,
+): string[] {
+    const parts = String(probe).split('.');
+    if (parts.length < 2) return [];
+    const target = (project?.targets ?? []).find((t: any) => String(t?.name) === parts[0]);
+    if (!target) return [];
+    let kind: 'variable' | 'list' | null = null;
+    let name: string | null = null;
+    if ((parts[1] === 'variables' || parts[1] === 'vars') && parts[2] !== undefined) {
+        kind = 'variable';
+        name = parts[2];
+    } else if (parts[1] === 'lists' && parts[2] !== undefined) {
+        kind = 'list';
+        name = parts[2];
+    } else if (parts.length === 2) {
+        const vnames = Object.values<any>(target.variables ?? {}).map((v) => String(Array.isArray(v) ? v[0] : v));
+        const lnames = Object.values<any>(target.lists ?? {}).map((v) => String(Array.isArray(v) ? v[0] : v));
+        if (vnames.includes(parts[1])) {
+            kind = 'variable';
+            name = parts[1];
+        } else if (lnames.includes(parts[1])) {
+            kind = 'list';
+            name = parts[1];
+        } else return [];
+    } else return [];
+    const ids = new Set<string>();
+    for (const [id, v] of Object.entries<any>((kind === 'variable' ? target.variables : target.lists) ?? {})) {
+        if (String(Array.isArray(v) ? v[0] : v) === name) ids.add(id);
+    }
+    const WRITERS = kind === 'variable'
+        ? new Set(['data_setvariableto', 'data_changevariableby'])
+        : new Set(['data_addtolist', 'data_insertatlist', 'data_replaceitemoflist', 'data_deleteoflist', 'data_deletealloflist']);
+    const field = kind === 'variable' ? 'VARIABLE' : 'LIST';
+    const out: string[] = [];
+    const seen = new Set<string>();
+    for (const [bid, b] of Object.entries<any>(target.blocks ?? {})) {
+        if (!b || Array.isArray(b) || !WRITERS.has(b.opcode)) continue;
+        const f = b.fields?.[field];
+        const fid = Array.isArray(f) ? f[1] : null;
+        if (typeof fid !== 'string' || !ids.has(fid)) continue;
+        const loc = sourcemap[bid];
+        const key = loc ? `${loc.file}:${loc.line}:${loc.col}` : `(block ${bid})`;
+        if (!seen.has(key)) {
+            seen.add(key);
+            out.push(loc ? relPath(dir, loc.file) + `:${loc.line}:${loc.col}` : key);
+        }
+        if (out.length >= 3) break;
+    }
+    return out;
+}
+
+function fmtActual(v: unknown): string {
+    return v === undefined ? 'missing' : JSON.stringify(v) ?? String(v);
+}
+
+async function runTestCommand(dir: string, pattern: string | undefined, json: boolean): Promise<void> {
+    const testsDir = join(dir, 'tests');
+    let files: string[];
+    try {
+        files = (await readdir(testsDir)).filter((f) => f.endsWith('.test.json')).sort();
+    } catch {
+        process.stderr.write(`test: no tests directory (${displayPath(join(dir, 'tests'))}); add tests/*.test.json\n`);
+        if (json) process.stdout.write(JSON.stringify({ ok: false, error: 'no tests directory', scenarios: [] }) + '\n');
+        process.exit(1);
+    }
+    const sb3 = await doPack(dir);
+    const { project } = await loadSb3File(sb3);
+    const sourcemap = await readSourcemap(dir);
+    const tmp = await mkdtemp(join(tmpdir(), 'agentwarp-test-'));
+    try {
+        const results: Array<{
+            file: string; name: string; ok: boolean; frames?: number;
+            error?: string; expects: TestExpectResult[];
+        }> = [];
+        for (const f of files) {
+            let raw: any;
+            try {
+                raw = JSON.parse(await readFile(join(testsDir, f), 'utf8'));
+            } catch (e: any) {
+                results.push({ file: f, name: f, ok: false, error: `cannot parse ${f}: ${e?.message}`, expects: [] });
+                continue;
+            }
+            const scenarios: TestScenario[] = Array.isArray(raw) ? raw : [raw];
+            for (const sc of scenarios) {
+                const name = String(sc?.name ?? f);
+                if (pattern && !`${f} ${name}`.toLowerCase().includes(pattern.toLowerCase())) continue;
+                const totalFrames = sc?.frames !== undefined ? Math.max(0, Math.round(Number(sc.frames)))
+                    : sc?.seconds !== undefined ? Math.max(0, Math.round(Number(sc.seconds) * 30))
+                    : 300;
+                if (!Number.isFinite(totalFrames)) {
+                    results.push({ file: f, name, ok: false, error: 'seconds/frames must be a number', expects: [] });
+                    continue;
+                }
+                const expects: TestExpect[] = Array.isArray(sc?.expect) ? sc.expect : [];
+                // Group expects by `at`: one headless run per distinct frame count.
+                const groups = new Map<string, { frames: number; list: TestExpect[] }>();
+                for (const e of expects) {
+                    const key = e?.at === undefined || e?.at === 'end' ? 'end' : String(Math.max(0, Math.round(Number(e.at))));
+                    const frames = key === 'end' ? totalFrames : Number(key);
+                    if (!groups.has(key)) groups.set(key, { frames, list: [] });
+                    groups.get(key)!.list.push({ at: e?.at ?? 'end', probe: String(e?.probe ?? ''), op: e?.op ?? '==', value: e?.value });
+                }
+                let inputArg: string | null = null;
+                if (sc?.input !== undefined) {
+                    inputArg = join(tmp, `${results.length}.input.json`);
+                    await writeFile(inputArg, JSON.stringify(Array.isArray(sc.input) ? sc.input : []));
+                }
+                const seedArg = sc?.seed !== undefined ? String(Number(sc.seed)) : undefined;
+                const res: TestExpectResult[] = [];
+                let runError: string | undefined;
+                let ranFrames: number | undefined;
+                for (const [key, g] of groups) {
+                    if (runError) {
+                        for (const e of g.list) res.push({ ...e, ok: false, actual: undefined });
+                        continue;
+                    }
+                    const args = ['run', sb3, '--frames', String(g.frames)];
+                    if (inputArg) args.push('--input', inputArg);
+                    if (seedArg !== undefined) args.push('--seed', seedArg);
+                    // `until` stops the full-length run early (only meaningful at end).
+                    if (typeof sc?.until === 'string' && key === 'end') args.push('--until', sc.until);
+                    for (const e of g.list) args.push('--probe', e.probe);
+                    const { res: out } = vmrunJson(args);
+                    if (!out?.ok) {
+                        runError = mapRunError(String(out?.error ?? 'run failed'), sourcemap, dir);
+                        for (const e of g.list) res.push({ ...e, ok: false, actual: undefined });
+                        continue;
+                    }
+                    ranFrames = out.frames;
+                    for (const e of g.list) {
+                        const actual = out.probes?.[e.probe] ?? null;
+                        const ok = actual !== undefined && actual !== null || e.value === null
+                            ? cmpTestValue(actual, e.op ?? '==', e.value)
+                            : false;
+                        const r: TestExpectResult = { ...e, ok, actual: actual ?? null };
+                        if (!ok) {
+                            const locs = probeWriters(project, e.probe, sourcemap, dir);
+                            if (locs.length) r.locations = locs;
+                        }
+                        res.push(r);
+                    }
+                }
+                const ok = runError === undefined && res.every((r) => r.ok);
+                results.push({ file: f, name, ok, frames: ranFrames, ...(runError ? { error: runError } : {}), expects: res });
+            }
+        }
+        const passed = results.filter((r) => r.ok).length;
+        const failedExpects = results.flatMap((r) => r.expects).filter((e) => !e.ok).length;
+        for (const r of results) {
+            const n = r.expects.length;
+            const okN = r.expects.filter((e) => e.ok).length;
+            process.stderr.write(`${r.ok ? 'PASS' : 'FAIL'} ${r.file} :: ${r.name} (${okN}/${n})\n`);
+            if (r.error) process.stderr.write(`  error: ${r.error}\n`);
+            for (const e of r.expects) {
+                if (e.ok) continue;
+                process.stderr.write(`  [${e.at}] ${e.probe} ${e.op} ${fmtActual(e.value)} (actual: ${fmtActual(e.actual)})\n`);
+                for (const l of e.locations ?? []) process.stderr.write(`    written at ${l}\n`);
+            }
+        }
+        process.stderr.write(`${passed} passed, ${results.length - passed} failed (${failedExpects} failing expects)\n`);
+        if (json) {
+            process.stdout.write(JSON.stringify({
+                ok: failedExpects === 0 && results.every((r) => r.ok),
+                passed,
+                failed: results.length - passed,
+                scenarios: results,
+            }, null, 2) + '\n');
+        }
+        process.exit(results.length > 0 && results.every((r) => r.ok) ? 0 : 1);
+    } finally {
+        await rm(tmp, { recursive: true, force: true });
+    }
+}
+
 /** Warn about overlap pairs the pack introduced (base vs packed, per target). */
 async function overlapWarnings(dir: string, packedSb3: string): Promise<Diagnostic[]> {
     const out: Diagnostic[] = [];
@@ -285,6 +515,32 @@ async function main() {
             const r = await unpackSb3(resolve(src), resolve(dir), format);
             await writeFile(join(dir, '.agentwarp', 'format'), name + '\n');
             if (name === 'ts') await tsTypes(resolve(dir));
+            // Project-level agent docs (P5: the bridge runs agents with
+            // cwd = project dir). Never overwrite the author's own files.
+            const agentsMd = join(resolve(dir), 'AGENTS.md');
+            if (!existsSync(agentsMd)) {
+                await writeFile(agentsMd,
+                    `# ${basename(resolve(dir))} — agentwarp text project (format: ${name})\n` +
+                    `\n` +
+                    `This directory is a text mirror of a Scratch project. Edit the text files; the tool packs them\n` +
+                    `back into an .sb3. Never hand-edit \`.agentwarp/\` (machine-managed).\n` +
+                    `\n` +
+                    `Tool: \`${join(ROOT, 'bin/agentwarp')}\` (call it \`agentwarp\` below; run from this directory).\n` +
+                    `Read BEFORE editing:\n` +
+                    `- Workflow guide: ${join(ROOT, 'skill/agentwarp/SKILL.md')}\n` +
+                    `- Format reference (${name}): ${join(ROOT, 'formats', name, 'AGENTS.md')}\n` +
+                    `\n` +
+                    `Layout: \`Stage/\` + one dir per sprite (\`scripts.<ext>\`, \`target.json\`, \`costumes/\`, \`sounds/\`);\n` +
+                    `project-wide \`agentwarp.json\` (extensions, monitors); \`tests/*.test.json\` (headless scenarios).\n` +
+                    `\n` +
+                    `Loop: edit → \`agentwarp check\` → \`agentwarp test\` / \`agentwarp run --until …\` → \`agentwarp shot\` to look → fix.\n` +
+                    `Write a test for every feature. Keep diffs small; if a human has the project open in TurboWarp\n` +
+                    `(\`agentwarp serve\`), files may be rewritten by the bridge — re-read before editing.\n`);
+            }
+            const claudeMd = join(resolve(dir), 'CLAUDE.md');
+            if (!existsSync(claudeMd)) {
+                await writeFile(claudeMd, `@AGENTS.md\n`);
+            }
             printDiags(
                 r.diagnostics.filter((d) => d.severity === 'error'),
                 dir,
@@ -360,6 +616,15 @@ async function main() {
             process.stdout.write(JSON.stringify(res, null, 2) + '\n');
             process.exit(res.ok ? 0 : code || 1);
         }
+        case 'test': {
+            // test [dir] [pattern] [--json]: first non-flag arg is the dir,
+            // second (if any) filters scenarios by file/name substring.
+            const nonFlags = argv.filter((a) => !a.startsWith('-'));
+            const dir = resolve(nonFlags[0] ?? '.');
+            const pattern = nonFlags.length > 1 ? nonFlags[1] : undefined;
+            await runTestCommand(dir, pattern, !!opts.json);
+            return;
+        }
         case 'layout': {
             const dir = resolve(pos[0] ?? '.');
             const out = await doPack(dir);
@@ -416,6 +681,29 @@ async function main() {
             const { res, code } = vmrunJson(['costumes', out]);
             process.stdout.write(JSON.stringify(res, null, 2) + '\n');
             process.exit(code);
+        }
+        case 'shot': {
+            // shot [dir] [render options…]: like run, first non-flag arg is the dir, the rest passes through.
+            const raw = argv.filter(a => a !== '--');
+            const dir = resolve(raw.length && !raw[0].startsWith('-') ? raw[0] : '.');
+            const flags = raw.length && !raw[0].startsWith('-') ? raw.slice(1) : raw;
+            const out = await doPack(dir);
+            const oi = flags.indexOf('--out');
+            const outDir = resolve(oi >= 0 ? flags[oi + 1] : join(dir, '.agentwarp', 'shots'));
+            const passthrough = flags.filter((a, i) => !(i === oi || i === oi + 1) || oi < 0);
+            if (!passthrough.includes('--frames')) passthrough.push('--frames', '30');
+            try {
+                const json = execFileSync('node', [join(ROOT, 'tools/render/cli.mjs'), 'shot', out, ...passthrough, '--out', outDir],
+                    {encoding: 'utf8', maxBuffer: 256 * 1024 * 1024});
+                const {readdir} = await import('node:fs/promises');
+                const images = (await readdir(outDir)).filter(f => /\.(png|gif)$/.test(f)).sort().map(f => join(outDir, f));
+                process.stderr.write(images.map(f => `image: ${f}`).join('\n') + '\n');
+                process.stdout.write(json);
+            } catch (e: any) {
+                process.stderr.write(String(e.stderr ?? e.message ?? e) + '\n');
+                process.exit(1);
+            }
+            return;
         }
         case 'serve': {
             const dir = resolve(pos[0] ?? '.');
