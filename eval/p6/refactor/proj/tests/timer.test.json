@@ -1,0 +1,9 @@
+{
+  "name": "countdown decreases while playing",
+  "frames": 200,
+  "input": [{ "frame": 5, "type": "broadcast", "name": "enter game" }],
+  "expect": [
+    { "probe": "Stage.variables.TimeLeft", "op": "<=", "value": 1199 },
+    { "probe": "Stage.variables.TimeLeft", "op": ">", "value": 1000 }
+  ]
+}

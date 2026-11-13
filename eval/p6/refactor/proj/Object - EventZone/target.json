@@ -1,0 +1,72 @@
+{
+  "name": "Object - EventZone",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 17,
+  "visible": false,
+  "x": -45,
+  "y": -104,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Data",
+      "id": "?_iJ-}E]S5fLAnK{F^ci-Local Data-",
+      "value": 0
+    },
+    {
+      "name": "Local Clone?",
+      "id": "?_iJ-}E]S5fLAnK{F^ci-Local Clone?-",
+      "value": 0
+    },
+    {
+      "name": "Local Glide",
+      "id": "?_iJ-}E]S5fLAnK{F^ci-Local Glide-",
+      "value": 1.1999999999999995
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30,
+      "rotationCenterY": 108,
+      "file": "costumes/variant1.svg"
+    },
+    {
+      "name": "arrow",
+      "bitmapResolution": 1,
+      "rotationCenterX": 29,
+      "rotationCenterY": 40,
+      "file": "costumes/arrow.svg"
+    },
+    {
+      "name": "arrow2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 24,
+      "rotationCenterY": 40,
+      "file": "costumes/arrow2.svg"
+    },
+    {
+      "name": "variant2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 94,
+      "rotationCenterY": 18,
+      "file": "costumes/variant2.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

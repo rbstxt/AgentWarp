@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140">
+  <rect x="4" y="4" width="312" height="132" rx="16" fill="#111122" fill-opacity="0.92" stroke="#ffffff" stroke-width="4"/>
+  <text x="160" y="48" font-family="sans-serif" font-size="34" font-weight="bold" fill="#ffffff" text-anchor="middle">PAUSED</text>
+  <text x="160" y="84" font-family="sans-serif" font-size="18" fill="#ffe27a" text-anchor="middle">SPACE: つづける / P: つづける</text>
+  <text x="160" y="112" font-family="sans-serif" font-size="18" fill="#7ad9ff" text-anchor="middle">R: はじめから</text>
+</svg>

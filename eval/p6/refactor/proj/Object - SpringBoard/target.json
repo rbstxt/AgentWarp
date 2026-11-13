@@ -1,0 +1,48 @@
+{
+  "name": "Object - SpringBoard",
+  "isStage": false,
+  "currentCostume": 1,
+  "volume": 100,
+  "layerOrder": 11,
+  "visible": false,
+  "x": 148,
+  "y": 62,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Data",
+      "id": "~2Q.gefZ~63*y6=m4oRu-Local Data-",
+      "value": ""
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant1-1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 6,
+      "file": "costumes/variant1-1.svg"
+    },
+    {
+      "name": "variant1-2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 18,
+      "file": "costumes/variant1-2.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "SYS-TIGGER-JP",
+      "format": "adpcm",
+      "rate": 22050,
+      "sampleCount": 28449,
+      "file": "sounds/SYS-TIGGER-JP.wav"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Object - Bubble",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 8,
+  "visible": false,
+  "x": 8,
+  "y": 41,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local VelocityY",
+      "id": "EPsKsf~mV$]5K4A%~U|:",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "Water Bubble",
+      "bitmapResolution": 1,
+      "rotationCenterX": 4,
+      "rotationCenterY": 4,
+      "file": "costumes/Water Bubble.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

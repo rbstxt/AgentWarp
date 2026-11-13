@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="482.1986694589978" height="362.17819216407594" viewBox="-1.2702026985778048e-8 0.8955554835137933 482.1986694589978 362.17819216407594">
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.5106989005580544" fill="#5B5B5B" stroke="none" d="M 74.5 362 L 104 362 L 104 362 L 74.5 362 L 74.5 362 Z " stroke-width="1"/>
+  <path id="ID0.7028856645338237" fill="#363D1E" stroke="none" d="M 116.6 296.8 L 116.6 296.8 L 116.6 296.9 L 116.6 296.9 L 116.6 296.8 Z " stroke-width="1"/>
+  <path id="ID0.32128847390413284" fill="#5B5B5B" stroke="none" d="M 481 12 L 481 12 L 481 14.5 L 481 14.5 L 481 12 Z " stroke-width="1"/>
+  <path id="ID0.6846096026711166" fill="#5B5B5B" stroke="none" d="M 481 93 L 481 93 L 481 94.5 L 481 94.5 L 481 93 Z " stroke-width="1"/>
+  <g id="ID0.44488216703757644">
+    <path id="ID0.9778965464793146" fill="#663B00" stroke="#995900" stroke-width="2.000000025404054" stroke-linecap="round" d="M 376.3399 140.2254 L 396.4135 167.3833 L 367.9505 172.9381 L 376.3399 140.2254 Z "/>
+    <path id="ID0.3824962517246604" fill="#663B00" stroke="none" stroke-linecap="round" d="M 380.9352 171.4036 L 384.8611 170.6374 L 393.6722 215.7856 L 389.7463 216.5518 L 380.9352 171.4036 Z " stroke-width="1.000000012702027"/>
+    <text id="ID0.09017158299684525" fill="#FF9400" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(0.981484 -0.191546 0.191546 0.981484 375.138 147.022)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">!</tspan></text>
+  </g>
+  <path id="ID0.3644601800478995" fill="none" stroke="#012E34" stroke-width="2" stroke-linecap="round" d="M 6 7 C 6 7 3.883 5.103 3 4 C 2.535 3.419 2.527 2.527 2 2 C 1.765 1.765 1 2 1 2 "/>
+  <path id="ID0.6614030166529119" fill="none" stroke="#012E34" stroke-width="2" stroke-linecap="round" d="M 478 354 C 478 354 480.368 355.736 481 357 C 481.447 357.894 481 359.001 481 360 C 481 360.666 481 361.334 481 362 C 481 362.166 481 362 481 362 "/>
+</svg>

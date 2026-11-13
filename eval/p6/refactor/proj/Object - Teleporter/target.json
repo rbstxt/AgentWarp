@@ -1,0 +1,53 @@
+{
+  "name": "Object - Teleporter",
+  "isStage": false,
+  "currentCostume": 1,
+  "volume": 100,
+  "layerOrder": 4,
+  "visible": false,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Data",
+      "id": "nbiFPE~|O6Ag{[p(98%}-Local Data-",
+      "value": ""
+    },
+    {
+      "name": "Local Clone?",
+      "id": "nbiFPE~|O6Ag{[p(98%}-Local Clone?-",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 1,
+      "rotationCenterY": 178,
+      "file": "costumes/variant1.svg"
+    },
+    {
+      "name": "variant2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 238,
+      "rotationCenterY": 1,
+      "file": "costumes/variant2.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="58.10919956860476" height="68.68467716870241" viewBox="0.9450000301125991 1.0781249776605117 58.10919956860476 68.68467716870241">
+  <defs>
+    <radialGradient id="grad_1" cx="0.5770000000000001" cy="0.8726999999999999" r="1.13451">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#CC99FF" stop-opacity="1"/>
+    </radialGradient>
+  <radialGradient id="grad_1-0.0012145739747211337,-0.9999992847442627,0.9999992847442627,-0.0012145739747211337,-161.65,287.25" cx="50.911" cy="42.1996" r="58.1994" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="1" stop-color="#CC99FF" stop-opacity="1"/>
+    </radialGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.8979769782163203" fill="url(#grad_1-0.0012145739747211337,-0.9999992847442627,0.9999992847442627,-0.0012145739747211337,-161.65,287.25)" stroke="#7F00FF" stroke-width="2.0000000446789765" d="M 1.9688 55.6511 L 1.945 36.0511 L 33.9451 36.0622 L 33.9289 22.7623 L 58.0542 43.533 L 33.4848 68.7628 L 33.4689 55.6628 L 1.9688 55.6511 Z "/>
+  <text id="ID0.9910100623965263" fill="#CCCCCC" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 18.4 -1.25)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Go!</tspan></text>
+  <text id="ID0.9910100623965263" fill="#FFFFFF" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 17.25 -2.5)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Go!</tspan></text>
+</svg>

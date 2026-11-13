@@ -1,0 +1,282 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 3,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "off",
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "name": "Tile",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Tile-",
+      "value": 22
+    },
+    {
+      "name": "Next?",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Next?-",
+      "value": 0
+    },
+    {
+      "name": "Extendo",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Extendo-",
+      "value": 0
+    },
+    {
+      "name": "Data",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Data-",
+      "value": 0
+    },
+    {
+      "name": "Map ScrollFinished?",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Map ScrollFinished?-",
+      "value": "1"
+    },
+    {
+      "name": "Saved X",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved X-",
+      "value": -216
+    },
+    {
+      "name": "Saved Y",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Y-",
+      "value": -76
+    },
+    {
+      "name": "Saved Glide Y",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Glide Y-",
+      "value": 0
+    },
+    {
+      "name": "Saved Glide Left",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Glide Left-",
+      "value": 0
+    },
+    {
+      "name": "Saved Glide Right",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Glide Right-",
+      "value": "3"
+    },
+    {
+      "name": "Saved Jump",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Jump-",
+      "value": 0
+    },
+    {
+      "name": "AlreadyDon?",
+      "id": "_=~2N*p##HUyF/Rd6yZa-AlreadyDon?-",
+      "value": 0
+    },
+    {
+      "name": "Player readingText?",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Player readingText?-",
+      "value": 0
+    },
+    {
+      "name": "Player TouchWater?",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Player TouchWater?-",
+      "value": "1"
+    },
+    {
+      "name": "Water Present?",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Water Present?-",
+      "value": 0
+    },
+    {
+      "name": "Key",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Key-",
+      "value": 0
+    },
+    {
+      "name": "Saved InWater",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved InWater-",
+      "value": 0
+    },
+    {
+      "name": "Time",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Time-",
+      "value": 359073
+    },
+    {
+      "name": "Local Data2",
+      "id": "s%+%Hp4~8DnyD8{%keg1-Local Data-",
+      "value": 0
+    },
+    {
+      "name": "Local Data3",
+      "id": "_WU:zzU3ZJZ{M}EIu4fg-Local Data-",
+      "value": 0
+    },
+    {
+      "name": "Local Data4",
+      "id": "n~GDi)uslCb0n,Jy.:C@-Local Data-",
+      "value": 0
+    },
+    {
+      "name": "TimeFinal",
+      "id": "|pIR$fct]|ZilIvfE-sh",
+      "value": "0"
+    },
+    {
+      "name": "Score",
+      "value": 0,
+      "id": "leZ,#hf{_GZSGRnZM0Kh"
+    },
+    {
+      "name": "TimeLeft",
+      "value": 1200,
+      "id": "8L-Ch2)WH~0?`zw`[ozt"
+    },
+    {
+      "name": "Paused",
+      "value": 0,
+      "id": "O/Px+uaQKxJqWuotb;?+"
+    }
+  ],
+  "lists": [
+    {
+      "name": "Spawn Area X,Y",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Spawn Area X,Y-list",
+      "items": []
+    },
+    {
+      "name": "Spawn Type",
+      "id": "_=~2N*p##HUyF/Rd6yZa-Spawn Type-list",
+      "items": []
+    }
+  ],
+  "broadcasts": [
+    {
+      "name": "mainmenu",
+      "id": "broadcastMsgId-mainmenu"
+    },
+    {
+      "name": "enter game",
+      "id": "broadcastMsgId-enter game"
+    },
+    {
+      "name": "win!",
+      "id": "broadcastMsgId-win!"
+    },
+    {
+      "name": "gameend",
+      "id": "broadcastMsgId-gameend"
+    },
+    {
+      "name": "done",
+      "id": "broadcastMsgId-done"
+    },
+    {
+      "name": "next",
+      "id": "broadcastMsgId-next"
+    },
+    {
+      "name": "fireout",
+      "id": "broadcastMsgId-fireout"
+    },
+    {
+      "name": "tryagain!",
+      "id": "broadcastMsgId-tryagain!"
+    },
+    {
+      "name": "spring!",
+      "id": "broadcastMsgId-spring!"
+    },
+    {
+      "name": "bright up",
+      "id": "broadcastMsgId-bright up"
+    },
+    {
+      "name": "bright reset",
+      "id": "broadcastMsgId-bright reset"
+    },
+    {
+      "name": "dev",
+      "id": "broadcastMsgId-dev"
+    },
+    {
+      "name": "fadeblack - fast",
+      "id": "broadcastMsgId-fadeblack - fast"
+    },
+    {
+      "name": "flashwhite",
+      "id": "broadcastMsgId-flashwhite"
+    },
+    {
+      "name": "error",
+      "id": "broadcastMsgId-error"
+    },
+    {
+      "name": "fadeblack",
+      "id": "broadcastMsgId-fadeblack"
+    },
+    {
+      "name": "deletecc",
+      "id": "broadcastMsgId-deletecc"
+    },
+    {
+      "name": "DevIntro_Completed",
+      "id": "1p(#OvpyMKDv*``Mi#v["
+    },
+    {
+      "name": "restart",
+      "id": "M)B9|OM:gb`we)*BbY%D"
+    },
+    {
+      "name": "stage31test",
+      "id": "yMTKC#k.DUE-x^OnB(tC"
+    }
+  ],
+  "costumes": [
+    {
+      "name": "Cave",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/Cave.svg"
+    },
+    {
+      "name": "Black",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/Black.svg"
+    },
+    {
+      "name": "End",
+      "bitmapResolution": 1,
+      "rotationCenterX": 254.95000413001847,
+      "rotationCenterY": 180.00000432075333,
+      "file": "costumes/End.svg"
+    },
+    {
+      "name": "bandicam 2016-12-09 00-08-03-720",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/bandicam 2016-12-09 00-08-03-720.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "TA-OpeningTheme Intro",
+      "rate": 44100,
+      "sampleCount": 4447520,
+      "file": "sounds/TA-OpeningTheme Intro.mp3"
+    },
+    {
+      "name": "TA-OpeningTheme",
+      "rate": 44100,
+      "sampleCount": 3587028,
+      "file": "sounds/TA-OpeningTheme.mp3"
+    },
+    {
+      "name": "TA-Game Over",
+      "rate": 44100,
+      "sampleCount": 2424442,
+      "file": "sounds/TA-Game Over.mp3"
+    }
+  ]
+}

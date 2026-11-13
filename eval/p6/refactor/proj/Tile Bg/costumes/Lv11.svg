@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="482.2537841796875" height="352.5" viewBox="0 -1 482.2537841796875 352.5">
+  <defs>
+    <linearGradient id="grad_1" y2="1" x2="0">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient>
+  <linearGradient id="grad_1-,0,0,1,-4,-9.5" y2="350.5" x2="100" x1="100" y1="297" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.5106989005580544" fill="#5B5B5B" stroke="none" d="M 74.5 350 L 104 350 L 104 350 L 74.5 350 L 74.5 350 Z " stroke-width="1"/>
+  <path id="ID0.7079182723537087" fill="#363D1E" stroke="none" d="M 351.7 344.85 L 351.85 344.85 L 351.85 347 L 351.7 347 L 351.7 344.85 Z " stroke-width="1"/>
+  <path id="ID0.7028856645338237" fill="#363D1E" stroke="none" d="M 116.6 284.8 L 116.6 284.8 L 116.6 284.9 L 116.6 284.9 L 116.6 284.8 Z " stroke-width="1"/>
+  <path id="ID0.32128847390413284" fill="#5B5B5B" stroke="none" d="M 481 0 L 481 0 L 481 2.5 L 481 2.5 L 481 0 Z " stroke-width="1"/>
+  <path id="ID0.6846096026711166" fill="#5B5B5B" stroke="none" d="M 481 81 L 481 81 L 481 82.5 L 481 82.5 L 481 81 Z " stroke-width="1"/>
+  <path id="ID0.36061516124755144" fill="url(#grad_1-,0,0,1,-4,-9.5)" stroke="none" d="M 100 297 L 281 297 L 281 350.5 L 100 350.5 L 100 297 Z " stroke-width="1"/>
+  <path id="ID0.5470900419168174" fill="none" stroke="#5B5B5B" stroke-width="2" stroke-linecap="round" d="M 1 345 C 1 345 1 350 1 350 "/>
+  <path id="ID0.6100913663394749" fill="none" stroke="#5B5B5B" stroke-width="2" stroke-linecap="round" d="M 476 342 C 476 342 479.544 342.126 481 343 C 481.571 343.343 481 344.334 481 345 C 481 346.665 481 350 481 350 "/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="482.2377624511719" height="212.04550170898438" viewBox="0.8359999656677246 4.102499961853027 482.2377624511719 212.04550170898438">
+  <defs>
+    <linearGradient id="grad_1" y2="1" x2="0">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient>
+  <linearGradient id="grad_1-,0,0,1,2,-145" y2="215" x2="145.5" x1="145.5" y1="155.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.5106989005580544" fill="#5B5B5B" stroke="none" d="M 75.5 215 L 105 215 L 105 215 L 75.5 215 L 75.5 215 Z " stroke-width="1"/>
+  <path id="ID0.7079182723537087" fill="#363D1E" stroke="none" d="M 352.7 209.85 L 352.85 209.85 L 352.85 212 L 352.7 212 L 352.7 209.85 Z " stroke-width="1"/>
+  <path id="ID0.04803709592670202" fill="url(#grad_1-,0,0,1,2,-145)" stroke="none" d="M 145.5 155.5 L 284 155.5 L 284 215 L 145.5 215 L 145.5 155.5 Z " stroke-width="1"/>
+  <g id="ID0.44488216703757644">
+    <path id="ID0.9778965464793146" fill="#663B00" stroke="#995900" stroke-width="1.9999999455585675" stroke-linecap="round" d="M 153.4216 5.1025 L 163.7656 37.2506 L 135.0197 33.4198 L 153.4216 5.1025 Z "/>
+    <path id="ID0.3824962517246604" fill="#663B00" stroke="none" stroke-linecap="round" d="M 147.8021 36.1133 L 151.767 36.6417 L 145.6906 82.2386 L 141.7256 81.7102 L 147.8021 36.1133 Z " stroke-width="0.9999999727792838"/>
+    <text id="ID0.09017158299684525" fill="#FF9400" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(0.991237 0.132097 -0.132097 0.991237 150.079 11.1905)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">!</tspan></text>
+  </g>
+  <path id="ID0.841815359890461" fill="none" stroke="#5B5B5B" stroke-width="2" stroke-linecap="round" d="M 9 205 C 9 205 5.633 205.534 4 206 C 3.284 206.205 2.413 206.38 2 207 C 1.631 207.554 2 208.334 2 209 C 2 209.666 2 210.334 2 211 C 2 212.332 2 213.668 2 215 C 2 215.333 2 215 2 215 "/>
+  <path id="ID0.9915876626037061" fill="none" stroke="#5B5B5B" stroke-width="2" stroke-linecap="round" d="M 473 206 C 473 206 476.526 207.736 478 209 C 478.912 209.781 479.334 211.001 480 212 C 480.666 212.999 481.334 214.001 482 215 C 482.166 215.25 482 215 482 215 "/>
+</svg>

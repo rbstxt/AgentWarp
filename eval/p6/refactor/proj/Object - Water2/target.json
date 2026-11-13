@@ -1,0 +1,73 @@
+{
+  "name": "Object - Water2",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 5,
+  "visible": false,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local RandomEmit",
+      "id": "5Qr%2Y.mGthRE5+O8f};-Local RandomEmit-",
+      "value": 70
+    },
+    {
+      "name": "Local Type",
+      "id": "5Qr%2Y.mGthRE5+O8f};-Local Type-",
+      "value": "1"
+    },
+    {
+      "name": "Local GlideX",
+      "id": "5Qr%2Y.mGthRE5+O8f};-Local GlideX-",
+      "value": 0
+    },
+    {
+      "name": "Local GlideY",
+      "id": "5Qr%2Y.mGthRE5+O8f};-Local GlideY-",
+      "value": 0
+    },
+    {
+      "name": "Local Data",
+      "id": "5Qr%2Y.mGthRE5+O8f};-Local Data-",
+      "value": ""
+    },
+    {
+      "name": "Local Glide",
+      "id": "5Qr%2Y.mGthRE5+O8f};-Local Glide-",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": -51,
+      "file": "costumes/variant2.svg"
+    },
+    {
+      "name": "variant3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": -50,
+      "file": "costumes/variant3.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

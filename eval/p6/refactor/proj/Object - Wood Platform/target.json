@@ -1,0 +1,35 @@
+{
+  "name": "Object - Wood Platform",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 9,
+  "visible": false,
+  "x": 49,
+  "y": -57,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 55,
+      "rotationCenterY": 10,
+      "file": "costumes/variant1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

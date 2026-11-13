@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="27.101479530334473" height="67.053879737854" viewBox="0.6458606719970703 0.635260820388794 27.101479530334473 67.053879737854">
+  <defs>
+    <radialGradient id="grad_1" cx="0.5664" cy="0.8952" r="1.1637600000000001">
+      <stop offset="0" stop-color="#663B00" stop-opacity="1"/>
+      <stop offset="1" stop-color="#995900" stop-opacity="1"/>
+    </radialGradient>
+  <radialGradient id="grad_1-.544739246368408,0,0,2.544739246368408,-596.35,-423.7" cx="15.6582" cy="58.6506" r="54.1124" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#663B00" stop-opacity="1"/>
+      <stop offset="1" stop-color="#995900" stop-opacity="1"/>
+    </radialGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.34442213689908385" fill="url(#grad_1-.544739246368408,0,0,2.544739246368408,-596.35,-423.7)" stroke="#000000" stroke-width="5.089478492736816" d="M 3.1906 3.18 L 25.2026 3.18 L 25.2026 65.1444 L 3.1906 65.1444 L 3.1906 3.18 Z "/>
+  <path id="ID0.6812144066207111" fill="#000000" stroke="#7F7F7F" stroke-width="2" d="M 10.5 25.5 L 18 25.5 L 18 51.5 L 10.5 51.5 L 10.5 25.5 Z "/>
+  <path id="ID0.08678162703290582" fill="#000000" stroke="#7F7F7F" stroke-width="2" d="M 14 15.75 C 16.276 15.75 18.339 16.674 19.832 18.168 C 21.326 19.661 22.25 21.724 22.25 24 C 22.25 26.276 21.326 28.339 19.832 29.832 C 18.339 31.326 16.276 32.25 14 32.25 C 11.724 32.25 9.661 31.326 8.168 29.832 C 6.674 28.339 5.75 26.276 5.75 24 C 5.75 21.724 6.674 19.661 8.168 18.168 C 9.661 16.674 11.724 15.75 14 15.75 Z "/>
+  <path id="ID0.4882810618728399" fill="#000000" stroke="none" d="M 11.75 25.5 L 17.25 25.5 L 17.25 42.75 L 11.75 42.75 L 11.75 25.5 Z " stroke-width="1"/>
+</svg>

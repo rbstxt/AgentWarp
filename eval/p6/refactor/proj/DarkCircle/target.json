@@ -1,0 +1,101 @@
+{
+  "name": "DarkCircle",
+  "isStage": false,
+  "currentCostume": 5,
+  "volume": 100,
+  "layerOrder": 22,
+  "visible": false,
+  "x": -126,
+  "y": -82.59999999999889,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Left,Right",
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Left,Right-",
+      "value": "1"
+    },
+    {
+      "name": "Local Up,Down",
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Up,Down-",
+      "value": "1"
+    },
+    {
+      "name": "Local Data",
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Data-",
+      "value": "2"
+    },
+    {
+      "name": "Local Ghost",
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Ghost-",
+      "value": 0
+    },
+    {
+      "name": "Local SizeGlide",
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local SizeGlide-",
+      "value": 17.5
+    },
+    {
+      "name": "Local Clone?",
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Clone?-",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "Circle",
+      "bitmapResolution": 1,
+      "rotationCenterX": 93,
+      "rotationCenterY": 92,
+      "file": "costumes/Circle.svg"
+    },
+    {
+      "name": "bandicam 2016-12-05 20-25-43-181",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/bandicam 2016-12-05 20-25-43-181.svg"
+    },
+    {
+      "name": "bandicam 2016-12-05 20-25-49-515",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/bandicam 2016-12-05 20-25-49-515.svg"
+    },
+    {
+      "name": "bandicam 2016-12-05 20-25-55-199",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/bandicam 2016-12-05 20-25-55-199.svg"
+    },
+    {
+      "name": "bandicam 2016-12-05 20-26-23-130",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/bandicam 2016-12-05 20-26-23-130.svg"
+    },
+    {
+      "name": "Edge",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/Edge.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

@@ -47,7 +47,7 @@ const USAGE = `usage: agentwarp <command> [args]
   run [dir] [vmrun options…]     pack + headless run; pure JSON on stdout
   test [dir] [pattern] [--json]  pack once + run tests/*.test.json; table on stderr
   layout [dir]                   overlap report (JSON on stdout)
-  tidy [dir] [--target NAME]     Clean-up-Plus layout in place
+  tidy [dir] [--target NAME] [--dry-run]     Clean-up-Plus layout in place
   costumes [dir]                  costume collision sizes (JSON on stdout)
   shot [dir] --frames N [--at f1,f2] [--input in.json] [--seed S] [--out DIR] [--gif]
                                  render the stage with the real renderer (PNG frames / GIF,
@@ -644,12 +644,16 @@ async function main() {
             const { cleanUpPlus } = await import('../core/layout.ts');
             const names: string[] = project.targets.map((t: any) => String(t?.name));
             if (only && !names.includes(only)) die(`no target "${only}" (have: ${names.join(', ')})`);
+            const dryRun = opts['dry-run'] === true;
+            const moves: Record<string, number> = {};
             for (const t of project.targets ?? []) {
                 if (only && String(t?.name) !== only) continue;
                 const placed = cleanUpPlus(t);
+                moves[String(t?.name)] = 0;
                 for (const [id, p] of placed.blocks) {
                     const b = t.blocks?.[id];
                     if (b && !Array.isArray(b)) {
+                        if (Math.round(p.x) !== Math.round(b.x) || Math.round(p.y) !== Math.round(b.y)) moves[String(t?.name)]++;
                         b.x = Math.round(p.x);
                         b.y = Math.round(p.y);
                     }
@@ -661,6 +665,12 @@ async function main() {
                         c.y = Math.round(p.y);
                     }
                 }
+            }
+            if (dryRun) {
+                for (const [n, k] of Object.entries(moves)) process.stderr.write(`${n}: ${k} script(s) would move\n`);
+                process.stderr.write('dry run: nothing written. Note: tidy re-lays out the WHOLE target (human placement is lost);\n' +
+                    'new scripts are already placed cleanly by pack without tidy.\n');
+                return;
             }
             // Persist positions by re-unpacking the cleaned sb3 into a temp dir
             // and copying the machine-managed files back (script text is unchanged).

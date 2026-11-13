@@ -1,0 +1,74 @@
+{
+  "name": "Object - Collectables",
+  "isStage": false,
+  "currentCostume": 1,
+  "volume": 100,
+  "layerOrder": 6,
+  "visible": false,
+  "x": 146.95,
+  "y": 40.849999999999994,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Data",
+      "id": "?I+T)Y8*hk4;_pNv=U4A-Local Data-",
+      "value": "11"
+    },
+    {
+      "name": "Local Glide",
+      "id": "?I+T)Y8*hk4;_pNv=U4A-Local Glide-",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "Door Locked",
+      "bitmapResolution": 1,
+      "rotationCenterX": 14,
+      "rotationCenterY": 33,
+      "file": "costumes/Door Locked.svg"
+    },
+    {
+      "name": "Door Opened",
+      "bitmapResolution": 1,
+      "rotationCenterX": 14,
+      "rotationCenterY": 33,
+      "file": "costumes/Door Opened.svg"
+    },
+    {
+      "name": "Key",
+      "bitmapResolution": 1,
+      "rotationCenterX": 29,
+      "rotationCenterY": 22,
+      "file": "costumes/Key.svg"
+    },
+    {
+      "name": "Text",
+      "bitmapResolution": 1,
+      "rotationCenterX": 39,
+      "rotationCenterY": 13,
+      "file": "costumes/Text.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "SYS-DOOR2",
+      "format": "adpcm",
+      "rate": 22050,
+      "sampleCount": 44705,
+      "file": "sounds/SYS-DOOR2.wav"
+    },
+    {
+      "name": "SYS-DOOR0",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 42496,
+      "file": "sounds/SYS-DOOR0.wav"
+    }
+  ]
+}

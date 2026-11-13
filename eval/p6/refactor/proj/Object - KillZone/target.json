@@ -1,0 +1,42 @@
+{
+  "name": "Object - KillZone",
+  "isStage": false,
+  "currentCostume": 1,
+  "volume": 100,
+  "layerOrder": 7,
+  "visible": false,
+  "x": 32,
+  "y": -178,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 43,
+      "rotationCenterY": 1,
+      "file": "costumes/variant1.svg"
+    },
+    {
+      "name": "variant2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 91,
+      "rotationCenterY": 1,
+      "file": "costumes/variant2.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "SYS-PO-FALL",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 67122,
+      "file": "sounds/SYS-PO-FALL.wav"
+    }
+  ]
+}

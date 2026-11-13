@@ -1,0 +1,17 @@
+{
+  "name": "R restarts from the beginning",
+  "frames": 400,
+  "input": [
+    { "frame": 5, "type": "broadcast", "name": "enter game" },
+    { "frame": 60, "type": "keydown", "key": "p" },
+    { "frame": 90, "type": "keyup", "key": "p" },
+    { "frame": 140, "type": "keydown", "key": "r" },
+    { "frame": 170, "type": "keyup", "key": "r" }
+  ],
+  "expect": [
+    { "probe": "Stage.variables.Tile", "op": "==", "value": 1 },
+    { "probe": "Stage.variables.Paused", "op": "==", "value": 0 },
+    { "probe": "Stage.variables.Score", "op": "==", "value": 0 },
+    { "probe": "PauseMenu.visible", "op": "==", "value": false }
+  ]
+}

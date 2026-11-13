@@ -1,0 +1,51 @@
+{
+  "name": "Object - Water Effect",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 14,
+  "visible": false,
+  "x": -44,
+  "y": -9,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Type",
+      "id": ",aMzxKm6s1bGBS=]aU45-Local Type-",
+      "value": "1"
+    },
+    {
+      "name": "Local GlideX",
+      "id": ",aMzxKm6s1bGBS=]aU45-Local GlideX-",
+      "value": 0
+    },
+    {
+      "name": "Local GlideY",
+      "id": ",aMzxKm6s1bGBS=]aU45-Local GlideY-",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant 1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 7,
+      "rotationCenterY": 8,
+      "file": "costumes/variant 1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

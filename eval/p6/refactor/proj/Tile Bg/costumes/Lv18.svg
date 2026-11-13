@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="482.07421875" height="362.2093200683594" viewBox="-0.07422220706939697 0.7906666994094849 482.07421875 362.2093200683594">
+  <defs>
+    <linearGradient id="grad_1" y2="1" x2="0">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient>
+  <linearGradient id="grad_1-,0,0,0.9795918464660645,1,9.3" y2="361.9531" x2="122" x1="122" y1="313.9531" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </linearGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.5106989005580544" fill="#5B5B5B" stroke="none" d="M 74.5 362 L 104 362 L 104 362 L 74.5 362 L 74.5 362 Z " stroke-width="1"/>
+  <path id="ID0.7079182723537087" fill="#363D1E" stroke="none" d="M 351.7 356.85 L 351.85 356.85 L 351.85 359 L 351.7 359 L 351.7 356.85 Z " stroke-width="1"/>
+  <path id="ID0.7028856645338237" fill="#363D1E" stroke="none" d="M 116.6 296.8 L 116.6 296.8 L 116.6 296.9 L 116.6 296.9 L 116.6 296.8 Z " stroke-width="1"/>
+  <path id="ID0.32128847390413284" fill="#5B5B5B" stroke="none" d="M 481 12 L 481 12 L 481 14.5 L 481 14.5 L 481 12 Z " stroke-width="1"/>
+  <path id="ID0.6846096026711166" fill="#5B5B5B" stroke="none" d="M 481 93 L 481 93 L 481 94.5 L 481 94.5 L 481 93 Z " stroke-width="1"/>
+  <path id="ID0.4329290692694485" fill="url(#grad_1-,0,0,0.9795918464660645,1,9.3)" stroke="none" d="M 122 313.9531 L 390 313.9531 L 390 361.9531 L 122 361.9531 L 122 313.9531 Z " stroke-width="0.9898485201440657"/>
+  <g id="ID0.45272549288347363">
+    <path id="ID0.9778965464793146" fill="#663B00" stroke="#995900" stroke-width="1.9999999862405184" stroke-linecap="round" d="M 345.7495 104.5548 L 383.8528 125.6353 L 377.2018 139.0802 L 413.596 126.403 L 400.0416 94.0375 L 392.716 106.5908 L 358.1837 83.9298 L 345.7495 104.5548 Z "/>
+    <path id="ID0.3824962517246604" fill="#663B00" stroke="none" stroke-linecap="round" d="M 376.1024 96.3772 L 379.6877 98.1508 L 400.0839 56.9198 L 396.4986 55.1462 L 376.1024 96.3772 Z " stroke-width="0.9999999931202592"/>
+  </g>
+  <path id="ID0.6764694973826408" fill="none" stroke="#012E34" stroke-width="2" stroke-linecap="round" d="M 478 359 C 478 359 481 362 481 362 "/>
+  <path id="ID0.6780851110816002" fill="none" stroke="#012E34" stroke-width="2" stroke-linecap="round" d="M 4 5 C 4 5 3.745 2.745 3 2 C 2.529 1.529 1.666 2 1 2 C 0.833 2 1 2 1 2 "/>
+</svg>

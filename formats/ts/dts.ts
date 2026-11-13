@@ -262,7 +262,9 @@ export async function generateDts(projectDir: string): Promise<string[]> {
         lines.push(`// Regenerate after changing target.json: see formats/ts/AGENTS.md.`);
         lines.push(`type VarRef = string & { readonly __var: true };`);
         lines.push(`type ListRef = string & { readonly __list: true };`);
-        lines.push(`type BroadcastName = ${unionOrString(allBroadcasts)};`);
+        // Broadcasts: known names autocomplete, but NEW names are allowed (pack declares them on the Stage);
+        // typos are caught by lint (broadcast-sent-never-received / received-never-sent).
+        lines.push(`type BroadcastName = ${allBroadcasts.length ? unionOrString(allBroadcasts) + ' | (string & {})' : 'string'};`);
         lines.push(`type CostumeName = ${unionOrString(t.costumes)};`);
         lines.push(`type SoundName = ${unionOrString(t.sounds)};`);
         lines.push(`type BackdropName = ${unionOrString(backdropNames)};`);

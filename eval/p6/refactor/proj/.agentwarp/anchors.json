@@ -1,0 +1,218 @@
+{
+  "Stage": {
+    "a1": "NETwK~yPP4o{Mj6o60g=",
+    "a2": "y]XxP?q^aLaW]6]yM`b`",
+    "a3": "j*XeBQS1--TwGTk*{4y)",
+    "a4": ",cZ+VEUV0Zc8}{M*^:Oy",
+    "a5": "RM?!^+a}QwUUtY5t?/7M"
+  },
+  "Welcome!": {
+    "a1": "}`xSBG9v%hos(d~zh%Au",
+    "a2": ":n@7UHWJ@u}kGSa]eySF",
+    "c1": "}`xSBG9v%hos(d~zh%Au",
+    "c2": ":n@7UHWJ@u}kGSa]eySF"
+  },
+  "Dev": {
+    "a1": "ut|E:_p}ek%rBNx9:}I}",
+    "a2": "j)m,:[30}qqn)AmEE^o]",
+    "a3": "Pw3odDe3Dx3VqwQyzc!+",
+    "a4": "ED0]?r`198@fAx7OCj|c",
+    "a5": "FB6X-a4xT[4k]n7MCa5b",
+    "a6": "+H#v//ln)V1FZ|5)lDaj",
+    "a7": "]xqRsb9OW_(YQcgNNZT)",
+    "a8": ":gn+L1AGKnWTx3jm0xq?",
+    "c1": "j)m,:[30}qqn)AmEE^o]_comment",
+    "c2": "*94p9UHgVXE7FR?n3^se_comment",
+    "c3": "h;o%n#WiGy/5Fjh^Bb3O_comment"
+  },
+  "Dev Intro": {
+    "a1": "s;Ilm#F@L,w,az/CvZZ$",
+    "a2": "z",
+    "a3": "Cl(vp:Md}EP1GOK,X#X0",
+    "a4": "H",
+    "a5": "i",
+    "a6": "m",
+    "a7": "r",
+    "a8": "o",
+    "a9": "_5j,la+v%,$~RS7[o7h!",
+    "a10": "bG?I74=%cwCLKp-jg@Q2",
+    "a11": "R:.HGk:O}W04z{g!NLz}",
+    "a12": "BVtMd`~`9O/4-FtN*qv8",
+    "a13": "i+8?8werF%tJUVPH=$m3",
+    "a14": "u/,U:O![!Kb5VG9m_AUz",
+    "c1": "s;Ilm#F@L,w,az/CvZZ$"
+  },
+  "Block": {
+    "a1": ":I^c6Z1Aoh.tYkCqYYkS",
+    "a2": "CaN~%9ezMn~06#+q~OUh",
+    "a3": ".KjBbUSMpSi-8145w_vY",
+    "a4": "}V?#_T=z`{ROg8+RD1aq",
+    "a5": "nV?{xoSN4X0}4Nt[nFAv"
+  },
+  "DarkCircle": {
+    "a1": "g,l![iK!f_#y_?2Myz(A",
+    "a2": "ADU6A^vx%nT?HxlaKyIe",
+    "a3": "e]t}x4#a7ihd^Q4rqGS,",
+    "a4": "LH@ZNR03@:.k14F8LlV`",
+    "a5": "cq?Q_0o,A%WLw%rLjOos",
+    "a6": "(L#YoAo/]?!^jl_8_AWO",
+    "a7": "A#?lk8+?}BDRzO{QSs0z",
+    "a8": "olwvj3d:5{:*nI5HhipR"
+  },
+  "Tile": {
+    "a1": "0mgz/996lW7=1=OZ5E);",
+    "a2": "yCy@.oo9rATB[:oR=mD?",
+    "a3": "u-5n^L=Yc^1)zS6HG[,X",
+    "a4": "NxV.rpnJ[)y({.e`=XH]",
+    "a5": "71A{QG*mLbMUs;c`%RwW",
+    "a6": "-Vhg8|PXufL@c+arIs7L",
+    "a7": "^YY7nGE`k:u@G]6O7Y8j",
+    "a8": "~Qyh`X..nxch)(^xE}+t",
+    "a9": ".-3cDF8dDZBv9g++GI2a",
+    "a10": ".PQGFBcCLjdzNQm#d8rI",
+    "a11": "ri^LBxcnPjNbJ83~_bJ@",
+    "a12": "g;h:[2C5EKp6L776}+%1",
+    "a13": "cl^ijw^#[^@TL5,lITby"
+  },
+  "Hitbox": {
+    "a1": "OG?RPCYzRyhXWt01%qF2",
+    "a2": "Ng0^K]swR[Q:R,R-VJ:0",
+    "a3": "3:iB,ao!2dV)dItnF.vT",
+    "a4": "#_?*tnT(7JZbyy|=G_]B",
+    "a5": "+~VEK1fGM!))gN[9gkGH",
+    "a6": "[U+X/V70W7_iqRbUz]:e",
+    "a7": "}URE)2VGSvBr2*+ik*(j",
+    "a8": "xok8-`:8m-9N}dOWn^:A",
+    "a9": "K}/%K;:*Kd(lyd{m4~AD",
+    "a10": "9}0yGz^R@H5^wvAkGnp#",
+    "a11": "rS@bXr(=FYd*{6AZ~8S_",
+    "a12": "4OXFlDKGkFw@e+DL4:g`",
+    "a13": "QN~s)akVE;q!dlH3Si,B",
+    "a14": "I{,9a/2.;k_%59)w@;pH",
+    "a15": ".()WXc`:Pb`9dvC4mnnb",
+    "a16": "gd{f-[`PQ*t6Z1dsB6c=",
+    "a17": "[|8+f:i,Nr0oz%jQTuvU",
+    "a18": "4aOyHRNVb6lX*HzA963s",
+    "a19": "h~i?H/LZ-NK.Ol6U.[Ij",
+    "a20": "PLWnD:,p{d5q6WCx0jd3"
+  },
+  "Object - Teleporter": {
+    "a1": "H[_AowDz?sQ~5e=]jOEU",
+    "a2": "y4h|mBYEng6F2g}L)Z}k",
+    "a3": "`y8.J#L^iybTSa3Bf*M;",
+    "a4": "ac*U::vdZ50?|jPCfOmx",
+    "a5": "3_Z`P2Ce`:79Ga]PLjKc"
+  },
+  "Object - KillZone": {
+    "a1": "ERoxo^1]R|r2L:w-WjGN",
+    "a2": "Sh8~[{pgq(}.Lg({f;Id",
+    "a3": "JL+n#yLhr.sykG.t3ZJR",
+    "a4": "/u.#mDdK/EQHMBs}m^7:",
+    "a5": "DP5@}2?}{1y0lk|iF0[v"
+  },
+  "Object - Torch": {
+    "a1": ";]1SB+lFfDQUWzRKE_mQ",
+    "a2": "Zlw6sN^G4y)3~24z%4Y6",
+    "a3": "g0bz?!9f/TCa9LIIF?a8",
+    "a4": "JRWG9Tmhn^yhUzflhH@]",
+    "a5": ";fQ.u%DM{k73_nFmz*5]"
+  },
+  "Object - Sign": {
+    "a1": "%RW##l9R|Cil6hHAT10b",
+    "a2": "nqk}m~PhUM}I^gH5@)SW",
+    "a3": "s2sy.RWl3Wk=*pB8qL9q",
+    "a4": "RpdaDCGw()b}F.}p!RJ)",
+    "a5": "m-~Y:M:kqaY{*c,kx1PZ",
+    "a6": "8,EZn#p[3L[1FFL0OHhm",
+    "a7": "ZcbRc-nwtltB%XV7Xuo+",
+    "a8": "L6Sp}*7g3UgeDfZ+KCHc",
+    "a9": "/`N-)d::dV^%iEg|o-O%",
+    "a10": "pv?G2dMHyLzIm!(=|on("
+  },
+  "FadeBlack": {
+    "a1": "]8hFXCqt^8zFLUJjfZ)^",
+    "a2": "pr9^)z?8oPJwpGmAX@`4",
+    "a3": "/UE@j8.%K;rPVd|)S?vR",
+    "a4": "k3hcIVBJ-YE2NJ!]y[w`"
+  },
+  "Object - EventZone": {
+    "a1": "G96A=vUY6fWN9psKO6x+",
+    "a2": "w5UJ0jbpzc?;e:3GC6vI",
+    "a3": "NZ@D[R*Y;_?3ITReDA|G",
+    "a4": "]g#45+rL+y|oe0ud,voU",
+    "a5": "3=%[ASv]0RyQEM9%]=}a"
+  },
+  "Object - Water": {
+    "a1": "OdZWEvhfI9[1CH@!Z@r=",
+    "a2": "%C[`*I[sL)(%vl25GMY-",
+    "a3": "lz:rm76PQu:Rqg0HaW/!",
+    "a4": ".7Hve63T/cb-R1Wlb4cM"
+  },
+  "Object - Water2": {
+    "a1": "91^_!_}SVaX73kA5;cn3",
+    "a2": ";Q/*8q_CiErRG_RR2W?2",
+    "a3": "az-D`[e!jS(6dwZJFj{k",
+    "a4": ";hvyv)QSN!`B@m.b11-u"
+  },
+  "Object - Urchin": {
+    "a1": ",-lM9UBc)T6Y[Ha;Ba[0",
+    "a2": "lo!yV?Isl?Lg=*1m0Myz",
+    "a3": "28o):p%7j#B1-v~wzyG[",
+    "a4": "`wpp5gKe?k7!NIFmIjC6",
+    "a5": "OItR8+J0:2IV^RY}_U9,",
+    "a6": "4,/UjDco/5_rolCSj?.5"
+  },
+  "Object - Wood Platform": {
+    "a1": "(m[{(Ye!ybfK,lwSgAUk",
+    "a2": "vO%[JC}U[P|5%~^W]`vz",
+    "a3": "ukp8SWIp|6ar1jnH[Uda",
+    "a4": "inob47aa.|+Eb%]sF8U(",
+    "a5": "[i5Cxn7-bp`F_Y5?1TMT",
+    "a6": "3pu_3HJNAU1o?]ACs]?j"
+  },
+  "Object - SpringBoard": {
+    "a1": "!EF)]j:XXhwn~|t5/!r^",
+    "a2": "_K;(.s!HmTJ8^TcH`i,a",
+    "a3": "ggcCsz%tMq81zKmuv:|=",
+    "a4": "8+%lEKw@Y/eE|#%Ww^*z",
+    "a5": "J*KF2tw0N;jA*7uoFI_J"
+  },
+  "Object - Collectables": {
+    "a1": ".9))aF|[;dhs*3|Ba%#i",
+    "a2": ";zN`/;C|,r#4!CrJ6RTh",
+    "a3": "]GNr^aVZcf.+lud#ZA?W",
+    "a4": "zqaGV-jlOZF-5aBbvWd`",
+    "a5": "m4mZ0pdzs)tEyl~UrJl_"
+  },
+  "Object - Bubble": {
+    "a1": "q6%3xJ%NfL{,FRqEAOi7",
+    "a2": "w}Zn)9[zH%Z`sNLdDFp5",
+    "a3": ";7@qn9Q8,oAzi*w9[;gj"
+  },
+  "GameName": {
+    "a1": "|cT;I?R16}[t]@Fgw1s8",
+    "a2": "DXM(B,s?RIMM`Hylx6c}",
+    "a3": "e1Exb1r5grV@@7KZ@;Ks",
+    "a4": "T5;:_gncsmbwMiSAn=V-",
+    "a5": ";=G.}a12P-6^=V6#I^n1",
+    "a6": "4DK]Gzj[w[Xlz8[ST{fG",
+    "a7": "6^}lkPhsw[#V^;6M.][m",
+    "a8": "A{%C;,d^*RnY04/;,(1@",
+    "c1": ";=G.}a12P-6^=V6#I^n1_comment"
+  },
+  "Tile Bg": {
+    "a1": "wc2UAdeQeA[MN7@jODo6",
+    "a2": ";zl^sEF}@=K2Yq0Zv]*X",
+    "a3": "Q/5@,owwsfel8cbBUyQn",
+    "a4": "2Q,+7#y0uLq)W[4gb2d%"
+  },
+  "Object - Water Effect": {
+    "a1": "t|AjX_UuQcp_ivyh_r6S",
+    "a2": "eFo}6Kz7r+OGMV787z=A",
+    "a3": ".w*w6jkdPrkcGI;en|d,"
+  },
+  "Report": {
+    "a1": "|kA)WK![JjcL*ZYmTXmn",
+    "a2": "q{K}#NFsnJf4kWLvROaL"
+  }
+}

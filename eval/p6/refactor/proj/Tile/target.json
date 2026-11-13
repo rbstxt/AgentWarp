@@ -1,0 +1,251 @@
+{
+  "name": "Tile",
+  "isStage": false,
+  "currentCostume": 26,
+  "volume": 100,
+  "layerOrder": 3,
+  "visible": false,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local FromLR",
+      "id": "`0]sruT5)^_KjG;{0a%6-Local FromLR-",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "Lv1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241,
+      "rotationCenterY": -98,
+      "file": "costumes/Lv1.svg"
+    },
+    {
+      "name": "Lv2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241,
+      "rotationCenterY": -73,
+      "file": "costumes/Lv2.svg"
+    },
+    {
+      "name": "Lv3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241,
+      "rotationCenterY": -44,
+      "file": "costumes/Lv3.svg"
+    },
+    {
+      "name": "Lv4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241,
+      "rotationCenterY": -44,
+      "file": "costumes/Lv4.svg"
+    },
+    {
+      "name": "Lv5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241,
+      "rotationCenterY": 199,
+      "file": "costumes/Lv5.svg"
+    },
+    {
+      "name": "Lv5.5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 251,
+      "rotationCenterY": 184,
+      "file": "costumes/Lv5.5.svg"
+    },
+    {
+      "name": "Lv6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 242,
+      "rotationCenterY": 183,
+      "file": "costumes/Lv6.svg"
+    },
+    {
+      "name": "Lv7",
+      "bitmapResolution": 1,
+      "rotationCenterX": 244.0222,
+      "rotationCenterY": 180.5,
+      "file": "costumes/Lv7.svg"
+    },
+    {
+      "name": "Lv8",
+      "bitmapResolution": 1,
+      "rotationCenterX": 244,
+      "rotationCenterY": 183,
+      "file": "costumes/Lv8.svg"
+    },
+    {
+      "name": "Lv9",
+      "bitmapResolution": 1,
+      "rotationCenterX": 242,
+      "rotationCenterY": 181,
+      "file": "costumes/Lv9.svg"
+    },
+    {
+      "name": "Lv10",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv10.svg"
+    },
+    {
+      "name": "Lv11",
+      "bitmapResolution": 1,
+      "rotationCenterX": 244,
+      "rotationCenterY": 170,
+      "file": "costumes/Lv11.svg"
+    },
+    {
+      "name": "Lv12",
+      "bitmapResolution": 1,
+      "rotationCenterX": 243.0434,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv12.svg"
+    },
+    {
+      "name": "Lv13",
+      "bitmapResolution": 1,
+      "rotationCenterX": 242,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv13.svg"
+    },
+    {
+      "name": "Lv14",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv14.svg"
+    },
+    {
+      "name": "Lv15",
+      "bitmapResolution": 1,
+      "rotationCenterX": 244,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv15.svg"
+    },
+    {
+      "name": "Lv16",
+      "bitmapResolution": 1,
+      "rotationCenterX": 244,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv16.svg"
+    },
+    {
+      "name": "Lv17",
+      "bitmapResolution": 1,
+      "rotationCenterX": 243.291,
+      "rotationCenterY": 183.96949999999998,
+      "file": "costumes/Lv17.svg"
+    },
+    {
+      "name": "Lv18",
+      "bitmapResolution": 1,
+      "rotationCenterX": 243.291,
+      "rotationCenterY": 183.96949999999998,
+      "file": "costumes/Lv18.svg"
+    },
+    {
+      "name": "Lv19",
+      "bitmapResolution": 1,
+      "rotationCenterX": 243,
+      "rotationCenterY": 183,
+      "file": "costumes/Lv19.svg"
+    },
+    {
+      "name": "Lv20",
+      "bitmapResolution": 1,
+      "rotationCenterX": 243,
+      "rotationCenterY": 183,
+      "file": "costumes/Lv20.svg"
+    },
+    {
+      "name": "Lv21",
+      "bitmapResolution": 1,
+      "rotationCenterX": 243,
+      "rotationCenterY": 183,
+      "file": "costumes/Lv21.svg"
+    },
+    {
+      "name": "Lv22",
+      "bitmapResolution": 1,
+      "rotationCenterX": 242.9921,
+      "rotationCenterY": 181.9924,
+      "file": "costumes/Lv22.svg"
+    },
+    {
+      "name": "Lv23",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 170,
+      "file": "costumes/Lv23.svg"
+    },
+    {
+      "name": "Lv24",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv24.svg"
+    },
+    {
+      "name": "Lv25",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv25.svg"
+    },
+    {
+      "name": "Lv26",
+      "bitmapResolution": 1,
+      "rotationCenterX": 243.291,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv26.svg"
+    },
+    {
+      "name": "Lv27",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241.9475,
+      "rotationCenterY": 180,
+      "file": "costumes/Lv27.svg"
+    },
+    {
+      "name": "Lv28",
+      "bitmapResolution": 1,
+      "rotationCenterX": 244.99089999999998,
+      "rotationCenterY": 182,
+      "file": "costumes/Lv28.svg"
+    },
+    {
+      "name": "Lv29",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241.0588235848508,
+      "rotationCenterY": 180.75,
+      "file": "costumes/Lv29.svg"
+    },
+    {
+      "name": "Lv30",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241.0588235848508,
+      "rotationCenterY": 180.75,
+      "file": "costumes/Lv30.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

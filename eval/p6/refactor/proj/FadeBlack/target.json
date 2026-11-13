@@ -1,0 +1,42 @@
+{
+  "name": "FadeBlack",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 21,
+  "visible": false,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "BlkScreen",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/BlkScreen.svg"
+    },
+    {
+      "name": "white",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/white.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

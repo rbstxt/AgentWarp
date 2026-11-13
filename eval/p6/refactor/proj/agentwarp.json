@@ -1,0 +1,1232 @@
+{
+  "formatVersion": 1,
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "15.0.2-revert-react-context-menu-static-init.1",
+    "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+  },
+  "extensions": [],
+  "monitors": [
+    {
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Up,Down-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Up,Down"
+      },
+      "spriteName": "DarkCircle",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 32,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Data-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Data"
+      },
+      "spriteName": "DarkCircle",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 59,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": ";Lnysnp[Yz_qK3X4?Dw{_yposition",
+      "mode": "default",
+      "opcode": "motion_yposition",
+      "params": {},
+      "spriteName": "Block",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 86,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "?]{-;Q=[ZX9oJ(kx3vDk_size",
+      "mode": "default",
+      "opcode": "looks_size",
+      "params": {},
+      "spriteName": "DarkCircle",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 221,
+      "y": 275,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "2%UWE5?V=e!IJw1`m])[_xposition",
+      "mode": "default",
+      "opcode": "motion_xposition",
+      "params": {},
+      "spriteName": "Tile",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 112,
+      "y": 194,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "nbiFPE~|O6Ag{[p(98%}-Local Data-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Data"
+      },
+      "spriteName": "Object - Teleporter",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 219,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Local NextMap?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local NextMap?"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 112,
+      "y": 140,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Left,Right-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Left,Right"
+      },
+      "spriteName": "DarkCircle",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Ghost-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Ghost"
+      },
+      "spriteName": "DarkCircle",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 219,
+      "y": 59,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "nbiFPE~|O6Ag{[p(98%}-Local Clone?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Clone?"
+      },
+      "spriteName": "Object - Teleporter",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 221,
+      "y": 221,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local SizeGlide-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local SizeGlide"
+      },
+      "spriteName": "DarkCircle",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 221,
+      "y": 248,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Next?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Next?"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 112,
+      "y": 167,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Map ScrollFinished?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Map ScrollFinished?"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 221,
+      "y": 167,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Glide Y-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Saved Glide Y"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 331,
+      "y": 140,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Glide Left-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Saved Glide Left"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 331,
+      "y": 194,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Glide Right-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Saved Glide Right"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 331,
+      "y": 302,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "A#sR`1z^4e6mXQILF^.c_xposition",
+      "mode": "default",
+      "opcode": "motion_xposition",
+      "params": {},
+      "spriteName": "Object - Torch",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 154,
+      "y": 40,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "A#sR`1z^4e6mXQILF^.c_yposition",
+      "mode": "default",
+      "opcode": "motion_yposition",
+      "params": {},
+      "spriteName": "Object - Torch",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 28,
+      "y": 46,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local RandomEmit-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local RandomEmit"
+      },
+      "spriteName": "Object - Torch",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 267,
+      "y": 296,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local Type-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Type"
+      },
+      "spriteName": "Object - Torch",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 189,
+      "y": 104,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local GlideX-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local GlideX"
+      },
+      "spriteName": "Object - Torch",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 223,
+      "y": 304,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local GlideY-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local GlideY"
+      },
+      "spriteName": "Object - Torch",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 258,
+      "y": 284,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "2~G/|g|={yl)tySr6g21_xposition",
+      "mode": "default",
+      "opcode": "motion_xposition",
+      "params": {},
+      "spriteName": "Object - Sign",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 235,
+      "y": 220,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "?_iJ-}E]S5fLAnK{F^ci-Local Glide-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Glide"
+      },
+      "spriteName": "Object - EventZone",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 70,
+      "y": 238,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "Lf1/o#zWq`0+h9U^kC%V-Local Clone?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Clone?"
+      },
+      "spriteName": "DarkCircle",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 178,
+      "y": 33,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "pDfBKcP[}u-f)Kn?C6Kb-Local Glide-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Glide"
+      },
+      "spriteName": "Object - Water",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 261,
+      "y": 100,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Glide Right-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Glide Right"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 155,
+      "y": 80,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Glide Left-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Glide Left"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 313,
+      "y": 116,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Player TouchWater?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Player TouchWater?"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 297,
+      "y": 32,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Local Random-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Random"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 248,
+      "y": 179,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Local Glide-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Glide"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 253,
+      "y": 76,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Jump-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Jump"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 223,
+      "y": 298,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "?I+T)Y8*hk4;_pNv=U4A-Local Data-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Data"
+      },
+      "spriteName": "Object - Collectables",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 371,
+      "y": 240,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "?I+T)Y8*hk4;_pNv=U4A-Local Glide-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Glide"
+      },
+      "spriteName": "Object - Collectables",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 226,
+      "y": 150,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "o%+QAS[}.^NbNG|NdlC`-Local BlinkRandom-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local BlinkRandom"
+      },
+      "spriteName": "Block",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 328,
+      "y": 189,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "MrUvak2esDD!2EAjVE*0-Local Glide-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Glide"
+      },
+      "spriteName": "GameName",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 52,
+      "y": 253,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "Q;|0tsQJ7hSy_m|WyOe_-Local Data-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Data"
+      },
+      "spriteName": "Dev",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 123,
+      "y": 181,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "Q;|0tsQJ7hSy_m|WyOe_-Local Wait-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Wait"
+      },
+      "spriteName": "Dev",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 16,
+      "y": 241,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "`0]sruT5)^_KjG;{0a%6-Local FromLR-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local FromLR"
+      },
+      "spriteName": "Tile",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 219,
+      "y": 32,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": ",aMzxKm6s1bGBS=]aU45-Local Type-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Type"
+      },
+      "spriteName": "Object - Water Effect",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 212,
+      "y": 246,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": ",aMzxKm6s1bGBS=]aU45-Local GlideX-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local GlideX"
+      },
+      "spriteName": "Object - Water Effect",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 321,
+      "y": 242,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": ",aMzxKm6s1bGBS=]aU45-Local GlideY-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local GlideY"
+      },
+      "spriteName": "Object - Water Effect",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 168,
+      "y": 209,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-RespawnCooldown-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "RespawnCooldown"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 277,
+      "y": 305,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved InWater-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Saved InWater"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 91,
+      "y": 79,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Landing?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Landing?"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 349,
+      "y": 9,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_WU:zzU3ZJZ{M}EIu4fg-Local Random-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local Random"
+      },
+      "spriteName": "Object - Urchin",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 295,
+      "y": 20,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Water Present?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Water Present?"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 158,
+      "y": 112,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved X-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Saved X"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 221,
+      "y": 302,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Jump-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Saved Jump"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 228,
+      "y": 100,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Player readingText?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Player readingText?"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 238,
+      "y": 136,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Key-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Key"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 348,
+      "y": 186,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Extendo-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Extendo"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 219,
+      "y": 86,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Time-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Time"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 33,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Glide Y-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Glide Y"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 353,
+      "y": 148,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Saved Y-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Saved Y"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 331,
+      "y": 86,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Data-",
+      "mode": "large",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Data"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 197,
+      "y": 223,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-AlreadyDon?-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "AlreadyDon?"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 101,
+      "y": 189,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "/So^_2Y4d5f#f1lsb-9s-Tile to Move-",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Tile to Move"
+      },
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 39,
+      "y": 241,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "NW(s^dgUOMn](;6dR^EN_yposition",
+      "mode": "default",
+      "opcode": "motion_yposition",
+      "params": {},
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 66,
+      "y": 103,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "NW(s^dgUOMn](;6dR^EN_xposition",
+      "mode": "default",
+      "opcode": "motion_xposition",
+      "params": {},
+      "spriteName": "Hitbox",
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 65.75,
+      "y": 153.2,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Tile-",
+      "mode": "large",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Tile"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 215,
+      "y": 178,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Spawn Area X,Y-list",
+      "mode": "list",
+      "opcode": "data_listcontents",
+      "params": {
+        "LIST": "Spawn Area X,Y"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 148,
+      "height": 195,
+      "x": 5,
+      "y": 167,
+      "visible": false
+    },
+    {
+      "id": "_=~2N*p##HUyF/Rd6yZa-Spawn Type-list",
+      "mode": "list",
+      "opcode": "data_listcontents",
+      "params": {
+        "LIST": "Spawn Type"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 148,
+      "height": 179,
+      "x": 112,
+      "y": 221,
+      "visible": false
+    },
+    {
+      "id": "EPsKsf~mV$]5K4A%~U|:",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Local VelocityY"
+      },
+      "spriteName": "Object - Bubble",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "|pIR$fct]|ZilIvfE-sh",
+      "mode": "large",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "TimeFinal"
+      },
+      "spriteName": null,
+      "value": "0",
+      "width": 0,
+      "height": 0,
+      "x": 217,
+      "y": 332,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": ".f|12DfpimIxA%T4T2jR",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "_CanAdvance"
+      },
+      "spriteName": "GameName",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "K#v4nhX7%4ylWN_Vm6=|",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "_AdvanceInputState"
+      },
+      "spriteName": "GameName",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "mon-score",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "Score"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": true,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "mon-timeleft",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "TimeLeft"
+      },
+      "spriteName": null,
+      "value": 1200,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 35,
+      "visible": true,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    }
+  ],
+  "extraTopLevel": {}
+}

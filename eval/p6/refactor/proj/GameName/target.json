@@ -1,0 +1,100 @@
+{
+  "name": "GameName",
+  "isStage": false,
+  "currentCostume": 2,
+  "volume": 100,
+  "layerOrder": 20,
+  "visible": false,
+  "x": 0,
+  "y": -166,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Glide",
+      "id": "MrUvak2esDD!2EAjVE*0-Local Glide-",
+      "value": "1"
+    },
+    {
+      "name": "_CanAdvance",
+      "id": ".f|12DfpimIxA%T4T2jR",
+      "value": 0
+    },
+    {
+      "name": "_AdvanceInputState",
+      "id": "K#v4nhX7%4ylWN_Vm6=|",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "indesign1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 106,
+      "rotationCenterY": 31,
+      "file": "costumes/indesign1.svg"
+    },
+    {
+      "name": "indesign2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 65,
+      "rotationCenterY": 16,
+      "file": "costumes/indesign2.svg"
+    },
+    {
+      "name": "indesign3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 77,
+      "rotationCenterY": 16,
+      "file": "costumes/indesign3.svg"
+    },
+    {
+      "name": "ct",
+      "bitmapResolution": 1,
+      "rotationCenterX": 122,
+      "rotationCenterY": 41,
+      "file": "costumes/ct.svg"
+    },
+    {
+      "name": "ct4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 137,
+      "rotationCenterY": 62,
+      "file": "costumes/ct4.svg"
+    },
+    {
+      "name": "ct2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 152,
+      "rotationCenterY": 34,
+      "file": "costumes/ct2.svg"
+    },
+    {
+      "name": "ct3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 55,
+      "rotationCenterY": 39,
+      "file": "costumes/ct3.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "Click",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 37440,
+      "file": "sounds/Click.wav"
+    },
+    {
+      "name": "aplausses",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 289778,
+      "file": "sounds/aplausses.wav"
+    }
+  ]
+}

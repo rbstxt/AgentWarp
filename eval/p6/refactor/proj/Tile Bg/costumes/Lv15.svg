@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="482.13244629700625" height="352.1111145098969" viewBox="-3.9718761613016795e-9 -1.0000000039718762 482.13244629700625 352.1111145098969">
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.5106989005580544" fill="#5B5B5B" stroke="none" d="M 74.5 350 L 104 350 L 104 350 L 74.5 350 L 74.5 350 Z " stroke-width="1"/>
+  <path id="ID0.7079182723537087" fill="#363D1E" stroke="none" d="M 351.7 344.85 L 351.85 344.85 L 351.85 347 L 351.7 347 L 351.7 344.85 Z " stroke-width="1"/>
+  <path id="ID0.7028856645338237" fill="#363D1E" stroke="none" d="M 116.6 284.8 L 116.6 284.8 L 116.6 284.9 L 116.6 284.9 L 116.6 284.8 Z " stroke-width="1"/>
+  <path id="ID0.32128847390413284" fill="#5B5B5B" stroke="none" d="M 481 0 L 481 0 L 481 2.5 L 481 2.5 L 481 0 Z " stroke-width="1"/>
+  <path id="ID0.6846096026711166" fill="#5B5B5B" stroke="none" d="M 481 81 L 481 81 L 481 82.5 L 481 82.5 L 481 81 Z " stroke-width="1"/>
+  <g id="ID0.8899252731353045">
+    <path id="ID0.9778965464793146" fill="#663B00" stroke="#995900" stroke-width="2.0000000079437523" stroke-linecap="round" d="M 272.4119 137.4749 L 258.7372 106.5961 L 287.7267 107.3758 L 272.4119 137.4749 Z "/>
+    <path id="ID0.3824962517246604" fill="#663B00" stroke="none" stroke-linecap="round" d="M 274.8007 106.0752 L 270.8022 105.9677 L 272.0389 59.9843 L 276.0375 60.0918 L 274.8007 106.0752 Z " stroke-width="1.0000000039718762"/>
+    <text id="ID0.09017158299684525" fill="#FF9400" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(0.999997 0.00231599 -0.00231599 0.999997 271.257 103.505)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">!</tspan></text>
+  </g>
+  <path id="ID0.9656132482923567" fill="none" stroke="#5B5B5B" stroke-width="2" stroke-linecap="round" d="M 2 347 C 2 347 1 350 1 350 Z "/>
+  <path id="ID0.8935437961481512" fill="none" stroke="#5B5B5B" stroke-width="2" stroke-linecap="round" d="M 479 341 C 479 341 480.579 342.158 481 343 C 481.298 343.596 481 344.334 481 345 C 481 345.666 481 346.334 481 347 C 481 347.999 481 349.001 481 350 C 481 350.25 481 350 481 350 "/>
+</svg>

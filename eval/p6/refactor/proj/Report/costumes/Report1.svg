@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="278.65383767695135" height="157.61901712031076" viewBox="0.6270375271096361 0.27813744738246327 278.65383767695135 157.61901712031076">
+  <defs>
+    <radialGradient id="grad_1" cx="0.4736" cy="0.41840000000000005" r="0.7560799999999999">
+      <stop offset="0" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+  <radialGradient id="grad_1-.120729923248291,0,0,0.6518218517303467,-65.7,-68.55" cx="132.6459" cy="66.3756" r="168.4573" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <path id="ID0.9852650533430278" fill="url(#grad_1-.120729923248291,0,0,0.6518218517303467,-65.7,-68.55)" stroke="#FFFFFF" stroke-width="1.833525176951382" d="M 1.5438 1.1949 L 278.3641 1.1949 L 278.3641 156.9804 L 1.5438 156.9804 L 1.5438 1.1949 Z "/>
+  <g id="ID0.6699770409613848">
+    <text id="ID0.6345122423954308" fill="#666666" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 88.1 -0.6)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Aw, Snap! :(</tspan></text>
+    <text id="ID0.012547009624540806" fill="#666666" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 40.05 36.8)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Looks like your game is</tspan></text>
+    <text id="ID0.21218352718278766" fill="#666666" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 6 55.8)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">crashed. If you are seeing this</tspan><tspan x="0" style="white-space: pre" dy="0.89em">please comment this bug with</tspan><tspan x="0" style="white-space: pre" dy="0.89em">this code below.</tspan></text>
+  </g>
+  <text id="ID0.6345122423954308" fill="#FFFFFF" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 87 -1.85)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Aw, Snap! :(</tspan></text>
+  <text id="ID0.012547009624540806" fill="#FFFFFF" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 39 35.5)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">Looks like your game is</tspan></text>
+  <text id="ID0.21218352718278766" fill="#FFFFFF" text-anchor="start" font-family="Scratch" font-size="22" transform="matrix(1 0 0 1 5 54.5)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="0.89em">crashed. If you are seeing this</tspan><tspan x="0" style="white-space: pre" dy="0.89em">please comment this bug with</tspan><tspan x="0" style="white-space: pre" dy="0.89em">this code below.</tspan></text>
+</svg>

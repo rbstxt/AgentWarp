@@ -1,0 +1,76 @@
+{
+  "name": "Object - Urchin",
+  "isStage": false,
+  "currentCostume": 1,
+  "volume": 100,
+  "layerOrder": 10,
+  "visible": false,
+  "x": -71,
+  "y": -132,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Random",
+      "id": "_WU:zzU3ZJZ{M}EIu4fg-Local Random-",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 38,
+      "rotationCenterY": 34,
+      "file": "costumes/variant2.svg"
+    },
+    {
+      "name": "variant1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 32,
+      "rotationCenterY": 32,
+      "file": "costumes/variant1.svg"
+    },
+    {
+      "name": "variant3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 32,
+      "rotationCenterY": 32,
+      "file": "costumes/variant3.svg"
+    },
+    {
+      "name": "variant4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 32,
+      "rotationCenterY": 32,
+      "file": "costumes/variant4.svg"
+    },
+    {
+      "name": "variant5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 32,
+      "rotationCenterY": 32,
+      "file": "costumes/variant5.svg"
+    },
+    {
+      "name": "variant6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 32,
+      "rotationCenterY": 32,
+      "file": "costumes/variant6.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "SYS-CARDLOSE",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 75258,
+      "file": "sounds/SYS-CARDLOSE.wav"
+    }
+  ]
+}

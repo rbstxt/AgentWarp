@@ -1,0 +1,12 @@
+{
+  "name": "boot spawns map 1 and timer runs",
+  "frames": 150,
+  "input": [{ "frame": 5, "type": "broadcast", "name": "enter game" }],
+  "expect": [
+    { "probe": "Stage.variables.Tile", "op": "==", "value": 1 },
+    { "probe": "Stage.variables.Paused", "op": "==", "value": 0 },
+    { "probe": "Stage.variables.Score", "op": "==", "value": 0 },
+    { "probe": "Stage.variables.Time", "op": ">", "value": 0 },
+    { "probe": "Hitbox.visible", "op": "==", "value": true }
+  ]
+}

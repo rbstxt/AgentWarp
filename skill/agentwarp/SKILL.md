@@ -96,6 +96,15 @@ Every feature or fix gets a scenario file `tests/<name>.test.json`:
   are `check` errors; use `attributeOf("x position", "Sprite")` for
   position/costume/size/volume reads.
 - Menus use stored values (`"_myself_"`, `"_mouse_"`, `"_edge_"`), not labels.
+- Put game-wide orchestration and test hooks (`when I receive [next level]`, timers, state machines)
+  on the **Stage**: it is never cloned, so its hats fire exactly once.
+- New broadcast names need no declaration — pack declares them on the Stage. Lint reports
+  broadcasts sent-but-never-received and vice versa, which is how typos are caught.
+- `tidy` re-lays out a WHOLE target (human placement is lost). New scripts you add are already
+  placed cleanly by pack; in human-made projects don't run `tidy` unless asked
+  (`tidy --dry-run` shows what would move).
+- `run`/`test` use bounding boxes for `touching`; `shot` uses real pixels. When a test depends on an
+  exact collision frame, leave a margin (e.g. check "within frames 40–60" via `until`).
 
 ## 6. Working with a human in TurboWarp (`serve`)
 

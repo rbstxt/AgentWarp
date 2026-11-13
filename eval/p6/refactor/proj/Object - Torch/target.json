@@ -1,0 +1,103 @@
+{
+  "name": "Object - Torch",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 12,
+  "visible": false,
+  "x": -8,
+  "y": -131,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local RandomEmit",
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local RandomEmit-",
+      "value": 70
+    },
+    {
+      "name": "Local Type",
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local Type-",
+      "value": "1"
+    },
+    {
+      "name": "Local GlideX",
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local GlideX-",
+      "value": 0
+    },
+    {
+      "name": "Local GlideY",
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local GlideY-",
+      "value": 0
+    },
+    {
+      "name": "Local Data",
+      "id": "9EuZSu/`Uw@nH`*bi:6*-Local Data-",
+      "value": ""
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "variant1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 3,
+      "rotationCenterY": 47,
+      "file": "costumes/variant1.svg"
+    },
+    {
+      "name": "Fire Effect",
+      "bitmapResolution": 1,
+      "rotationCenterX": 5,
+      "rotationCenterY": 5,
+      "file": "costumes/Fire Effect.svg"
+    },
+    {
+      "name": "Moving Fire",
+      "bitmapResolution": 1,
+      "rotationCenterX": 8,
+      "rotationCenterY": 8,
+      "file": "costumes/Moving Fire.svg"
+    },
+    {
+      "name": "variant2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 4,
+      "rotationCenterY": 46,
+      "file": "costumes/variant2.svg"
+    },
+    {
+      "name": "variant3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 27,
+      "rotationCenterY": 48,
+      "file": "costumes/variant3.svg"
+    },
+    {
+      "name": "variant4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 16,
+      "rotationCenterY": 26,
+      "file": "costumes/variant4.svg"
+    },
+    {
+      "name": "Fire Effect Dust",
+      "bitmapResolution": 1,
+      "rotationCenterX": 5,
+      "rotationCenterY": 5,
+      "file": "costumes/Fire Effect Dust.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 1032,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

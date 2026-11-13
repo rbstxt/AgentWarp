@@ -1,0 +1,27 @@
+{
+  "name": "PauseMenu",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 30,
+  "visible": false,
+  "x": 0,
+  "y": 20,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "pause",
+      "bitmapResolution": 1,
+      "rotationCenterX": 160,
+      "rotationCenterY": 70,
+      "file": "costumes/pause.svg"
+    }
+  ],
+  "sounds": []
+}

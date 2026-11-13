@@ -1,0 +1,157 @@
+{
+  "name": "Dev",
+  "isStage": false,
+  "currentCostume": 3,
+  "volume": 100,
+  "layerOrder": 13,
+  "visible": false,
+  "x": -42,
+  "y": 21,
+  "size": 200,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local Data",
+      "id": "Q;|0tsQJ7hSy_m|WyOe_-Local Data-",
+      "value": 0
+    },
+    {
+      "name": "Local Wait",
+      "id": "Q;|0tsQJ7hSy_m|WyOe_-Local Wait-",
+      "value": "3"
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "costume1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 109,
+      "rotationCenterY": 44,
+      "file": "costumes/costume1.svg"
+    },
+    {
+      "name": "letter1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter1.svg"
+    },
+    {
+      "name": "letter2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter2.svg"
+    },
+    {
+      "name": "letter3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter3.svg"
+    },
+    {
+      "name": "letter4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter4.svg"
+    },
+    {
+      "name": "letter5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter5.svg"
+    },
+    {
+      "name": "letter6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter6.svg"
+    },
+    {
+      "name": "letter7",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter7.svg"
+    },
+    {
+      "name": "letter8",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter8.svg"
+    },
+    {
+      "name": "letter9",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter9.svg"
+    },
+    {
+      "name": "letter10",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter10.svg"
+    },
+    {
+      "name": "letter11",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter11.svg"
+    },
+    {
+      "name": "letter12",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter12.svg"
+    },
+    {
+      "name": "letter13",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter13.svg"
+    },
+    {
+      "name": "letter14",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter14.svg"
+    },
+    {
+      "name": "letter15",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter15.svg"
+    },
+    {
+      "name": "letter16",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter16.svg"
+    },
+    {
+      "name": "letter17",
+      "bitmapResolution": 1,
+      "rotationCenterX": 10,
+      "rotationCenterY": 13,
+      "file": "costumes/letter17.svg"
+    }
+  ],
+  "sounds": []
+}

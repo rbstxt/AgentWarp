@@ -1,0 +1,129 @@
+{
+  "name": "Dev Intro",
+  "isStage": false,
+  "currentCostume": 5,
+  "volume": 100,
+  "layerOrder": 24,
+  "visible": false,
+  "x": 80,
+  "y": 4,
+  "size": 200,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "_CloneID",
+      "id": "SyAhYiS/_,5nT)RC.MAV",
+      "value": "0"
+    },
+    {
+      "name": "_MovementY",
+      "id": "ox`V{Xbi#tBk4!DdU*CK",
+      "value": -14
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "nicopaint-1",
+      "bitmapResolution": 2,
+      "rotationCenterX": 152,
+      "rotationCenterY": 36,
+      "file": "costumes/nicopaint-1.png"
+    },
+    {
+      "name": "background",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241,
+      "rotationCenterY": 181,
+      "file": "costumes/background.svg"
+    },
+    {
+      "name": "screen_fade",
+      "bitmapResolution": 1,
+      "rotationCenterX": 241,
+      "rotationCenterY": 181,
+      "file": "costumes/screen_fade.svg"
+    },
+    {
+      "name": "z",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/z.png"
+    },
+    {
+      "name": "zz",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/zz.png"
+    },
+    {
+      "name": "MochiEXE_intro1",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro1.png"
+    },
+    {
+      "name": "MochiEXE_intro2",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro2.png"
+    },
+    {
+      "name": "MochiEXE_intro3",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro3.png"
+    },
+    {
+      "name": "MochiEXE_intro4",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro4.png"
+    },
+    {
+      "name": "MochiEXE_intro5",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro5.png"
+    },
+    {
+      "name": "MochiEXE_intro6",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro6.png"
+    },
+    {
+      "name": "MochiEXE_intro7",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro7.png"
+    },
+    {
+      "name": "MochiEXE_intro8",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro8.png"
+    },
+    {
+      "name": "MochiEXE_intro9",
+      "bitmapResolution": 2,
+      "rotationCenterX": 32,
+      "rotationCenterY": 48,
+      "file": "costumes/MochiEXE_intro9.png"
+    }
+  ],
+  "sounds": []
+}

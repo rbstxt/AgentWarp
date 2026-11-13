@@ -1,0 +1,117 @@
+{
+  "name": "Hitbox",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 18,
+  "visible": false,
+  "x": -210,
+  "y": -76,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Glide Y",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Glide Y-",
+      "value": 0
+    },
+    {
+      "name": "Glide Left",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Glide Left-",
+      "value": 0.5
+    },
+    {
+      "name": "Glide Right",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Glide Right-",
+      "value": 0
+    },
+    {
+      "name": "Player Dir",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Player Dir-",
+      "value": "1"
+    },
+    {
+      "name": "Local Attempts",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Local Attempts-",
+      "value": 4
+    },
+    {
+      "name": "Tile to Move",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Tile to Move-",
+      "value": 0
+    },
+    {
+      "name": "Jump",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Jump-",
+      "value": 0
+    },
+    {
+      "name": "Local NextMap?",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Local NextMap?-",
+      "value": 0
+    },
+    {
+      "name": "Local Random",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Local Random-",
+      "value": 26
+    },
+    {
+      "name": "Local Glide",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Local Glide-",
+      "value": 0
+    },
+    {
+      "name": "RespawnCooldown",
+      "id": "/So^_2Y4d5f#f1lsb-9s-RespawnCooldown-",
+      "value": 0
+    },
+    {
+      "name": "Landing?",
+      "id": "/So^_2Y4d5f#f1lsb-9s-Landing?-",
+      "value": "1"
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "LightBlock Size",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 17,
+      "file": "costumes/LightBlock Size.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "Jump",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 23744,
+      "file": "sounds/Jump.wav"
+    },
+    {
+      "name": "WaterLanding",
+      "format": "adpcm",
+      "rate": 22050,
+      "sampleCount": 55881,
+      "file": "sounds/WaterLanding.wav"
+    },
+    {
+      "name": "WaterJump",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 13632,
+      "file": "sounds/WaterJump.wav"
+    },
+    {
+      "name": "Landing",
+      "format": "",
+      "rate": 44100,
+      "sampleCount": 6720,
+      "file": "sounds/Landing.wav"
+    }
+  ]
+}

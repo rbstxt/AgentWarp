@@ -1,0 +1,138 @@
+{
+  "name": "Object - Sign",
+  "isStage": false,
+  "currentCostume": 7,
+  "volume": 100,
+  "layerOrder": 2,
+  "visible": false,
+  "x": -108,
+  "y": -88,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "Local RandomEmit",
+      "id": "#iqB@zLIe~KI~9.R-?^8-Local RandomEmit-",
+      "value": 70
+    },
+    {
+      "name": "Local Type",
+      "id": "#iqB@zLIe~KI~9.R-?^8-Local Type-",
+      "value": "1"
+    },
+    {
+      "name": "Local GlideX",
+      "id": "#iqB@zLIe~KI~9.R-?^8-Local GlideX-",
+      "value": 0
+    },
+    {
+      "name": "Local GlideY",
+      "id": "#iqB@zLIe~KI~9.R-?^8-Local GlideY-",
+      "value": 0
+    },
+    {
+      "name": "Local Data",
+      "id": "#iqB@zLIe~KI~9.R-?^8-Local Data-",
+      "value": ""
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "Sign",
+      "bitmapResolution": 1,
+      "rotationCenterX": 21,
+      "rotationCenterY": 29,
+      "file": "costumes/Sign.svg"
+    },
+    {
+      "name": "SpeechBB 1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 131,
+      "rotationCenterY": 87,
+      "file": "costumes/SpeechBB 1.svg"
+    },
+    {
+      "name": "SpeechBB 2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 131,
+      "rotationCenterY": 53,
+      "file": "costumes/SpeechBB 2.svg"
+    },
+    {
+      "name": "text1 WASD",
+      "bitmapResolution": 1,
+      "rotationCenterX": 116,
+      "rotationCenterY": 82,
+      "file": "costumes/text1 WASD.svg"
+    },
+    {
+      "name": "text1 WASD2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 121,
+      "rotationCenterY": 46,
+      "file": "costumes/text1 WASD2.svg"
+    },
+    {
+      "name": "text1 WASD3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 103,
+      "rotationCenterY": 44,
+      "file": "costumes/text1 WASD3.svg"
+    },
+    {
+      "name": "text1 WASD4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 132,
+      "rotationCenterY": 46,
+      "file": "costumes/text1 WASD4.svg"
+    },
+    {
+      "name": "text1 WASD5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 113.80000001192093,
+      "rotationCenterY": 50.669985,
+      "file": "costumes/text1 WASD5.svg"
+    },
+    {
+      "name": "text1 WASD6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 110,
+      "rotationCenterY": 39,
+      "file": "costumes/text1 WASD6.svg"
+    },
+    {
+      "name": "text1 WASD7",
+      "bitmapResolution": 1,
+      "rotationCenterX": 86,
+      "rotationCenterY": 50.66999999999999,
+      "file": "costumes/text1 WASD7.svg"
+    },
+    {
+      "name": "text1 WASD8",
+      "bitmapResolution": 1,
+      "rotationCenterX": 110,
+      "rotationCenterY": 53,
+      "file": "costumes/text1 WASD8.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "SYS-CLOSE",
+      "format": "adpcm",
+      "rate": 22050,
+      "sampleCount": 31497,
+      "file": "sounds/SYS-CLOSE.wav"
+    },
+    {
+      "name": "SYS-CANSEL",
+      "format": "adpcm",
+      "rate": 22050,
+      "sampleCount": 31497,
+      "file": "sounds/SYS-CANSEL.wav"
+    }
+  ]
+}

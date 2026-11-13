@@ -1,0 +1,13 @@
+{
+  "name": "warp to new stage 31 spawns its objects",
+  "frames": 400,
+  "input": [
+    { "frame": 5, "type": "broadcast", "name": "enter game" },
+    { "frame": 150, "type": "broadcast", "name": "stage31test" }
+  ],
+  "expect": [
+    { "probe": "Stage.variables.Tile", "op": "==", "value": 31 },
+    { "probe": "clones.Object - EventZone", "op": ">=", "value": 1 },
+    { "probe": "Stage.variables.Score", "op": ">=", "value": 3000 }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "name": "Block",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 15,
+  "visible": false,
+  "x": -210,
+  "y": -76,
+  "size": 100,
+  "direction": 148,
+  "draggable": false,
+  "rotationStyle": "don't rotate",
+  "variables": [
+    {
+      "name": "Local BlinkRandom",
+      "id": "o%+QAS[}.^NbNG|NdlC`-Local BlinkRandom-",
+      "value": 71
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "LightBlock -Normal",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 17,
+      "file": "costumes/LightBlock -Normal.svg"
+    },
+    {
+      "name": "LightBlock -Normal6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 17,
+      "file": "costumes/LightBlock -Normal6.svg"
+    },
+    {
+      "name": "LightBlock -Normal2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 17,
+      "file": "costumes/LightBlock -Normal2.svg"
+    },
+    {
+      "name": "LightBlock -Normal5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 17,
+      "file": "costumes/LightBlock -Normal5.svg"
+    },
+    {
+      "name": "LightBlock -Normal3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 17,
+      "file": "costumes/LightBlock -Normal3.svg"
+    },
+    {
+      "name": "LightBlock -Normal4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 17,
+      "rotationCenterY": 17,
+      "file": "costumes/LightBlock -Normal4.svg"
+    }
+  ],
+  "sounds": []
+}
