@@ -14,6 +14,8 @@
 
 import VirtualMachine from 'scratch-vm';
 import RenderedTarget from 'scratch-vm/src/sprites/rendered-target.js';
+import Timer from 'scratch-vm/src/util/timer.js';
+import Cast from 'scratch-vm/src/util/cast.js';
 import {assetDims} from './dims.mjs';
 
 export const FPS = 30;
@@ -227,6 +229,71 @@ function patchSaySecs(vm) {
 }
 
 // ---------------------------------------------------------------------------
+// Virtual-time glide.
+//
+// Upstream `motion_glidesecstoxy` / `motion_glideto` (blocks/scratch3_motion.js)
+// measure progress with `new Timer()` — a wall-clock timer — while every other
+// scheduling primitive (`control_wait`, compiled `control_wait`, the project
+// timer, patched say/think-for-secs) follows `runtime.currentMSecs`, which this
+// harness overrides with the virtual clock. Headless frames execute in
+// microseconds of wall time, so a wall-clock glide barely advances per frame:
+// a 0.8 s glide needs ~0.8 s of wall time (thousands of headless frames) and
+// its progress varies run to run. On screen the frame loop is wall-paced, so
+// wall and virtual time agree and the glide finishes in 0.8 s.
+//
+// Fix: reimplement glide on the stack timer (`util.nowObj`, i.e. the virtual
+// clock), mirroring the upstream interpolation exactly. Both execution paths
+// go through `runtime._primitives` — interpreted threads via execute.js and
+// compiled threads via the compatibility layer (`runtime.getOpcodeFunction`
+// is resolved per thread start, after this patch is installed) — so replacing
+// the two primitive entries covers every live thread.
+function patchGlide(runtime) {
+    const motion = runtime.ext_scratch3_motion;
+    const virtualGlide = function (args, util) {
+        const nowObj = util.nowObj ?? {now: () => util.runtime.currentMSecs};
+        if (util.stackFrame.timer) {
+            const timeElapsed = util.stackFrame.timer.timeElapsed();
+            if (timeElapsed < util.stackFrame.duration * 1000) {
+                // In progress: move to intermediate position.
+                const frac = timeElapsed / (util.stackFrame.duration * 1000);
+                const dx = frac * (util.stackFrame.endX - util.stackFrame.startX);
+                const dy = frac * (util.stackFrame.endY - util.stackFrame.startY);
+                util.target.setXY(
+                    util.stackFrame.startX + dx,
+                    util.stackFrame.startY + dy
+                );
+                util.yield();
+            } else {
+                // Finished: move to final position.
+                util.target.setXY(util.stackFrame.endX, util.stackFrame.endY);
+            }
+        } else {
+            // First time: save data for future use.
+            util.stackFrame.timer = new Timer(nowObj);
+            util.stackFrame.timer.start();
+            util.stackFrame.duration = Cast.toNumber(args.SECS);
+            util.stackFrame.startX = util.target.x;
+            util.stackFrame.startY = util.target.y;
+            util.stackFrame.endX = Cast.toNumber(args.X);
+            util.stackFrame.endY = Cast.toNumber(args.Y);
+            if (util.stackFrame.duration <= 0) {
+                // Duration too short to glide.
+                util.target.setXY(util.stackFrame.endX, util.stackFrame.endY);
+                return;
+            }
+            util.yield();
+        }
+    };
+    runtime._primitives.motion_glidesecstoxy = virtualGlide;
+    runtime._primitives.motion_glideto = function (args, util) {
+        const targetXY = motion.getTargetXY(args.TO, util);
+        if (targetXY) {
+            virtualGlide({SECS: args.SECS, X: targetXY[0], Y: targetXY[1]}, util);
+        }
+    };
+}
+
+// ---------------------------------------------------------------------------
 
 function targetName(t) {
     try {
@@ -336,6 +403,7 @@ export function createHeadlessVM({seed = 1, dims = new Map()} = {}) {
     const origRandom = Math.random;
     Math.random = rand;
     patchSaySecs(vm);
+    patchGlide(vm.runtime);
     patchBubbleRedraw(vm);
     return {
         vm,
@@ -502,14 +570,18 @@ function untilSatisfied(current, op, expected) {
  * onFrame(frame, vm) called after each step (for trace/say polling).
  * until: null or {probe, op, value} (see parseUntil); when set, stepping
  *   stops early once the probe satisfies the condition.
- * Returns {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until}
- * (until is null when no condition was given, else {met, frame, value}).
+ * maxMs: null (default) or a real-time budget in ms per frame; frames whose
+ *   `runtime._step()` wall time exceeds it are reported as slowFrames
+ *   `[{frame, ms}]`. Purely diagnostic — it never changes simulation results.
+ * Returns {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until, slowFrames}
+ * (until is null when no condition was given, else {met, frame, value};
+ * slowFrames is null unless maxMs is set).
  * Timelines are capped at MAX_TIMELINE entries (prefix kept, overflow
  * counted) so pathological projects (clone/broadcast spam) cannot produce
  * unbounded output.
  */
 const MAX_TIMELINE = 20000;
-export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, until = null) {
+export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, until = null, maxMs = null) {
     const sorted = [...inputs].sort((a, b) => a.frame - b.frame);
     let cursor = 0;
     const timeline = [];
@@ -581,6 +653,7 @@ export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, u
     beginWarningCapture();
     let framesRun = 0;
     let untilState = until ? {met: false, frame: null, value: undefined} : null;
+    const slowFrames = maxMs === null || maxMs === undefined ? null : [];
     try {
     for (let f = 0; f < totalFrames; f++) {
         currentFrame = f;
@@ -631,7 +704,12 @@ export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, u
             }
         }
         clock.now += FRAME_MS;
+        const stepStart = slowFrames === null ? 0 : performance.now();
         vm.runtime._step();
+        if (slowFrames !== null) {
+            const dt = performance.now() - stepStart;
+            if (dt > maxMs) slowFrames.push({frame: f, ms: Math.round(dt * 1000) / 1000});
+        }
         pollBubbles(f);
         if (onFrame) onFrame(f, vm);
         framesRun = f + 1;
@@ -652,7 +730,7 @@ export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, u
         untilState = {met: false, frame: null, value: resolveProbe(state, until.probe) ?? null};
     }
     vm.runtime.startHats = origStartHats;
-    return {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until: untilState};
+    return {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until: untilState, slowFrames};
 }
 
 /** Resolve a dot-path probe against the state object (numeric parts index arrays).

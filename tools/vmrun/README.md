@@ -53,12 +53,12 @@ human-made projects: detached `shadow` blocks unreachable from any script
 `blockId` points at a deleted block (shown floating, treated as workspace
 comments). Unreachable *non-shadow* blocks are still errors.
 
-## `run <file.sb3> --seconds N | --frames N [--input script.json] [--probe expr...] [--trace A,B] [--seed N] [--until "<probe> <op> <value>" --max-frames N]`
+## `run <file.sb3> --seconds N | --frames N [--input script.json] [--probe expr...] [--trace A,B] [--seed N] [--until "<probe> <op> <value>" --max-frames N] [--max-ms X]`
 
 Loads the sb3 into scratch-vm headlessly and steps it deterministically.
 Output: per-target state plus `clones`, `broadcasts`, `hats`, `sayEvents`,
-`monitors`, `vmWarnings`, and optional `probes` / `trace` / `until`.
-Exit non-zero on load/step failure.
+`monitors`, `vmWarnings`, and optional `probes` / `trace` / `until` /
+`slowFrames`. Exit non-zero on load/step failure.
 
 State per target: `{name, isStage, isClone, x, y, direction, size, visible,
 costumeIndex, costumeName, variables, lists, bubble}` where `bubble` is
@@ -81,7 +81,9 @@ Fixed **30 fps virtual time**. No wall-clock stepping: the harness never starts
 the runtime frame loop. Before each frame it advances a virtual clock by
 1000/30 ms and overrides `runtime.updateCurrentMSecs`, so `wait`, `say for
 secs`, `glide`, and the project timer all follow virtual time (verified:
-a `say … for 2 secs` block shows for exactly 60 frames). `--seconds N` is
+a `say … for 2 secs` block shows for exactly 60 frames, and a 0.8 s glide
+lands on its target at exactly frame 24 — even with 200 clone threads alive).
+`--seconds N` is
 converted to `round(N*30)` frames. `--seed N` (default 1) seeds `Math.random`
 (mulberry32) for the whole run: clone scatter, `pick random`, etc. are
 reproducible. Repeated runs of the same project are byte-for-byte identical
@@ -89,9 +91,12 @@ reproducible. Repeated runs of the same project are byte-for-byte identical
 
 Two deliberate emulations keep headless timing faithful to on-screen TurboWarp:
 
-- **Virtual `say/think … for secs`**: upstream implements these with
-  wall-clock `setTimeout`; the harness reimplements them on the stack timer
-  (same mechanism as `control_wait`).
+- **Virtual `say/think … for secs` and `glide`**: upstream implements these with
+  wall-clock `setTimeout` / `Timer`, so bubble lifetimes and glide progress
+  would ignore virtual time (headless frames run in microseconds, so a 0.8 s
+  glide needed thousands of frames and varied run to run); the harness
+  reimplements both on the stack timer (same mechanism as `control_wait`),
+  which follows `runtime.currentMSecs`.
 - **Redraw gating**: the VM runs threads until the work budget expires *or* a
   redraw is requested; on screen, every visual mutation (move, turn, show,
   costume, bubble, pen draw, …) requests one, so game loops advance ~once per
@@ -188,6 +193,11 @@ string. The probe resolves against per-frame target state (same paths as
 `--probe`, e.g. `Sprite1.x`, `clones.Ball`); `--frames`/`--seconds` may be
 used instead of `--max-frames` as the cap.
 
+`--max-ms X` adds a real-time safety report without changing simulation
+results: every frame whose `runtime._step()` takes more than X ms of wall
+time is listed in output as `slowFrames: [{frame, ms}]` (absent when the flag
+is not given, so default output stays byte-deterministic).
+
 ## `layout <file.sb3> [--cleanup <out.sb3>]`
 
 Reports per-target script bounding boxes, overlaps, and a 0–100 score.
@@ -230,12 +240,14 @@ collision).
 
 ## Test fixtures
 
-`node make-fixtures.mjs [outDir]` writes seven small sb3s (default
+`node make-fixtures.mjs [outDir]` writes eight small sb3s (default
 `tools/vmrun/test-fixtures/`): `greenflag` (move+say+broadcast),
 `keys` (arrow-key movement, edge bounce), `clones`, `click` (variable+monitor),
 `touch` (sprite-vs-sprite touching), `ask` (ask/answer), `lists`
-(scalar+list+broadcast separation). `npm test` rebuilds them and asserts
-`check`/`run`/`layout`/`costumes` behaviour (50 assertions).
+(scalar+list+broadcast separation), `glide` (0.8 s glide under a configurable
+clone load, plus a `play until done` stub sprite).
+`npm test` rebuilds them and asserts
+`check`/`run`/`layout`/`costumes` behaviour (70 assertions).
 
 Medium real-world fixtures live in `eval/fixtures/` (see `SOURCES.md` there).
 

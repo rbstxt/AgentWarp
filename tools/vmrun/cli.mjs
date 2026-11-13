@@ -78,6 +78,11 @@ async function cmdRun(file, positional, opts, multi) {
     }
     const seed = opts.seed !== undefined ? Number(opts.seed) : 1;
     const traceNames = opts.trace ? String(opts.trace).split(',').map(s => s.trim()).filter(Boolean) : [];
+    const maxMsRaw = opts['max-ms'] ?? opts.maxMs ?? opts.maxms;
+    const maxMs = maxMsRaw === undefined ? null : Number(maxMsRaw);
+    if (maxMs !== null && (!Number.isFinite(maxMs) || maxMs < 0)) {
+        usageError('--max-ms must be a non-negative number of milliseconds');
+    }
 
     const {files} = await loadSb3(file);
     const dims = buildDimsMap(files);
@@ -97,9 +102,9 @@ async function cmdRun(file, positional, opts, multi) {
         process.exit(1);
     }
     const traced = [];
-    let timeline, sayEvents, hatsDropped, sayDropped, framesRun, untilState;
+    let timeline, sayEvents, hatsDropped, sayDropped, framesRun, untilState, slowFrames;
     try {
-        ({timeline, sayEvents, hatsDropped, sayDropped, framesRun, until: untilState} = await stepFrames(vm, clock, totalFrames, inputs, (frame, v) => {
+        ({timeline, sayEvents, hatsDropped, sayDropped, framesRun, until: untilState, slowFrames} = await stepFrames(vm, clock, totalFrames, inputs, (frame, v) => {
         if (traceNames.length === 0) return;
         const snap = {frame, targets: []};
         for (const t of v.runtime.targets) {
@@ -125,7 +130,7 @@ async function cmdRun(file, positional, opts, multi) {
             });
         }
         traced.push(snap);
-        }, until));
+        }, until, maxMs));
     } finally {
         restoreRandom();
     }
@@ -144,6 +149,7 @@ async function cmdRun(file, positional, opts, multi) {
         vmWarnings,
     };
     if (until) out.until = {expression: opts.until, ...untilState};
+    if (maxMs !== null) out.slowFrames = slowFrames;
     if (traceNames.length > 0) out.trace = traced;
     if (multi.probe.length > 0) {
         out.probes = {};
@@ -211,7 +217,7 @@ async function main() {
             usage: 'cli.mjs <check|run|layout|costumes> ...',
             commands: {
                 check: 'check <file.sb3>',
-                run: 'run <file.sb3> --seconds N|--frames N [--input script.json] [--probe expr...] [--trace A,B] [--seed N] [--until "<probe> <op> <value>" --max-frames N]',
+                run: 'run <file.sb3> --seconds N|--frames N [--input script.json] [--probe expr...] [--trace A,B] [--seed N] [--until "<probe> <op> <value>" --max-frames N] [--max-ms X]',
                 layout: 'layout <file.sb3> [--cleanup <out.sb3>]',
                 costumes: 'costumes <file.sb3>',
                 diff: 'diff <original.sb3> <edited.sb3>  (preservation report: unchanged/moved/changed scripts, comments)',

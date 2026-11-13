@@ -48,7 +48,7 @@ async function main() {
     await execFileP(process.execPath, [new URL('./make-fixtures.mjs', import.meta.url).pathname]);
 
     // 1. check passes on all fixtures
-    for (const f of ['greenflag', 'keys', 'clones', 'click', 'touch', 'ask', 'lists']) {
+    for (const f of ['greenflag', 'keys', 'clones', 'click', 'touch', 'ask', 'lists', 'glide']) {
         const r = await cli('check', `${FIX}/${f}.sb3`);
         assert(r.ok === true && r.errors.length === 0, `check ${f}.sb3 clean`, r);
     }
@@ -437,6 +437,71 @@ async function main() {
         const r = await cli('run', '/tmp/vmrun-test/emptylen.sb3', '--frames', '5');
         const s = tgt(r, 'Sprite1');
         assert(s.bubble?.text === '0', 'length of empty list says "0"', s.bubble);
+    }
+
+    // 24. glide finishes on virtual time under clone load (N = 0/50/200)
+    // A 0.8 s glide is 24 virtual frames on screen; it must finish in 24
+    // frames here too, no matter how many clone threads are alive. Every
+    // live clone thread must also advance exactly once per frame (fairness),
+    // and repeated runs must be byte-identical (determinism).
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const glideVariant = async (n) => {
+            const raw = await readFile(`${FIX}/glide.sb3`);
+            const zip = await JSZip.loadAsync(raw);
+            const proj = JSON.parse(await zip.file('project.json').async('string'));
+            const cloner = proj.targets.find(t => t.name === 'Cloner');
+            const rep = Object.values(cloner.blocks).find(b => !Array.isArray(b) && b.opcode === 'control_repeat');
+            rep.inputs.TIMES = [1, [4, String(n)]];
+            zip.file('project.json', JSON.stringify(proj));
+            const out = `/tmp/vmrun-test/glide-n${n}.sb3`;
+            await writeFile(out, await zip.generateAsync({type: 'nodebuffer'}));
+            return out;
+        };
+        for (const n of [0, 50, 200]) {
+            const f = await glideVariant(n);
+            const r = await cli('run', f, '--until', 'Glider.x == 200', '--max-frames', '600',
+                '--probe', 'Glider.x', '--probe', 'Glider.variables.done', '--probe', 'Horn.variables.played');
+            assert(r.until?.met === true && r.until?.frame === 24,
+                `glide N=${n} finishes at frame 24 (0.8 virtual s)`, r.until);
+            assert(r.probes?.['Glider.variables.done'] === 1,
+                `glide N=${n} runs the block after the glide`, r.probes);
+            assert(r.probes?.['Horn.variables.played'] === 1,
+                `glide N=${n} play-until-done stub never blocks`, r.probes);
+        }
+        // fairness: 1 clone spawns per frame (redraw-gated, as on screen) and
+        // every live clone moves exactly 1 step per frame.
+        {
+            const f = await glideVariant(200);
+            const r = await cli('run', f, '--frames', '30');
+            const xs = r.targets.filter(t => t.name === 'Cloner' && t.isClone).map(t => t.x).sort((a, b) => a - b);
+            assert(xs.length === 30 && xs.every((x, i) => x === i + 1),
+                '200-clone spawner: every live thread steps once per frame (xs 1..30)', xs);
+        }
+        // determinism: same file twice => byte-identical stdout.
+        {
+            const f = await glideVariant(50);
+            const a = await execFileP(process.execPath, [CLI, 'run', f, '--frames', '60', '--probe', 'Glider.x'], {maxBuffer: 64 * 1024 * 1024});
+            const b = await execFileP(process.execPath, [CLI, 'run', f, '--frames', '60', '--probe', 'Glider.x'], {maxBuffer: 64 * 1024 * 1024});
+            assert(a.stdout === b.stdout, 'repeated glide runs are byte-identical');
+        }
+    }
+
+    // 25. --max-ms reports slow frames without changing results
+    {
+        const r = await cli('run', `${FIX}/glide.sb3`, '--frames', '10',
+            '--max-ms', '100000', '--probe', 'Glider.x');
+        assert(Array.isArray(r.slowFrames) && r.slowFrames.length === 0,
+            '--max-ms with huge budget reports no slow frames', r.slowFrames);
+        assert(Math.abs(tgt(r, 'Glider').x - (-50)) < 1e-6,
+            '--max-ms does not change simulation results', tgt(r, 'Glider').x);
+        const r2 = await cli('run', `${FIX}/glide.sb3`, '--frames', '10');
+        assert(!('slowFrames' in r2), 'no slowFrames key without --max-ms');
+        const r3 = await cli('run', `${FIX}/glide.sb3`, '--frames', '10', '--max-ms', '0');
+        assert(r3.slowFrames.length === 10 && r3.slowFrames[0].frame === 0 &&
+            typeof r3.slowFrames[0].ms === 'number',
+            '--max-ms 0 flags every frame with {frame, ms}', r3.slowFrames.length);
     }
 
     console.log(`\n${passed} passed, ${failed} failed`);

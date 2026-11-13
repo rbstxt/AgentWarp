@@ -305,7 +305,69 @@ function lists() {
     return {proj: project([st, s]), assets: assetsOf(st, s)};
 }
 
-const makers = {greenflag, keys, clones, click, touch, ask, lists};
+// --- fixture 8: glide under clone load + play-until-done stub --------------------
+// Glider: goto(-200,0), glide 0.8s to (200,0), set done=1.
+// Cloner: repeat N (literal, tests rewrite it to 0/50/200) {create clone};
+//   clones point right and move 1 step/frame (visual => redraw-gated, 1 iter/frame).
+// Horn: play pop until done, then set played=1 (headless: no audio => no block).
+function glide() {
+    n = 0;
+    const doneId = bid('var');
+    const g = {};
+    const g1 = bid(), g2 = bid(), g3 = bid(), g4 = bid();
+    g[g1] = blk('event_whenflagclicked', {topLevel: true, x: 20, y: 20, next: g2});
+    g[g2] = blk('motion_gotoxy', {parent: g1, next: g3, inputs: {X: num(-200), Y: num(0)}});
+    g[g3] = blk('motion_glidesecstoxy', {
+        parent: g2, next: g4, inputs: {SECS: num(0.8), X: num(200), Y: num(0)},
+    });
+    g[g4] = blk('data_setvariableto', {
+        parent: g3, fields: {VARIABLE: ['done', doneId]}, inputs: {VALUE: num(1)},
+    });
+    const glider = spriteTarget('Glider', CAT_SVG, {
+        variables: {[doneId]: ['done', 0]}, blocks: g,
+    });
+
+    const c = {};
+    const c1 = bid(), c2 = bid(), c3 = bid(), m1 = bid();
+    c[c1] = blk('event_whenflagclicked', {topLevel: true, x: 20, y: 20, next: c2});
+    c[c2] = blk('control_repeat', {parent: c1, inputs: {TIMES: num(200), SUBSTACK: [2, c3]}});
+    c[c3] = blk('control_create_clone_of', {parent: c2, inputs: {CLONE_OPTION: [1, m1]}});
+    c[m1] = blk('control_create_clone_of_menu', {
+        parent: c3, shadow: true, fields: {CLONE_OPTION: ['_myself_', null]},
+    });
+    const c4 = bid(), c5 = bid(), c6 = bid(), mvId = bid();
+    c[c4] = blk('control_start_as_clone', {topLevel: true, x: 20, y: 200, next: c5});
+    c[c5] = blk('motion_pointindirection', {parent: c4, next: c6, inputs: {DIRECTION: num(90)}});
+    c[c6] = blk('control_forever', {parent: c5, inputs: {SUBSTACK: [2, mvId]}});
+    c[mvId] = blk('motion_movesteps', {parent: c6, inputs: {STEPS: num(1)}});
+    const cloner = spriteTarget('Cloner', BALL_SVG, {blocks: c});
+
+    const pop = makePopWav();
+    const playedId = bid('var');
+    const h = {};
+    const h1 = bid(), h2 = bid(), h3 = bid(), sm = bid();
+    h[h1] = blk('event_whenflagclicked', {topLevel: true, x: 20, y: 20, next: h2});
+    h[h2] = blk('sound_playuntildone', {parent: h1, next: h3, inputs: {SOUND_MENU: [1, sm]}});
+    h[sm] = blk('sound_sounds_menu', {
+        parent: h2, shadow: true, fields: {SOUND_MENU: ['pop', null]},
+    });
+    h[h3] = blk('data_setvariableto', {
+        parent: h2, fields: {VARIABLE: ['played', playedId]}, inputs: {VALUE: num(1)},
+    });
+    const horn = spriteTarget('Horn', COOKIE_SVG, {
+        variables: {[playedId]: ['played', 0]},
+        blocks: h,
+        sounds: [{assetId: pop.assetId, name: 'pop', dataFormat: 'wav', format: '', rate: pop.rate, sampleCount: pop.sampleCount, md5ext: pop.md5ext}],
+    });
+
+    const st = stageTarget();
+    return {
+        proj: project([st, glider, cloner, horn]),
+        assets: [...assetsOf(st, glider, cloner, horn), [pop.md5ext, pop.data]],
+    };
+}
+
+const makers = {greenflag, keys, clones, click, touch, ask, lists, glide};
 
 async function main() {
     for (const [name, fn] of Object.entries(makers)) {
