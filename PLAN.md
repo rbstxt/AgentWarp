@@ -31,11 +31,11 @@ No custom LLM loop: existing CLI agents are used via subscriptions (CLI/skill/MC
 - [x] P1 evaluate existing tools with Muse Spark 1.3 as the test agent (goboscript, hikkaku, raw project.json / scratch MCPs) on the task ladder → friction reports (`eval/runs/*/REPORT.md`), TurboWarp calibration (`eval/calibration/`). Design: `docs/P2-DESIGN.md`
 - [x] P2a core: catalog (226 opcodes, en+ja), IR/extract/reconcile (byte-identical round trip), metrics (en+ja, holdout-validated), Clean up Plus replica, placeNew
 - [x] P2b formats: `formats/{scratchblocks,ts,sbpy}` (38/38 byte-identical round trip each), prototype CLI `bin/agentwarp`
-- [ ] P2c fresh-agent evaluation of the 3 formats (`eval/P2C-BRIEF.md`)
-- [ ] P3 pick format → `agentwarp` CLI (unpack/pack/check/run/test/screenshot/watch) + SKILL.md/AGENTS.md
-- [ ] P4 TurboWarp live bridge (`docs/P4-DESIGN.md`): server (Muse) + browser client (Codex) in progress
-- [ ] P5 TurboWarp fork + ACP side panel
-- [ ] P6 long-horizon evaluation (multi-hour complex tasks), fix friction, docs
+- [x] P2c fresh-agent evaluation of the 3 formats → `ts` chosen (`docs/P3-DECISION.md`)
+- [x] P3 CLI: new/unpack/pack/check(validate+lint+tsc)/run/test/shot/tidy/layout/costumes/serve; skill `skill/agentwarp/`; sprite lifecycle, id minting, stable anchors; rendered runner `tools/render`
+- [x] P4 TurboWarp live bridge (`docs/P4-DESIGN.md`), web e2e verified; Desktop userscript not yet verified (needs user's OK to touch real profile)
+- [ ] P5 ACP side panel (injected, no fork; `docs/P5-DESIGN.md`): host + panel done, integration + real-agent e2e in progress
+- [ ] P6 long-horizon evaluation (`eval/P6-BRIEF.md`): new game + big refactor running
 
 Model split: basic implementation/eval = Muse Spark 1.3 (OpenCode Go); browser-driven work = Codex GPT-6.1 Terra;
 architecture/review = Claude.
