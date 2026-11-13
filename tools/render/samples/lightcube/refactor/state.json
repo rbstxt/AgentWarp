@@ -1,0 +1,1169 @@
+{
+  "file": "eval/p6/refactor/out.sb3",
+  "ok": true,
+  "frames": 90,
+  "requestedFrames": 90,
+  "fps": 30,
+  "virtualSeconds": 3,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "Black",
+      "variables": {
+        "Tile": 22,
+        "Next?": 0,
+        "Extendo": 0,
+        "Data": 0,
+        "Map ScrollFinished?": "1",
+        "Saved X": -216,
+        "Saved Y": -76,
+        "Saved Glide Y": 0,
+        "Saved Glide Left": 0,
+        "Saved Glide Right": "3",
+        "Saved Jump": 0,
+        "AlreadyDon?": 0,
+        "Player readingText?": 0,
+        "Player TouchWater?": "1",
+        "Water Present?": 0,
+        "Key": 0,
+        "Saved InWater": 0,
+        "Time": 0,
+        "Local Data2": 0,
+        "Local Data3": 0,
+        "Local Data4": 0,
+        "TimeFinal": "0",
+        "Score": 0,
+        "TimeLeft": 1200,
+        "Paused": 0
+      },
+      "lists": {
+        "Spawn Area X,Y": [],
+        "Spawn Type": []
+      },
+      "bubble": null
+    },
+    {
+      "name": "Welcome!",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Dev",
+      "isStage": false,
+      "isClone": false,
+      "x": -42,
+      "y": 21,
+      "direction": 90,
+      "size": 200,
+      "visible": false,
+      "costumeIndex": 3,
+      "costumeName": "letter3",
+      "variables": {
+        "Local Data": 0,
+        "Local Wait": "3"
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Dev Intro",
+      "isStage": false,
+      "isClone": false,
+      "x": 80,
+      "y": 4,
+      "direction": 90,
+      "size": 200,
+      "visible": false,
+      "costumeIndex": 5,
+      "costumeName": "MochiEXE_intro1",
+      "variables": {
+        "_CloneID": 0,
+        "_MovementY": -14
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Block",
+      "isStage": false,
+      "isClone": false,
+      "x": -210,
+      "y": -76,
+      "direction": 148,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "LightBlock -Normal",
+      "variables": {
+        "Local BlinkRandom": 71
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "DarkCircle",
+      "isStage": false,
+      "isClone": false,
+      "x": -126,
+      "y": -82.59999999999889,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 5,
+      "costumeName": "Edge",
+      "variables": {
+        "Local Left,Right": "1",
+        "Local Up,Down": "1",
+        "Local Data": "2",
+        "Local Ghost": 0,
+        "Local SizeGlide": 17.5,
+        "Local Clone?": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Tile",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 26,
+      "costumeName": "Lv26",
+      "variables": {
+        "Local FromLR": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Hitbox",
+      "isStage": false,
+      "isClone": false,
+      "x": -210,
+      "y": -76,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "LightBlock Size",
+      "variables": {
+        "Glide Y": 0,
+        "Glide Left": 0.5,
+        "Glide Right": 0,
+        "Player Dir": "1",
+        "Local Attempts": 4,
+        "Tile to Move": 0,
+        "Jump": 0,
+        "Local NextMap?": 0,
+        "Local Random": 26,
+        "Local Glide": 0,
+        "RespawnCooldown": 0,
+        "Landing?": "1"
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Teleporter",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "variant2",
+      "variables": {
+        "Local Data": "",
+        "Local Clone?": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - KillZone",
+      "isStage": false,
+      "isClone": false,
+      "x": 32,
+      "y": -178,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "variant2",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Torch",
+      "isStage": false,
+      "isClone": false,
+      "x": -8,
+      "y": -131,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "variant1",
+      "variables": {
+        "Local RandomEmit": 70,
+        "Local Type": 1,
+        "Local GlideX": 0,
+        "Local GlideY": 0,
+        "Local Data": ""
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Sign",
+      "isStage": false,
+      "isClone": false,
+      "x": -108,
+      "y": -88,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 7,
+      "costumeName": "text1 WASD5",
+      "variables": {
+        "Local RandomEmit": 70,
+        "Local Type": 1,
+        "Local GlideX": 0,
+        "Local GlideY": 0,
+        "Local Data": ""
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "FadeBlack",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "BlkScreen",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - EventZone",
+      "isStage": false,
+      "isClone": false,
+      "x": -45,
+      "y": -104,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "variant1",
+      "variables": {
+        "Local Data": 0,
+        "Local Clone?": 0,
+        "Local Glide": 1.1999999999999995
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Water",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 240,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "variant2",
+      "variables": {
+        "Local RandomEmit": 70,
+        "Local Type": 1,
+        "Local GlideX": 0,
+        "Local GlideY": 0,
+        "Local Data": "",
+        "Local Glide": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Water2",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "variant2",
+      "variables": {
+        "Local RandomEmit": 70,
+        "Local Type": 1,
+        "Local GlideX": 0,
+        "Local GlideY": 0,
+        "Local Data": "",
+        "Local Glide": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Urchin",
+      "isStage": false,
+      "isClone": false,
+      "x": -71,
+      "y": -132,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "variant1",
+      "variables": {
+        "Local Random": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Wood Platform",
+      "isStage": false,
+      "isClone": false,
+      "x": 49,
+      "y": -57,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "variant1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - SpringBoard",
+      "isStage": false,
+      "isClone": false,
+      "x": 148,
+      "y": 62,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "variant1-2",
+      "variables": {
+        "Local Data": ""
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Collectables",
+      "isStage": false,
+      "isClone": false,
+      "x": 146.95,
+      "y": 40.849999999999994,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 1,
+      "costumeName": "Door Opened",
+      "variables": {
+        "Local Data": "11",
+        "Local Glide": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Bubble",
+      "isStage": false,
+      "isClone": false,
+      "x": 8,
+      "y": 41,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "Water Bubble",
+      "variables": {
+        "Local VelocityY": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "GameName",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -166,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 2,
+      "costumeName": "indesign3",
+      "variables": {
+        "Local Glide": "1",
+        "_CanAdvance": 0,
+        "_AdvanceInputState": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Tile Bg",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 7,
+      "costumeName": "Lv7",
+      "variables": {
+        "Local FromLR": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Object - Water Effect",
+      "isStage": false,
+      "isClone": false,
+      "x": -44,
+      "y": -9,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "variant 1",
+      "variables": {
+        "Local Type": 1,
+        "Local GlideX": 0,
+        "Local GlideY": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Report",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "Report1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "PauseMenu",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 20,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "pause",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Dev Intro",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 200,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "background",
+      "variables": {
+        "_CloneID": 2,
+        "_MovementY": -14
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Dev Intro",
+      "isStage": false,
+      "isClone": true,
+      "x": -32,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "nicopaint-1",
+      "variables": {
+        "_CloneID": 3,
+        "_MovementY": -14
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Dev Intro",
+      "isStage": false,
+      "isClone": true,
+      "x": 80,
+      "y": 8,
+      "direction": 90,
+      "size": 200,
+      "visible": true,
+      "costumeIndex": 11,
+      "costumeName": "MochiEXE_intro7",
+      "variables": {
+        "_CloneID": 4,
+        "_MovementY": -14
+      },
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "Dev Intro": 3
+  },
+  "monitors": {
+    "Lf1/o#zWq`0+h9U^kC%V-Local Up,Down-": {
+      "opcode": "data_variable",
+      "spriteName": "DarkCircle",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Up,Down"
+      }
+    },
+    "Lf1/o#zWq`0+h9U^kC%V-Local Data-": {
+      "opcode": "data_variable",
+      "spriteName": "DarkCircle",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Data"
+      }
+    },
+    "#`gXjqxUFmdFZ:@HwlRz_yposition": {
+      "opcode": "motion_yposition",
+      "spriteName": "Block",
+      "value": "",
+      "params": {}
+    },
+    "(q1k#yTA[3F:No^7*)V7_size": {
+      "opcode": "looks_size",
+      "spriteName": "DarkCircle",
+      "value": "",
+      "params": {}
+    },
+    "_1m/tnNciRV[k3B[yI1]_xposition": {
+      "opcode": "motion_xposition",
+      "spriteName": "Tile",
+      "value": "",
+      "params": {}
+    },
+    "nbiFPE~|O6Ag{[p(98%}-Local Data-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Teleporter",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Data"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Local NextMap?-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local NextMap?"
+      }
+    },
+    "Lf1/o#zWq`0+h9U^kC%V-Local Left,Right-": {
+      "opcode": "data_variable",
+      "spriteName": "DarkCircle",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Left,Right"
+      }
+    },
+    "Lf1/o#zWq`0+h9U^kC%V-Local Ghost-": {
+      "opcode": "data_variable",
+      "spriteName": "DarkCircle",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Ghost"
+      }
+    },
+    "nbiFPE~|O6Ag{[p(98%}-Local Clone?-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Teleporter",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Clone?"
+      }
+    },
+    "Lf1/o#zWq`0+h9U^kC%V-Local SizeGlide-": {
+      "opcode": "data_variable",
+      "spriteName": "DarkCircle",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local SizeGlide"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Next?-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Next?"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Map ScrollFinished?-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Map ScrollFinished?"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Saved Glide Y-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Saved Glide Y"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Saved Glide Left-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Saved Glide Left"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Saved Glide Right-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Saved Glide Right"
+      }
+    },
+    "|3T}_/PDT}4{K6mbP/y#_xposition": {
+      "opcode": "motion_xposition",
+      "spriteName": "Object - Torch",
+      "value": "",
+      "params": {}
+    },
+    "|3T}_/PDT}4{K6mbP/y#_yposition": {
+      "opcode": "motion_yposition",
+      "spriteName": "Object - Torch",
+      "value": "",
+      "params": {}
+    },
+    "9EuZSu/`Uw@nH`*bi:6*-Local RandomEmit-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Torch",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local RandomEmit"
+      }
+    },
+    "9EuZSu/`Uw@nH`*bi:6*-Local Type-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Torch",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Type"
+      }
+    },
+    "9EuZSu/`Uw@nH`*bi:6*-Local GlideX-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Torch",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local GlideX"
+      }
+    },
+    "9EuZSu/`Uw@nH`*bi:6*-Local GlideY-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Torch",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local GlideY"
+      }
+    },
+    "WAC)BTy8qG/X`iJjTa,%_xposition": {
+      "opcode": "motion_xposition",
+      "spriteName": "Object - Sign",
+      "value": "",
+      "params": {}
+    },
+    "?_iJ-}E]S5fLAnK{F^ci-Local Glide-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - EventZone",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Glide"
+      }
+    },
+    "Lf1/o#zWq`0+h9U^kC%V-Local Clone?-": {
+      "opcode": "data_variable",
+      "spriteName": "DarkCircle",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Clone?"
+      }
+    },
+    "pDfBKcP[}u-f)Kn?C6Kb-Local Glide-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Water",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Glide"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Glide Right-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Glide Right"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Glide Left-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Glide Left"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Player TouchWater?-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Player TouchWater?"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Local Random-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Random"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Local Glide-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Glide"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Jump-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Jump"
+      }
+    },
+    "?I+T)Y8*hk4;_pNv=U4A-Local Data-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Collectables",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Data"
+      }
+    },
+    "?I+T)Y8*hk4;_pNv=U4A-Local Glide-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Collectables",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Glide"
+      }
+    },
+    "o%+QAS[}.^NbNG|NdlC`-Local BlinkRandom-": {
+      "opcode": "data_variable",
+      "spriteName": "Block",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local BlinkRandom"
+      }
+    },
+    "MrUvak2esDD!2EAjVE*0-Local Glide-": {
+      "opcode": "data_variable",
+      "spriteName": "GameName",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Glide"
+      }
+    },
+    "Q;|0tsQJ7hSy_m|WyOe_-Local Data-": {
+      "opcode": "data_variable",
+      "spriteName": "Dev",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Data"
+      }
+    },
+    "Q;|0tsQJ7hSy_m|WyOe_-Local Wait-": {
+      "opcode": "data_variable",
+      "spriteName": "Dev",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Wait"
+      }
+    },
+    "`0]sruT5)^_KjG;{0a%6-Local FromLR-": {
+      "opcode": "data_variable",
+      "spriteName": "Tile",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local FromLR"
+      }
+    },
+    ",aMzxKm6s1bGBS=]aU45-Local Type-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Water Effect",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Type"
+      }
+    },
+    ",aMzxKm6s1bGBS=]aU45-Local GlideX-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Water Effect",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local GlideX"
+      }
+    },
+    ",aMzxKm6s1bGBS=]aU45-Local GlideY-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Water Effect",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local GlideY"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-RespawnCooldown-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "RespawnCooldown"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Saved InWater-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Saved InWater"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Landing?-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Landing?"
+      }
+    },
+    "_WU:zzU3ZJZ{M}EIu4fg-Local Random-": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Urchin",
+      "value": "",
+      "params": {
+        "VARIABLE": "Local Random"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Water Present?-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Water Present?"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Saved X-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Saved X"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Saved Jump-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Saved Jump"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Player readingText?-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Player readingText?"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Key-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Key"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Extendo-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Extendo"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Time-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "Time"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Glide Y-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Glide Y"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Saved Y-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Saved Y"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Data-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Data"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-AlreadyDon?-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "AlreadyDon?"
+      }
+    },
+    "/So^_2Y4d5f#f1lsb-9s-Tile to Move-": {
+      "opcode": "data_variable",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {
+        "VARIABLE": "Tile to Move"
+      }
+    },
+    "ZMb`s8aI!Qt6Co!)/Xvv_yposition": {
+      "opcode": "motion_yposition",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {}
+    },
+    "ZMb`s8aI!Qt6Co!)/Xvv_xposition": {
+      "opcode": "motion_xposition",
+      "spriteName": "Hitbox",
+      "value": "",
+      "params": {}
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Tile-": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "VARIABLE": "Tile"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Spawn Area X,Y-list": {
+      "opcode": "data_listcontents",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "LIST": "Spawn Area X,Y"
+      }
+    },
+    "_=~2N*p##HUyF/Rd6yZa-Spawn Type-list": {
+      "opcode": "data_listcontents",
+      "spriteName": null,
+      "value": "",
+      "params": {
+        "LIST": "Spawn Type"
+      }
+    },
+    "EPsKsf~mV$]5K4A%~U|:": {
+      "opcode": "data_variable",
+      "spriteName": "Object - Bubble",
+      "value": 0,
+      "params": {
+        "VARIABLE": "Local VelocityY"
+      }
+    },
+    "|pIR$fct]|ZilIvfE-sh": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "0",
+      "params": {
+        "VARIABLE": "TimeFinal"
+      }
+    },
+    ".f|12DfpimIxA%T4T2jR": {
+      "opcode": "data_variable",
+      "spriteName": "GameName",
+      "value": 0,
+      "params": {
+        "VARIABLE": "_CanAdvance"
+      }
+    },
+    "K#v4nhX7%4ylWN_Vm6=|": {
+      "opcode": "data_variable",
+      "spriteName": "GameName",
+      "value": 0,
+      "params": {
+        "VARIABLE": "_AdvanceInputState"
+      }
+    },
+    "mon-score": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "Score"
+      }
+    },
+    "mon-timeleft": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 1200,
+      "params": {
+        "VARIABLE": "TimeLeft"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 81,
+      "name": "fadeblack - fast",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Dev Intro",
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Dev Intro",
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Dev Intro",
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Dev Intro",
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Dev Intro",
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Dev Intro",
+      "fields": {}
+    },
+    {
+      "frame": 81,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "fadeblack - fast"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "vmWarnings": []
+}

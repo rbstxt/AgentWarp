@@ -706,8 +706,9 @@ async function main() {
             const passthrough = flags.filter((a, i) => !(i === oi || i === oi + 1) || oi < 0);
             if (!passthrough.includes('--frames')) passthrough.push('--frames', '30');
             try {
+                // stderr inherited: the renderer's progress lines (loading / frame k of N) show live.
                 const json = execFileSync('node', [join(ROOT, 'tools/render/cli.mjs'), 'shot', out, ...passthrough, '--out', outDir],
-                    {encoding: 'utf8', maxBuffer: 256 * 1024 * 1024});
+                    {encoding: 'utf8', maxBuffer: 256 * 1024 * 1024, stdio: ['ignore', 'pipe', 'inherit']});
                 const {readdir} = await import('node:fs/promises');
                 const images = (await readdir(outDir)).filter(f => /\.(png|gif)$/.test(f)).sort().map(f => join(outDir, f));
                 process.stderr.write(images.map(f => `image: ${f}`).join('\n') + '\n');

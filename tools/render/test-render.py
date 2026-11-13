@@ -9,6 +9,9 @@ stage, sprite = project['targets']
 svg = b'<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360"><rect width="480" height="360" fill="#ff0000"/></svg>'
 id = hashlib.md5(svg).hexdigest(); assets[id+'.svg'] = svg
 stage['costumes'][0].update(assetId=id, md5ext=id+'.svg', rotationCenterX=240, rotationCenterY=180)
+empty = b'<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 0 0"></svg>'
+empty_id = hashlib.md5(empty).hexdigest(); assets[empty_id+'.svg'] = empty
+stage['costumes'].append(dict(stage['costumes'][0], name='empty', assetId=empty_id, md5ext=empty_id+'.svg'))
 stage['blocks'] = {}; stage['variables'] = {'color':['color',0]}
 sprite['blocks'] = {
  'h': {'opcode':'event_whenflagclicked','next':'p','parent':None,'inputs':{},'fields':{},'shadow':False,'topLevel':True,'x':10,'y':10},
@@ -27,3 +30,8 @@ with tempfile.TemporaryDirectory() as tmp:
     assert str(state['targets'][0]['variables']['color']).lower() == 'true', state
     js="const {PNG}=require('pngjs');const fs=require('fs');const p=PNG.sync.read(fs.readFileSync(process.argv[1]));let n=0;for(let x=241;x<315;x++){let i=(180*480+x)*4;if(p.data[i]<240||p.data[i+1]>20||p.data[i+2]>20)n++}if(n<20)throw Error('pen line missing: '+n);console.log('color sensing and pen passed, line pixels:',n)"
     subprocess.run(['node','-e',js,str(out/'frame-000004.png')],cwd=root/'tools/render',check=True)
+
+    assert 'loaded ' in run.stderr and 'frame 5 of 5' in run.stderr, run.stderr
+    timeout = subprocess.run(['node',str(root/'tools/render/cli.mjs'),'shot',str(sb3),'--frames','5','--timeout','0.01','--out',str(out)],cwd=root,text=True,capture_output=True,timeout=10)
+    assert timeout.returncode != 0 and 'timed out' in timeout.stderr, timeout.stderr
+    print('empty SVG and timeout passed')
