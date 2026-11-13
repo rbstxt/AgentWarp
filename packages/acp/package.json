@@ -1,0 +1,21 @@
+{
+  "name": "@agentwarp/acp",
+  "version": "0.1.0",
+  "description": "ACP host for agentwarp: spawns coding agents (Claude/Codex/OpenCode) over stdio and bridges them to the TurboWarp panel protocol",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@agentclientprotocol/sdk": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
