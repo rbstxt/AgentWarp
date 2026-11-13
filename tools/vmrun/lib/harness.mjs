@@ -248,14 +248,13 @@ function bubbleOf(t) {
 
 function dumpTarget(t) {
     const variables = {};
-    for (const v of Object.values(t.variables ?? {})) {
-        // Broadcasts are stored as variables of type 'broadcast_msg'; skip them.
-        if (v.type === 'broadcast_msg') continue;
-        variables[v.name] = v.value;
-    }
     const lists = {};
-    for (const l of Object.values(t.lists ?? {})) {
-        lists[l.name] = Array.from(l.value ?? []);
+    for (const v of Object.values(t.variables ?? {})) {
+        // In scratch-vm, target.variables holds scalars (type ''), lists
+        // (type 'list') and broadcasts (type 'broadcast_msg') together.
+        if (v.type === 'broadcast_msg') continue; // broadcasts are not variables
+        if (v.type === 'list') lists[v.name] = Array.from(v.value ?? []);
+        else variables[v.name] = v.value;
     }
     const sprite = t.sprite;
     return {
@@ -348,34 +347,88 @@ export function createHeadlessVM({seed = 1, dims = new Map()} = {}) {
 }
 
 /**
- * Load an sb3 ArrayBuffer into the VM, suppressing the expected headless
- * warnings ("No storage module present", "No rendering module present":
- * assets resolve from the zip and sizes are parsed separately; there is no
- * renderer or network storage by design). All other warnings pass through.
+ * Warning capture: scratch-vm logs via @turbowarp/nanolog, which binds
+ * console methods at import time, so console patching cannot intercept it.
+ * Instead we intercept process.stderr.write while the VM loads/steps,
+ * parse warning lines, dedupe with counts, and keep them out of stderr.
+ */
+const _ANSI_RE = /\x1b\[[0-9;]*m/g;
+const _SUPPRESSED_RE = /No (storage|rendering) module present/;
+let _captureDepth = 0;
+let _captureOrigWrite = null;
+const _captureCounts = new Map(); // message -> {message, count, blockId, target}
+
+function _extractIds(message) {
+    // Best-effort: some VM warnings name a block id or target.
+    const out = {};
+    const b = message.match(/\b[Bb]lock (?:with )?id ["']?([\w$-]+)["']?/);
+    if (b) out.blockId = b[1];
+    const t = message.match(/\b[Tt]arget ["']([\w $-]+)["']/) || message.match(/\bfor target ([\w $-]+)/);
+    if (t) out.target = t[1];
+    return out;
+}
+
+function _recordStderrLine(line) {
+    const clean = String(line).replace(_ANSI_RE, '').trim();
+    if (!clean || _SUPPRESSED_RE.test(clean)) return;
+    const m = clean.match(/^(?:\S+ )?vm\s+(debug|info|warn|warning|error)\s+([\s\S]*)$/) ||
+        clean.match(/^(debug|info|warn|warning|error)\s+([\s\S]*)$/);
+    const message = m ? m[2].trim() : clean;
+    if (!message) return;
+    const prev = _captureCounts.get(message);
+    if (prev) prev.count++;
+    else _captureCounts.set(message, {message, count: 1, ..._extractIds(message)});
+}
+
+function beginWarningCapture() {
+    if (_captureDepth === 0) {
+        _captureOrigWrite = process.stderr.write.bind(process.stderr);
+        let pending = '';
+        process.stderr.write = (chunk, ...args) => {
+            const lines = (pending + String(chunk)).split('\n');
+            pending = lines.pop();
+            for (const line of lines) _recordStderrLine(line);
+            const cb = args.find(a => typeof a === 'function');
+            if (cb) cb();
+            return true;
+        };
+        process.stderr.write._vmrunPending = () => pending;
+    }
+    _captureDepth++;
+}
+
+function endWarningCapture() {
+    _captureDepth = Math.max(0, _captureDepth - 1);
+    if (_captureDepth === 0 && _captureOrigWrite) {
+        const pendingFn = process.stderr.write._vmrunPending;
+        const pending = typeof pendingFn === 'function' ? pendingFn() : '';
+        process.stderr.write = _captureOrigWrite;
+        _captureOrigWrite = null;
+        if (pending) _recordStderrLine(pending);
+    }
+}
+
+/**
+ * Load an sb3 ArrayBuffer into the VM. Expected headless noise
+ * ("No storage/rendering module present": assets resolve from the zip and
+ * sizes are parsed separately; there is no renderer or network storage by
+ * design) is dropped; everything else the VM logs is captured for
+ * takeVmWarnings() instead of reaching stderr.
  */
 export async function loadProjectHeadless(vm, arrayBuffer) {
-    // nanolog binds console methods at import time, so console.warn
-    // reassignment cannot silence it; filter stderr during load instead.
-    const origWrite = process.stderr.write.bind(process.stderr);
-    let pending = '';
-    const suppressed = /No (storage|rendering) module present/;
-    process.stderr.write = (chunk, ...args) => {
-        const lines = (pending + String(chunk)).split('\n');
-        pending = lines.pop();
-        for (const line of lines) {
-            if (suppressed.test(line)) continue;
-            origWrite(line + '\n');
-        }
-        const cb = args.find(a => typeof a === 'function');
-        if (cb) cb();
-        return true;
-    };
+    beginWarningCapture();
     try {
         await vm.loadProject(arrayBuffer);
     } finally {
-        process.stderr.write = origWrite;
-        if (pending && !suppressed.test(pending)) origWrite(pending);
+        endWarningCapture();
     }
+}
+
+/** Drain captured warnings (deduped with counts, first-seen order). */
+export function takeVmWarnings() {
+    const out = [..._captureCounts.values()];
+    _captureCounts.clear();
+    return out;
 }
 
 /** Find first non-stage target whose sprite name matches (originals first), else the stage. */
@@ -386,17 +439,77 @@ function findClickTarget(vm, spriteName) {
     return orig ?? targets[0] ?? null;
 }
 
+// Scratch key names (as used in block menus like `sensing_keypressed`) vs
+// DOM key names (as delivered by browsers and previously required here).
+// Both spellings are accepted in keydown/keyup inputs (case-insensitive).
+const SCRATCH_TO_DOM_KEY = new Map([
+    ['space', ' '],
+    ['left arrow', 'ArrowLeft'],
+    ['right arrow', 'ArrowRight'],
+    ['up arrow', 'ArrowUp'],
+    ['down arrow', 'ArrowDown'],
+    ['enter', 'Enter'],
+    ['backspace', 'Backspace'],
+    ['delete', 'Delete'],
+    ['shift', 'Shift'],
+    ['caps lock', 'CapsLock'],
+    ['scroll lock', 'ScrollLock'],
+    ['control', 'Control'],
+    ['escape', 'Escape'],
+    ['insert', 'Insert'],
+    ['home', 'Home'],
+    ['end', 'End'],
+    ['page up', 'PageUp'],
+    ['page down', 'PageDown'],
+]);
+
+/** Normalize a keydown/keyup `key` to the DOM-style name scratch-vm expects. */
+export function normalizeKey(key) {
+    const k = String(key ?? '');
+    const mapped = SCRATCH_TO_DOM_KEY.get(k.toLowerCase());
+    return mapped !== undefined ? mapped : k;
+}
+
+/**
+ * Parse an --until probe expression: "<probe> <op> <value>".
+ * Returns {probe, op, value} where value is a number/boolean/string.
+ */
+export function parseUntil(expr) {
+    const m = String(expr).match(/^(.*?)\s*(>=|<=|!=|==|>|<|=)\s*([\s\S]*)$/);
+    if (!m) throw new Error(`cannot parse --until expression "${expr}" (want "<probe> <op> <value>")`);
+    let value = m[3].trim();
+    const quoted = value.match(/^(['"])([\s\S]*)\1$/);
+    if (quoted) value = quoted[2];
+    else if (/^(true|false)$/i.test(value)) value = value.toLowerCase() === 'true';
+    else if (value !== '' && Number.isFinite(Number(value))) value = Number(value);
+    return {probe: m[1].trim(), op: m[2], value};
+}
+
+function untilSatisfied(current, op, expected) {
+    if (op === '=' || op === '==') return current === expected || String(current) === String(expected);
+    if (op === '!=') return current !== expected && String(current) !== String(expected);
+    if (typeof current !== 'number' || typeof expected !== 'number') return false;
+    if (op === '>') return current > expected;
+    if (op === '<') return current < expected;
+    if (op === '>=') return current >= expected;
+    if (op === '<=') return current <= expected;
+    return false;
+}
+
 /**
  * Run a loaded VM for a fixed number of frames with scripted inputs.
- * inputs: [{frame, type, key?, sprite?, x?, y?, isDown?}]
+ * inputs: [{frame, type, key?, sprite?, x?, y?, isDown?, name?, text?}]
  * onFrame(frame, vm) called after each step (for trace/say polling).
- * Returns {timeline, sayEvents, hatsDropped, sayDropped} (hat starts with
- * frame numbers). Timelines are capped at MAX_TIMELINE entries (prefix kept,
- * overflow counted) so pathological projects (clone/broadcast spam) cannot
- * produce unbounded output.
+ * until: null or {probe, op, value} (see parseUntil); when set, stepping
+ *   stops early once the probe satisfies the condition.
+ * Returns {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until}
+ * (until is null when no condition was given, else {met, frame, value}).
+ * Timelines are capped at MAX_TIMELINE entries (prefix kept, overflow
+ * counted) so pathological projects (clone/broadcast spam) cannot produce
+ * unbounded output.
  */
 const MAX_TIMELINE = 20000;
-export function stepFrames(vm, clock, totalFrames, inputs = [], onFrame) {
+export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, until = null) {
     const sorted = [...inputs].sort((a, b) => a.frame - b.frame);
     let cursor = 0;
     const timeline = [];
@@ -465,14 +578,18 @@ export function stepFrames(vm, clock, totalFrames, inputs = [], onFrame) {
     vm.greenFlag();
     postMouse();
     pollBubbles(-1);
+    beginWarningCapture();
+    let framesRun = 0;
+    let untilState = until ? {met: false, frame: null, value: undefined} : null;
+    try {
     for (let f = 0; f < totalFrames; f++) {
         currentFrame = f;
         while (cursor < sorted.length && sorted[cursor].frame <= f) {
             const inp = sorted[cursor++];
             if (inp.type === 'keydown' || inp.type === 'keypress') {
-                vm.postIOData('keyboard', {key: inp.key ?? '', isDown: true});
+                vm.postIOData('keyboard', {key: normalizeKey(inp.key ?? ''), isDown: true});
             } else if (inp.type === 'keyup') {
-                vm.postIOData('keyboard', {key: inp.key ?? '', isDown: false});
+                vm.postIOData('keyboard', {key: normalizeKey(inp.key ?? ''), isDown: false});
             } else if (inp.type === 'mouse') {
                 if (typeof inp.x === 'number' || typeof inp.y === 'number') {
                     const c = toClient(inp.x ?? 0, inp.y ?? 0);
@@ -495,6 +612,20 @@ export function stepFrames(vm, clock, totalFrames, inputs = [], onFrame) {
                 } else {
                     timeline.push({frame: f, hat: '(click-missed)', target: inp.sprite ?? null, fields: {}});
                 }
+            } else if (inp.type === 'broadcast') {
+                // Inject a broadcast as if an event_broadcast block ran it.
+                vm.runtime.startHats('event_whenbroadcastreceived', {BROADCAST_OPTION: inp.name ?? ''});
+            } else if (inp.type === 'greenflag') {
+                vm.greenFlag();
+            } else if (inp.type === 'stop') {
+                vm.stopAll();
+            } else if (inp.type === 'answer') {
+                // Resolve a waiting sensing_askandwait, like typing in the
+                // ask box and pressing return.
+                vm.runtime.emit('ANSWER', String(inp.text ?? ''));
+                // The ask primitive continues in a promise microtask; let it
+                // run before stepping so the following blocks execute next frame.
+                await Promise.resolve();
             } else {
                 throw new Error(`unknown input type "${inp.type}"`);
             }
@@ -503,9 +634,25 @@ export function stepFrames(vm, clock, totalFrames, inputs = [], onFrame) {
         vm.runtime._step();
         pollBubbles(f);
         if (onFrame) onFrame(f, vm);
+        framesRun = f + 1;
+        if (until) {
+            const state = dumpState(vm);
+            const current = resolveProbe(state, until.probe);
+            if (untilSatisfied(current, until.op, until.value)) {
+                untilState = {met: true, frame: f, value: current ?? null};
+                break;
+            }
+        }
+    }
+    } finally {
+        endWarningCapture();
+    }
+    if (until && !untilState.met) {
+        const state = dumpState(vm);
+        untilState = {met: false, frame: null, value: resolveProbe(state, until.probe) ?? null};
     }
     vm.runtime.startHats = origStartHats;
-    return {timeline, sayEvents, hatsDropped, sayDropped};
+    return {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until: untilState};
 }
 
 /** Resolve a dot-path probe against the state object (numeric parts index arrays).

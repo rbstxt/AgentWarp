@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Generate small test sb3 fixtures programmatically.
 // Usage: node make-fixtures.mjs [outDir]
-// Writes: greenflag.sb3, keys.sb3, clones.sb3, click.sb3, touch.sb3
+// Writes: greenflag.sb3, keys.sb3, clones.sb3, click.sb3, touch.sb3,
+//         ask.sb3, lists.sb3
 // Each: project.json + SVG costumes (+ generated WAV for click) packed as sb3.
 
 import {mkdirSync, writeFileSync} from 'node:fs';
@@ -261,7 +262,50 @@ function touch() {
     return {proj: project([st, chaser, tgt]), assets: assetsOf(st, chaser, tgt)};
 }
 
-const makers = {greenflag, keys, clones, click, touch};
+// --- fixture 6: ask/answer ---------------------------------------------------------
+function ask() {
+    n = 0;
+    const blocks = {};
+    const a1 = bid(), a2 = bid(), a3 = bid(), r1 = bid();
+    blocks[a1] = blk('event_whenflagclicked', {topLevel: true, x: 20, y: 20, next: a2});
+    blocks[a2] = blk('sensing_askandwait', {parent: a1, next: a3, inputs: {QUESTION: str('name?')}});
+    blocks[a3] = blk('looks_say', {parent: a2, inputs: {MESSAGE: [2, r1]}});
+    blocks[r1] = blk('sensing_answer', {parent: a3});
+    const s = spriteTarget('Sprite1', CAT_SVG, {blocks});
+    const st = stageTarget();
+    return {proj: project([st, s]), assets: assetsOf(st, s)};
+}
+
+// --- fixture 7: sprite scalar + list + broadcast separation -------------------------
+function lists() {
+    n = 0;
+    const varId = bid('var');
+    const listId = bid('list');
+    const bcast = bid('bc');
+    const blocks = {};
+    const f1 = bid(), f2 = bid(), f3 = bid();
+    blocks[f1] = blk('event_whenflagclicked', {topLevel: true, x: 20, y: 20, next: f2});
+    blocks[f2] = blk('data_setvariableto', {
+        parent: f1, next: f3,
+        fields: {VARIABLE: ['score', varId]},
+        inputs: {VALUE: num(7)},
+    });
+    blocks[f3] = blk('data_addtolist', {
+        parent: f2,
+        fields: {LIST: ['items', listId]},
+        inputs: {ITEM: str('a')},
+    });
+    const s = spriteTarget('Sprite1', CAT_SVG, {
+        variables: {[varId]: ['score', 0]},
+        lists: {[listId]: ['items', []]},
+        broadcasts: {[bcast]: 'go'},
+        blocks,
+    });
+    const st = stageTarget({broadcasts: {[bcast]: 'go'}});
+    return {proj: project([st, s]), assets: assetsOf(st, s)};
+}
+
+const makers = {greenflag, keys, clones, click, touch, ask, lists};
 
 async function main() {
     for (const [name, fn] of Object.entries(makers)) {

@@ -48,7 +48,7 @@ async function main() {
     await execFileP(process.execPath, [new URL('./make-fixtures.mjs', import.meta.url).pathname]);
 
     // 1. check passes on all fixtures
-    for (const f of ['greenflag', 'keys', 'clones', 'click', 'touch']) {
+    for (const f of ['greenflag', 'keys', 'clones', 'click', 'touch', 'ask', 'lists']) {
         const r = await cli('check', `${FIX}/${f}.sb3`);
         assert(r.ok === true && r.errors.length === 0, `check ${f}.sb3 clean`, r);
     }
@@ -170,6 +170,228 @@ async function main() {
         await writeFile('/tmp/vmrun-test/unknown.sb3', await zip.generateAsync({type: 'nodebuffer'}));
         const r = await cli('check', '/tmp/vmrun-test/unknown.sb3');
         assert(r.ok === true && r.warnings.length >= 1, 'unknown opcode warns only', r);
+    }
+
+    // 11. run dump: lists live under `lists`, broadcasts are not variables
+    {
+        const r = await cli('run', `${FIX}/lists.sb3`, '--frames', '5');
+        const s = tgt(r, 'Sprite1');
+        assert(s.variables.score === 7 && !('items' in s.variables),
+            'lists fixture scalar under variables only', s.variables);
+        assert(JSON.stringify(s.lists.items) === JSON.stringify(['a']),
+            'lists fixture list under lists', s.lists);
+        assert(!('go' in s.variables), 'broadcast not exposed as variable', s.variables);
+        assert(Array.isArray(r.vmWarnings), 'run output carries vmWarnings', r.vmWarnings);
+    }
+
+    // 12. input scripts: broadcast / greenflag / stop / answer
+    {
+        writeFileSync('/tmp/vmrun-test/broadcast-input.json', JSON.stringify([
+            {frame: 5, type: 'broadcast', name: 'done'},
+        ]));
+        const r = await cli('run', `${FIX}/greenflag.sb3`, '--frames', '75',
+            '--input', '/tmp/vmrun-test/broadcast-input.json');
+        const frames = r.broadcasts.filter(b => b.name === 'done').map(b => b.frame);
+        assert(frames.includes(5) && frames.includes(60),
+            'injected broadcast delivered at frame 5 (project one at 60)', frames);
+    }
+    {
+        writeFileSync('/tmp/vmrun-test/flag-input.json', JSON.stringify([
+            {frame: 30, type: 'greenflag'},
+        ]));
+        const r = await cli('run', `${FIX}/greenflag.sb3`, '--frames', '40',
+            '--input', '/tmp/vmrun-test/flag-input.json');
+        const flags = r.hats.filter(h => h.hat === 'event_whenflagclicked').map(h => h.frame);
+        assert(flags.length >= 2 && flags.includes(30),
+            'greenflag input restarts hats at frame 30', flags);
+    }
+    {
+        writeFileSync('/tmp/vmrun-test/stop-input.json', JSON.stringify([
+            {frame: 0, type: 'keydown', key: 'ArrowRight'},
+            {frame: 10, type: 'stop'},
+        ]));
+        const r = await cli('run', `${FIX}/keys.sb3`, '--frames', '30',
+            '--input', '/tmp/vmrun-test/stop-input.json');
+        const s = tgt(r, 'Sprite1');
+        assert(s.x === 50, 'stop input freezes motion at frame 10 (x==50)', s.x);
+    }
+    {
+        writeFileSync('/tmp/vmrun-test/answer-input.json', JSON.stringify([
+            {frame: 2, type: 'answer', text: 'Ada'},
+        ]));
+        const r = await cli('run', `${FIX}/ask.sb3`, '--frames', '30',
+            '--input', '/tmp/vmrun-test/answer-input.json');
+        const s = tgt(r, 'Sprite1');
+        assert(s.bubble?.text === 'Ada', 'answer input resolves ask with text', s.bubble);
+        assert(r.sayEvents.some(e => e.text === 'Ada'), 'answer recorded in sayEvents', r.sayEvents);
+    }
+
+    // 13. key names: Scratch menu names and DOM names both drive key hats
+    {
+        writeFileSync('/tmp/vmrun-test/scratch-keys.json', JSON.stringify([
+            {frame: 0, type: 'keydown', key: 'right arrow'},
+            {frame: 30, type: 'keyup', key: 'right arrow'},
+        ]));
+        const r = await cli('run', `${FIX}/keys.sb3`, '--frames', '30',
+            '--input', '/tmp/vmrun-test/scratch-keys.json');
+        const s = tgt(r, 'Sprite1');
+        assert(s.x >= 100, "Scratch key name 'right arrow' moves cat", s.x);
+        writeFileSync('/tmp/vmrun-test/space-key.json', JSON.stringify([
+            {frame: 0, type: 'keydown', key: 'space'},
+            {frame: 1, type: 'keyup', key: 'space'},
+        ]));
+        const r2 = await cli('run', `${FIX}/keys.sb3`, '--frames', '2',
+            '--input', '/tmp/vmrun-test/space-key.json');
+        assert(r2.ok === true, "Scratch key name 'space' accepted", r2.ok);
+    }
+
+    // 14. check: menu opcodes are known (no unknown-opcode warnings)
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const raw = await readFile(`${FIX}/greenflag.sb3`);
+        const zip = await JSZip.loadAsync(raw);
+        const proj = JSON.parse(await zip.file('project.json').async('string'));
+        const sprite = proj.targets.find(t => !t.isStage);
+        for (const [i, op] of ['music_menu_DRUM', 'music_menu_INSTRUMENT', 'note',
+            'sensing_of_object_menu', 'motion_glideto_menu', 'looks_costume',
+            'looks_backdrops', 'sound_sounds_menu', 'pen_menu_colorParam'].entries()) {
+            sprite.blocks[`menu${i}`] = {
+                opcode: op, next: null, parent: null, inputs: {}, fields: {},
+                shadow: true, topLevel: false,
+            };
+        }
+        zip.file('project.json', JSON.stringify(proj));
+        await writeFile('/tmp/vmrun-test/menus.sb3', await zip.generateAsync({type: 'nodebuffer'}));
+        const r = await cli('check', '/tmp/vmrun-test/menus.sb3');
+        assert(r.ok === true && !r.warnings.some(w => /unknown opcode/.test(w.message)),
+            'menu opcodes known (music/note/sensing/motion/looks/sound/pen)', r.warnings);
+    }
+
+    // 15. check: invalid input names warn (OPERAND1 on operator_subtract)
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const raw = await readFile(`${FIX}/greenflag.sb3`);
+        const zip = await JSZip.loadAsync(raw);
+        const proj = JSON.parse(await zip.file('project.json').async('string'));
+        const sprite = proj.targets.find(t => !t.isStage);
+        const sub = Object.values(sprite.blocks).find(b => !Array.isArray(b) && b.opcode === 'motion_movesteps');
+        sub.inputs.OPERAND1 = [1, [4, '1']];
+        zip.file('project.json', JSON.stringify(proj));
+        await writeFile('/tmp/vmrun-test/badinput.sb3', await zip.generateAsync({type: 'nodebuffer'}));
+        const r = await cli('check', '/tmp/vmrun-test/badinput.sb3');
+        assert(r.ok === true && r.warnings.some(w => /OPERAND1.*motion_movesteps/.test(w.message)),
+            'invalid input name warns with opcode', r.warnings);
+    }
+
+    // 16. check: broadcast menu with undeclared id warns (does not fail)
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const raw = await readFile(`${FIX}/greenflag.sb3`);
+        const zip = await JSZip.loadAsync(raw);
+        const proj = JSON.parse(await zip.file('project.json').async('string'));
+        const sprite = proj.targets.find(t => !t.isStage);
+        const bcast = Object.entries(sprite.blocks).find(([, b]) => !Array.isArray(b) && b.opcode === 'event_broadcast');
+        sprite.blocks.menumine = {
+            opcode: 'event_broadcast_menu', next: null, parent: bcast[0],
+            inputs: {}, fields: {BROADCAST_OPTION: ['missing', 'bogus-id']},
+            shadow: true, topLevel: false,
+        };
+        bcast[1].inputs.BROADCAST_INPUT = [3, 'menumine'];
+        zip.file('project.json', JSON.stringify(proj));
+        await writeFile('/tmp/vmrun-test/badbroadcast.sb3', await zip.generateAsync({type: 'nodebuffer'}));
+        const r = await cli('check', '/tmp/vmrun-test/badbroadcast.sb3');
+        assert(r.ok === true && r.warnings.some(w => /broadcast menu references undeclared/.test(w.message)),
+            'undeclared broadcast id warns, still passes', r.warnings);
+    }
+
+    // 17. check: variable/list from another sprite warns (does not fail)
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const raw = await readFile(`${FIX}/click.sb3`);
+        const zip = await JSZip.loadAsync(raw);
+        const proj = JSON.parse(await zip.file('project.json').async('string'));
+        const cookie = proj.targets.find(t => t.name === 'Cookie');
+        const varId = Object.keys(cookie.variables)[0];
+        const stage = proj.targets.find(t => t.isStage);
+        stage.blocks.s1 = {
+            opcode: 'event_whenflagclicked', next: 's2', parent: null,
+            inputs: {}, fields: {}, shadow: false, topLevel: true, x: 20, y: 20,
+        };
+        stage.blocks.s2 = {
+            opcode: 'data_changevariableby', next: null, parent: 's1',
+            inputs: {VALUE: [1, [4, '1']]}, fields: {VARIABLE: ['score', varId]},
+            shadow: false, topLevel: false,
+        };
+        zip.file('project.json', JSON.stringify(proj));
+        await writeFile('/tmp/vmrun-test/crossvar.sb3', await zip.generateAsync({type: 'nodebuffer'}));
+        const r = await cli('check', '/tmp/vmrun-test/crossvar.sb3');
+        assert(r.ok === true && r.warnings.some(w => /declared on sprite "Cookie"/.test(w.message)),
+            'cross-sprite variable warns with owner', r.warnings);
+    }
+
+    // 18. run captures scratch-vm warnings as vmWarnings (deduped, stderr clean)
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const raw = await readFile(`${FIX}/click.sb3`);
+        const zip = await JSZip.loadAsync(raw);
+        const proj = JSON.parse(await zip.file('project.json').async('string'));
+        for (const i of [1, 2]) {
+            proj.monitors.push({
+                id: `ghost${i}`, mode: 'default', opcode: 'data_variable',
+                params: {VARIABLE: 'score'}, spriteName: 'Ghost', value: 0,
+                width: 0, height: 0, x: 5, y: 5, visible: true,
+            });
+        }
+        zip.file('project.json', JSON.stringify(proj));
+        await writeFile('/tmp/vmrun-test/ghostmon.sb3', await zip.generateAsync({type: 'nodebuffer'}));
+        const {execFile: ef} = await import('node:child_process');
+        const {promisify: pz} = await import('node:util');
+        const ep = pz(ef);
+        const {stdout, stderr} = await ep(process.execPath, [CLI, 'run', '/tmp/vmrun-test/ghostmon.sb3', '--frames', '3']);
+        const r = JSON.parse(stdout);
+        assert(r.vmWarnings.some(w => w.count === 2 && /could not find sprite Ghost/.test(w.message)),
+            'vmWarnings dedupes repeated VM warning with count', r.vmWarnings);
+        assert(stderr === '', 'VM warnings do not spam stderr', JSON.stringify(stderr).slice(0, 120));
+    }
+
+    // 19. costumes command reports parsed dims + rotation centers
+    {
+        const r = await cli('costumes', `${FIX}/greenflag.sb3`);
+        const stage = r.targets.find(t => t.isStage);
+        const spr = r.targets.find(t => t.name === 'Sprite1');
+        assert(stage.costumes[0].width === 480 && stage.costumes[0].height === 360,
+            'costumes stage backdrop dims', stage.costumes);
+        assert(spr.costumes[0].width === 100 && spr.costumes[0].height === 100 &&
+            spr.costumes[0].rotationCenterX === 50 && spr.costumes[0].rotationCenterY === 50 &&
+            spr.costumes[0].collisionWidth === 100,
+            'costumes sprite dims + rotation center + collision size', spr.costumes);
+    }
+
+    // 20. run --until stops early and reports the frame
+    {
+        const r = await cli('run', `${FIX}/greenflag.sb3`,
+            '--until', 'Sprite1.x == 10', '--max-frames', '100');
+        assert(r.until?.met === true && r.until?.frame === 0 && r.frames === 1,
+            'until met at frame 0 stops after 1 frame', {until: r.until, frames: r.frames});
+        const r2 = await cli('run', `${FIX}/greenflag.sb3`,
+            '--until', 'Sprite1.x > 99999', '--max-frames', '20');
+        assert(r2.until?.met === false && r2.frames === 20,
+            'unmet until runs the full cap', {until: r2.until, frames: r2.frames});
+    }
+
+    // 21. trace shape matches the documented schema
+    {
+        const r = await cli('run', `${FIX}/greenflag.sb3`, '--seconds', '1', '--trace', 'Sprite1');
+        const snap = r.trace[0];
+        const row = snap.targets[0];
+        assert(typeof snap.frame === 'number' &&
+            ['x', 'y', 'direction', 'size', 'visible', 'costumeIndex', 'costumeName', 'bubble'].every(k => k in row),
+            'trace rows carry documented keys', row);
     }
 
     console.log(`\n${passed} passed, ${failed} failed`);

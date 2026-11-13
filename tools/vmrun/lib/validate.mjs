@@ -1,4 +1,4 @@
-import {KNOWN_OPCODES} from './opcodes.mjs';
+import {VALID_INPUTS, isKnownOpcode} from './opcodes.mjs';
 import {assetName, md5} from './sb3.mjs';
 
 const KNOWN_EXTENSIONS = new Set([
@@ -36,6 +36,17 @@ export function validateProject(project, files) {
             if (!broadcasts.has(id)) broadcasts.set(id, {name, target: t.name});
         }
     }
+    // Variable/list declaration sites across all targets, for cross-sprite warnings.
+    const varOwners = new Map(); // id -> target name
+    const listOwners = new Map();
+    for (const t of targets) {
+        for (const id of Object.keys(t.variables ?? {})) {
+            if (!varOwners.has(id)) varOwners.set(id, t.name);
+        }
+        for (const id of Object.keys(t.lists ?? {})) {
+            if (!listOwners.has(id)) listOwners.set(id, t.name);
+        }
+    }
 
     for (const t of targets) {
         const tname = t.name ?? '(unnamed)';
@@ -58,7 +69,7 @@ export function validateProject(project, files) {
                 errors.push(at('missing opcode'));
                 continue;
             }
-            if (!KNOWN_OPCODES.has(opcode)) {
+            if (!isKnownOpcode(opcode)) {
                 warnings.push({...at(`unknown opcode "${opcode}"`), message: `unknown opcode "${opcode}"`});
             }
             if (b.parent !== null && b.parent !== undefined && !blockIds.has(b.parent)) {
@@ -73,10 +84,17 @@ export function validateProject(project, files) {
                 }
             }
             // inputs
+            const validInputs = VALID_INPUTS[opcode];
             for (const [iname, ival] of Object.entries(b.inputs ?? {})) {
                 if (!Array.isArray(ival) || ival.length < 2) {
                     errors.push(at(`malformed input "${iname}"`));
                     continue;
+                }
+                if (validInputs !== undefined && iname !== 'SUBSTACK' && iname !== 'SUBSTACK2' &&
+                    !validInputs.includes(iname)) {
+                    warnings.push(at(
+                        `input "${iname}" is not valid for opcode "${opcode}" ` +
+                        `(expected one of: ${validInputs.join(', ') || '(none)'})`));
                 }
                 const [, primary] = ival;
                 if (isBlockIdLike(primary)) {
@@ -103,15 +121,33 @@ export function validateProject(project, files) {
                 if (fid === null || fid === undefined) continue; // e.g. custom-block arg names, key menus
                 if (fname === 'VARIABLE') {
                     if (!varIds.has(fid) && !stageVarIds.has(fid)) {
-                        errors.push(at(`variable field references undeclared id "${fid}"`));
+                        if (varOwners.has(fid)) {
+                            warnings.push(at(
+                                `variable field references id "${fid}" ("${fval[0]}") declared on ` +
+                                `sprite "${varOwners.get(fid)}", not here or on the Stage ` +
+                                `(sprite-local variables do not carry over)`));
+                        } else {
+                            errors.push(at(`variable field references undeclared id "${fid}"`));
+                        }
                     }
                 } else if (fname === 'LIST') {
                     if (!listIds.has(fid) && !stageListIds.has(fid)) {
-                        errors.push(at(`list field references undeclared id "${fid}"`));
+                        if (listOwners.has(fid)) {
+                            warnings.push(at(
+                                `list field references id "${fid}" ("${fval[0]}") declared on ` +
+                                `sprite "${listOwners.get(fid)}", not here or on the Stage ` +
+                                `(sprite-local lists do not carry over)`));
+                        } else {
+                            errors.push(at(`list field references undeclared id "${fid}"`));
+                        }
                     }
                 } else if (fname === 'BROADCAST_OPTION') {
                     if (!broadcasts.has(fid)) {
-                        errors.push(at(`broadcast field references undeclared id "${fid}" (${JSON.stringify(fval[0])})`));
+                        // The VM silently does nothing when a broadcast menu
+                        // points at an undeclared id, so this is a warning.
+                        warnings.push(at(
+                            `broadcast menu references undeclared broadcast id "${fid}" ` +
+                            `(${JSON.stringify(fval[0])}); broadcast will silently do nothing`));
                     }
                 }
             }
@@ -185,7 +221,7 @@ export function validateProject(project, files) {
 
     // monitors
     for (const m of project.monitors ?? []) {
-        if (m.opcode && !KNOWN_OPCODES.has(m.opcode)) {
+        if (m.opcode && !isKnownOpcode(m.opcode)) {
             warnings.push(err(null, null, m.opcode, `monitor "${m.id}" uses unknown opcode "${m.opcode}"`));
         }
     }
