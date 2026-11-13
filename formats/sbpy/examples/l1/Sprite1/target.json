@@ -1,0 +1,27 @@
+{
+  "name": "Sprite1",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": true,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "Sprite1-a",
+      "bitmapResolution": 1,
+      "rotationCenterX": 50,
+      "rotationCenterY": 50,
+      "file": "costumes/Sprite1-a.svg"
+    }
+  ],
+  "sounds": []
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Bullet",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 2,
+  "visible": true,
+  "x": 300,
+  "y": 300,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "bolt",
+      "bitmapResolution": 1,
+      "rotationCenterX": 4,
+      "rotationCenterY": 8,
+      "file": "costumes/bolt.svg"
+    }
+  ],
+  "sounds": []
+}

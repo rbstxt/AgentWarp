@@ -95,6 +95,8 @@ export interface FormatCtx {
     /** Parsed <Target>/target.json (variables, lists, broadcasts, costumes, sounds, …). */
     targetJson?: any;
     isStage?: boolean;
+    /** Parsed Stage/target.json (global variables, lists, broadcasts, backdrops). */
+    stageJson?: any;
 }
 
 /** Pluggable script-text format (e.g. ir-json, scratchblocks, …). */

@@ -140,6 +140,8 @@ export async function unpackProject(
     await writeFile(join(outDir, 'agentwarp.json'), JSON.stringify(meta, null, 2) + '\n');
     const taken = new Set<string>();
     const anchors: Record<string, Record<string, string>> = {};
+    const stageTarget = (project?.targets ?? []).find((t: any) => t?.isStage === true);
+    const stageJson = stageTarget ? splitTargetForUnpack(stageTarget).targetJson : undefined;
     for (const target of project?.targets ?? []) {
         const dir = targetDirName(String(target?.name ?? 'target'), taken);
         const tdir = join(outDir, dir);
@@ -159,7 +161,7 @@ export async function unpackProject(
         const extracted = extractTarget(target, project, { file });
         diagnostics.push(...extracted.diagnostics);
         anchors[String(target?.name ?? dir)] = extracted.anchors;
-        await writeFile(join(tdir, scriptsFileName(format)), format.print(extracted.scripts, { targetName: String(target?.name), file, targetJson, isStage: target?.isStage === true }));
+        await writeFile(join(tdir, scriptsFileName(format)), format.print(extracted.scripts, { targetName: String(target?.name), file, targetJson, isStage: target?.isStage === true, stageJson }));
     }
     await writeFile(join(outDir, '.agentwarp', 'anchors.json'), JSON.stringify(anchors, null, 2) + '\n');
     return { diagnostics };
@@ -178,6 +180,7 @@ async function readTargetDir(
     targetName: string,
     format: Format,
     diagnostics: Diagnostic[],
+    stageJson?: any,
 ): Promise<{
     scripts: ReturnType<Format['parse']>['scripts'];
     decls: TargetDecls;
@@ -201,7 +204,7 @@ async function readTargetDir(
         });
         return null;
     }
-    const parsed = format.parse(text, { targetName, file: scriptsPath, targetJson, isStage: targetJson?.isStage === true });
+    const parsed = format.parse(text, { targetName, file: scriptsPath, targetJson, isStage: targetJson?.isStage === true, stageJson });
     diagnostics.push(...parsed.diagnostics);
     const decls: TargetDecls = {
         variables: [],
@@ -284,6 +287,15 @@ export async function packDir(dir: string, outSb3Path: string, format: Format): 
     const declsByTarget: Record<string, TargetDecls> = {};
     const allFiles = new Map<string, Uint8Array>();
     const seenNames = new Set<string>();
+    let stageJson: any = undefined;
+    for (const e of entries) {
+        try {
+            const tj = JSON.parse(await readFile(join(dir, e, TARGET_JSON), 'utf8'));
+            if (tj?.isStage === true) stageJson = tj;
+        } catch {
+            /* not a target dir */
+        }
+    }
     for (const e of entries.sort()) {
         const tdir = join(dir, e);
         let tj: any = null;
@@ -298,7 +310,7 @@ export async function packDir(dir: string, outSb3Path: string, format: Format): 
             continue;
         }
         seenNames.add(name);
-        const r = await readTargetDir(tdir, name, format, diagnostics);
+        const r = await readTargetDir(tdir, name, format, diagnostics, stageJson);
         if (!r) continue;
         perTarget[name] = { scripts: r.scripts, anchors: anchors[name] ?? {} };
         declsByTarget[name] = r.decls;

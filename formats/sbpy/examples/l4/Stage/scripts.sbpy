@@ -1,0 +1,12 @@
+# L4 clones game: the player moves with left/right, space fires bullets.
+# Enemies fall from the top; a bullet hit scores, reaching the bottom
+# costs a life. At 0 lives the player says Game Over.
+
+event_whenflagclicked():
+    data_setvariableto(VARIABLE="score", VALUE="0")
+    data_setvariableto(VARIABLE="lives", VALUE="3")
+    data_setvariableto(VARIABLE="ship x", VALUE="0")
+    looks_switchbackdropto(BACKDROP="backdrop1")
+    control_repeat_until(CONDITION=operator_lt(OPERAND1=var("lives"), OPERAND2="1")):
+        pass
+    event_broadcast(BROADCAST_INPUT=broadcast("game over"))

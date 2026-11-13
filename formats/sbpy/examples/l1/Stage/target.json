@@ -1,0 +1,24 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "off",
+  "textToSpeechLanguage": null,
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "backdrop1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 50,
+      "rotationCenterY": 50,
+      "file": "costumes/backdrop1.svg"
+    }
+  ],
+  "sounds": []
+}

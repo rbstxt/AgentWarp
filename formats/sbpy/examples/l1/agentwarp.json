@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "2.1.46",
+    "agent": "vmrun-make-fixtures"
+  },
+  "extensions": [],
+  "monitors": [],
+  "extraTopLevel": {
+    "extensionData": {}
+  }
+}

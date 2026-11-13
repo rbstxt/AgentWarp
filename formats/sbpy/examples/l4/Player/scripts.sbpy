@@ -1,0 +1,19 @@
+event_whenflagclicked():
+    motion_gotoxy(X=0, Y=-120)
+    looks_show()
+    control_repeat_until(CONDITION=operator_lt(OPERAND1=var("lives"), OPERAND2="1")):
+        data_setvariableto(VARIABLE="ship x", VALUE=motion_xposition())
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="left arrow")):
+            motion_changexby(DX=-8)
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="right arrow")):
+            motion_changexby(DX=8)
+        control_if(CONDITION=operator_gt(OPERAND1=motion_xposition(), OPERAND2="220")):
+            motion_setx(X=220)
+        control_if(CONDITION=operator_lt(OPERAND1=motion_xposition(), OPERAND2="-220")):
+            motion_setx(X=-220)
+
+event_whenkeypressed(KEY_OPTION="space"):
+    event_broadcast(BROADCAST_INPUT=broadcast("fire"))
+
+event_whenbroadcastreceived(BROADCAST_OPTION="game over"):
+    looks_say(MESSAGE="Game Over")

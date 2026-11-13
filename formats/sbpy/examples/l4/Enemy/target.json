@@ -1,0 +1,27 @@
+{
+  "name": "Enemy",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 3,
+  "visible": true,
+  "x": 300,
+  "y": 300,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "invader",
+      "bitmapResolution": 1,
+      "rotationCenterX": 15,
+      "rotationCenterY": 15,
+      "file": "costumes/invader.svg"
+    }
+  ],
+  "sounds": []
+}

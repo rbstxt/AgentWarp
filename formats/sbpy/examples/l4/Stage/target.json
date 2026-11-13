@@ -1,0 +1,49 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "off",
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "name": "score",
+      "id": "var-score",
+      "value": 0
+    },
+    {
+      "name": "lives",
+      "id": "var-lives",
+      "value": 3
+    },
+    {
+      "name": "ship x",
+      "id": "var-shipx",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [
+    {
+      "name": "fire",
+      "id": "bc-fire"
+    },
+    {
+      "name": "game over",
+      "id": "bc-gameover"
+    }
+  ],
+  "costumes": [
+    {
+      "name": "backdrop1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 50,
+      "rotationCenterY": 50,
+      "file": "costumes/backdrop1.svg"
+    }
+  ],
+  "sounds": []
+}
