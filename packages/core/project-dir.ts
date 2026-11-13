@@ -15,6 +15,7 @@
  *     anchors.json            per target: anchor label -> top-level block/comment id
  *     sourcemap.json          block id -> file:line:col (written by pack)
  */
+import { placeNew } from './layout.ts';
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import type { Diagnostic, Format } from './ir.ts';
@@ -323,6 +324,21 @@ export async function packDir(dir: string, outSb3Path: string, format: Format): 
     const metaSame = JSON.stringify(baseTop) === JSON.stringify(newTop);
     let project = reconciled.project;
     let changed = !reconciled.unchanged;
+    // Final placement of new scripts/comments with the real block-size model (existing ones stay fixed).
+    for (const pl of reconciled.placements) {
+        if (!pl.newScriptIds.length && !pl.newCommentIds.length) continue;
+        const target = project?.targets?.find((t: any) => t?.name === pl.target);
+        if (!target) continue;
+        const pos = placeNew(target, pl.newScriptIds, pl.newCommentIds);
+        for (const [id, p] of pos.blocks) {
+            const b = target.blocks?.[id];
+            if (b && !Array.isArray(b)) { b.x = Math.round(p.x); b.y = Math.round(p.y); }
+        }
+        for (const [id, p] of pos.comments) {
+            const c = target.comments?.[id];
+            if (c) { c.x = Math.round(p.x); c.y = Math.round(p.y); }
+        }
+    }
     if (!metaSame) {
         project = {
             ...project,

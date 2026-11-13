@@ -1,0 +1,2252 @@
+{
+ "argument_reporter_string_number": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "VALUE",
+      "rule": "label"
+     }
+    ]
+   }
+  ],
+  "n": 92
+ },
+ "colour_picker": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "COLOUR",
+      "rule": "color"
+     }
+    ]
+   }
+  ],
+  "n": 2
+ },
+ "control_create_clone_of": {
+  "inputs": [
+   {
+    "name": "CLONE_OPTION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "create clone of"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 180
+ },
+ "control_create_clone_of_menu": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "CLONE_OPTION",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 180
+ },
+ "control_delete_this_clone": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "delete this clone"
+     }
+    ]
+   }
+  ],
+  "n": 88
+ },
+ "control_forever": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "forever"
+     }
+    ]
+   },
+   {
+    "name": "SUBSTACK",
+    "t": 3,
+    "fields": []
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "image",
+      "w": 24,
+      "h": 24
+     }
+    ],
+    "align": "right"
+   }
+  ],
+  "n": 43
+ },
+ "control_if": {
+  "inputs": [
+   {
+    "name": "CONDITION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "if"
+     }
+    ],
+    "hex": true
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "then"
+     }
+    ]
+   },
+   {
+    "name": "SUBSTACK",
+    "t": 3,
+    "fields": []
+   }
+  ],
+  "n": 245
+ },
+ "control_if_else": {
+  "inputs": [
+   {
+    "name": "CONDITION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "if"
+     }
+    ],
+    "hex": true
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "then"
+     }
+    ]
+   },
+   {
+    "name": "SUBSTACK",
+    "t": 3,
+    "fields": []
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "else"
+     }
+    ]
+   },
+   {
+    "name": "SUBSTACK2",
+    "t": 3,
+    "fields": []
+   }
+  ],
+  "n": 48
+ },
+ "control_repeat": {
+  "inputs": [
+   {
+    "name": "TIMES",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "repeat"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "SUBSTACK",
+    "t": 3,
+    "fields": []
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "image",
+      "w": 24,
+      "h": 24
+     }
+    ],
+    "align": "right"
+   }
+  ],
+  "n": 114
+ },
+ "control_repeat_until": {
+  "inputs": [
+   {
+    "name": "CONDITION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "repeat until"
+     }
+    ],
+    "hex": true
+   },
+   {
+    "name": "SUBSTACK",
+    "t": 3,
+    "fields": []
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "image",
+      "w": 24,
+      "h": 24
+     }
+    ],
+    "align": "right"
+   }
+  ],
+  "n": 35
+ },
+ "control_start_as_clone": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "when I start as a clone"
+     }
+    ]
+   }
+  ],
+  "n": 41
+ },
+ "control_stop": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "stop"
+     },
+     {
+      "k": "field",
+      "name": "STOP_OPTION",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 35
+ },
+ "control_wait": {
+  "inputs": [
+   {
+    "name": "DURATION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "wait"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "seconds"
+     }
+    ]
+   }
+  ],
+  "n": 42
+ },
+ "control_wait_until": {
+  "inputs": [
+   {
+    "name": "CONDITION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "wait until"
+     }
+    ],
+    "hex": true
+   }
+  ],
+  "n": 25
+ },
+ "data_addtolist": {
+  "inputs": [
+   {
+    "name": "ITEM",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "add"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "to"
+     },
+     {
+      "k": "field",
+      "name": "LIST",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 400
+ },
+ "data_changevariableby": {
+  "inputs": [
+   {
+    "name": "VALUE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "change"
+     },
+     {
+      "k": "field",
+      "name": "VARIABLE",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "by"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 109
+ },
+ "data_deletealloflist": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "delete all of"
+     },
+     {
+      "k": "field",
+      "name": "LIST",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 2
+ },
+ "data_deleteoflist": {
+  "inputs": [
+   {
+    "name": "INDEX",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "delete"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "of"
+     },
+     {
+      "k": "field",
+      "name": "LIST",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 35
+ },
+ "data_hidevariable": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "hide variable"
+     },
+     {
+      "k": "field",
+      "name": "VARIABLE",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 6
+ },
+ "data_insertatlist": {
+  "inputs": [
+   {
+    "name": "ITEM",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "insert"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "INDEX",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "at"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "of"
+     },
+     {
+      "k": "field",
+      "name": "LIST",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 21
+ },
+ "data_itemoflist": {
+  "inputs": [
+   {
+    "name": "INDEX",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "item"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "of"
+     },
+     {
+      "k": "field",
+      "name": "LIST",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 37
+ },
+ "data_listcontainsitem": {
+  "inputs": [
+   {
+    "name": "ITEM",
+    "t": 1,
+    "fields": [
+     {
+      "k": "field",
+      "name": "LIST",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "contains"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "?"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "data_setvariableto": {
+  "inputs": [
+   {
+    "name": "VALUE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "set"
+     },
+     {
+      "k": "field",
+      "name": "VARIABLE",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 342
+ },
+ "data_showvariable": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "show variable"
+     },
+     {
+      "k": "field",
+      "name": "VARIABLE",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 5
+ },
+ "data_variable": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "VARIABLE",
+      "rule": "getter"
+     }
+    ]
+   }
+  ],
+  "n": 442
+ },
+ "event_broadcast": {
+  "inputs": [
+   {
+    "name": "BROADCAST_INPUT",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "broadcast"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 38
+ },
+ "event_broadcast_menu": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "BROADCAST_OPTION",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 43
+ },
+ "event_broadcastandwait": {
+  "inputs": [
+   {
+    "name": "BROADCAST_INPUT",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "broadcast"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "and wait"
+     }
+    ]
+   }
+  ],
+  "n": 5
+ },
+ "event_whenbroadcastreceived": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "when I receive"
+     },
+     {
+      "k": "field",
+      "name": "BROADCAST_OPTION",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 93
+ },
+ "event_whenflagclicked": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "when"
+     },
+     {
+      "k": "image",
+      "w": 24,
+      "h": 24
+     },
+     {
+      "k": "label",
+      "t": "clicked"
+     }
+    ]
+   }
+  ],
+  "n": 41
+ },
+ "event_whenthisspriteclicked": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "when this sprite clicked"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "looks_backdrops": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "BACKDROP",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 6
+ },
+ "looks_changeeffectby": {
+  "inputs": [
+   {
+    "name": "CHANGE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "change"
+     },
+     {
+      "k": "field",
+      "name": "EFFECT",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "effect by"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 49
+ },
+ "looks_changesizeby": {
+  "inputs": [
+   {
+    "name": "CHANGE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "change size by"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 11
+ },
+ "looks_cleargraphiceffects": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "clear graphic effects"
+     }
+    ]
+   }
+  ],
+  "n": 4
+ },
+ "looks_costume": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "COSTUME",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 132
+ },
+ "looks_costumenumbername": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "costume"
+     },
+     {
+      "k": "field",
+      "name": "NUMBER_NAME",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 30
+ },
+ "looks_goforwardbackwardlayers": {
+  "inputs": [
+   {
+    "name": "NUM",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "go"
+     },
+     {
+      "k": "field",
+      "name": "FORWARD_BACKWARD",
+      "rule": "dropdown"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "layers"
+     }
+    ]
+   }
+  ],
+  "n": 11
+ },
+ "looks_gotofrontback": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "go to"
+     },
+     {
+      "k": "field",
+      "name": "FRONT_BACK",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "layer"
+     }
+    ]
+   }
+  ],
+  "n": 38
+ },
+ "looks_hide": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "hide"
+     }
+    ]
+   }
+  ],
+  "n": 51
+ },
+ "looks_nextcostume": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "next costume"
+     }
+    ]
+   }
+  ],
+  "n": 32
+ },
+ "looks_say": {
+  "inputs": [
+   {
+    "name": "MESSAGE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "say"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 3
+ },
+ "looks_sayforsecs": {
+  "inputs": [
+   {
+    "name": "MESSAGE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "say"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "SECS",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "for"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "seconds"
+     }
+    ]
+   }
+  ],
+  "n": 2
+ },
+ "looks_seteffectto": {
+  "inputs": [
+   {
+    "name": "VALUE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "set"
+     },
+     {
+      "k": "field",
+      "name": "EFFECT",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "effect to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 65
+ },
+ "looks_setsizeto": {
+  "inputs": [
+   {
+    "name": "SIZE",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "set size to"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "%"
+     }
+    ]
+   }
+  ],
+  "n": 21
+ },
+ "looks_show": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "show"
+     }
+    ]
+   }
+  ],
+  "n": 67
+ },
+ "looks_size": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "size"
+     }
+    ]
+   }
+  ],
+  "n": 9
+ },
+ "looks_switchbackdropto": {
+  "inputs": [
+   {
+    "name": "BACKDROP",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "switch backdrop to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 6
+ },
+ "looks_switchcostumeto": {
+  "inputs": [
+   {
+    "name": "COSTUME",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "switch costume to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 141
+ },
+ "math_angle": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "NUM",
+      "rule": "text"
+     }
+    ]
+   }
+  ],
+  "n": 4
+ },
+ "math_integer": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "NUM",
+      "rule": "text"
+     }
+    ]
+   }
+  ],
+  "n": 103
+ },
+ "math_number": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "NUM",
+      "rule": "text"
+     }
+    ]
+   }
+  ],
+  "n": 635
+ },
+ "math_positive_number": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "NUM",
+      "rule": "text"
+     }
+    ]
+   }
+  ],
+  "n": 42
+ },
+ "math_whole_number": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "NUM",
+      "rule": "text"
+     }
+    ]
+   }
+  ],
+  "n": 103
+ },
+ "motion_changexby": {
+  "inputs": [
+   {
+    "name": "DX",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "change x by"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 58
+ },
+ "motion_changeyby": {
+  "inputs": [
+   {
+    "name": "DY",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "change y by"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 62
+ },
+ "motion_direction": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "direction"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "motion_glidesecstoxy": {
+  "inputs": [
+   {
+    "name": "SECS",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "glide"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "X",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "secs to x:"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "Y",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "y:"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 25
+ },
+ "motion_goto": {
+  "inputs": [
+   {
+    "name": "TO",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "go to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 9
+ },
+ "motion_goto_menu": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "TO",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 9
+ },
+ "motion_gotoxy": {
+  "inputs": [
+   {
+    "name": "X",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "go to x:"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "Y",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "y:"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 74
+ },
+ "motion_ifonedgebounce": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "if on edge, bounce"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "motion_movesteps": {
+  "inputs": [
+   {
+    "name": "STEPS",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "move"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "steps"
+     }
+    ]
+   }
+  ],
+  "n": 3
+ },
+ "motion_pointindirection": {
+  "inputs": [
+   {
+    "name": "DIRECTION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "point in direction"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 7
+ },
+ "motion_setrotationstyle": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "set rotation style"
+     },
+     {
+      "k": "field",
+      "name": "STYLE",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "motion_setx": {
+  "inputs": [
+   {
+    "name": "X",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "set x to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 10
+ },
+ "motion_sety": {
+  "inputs": [
+   {
+    "name": "Y",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "set y to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 8
+ },
+ "motion_turnleft": {
+  "inputs": [
+   {
+    "name": "DEGREES",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "turn"
+     },
+     {
+      "k": "image",
+      "w": 24,
+      "h": 24
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "degrees"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "motion_turnright": {
+  "inputs": [
+   {
+    "name": "DEGREES",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "turn"
+     },
+     {
+      "k": "image",
+      "w": 24,
+      "h": 24
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "degrees"
+     }
+    ]
+   }
+  ],
+  "n": 6
+ },
+ "motion_xposition": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "x position"
+     }
+    ]
+   }
+  ],
+  "n": 34
+ },
+ "motion_yposition": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "y position"
+     }
+    ]
+   }
+  ],
+  "n": 17
+ },
+ "operator_add": {
+  "inputs": [
+   {
+    "name": "NUM1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "NUM2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "+"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 34
+ },
+ "operator_and": {
+  "inputs": [
+   {
+    "name": "OPERAND1",
+    "t": 1,
+    "fields": [],
+    "hex": true
+   },
+   {
+    "name": "OPERAND2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "and"
+     }
+    ],
+    "hex": true
+   }
+  ],
+  "n": 20
+ },
+ "operator_contains": {
+  "inputs": [
+   {
+    "name": "STRING1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "STRING2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "contains"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "?"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "operator_divide": {
+  "inputs": [
+   {
+    "name": "NUM1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "NUM2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "/"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 42
+ },
+ "operator_equals": {
+  "inputs": [
+   {
+    "name": "OPERAND1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "OPERAND2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "="
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 246
+ },
+ "operator_gt": {
+  "inputs": [
+   {
+    "name": "OPERAND1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "OPERAND2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": ">"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 23
+ },
+ "operator_join": {
+  "inputs": [
+   {
+    "name": "STRING1",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "join"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "STRING2",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   }
+  ],
+  "n": 8
+ },
+ "operator_lt": {
+  "inputs": [
+   {
+    "name": "OPERAND1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "OPERAND2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "<"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 38
+ },
+ "operator_mathop": {
+  "inputs": [
+   {
+    "name": "NUM",
+    "t": 1,
+    "fields": [
+     {
+      "k": "field",
+      "name": "OPERATOR",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "of"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 24
+ },
+ "operator_multiply": {
+  "inputs": [
+   {
+    "name": "NUM1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "NUM2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "*"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 55
+ },
+ "operator_not": {
+  "inputs": [
+   {
+    "name": "OPERAND",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "not"
+     }
+    ],
+    "hex": true
+   }
+  ],
+  "n": 21
+ },
+ "operator_or": {
+  "inputs": [
+   {
+    "name": "OPERAND1",
+    "t": 1,
+    "fields": [],
+    "hex": true
+   },
+   {
+    "name": "OPERAND2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "or"
+     }
+    ],
+    "hex": true
+   }
+  ],
+  "n": 78
+ },
+ "operator_random": {
+  "inputs": [
+   {
+    "name": "FROM",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "pick random"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "TO",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "to"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 14
+ },
+ "operator_round": {
+  "inputs": [
+   {
+    "name": "NUM",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "round"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 12
+ },
+ "operator_subtract": {
+  "inputs": [
+   {
+    "name": "NUM1",
+    "t": 1,
+    "fields": [],
+    "hex": false
+   },
+   {
+    "name": "NUM2",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "-"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 37
+ },
+ "procedures_definition": {
+  "inputs": [
+   {
+    "name": "custom_block",
+    "t": 3,
+    "fields": [
+     {
+      "k": "label",
+      "t": "define"
+     }
+    ]
+   }
+  ],
+  "n": 69
+ },
+ "sensing_answer": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "answer"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "sensing_askandwait": {
+  "inputs": [
+   {
+    "name": "QUESTION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "ask"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "and wait"
+     }
+    ]
+   }
+  ],
+  "n": 1
+ },
+ "sensing_keyoptions": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "KEY_OPTION",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 39
+ },
+ "sensing_keypressed": {
+  "inputs": [
+   {
+    "name": "KEY_OPTION",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "key"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "pressed?"
+     }
+    ]
+   }
+  ],
+  "n": 40
+ },
+ "sensing_mousedown": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "mouse down?"
+     }
+    ]
+   }
+  ],
+  "n": 13
+ },
+ "sensing_mousex": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "mouse x"
+     }
+    ]
+   }
+  ],
+  "n": 4
+ },
+ "sensing_mousey": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "mouse y"
+     }
+    ]
+   }
+  ],
+  "n": 6
+ },
+ "sensing_of": {
+  "inputs": [
+   {
+    "name": "OBJECT",
+    "t": 1,
+    "fields": [
+     {
+      "k": "field",
+      "name": "PROPERTY",
+      "rule": "dropdown"
+     },
+     {
+      "k": "label",
+      "t": "of"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 8
+ },
+ "sensing_of_object_menu": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "OBJECT",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 8
+ },
+ "sensing_resettimer": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "reset timer"
+     }
+    ]
+   }
+  ],
+  "n": 3
+ },
+ "sensing_timer": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "timer"
+     }
+    ]
+   }
+  ],
+  "n": 15
+ },
+ "sensing_touchingcolor": {
+  "inputs": [
+   {
+    "name": "COLOR",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "touching color"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "?"
+     }
+    ]
+   }
+  ],
+  "n": 2
+ },
+ "sensing_touchingobject": {
+  "inputs": [
+   {
+    "name": "TOUCHINGOBJECTMENU",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "touching"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "?"
+     }
+    ]
+   }
+  ],
+  "n": 79
+ },
+ "sensing_touchingobjectmenu": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "TOUCHINGOBJECTMENU",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 79
+ },
+ "sound_changevolumeby": {
+  "inputs": [
+   {
+    "name": "VOLUME",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "change volume by"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 1
+ },
+ "sound_play": {
+  "inputs": [
+   {
+    "name": "SOUND_MENU",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "start sound"
+     }
+    ],
+    "hex": false
+   }
+  ],
+  "n": 20
+ },
+ "sound_playuntildone": {
+  "inputs": [
+   {
+    "name": "SOUND_MENU",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "play sound"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "until done"
+     }
+    ]
+   }
+  ],
+  "n": 5
+ },
+ "sound_setvolumeto": {
+  "inputs": [
+   {
+    "name": "VOLUME",
+    "t": 1,
+    "fields": [
+     {
+      "k": "label",
+      "t": "set volume to"
+     }
+    ],
+    "hex": false
+   },
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "label",
+      "t": "%"
+     }
+    ]
+   }
+  ],
+  "n": 3
+ },
+ "sound_sounds_menu": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "SOUND_MENU",
+      "rule": "dropdown"
+     }
+    ]
+   }
+  ],
+  "n": 24
+ },
+ "text": {
+  "inputs": [
+   {
+    "name": "",
+    "t": 5,
+    "fields": [
+     {
+      "k": "field",
+      "name": "TEXT",
+      "rule": "text"
+     }
+    ]
+   }
+  ],
+  "n": 1341
+ }
+}
