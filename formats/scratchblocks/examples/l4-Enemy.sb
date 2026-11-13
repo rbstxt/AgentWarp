@@ -1,0 +1,24 @@
+when clicked
+go to x: (500) y: (500)
+hide
+forever
+  wait (0.7) seconds
+  create clone of [myself v]
+end
+
+when I start as a clone
+go to x: (pick random (-100) to (100)) y: (160)
+show
+repeat until <touching [edge v]?>
+  change y by (-3)
+  if <touching [Bullet v]?> then
+    delete this clone
+  end
+end
+change [lives v] by (-1)
+if <(lives) < (1)> then
+  say [Game Over] for (2) seconds
+  stop [all v]
+else
+  delete this clone
+end

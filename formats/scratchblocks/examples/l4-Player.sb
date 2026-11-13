@@ -1,0 +1,16 @@
+when clicked
+go to x: (0) y: (-140)
+show
+forever
+  if <key [left arrow v] pressed?> then
+    change x by (-5)
+  end
+  if <key [right arrow v] pressed?> then
+    change x by (5)
+  end
+  if <key [space v] pressed?> then
+    create clone of [Bullet v]
+    start sound [pop v]
+    wait (0.2) seconds
+  end
+end

@@ -1499,8 +1499,8 @@ function buildCollections(
         lists,
         broadcasts,
         // Key order in asset entries is cosmetic: reuse base verbatim when equal.
-        costumes: normDeep(decls.costumes) === normDeep(baseTarget?.costumes ?? []) ? cloneBase(baseTarget.costumes) : decls.costumes,
-        sounds: normDeep(decls.sounds) === normDeep(baseTarget?.sounds ?? []) ? cloneBase(baseTarget.sounds) : decls.sounds,
+        costumes: normDeep(decls.costumes) === normDeep(baseTarget?.costumes ?? []) ? cloneBase(baseTarget.costumes ?? []) : decls.costumes,
+        sounds: normDeep(decls.sounds) === normDeep(baseTarget?.sounds ?? []) ? cloneBase(baseTarget.sounds ?? []) : decls.sounds,
         scalars: decls.scalars,
     };
     const norm = (v: any): string => JSON.stringify(v);
