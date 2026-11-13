@@ -85,7 +85,11 @@ export interface Diagnostic {
     file?: string;
     line?: number;
     col?: number;
-    severity: 'error' | 'warning';
+    severity: 'error' | 'warning' | 'info';
+    /** Machine-stable check id, e.g. `say-before-stop` (core validate/lint). */
+    rule?: string;
+    /** One-line fix hint (core lint). */
+    hint?: string;
 }
 
 export interface FormatCtx {

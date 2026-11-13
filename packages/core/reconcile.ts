@@ -23,6 +23,91 @@ const SHADOW_TAG: Record<string, number> = {
     text: 10,
 };
 
+/** Shadow menu opcodes that reference a sprite (or the stage) by name. */
+const SPRITE_SHADOWS = new Set([
+    'motion_goto_menu',
+    'motion_glideto_menu',
+    'motion_pointtowards_menu',
+    'sensing_touchingobjectmenu',
+    'sensing_distancetomenu',
+    'sensing_of_object_menu',
+    'control_create_clone_of_menu',
+]);
+
+const COSTUME_SHADOWS = new Set(['looks_costume']);
+const BACKDROP_SHADOWS = new Set(['looks_backdrops']);
+const SOUND_SHADOWS = new Set(['sound_sounds_menu']);
+
+export type MenuKind = 'sprite' | 'costume' | 'backdrop' | 'sound' | 'broadcast' | null;
+
+/** What a menu input value refers to (by the owner's input spec), if anything renameable. */
+export function menuValueKind(ownerOpcode: string, inputName: string): MenuKind {
+    const spec = getBlockSpec(ownerOpcode);
+    const ispec = spec?.inputs.find((i) => i.name === inputName);
+    const sh = ispec?.shadowOpcode;
+    if (!sh) return null;
+    if (SPRITE_SHADOWS.has(sh)) return 'sprite';
+    if (COSTUME_SHADOWS.has(sh)) return 'costume';
+    if (BACKDROP_SHADOWS.has(sh)) return 'backdrop';
+    if (SOUND_SHADOWS.has(sh)) return 'sound';
+    if (sh === 'event_broadcast_menu') return 'broadcast';
+    return null;
+}
+
+/** What a field value refers to (by the block's field spec dynamic kind), if anything renameable. */
+export function fieldValueKind(opcode: string, fieldName: string): MenuKind {
+    const spec = getBlockSpec(opcode);
+    const fs = spec?.fields.find((f) => f.name === fieldName);
+    const dyn = fs?.dynamic;
+    if (dyn === 'sprites' || dyn === 'sprites+stage') return 'sprite';
+    if (dyn === 'costumes') return 'costume';
+    if (dyn === 'backdrops') return 'backdrop';
+    if (dyn === 'sounds') return 'sound';
+    return null;
+}
+
+/**
+ * Rewrite references to a renamed sprite in IR scripts (menu inputs and
+ * sprite fields that exactly match `oldName`). Silent: renames are normal
+ * operations, not diagnostics.
+ */
+export function rewriteSpriteName(scripts: Script[], oldName: string, newName: string): void {
+    const visit = (b: Block): void => {
+        for (const [iname, inp] of Object.entries(b.inputs)) {
+            if (inp.kind === 'menu') {
+                if (menuValueKind(b.opcode, iname) === 'sprite' && inp.value === oldName) inp.value = newName;
+            } else if ((inp.kind === 'block' || inp.kind === 'stack') && inp.block) {
+                visit(inp.block);
+            }
+        }
+        for (const [fname, f] of Object.entries(b.fields)) {
+            if (fieldValueKind(b.opcode, fname) === 'sprite' && f.value === oldName) f.value = newName;
+        }
+        if (b.next) visit(b.next);
+    };
+    for (const s of scripts) {
+        if (s.top) visit(s.top);
+    }
+}
+
+/** Collect every script/comment anchor label used by IR scripts (for rename scoring). */
+export function collectAnchorLabels(scripts: Script[]): Set<string> {
+    const out = new Set<string>();
+    const visit = (b: Block): void => {
+        if (b.comment?.anchor) out.add(b.comment.anchor);
+        for (const inp of Object.values(b.inputs)) {
+            if ((inp.kind === 'block' || inp.kind === 'stack') && inp.block) visit(inp.block);
+        }
+        if (b.next) visit(b.next);
+    };
+    for (const s of scripts) {
+        if (s.anchor) out.add(s.anchor);
+        if (s.comment?.anchor) out.add(s.comment.anchor);
+        if (s.top) visit(s.top);
+    }
+    return out;
+}
+
 export interface TargetDecls {
     /** Ordered declarations; duplicate names possible in messy human projects. */
     variables: Array<{ name: string; id: string; value: unknown; cloud?: boolean }>;
@@ -1494,9 +1579,17 @@ function buildCollections(
     }
     const lists: Record<string, unknown[]> = {};
     for (const d of decls.lists) lists[d.id] = d.raw ? [d.name, ...d.raw] : [d.name, d.items];
-    // Broadcasts: base dict overlaid with target.json declarations.
-    const broadcasts: Record<string, string> = { ...(baseTarget?.broadcasts ?? {}) };
+    // Broadcasts: base dict overlaid with target.json declarations — except
+    // that a NEW broadcast declared on a sprite is emitted on the Stage
+    // instead (project-level consolidation below flushes it there). A decl
+    // counts as pre-existing when its id or name matches the base target's
+    // broadcasts, so lossless round trips keep sprite broadcasts in place.
+    const isStageTarget = (decls.scalars as any)?.isStage === true || baseTarget?.isStage === true;
+    const baseBroadcasts: Record<string, string> = baseTarget?.broadcasts ?? {};
+    const baseBroadcastNames = new Set(Object.values(baseBroadcasts).map(String));
+    const broadcasts: Record<string, string> = { ...baseBroadcasts };
     for (const { name, id } of decls.broadcasts) {
+        if (!isStageTarget && baseBroadcasts[id] === undefined && !baseBroadcastNames.has(name)) continue;
         for (const [k, v] of Object.entries(broadcasts)) {
             if (v === name && k !== id) delete broadcasts[k];
         }
@@ -1530,6 +1623,153 @@ function baseScalars(baseTarget: any): Record<string, unknown> {
         if (!TARGET_META_KEYS.has(k)) out[k] = v;
     }
     return out;
+}
+
+/** Warn on IR menus/fields that reference a deleted sprite (by name). */
+function warnDeletedSpriteRefs(
+    scripts: Script[],
+    deleted: Set<string>,
+    targetName: string,
+    diagnostics: Diagnostic[],
+): void {
+    const warn = (value: string, what: string, loc?: Loc): void => {
+        diagnostics.push({
+            message: `target "${targetName}": ${what} references deleted sprite "${value}"`,
+            file: loc?.file,
+            line: loc?.line,
+            col: loc?.col,
+            severity: 'warning',
+        });
+    };
+    const visit = (b: Block): void => {
+        for (const [iname, inp] of Object.entries(b.inputs)) {
+            if (inp.kind === 'menu') {
+                if (menuValueKind(b.opcode, iname) === 'sprite' && deleted.has(inp.value)) {
+                    warn(inp.value, `menu "${iname}"`, b.loc);
+                }
+            } else if ((inp.kind === 'block' || inp.kind === 'stack') && inp.block) {
+                visit(inp.block);
+            }
+        }
+        for (const [fname, f] of Object.entries(b.fields)) {
+            if (fieldValueKind(b.opcode, fname) === 'sprite' && deleted.has(f.value)) {
+                warn(f.value, `field "${fname}"`, b.loc);
+            }
+        }
+        if (b.next) visit(b.next);
+    };
+    for (const s of scripts) {
+        if (s.top) visit(s.top);
+    }
+}
+
+/**
+ * Costume/sound renames (same asset bytes, new name in target.json) applied
+ * to already-reconciled output blocks: a renamed sprite costume updates that
+ * sprite's `looks_costume` menus, a renamed Stage costume (backdrop) updates
+ * every `looks_backdrops` menu and `when backdrop switches` hat, and a
+ * renamed sound updates that target's `sound_sounds_menu` menus.
+ */
+function applyAssetRenames(
+    newTargets: any[],
+    baseProject: any,
+    baseByName: Map<string, any>,
+    declsByTarget: Record<string, TargetDecls>,
+    keyByOutputName: Map<string, string>,
+): boolean {
+    const ownCostume = new Map<string, Map<string, string>>(); // output target name -> old->new
+    const ownSound = new Map<string, Map<string, string>>();
+    const backdrop = new Map<string, string>(); // global old->new
+    for (const [outName, key] of keyByOutputName) {
+        const base = baseByName.get(key);
+        const decls = declsByTarget[key];
+        if (!base || !decls) continue;
+        const matchByMd5 = (baseList: any[], declList: Array<Record<string, any>>): Map<string, string> => {
+            const byMd5 = new Map<string, string>();
+            for (const c of baseList ?? []) {
+                if (c && typeof c.md5ext === 'string') byMd5.set(c.md5ext, String(c.name));
+            }
+            const renames = new Map<string, string>();
+            for (const d of declList ?? []) {
+                const md5 = (d as any)?.md5ext;
+                const old = typeof md5 === 'string' ? byMd5.get(md5) : undefined;
+                const cur = String((d as any)?.name ?? '');
+                if (old !== undefined && old !== cur) renames.set(old, cur);
+            }
+            return renames;
+        };
+        const cRen = matchByMd5(base.costumes, decls.costumes);
+        const sRen = matchByMd5(base.sounds, decls.sounds);
+        const isStage = (decls.scalars as any)?.isStage === true || base?.isStage === true;
+        if (isStage) {
+            for (const [o, n] of cRen) backdrop.set(o, n);
+        } else if (cRen.size > 0) {
+            ownCostume.set(outName, cRen);
+        }
+        if (sRen.size > 0) ownSound.set(outName, sRen);
+    }
+    if (backdrop.size === 0 && ownCostume.size === 0 && ownSound.size === 0) return false;
+    const setField = (fields: Record<string, any>, fname: string, value: string): void => {
+        const cur = fields[fname];
+        fields[fname] = Array.isArray(cur) ? [value, cur[1] ?? null] : [value, null];
+    };
+    // Verbatim targets may share object identity with the base project:
+    // clone before the first mutation so the caller's base is never touched.
+    const baseTargets = new Set((baseProject?.targets ?? []) as any[]);
+    let changed = false;
+    for (let ti = 0; ti < newTargets.length; ti++) {
+        const t = newTargets[ti];
+        const blocks = t?.blocks ?? {};
+        let owned = !baseTargets.has(t);
+        const ensureOwned = (): Record<string, any> => {
+            if (!owned) {
+                const freshBlocks: Record<string, any> = {};
+                for (const [id, b] of Object.entries<any>(blocks)) {
+                    freshBlocks[id] = b && typeof b === 'object' && !Array.isArray(b) ? { ...b, fields: { ...(b.fields ?? {}) } } : b;
+                }
+                newTargets[ti] = { ...t, blocks: freshBlocks };
+                owned = true;
+            }
+            return newTargets[ti].blocks;
+        };
+        for (const [bid, b] of Object.entries<any>(blocks)) {
+            if (!b || typeof b !== 'object' || Array.isArray(b)) continue;
+            let next: string | null = null;
+            if (b.opcode === 'looks_costume') {
+                const m = ownCostume.get(String(t?.name));
+                const cur = Array.isArray(b.fields?.COSTUME) ? String(b.fields.COSTUME[0]) : null;
+                if (m && cur !== null && m.has(cur)) next = m.get(cur) as string;
+                if (next !== null) {
+                    const ownedBlocks = ensureOwned();
+                    setField(ownedBlocks[bid].fields, 'COSTUME', next);
+                    changed = true;
+                }
+            } else if (b.opcode === 'looks_backdrops') {
+                const cur = Array.isArray(b.fields?.BACKDROP) ? String(b.fields.BACKDROP[0]) : null;
+                if (cur !== null && backdrop.has(cur)) {
+                    const ownedBlocks = ensureOwned();
+                    setField(ownedBlocks[bid].fields, 'BACKDROP', backdrop.get(cur) as string);
+                    changed = true;
+                }
+            } else if (b.opcode === 'sound_sounds_menu') {
+                const m = ownSound.get(String(t?.name));
+                const cur = Array.isArray(b.fields?.SOUND_MENU) ? String(b.fields.SOUND_MENU[0]) : null;
+                if (m && cur !== null && m.has(cur)) {
+                    const ownedBlocks = ensureOwned();
+                    setField(ownedBlocks[bid].fields, 'SOUND_MENU', m.get(cur) as string);
+                    changed = true;
+                }
+            } else if (b.opcode === 'event_whenbackdropswitchesto') {
+                const cur = Array.isArray(b.fields?.BACKDROP) ? String(b.fields.BACKDROP[0]) : null;
+                if (cur !== null && backdrop.has(cur)) {
+                    const ownedBlocks = ensureOwned();
+                    setField(ownedBlocks[bid].fields, 'BACKDROP', backdrop.get(cur) as string);
+                    changed = true;
+                }
+            }
+        }
+    }
+    return changed;
 }
 
 /** Reorder entries to base key order (base keys first), new keys appended. */
@@ -1598,15 +1838,26 @@ export function reconcileProject(
     let changed = false;
     const newTargets: any[] = [];
     const seen = new Set<string>();
+    // Targets whose directory was deleted: drop them, and warn on every
+    // surviving menu that still references them by name.
+    const deletedNames = new Set<string>();
+    for (const baseTarget of baseProject?.targets ?? []) {
+        if (!perTarget[baseTarget?.name] || !declsByTarget[baseTarget?.name]) deletedNames.add(baseTarget?.name);
+    }
+    if (deletedNames.size > 0) {
+        for (const [tname, per] of Object.entries(perTarget)) {
+            warnDeletedSpriteRefs(per.scripts, deletedNames, tname, diagnostics);
+        }
+    }
     for (const baseTarget of baseProject?.targets ?? []) {
         const name = baseTarget?.name;
         seen.add(name);
         const per = perTarget[name];
         const decls = declsByTarget[name];
         if (!per || !decls) {
-            // Target directory missing: keep base verbatim.
-            diagnostics.push({ message: `target "${name}" not in directory; kept verbatim`, severity: 'warning' });
-            newTargets.push(baseTarget);
+            // Target directory removed: drop the target.
+            diagnostics.push({ message: `target "${name}" removed (directory deleted)`, severity: 'warning' });
+            changed = true;
             continue;
         }
         const r = reconcileTarget(baseTarget, per.scripts, per.anchors, decls, shared, name);
@@ -1656,6 +1907,20 @@ export function reconcileProject(
             blocks: r.blocks,
             comments: r.comments,
         });
+    }
+    // Costume/sound renames (same bytes, new name): update menus. Must run
+    // before the broadcast flush (it only touches broadcasts).
+    {
+        const baseByName = new Map<string, any>();
+        for (const t of baseProject?.targets ?? []) baseByName.set(String(t?.name), t);
+        // Output name -> perTarget key (packAgainst rekeys renames to the old name).
+        const keyByOutputName = new Map<string, string>();
+        for (const t of newTargets) keyByOutputName.set(String(t?.name), String(t?.name));
+        for (const key of Object.keys(perTarget)) {
+            const outName = String((declsByTarget[key]?.scalars as any)?.name ?? key);
+            keyByOutputName.set(outName, key);
+        }
+        if (applyAssetRenames(newTargets, baseProject, baseByName, declsByTarget, keyByOutputName)) changed = true;
     }
     // Flush auto-created broadcasts onto the Stage.
     const created: Array<[string, string]> = [];

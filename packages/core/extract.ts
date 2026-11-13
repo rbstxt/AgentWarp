@@ -502,3 +502,102 @@ export function extractTarget(target: any, project: any, opts?: { file?: string 
     }
     return { scripts, anchors, diagnostics: ctx.diagnostics, nodeById: ctx.nodeById };
 }
+
+/**
+ * Re-label freshly extracted scripts so every id the agent already knows
+ * keeps its old anchor label. Reading order of the file stays spatial
+ * (scripts are NOT reordered); only labels are remapped.
+ *
+ * - ids present in `prev` reuse their old label (`a3` stays `a3` even when
+ *   a human moved the script to another column);
+ * - genuinely new ids get the next free numbers (`a{maxA+1}`,
+ *   `c{maxC+1}` scanning both script and comment labels);
+ * - deleted labels are never reused.
+ *
+ * When `prev` is empty the fresh labels are returned unchanged.
+ */
+export function stabilizeAnchors(
+    scripts: Script[],
+    fresh: AnchorMap,
+    prev: AnchorMap,
+): { scripts: Script[]; anchors: AnchorMap } {
+    if (Object.keys(prev).length === 0) return { scripts, anchors: { ...fresh } };
+    // One id can own several old labels (a workspace comment carries both a
+    // script label and a comment label); claims prefer the matching kind.
+    const oldById = new Map<string, string[]>();
+    for (const [a, id] of Object.entries(prev)) {
+        const list = oldById.get(id) ?? [];
+        list.push(a);
+        oldById.set(id, list);
+    }
+    let maxA = 0;
+    let maxC = 0;
+    for (const a of Object.keys(prev)) {
+        let m = /^a(\d+)$/.exec(a);
+        if (m) maxA = Math.max(maxA, Number(m[1]));
+        m = /^c(\d+)$/.exec(a);
+        if (m) maxC = Math.max(maxC, Number(m[1]));
+    }
+    const reserved = new Set(Object.keys(prev));
+    const taken = new Set<string>();
+    const freshLabel = (kind: 'a' | 'c'): string => {
+        for (;;) {
+            const lab = kind === 'a' ? `a${++maxA}` : `c${++maxC}`;
+            if (!reserved.has(lab) && !taken.has(lab)) {
+                taken.add(lab);
+                return lab;
+            }
+        }
+    };
+    const claim = (id: string, kind: 'a' | 'c'): string => {
+        for (const old of oldById.get(id) ?? []) {
+            if (old[0] === kind && !taken.has(old)) {
+                taken.add(old);
+                return old;
+            }
+        }
+        return freshLabel(kind);
+    };
+    void fresh;
+    const anchors: AnchorMap = {};
+    const visitBlockComments = (b: NonNullable<Script['top']>): void => {
+        let cur: typeof b | undefined = b;
+        while (cur) {
+            if (cur.comment?.srcId) {
+                const lab = claim(cur.comment.srcId, 'c');
+                cur.comment.anchor = lab;
+                anchors[lab] = cur.comment.srcId;
+            }
+            for (const inp of Object.values(cur.inputs)) {
+                if ((inp.kind === 'block' || inp.kind === 'stack') && inp.block) visitBlockComments(inp.block);
+            }
+            cur = cur.next;
+        }
+    };
+    for (const s of scripts) {
+        if (s.kind === 'comment') {
+            // Workspace comments carry both a script label and a comment
+            // label (both map to the comment id); keep them stable together.
+            if (s.srcId) {
+                const lab = claim(s.srcId, 'a');
+                s.anchor = lab;
+                anchors[lab] = s.srcId;
+            }
+            if (s.comment?.srcId) {
+                const lab = claim(s.comment.srcId, 'c');
+                s.comment.anchor = lab;
+                anchors[lab] = s.comment.srcId;
+            }
+            continue;
+        }
+        if (s.srcId) {
+            const lab = claim(s.srcId, 'a');
+            s.anchor = lab;
+            anchors[lab] = s.srcId;
+        } else {
+            s.anchor = undefined;
+        }
+        if (s.top) visitBlockComments(s.top);
+    }
+    return { scripts, anchors };
+}
