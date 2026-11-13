@@ -53,7 +53,11 @@
     if (dragging()) { schedule(); return; }
     state.dirty = false; const base = state.rev; status('syncing', 'Sending editor changes');
     try {
-      const blob = await vm.saveProjectSb3();
+      // TurboWarp's default export compacts block IDs, breaking bridge anchors.
+      // Replace only project.json in its asset ZIP with the unoptimized form.
+      const zip = vm._saveProjectZip();
+      zip.file('project.json', vm.toJSON(undefined, {allowOptimization:false}));
+      const blob = await zip.generateAsync({type:'blob', mimeType:'application/x.scratch.sb3'});
       const response = await fetch(endpoint('/editor.sb3'), {method:'POST', headers:{'Content-Type':'application/octet-stream', 'X-Base-Rev': String(base ?? 0)}, body:blob});
       if (!response.ok) throw new Error(`Editor upload failed: HTTP ${response.status}`);
       const type = response.headers.get('content-type') || '';
@@ -67,7 +71,9 @@
     return {id:target?.id, name:target?.getName?.(), stage:target?.isStage, scale:w?.scale, x:w?.scrollX, y:w?.scrollY, running:vm.runtime.threads.some(t => !t.isKilled)};
   }
   async function load(rev) {
+    if (state.rev === rev) return;
     if (state.dirty) { await flush(); if (state.dirty) throw new Error('Local edits could not be sent; postponed incoming project'); }
+    rev = Math.max(rev, state.rev ?? rev);
     const old = capture(); state.loading = true; clearTimeout(timer); status('syncing', `Loading revision ${rev}`);
     try {
       const response = await fetch(endpoint('/project.sb3', rev));
@@ -103,7 +109,7 @@
       let msg; try { msg = JSON.parse(event.data); } catch (_) { return; }
       if (msg.type === 'hello' && Number.isInteger(msg.rev)) { if (state.rev !== msg.rev) enqueue(() => load(msg.rev)); }
       else if (msg.type === 'load' && Number.isInteger(msg.rev)) enqueue(() => load(msg.rev));
-      else if (msg.type === 'status') { const detail = [msg.message, ...(msg.diagnostics || []).map(d => typeof d === 'string' ? d : JSON.stringify(d)), ...(msg.conflicts || []).map(d => typeof d === 'string' ? d : JSON.stringify(d))].filter(Boolean).join('\n'); status(msg.ok === false || detail ? 'error' : 'connected', detail); }
+      else if (msg.type === 'status') { const detail = [msg.message, ...(msg.diagnostics || []).map(d => typeof d === 'string' ? d : `${d.file || ''}${d.line != null ? ':' + d.line : ''}${d.col != null ? ':' + d.col : ''}: ${d.message}`), ...(msg.conflicts || []).map(d => typeof d === 'string' ? d : JSON.stringify(d))].filter(Boolean).join('\n'); status(msg.ok === false || (msg.conflicts || []).length ? 'error' : 'connected', detail); }
     };
     current.onerror = () => { if (gen === generation) status('error', 'Bridge connection failed. Check URL, token, browser Local Network Access permission and CORS.'); };
     current.onclose = () => { if (gen !== generation || state.stopped) return; state.connected = false; status('error', 'Disconnected; reconnecting'); reconnectTimer = setTimeout(() => connect(gen), reconnectDelay); reconnectDelay = Math.min(reconnectDelay * 2, 15000); };

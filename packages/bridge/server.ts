@@ -105,6 +105,11 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
     const assets = await collectAssetFiles(dir);
     let lastTextHash = await hashTextDir(dir);
     let rev = 0;
+    const history = new Map<number, { base: any; anchors: Record<string, AnchorMap> }>();
+    const rememberRevision = (): void => {
+        history.set(rev, { base, anchors });
+        if (history.size > 100) history.delete(history.keys().next().value!);
+    };
     const name = opts.name ?? basename(dir);
     const token = opts.token ?? randomBytes(16).toString('hex');
     const logs: string[] = [];
@@ -165,6 +170,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
     // the agent touches afterwards are OURS to skip during re-unpack (never
     // clobber newer agent work); a forced follow-up pack then adopts them.
     const commitPack = async (project: any, projectText: string, files: Map<string, Uint8Array>, skipSigs?: Map<string, string>): Promise<void> => {
+        rememberRevision();
         base = project;
         baseText = projectText;
         for (const [k, v] of files) {
@@ -199,7 +205,10 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
     const agentCycle = async (force: boolean): Promise<void> => {
         for (let i = 0; i < 10; i++) {
             const h = await hashTextDir(dir);
-            if (h === lastTextHash && !force) return;
+            if (h === lastTextHash && !force) {
+                sendStatus({ ok: true, rev, message: 'synced' });
+                return;
+            }
             force = false;
             const { sigs } = await snapshotSigs(dir);
             const r = await packTextAgainstBase(dir, format, base, baseText, anchors);
@@ -217,6 +226,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                 // Semantically identical (e.g. whitespace-only edit): adopt
                 // the hash quietly, no rev bump, no push.
                 lastTextHash = h2;
+                sendStatus({ ok: true, rev, message: 'synced' });
                 return;
             }
             await commitPack(r.project, r.projectText, r.files, sigs);
@@ -241,10 +251,15 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             if (baseRevHeader != null && baseRevHeader !== '' && Number(baseRevHeader) !== rev) {
                 log(`stale X-Base-Rev ${baseRevHeader} (current rev ${rev}); merge path handles it`);
             }
+            const postedRev = baseRevHeader == null || baseRevHeader === '' ? rev : Number(baseRevHeader);
+            const stale = postedRev !== rev;
+            const ancestor = stale ? history.get(postedRev) : { base, anchors };
+            if (!ancestor) return { status: 409, json: { ok: false, rev, message: 'base revision no longer available; cannot safely merge editor state' } };
             const h = await hashTextDir(dir);
-            if (h === lastTextHash) {
+            if (h === lastTextHash && !stale) {
                 // Clean: adopt the editor state wholesale, no push back.
                 const { sigs } = await snapshotSigs(dir);
+                rememberRevision();
                 base = editorProject;
                 baseText = contents.projectText;
                 rev += 1;
@@ -264,7 +279,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                 const ha = await hashTextDir(dir);
                 const { sigs } = await snapshotSigs(dir);
                 const text = await readTextState(dir, format);
-                const { overrides, conflicts } = buildMerge({ oldBase: base, editorProject, text, oldAnchors: anchors, editorFiles: contents.files });
+                const { overrides, conflicts } = buildMerge({ oldBase: ancestor.base, editorProject, text, oldAnchors: ancestor.anchors, editorFiles: contents.files });
                 const r = await packTextAgainstBase(dir, format, editorProject, JSON.stringify(editorProject), anchors, overrides);
                 const errs = r.diagnostics.filter((d) => d.severity === 'error');
                 if (errs.length) {
