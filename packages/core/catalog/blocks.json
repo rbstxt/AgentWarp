@@ -1,0 +1,6849 @@
+{
+  "meta": {
+    "generatedBy": "packages/core/catalog/gen/generate.ts",
+    "sources": {
+      "tw-scratch-blocks": "7c58de666658df1bb447d010132aa3914c10f41e",
+      "tw-scratch-gui": "7738389afee319d2c6293550a2f7cb13004b928c",
+      "tw-scratch-vm": "0cb82afe62506f3d9f2ff849c95593f0473b5d2c",
+      "tw-scratch-l10n": "436a7b93994396fbd810e28b12ffefdcf180410a"
+    }
+  },
+  "notes": {
+    "procedures_definition": "Inputs are mutation-driven (the definition always carries a custom_block input holding a procedures_prototype shadow; argument names/ids live in the mutation proccode/argumentids, not in statically named inputs).",
+    "procedures_prototype": "Shadow of procedures_definition; inputs are mutation-driven from proccode/argumentids.",
+    "procedures_call": "Inputs are mutation-driven: one input per procedure argument, named by the mutation argumentids. Shape is stack, reporter, or boolean according to the return type.",
+    "argument_reporter_string_number": "VALUE names the procedure argument; resolved against the enclosing custom block.",
+    "argument_reporter_boolean": "VALUE names the procedure argument; resolved against the enclosing custom block.",
+    "procedures_declaration": "Editor-only root of the procedure declaration dialog; never stored in project.json.",
+    "argument_editor_boolean": "Editor-only (procedure declaration dialog); never stored in project.json.",
+    "argument_editor_string_number": "Editor-only (procedure declaration dialog); never stored in project.json."
+  },
+  "blocks": {
+    "argument_editor_boolean": {
+      "opcode": "argument_editor_boolean",
+      "category": "procedures",
+      "shape": "boolean",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TEXT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TEXT",
+          "kind": "text"
+        }
+      ],
+      "hidden": true
+    },
+    "argument_editor_string_number": {
+      "opcode": "argument_editor_string_number",
+      "category": "procedures",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TEXT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TEXT",
+          "kind": "text"
+        }
+      ],
+      "hidden": true
+    },
+    "argument_reporter_boolean": {
+      "opcode": "argument_reporter_boolean",
+      "category": "procedures",
+      "shape": "argument",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VALUE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "VALUE",
+          "kind": "text"
+        }
+      ]
+    },
+    "argument_reporter_string_number": {
+      "opcode": "argument_reporter_string_number",
+      "category": "procedures",
+      "shape": "argument",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VALUE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "VALUE",
+          "kind": "text"
+        }
+      ]
+    },
+    "colour_picker": {
+      "opcode": "colour_picker",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "COLOUR"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "COLOUR",
+          "kind": "color"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "control_all_at_once": {
+      "opcode": "control_all_at_once",
+      "category": "control",
+      "shape": "c",
+      "text": {
+        "en": "all at once %1",
+        "ja": "一斉に"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "control_clear_counter": {
+      "opcode": "control_clear_counter",
+      "category": "control",
+      "shape": "stack",
+      "text": {
+        "en": "clear counter",
+        "ja": "カウンターをクリアする"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "control_create_clone_of": {
+      "opcode": "control_create_clone_of",
+      "category": "control",
+      "shape": "stack",
+      "text": {
+        "en": "create clone of %1",
+        "ja": "%1 のクローンを作る"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CLONE_OPTION"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CLONE_OPTION",
+          "kind": "menu",
+          "shadowOpcode": "control_create_clone_of_menu"
+        }
+      ],
+      "fields": []
+    },
+    "control_create_clone_of_menu": {
+      "opcode": "control_create_clone_of_menu",
+      "category": "control",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "CLONE_OPTION"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "CLONE_OPTION",
+          "kind": "dropdown",
+          "options": [
+            [
+              "myself",
+              "_myself_"
+            ]
+          ],
+          "dynamic": "sprites"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "control_delete_this_clone": {
+      "opcode": "control_delete_this_clone",
+      "category": "control",
+      "shape": "cap",
+      "text": {
+        "en": "delete this clone",
+        "ja": "このクローンを削除する"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "control_for_each": {
+      "opcode": "control_for_each",
+      "category": "control",
+      "shape": "c",
+      "text": {
+        "en": "for each %1 in %2 %3",
+        "ja": "%2 の要素を %1 に入れて繰り返す"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VARIABLE"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        },
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "any"
+        },
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        }
+      ],
+      "fields": [
+        {
+          "name": "VARIABLE",
+          "kind": "variable",
+          "dynamic": "variables"
+        }
+      ],
+      "hidden": true
+    },
+    "control_forever": {
+      "opcode": "control_forever",
+      "category": "control",
+      "shape": "end-c",
+      "text": {
+        "en": "forever %1",
+        "ja": "ずっと"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        }
+      ],
+      "fields": []
+    },
+    "control_get_counter": {
+      "opcode": "control_get_counter",
+      "category": "control",
+      "shape": "reporter",
+      "text": {
+        "en": "counter",
+        "ja": "カウンター"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "control_if": {
+      "opcode": "control_if",
+      "category": "control",
+      "shape": "c",
+      "text": {
+        "en": "if %1 then %2",
+        "ja": "もし %1 なら"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CONDITION"
+        },
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CONDITION",
+          "kind": "boolean"
+        },
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        }
+      ],
+      "fields": []
+    },
+    "control_if_else": {
+      "opcode": "control_if_else",
+      "category": "control",
+      "shape": "c2",
+      "text": {
+        "en": "if %1 then %2 else %3",
+        "ja": "もし %1 なら でなければ"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CONDITION"
+        },
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        },
+        {
+          "kind": "input",
+          "input": "SUBSTACK2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CONDITION",
+          "kind": "boolean"
+        },
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        },
+        {
+          "name": "SUBSTACK2",
+          "kind": "stack"
+        }
+      ],
+      "fields": []
+    },
+    "control_incr_counter": {
+      "opcode": "control_incr_counter",
+      "category": "control",
+      "shape": "stack",
+      "text": {
+        "en": "increment counter",
+        "ja": "カウンターに足す"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "control_repeat": {
+      "opcode": "control_repeat",
+      "category": "control",
+      "shape": "c",
+      "text": {
+        "en": "repeat %1 %2",
+        "ja": "%1 回繰り返す"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TIMES"
+        },
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TIMES",
+          "kind": "whole_number",
+          "shadowOpcode": "math_whole_number",
+          "shadowField": "NUM",
+          "default": 10
+        },
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        }
+      ],
+      "fields": []
+    },
+    "control_repeat_until": {
+      "opcode": "control_repeat_until",
+      "category": "control",
+      "shape": "c",
+      "text": {
+        "en": "repeat until %1 %2",
+        "ja": "%1 まで繰り返す"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CONDITION"
+        },
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CONDITION",
+          "kind": "boolean"
+        },
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        }
+      ],
+      "fields": []
+    },
+    "control_start_as_clone": {
+      "opcode": "control_start_as_clone",
+      "category": "control",
+      "shape": "hat",
+      "text": {
+        "en": "when I start as a clone",
+        "ja": "クローンされたとき"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "control_stop": {
+      "opcode": "control_stop",
+      "category": "control",
+      "shape": "cap",
+      "text": {
+        "en": "stop %1",
+        "ja": "　 %1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "STOP_OPTION"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "STOP_OPTION",
+          "kind": "dropdown",
+          "options": [
+            [
+              "all",
+              "all"
+            ],
+            [
+              "this script",
+              "this script"
+            ],
+            [
+              "other scripts in sprite",
+              "other scripts in sprite"
+            ]
+          ]
+        }
+      ]
+    },
+    "control_wait": {
+      "opcode": "control_wait",
+      "category": "control",
+      "shape": "stack",
+      "text": {
+        "en": "wait %1 seconds",
+        "ja": "%1 秒待つ"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DURATION"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DURATION",
+          "kind": "positive_number",
+          "shadowOpcode": "math_positive_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": []
+    },
+    "control_wait_until": {
+      "opcode": "control_wait_until",
+      "category": "control",
+      "shape": "stack",
+      "text": {
+        "en": "wait until %1",
+        "ja": "%1 まで待つ"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CONDITION"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CONDITION",
+          "kind": "boolean"
+        }
+      ],
+      "fields": []
+    },
+    "control_while": {
+      "opcode": "control_while",
+      "category": "control",
+      "shape": "c",
+      "text": {
+        "en": "while %1 %2",
+        "ja": "%1 の間繰り返す"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CONDITION"
+        },
+        {
+          "kind": "input",
+          "input": "SUBSTACK"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CONDITION",
+          "kind": "boolean"
+        },
+        {
+          "name": "SUBSTACK",
+          "kind": "stack"
+        }
+      ],
+      "fields": []
+    },
+    "data_addtolist": {
+      "opcode": "data_addtolist",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "add %1 to %2",
+        "ja": "%1 を %2 に追加する"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "ITEM"
+        },
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "ITEM",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "thing"
+        }
+      ],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_changevariableby": {
+      "opcode": "data_changevariableby",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "change %1 by %2",
+        "ja": "%1 を %2 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VARIABLE"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [
+        {
+          "name": "VARIABLE",
+          "kind": "variable",
+          "dynamic": "variables"
+        }
+      ]
+    },
+    "data_deletealloflist": {
+      "opcode": "data_deletealloflist",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "delete all of %1",
+        "ja": "%1のすべてを削除する"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_deleteoflist": {
+      "opcode": "data_deleteoflist",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "delete %1 of %2",
+        "ja": "%2 の %1 番目を削除する"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "INDEX"
+        },
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "INDEX",
+          "kind": "integer",
+          "shadowOpcode": "math_integer",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_hidelist": {
+      "opcode": "data_hidelist",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "hide list %1",
+        "ja": "リスト %1 を隠す"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_hidevariable": {
+      "opcode": "data_hidevariable",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "hide variable %1",
+        "ja": "変数 %1 を隠す"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VARIABLE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "VARIABLE",
+          "kind": "variable",
+          "dynamic": "variables"
+        }
+      ]
+    },
+    "data_insertatlist": {
+      "opcode": "data_insertatlist",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "insert %1 at %2 of %3",
+        "ja": "%3 の %2 番目に %1 を挿入する"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "ITEM"
+        },
+        {
+          "kind": "input",
+          "input": "INDEX"
+        },
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "ITEM",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "thing"
+        },
+        {
+          "name": "INDEX",
+          "kind": "integer",
+          "shadowOpcode": "math_integer",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_itemnumoflist": {
+      "opcode": "data_itemnumoflist",
+      "category": "data",
+      "shape": "reporter",
+      "text": {
+        "en": "item # of %1 in %2",
+        "ja": "%2中の%1の場所"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "ITEM"
+        },
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "ITEM",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "thing"
+        }
+      ],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_itemoflist": {
+      "opcode": "data_itemoflist",
+      "category": "data",
+      "shape": "reporter",
+      "text": {
+        "en": "item %1 of %2",
+        "ja": "%2 の %1 番目"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "INDEX"
+        },
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "INDEX",
+          "kind": "integer",
+          "shadowOpcode": "math_integer",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_lengthoflist": {
+      "opcode": "data_lengthoflist",
+      "category": "data",
+      "shape": "reporter",
+      "text": {
+        "en": "length of %1",
+        "ja": "%1 の長さ"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_listcontainsitem": {
+      "opcode": "data_listcontainsitem",
+      "category": "data",
+      "shape": "boolean",
+      "text": {
+        "en": "%1 contains %2?",
+        "ja": "%1 に %2 が含まれる"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "LIST"
+        },
+        {
+          "kind": "input",
+          "input": "ITEM"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "ITEM",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "thing"
+        }
+      ],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_listcontents": {
+      "opcode": "data_listcontents",
+      "category": "data",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_listindexall": {
+      "opcode": "data_listindexall",
+      "category": "data",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "INDEX"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "INDEX",
+          "kind": "dropdown",
+          "options": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "last",
+              "last"
+            ],
+            [
+              "all",
+              "all"
+            ]
+          ]
+        }
+      ]
+    },
+    "data_listindexrandom": {
+      "opcode": "data_listindexrandom",
+      "category": "data",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "INDEX"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "INDEX",
+          "kind": "dropdown",
+          "options": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "last",
+              "last"
+            ],
+            [
+              "random",
+              "random"
+            ]
+          ]
+        }
+      ]
+    },
+    "data_replaceitemoflist": {
+      "opcode": "data_replaceitemoflist",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "replace item %1 of %2 with %3",
+        "ja": "%2 の %1 番目を %3 で置き換える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "INDEX"
+        },
+        {
+          "kind": "field",
+          "field": "LIST"
+        },
+        {
+          "kind": "input",
+          "input": "ITEM"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "INDEX",
+          "kind": "integer",
+          "shadowOpcode": "math_integer",
+          "shadowField": "NUM",
+          "default": 1
+        },
+        {
+          "name": "ITEM",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "thing"
+        }
+      ],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_setvariableto": {
+      "opcode": "data_setvariableto",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "set %1 to %2",
+        "ja": "%1 を %2 にする"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VARIABLE"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": 0
+        }
+      ],
+      "fields": [
+        {
+          "name": "VARIABLE",
+          "kind": "variable",
+          "dynamic": "variables"
+        }
+      ]
+    },
+    "data_showlist": {
+      "opcode": "data_showlist",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "show list %1",
+        "ja": "リスト %1 を表示する"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "LIST"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "LIST",
+          "kind": "list",
+          "dynamic": "lists"
+        }
+      ]
+    },
+    "data_showvariable": {
+      "opcode": "data_showvariable",
+      "category": "data",
+      "shape": "stack",
+      "text": {
+        "en": "show variable %1",
+        "ja": "変数 %1 を表示する"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VARIABLE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "VARIABLE",
+          "kind": "variable",
+          "dynamic": "variables"
+        }
+      ]
+    },
+    "data_variable": {
+      "opcode": "data_variable",
+      "category": "data",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VARIABLE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "VARIABLE",
+          "kind": "variable",
+          "dynamic": "variables"
+        }
+      ]
+    },
+    "event_broadcast": {
+      "opcode": "event_broadcast",
+      "category": "event",
+      "shape": "stack",
+      "text": {
+        "en": "broadcast %1",
+        "ja": "%1 を送る"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "BROADCAST_INPUT"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "BROADCAST_INPUT",
+          "kind": "broadcast",
+          "shadowOpcode": "event_broadcast_menu"
+        }
+      ],
+      "fields": []
+    },
+    "event_broadcast_menu": {
+      "opcode": "event_broadcast_menu",
+      "category": "event",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "BROADCAST_OPTION"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "BROADCAST_OPTION",
+          "kind": "broadcast",
+          "dynamic": "broadcast"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "event_broadcastandwait": {
+      "opcode": "event_broadcastandwait",
+      "category": "event",
+      "shape": "stack",
+      "text": {
+        "en": "broadcast %1 and wait",
+        "ja": "%1 を送って待つ"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "BROADCAST_INPUT"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "BROADCAST_INPUT",
+          "kind": "broadcast",
+          "shadowOpcode": "event_broadcast_menu"
+        }
+      ],
+      "fields": []
+    },
+    "event_touchingobjectmenu": {
+      "opcode": "event_touchingobjectmenu",
+      "category": "event",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TOUCHINGOBJECTMENU"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TOUCHINGOBJECTMENU",
+          "kind": "dropdown",
+          "options": [
+            [
+              "mouse-pointer",
+              "_mouse_"
+            ],
+            [
+              "edge",
+              "_edge_"
+            ]
+          ]
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "event_whenbackdropswitchesto": {
+      "opcode": "event_whenbackdropswitchesto",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when backdrop switches to %1",
+        "ja": "背景が %1 になったとき"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "BACKDROP"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "BACKDROP",
+          "kind": "dropdown",
+          "options": [
+            [
+              "backdrop1",
+              "BACKDROP1"
+            ]
+          ],
+          "dynamic": "backdrops"
+        }
+      ]
+    },
+    "event_whenbroadcastreceived": {
+      "opcode": "event_whenbroadcastreceived",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when I receive %1",
+        "ja": "%1 を受け取ったとき"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "BROADCAST_OPTION"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "BROADCAST_OPTION",
+          "kind": "broadcast",
+          "dynamic": "broadcast"
+        }
+      ]
+    },
+    "event_whenflagclicked": {
+      "opcode": "event_whenflagclicked",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when clicked",
+        "ja": "が押されたとき"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "event_whengreaterthan": {
+      "opcode": "event_whengreaterthan",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when %1 > %2",
+        "ja": "%1 > %2 のとき"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "WHENGREATERTHANMENU"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": [
+        {
+          "name": "WHENGREATERTHANMENU",
+          "kind": "dropdown",
+          "options": [
+            [
+              "loudness",
+              "LOUDNESS"
+            ],
+            [
+              "timer",
+              "TIMER"
+            ]
+          ]
+        }
+      ]
+    },
+    "event_whenkeypressed": {
+      "opcode": "event_whenkeypressed",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when %1 key pressed",
+        "ja": "%1 キーが押されたとき"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "KEY_OPTION"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "KEY_OPTION",
+          "kind": "dropdown",
+          "options": [
+            [
+              "space",
+              "space"
+            ],
+            [
+              "up arrow",
+              "up arrow"
+            ],
+            [
+              "down arrow",
+              "down arrow"
+            ],
+            [
+              "right arrow",
+              "right arrow"
+            ],
+            [
+              "left arrow",
+              "left arrow"
+            ],
+            [
+              "any",
+              "any"
+            ],
+            [
+              "a",
+              "a"
+            ],
+            [
+              "b",
+              "b"
+            ],
+            [
+              "c",
+              "c"
+            ],
+            [
+              "d",
+              "d"
+            ],
+            [
+              "e",
+              "e"
+            ],
+            [
+              "f",
+              "f"
+            ],
+            [
+              "g",
+              "g"
+            ],
+            [
+              "h",
+              "h"
+            ],
+            [
+              "i",
+              "i"
+            ],
+            [
+              "j",
+              "j"
+            ],
+            [
+              "k",
+              "k"
+            ],
+            [
+              "l",
+              "l"
+            ],
+            [
+              "m",
+              "m"
+            ],
+            [
+              "n",
+              "n"
+            ],
+            [
+              "o",
+              "o"
+            ],
+            [
+              "p",
+              "p"
+            ],
+            [
+              "q",
+              "q"
+            ],
+            [
+              "r",
+              "r"
+            ],
+            [
+              "s",
+              "s"
+            ],
+            [
+              "t",
+              "t"
+            ],
+            [
+              "u",
+              "u"
+            ],
+            [
+              "v",
+              "v"
+            ],
+            [
+              "w",
+              "w"
+            ],
+            [
+              "x",
+              "x"
+            ],
+            [
+              "y",
+              "y"
+            ],
+            [
+              "z",
+              "z"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "2"
+            ],
+            [
+              "3",
+              "3"
+            ],
+            [
+              "4",
+              "4"
+            ],
+            [
+              "5",
+              "5"
+            ],
+            [
+              "6",
+              "6"
+            ],
+            [
+              "7",
+              "7"
+            ],
+            [
+              "8",
+              "8"
+            ],
+            [
+              "9",
+              "9"
+            ]
+          ]
+        }
+      ]
+    },
+    "event_whenstageclicked": {
+      "opcode": "event_whenstageclicked",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when stage clicked",
+        "ja": "ステージが押されたとき"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "event_whenthisspriteclicked": {
+      "opcode": "event_whenthisspriteclicked",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when this sprite clicked",
+        "ja": "このスプライトが押されたとき"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "event_whentouchingobject": {
+      "opcode": "event_whentouchingobject",
+      "category": "event",
+      "shape": "hat",
+      "text": {
+        "en": "when this sprite touches %1",
+        "ja": "このスプライトが %1 に触れたとき"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TOUCHINGOBJECTMENU"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TOUCHINGOBJECTMENU",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_microbit_display": {
+      "opcode": "extension_microbit_display",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "display %1"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "MATRIX"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "MATRIX",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_music_drum": {
+      "opcode": "extension_music_drum",
+      "category": "more",
+      "shape": "stack",
+      "text": {
+        "en": "play drum %1"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NUMBER"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUMBER",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_music_play_note": {
+      "opcode": "extension_music_play_note",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "play note %1 for %2 beats"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NOTE"
+        },
+        {
+          "kind": "input",
+          "input": "BEATS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NOTE",
+          "kind": "any"
+        },
+        {
+          "name": "BEATS",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_music_reporter": {
+      "opcode": "extension_music_reporter",
+      "category": "more",
+      "shape": "reporter",
+      "text": {
+        "en": "hey now, you're an all-star"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_pen_down": {
+      "opcode": "extension_pen_down",
+      "category": "more",
+      "shape": "stack",
+      "text": {
+        "en": "pen down"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_wedo_boolean": {
+      "opcode": "extension_wedo_boolean",
+      "category": "more",
+      "shape": "boolean",
+      "text": {
+        "en": "O RLY?"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_wedo_hat": {
+      "opcode": "extension_wedo_hat",
+      "category": "more",
+      "shape": "hat",
+      "text": {
+        "en": "when I am wearing a hat"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_wedo_motor": {
+      "opcode": "extension_wedo_motor",
+      "category": "more",
+      "shape": "stack",
+      "text": {
+        "en": "turn a motor"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "extension_wedo_tilt_menu": {
+      "opcode": "extension_wedo_tilt_menu",
+      "category": "more",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TILT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TILT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "Any",
+              "Any"
+            ],
+            [
+              "Whirl",
+              "Whirl"
+            ],
+            [
+              "South",
+              "South"
+            ],
+            [
+              "Back in time",
+              "Back in time"
+            ]
+          ]
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "extension_wedo_tilt_reporter": {
+      "opcode": "extension_wedo_tilt_reporter",
+      "category": "more",
+      "shape": "reporter",
+      "text": {
+        "en": "tilt angle %1"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TILT"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TILT",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "looks_backdropnumbername": {
+      "opcode": "looks_backdropnumbername",
+      "category": "looks",
+      "shape": "reporter",
+      "text": {
+        "en": "backdrop %1",
+        "ja": "背景の %1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NUMBER_NAME"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NUMBER_NAME",
+          "kind": "dropdown",
+          "options": [
+            [
+              "number",
+              "number"
+            ],
+            [
+              "name",
+              "name"
+            ]
+          ]
+        }
+      ]
+    },
+    "looks_backdrops": {
+      "opcode": "looks_backdrops",
+      "category": "looks",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "BACKDROP"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "BACKDROP",
+          "kind": "dropdown",
+          "options": [
+            [
+              "backdrop1",
+              "BACKDROP1"
+            ]
+          ],
+          "dynamic": "backdrops"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "looks_changeeffectby": {
+      "opcode": "looks_changeeffectby",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "change %1 effect by %2",
+        "ja": "%1 の効果を %2 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "EFFECT"
+        },
+        {
+          "kind": "input",
+          "input": "CHANGE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CHANGE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 25
+        }
+      ],
+      "fields": [
+        {
+          "name": "EFFECT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "color",
+              "COLOR"
+            ],
+            [
+              "fisheye",
+              "FISHEYE"
+            ],
+            [
+              "whirl",
+              "WHIRL"
+            ],
+            [
+              "pixelate",
+              "PIXELATE"
+            ],
+            [
+              "mosaic",
+              "MOSAIC"
+            ],
+            [
+              "brightness",
+              "BRIGHTNESS"
+            ],
+            [
+              "ghost",
+              "GHOST"
+            ]
+          ]
+        }
+      ]
+    },
+    "looks_changesizeby": {
+      "opcode": "looks_changesizeby",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "change size by %1",
+        "ja": "大きさを %1 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CHANGE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CHANGE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": []
+    },
+    "looks_changestretchby": {
+      "opcode": "looks_changestretchby",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "change stretch by %1",
+        "ja": "伸びを %1 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "CHANGE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "CHANGE",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "looks_cleargraphiceffects": {
+      "opcode": "looks_cleargraphiceffects",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "clear graphic effects",
+        "ja": "画像効果をなくす"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "looks_costume": {
+      "opcode": "looks_costume",
+      "category": "looks",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "COSTUME"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "COSTUME",
+          "kind": "dropdown",
+          "options": [
+            [
+              "costume1",
+              "COSTUME1"
+            ],
+            [
+              "costume2",
+              "COSTUME2"
+            ]
+          ],
+          "dynamic": "costumes"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "looks_costumenumbername": {
+      "opcode": "looks_costumenumbername",
+      "category": "looks",
+      "shape": "reporter",
+      "text": {
+        "en": "costume %1",
+        "ja": "コスチュームの %1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NUMBER_NAME"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NUMBER_NAME",
+          "kind": "dropdown",
+          "options": [
+            [
+              "number",
+              "number"
+            ],
+            [
+              "name",
+              "name"
+            ]
+          ]
+        }
+      ]
+    },
+    "looks_goforwardbackwardlayers": {
+      "opcode": "looks_goforwardbackwardlayers",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "go %1 %2 layers",
+        "ja": "%2 層 %1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "FORWARD_BACKWARD"
+        },
+        {
+          "kind": "input",
+          "input": "NUM"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM",
+          "kind": "integer",
+          "shadowOpcode": "math_integer",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [
+        {
+          "name": "FORWARD_BACKWARD",
+          "kind": "dropdown",
+          "options": [
+            [
+              "forward",
+              "forward"
+            ],
+            [
+              "backward",
+              "backward"
+            ]
+          ]
+        }
+      ]
+    },
+    "looks_gotofrontback": {
+      "opcode": "looks_gotofrontback",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "go to %1 layer",
+        "ja": "%1 へ移動する"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "FRONT_BACK"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "FRONT_BACK",
+          "kind": "dropdown",
+          "options": [
+            [
+              "front",
+              "front"
+            ],
+            [
+              "back",
+              "back"
+            ]
+          ]
+        }
+      ]
+    },
+    "looks_hide": {
+      "opcode": "looks_hide",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "hide",
+        "ja": "隠す"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "looks_hideallsprites": {
+      "opcode": "looks_hideallsprites",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "hide all sprites",
+        "ja": "すべてのスプライトを隠す"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "looks_nextbackdrop": {
+      "opcode": "looks_nextbackdrop",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "next backdrop",
+        "ja": "次の背景にする"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "looks_nextcostume": {
+      "opcode": "looks_nextcostume",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "next costume",
+        "ja": "次のコスチュームにする"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "looks_say": {
+      "opcode": "looks_say",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "say %1",
+        "ja": "%1 と言う"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "MESSAGE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "MESSAGE",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "Hello!"
+        }
+      ],
+      "fields": []
+    },
+    "looks_sayforsecs": {
+      "opcode": "looks_sayforsecs",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "say %1 for %2 seconds",
+        "ja": "%1 と %2 秒言う"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "MESSAGE"
+        },
+        {
+          "kind": "input",
+          "input": "SECS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "MESSAGE",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "Hello!"
+        },
+        {
+          "name": "SECS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 2
+        }
+      ],
+      "fields": []
+    },
+    "looks_seteffectto": {
+      "opcode": "looks_seteffectto",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "set %1 effect to %2",
+        "ja": "%1 の効果を %2 にする"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "EFFECT"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0
+        }
+      ],
+      "fields": [
+        {
+          "name": "EFFECT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "color",
+              "COLOR"
+            ],
+            [
+              "fisheye",
+              "FISHEYE"
+            ],
+            [
+              "whirl",
+              "WHIRL"
+            ],
+            [
+              "pixelate",
+              "PIXELATE"
+            ],
+            [
+              "mosaic",
+              "MOSAIC"
+            ],
+            [
+              "brightness",
+              "BRIGHTNESS"
+            ],
+            [
+              "ghost",
+              "GHOST"
+            ]
+          ]
+        }
+      ]
+    },
+    "looks_setsizeto": {
+      "opcode": "looks_setsizeto",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "set size to %1 %",
+        "ja": "大きさを %1 %にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SIZE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SIZE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 100
+        }
+      ],
+      "fields": []
+    },
+    "looks_setstretchto": {
+      "opcode": "looks_setstretchto",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "set stretch to %1 %",
+        "ja": "伸びを %1 %にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "STRETCH"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "STRETCH",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "looks_show": {
+      "opcode": "looks_show",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "show",
+        "ja": "表示する"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "looks_size": {
+      "opcode": "looks_size",
+      "category": "looks",
+      "shape": "reporter",
+      "text": {
+        "en": "size",
+        "ja": "大きさ"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "looks_switchbackdropto": {
+      "opcode": "looks_switchbackdropto",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "switch backdrop to %1",
+        "ja": "背景を %1 にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "BACKDROP"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "BACKDROP",
+          "kind": "costume",
+          "shadowOpcode": "looks_backdrops",
+          "shadowField": "BACKDROP"
+        }
+      ],
+      "fields": []
+    },
+    "looks_switchbackdroptoandwait": {
+      "opcode": "looks_switchbackdroptoandwait",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "switch backdrop to %1 and wait",
+        "ja": "背景を %1 にして待つ"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "BACKDROP"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "BACKDROP",
+          "kind": "costume",
+          "shadowOpcode": "looks_backdrops",
+          "shadowField": "BACKDROP"
+        }
+      ],
+      "fields": []
+    },
+    "looks_switchcostumeto": {
+      "opcode": "looks_switchcostumeto",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "switch costume to %1",
+        "ja": "コスチュームを %1 にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "COSTUME"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "COSTUME",
+          "kind": "costume",
+          "shadowOpcode": "looks_costume",
+          "shadowField": "COSTUME"
+        }
+      ],
+      "fields": []
+    },
+    "looks_think": {
+      "opcode": "looks_think",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "think %1",
+        "ja": "%1 と考える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "MESSAGE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "MESSAGE",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "Hmm..."
+        }
+      ],
+      "fields": []
+    },
+    "looks_thinkforsecs": {
+      "opcode": "looks_thinkforsecs",
+      "category": "looks",
+      "shape": "stack",
+      "text": {
+        "en": "think %1 for %2 seconds",
+        "ja": "%1 と %2 秒考える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "MESSAGE"
+        },
+        {
+          "kind": "input",
+          "input": "SECS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "MESSAGE",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "Hmm..."
+        },
+        {
+          "name": "SECS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 2
+        }
+      ],
+      "fields": []
+    },
+    "makeymakey_menu_KEY": {
+      "opcode": "makeymakey_menu_KEY",
+      "category": "makeymakey",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "KEY"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "KEY",
+          "kind": "dropdown",
+          "options": [
+            [
+              "space",
+              "SPACE"
+            ],
+            [
+              "up arrow",
+              "UP"
+            ],
+            [
+              "down arrow",
+              "DOWN"
+            ],
+            [
+              "right arrow",
+              "RIGHT"
+            ],
+            [
+              "left arrow",
+              "LEFT"
+            ],
+            [
+              "w",
+              "w"
+            ],
+            [
+              "a",
+              "a"
+            ],
+            [
+              "s",
+              "s"
+            ],
+            [
+              "d",
+              "d"
+            ],
+            [
+              "f",
+              "f"
+            ],
+            [
+              "g",
+              "g"
+            ]
+          ]
+        }
+      ],
+      "extension": "makeymakey",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "makeymakey_menu_SEQUENCE": {
+      "opcode": "makeymakey_menu_SEQUENCE",
+      "category": "makeymakey",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "SEQUENCE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "SEQUENCE",
+          "kind": "dropdown",
+          "options": [
+            [
+              "left up right",
+              "LEFT UP RIGHT"
+            ],
+            [
+              "right up left",
+              "RIGHT UP LEFT"
+            ],
+            [
+              "left right",
+              "LEFT RIGHT"
+            ],
+            [
+              "right left",
+              "RIGHT LEFT"
+            ],
+            [
+              "up down",
+              "UP DOWN"
+            ],
+            [
+              "down up",
+              "DOWN UP"
+            ],
+            [
+              "up right down left",
+              "UP RIGHT DOWN LEFT"
+            ],
+            [
+              "up left down right",
+              "UP LEFT DOWN RIGHT"
+            ],
+            [
+              "up up down down left right left right",
+              "UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT"
+            ]
+          ]
+        }
+      ],
+      "extension": "makeymakey",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "makeymakey_whenCodePressed": {
+      "opcode": "makeymakey_whenCodePressed",
+      "category": "makeymakey",
+      "shape": "hat",
+      "text": {
+        "en": "when %1 pressed in order",
+        "ja": "%1が順番に押されたとき"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SEQUENCE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SEQUENCE",
+          "kind": "menu",
+          "shadowOpcode": "makeymakey_menu_SEQUENCE",
+          "shadowField": "SEQUENCE",
+          "default": "LEFT UP RIGHT"
+        }
+      ],
+      "fields": [],
+      "extension": "makeymakey"
+    },
+    "makeymakey_whenMakeyKeyPressed": {
+      "opcode": "makeymakey_whenMakeyKeyPressed",
+      "category": "makeymakey",
+      "shape": "hat",
+      "text": {
+        "en": "when %1 key pressed",
+        "ja": "%1キーが押されたとき"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "KEY"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "KEY",
+          "kind": "menu",
+          "shadowOpcode": "makeymakey_menu_KEY",
+          "shadowField": "KEY",
+          "default": "SPACE"
+        }
+      ],
+      "fields": [],
+      "extension": "makeymakey"
+    },
+    "math_angle": {
+      "opcode": "math_angle",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NUM"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NUM",
+          "kind": "angle"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "math_integer": {
+      "opcode": "math_integer",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NUM"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NUM",
+          "kind": "number"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "math_number": {
+      "opcode": "math_number",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NUM"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NUM",
+          "kind": "number"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "math_positive_number": {
+      "opcode": "math_positive_number",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NUM"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NUM",
+          "kind": "number"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "math_whole_number": {
+      "opcode": "math_whole_number",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NUM"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NUM",
+          "kind": "number"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "matrix": {
+      "opcode": "matrix",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "MATRIX"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "MATRIX",
+          "kind": "other"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "motion_align_scene": {
+      "opcode": "motion_align_scene",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "align scene %1",
+        "ja": "スクロール位置を %1 にする"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "ALIGNMENT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "ALIGNMENT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "bottom-left",
+              "bottom-left"
+            ],
+            [
+              "bottom-right",
+              "bottom-right"
+            ],
+            [
+              "middle",
+              "middle"
+            ],
+            [
+              "top-left",
+              "top-left"
+            ],
+            [
+              "top-right",
+              "top-right"
+            ]
+          ]
+        }
+      ],
+      "hidden": true
+    },
+    "motion_changexby": {
+      "opcode": "motion_changexby",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "change x by %1",
+        "ja": "x座標を %1 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DX"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DX",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": []
+    },
+    "motion_changeyby": {
+      "opcode": "motion_changeyby",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "change y by %1",
+        "ja": "y座標を %1 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DY"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DY",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": []
+    },
+    "motion_direction": {
+      "opcode": "motion_direction",
+      "category": "motion",
+      "shape": "reporter",
+      "text": {
+        "en": "direction",
+        "ja": "向き"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "motion_glidesecstoxy": {
+      "opcode": "motion_glidesecstoxy",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "glide %1 secs to x: %2 y: %3",
+        "ja": "%1 秒でx座標を %2 に、y座標を %3 に変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SECS"
+        },
+        {
+          "kind": "input",
+          "input": "X"
+        },
+        {
+          "kind": "input",
+          "input": "Y"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SECS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        },
+        {
+          "name": "X",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0
+        },
+        {
+          "name": "Y",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0
+        }
+      ],
+      "fields": []
+    },
+    "motion_glideto": {
+      "opcode": "motion_glideto",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "glide %1 secs to %2",
+        "ja": "%1 秒で %2 へ行く"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SECS"
+        },
+        {
+          "kind": "input",
+          "input": "TO"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SECS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        },
+        {
+          "name": "TO",
+          "kind": "menu",
+          "shadowOpcode": "motion_glideto_menu"
+        }
+      ],
+      "fields": []
+    },
+    "motion_glideto_menu": {
+      "opcode": "motion_glideto_menu",
+      "category": "motion",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TO"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TO",
+          "kind": "dropdown",
+          "options": [
+            [
+              "mouse-pointer",
+              "_mouse_"
+            ],
+            [
+              "random position",
+              "_random_"
+            ]
+          ],
+          "dynamic": "sprites"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "motion_goto": {
+      "opcode": "motion_goto",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "go to %1",
+        "ja": "%1 へ行く"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TO"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TO",
+          "kind": "menu",
+          "shadowOpcode": "motion_goto_menu"
+        }
+      ],
+      "fields": []
+    },
+    "motion_goto_menu": {
+      "opcode": "motion_goto_menu",
+      "category": "motion",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TO"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TO",
+          "kind": "dropdown",
+          "options": [
+            [
+              "mouse-pointer",
+              "_mouse_"
+            ],
+            [
+              "random position",
+              "_random_"
+            ]
+          ],
+          "dynamic": "sprites"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "motion_gotoxy": {
+      "opcode": "motion_gotoxy",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "go to x: %1 y: %2",
+        "ja": "x座標を %1 、y座標を %2 にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "X"
+        },
+        {
+          "kind": "input",
+          "input": "Y"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "X",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0
+        },
+        {
+          "name": "Y",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0
+        }
+      ],
+      "fields": []
+    },
+    "motion_ifonedgebounce": {
+      "opcode": "motion_ifonedgebounce",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "if on edge, bounce",
+        "ja": "もし端に着いたら、跳ね返る"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "motion_movesteps": {
+      "opcode": "motion_movesteps",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "move %1 steps",
+        "ja": "%1 歩動かす"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "STEPS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "STEPS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": []
+    },
+    "motion_pointindirection": {
+      "opcode": "motion_pointindirection",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "point in direction %1",
+        "ja": "%1 度に向ける"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DIRECTION"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DIRECTION",
+          "kind": "angle",
+          "shadowOpcode": "math_angle",
+          "shadowField": "NUM",
+          "default": 90
+        }
+      ],
+      "fields": []
+    },
+    "motion_pointtowards": {
+      "opcode": "motion_pointtowards",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "point towards %1",
+        "ja": "%1 へ向ける"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TOWARDS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TOWARDS",
+          "kind": "menu",
+          "shadowOpcode": "motion_pointtowards_menu"
+        }
+      ],
+      "fields": []
+    },
+    "motion_pointtowards_menu": {
+      "opcode": "motion_pointtowards_menu",
+      "category": "motion",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TOWARDS"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TOWARDS",
+          "kind": "dropdown",
+          "options": [
+            [
+              "mouse-pointer",
+              "_mouse_"
+            ],
+            [
+              "random direction",
+              "_random_"
+            ]
+          ],
+          "dynamic": "sprites"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "motion_scroll_right": {
+      "opcode": "motion_scroll_right",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "scroll right %1",
+        "ja": "右に %1 スクロールする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DISTANCE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DISTANCE",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "motion_scroll_up": {
+      "opcode": "motion_scroll_up",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "scroll up %1",
+        "ja": "上に %1 スクロールする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DISTANCE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DISTANCE",
+          "kind": "any"
+        }
+      ],
+      "fields": [],
+      "hidden": true
+    },
+    "motion_setrotationstyle": {
+      "opcode": "motion_setrotationstyle",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "set rotation style %1",
+        "ja": "回転方法を %1 にする"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "STYLE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "STYLE",
+          "kind": "dropdown",
+          "options": [
+            [
+              "left-right",
+              "left-right"
+            ],
+            [
+              "don't rotate",
+              "don't rotate"
+            ],
+            [
+              "all around",
+              "all around"
+            ]
+          ]
+        }
+      ]
+    },
+    "motion_setx": {
+      "opcode": "motion_setx",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "set x to %1",
+        "ja": "x座標を %1 にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "X"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "X",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0
+        }
+      ],
+      "fields": []
+    },
+    "motion_sety": {
+      "opcode": "motion_sety",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "set y to %1",
+        "ja": "y座標を %1 にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "Y"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "Y",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0
+        }
+      ],
+      "fields": []
+    },
+    "motion_turnleft": {
+      "opcode": "motion_turnleft",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "turn %1 degrees",
+        "ja": "%1 度回す"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DEGREES"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DEGREES",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 15
+        }
+      ],
+      "fields": []
+    },
+    "motion_turnright": {
+      "opcode": "motion_turnright",
+      "category": "motion",
+      "shape": "stack",
+      "text": {
+        "en": "turn %1 degrees",
+        "ja": "%1 度回す"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DEGREES"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DEGREES",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 15
+        }
+      ],
+      "fields": []
+    },
+    "motion_xposition": {
+      "opcode": "motion_xposition",
+      "category": "motion",
+      "shape": "reporter",
+      "text": {
+        "en": "x position",
+        "ja": "x座標"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "motion_xscroll": {
+      "opcode": "motion_xscroll",
+      "category": "motion",
+      "shape": "reporter",
+      "text": {
+        "en": "x scroll",
+        "ja": "x方向のスクロール量"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "motion_yposition": {
+      "opcode": "motion_yposition",
+      "category": "motion",
+      "shape": "reporter",
+      "text": {
+        "en": "y position",
+        "ja": "y座標"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "motion_yscroll": {
+      "opcode": "motion_yscroll",
+      "category": "motion",
+      "shape": "reporter",
+      "text": {
+        "en": "y scroll",
+        "ja": "y方向のスクロール方向"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "music_changeTempo": {
+      "opcode": "music_changeTempo",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "change tempo by %1",
+        "ja": "テンポを%1ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TEMPO"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TEMPO",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 20
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_getTempo": {
+      "opcode": "music_getTempo",
+      "category": "music",
+      "shape": "reporter",
+      "text": {
+        "en": "tempo",
+        "ja": "テンポ"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_menu_DRUM": {
+      "opcode": "music_menu_DRUM",
+      "category": "music",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "DRUM"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "DRUM",
+          "kind": "dropdown",
+          "options": [
+            [
+              "(1) Snare Drum",
+              "1"
+            ],
+            [
+              "(2) Bass Drum",
+              "2"
+            ],
+            [
+              "(3) Side Stick",
+              "3"
+            ],
+            [
+              "(4) Crash Cymbal",
+              "4"
+            ],
+            [
+              "(5) Open Hi-Hat",
+              "5"
+            ],
+            [
+              "(6) Closed Hi-Hat",
+              "6"
+            ],
+            [
+              "(7) Tambourine",
+              "7"
+            ],
+            [
+              "(8) Hand Clap",
+              "8"
+            ],
+            [
+              "(9) Claves",
+              "9"
+            ],
+            [
+              "(10) Wood Block",
+              "10"
+            ],
+            [
+              "(11) Cowbell",
+              "11"
+            ],
+            [
+              "(12) Triangle",
+              "12"
+            ],
+            [
+              "(13) Bongo",
+              "13"
+            ],
+            [
+              "(14) Conga",
+              "14"
+            ],
+            [
+              "(15) Cabasa",
+              "15"
+            ],
+            [
+              "(16) Guiro",
+              "16"
+            ],
+            [
+              "(17) Vibraslap",
+              "17"
+            ],
+            [
+              "(18) Cuica",
+              "18"
+            ]
+          ]
+        }
+      ],
+      "extension": "music",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "music_menu_INSTRUMENT": {
+      "opcode": "music_menu_INSTRUMENT",
+      "category": "music",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "INSTRUMENT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "INSTRUMENT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "(1) Piano",
+              "1"
+            ],
+            [
+              "(2) Electric Piano",
+              "2"
+            ],
+            [
+              "(3) Organ",
+              "3"
+            ],
+            [
+              "(4) Guitar",
+              "4"
+            ],
+            [
+              "(5) Electric Guitar",
+              "5"
+            ],
+            [
+              "(6) Bass",
+              "6"
+            ],
+            [
+              "(7) Pizzicato",
+              "7"
+            ],
+            [
+              "(8) Cello",
+              "8"
+            ],
+            [
+              "(9) Trombone",
+              "9"
+            ],
+            [
+              "(10) Clarinet",
+              "10"
+            ],
+            [
+              "(11) Saxophone",
+              "11"
+            ],
+            [
+              "(12) Flute",
+              "12"
+            ],
+            [
+              "(13) Wooden Flute",
+              "13"
+            ],
+            [
+              "(14) Bassoon",
+              "14"
+            ],
+            [
+              "(15) Choir",
+              "15"
+            ],
+            [
+              "(16) Vibraphone",
+              "16"
+            ],
+            [
+              "(17) Music Box",
+              "17"
+            ],
+            [
+              "(18) Steel Drum",
+              "18"
+            ],
+            [
+              "(19) Marimba",
+              "19"
+            ],
+            [
+              "(20) Synth Lead",
+              "20"
+            ],
+            [
+              "(21) Synth Pad",
+              "21"
+            ]
+          ]
+        }
+      ],
+      "extension": "music",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "music_midiPlayDrumForBeats": {
+      "opcode": "music_midiPlayDrumForBeats",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "play drum %1 for %2 beats",
+        "ja": "%1のドラムを%2拍鳴らす"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DRUM"
+        },
+        {
+          "kind": "input",
+          "input": "BEATS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DRUM",
+          "kind": "menu",
+          "shadowOpcode": "music_menu_DRUM",
+          "shadowField": "DRUM",
+          "default": 1
+        },
+        {
+          "name": "BEATS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0.25
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_midiSetInstrument": {
+      "opcode": "music_midiSetInstrument",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "set instrument to %1",
+        "ja": "楽器を%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "INSTRUMENT"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "INSTRUMENT",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_playDrumForBeats": {
+      "opcode": "music_playDrumForBeats",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "play drum %1 for %2 beats",
+        "ja": "%1のドラムを%2拍鳴らす"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DRUM"
+        },
+        {
+          "kind": "input",
+          "input": "BEATS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DRUM",
+          "kind": "menu",
+          "shadowOpcode": "music_menu_DRUM",
+          "shadowField": "DRUM",
+          "default": 1
+        },
+        {
+          "name": "BEATS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0.25
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_playNoteForBeats": {
+      "opcode": "music_playNoteForBeats",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "play note %1 for %2 beats",
+        "ja": "%1の音符を%2拍鳴らす"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NOTE"
+        },
+        {
+          "kind": "input",
+          "input": "BEATS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NOTE",
+          "kind": "note",
+          "shadowOpcode": "note",
+          "shadowField": "NOTE",
+          "default": 60
+        },
+        {
+          "name": "BEATS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0.25
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_restForBeats": {
+      "opcode": "music_restForBeats",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "rest for %1 beats",
+        "ja": "%1拍休む"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "BEATS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "BEATS",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 0.25
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_setInstrument": {
+      "opcode": "music_setInstrument",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "set instrument to %1",
+        "ja": "楽器を%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "INSTRUMENT"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "INSTRUMENT",
+          "kind": "menu",
+          "shadowOpcode": "music_menu_INSTRUMENT",
+          "shadowField": "INSTRUMENT",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "music_setTempo": {
+      "opcode": "music_setTempo",
+      "category": "music",
+      "shape": "stack",
+      "text": {
+        "en": "set tempo to %1",
+        "ja": "テンポを%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TEMPO"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TEMPO",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 60
+        }
+      ],
+      "fields": [],
+      "extension": "music"
+    },
+    "note": {
+      "opcode": "note",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "NOTE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "NOTE",
+          "kind": "other"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "operator_add": {
+      "opcode": "operator_add",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "%1 + %2",
+        "ja": "%1 + %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NUM1"
+        },
+        {
+          "kind": "input",
+          "input": "NUM2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM1",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        },
+        {
+          "name": "NUM2",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        }
+      ],
+      "fields": []
+    },
+    "operator_and": {
+      "opcode": "operator_and",
+      "category": "operators",
+      "shape": "boolean",
+      "text": {
+        "en": "%1 and %2",
+        "ja": "%1 かつ %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "OPERAND1"
+        },
+        {
+          "kind": "input",
+          "input": "OPERAND2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "OPERAND1",
+          "kind": "boolean"
+        },
+        {
+          "name": "OPERAND2",
+          "kind": "boolean"
+        }
+      ],
+      "fields": []
+    },
+    "operator_contains": {
+      "opcode": "operator_contains",
+      "category": "operators",
+      "shape": "boolean",
+      "text": {
+        "en": "%1 contains %2?",
+        "ja": "%1 に %2 が含まれる"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "STRING1"
+        },
+        {
+          "kind": "input",
+          "input": "STRING2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "STRING1",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "apple"
+        },
+        {
+          "name": "STRING2",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "a"
+        }
+      ],
+      "fields": []
+    },
+    "operator_divide": {
+      "opcode": "operator_divide",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "%1 / %2",
+        "ja": "%1 / %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NUM1"
+        },
+        {
+          "kind": "input",
+          "input": "NUM2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM1",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        },
+        {
+          "name": "NUM2",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        }
+      ],
+      "fields": []
+    },
+    "operator_equals": {
+      "opcode": "operator_equals",
+      "category": "operators",
+      "shape": "boolean",
+      "text": {
+        "en": "%1 = %2",
+        "ja": "%1 = %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "OPERAND1"
+        },
+        {
+          "kind": "input",
+          "input": "OPERAND2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "OPERAND1",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT"
+        },
+        {
+          "name": "OPERAND2",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": 50
+        }
+      ],
+      "fields": []
+    },
+    "operator_gt": {
+      "opcode": "operator_gt",
+      "category": "operators",
+      "shape": "boolean",
+      "text": {
+        "en": "%1 > %2",
+        "ja": "%1 > %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "OPERAND1"
+        },
+        {
+          "kind": "input",
+          "input": "OPERAND2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "OPERAND1",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT"
+        },
+        {
+          "name": "OPERAND2",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": 50
+        }
+      ],
+      "fields": []
+    },
+    "operator_join": {
+      "opcode": "operator_join",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "join %1 %2",
+        "ja": "%1 と %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "STRING1"
+        },
+        {
+          "kind": "input",
+          "input": "STRING2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "STRING1",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "apple "
+        },
+        {
+          "name": "STRING2",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "banana"
+        }
+      ],
+      "fields": []
+    },
+    "operator_length": {
+      "opcode": "operator_length",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "length of %1",
+        "ja": "%1 の長さ"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "STRING"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "STRING",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "apple"
+        }
+      ],
+      "fields": []
+    },
+    "operator_letter_of": {
+      "opcode": "operator_letter_of",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "letter %1 of %2",
+        "ja": "%2 の %1 番目の文字"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "LETTER"
+        },
+        {
+          "kind": "input",
+          "input": "STRING"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "LETTER",
+          "kind": "whole_number",
+          "shadowOpcode": "math_whole_number",
+          "shadowField": "NUM",
+          "default": 1
+        },
+        {
+          "name": "STRING",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "apple"
+        }
+      ],
+      "fields": []
+    },
+    "operator_lt": {
+      "opcode": "operator_lt",
+      "category": "operators",
+      "shape": "boolean",
+      "text": {
+        "en": "%1 < %2",
+        "ja": "%1 < %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "OPERAND1"
+        },
+        {
+          "kind": "input",
+          "input": "OPERAND2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "OPERAND1",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT"
+        },
+        {
+          "name": "OPERAND2",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": 50
+        }
+      ],
+      "fields": []
+    },
+    "operator_mathop": {
+      "opcode": "operator_mathop",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "%1 of %2",
+        "ja": "%2 の %1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "OPERATOR"
+        },
+        {
+          "kind": "input",
+          "input": "NUM"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        }
+      ],
+      "fields": [
+        {
+          "name": "OPERATOR",
+          "kind": "dropdown",
+          "options": [
+            [
+              "abs",
+              "abs"
+            ],
+            [
+              "floor",
+              "floor"
+            ],
+            [
+              "ceiling",
+              "ceiling"
+            ],
+            [
+              "sqrt",
+              "sqrt"
+            ],
+            [
+              "sin",
+              "sin"
+            ],
+            [
+              "cos",
+              "cos"
+            ],
+            [
+              "tan",
+              "tan"
+            ],
+            [
+              "asin",
+              "asin"
+            ],
+            [
+              "acos",
+              "acos"
+            ],
+            [
+              "atan",
+              "atan"
+            ],
+            [
+              "ln",
+              "ln"
+            ],
+            [
+              "log",
+              "log"
+            ],
+            [
+              "e ^",
+              "e ^"
+            ],
+            [
+              "10 ^",
+              "10 ^"
+            ]
+          ]
+        }
+      ]
+    },
+    "operator_mod": {
+      "opcode": "operator_mod",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "%1 mod %2",
+        "ja": "%1 を %2 で割った余り"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NUM1"
+        },
+        {
+          "kind": "input",
+          "input": "NUM2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM1",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        },
+        {
+          "name": "NUM2",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        }
+      ],
+      "fields": []
+    },
+    "operator_multiply": {
+      "opcode": "operator_multiply",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "%1 * %2",
+        "ja": "%1 * %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NUM1"
+        },
+        {
+          "kind": "input",
+          "input": "NUM2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM1",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        },
+        {
+          "name": "NUM2",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        }
+      ],
+      "fields": []
+    },
+    "operator_not": {
+      "opcode": "operator_not",
+      "category": "operators",
+      "shape": "boolean",
+      "text": {
+        "en": "not %1",
+        "ja": "%1 ではない"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "OPERAND"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "OPERAND",
+          "kind": "boolean"
+        }
+      ],
+      "fields": []
+    },
+    "operator_or": {
+      "opcode": "operator_or",
+      "category": "operators",
+      "shape": "boolean",
+      "text": {
+        "en": "%1 or %2",
+        "ja": "%1 または %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "OPERAND1"
+        },
+        {
+          "kind": "input",
+          "input": "OPERAND2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "OPERAND1",
+          "kind": "boolean"
+        },
+        {
+          "name": "OPERAND2",
+          "kind": "boolean"
+        }
+      ],
+      "fields": []
+    },
+    "operator_random": {
+      "opcode": "operator_random",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "pick random %1 to %2",
+        "ja": "%1 から %2 までの乱数"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "FROM"
+        },
+        {
+          "kind": "input",
+          "input": "TO"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "FROM",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        },
+        {
+          "name": "TO",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": []
+    },
+    "operator_round": {
+      "opcode": "operator_round",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "round %1",
+        "ja": "%1 を四捨五入"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NUM"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        }
+      ],
+      "fields": []
+    },
+    "operator_subtract": {
+      "opcode": "operator_subtract",
+      "category": "operators",
+      "shape": "reporter",
+      "text": {
+        "en": "%1 - %2",
+        "ja": "%1 - %2"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "NUM1"
+        },
+        {
+          "kind": "input",
+          "input": "NUM2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "NUM1",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        },
+        {
+          "name": "NUM2",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM"
+        }
+      ],
+      "fields": []
+    },
+    "pen_changePenColorParamBy": {
+      "opcode": "pen_changePenColorParamBy",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "change pen %1 by %2",
+        "ja": "ペンの%1を%2ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "COLOR_PARAM"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "COLOR_PARAM",
+          "kind": "menu",
+          "shadowOpcode": "pen_menu_colorParam",
+          "shadowField": "colorParam",
+          "default": "color"
+        },
+        {
+          "name": "VALUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_changePenHueBy": {
+      "opcode": "pen_changePenHueBy",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "change pen color by %1",
+        "ja": "ペンの色を%1ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "HUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "HUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_changePenShadeBy": {
+      "opcode": "pen_changePenShadeBy",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "change pen shade by %1",
+        "ja": "ペンの濃さを%1ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SHADE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SHADE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_changePenSizeBy": {
+      "opcode": "pen_changePenSizeBy",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "change pen size by %1",
+        "ja": "ペンの太さを%1ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SIZE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SIZE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_clear": {
+      "opcode": "pen_clear",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "erase all",
+        "ja": "全部消す"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_menu_colorParam": {
+      "opcode": "pen_menu_colorParam",
+      "category": "pen",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "colorParam"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "colorParam",
+          "kind": "dropdown",
+          "options": [
+            [
+              "color",
+              "color"
+            ],
+            [
+              "saturation",
+              "saturation"
+            ],
+            [
+              "brightness",
+              "brightness"
+            ],
+            [
+              "transparency",
+              "transparency"
+            ]
+          ]
+        }
+      ],
+      "extension": "pen",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "pen_penDown": {
+      "opcode": "pen_penDown",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "pen down",
+        "ja": "ペンを下ろす"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_penUp": {
+      "opcode": "pen_penUp",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "pen up",
+        "ja": "ペンを上げる"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_setPenColorParamTo": {
+      "opcode": "pen_setPenColorParamTo",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "set pen %1 to %2",
+        "ja": "ペンの%1を%2にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "COLOR_PARAM"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "COLOR_PARAM",
+          "kind": "menu",
+          "shadowOpcode": "pen_menu_colorParam",
+          "shadowField": "colorParam",
+          "default": "color"
+        },
+        {
+          "name": "VALUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 50
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_setPenColorToColor": {
+      "opcode": "pen_setPenColorToColor",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "set pen color to %1",
+        "ja": "ペンの色を%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "COLOR"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "COLOR",
+          "kind": "color",
+          "shadowOpcode": "colour_picker",
+          "shadowField": "COLOUR"
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_setPenHueToNumber": {
+      "opcode": "pen_setPenHueToNumber",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "set pen color to %1",
+        "ja": "ペンの色を%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "HUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "HUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_setPenShadeToNumber": {
+      "opcode": "pen_setPenShadeToNumber",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "set pen shade to %1",
+        "ja": "ペンの濃さを%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SHADE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SHADE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_setPenSizeTo": {
+      "opcode": "pen_setPenSizeTo",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "set pen size to %1",
+        "ja": "ペンの太さを%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SIZE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SIZE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 1
+        }
+      ],
+      "fields": [],
+      "extension": "pen"
+    },
+    "pen_stamp": {
+      "opcode": "pen_stamp",
+      "category": "pen",
+      "shape": "stack",
+      "text": {
+        "en": "stamp",
+        "ja": "スタンプ"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "extension": "pen"
+    },
+    "procedures_call": {
+      "opcode": "procedures_call",
+      "category": "procedures",
+      "shape": "stack",
+      "text": {
+        "en": ""
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "procedures_declaration": {
+      "opcode": "procedures_declaration",
+      "category": "procedures",
+      "shape": "prototype",
+      "text": {
+        "en": ""
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "procedures_definition": {
+      "opcode": "procedures_definition",
+      "category": "procedures",
+      "shape": "definition",
+      "text": {
+        "en": "define"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "procedures_prototype": {
+      "opcode": "procedures_prototype",
+      "category": "procedures",
+      "shape": "prototype",
+      "text": {
+        "en": ""
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "procedures_return": {
+      "opcode": "procedures_return",
+      "category": "procedures",
+      "shape": "cap",
+      "text": {
+        "en": "return %1"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT"
+        }
+      ],
+      "fields": []
+    },
+    "sensing_answer": {
+      "opcode": "sensing_answer",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "answer",
+        "ja": "答え"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_askandwait": {
+      "opcode": "sensing_askandwait",
+      "category": "sensing",
+      "shape": "stack",
+      "text": {
+        "en": "ask %1 and wait",
+        "ja": "%1 と聞いて待つ"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "QUESTION"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "QUESTION",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "What's your name?"
+        }
+      ],
+      "fields": []
+    },
+    "sensing_coloristouchingcolor": {
+      "opcode": "sensing_coloristouchingcolor",
+      "category": "sensing",
+      "shape": "boolean",
+      "text": {
+        "en": "color %1 is touching %2?",
+        "ja": "%1 色が %2 色に触れた"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "COLOR"
+        },
+        {
+          "kind": "input",
+          "input": "COLOR2"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "COLOR",
+          "kind": "color",
+          "shadowOpcode": "colour_picker"
+        },
+        {
+          "name": "COLOR2",
+          "kind": "color",
+          "shadowOpcode": "colour_picker"
+        }
+      ],
+      "fields": []
+    },
+    "sensing_current": {
+      "opcode": "sensing_current",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "current %1",
+        "ja": "現在の %1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "CURRENTMENU"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "CURRENTMENU",
+          "kind": "dropdown",
+          "options": [
+            [
+              "year",
+              "YEAR"
+            ],
+            [
+              "month",
+              "MONTH"
+            ],
+            [
+              "date",
+              "DATE"
+            ],
+            [
+              "day of week",
+              "DAYOFWEEK"
+            ],
+            [
+              "hour",
+              "HOUR"
+            ],
+            [
+              "minute",
+              "MINUTE"
+            ],
+            [
+              "second",
+              "SECOND"
+            ]
+          ]
+        }
+      ]
+    },
+    "sensing_dayssince2000": {
+      "opcode": "sensing_dayssince2000",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "days since 2000",
+        "ja": "2000年からの日数"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_distanceto": {
+      "opcode": "sensing_distanceto",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "distance to %1",
+        "ja": "%1 までの距離"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "DISTANCETOMENU"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "DISTANCETOMENU",
+          "kind": "menu",
+          "shadowOpcode": "sensing_distancetomenu"
+        }
+      ],
+      "fields": []
+    },
+    "sensing_distancetomenu": {
+      "opcode": "sensing_distancetomenu",
+      "category": "sensing",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "DISTANCETOMENU"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "DISTANCETOMENU",
+          "kind": "dropdown",
+          "options": [
+            [
+              "mouse-pointer",
+              "_mouse_"
+            ]
+          ],
+          "dynamic": "sprites"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "sensing_keyoptions": {
+      "opcode": "sensing_keyoptions",
+      "category": "sensing",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "KEY_OPTION"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "KEY_OPTION",
+          "kind": "dropdown",
+          "options": [
+            [
+              "space",
+              "space"
+            ],
+            [
+              "up arrow",
+              "up arrow"
+            ],
+            [
+              "down arrow",
+              "down arrow"
+            ],
+            [
+              "right arrow",
+              "right arrow"
+            ],
+            [
+              "left arrow",
+              "left arrow"
+            ],
+            [
+              "any",
+              "any"
+            ],
+            [
+              "a",
+              "a"
+            ],
+            [
+              "b",
+              "b"
+            ],
+            [
+              "c",
+              "c"
+            ],
+            [
+              "d",
+              "d"
+            ],
+            [
+              "e",
+              "e"
+            ],
+            [
+              "f",
+              "f"
+            ],
+            [
+              "g",
+              "g"
+            ],
+            [
+              "h",
+              "h"
+            ],
+            [
+              "i",
+              "i"
+            ],
+            [
+              "j",
+              "j"
+            ],
+            [
+              "k",
+              "k"
+            ],
+            [
+              "l",
+              "l"
+            ],
+            [
+              "m",
+              "m"
+            ],
+            [
+              "n",
+              "n"
+            ],
+            [
+              "o",
+              "o"
+            ],
+            [
+              "p",
+              "p"
+            ],
+            [
+              "q",
+              "q"
+            ],
+            [
+              "r",
+              "r"
+            ],
+            [
+              "s",
+              "s"
+            ],
+            [
+              "t",
+              "t"
+            ],
+            [
+              "u",
+              "u"
+            ],
+            [
+              "v",
+              "v"
+            ],
+            [
+              "w",
+              "w"
+            ],
+            [
+              "x",
+              "x"
+            ],
+            [
+              "y",
+              "y"
+            ],
+            [
+              "z",
+              "z"
+            ],
+            [
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "2"
+            ],
+            [
+              "3",
+              "3"
+            ],
+            [
+              "4",
+              "4"
+            ],
+            [
+              "5",
+              "5"
+            ],
+            [
+              "6",
+              "6"
+            ],
+            [
+              "7",
+              "7"
+            ],
+            [
+              "8",
+              "8"
+            ],
+            [
+              "9",
+              "9"
+            ]
+          ]
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "sensing_keypressed": {
+      "opcode": "sensing_keypressed",
+      "category": "sensing",
+      "shape": "boolean",
+      "text": {
+        "en": "key %1 pressed?",
+        "ja": "%1 キーが押された"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "KEY_OPTION"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "KEY_OPTION",
+          "kind": "menu",
+          "shadowOpcode": "sensing_keyoptions"
+        }
+      ],
+      "fields": []
+    },
+    "sensing_loud": {
+      "opcode": "sensing_loud",
+      "category": "sensing",
+      "shape": "boolean",
+      "text": {
+        "en": "loud?",
+        "ja": "うるさい"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "sensing_loudness": {
+      "opcode": "sensing_loudness",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "loudness",
+        "ja": "音量"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_mousedown": {
+      "opcode": "sensing_mousedown",
+      "category": "sensing",
+      "shape": "boolean",
+      "text": {
+        "en": "mouse down?",
+        "ja": "マウスが押された"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_mousex": {
+      "opcode": "sensing_mousex",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "mouse x",
+        "ja": "マウスのx座標"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_mousey": {
+      "opcode": "sensing_mousey",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "mouse y",
+        "ja": "マウスのy座標"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_of": {
+      "opcode": "sensing_of",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "%1 of %2",
+        "ja": "%2 の %1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "PROPERTY"
+        },
+        {
+          "kind": "input",
+          "input": "OBJECT"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "OBJECT",
+          "kind": "menu",
+          "shadowOpcode": "sensing_of_object_menu"
+        }
+      ],
+      "fields": [
+        {
+          "name": "PROPERTY",
+          "kind": "dropdown",
+          "options": [
+            [
+              "x position",
+              "x position"
+            ],
+            [
+              "y position",
+              "y position"
+            ],
+            [
+              "direction",
+              "direction"
+            ],
+            [
+              "costume #",
+              "costume #"
+            ],
+            [
+              "costume name",
+              "costume name"
+            ],
+            [
+              "size",
+              "size"
+            ],
+            [
+              "volume",
+              "volume"
+            ],
+            [
+              "backdrop #",
+              "backdrop #"
+            ],
+            [
+              "backdrop name",
+              "backdrop name"
+            ]
+          ],
+          "dynamic": "other"
+        }
+      ]
+    },
+    "sensing_of_object_menu": {
+      "opcode": "sensing_of_object_menu",
+      "category": "sensing",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "OBJECT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "OBJECT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "Sprite1",
+              "Sprite1"
+            ],
+            [
+              "Stage",
+              "_stage_"
+            ]
+          ],
+          "dynamic": "sprites+stage"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "sensing_online": {
+      "opcode": "sensing_online",
+      "category": "sensing",
+      "shape": "boolean",
+      "text": {
+        "en": "online?"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_resettimer": {
+      "opcode": "sensing_resettimer",
+      "category": "sensing",
+      "shape": "stack",
+      "text": {
+        "en": "reset timer",
+        "ja": "タイマーをリセット"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_setdragmode": {
+      "opcode": "sensing_setdragmode",
+      "category": "sensing",
+      "shape": "stack",
+      "text": {
+        "en": "set drag mode %1",
+        "ja": "ドラッグ %1 ようにする"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "DRAG_MODE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "DRAG_MODE",
+          "kind": "dropdown",
+          "options": [
+            [
+              "draggable",
+              "draggable"
+            ],
+            [
+              "not draggable",
+              "not draggable"
+            ]
+          ]
+        }
+      ]
+    },
+    "sensing_timer": {
+      "opcode": "sensing_timer",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "timer",
+        "ja": "タイマー"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sensing_touchingcolor": {
+      "opcode": "sensing_touchingcolor",
+      "category": "sensing",
+      "shape": "boolean",
+      "text": {
+        "en": "touching color %1?",
+        "ja": "%1 色に触れた"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "COLOR"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "COLOR",
+          "kind": "color",
+          "shadowOpcode": "colour_picker"
+        }
+      ],
+      "fields": []
+    },
+    "sensing_touchingobject": {
+      "opcode": "sensing_touchingobject",
+      "category": "sensing",
+      "shape": "boolean",
+      "text": {
+        "en": "touching %1?",
+        "ja": "%1 に触れた"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TOUCHINGOBJECTMENU"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TOUCHINGOBJECTMENU",
+          "kind": "menu",
+          "shadowOpcode": "sensing_touchingobjectmenu"
+        }
+      ],
+      "fields": []
+    },
+    "sensing_touchingobjectmenu": {
+      "opcode": "sensing_touchingobjectmenu",
+      "category": "sensing",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TOUCHINGOBJECTMENU"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TOUCHINGOBJECTMENU",
+          "kind": "dropdown",
+          "options": [
+            [
+              "mouse-pointer",
+              "_mouse_"
+            ],
+            [
+              "edge",
+              "_edge_"
+            ]
+          ],
+          "dynamic": "sprites"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "sensing_userid": {
+      "opcode": "sensing_userid",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "user id",
+        "ja": "ユーザーID"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "hidden": true
+    },
+    "sensing_username": {
+      "opcode": "sensing_username",
+      "category": "sensing",
+      "shape": "reporter",
+      "text": {
+        "en": "username",
+        "ja": "ユーザー名"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sound_changeeffectby": {
+      "opcode": "sound_changeeffectby",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "change %1 effect by %2",
+        "ja": "%1 の効果を %2 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "EFFECT"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": [
+        {
+          "name": "EFFECT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "pitch",
+              "PITCH"
+            ],
+            [
+              "pan left/right",
+              "PAN"
+            ]
+          ]
+        }
+      ]
+    },
+    "sound_changevolumeby": {
+      "opcode": "sound_changevolumeby",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "change volume by %1",
+        "ja": "音量を %1 ずつ変える"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "VOLUME"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VOLUME",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": -10
+        }
+      ],
+      "fields": []
+    },
+    "sound_cleareffects": {
+      "opcode": "sound_cleareffects",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "clear sound effects",
+        "ja": "音の効果をなくす"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sound_play": {
+      "opcode": "sound_play",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "start sound %1",
+        "ja": "%1 の音を鳴らす"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SOUND_MENU"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SOUND_MENU",
+          "kind": "sound",
+          "shadowOpcode": "sound_sounds_menu",
+          "shadowField": "SOUND_MENU"
+        }
+      ],
+      "fields": []
+    },
+    "sound_playuntildone": {
+      "opcode": "sound_playuntildone",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "play sound %1 until done",
+        "ja": "終わるまで %1 の音を鳴らす"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "SOUND_MENU"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "SOUND_MENU",
+          "kind": "sound",
+          "shadowOpcode": "sound_sounds_menu",
+          "shadowField": "SOUND_MENU"
+        }
+      ],
+      "fields": []
+    },
+    "sound_seteffectto": {
+      "opcode": "sound_seteffectto",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "set %1 effect to %2",
+        "ja": "%1 の効果を %2 にする"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "EFFECT"
+        },
+        {
+          "kind": "input",
+          "input": "VALUE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VALUE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 100
+        }
+      ],
+      "fields": [
+        {
+          "name": "EFFECT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "pitch",
+              "PITCH"
+            ],
+            [
+              "pan left/right",
+              "PAN"
+            ]
+          ]
+        }
+      ]
+    },
+    "sound_setvolumeto": {
+      "opcode": "sound_setvolumeto",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "set volume to %1%",
+        "ja": "音量を %1 %にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "VOLUME"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VOLUME",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 100
+        }
+      ],
+      "fields": []
+    },
+    "sound_sounds_menu": {
+      "opcode": "sound_sounds_menu",
+      "category": "sound",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "SOUND_MENU"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "SOUND_MENU",
+          "kind": "dropdown",
+          "options": [
+            [
+              "1",
+              "0"
+            ],
+            [
+              "2",
+              "1"
+            ],
+            [
+              "3",
+              "2"
+            ],
+            [
+              "4",
+              "3"
+            ],
+            [
+              "5",
+              "4"
+            ],
+            [
+              "6",
+              "5"
+            ],
+            [
+              "7",
+              "6"
+            ],
+            [
+              "8",
+              "7"
+            ],
+            [
+              "9",
+              "8"
+            ],
+            [
+              "10",
+              "9"
+            ],
+            [
+              "call a function",
+              "function() {\n              window.alert('function called!');}"
+            ]
+          ],
+          "dynamic": "sounds"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "sound_stopallsounds": {
+      "opcode": "sound_stopallsounds",
+      "category": "sound",
+      "shape": "stack",
+      "text": {
+        "en": "stop all sounds",
+        "ja": "すべての音を止める"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "sound_volume": {
+      "opcode": "sound_volume",
+      "category": "sound",
+      "shape": "reporter",
+      "text": {
+        "en": "volume",
+        "ja": "音量"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": []
+    },
+    "text": {
+      "opcode": "text",
+      "category": "literals",
+      "shape": "reporter",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "TEXT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "TEXT",
+          "kind": "text"
+        }
+      ],
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "text2speech_menu_languages": {
+      "opcode": "text2speech_menu_languages",
+      "category": "text2speech",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "languages"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "languages",
+          "kind": "dropdown",
+          "options": [
+            [
+              "Arabic",
+              "ar"
+            ],
+            [
+              "Chinese (Simplified)",
+              "zh-cn"
+            ],
+            [
+              "Danish",
+              "da"
+            ],
+            [
+              "Dutch",
+              "nl"
+            ],
+            [
+              "English",
+              "en"
+            ],
+            [
+              "French",
+              "fr"
+            ],
+            [
+              "German",
+              "de"
+            ],
+            [
+              "Hindi",
+              "hi"
+            ],
+            [
+              "Icelandic",
+              "is"
+            ],
+            [
+              "Italian",
+              "it"
+            ],
+            [
+              "Japanese",
+              "ja"
+            ],
+            [
+              "Korean",
+              "ko"
+            ],
+            [
+              "Norwegian",
+              "nb"
+            ],
+            [
+              "Polish",
+              "pl"
+            ],
+            [
+              "Portuguese (Brazilian)",
+              "pt-br"
+            ],
+            [
+              "Portuguese",
+              "pt"
+            ],
+            [
+              "Romanian",
+              "ro"
+            ],
+            [
+              "Russian",
+              "ru"
+            ],
+            [
+              "Spanish",
+              "es"
+            ],
+            [
+              "Spanish (Latin American)",
+              "es-419"
+            ],
+            [
+              "Swedish",
+              "sv"
+            ],
+            [
+              "Turkish",
+              "tr"
+            ],
+            [
+              "Welsh",
+              "cy"
+            ]
+          ]
+        }
+      ],
+      "extension": "text2speech",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "text2speech_menu_voices": {
+      "opcode": "text2speech_menu_voices",
+      "category": "text2speech",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "voices"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "voices",
+          "kind": "dropdown",
+          "options": [
+            [
+              "alto",
+              "ALTO"
+            ],
+            [
+              "tenor",
+              "TENOR"
+            ],
+            [
+              "squeak",
+              "SQUEAK"
+            ],
+            [
+              "giant",
+              "GIANT"
+            ],
+            [
+              "kitten",
+              "KITTEN"
+            ]
+          ]
+        }
+      ],
+      "extension": "text2speech",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "text2speech_setLanguage": {
+      "opcode": "text2speech_setLanguage",
+      "category": "text2speech",
+      "shape": "stack",
+      "text": {
+        "en": "set language to %1",
+        "ja": "言語を%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "LANGUAGE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "LANGUAGE",
+          "kind": "menu",
+          "shadowOpcode": "text2speech_menu_languages",
+          "shadowField": "languages",
+          "default": "en"
+        }
+      ],
+      "fields": [],
+      "extension": "text2speech"
+    },
+    "text2speech_setVoice": {
+      "opcode": "text2speech_setVoice",
+      "category": "text2speech",
+      "shape": "stack",
+      "text": {
+        "en": "set voice to %1",
+        "ja": "声を%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "VOICE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VOICE",
+          "kind": "menu",
+          "shadowOpcode": "text2speech_menu_voices",
+          "shadowField": "voices",
+          "default": "ALTO"
+        }
+      ],
+      "fields": [],
+      "extension": "text2speech"
+    },
+    "text2speech_speakAndWait": {
+      "opcode": "text2speech_speakAndWait",
+      "category": "text2speech",
+      "shape": "stack",
+      "text": {
+        "en": "speak %1",
+        "ja": "%1としゃべる"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "WORDS"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "WORDS",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "hello"
+        }
+      ],
+      "fields": [],
+      "extension": "text2speech"
+    },
+    "translate_getTranslate": {
+      "opcode": "translate_getTranslate",
+      "category": "translate",
+      "shape": "reporter",
+      "text": {
+        "en": "translate %1 to %2",
+        "ja": "%1を%2に翻訳する"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "WORDS"
+        },
+        {
+          "kind": "input",
+          "input": "LANGUAGE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "WORDS",
+          "kind": "text",
+          "shadowOpcode": "text",
+          "shadowField": "TEXT",
+          "default": "hello"
+        },
+        {
+          "name": "LANGUAGE",
+          "kind": "menu",
+          "shadowOpcode": "translate_menu_languages",
+          "shadowField": "languages"
+        }
+      ],
+      "fields": [],
+      "extension": "translate"
+    },
+    "translate_getViewerLanguage": {
+      "opcode": "translate_getViewerLanguage",
+      "category": "translate",
+      "shape": "reporter",
+      "text": {
+        "en": "language",
+        "ja": "言語"
+      },
+      "args": [],
+      "inputs": [],
+      "fields": [],
+      "extension": "translate"
+    },
+    "translate_menu_languages": {
+      "opcode": "translate_menu_languages",
+      "category": "translate",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "languages"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "languages",
+          "kind": "dropdown",
+          "options": [
+            [
+              "Amharic",
+              "am"
+            ],
+            [
+              "Arabic",
+              "ar"
+            ],
+            [
+              "Azerbaijani",
+              "az"
+            ],
+            [
+              "Basque",
+              "eu"
+            ],
+            [
+              "Bulgarian",
+              "bg"
+            ],
+            [
+              "Catalan",
+              "ca"
+            ],
+            [
+              "Chinese (Simplified)",
+              "zh-cn"
+            ],
+            [
+              "Chinese (Traditional)",
+              "zh-tw"
+            ],
+            [
+              "Croatian",
+              "hr"
+            ],
+            [
+              "Czech",
+              "cs"
+            ],
+            [
+              "Danish",
+              "da"
+            ],
+            [
+              "Dutch",
+              "nl"
+            ],
+            [
+              "English",
+              "en"
+            ],
+            [
+              "Estonian",
+              "et"
+            ],
+            [
+              "Finnish",
+              "fi"
+            ],
+            [
+              "French",
+              "fr"
+            ],
+            [
+              "Galician",
+              "gl"
+            ],
+            [
+              "German",
+              "de"
+            ],
+            [
+              "Greek",
+              "el"
+            ],
+            [
+              "Hebrew",
+              "he"
+            ],
+            [
+              "Hungarian",
+              "hu"
+            ],
+            [
+              "Icelandic",
+              "is"
+            ],
+            [
+              "Indonesian",
+              "id"
+            ],
+            [
+              "Irish Gaelic",
+              "ga"
+            ],
+            [
+              "Italian",
+              "it"
+            ],
+            [
+              "Japanese",
+              "ja"
+            ],
+            [
+              "Korean",
+              "ko"
+            ],
+            [
+              "Kurdish (Sorani)",
+              "ckb"
+            ],
+            [
+              "Latvian",
+              "lv"
+            ],
+            [
+              "Lithuanian",
+              "lt"
+            ],
+            [
+              "Maori",
+              "mi"
+            ],
+            [
+              "Norwegian",
+              "nb"
+            ],
+            [
+              "Persian",
+              "fa"
+            ],
+            [
+              "Polish",
+              "pl"
+            ],
+            [
+              "Portuguese",
+              "pt"
+            ],
+            [
+              "Romanian",
+              "ro"
+            ],
+            [
+              "Russian",
+              "ru"
+            ],
+            [
+              "Scots Gaelic",
+              "gd"
+            ],
+            [
+              "Serbian",
+              "sr"
+            ],
+            [
+              "Slovak",
+              "sk"
+            ],
+            [
+              "Slovenian",
+              "sl"
+            ],
+            [
+              "Spanish",
+              "es"
+            ],
+            [
+              "Swedish",
+              "sv"
+            ],
+            [
+              "Thai",
+              "th"
+            ],
+            [
+              "Turkish",
+              "tr"
+            ],
+            [
+              "Ukrainian",
+              "uk"
+            ],
+            [
+              "Vietnamese",
+              "vi"
+            ],
+            [
+              "Welsh",
+              "cy"
+            ],
+            [
+              "Zulu",
+              "zu"
+            ],
+            [
+              "Hebrew",
+              "he"
+            ],
+            [
+              "Chinese (Simplified)",
+              "zh-cn"
+            ]
+          ]
+        }
+      ],
+      "extension": "translate",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "videoSensing_menu_ATTRIBUTE": {
+      "opcode": "videoSensing_menu_ATTRIBUTE",
+      "category": "videoSensing",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "ATTRIBUTE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "ATTRIBUTE",
+          "kind": "dropdown",
+          "options": [
+            [
+              "motion",
+              "motion"
+            ],
+            [
+              "direction",
+              "direction"
+            ]
+          ]
+        }
+      ],
+      "extension": "videoSensing",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "videoSensing_menu_SUBJECT": {
+      "opcode": "videoSensing_menu_SUBJECT",
+      "category": "videoSensing",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "SUBJECT"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "SUBJECT",
+          "kind": "dropdown",
+          "options": [
+            [
+              "sprite",
+              "this sprite"
+            ],
+            [
+              "stage",
+              "Stage"
+            ]
+          ]
+        }
+      ],
+      "extension": "videoSensing",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "videoSensing_menu_VIDEO_STATE": {
+      "opcode": "videoSensing_menu_VIDEO_STATE",
+      "category": "videoSensing",
+      "shape": "menu",
+      "text": {
+        "en": "%1"
+      },
+      "args": [
+        {
+          "kind": "field",
+          "field": "VIDEO_STATE"
+        }
+      ],
+      "inputs": [],
+      "fields": [
+        {
+          "name": "VIDEO_STATE",
+          "kind": "dropdown",
+          "options": [
+            [
+              "off",
+              "off"
+            ],
+            [
+              "on",
+              "on"
+            ],
+            [
+              "on flipped",
+              "on-flipped"
+            ]
+          ]
+        }
+      ],
+      "extension": "videoSensing",
+      "hidden": true,
+      "isShadowOnly": true
+    },
+    "videoSensing_setVideoTransparency": {
+      "opcode": "videoSensing_setVideoTransparency",
+      "category": "videoSensing",
+      "shape": "stack",
+      "text": {
+        "en": "set video transparency to %1",
+        "ja": "ビデオの透明度を%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "TRANSPARENCY"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "TRANSPARENCY",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 50
+        }
+      ],
+      "fields": [],
+      "extension": "videoSensing"
+    },
+    "videoSensing_videoOn": {
+      "opcode": "videoSensing_videoOn",
+      "category": "videoSensing",
+      "shape": "reporter",
+      "text": {
+        "en": "video %1 on %2",
+        "ja": "%2のビデオの%1"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "ATTRIBUTE"
+        },
+        {
+          "kind": "input",
+          "input": "SUBJECT"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "ATTRIBUTE",
+          "kind": "menu",
+          "shadowOpcode": "videoSensing_menu_ATTRIBUTE",
+          "shadowField": "ATTRIBUTE",
+          "default": "motion"
+        },
+        {
+          "name": "SUBJECT",
+          "kind": "menu",
+          "shadowOpcode": "videoSensing_menu_SUBJECT",
+          "shadowField": "SUBJECT",
+          "default": "this sprite"
+        }
+      ],
+      "fields": [],
+      "extension": "videoSensing"
+    },
+    "videoSensing_videoToggle": {
+      "opcode": "videoSensing_videoToggle",
+      "category": "videoSensing",
+      "shape": "stack",
+      "text": {
+        "en": "turn video %1",
+        "ja": "ビデオを%1にする"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "VIDEO_STATE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "VIDEO_STATE",
+          "kind": "menu",
+          "shadowOpcode": "videoSensing_menu_VIDEO_STATE",
+          "shadowField": "VIDEO_STATE",
+          "default": "on"
+        }
+      ],
+      "fields": [],
+      "extension": "videoSensing"
+    },
+    "videoSensing_whenMotionGreaterThan": {
+      "opcode": "videoSensing_whenMotionGreaterThan",
+      "category": "videoSensing",
+      "shape": "hat",
+      "text": {
+        "en": "when video motion > %1",
+        "ja": "ビデオモーション > %1のとき"
+      },
+      "args": [
+        {
+          "kind": "input",
+          "input": "REFERENCE"
+        }
+      ],
+      "inputs": [
+        {
+          "name": "REFERENCE",
+          "kind": "number",
+          "shadowOpcode": "math_number",
+          "shadowField": "NUM",
+          "default": 10
+        }
+      ],
+      "fields": [],
+      "extension": "videoSensing"
+    }
+  }
+}
