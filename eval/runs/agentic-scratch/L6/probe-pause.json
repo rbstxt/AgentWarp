@@ -1,0 +1,1699 @@
+{
+  "file": "eval/runs/agentic-scratch/L6/out.sb3",
+  "ok": true,
+  "frames": 100,
+  "fps": 30,
+  "virtualSeconds": 3.3333333333333335,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {
+        "my variable": 0,
+        "LEVEL": 1,
+        "EXIT": "0",
+        "SCROLL X": 0,
+        "SCROLL Y": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "player",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 15,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {
+        "x": 0,
+        "y": 15,
+        "speed y": 0,
+        "in air": 0,
+        "jumps": 0,
+        "paused": 1,
+        "upWas": 0
+      },
+      "lists": {},
+      "bubble": {
+        "type": "say",
+        "text": "PAUSED"
+      }
+    },
+    {
+      "name": "platforms",
+      "isStage": false,
+      "isClone": false,
+      "x": 360,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "level 1 3",
+      "variables": {
+        "y": 0,
+        "x": 360
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": false,
+      "x": 155,
+      "y": -3,
+      "direction": -96.21279722652264,
+      "size": 50,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "platforms",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "level 1 2",
+      "variables": {
+        "y": 0,
+        "x": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "platforms",
+      "isStage": false,
+      "isClone": true,
+      "x": 360,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "level 1 2",
+      "variables": {
+        "y": 0,
+        "x": 360
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 95,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 90,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 85,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 80,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 75,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 70,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 65,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 60,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "mouse pointer",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": -96.21279722652264,
+      "size": 55,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "platforms": 2,
+    "mouse pointer": 10
+  },
+  "monitors": {
+    "cP}SB^tsZLS_.0%;3Cq)": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "LEVEL"
+      }
+    },
+    "e}K2KzM}~Wx=QxVE%]:7": {
+      "opcode": "data_variable",
+      "spriteName": "Sprite1",
+      "value": 0,
+      "params": {
+        "VARIABLE": "x"
+      }
+    },
+    "2;J9v16X3ngoE4=GVjKF": {
+      "opcode": "data_variable",
+      "spriteName": "Sprite1",
+      "value": 0,
+      "params": {
+        "VARIABLE": "y"
+      }
+    },
+    ".fyP5Z0PkL~~HQYmsm!v": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "EXIT"
+      }
+    },
+    "(g`qOG[AJ))ryp%~]L,H": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "SCROLL X"
+      }
+    },
+    "a^|`buy${9mxlx@n6s%Z": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "SCROLL Y"
+      }
+    },
+    "^R7YIr(cM=5zG4AYsIRb": {
+      "opcode": "data_variable",
+      "spriteName": "Sprite2",
+      "value": 0,
+      "params": {
+        "VARIABLE": "y"
+      }
+    },
+    "TTw4Wf9SV[KR:tnaF~Uu": {
+      "opcode": "data_variable",
+      "spriteName": "Sprite2",
+      "value": 0,
+      "params": {
+        "VARIABLE": "x"
+      }
+    },
+    "YC0v0C.8]lxc_ZL;lBjf": {
+      "opcode": "data_variable",
+      "spriteName": "Sprite1",
+      "value": 0,
+      "params": {
+        "VARIABLE": "speed y"
+      }
+    },
+    "l7|8-%j-h?+BzBLoDw[b": {
+      "opcode": "data_variable",
+      "spriteName": "Sprite1",
+      "value": 0,
+      "params": {
+        "VARIABLE": "in air"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 0,
+      "name": "green flag",
+      "target": null
+    },
+    {
+      "frame": 0,
+      "name": "play game",
+      "target": null
+    },
+    {
+      "frame": 0,
+      "name": "Reset",
+      "target": null
+    },
+    {
+      "frame": 0,
+      "name": "Setup",
+      "target": null
+    },
+    {
+      "frame": 1,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 3,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 5,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 7,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 9,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 11,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 13,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 15,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 17,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 19,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 21,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 23,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 25,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 27,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 29,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 31,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 33,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 35,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 37,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 39,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 41,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 43,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 45,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 47,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 49,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 51,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 53,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 55,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 57,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 59,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 61,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 63,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 65,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 67,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 69,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 71,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 73,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 75,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 77,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 79,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 81,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 83,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 85,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 87,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 89,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 91,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 93,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 95,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 97,
+      "name": "tick",
+      "target": null
+    },
+    {
+      "frame": 99,
+      "name": "tick",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "green flag"
+      }
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "play game"
+      }
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "Reset"
+      }
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "Setup"
+      }
+    },
+    {
+      "frame": 1,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 1,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 2,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 3,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 3,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 4,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 6,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 7,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 7,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 8,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 9,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 9,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 10,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 11,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 11,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 12,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 13,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 13,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 14,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 15,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 15,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 16,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 17,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 17,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 18,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 19,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 19,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 20,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 21,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 21,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 22,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 23,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 23,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 24,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 25,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 25,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 26,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 27,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 27,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 28,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 29,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 29,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 30,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "P"
+      }
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 31,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 31,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 32,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 33,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 33,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 34,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 35,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 35,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 36,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 37,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 37,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 38,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 39,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 39,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 40,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 41,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 41,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 42,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 43,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 43,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 44,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 45,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 45,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 46,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 47,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 47,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 48,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 49,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 49,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 50,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 51,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 51,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 52,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 53,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 53,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 54,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 55,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 55,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 56,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 57,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 57,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 58,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 59,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 59,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 60,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 61,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 61,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 62,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 63,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 63,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 64,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 65,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 65,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 66,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 67,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 67,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 68,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 69,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 69,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 70,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 71,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 71,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 72,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 73,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 73,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 74,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 75,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 75,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 76,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 77,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 77,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 78,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 79,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 79,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 80,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 81,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 81,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 82,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 83,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 83,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 84,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 85,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 85,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 86,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 87,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 87,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 88,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 89,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 89,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 91,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 91,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 93,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 93,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 94,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 95,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 95,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 96,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 97,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 97,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    },
+    {
+      "frame": 98,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 99,
+      "hat": "control_start_as_clone",
+      "target": "mouse pointer",
+      "fields": {}
+    },
+    {
+      "frame": 99,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "tick"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [
+    {
+      "frame": 30,
+      "target": "player",
+      "type": "say",
+      "text": "PAUSED"
+    }
+  ],
+  "sayDropped": 0,
+  "probes": {
+    "player.variables.x": 0,
+    "player.variables.paused": 1,
+    "player.bubble": {
+      "type": "say",
+      "text": "PAUSED"
+    }
+  }
+}

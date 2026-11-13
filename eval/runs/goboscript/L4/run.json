@@ -1,0 +1,294 @@
+{
+  "file": "eval/runs/goboscript/L4/out.sb3",
+  "ok": true,
+  "frames": 1800,
+  "fps": 30,
+  "virtualSeconds": 60,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "starfield",
+      "variables": {
+        "lives": 0,
+        "score": 2
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 230,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": false,
+      "x": 200,
+      "y": 230,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "enemy",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "GameOver",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "gameover",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": -6,
+      "y": -140,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "player",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 201,
+      "name": "game over",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 9,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 18,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 27,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 36,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 45,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 54,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 61,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 63,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 72,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 81,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 99,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 108,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 117,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 123,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 126,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 135,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 144,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 153,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 154,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 162,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 171,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 180,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 185,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 189,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 198,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 201,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "game over"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Stage.variables.score": 2,
+    "Stage.variables.lives": 0,
+    "GameOver.visible": true
+  }
+}

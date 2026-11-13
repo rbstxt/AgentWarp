@@ -1,0 +1,123 @@
+{
+  "file": "eval/runs/agentic-scratch/L4/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [
+        {
+          "blockId": "b-3",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 189,
+          "h": 120
+        },
+        {
+          "blockId": "b-6",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 250,
+          "w": 231,
+          "h": 210
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "Player": {
+      "scripts": [
+        {
+          "blockId": "b-b",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 189,
+          "h": 388
+        },
+        {
+          "blockId": "b-l",
+          "opcode": "event_whenkeypressed",
+          "x": 0,
+          "y": 250,
+          "w": 189,
+          "h": 82
+        }
+      ],
+      "comments": [],
+      "overlaps": [
+        [
+          "script:b-b",
+          "script:b-l"
+        ]
+      ]
+    },
+    "GameOver": {
+      "scripts": [
+        {
+          "blockId": "b-o",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "b-q",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 250,
+          "w": 259,
+          "h": 120
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "Bullet": {
+      "scripts": [
+        {
+          "blockId": "b-t",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "b-v",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 250,
+          "w": 266,
+          "h": 540
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "Enemy": {
+      "scripts": [
+        {
+          "blockId": "b-1c",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 217,
+          "h": 222
+        },
+        {
+          "blockId": "b-1i",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 300,
+          "w": 273,
+          "h": 464
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 1,
+  "scriptCount": 10,
+  "score": 85
+}

@@ -1,0 +1,901 @@
+{
+  "file": "eval/runs/goboscript/L6b/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 880,
+          "y": 0,
+          "w": 182,
+          "h": 158
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "NEXTだお": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 5024,
+          "w": 180,
+          "h": 120
+        },
+        {
+          "blockId": "$-",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 1264,
+          "w": 238,
+          "h": 2064
+        },
+        {
+          "blockId": "$p%",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 176,
+          "w": 245,
+          "h": 804
+        },
+        {
+          "blockId": "$G(",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 189,
+          "h": 82
+        }
+      ],
+      "comments": [
+        {
+          "id": "l6brest17",
+          "blockId": null,
+          "x": -166.37,
+          "y": 581.59,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest18",
+          "blockId": null,
+          "x": -120.88,
+          "y": 832.14,
+          "w": 200,
+          "h": 200
+        }
+      ],
+      "overlaps": [
+        [
+          "script:$p%",
+          "comment:l6brest17"
+        ],
+        [
+          "script:$p%",
+          "comment:l6brest18"
+        ]
+      ]
+    },
+    "いんとぅるえんぎね": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 25536,
+          "w": 273,
+          "h": 742
+        },
+        {
+          "blockId": "$b",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 26592,
+          "w": 203,
+          "h": 374
+        },
+        {
+          "blockId": "$e#",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 27256,
+          "w": 231,
+          "h": 538
+        },
+        {
+          "blockId": "$[%",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 28040,
+          "w": 231,
+          "h": 500
+        },
+        {
+          "blockId": "$a%",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 28776,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "$i%",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 28976,
+          "w": 252,
+          "h": 374
+        },
+        {
+          "blockId": "$s(",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 29752,
+          "w": 266,
+          "h": 298
+        },
+        {
+          "blockId": "$=)",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 30248,
+          "w": 180,
+          "h": 44
+        },
+        {
+          "blockId": "$[)",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 30392,
+          "w": 245,
+          "h": 158
+        },
+        {
+          "blockId": "$B)",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 30680,
+          "w": 180,
+          "h": 120
+        },
+        {
+          "blockId": "$R)",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 8960,
+          "w": 180,
+          "h": 248
+        },
+        {
+          "blockId": "$b)",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 0,
+          "w": 280,
+          "h": 576
+        },
+        {
+          "blockId": "$)*",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 800,
+          "w": 280,
+          "h": 196
+        },
+        {
+          "blockId": "$`*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 9352,
+          "w": 231,
+          "h": 526
+        },
+        {
+          "blockId": "$c*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 10208,
+          "w": 210,
+          "h": 222
+        },
+        {
+          "blockId": "$o*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 10568,
+          "w": 259,
+          "h": 362
+        },
+        {
+          "blockId": "$++",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 11104,
+          "w": 322,
+          "h": 1086
+        },
+        {
+          "blockId": "$z+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1120,
+          "w": 280,
+          "h": 564
+        },
+        {
+          "blockId": "$D,",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 12616,
+          "w": 322,
+          "h": 1276
+        },
+        {
+          "blockId": "$H-",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 14368,
+          "w": 294,
+          "h": 730
+        },
+        {
+          "blockId": "$w-",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 15400,
+          "w": 308,
+          "h": 768
+        },
+        {
+          "blockId": "$O.",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1904,
+          "w": 280,
+          "h": 44
+        },
+        {
+          "blockId": "$Q.",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 16480,
+          "w": 343,
+          "h": 1520
+        },
+        {
+          "blockId": "$G/",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2032,
+          "w": 280,
+          "h": 462
+        },
+        {
+          "blockId": "$m/",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2688,
+          "w": 280,
+          "h": 44
+        },
+        {
+          "blockId": "$o/",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 18560,
+          "w": 322,
+          "h": 578
+        },
+        {
+          "blockId": "$=:",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 19368,
+          "w": 210,
+          "h": 184
+        },
+        {
+          "blockId": "$N:",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 19920,
+          "w": 245,
+          "h": 222
+        },
+        {
+          "blockId": "$o:",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2816,
+          "w": 280,
+          "h": 82
+        },
+        {
+          "blockId": "$r:",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2992,
+          "w": 280,
+          "h": 652
+        },
+        {
+          "blockId": "$J=",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 4224,
+          "w": 280,
+          "h": 44
+        },
+        {
+          "blockId": "$L=",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 4352,
+          "w": 280,
+          "h": 500
+        },
+        {
+          "blockId": "$u=",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5056,
+          "w": 280,
+          "h": 538
+        },
+        {
+          "blockId": "$U?",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5808,
+          "w": 280,
+          "h": 1146
+        },
+        {
+          "blockId": "$s[",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 7552,
+          "w": 280,
+          "h": 260
+        },
+        {
+          "blockId": "$(]",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 20520,
+          "w": 217,
+          "h": 2392
+        },
+        {
+          "blockId": "$A`",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 7952,
+          "w": 280,
+          "h": 526
+        },
+        {
+          "blockId": "$g`",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 24680,
+          "w": 294,
+          "h": 324
+        },
+        {
+          "blockId": "$){",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 25192,
+          "w": 238,
+          "h": 210
+        },
+        {
+          "blockId": "$;{",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 8688,
+          "w": 280,
+          "h": 158
+        }
+      ],
+      "comments": [
+        {
+          "id": "l6brest0",
+          "blockId": null,
+          "x": 181.36,
+          "y": -263.85,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest1",
+          "blockId": null,
+          "x": 178.1,
+          "y": -48.15,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest2",
+          "blockId": null,
+          "x": 173.65,
+          "y": 174.96,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest3",
+          "blockId": null,
+          "x": 176.33,
+          "y": 404,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest4",
+          "blockId": null,
+          "x": 180.78,
+          "y": 627.11,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest5",
+          "blockId": null,
+          "x": 171.59,
+          "y": 856.15,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest6",
+          "blockId": null,
+          "x": 177.52,
+          "y": 1095.56,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest7",
+          "blockId": null,
+          "x": 172.78,
+          "y": 1340.89,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest8",
+          "blockId": null,
+          "x": 3750.93,
+          "y": 794.37,
+          "w": 434.073974609375,
+          "h": 148.14813232421875
+        },
+        {
+          "id": "l6brest9",
+          "blockId": null,
+          "x": 181.29,
+          "y": -264,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest10",
+          "blockId": null,
+          "x": 177.62,
+          "y": -48,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest11",
+          "blockId": null,
+          "x": 173.62,
+          "y": 175,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest12",
+          "blockId": null,
+          "x": 176.33,
+          "y": 404,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest13",
+          "blockId": null,
+          "x": 180.67,
+          "y": 627,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest14",
+          "blockId": null,
+          "x": 172,
+          "y": 856,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest15",
+          "blockId": null,
+          "x": 178,
+          "y": 1096,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6brest16",
+          "blockId": null,
+          "x": 172.71,
+          "y": 1341,
+          "w": 300.74072265625,
+          "h": 168.888916015625
+        }
+      ],
+      "overlaps": [
+        [
+          "script:$b)",
+          "comment:l6brest1"
+        ],
+        [
+          "script:$b)",
+          "comment:l6brest2"
+        ],
+        [
+          "script:$b)",
+          "comment:l6brest3"
+        ],
+        [
+          "script:$b)",
+          "comment:l6brest10"
+        ],
+        [
+          "script:$b)",
+          "comment:l6brest11"
+        ],
+        [
+          "script:$b)",
+          "comment:l6brest12"
+        ],
+        [
+          "script:$)*",
+          "comment:l6brest4"
+        ],
+        [
+          "script:$)*",
+          "comment:l6brest5"
+        ],
+        [
+          "script:$)*",
+          "comment:l6brest13"
+        ],
+        [
+          "script:$)*",
+          "comment:l6brest14"
+        ],
+        [
+          "script:$z+",
+          "comment:l6brest6"
+        ],
+        [
+          "script:$z+",
+          "comment:l6brest7"
+        ],
+        [
+          "script:$z+",
+          "comment:l6brest15"
+        ],
+        [
+          "script:$z+",
+          "comment:l6brest16"
+        ],
+        [
+          "comment:l6brest0",
+          "comment:l6brest9"
+        ],
+        [
+          "comment:l6brest1",
+          "comment:l6brest10"
+        ],
+        [
+          "comment:l6brest2",
+          "comment:l6brest11"
+        ],
+        [
+          "comment:l6brest3",
+          "comment:l6brest12"
+        ],
+        [
+          "comment:l6brest4",
+          "comment:l6brest13"
+        ],
+        [
+          "comment:l6brest5",
+          "comment:l6brest14"
+        ],
+        [
+          "comment:l6brest6",
+          "comment:l6brest15"
+        ],
+        [
+          "comment:l6brest7",
+          "comment:l6brest16"
+        ]
+      ]
+    },
+    "くうはくすぷらいｔ": {
+      "scripts": [],
+      "comments": [],
+      "overlaps": []
+    },
+    "ステージ": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 120
+        },
+        {
+          "blockId": "$)",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 848,
+          "w": 238,
+          "h": 184
+        },
+        {
+          "blockId": "$/",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1152,
+          "w": 238,
+          "h": 184
+        },
+        {
+          "blockId": "$|",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1472,
+          "w": 245,
+          "h": 158
+        },
+        {
+          "blockId": "$E",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 224,
+          "w": 224,
+          "h": 120
+        },
+        {
+          "blockId": "$H",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1744,
+          "w": 343,
+          "h": 540
+        },
+        {
+          "blockId": "$d",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2544,
+          "w": 238,
+          "h": 196
+        },
+        {
+          "blockId": "$!#",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 448,
+          "w": 224,
+          "h": 260
+        }
+      ],
+      "comments": [
+        {
+          "id": "l6b0",
+          "blockId": null,
+          "x": 260,
+          "y": 448,
+          "w": 280,
+          "h": 80
+        },
+        {
+          "id": "l6b1",
+          "blockId": null,
+          "x": 260,
+          "y": 1472,
+          "w": 280,
+          "h": 80
+        }
+      ],
+      "overlaps": []
+    },
+    "スプライト1": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 217,
+          "h": 374
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "海賊王になる男(((?": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 8016,
+          "w": 180,
+          "h": 310
+        },
+        {
+          "blockId": "$]",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 8496,
+          "w": 231,
+          "h": 222
+        },
+        {
+          "blockId": "$B",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 8864,
+          "w": 180,
+          "h": 196
+        },
+        {
+          "blockId": "$M",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 352,
+          "w": 434,
+          "h": 3556
+        },
+        {
+          "blockId": "$*+",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "$,+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5592,
+          "w": 259,
+          "h": 120
+        },
+        {
+          "blockId": "$:+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5816,
+          "w": 217,
+          "h": 120
+        },
+        {
+          "blockId": "$@+",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 7344,
+          "w": 182,
+          "h": 120
+        },
+        {
+          "blockId": "$`+",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 7568,
+          "w": 224,
+          "h": 298
+        },
+        {
+          "blockId": "$I+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 6040,
+          "w": 245,
+          "h": 286
+        },
+        {
+          "blockId": "$d+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 6528,
+          "w": 238,
+          "h": 260
+        },
+        {
+          "blockId": "$q+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 6928,
+          "w": 238,
+          "h": 146
+        },
+        {
+          "blockId": "$:,",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 176,
+          "w": 196,
+          "h": 82
+        },
+        {
+          "blockId": "$?,",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 7216,
+          "w": 252,
+          "h": 44
+        }
+      ],
+      "comments": [
+        {
+          "id": "l6b0",
+          "blockId": null,
+          "x": 260,
+          "y": 8016,
+          "w": 280,
+          "h": 80
+        }
+      ],
+      "overlaps": []
+    },
+    "針": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 176,
+          "w": 238,
+          "h": 222
+        },
+        {
+          "blockId": "$,",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "$.",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 528,
+          "w": 238,
+          "h": 184
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 24,
+  "scriptCount": 71,
+  "score": 0
+}

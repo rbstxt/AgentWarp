@@ -1,0 +1,145 @@
+{
+  "file": "eval/runs/raw-json/L5/out.sb3",
+  "ok": true,
+  "frames": 200,
+  "fps": 30,
+  "virtualSeconds": 6.666666666666667,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "level2",
+      "variables": {
+        "level": 2,
+        "scrollX": 166,
+        "platforms": [
+          0,
+          -140,
+          400,
+          -80,
+          -60,
+          120,
+          40,
+          20,
+          100
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 100,
+      "y": -182.8,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Player-a",
+      "variables": {
+        "wx": 266,
+        "wy": -182.8,
+        "vy": -10.4,
+        "dx": 4,
+        "grounded": 0,
+        "i": 4,
+        "px": 40,
+        "py": 20,
+        "pw": 100
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform1",
+      "isStage": false,
+      "isClone": false,
+      "x": -162,
+      "y": -140,
+      "direction": 90,
+      "size": 400,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Platform1-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform2",
+      "isStage": false,
+      "isClone": false,
+      "x": -242,
+      "y": -60,
+      "direction": 90,
+      "size": 120,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Platform2-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform3",
+      "isStage": false,
+      "isClone": false,
+      "x": -122,
+      "y": 20,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Platform3-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {
+    "vLevel": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 2,
+      "params": {
+        "VARIABLE": "level"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 95,
+      "name": "level2",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 95,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level2"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0
+}

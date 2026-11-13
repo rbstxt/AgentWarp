@@ -1,0 +1,220 @@
+{
+  "units": "workspace pixels",
+  "method": "absolute error; cleanup is vmrun minus editor",
+  "rows": [
+    {
+      "fixture": "click",
+      "missing": 0,
+      "width": {
+        "count": 1,
+        "mean": 25.597801208496094,
+        "max": 25.597801208496094
+      },
+      "height": {
+        "count": 1,
+        "mean": 22,
+        "max": 22
+      },
+      "dx": {
+        "count": 1,
+        "mean": 28,
+        "max": 28
+      },
+      "dy": {
+        "count": 1,
+        "mean": 44,
+        "max": 44
+      }
+    },
+    {
+      "fixture": "clones",
+      "missing": 0,
+      "width": {
+        "count": 2,
+        "mean": 19.82378387451172,
+        "max": 37.328125
+      },
+      "height": {
+        "count": 2,
+        "mean": 30,
+        "max": 38
+      },
+      "dx": {
+        "count": 2,
+        "mean": 28,
+        "max": 28
+      },
+      "dy": {
+        "count": 2,
+        "mean": 84,
+        "max": 124
+      }
+    },
+    {
+      "fixture": "greenflag",
+      "missing": 0,
+      "width": {
+        "count": 2,
+        "mean": 63.850114822387695,
+        "max": 87.12789154052734
+      },
+      "height": {
+        "count": 2,
+        "mean": 37,
+        "max": 52
+      },
+      "dx": {
+        "count": 2,
+        "mean": 28,
+        "max": 28
+      },
+      "dy": {
+        "count": 2,
+        "mean": 44,
+        "max": 44
+      }
+    },
+    {
+      "fixture": "keys",
+      "missing": 0,
+      "width": {
+        "count": 2,
+        "mean": 97.24595260620117,
+        "max": 182.33911895751953
+      },
+      "height": {
+        "count": 2,
+        "mean": 43,
+        "max": 46
+      },
+      "dx": {
+        "count": 2,
+        "mean": 28,
+        "max": 28
+      },
+      "dy": {
+        "count": 2,
+        "mean": 44,
+        "max": 44
+      }
+    },
+    {
+      "fixture": "lightcube-134430880",
+      "missing": 0,
+      "width": {
+        "count": 156,
+        "mean": 72.28820131986569,
+        "max": 725.2604169845581
+      },
+      "height": {
+        "count": 156,
+        "mean": 188.8846153846154,
+        "max": 1880
+      },
+      "dx": {
+        "count": 156,
+        "mean": 433.2000886599223,
+        "max": 3794.170700073242
+      },
+      "dy": {
+        "count": 156,
+        "mean": 1925.1666666666667,
+        "max": 20280
+      }
+    },
+    {
+      "fixture": "platformer-853110869",
+      "missing": 2,
+      "width": {
+        "count": 90,
+        "mean": 162.64454623858134,
+        "max": 2645.4849376678467
+      },
+      "height": {
+        "count": 90,
+        "mean": 159.62222222222223,
+        "max": 1696
+      },
+      "dx": {
+        "count": 90,
+        "mean": 3929.42039727105,
+        "max": 11230.914882659912
+      },
+      "dy": {
+        "count": 90,
+        "mean": 8165.955555555555,
+        "max": 22138
+      }
+    },
+    {
+      "fixture": "scrolltutorial-378587848",
+      "missing": 0,
+      "width": {
+        "count": 14,
+        "mean": 72.75417423248291,
+        "max": 214.04686737060547
+      },
+      "height": {
+        "count": 14,
+        "mean": 137.28571428571428,
+        "max": 468
+      },
+      "dx": {
+        "count": 14,
+        "mean": 726.5785373960223,
+        "max": 2496.1064739227295
+      },
+      "dy": {
+        "count": 14,
+        "mean": 441,
+        "max": 1218
+      }
+    },
+    {
+      "fixture": "touch",
+      "missing": 0,
+      "width": {
+        "count": 1,
+        "mean": 208.2696762084961,
+        "max": 208.2696762084961
+      },
+      "height": {
+        "count": 1,
+        "mean": 116,
+        "max": 116
+      },
+      "dx": {
+        "count": 1,
+        "mean": 28,
+        "max": 28
+      },
+      "dy": {
+        "count": 1,
+        "mean": 44,
+        "max": 44
+      }
+    }
+  ],
+  "total": {
+    "width": {
+      "count": 268,
+      "mean": 102.7210230845124,
+      "max": 2645.4849376678467
+    },
+    "height": {
+      "count": 268,
+      "mean": 172.0597014925373,
+      "max": 1880
+    },
+    "dx": {
+      "count": 268,
+      "mean": 1610.5341384659953,
+      "max": 11230.914882659912
+    },
+    "dy": {
+      "count": 268,
+      "mean": 3887.5671641791046,
+      "max": 22138
+    }
+  }
+}

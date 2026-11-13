@@ -1,0 +1,41 @@
+{
+  "file": "eval/runs/hikkaku/L2/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [],
+      "comments": [],
+      "overlaps": []
+    },
+    "Sprite1": {
+      "scripts": [
+        {
+          "blockId": "1",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 189,
+          "h": 350
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "Ball": {
+      "scripts": [
+        {
+          "blockId": "c",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 182,
+          "h": 260
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 0,
+  "scriptCount": 2,
+  "score": 100
+}

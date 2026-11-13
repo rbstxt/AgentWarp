@@ -1,0 +1,998 @@
+{
+  "targets": {
+    "Stage": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "`5D]}Ux!_iiJ]3.o17S(",
+          "opcode": "event_whenflagclicked"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 880,
+          "y": 0
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "くうはくすぷらいｔ": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "ステージ": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "4a^.5|Gj.OEO[P;aYX?g",
+          "opcode": "event_whenflagclicked"
+        },
+        {
+          "id": "/4;]0-.wG)$fHS1~fYMI",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "9#Q;gdV:WBBpy|(t)(32",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": ":zQjuUj)F+Xg/MM97c*b",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "gVmdcz]9uMAJV@{u^5ka",
+          "opcode": "event_whenflagclicked"
+        },
+        {
+          "id": "jZXcOg6s=Z@2`kKL85oq",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": ")qeU@^VGxXW[j)tN-E$v",
+          "opcode": "event_whenbroadcastreceived"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "$)",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 848
+        },
+        {
+          "id": "$/",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1152
+        },
+        {
+          "id": "$|",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1472
+        },
+        {
+          "id": "$E",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 224
+        },
+        {
+          "id": "$H",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1744
+        },
+        {
+          "id": "$d",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2544
+        },
+        {
+          "id": "$!#",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 448
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 2
+      },
+      "unchangedCount": 0
+    },
+    "いんとぅるえんぎね": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "z=uU*a)~T-ro[{^P#52d",
+          "opcode": "motion_direction"
+        },
+        {
+          "id": "-sCThWX3z8O;]QCYuQl}",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "D`6FR]{t];9k(C(GU3_o",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "7NpBr#o?MpGa9Z6VgW,^",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "sxk[,LU:!?.x=b8csC}z",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "D0i=jCD_|_3Z-SAm~N3)",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "}(R:A7P(+g~;O*Zd%[4?",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "M!g0tj**oXK4?=ZM,1Gc",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "$#OVd?xOm5[LCB:XaDL0",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "kAIR]saBp`/mae}dMWfX",
+          "opcode": "procedures_call"
+        },
+        {
+          "id": "Z|W65hgUN=-E}nq%MQ=)",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "PDKToTniZI{VEKRDqB;X",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "CP5-a_/.@TyX$hyHJ[-r",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "V{(9vvWPv?vSg|}YG!f]",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "*a6OXv:jOx^:LWv5aUvL",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "E7R.^S3i3pr[da`QLvM?",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "E0R:kOU9nFL2Qg0.;dgw",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "M3p]5d]2[^u8t/_W,R2B",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "|Q[?HuH%u6j~Pt}ivD,@",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "`SDil}vpH-9k.h;Awz=s",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "kYpnE^{EJU4hB983L~sG",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "E}#8ww8/gX:6In2F(X`H",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "D^p!D:X2Z1uD9I{WgVr(",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "|7sxZ4+c_Jw`inBvVOlM",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "?5EDlYa*|I}qkj*=%h=9",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "Wauu)1$SSB)2*.^ts^L_",
+          "opcode": "control_forever"
+        },
+        {
+          "id": "3^HxZv6/uE7hsJ_OEwoC",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "L~Ke4}LYI59-uO%*rnS.",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "xMtqKcl7sH!+1nQUaADt",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "{:$J8huX^/,}HmFM]Mqr",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "o5-C=1a!*@}(.=nO?Kk7",
+          "opcode": "operator_multiply"
+        },
+        {
+          "id": "mmExu6ee#||aVa/tpTWW",
+          "opcode": "data_setvariableto"
+        },
+        {
+          "id": "JL;JTVy5|sfEBq|lzrJv",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "_!`=Wok!n,z-,8=m={/-",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "pw`5pcTGekMyceVr:${E",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "*a,q%rzhL_^)nXb5k*U_",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "srTB[SOa%DyGGa/YG6[;",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "mD9^=H:aemOw#CTJ8SgR",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "`{I^uR0/HYk6!;LCdGZ8",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": "E90aL$sIw-?I!^eF78a4",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": ":EglwB5EHIGi#RF7WjPD",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": "n8u)2BNm}47WAMvxENG5",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": "6D~k9NLF!i]GHzQ[6;)~",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": "HSz_8u,U.,#:sOlQ],C2",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": "O+Vr/[?cOR|:G@l=Q@RH",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": "L0n$h~yn=N;LJa7b4xg3",
+          "opcode": "procedures_call"
+        },
+        {
+          "id": "eUW)6ma~VBQ0TE7ybSma",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "fA#Hcjuc?F1c@PF=Fq_[",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "~n.Dh;:Zq?~1[@pIwsO8",
+          "opcode": "data_setvariableto"
+        },
+        {
+          "id": ",cPOL|;%N/Z1kEjyzWIB",
+          "opcode": "procedures_call"
+        },
+        {
+          "id": "@|oH9RP#i-ire8NPMWH9",
+          "opcode": "operator_divide"
+        },
+        {
+          "id": "w%(buyfz]!?_5(2/`?G}",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "(+{vNc07]-C{l:nB9giH",
+          "opcode": "operator_equals"
+        },
+        {
+          "id": "Y`x-f%N(biCh_3=X`mDr",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "+bR85t*W!wji9QvslP}O",
+          "opcode": "data_changevariableby"
+        },
+        {
+          "id": "z-fU8-nrPK8M.%3ia,Gy",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "K43Q*U;ROl-W0RRI~emo",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "31l!sD}N?3ZFUDR0=v;I",
+          "opcode": "event_whenbroadcastreceived"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 25536
+        },
+        {
+          "id": "$b",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 26592
+        },
+        {
+          "id": "$e#",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 27256
+        },
+        {
+          "id": "$[%",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 28040
+        },
+        {
+          "id": "$a%",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 28776
+        },
+        {
+          "id": "$i%",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 28976
+        },
+        {
+          "id": "$s(",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 29752
+        },
+        {
+          "id": "$=)",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 30248
+        },
+        {
+          "id": "$[)",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 30392
+        },
+        {
+          "id": "$B)",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 30680
+        },
+        {
+          "id": "$R)",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 8960
+        },
+        {
+          "id": "$b)",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "$)*",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 800
+        },
+        {
+          "id": "$`*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 9352
+        },
+        {
+          "id": "$c*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 10208
+        },
+        {
+          "id": "$o*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 10568
+        },
+        {
+          "id": "$++",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 11104
+        },
+        {
+          "id": "$z+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1120
+        },
+        {
+          "id": "$D,",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 12616
+        },
+        {
+          "id": "$H-",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 14368
+        },
+        {
+          "id": "$w-",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 15400
+        },
+        {
+          "id": "$O.",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 1904
+        },
+        {
+          "id": "$Q.",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 16480
+        },
+        {
+          "id": "$G/",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2032
+        },
+        {
+          "id": "$m/",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2688
+        },
+        {
+          "id": "$o/",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 18560
+        },
+        {
+          "id": "$=:",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 19368
+        },
+        {
+          "id": "$N:",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 19920
+        },
+        {
+          "id": "$o:",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2816
+        },
+        {
+          "id": "$r:",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 2992
+        },
+        {
+          "id": "$J=",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 4224
+        },
+        {
+          "id": "$L=",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 4352
+        },
+        {
+          "id": "$u=",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5056
+        },
+        {
+          "id": "$U?",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5808
+        },
+        {
+          "id": "$s[",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 7552
+        },
+        {
+          "id": "$(]",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 20520
+        },
+        {
+          "id": "$A`",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 7952
+        },
+        {
+          "id": "$g`",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 24680
+        },
+        {
+          "id": "$){",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 25192
+        },
+        {
+          "id": "$;{",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 8688
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [
+          {
+            "id": "p}HfgV:sLx?`b`r6S@E4",
+            "text": "FOR ALL SPRITES! This variable is used to change the directi"
+          },
+          {
+            "id": "9Lf(qbW[m32HYV#1bLWE",
+            "text": "FOR ALL SPRITES! This variable is used to set the x position"
+          },
+          {
+            "id": "qv1,.71!AkSdWR+ZZn`}",
+            "text": "FOR ALL SPRITES! This variable is used to set the y position"
+          },
+          {
+            "id": "dXw^Dvp6{L.e0~QMWivg",
+            "text": "FOR ALL SPRITES! This variable is used to set the Z position"
+          },
+          {
+            "id": "ZhY_Q+9LKa@l?W43u%@9",
+            "text": "FOR THIS SPRITE ONLY! This variable is used to set the direc"
+          },
+          {
+            "id": "Wkw(_KcKgJFNX/@R~HE4",
+            "text": "FOR THIS SPRITE ONLY! This variable is used to set the x pos"
+          },
+          {
+            "id": "I1HV6Q;!px#:c99tZ]46",
+            "text": "FOR THIS SPRITE ONLY! This variable is used to set the y pos"
+          },
+          {
+            "id": "kkA6R:aYiHx$pvg3D5cX",
+            "text": "FOR THIS SPRITE ONLY! This variable is used to set the z pos"
+          },
+          {
+            "id": "O4=~+AN2B}yzF)vI3uIE",
+            "text": "This is the block that positions the clones. It uses some tr"
+          },
+          {
+            "id": "Zry~tH+ko0h-r^Ks-3g]",
+            "text": "FOR ALL SPRITES! This variables controls the direction of th"
+          },
+          {
+            "id": "QjxzQ:*)oMRiyl6__M2,",
+            "text": "FOR ALL SPRITES! This variables controls the x position of t"
+          },
+          {
+            "id": "=,6``]l2J+3Yvy]9-e-)",
+            "text": "FOR ALL SPRITES! This variables controls the y position of t"
+          },
+          {
+            "id": "[rF%tSaCKQBYt56C}u}6",
+            "text": "FOR ALL SPRITES! This variables controls the z position (siz"
+          },
+          {
+            "id": ")ede*9dYJ,5aVmdG1xZ]",
+            "text": "FOR THIS SPRITE ONLY! This variable controls the direction o"
+          },
+          {
+            "id": "h=BXy=|vaIXF6|,@MwD1",
+            "text": "FOR THIS SPRITE ONLY! This variable controls the x position "
+          },
+          {
+            "id": "jwgD4c7go2.M{Jb_bP?7",
+            "text": "FOR THIS SPRITE ONLY! This variable controls the y position "
+          },
+          {
+            "id": "]s,fV2q1m|I6u9K0icBc",
+            "text": "FOR THIS SPRITE ONLY! This variable controls the z position "
+          }
+        ],
+        "changed": [],
+        "added": 17
+      },
+      "unchangedCount": 0
+    },
+    "針": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "rgeEqZ}rZ!DVkvUq,z}W",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "tzZp9A0L}3pnK~?Qk/),",
+          "opcode": "event_whenflagclicked"
+        },
+        {
+          "id": "%z(h4FbWFPo57Y3;4ZG(",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "UcA*::zL0EH9wM/gTR#8",
+          "opcode": "data_setvariableto"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 176
+        },
+        {
+          "id": "$,",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "$.",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 528
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "NEXTだお": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "5p%!+v1MWc~.%fbUe0Wr",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "iV^RP)YFE)^%xlpyy60k",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "D_3[X5yO.PKrK;4[W=p3",
+          "opcode": "motion_xposition"
+        },
+        {
+          "id": "M[~$*u!nZK5X@Y4JjO_!",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "nOcQI]=^MQoF$E)_*y[0",
+          "opcode": "event_whenflagclicked"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 5024
+        },
+        {
+          "id": "$-",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 1264
+        },
+        {
+          "id": "$p%",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 176
+        },
+        {
+          "id": "$G(",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [
+          {
+            "id": "-oqJnE_!i.:h?]}rWI1R",
+            "text": "この音は共有後に追加したので、付けるかつけないかはあなた次第です！"
+          },
+          {
+            "id": "s@v85n9oL;-DFfuhjlY}",
+            "text": "⇧\nこの下に入れてください"
+          }
+        ],
+        "changed": [],
+        "added": 2
+      },
+      "unchangedCount": 0
+    },
+    "スプライト1": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "s#kv8_Cp!)sf,Eim`Dr*",
+          "opcode": "event_whenflagclicked"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "海賊王になる男(((?": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "U2Q$[3?{f-6BD;I,ABj{",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "e%FE?TJKrwo+@tL+I~8f",
+          "opcode": "event_whenflagclicked"
+        },
+        {
+          "id": "=963F,_Xjg;HWH1~8]PP",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "RLvp|[qg6oq]G0y*Im`U",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "YzbSKdl0sV$,0u,[o34U",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "q:}.SgjBa=ARKIlfvF{$",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "E*haDl(G9^bOZ9b[SO7N",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "#f:4W)Q[FwL$-?Q,Vsb7",
+          "opcode": "control_start_as_clone"
+        },
+        {
+          "id": "zs_KpXL},c6/a)x.1hvT",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "zQ5uufKD$gXSj(n[_%]n",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": ":HdVJ~WA;/#BE|3VXR7*",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "Gy0~y8_ijayw3h`P;1fk",
+          "opcode": "looks_switchcostumeto"
+        },
+        {
+          "id": "kWgtyjl@8xgjW`{W17s+",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": ",ifh:ITqF1*NK^b;cl,E",
+          "opcode": "event_whenflagclicked"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 8016
+        },
+        {
+          "id": "$]",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 8496
+        },
+        {
+          "id": "$B",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 8864
+        },
+        {
+          "id": "$M",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 352
+        },
+        {
+          "id": "$*+",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "$,+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5592
+        },
+        {
+          "id": "$:+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 5816
+        },
+        {
+          "id": "$@+",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 7344
+        },
+        {
+          "id": "$`+",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 7568
+        },
+        {
+          "id": "$I+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 6040
+        },
+        {
+          "id": "$d+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 6528
+        },
+        {
+          "id": "$q+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 6928
+        },
+        {
+          "id": "$:,",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 176
+        },
+        {
+          "id": "$?,",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 7216
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 1
+      },
+      "unchangedCount": 0
+    }
+  },
+  "summary": {
+    "unchanged": 0,
+    "moved": 0,
+    "changed": 0,
+    "deleted": 90,
+    "added": 71,
+    "commentsKept": 0,
+    "commentsLost": 19,
+    "commentsChanged": 0,
+    "commentsAdded": 22,
+    "idsPreservedInChanged": 0
+  }
+}

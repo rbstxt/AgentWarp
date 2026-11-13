@@ -1,0 +1,73 @@
+{
+  "file": "eval/runs/goboscript/L2/out.sb3",
+  "ok": true,
+  "frames": 600,
+  "fps": 30,
+  "virtualSeconds": 20,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "blank",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Ball",
+      "isStage": false,
+      "isClone": false,
+      "x": -125.72496346852748,
+      "y": 157.44069222106563,
+      "direction": -45,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "ball",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Cat",
+      "isStage": false,
+      "isClone": false,
+      "x": 150,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "cat",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {},
+  "broadcasts": [],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Cat.x": 150,
+    "Ball.x": -125.72496346852748,
+    "Ball.y": 157.44069222106563
+  }
+}

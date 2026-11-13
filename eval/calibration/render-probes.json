@@ -1,0 +1,62 @@
+{
+  "shapes": {
+    "event_whenflagclicked": {
+      "width": 148.5,
+      "height": 56,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "motion_movesteps": {
+      "width": 161.25,
+      "height": 56,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "control_repeat": {
+      "width": 160,
+      "height": 112,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "control_if_else": {
+      "width": 160,
+      "height": 168,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "control_forever": {
+      "width": 160,
+      "height": 104,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "control_stop": {
+      "width": 115.515625,
+      "height": 48,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "operator_add": {
+      "width": 129.609375,
+      "height": 40,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "math_number": {
+      "width": 54.91203689575195,
+      "height": 40,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    },
+    "text": {
+      "width": 50.46759271621704,
+      "height": 40,
+      "note": "newBlock, empty inputs, no toolbox shadow XML"
+    }
+  },
+  "text": {
+    "font": "500 16px \"Helvetica Neue\", Helvetica, sans-serif",
+    "samples": {
+      "0": 8.912036895751953,
+      "i": 3.8657407760620117,
+      "iiiiiiiiii": 38.564815521240234,
+      "W": 15.115740776062012,
+      "WWWWWWWWWW": 151.04165649414062,
+      "0000000000": 88.98148345947266,
+      "move": 40.625,
+      "hello world": 80.9490737915039
+    }
+  }
+}

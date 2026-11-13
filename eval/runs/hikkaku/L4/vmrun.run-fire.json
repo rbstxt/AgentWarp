@@ -1,0 +1,4744 @@
+{
+  "file": "eval/runs/hikkaku/L4/out.sb3",
+  "ok": true,
+  "frames": 1800,
+  "fps": 30,
+  "virtualSeconds": 60,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Stage",
+      "variables": {
+        "score": 57,
+        "lives": 3
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -140,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "cat",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": false,
+      "x": 230,
+      "y": 200,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": false,
+      "x": -230,
+      "y": 200,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "enemy",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Banner",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "cat",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 180,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 120,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 60,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": -60,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "Bullet": 5
+  },
+  "monitors": {
+    "asset-1": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 57,
+      "params": {
+        "VARIABLE": "score"
+      }
+    },
+    "asset-2": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 3,
+      "params": {
+        "VARIABLE": "lives"
+      }
+    }
+  },
+  "broadcasts": [],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 6,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 6,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 12,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 12,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 18,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 18,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 24,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 24,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 36,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 36,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 42,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 42,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 48,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 48,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 54,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 54,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 60,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 60,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 61,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 66,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 66,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 72,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 72,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 78,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 78,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 84,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 84,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 96,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 96,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 102,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 102,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 108,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 108,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 114,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 114,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 120,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 120,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 123,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 126,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 126,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 132,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 132,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 138,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 138,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 144,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 144,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 150,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 150,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 154,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 156,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 156,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 162,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 162,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 168,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 168,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 174,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 174,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 180,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 180,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 185,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 186,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 186,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 192,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 192,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 198,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 198,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 204,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 204,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 210,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 210,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 216,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 216,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 216,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 222,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 222,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 228,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 228,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 234,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 234,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 240,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 240,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 246,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 246,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 247,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 252,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 252,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 258,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 258,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 264,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 264,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 270,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 270,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 276,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 276,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 278,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 282,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 282,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 288,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 288,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 294,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 294,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 300,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 300,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 306,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 306,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 309,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 312,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 312,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 318,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 318,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 324,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 324,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 330,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 330,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 336,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 336,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 340,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 342,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 342,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 348,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 348,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 354,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 354,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 360,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 360,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 366,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 366,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 371,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 372,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 372,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 378,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 378,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 384,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 384,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 390,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 390,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 396,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 396,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 402,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 402,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 402,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 408,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 408,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 414,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 414,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 420,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 420,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 426,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 426,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 432,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 432,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 433,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 438,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 438,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 444,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 444,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 450,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 450,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 456,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 456,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 462,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 462,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 464,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 468,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 468,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 474,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 474,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 480,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 480,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 486,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 486,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 492,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 492,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 495,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 498,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 498,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 504,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 504,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 510,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 510,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 516,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 516,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 522,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 522,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 526,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 528,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 528,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 534,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 534,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 540,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 540,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 546,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 546,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 552,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 552,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 557,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 558,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 558,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 564,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 564,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 570,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 570,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 576,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 576,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 582,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 582,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 588,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 588,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 588,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 594,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 594,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 600,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 600,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 606,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 606,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 612,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 612,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 618,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 618,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 619,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 624,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 624,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 630,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 630,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 636,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 636,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 642,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 642,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 648,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 648,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 650,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 654,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 654,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 660,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 660,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 666,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 666,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 672,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 672,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 678,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 678,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 681,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 684,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 684,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 690,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 690,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 696,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 696,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 702,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 702,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 708,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 708,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 712,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 714,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 714,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 720,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 720,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 726,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 726,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 732,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 732,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 738,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 738,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 743,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 744,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 744,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 750,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 750,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 756,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 756,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 762,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 762,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 768,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 768,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 774,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 774,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 774,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 780,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 780,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 786,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 786,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 792,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 792,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 798,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 798,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 804,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 804,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 805,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 810,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 810,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 816,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 816,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 822,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 822,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 828,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 828,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 834,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 834,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 836,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 840,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 840,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 846,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 846,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 852,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 852,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 858,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 858,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 864,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 864,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 867,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 870,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 870,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 876,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 876,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 882,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 882,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 888,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 888,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 894,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 894,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 898,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 900,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 900,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 906,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 906,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 912,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 912,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 918,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 918,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 924,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 924,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 929,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 930,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 930,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 936,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 936,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 942,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 942,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 948,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 948,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 954,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 954,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 960,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 960,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 960,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 966,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 966,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 972,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 972,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 978,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 978,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 984,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 984,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 990,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 990,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 991,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 996,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 996,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1002,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1002,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1008,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1008,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1014,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1014,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1020,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1020,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1022,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1026,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1026,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1032,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1032,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1038,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1038,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1044,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1044,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1050,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1050,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1053,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1056,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1056,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1062,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1062,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1068,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1068,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1074,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1074,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1080,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1080,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1084,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1086,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1086,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1092,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1092,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1098,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1098,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1104,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1104,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1110,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1110,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1115,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1116,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1116,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1122,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1122,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1128,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1128,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1134,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1134,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1140,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1140,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1146,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1146,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1146,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1152,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1152,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1158,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1158,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1164,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1164,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1170,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1170,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1176,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1176,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1177,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1182,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1182,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1188,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1188,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1194,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1194,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1200,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1200,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1206,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1206,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1208,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1212,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1212,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1218,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1218,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1224,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1224,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1230,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1230,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1236,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1236,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1239,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1242,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1242,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1248,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1248,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1254,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1254,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1260,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1260,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1266,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1266,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1270,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1272,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1272,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1278,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1278,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1284,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1284,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1290,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1290,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1296,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1296,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1301,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1302,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1302,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1308,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1308,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1314,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1314,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1320,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1320,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1326,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1326,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1332,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1332,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1332,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1338,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1338,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1344,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1344,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1350,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1350,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1356,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1356,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1362,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1362,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1363,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1368,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1368,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1374,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1374,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1380,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1380,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1386,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1386,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1392,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1392,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1394,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1398,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1398,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1404,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1404,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1410,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1410,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1416,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1416,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1422,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1422,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1425,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1428,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1428,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1434,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1434,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1440,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1440,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1446,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1446,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1452,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1452,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1456,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1458,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1458,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1464,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1464,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1470,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1470,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1476,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1476,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1482,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1482,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1488,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1488,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1488,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1494,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1494,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1500,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1500,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1506,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1506,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1512,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1512,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1518,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1518,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1520,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1524,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1524,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1530,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1530,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1536,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1536,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1542,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1542,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1548,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1548,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1552,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1554,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1554,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1560,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1560,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1566,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1566,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1572,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1572,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1578,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1578,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1584,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1584,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1584,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1590,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1590,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1596,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1596,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1602,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1602,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1608,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1608,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1614,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1614,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1616,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1620,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1620,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1626,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1626,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1632,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1632,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1638,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1638,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1644,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1644,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1648,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1650,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1650,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1656,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1656,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1662,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1662,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1668,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1668,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1674,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1674,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1680,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1680,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1680,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1686,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1686,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1692,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1692,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1698,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1698,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1704,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1704,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1710,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1710,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1712,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1716,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1716,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1722,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1722,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1728,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1728,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1734,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1734,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1740,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1740,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1744,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1746,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1746,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1752,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1752,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1758,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1758,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1764,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1764,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1770,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1770,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1776,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1776,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 1776,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1782,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1782,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1788,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1788,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1794,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1794,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Stage.variables.score": 57,
+    "Stage.variables.lives": 3,
+    "clones.Bullet": 5,
+    "clones.Enemy": null,
+    "Banner.visible": false
+  }
+}

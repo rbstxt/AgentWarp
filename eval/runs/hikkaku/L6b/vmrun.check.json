@@ -1,0 +1,163 @@
+{
+  "file": "eval/runs/hikkaku/L6b/out.sb3",
+  "ok": true,
+  "errors": [],
+  "warnings": [
+    {
+      "target": "ステージ",
+      "blockId": "#smjF[(#!EHUrbk#_cb{",
+      "opcode": "looks_costume",
+      "message": "parent \"I$V:;An{y0DmxK!fnsP+\" does not reference this block back"
+    },
+    {
+      "target": "ステージ",
+      "blockId": "#smjF[(#!EHUrbk#_cb{",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": "K4Tp|b/Bk~@Fno9in$(.",
+      "opcode": "looks_costume",
+      "message": "parent \"X,EUle9#uRIA$GjEWr.`\" does not reference this block back"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": "K4Tp|b/Bk~@Fno9in$(.",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"p}HfgV:sLx?`b`r6S@E4\" attached to missing block \"##7){oSsszP`+PN~|89X\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"9Lf(qbW[m32HYV#1bLWE\" attached to missing block \"FF1q=ydH@wU[lPXvGyzE\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"qv1,.71!AkSdWR+ZZn`}\" attached to missing block \"!^-auUklnHr`Vp@#OgJ]\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"dXw^Dvp6{L.e0~QMWivg\" attached to missing block \"(9ix)GdIIK_LRaWKP3jo\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"ZhY_Q+9LKa@l?W43u%@9\" attached to missing block \"pQb97n=zDOW9ZBhqr)8q\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"Wkw(_KcKgJFNX/@R~HE4\" attached to missing block \"U*wePIB(9/|`f5SftWTV\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"I1HV6Q;!px#:c99tZ]46\" attached to missing block \"rKkz2,{nxQ*mn0VY!*}#\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"kkA6R:aYiHx$pvg3D5cX\" attached to missing block \"{[X*JAYzYtd^89[9LNA=\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"Zry~tH+ko0h-r^Ks-3g]\" attached to missing block \"BPNoBiL#=qwMmXvNu7h+\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"QjxzQ:*)oMRiyl6__M2,\" attached to missing block \"+B}aP@UeWy3TGuqRXT-*\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"=,6``]l2J+3Yvy]9-e-)\" attached to missing block \"NEyLaduYIRNjG8W`P^9d\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"[rF%tSaCKQBYt56C}u}6\" attached to missing block \"DfP4E~{D(v:@U*_aQ|oW\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \")ede*9dYJ,5aVmdG1xZ]\" attached to missing block \"2zaypnV{9?}j]HV4)g6M\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"h=BXy=|vaIXF6|,@MwD1\" attached to missing block \"G-27dWb%SOy)R*4/hWA5\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"jwgD4c7go2.M{Jb_bP?7\" attached to missing block \"N?l_XY@rr}y3wHlJ5TQ3\" (treated as workspace comment)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": null,
+      "opcode": null,
+      "message": "comment \"]s,fV2q1m|I6u9K0icBc\" attached to missing block \"7#MWtR.x/wq:XH@pa]f5\" (treated as workspace comment)"
+    },
+    {
+      "target": "針",
+      "blockId": "}i~-QU}Eym1oay-I7ko^",
+      "opcode": "looks_costume",
+      "message": "parent \"#mM1;qdWp:q#S*mK:)|(\" does not reference this block back"
+    },
+    {
+      "target": "針",
+      "blockId": "}i~-QU}Eym1oay-I7ko^",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "NEXTだお",
+      "blockId": "7%{|0u8,fWAeT0|^8U($",
+      "opcode": "looks_costume",
+      "message": "parent \"_/CSYV:tPAp(*Wj4mp3X\" does not reference this block back"
+    },
+    {
+      "target": "NEXTだお",
+      "blockId": "7%{|0u8,fWAeT0|^8U($",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "海賊王になる男(((?",
+      "blockId": "sDe/tJFB1_(QPGb?Rigo",
+      "opcode": "sound_sounds_menu",
+      "message": "parent \"/#=z.JXCE0n,I.aCS/Jx\" does not reference this block back"
+    },
+    {
+      "target": "海賊王になる男(((?",
+      "blockId": "sDe/tJFB1_(QPGb?Rigo",
+      "opcode": "sound_sounds_menu",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    }
+  ]
+}

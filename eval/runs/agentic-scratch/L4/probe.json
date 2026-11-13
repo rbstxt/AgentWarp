@@ -1,0 +1,4419 @@
+{
+  "file": "eval/runs/agentic-scratch/L4/out.sb3",
+  "ok": true,
+  "frames": 1800,
+  "fps": 30,
+  "virtualSeconds": 60,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {
+        "score": 8,
+        "lives": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 40,
+      "y": -150,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "player",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "GameOver",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "gameover",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -150,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 170,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "enemy",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 40,
+      "y": 155,
+      "direction": 0,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 40,
+      "y": 65,
+      "direction": 0,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 40,
+      "y": -25,
+      "direction": 0,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 40,
+      "y": -115,
+      "direction": 0,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "Bullet": 4
+  },
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 234,
+      "name": "gameover",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 5,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 11,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 11,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 17,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 17,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 23,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 23,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 29,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 29,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 35,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 35,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 41,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 41,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 47,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 47,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 53,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 53,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 59,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 59,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 61,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 65,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 65,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 71,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 71,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 77,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 77,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 83,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 83,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 89,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 89,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 95,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 95,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 101,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 101,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 107,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 107,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 113,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 113,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 119,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 119,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 123,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 125,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 125,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 131,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 131,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 137,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 137,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 143,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 143,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 149,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 149,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 154,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 155,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 155,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 161,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 161,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 167,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 167,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 173,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 173,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 179,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 179,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 185,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 185,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 185,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 191,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 191,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 197,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 197,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 203,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 203,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 209,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 209,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 215,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 215,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 216,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 221,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 221,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 227,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 227,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 233,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 233,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 234,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "gameover"
+      }
+    },
+    {
+      "frame": 239,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 239,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 245,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 245,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 251,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 251,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 257,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 257,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 263,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 263,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 269,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 269,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 275,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 275,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 281,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 281,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 287,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 287,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 293,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 293,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 299,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 299,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 305,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 305,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 311,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 311,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 317,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 317,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 323,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 323,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 329,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 329,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 335,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 335,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 341,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 341,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 347,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 347,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 353,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 353,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 359,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 359,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 365,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 365,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 371,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 371,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 377,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 377,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 383,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 383,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 389,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 389,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 395,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 395,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 401,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 401,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 407,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 407,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 413,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 413,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 419,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 419,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 425,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 425,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 431,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 431,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 437,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 437,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 443,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 443,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 449,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 449,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 455,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 455,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 461,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 461,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 467,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 467,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 473,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 473,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 479,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 479,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 485,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 485,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 491,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 491,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 497,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 497,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 503,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 503,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 509,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 509,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 515,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 515,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 521,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 521,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 527,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 527,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 533,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 533,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 539,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 539,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 545,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 545,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 551,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 551,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 557,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 557,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 563,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 563,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 569,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 569,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 575,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 575,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 581,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 581,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 587,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 587,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 593,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 593,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 599,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 599,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 605,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 605,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 611,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 611,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 617,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 617,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 623,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 623,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 629,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 629,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 635,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 635,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 641,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 641,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 647,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 647,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 653,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 653,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 659,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 659,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 665,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 665,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 671,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 671,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 677,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 677,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 683,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 683,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 689,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 689,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 695,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 695,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 701,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 701,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 707,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 707,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 713,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 713,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 719,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 719,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 725,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 725,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 731,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 731,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 737,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 737,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 743,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 743,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 749,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 749,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 755,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 755,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 761,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 761,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 767,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 767,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 773,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 773,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 779,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 779,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 785,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 785,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 791,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 791,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 797,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 797,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 803,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 803,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 809,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 809,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 815,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 815,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 821,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 821,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 827,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 827,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 833,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 833,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 839,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 839,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 845,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 845,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 851,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 851,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 857,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 857,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 863,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 863,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 869,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 869,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 875,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 875,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 881,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 881,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 887,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 887,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 893,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 893,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 899,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 899,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 905,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 905,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 911,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 911,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 917,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 917,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 923,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 923,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 929,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 929,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 935,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 935,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 941,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 941,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 947,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 947,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 953,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 953,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 959,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 959,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 965,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 965,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 971,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 971,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 977,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 977,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 983,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 983,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 989,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 989,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 995,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 995,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1001,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1001,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1007,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1007,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1013,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1013,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1019,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1019,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1025,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1025,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1031,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1031,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1037,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1037,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1043,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1043,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1049,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1049,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1055,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1055,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1061,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1061,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1067,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1067,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1073,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1073,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1079,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1079,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1085,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1085,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1091,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1091,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1097,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1097,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1103,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1103,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1109,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1109,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1115,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1115,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1121,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1121,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1127,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1127,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1133,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1133,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1139,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1139,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1145,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1145,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1151,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1151,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1157,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1157,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1163,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1163,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1169,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1169,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1175,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1175,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1181,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1181,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1187,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1187,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1193,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1193,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1199,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1199,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1205,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1205,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1211,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1211,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1217,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1217,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1223,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1223,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1229,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1229,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1235,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1235,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1241,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1241,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1247,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1247,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1253,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1253,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1259,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1259,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1265,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1265,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1271,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1271,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1277,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1277,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1283,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1283,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1289,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1289,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1295,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1295,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1301,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1301,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1307,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1307,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1313,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1313,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1319,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1319,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1325,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1325,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1331,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1331,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1337,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1337,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1343,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1343,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1349,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1349,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1355,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1355,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1361,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1361,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1367,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1367,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1373,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1373,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1379,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1379,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1385,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1385,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1391,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1391,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1397,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1397,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1403,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1403,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1409,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1409,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1415,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1415,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1421,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1421,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1427,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1427,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1433,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1433,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1439,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1439,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1445,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1445,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1451,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1451,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1457,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1457,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1463,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1463,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1469,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1469,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1475,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1475,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1481,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1481,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1487,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1487,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1493,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1493,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1499,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1499,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1505,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1505,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1511,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1511,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1517,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1517,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1523,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1523,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1529,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1529,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1535,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1535,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1541,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1541,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1547,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1547,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1553,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1553,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1559,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1559,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1565,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1565,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1571,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1571,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1577,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1577,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1583,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1583,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1589,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1589,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1595,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1595,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1601,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1601,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1607,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1607,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1613,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1613,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1619,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1619,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1625,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1625,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1631,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1631,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1637,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1637,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1643,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1643,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1649,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1649,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1655,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1655,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1661,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1661,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1667,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1667,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1673,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1673,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1679,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1679,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1685,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1685,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1691,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1691,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1697,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1697,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1703,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1703,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1709,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1709,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1715,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1715,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1721,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1721,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1727,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1727,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1733,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1733,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1739,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1739,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1745,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1745,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1751,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1751,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1757,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1757,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1763,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1763,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1769,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1769,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1775,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1775,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1781,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1781,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1787,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1787,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1793,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1793,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 1799,
+      "hat": "event_whenkeypressed",
+      "target": null,
+      "fields": {
+        "KEY_OPTION": "space"
+      }
+    },
+    {
+      "frame": 1799,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0
+}

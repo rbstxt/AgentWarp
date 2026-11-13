@@ -1,0 +1,72 @@
+{
+  "file": "eval/runs/raw-json/L2/out.sb3",
+  "ok": true,
+  "frames": 600,
+  "fps": 30,
+  "virtualSeconds": 20,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Sprite1",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Sprite1-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Ball",
+      "isStage": false,
+      "isClone": false,
+      "x": 82.72077938642144,
+      "y": -65.66756826189699,
+      "direction": -135,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Ball-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {},
+  "broadcasts": [],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Ball.x": 82.72077938642144,
+    "Ball.y": -65.66756826189699
+  }
+}

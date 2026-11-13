@@ -1,0 +1,168 @@
+{
+  "file": "eval/runs/hikkaku/L4/out.sb3",
+  "ok": true,
+  "frames": 1800,
+  "fps": 30,
+  "virtualSeconds": 60,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Stage",
+      "variables": {
+        "score": 0,
+        "lives": 0
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -140,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "cat",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": false,
+      "x": 230,
+      "y": 200,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": false,
+      "x": -230,
+      "y": 200,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "enemy",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Banner",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "gameover",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {
+    "asset-1": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "score"
+      }
+    },
+    "asset-2": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "lives"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 174,
+      "name": "gameover",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 61,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 123,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 154,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 174,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "gameover"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Stage.variables.lives": 0,
+    "Stage.variables.score": 0,
+    "Banner.visible": true,
+    "Banner.costumeName": "gameover"
+  }
+}

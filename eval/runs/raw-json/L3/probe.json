@@ -1,0 +1,149 @@
+{
+  "file": "eval/runs/raw-json/L3/out.sb3",
+  "ok": true,
+  "frames": 120,
+  "fps": 30,
+  "virtualSeconds": 4,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "win",
+      "variables": {
+        "score": 10
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Cookie",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Cookie-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {
+    "vScore": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 10,
+      "params": {
+        "VARIABLE": "score"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 51,
+      "name": "win",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 10,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 15,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 20,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 25,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 35,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 40,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 45,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 50,
+      "hat": "event_whenthisspriteclicked",
+      "target": "Cookie",
+      "fields": {}
+    },
+    {
+      "frame": 51,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "win"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Cookie.variables": {},
+    "Stage.costumeName": "win",
+    "broadcasts": [
+      {
+        "frame": 51,
+        "name": "win",
+        "target": null
+      }
+    ]
+  }
+}

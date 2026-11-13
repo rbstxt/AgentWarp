@@ -1,0 +1,94 @@
+{
+  "targets": {
+    "Stage": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "player": {
+      "moved": [],
+      "changed": [
+        {
+          "id": "Z!mdJ^L20-f=q]_70pV}",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "7/7"
+        },
+        {
+          "id": "Yt{7~R5HQLmO$dUww)Gx",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "18/18"
+        },
+        {
+          "id": "C2lJ=7y{Jr4?m8+44^;F",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "19/19"
+        }
+      ],
+      "deleted": [],
+      "added": [
+        {
+          "id": "b-i",
+          "opcode": "event_whenkeypressed",
+          "x": -500,
+          "y": 1100
+        }
+      ],
+      "comments": {
+        "kept": 8,
+        "lost": [],
+        "changed": [],
+        "added": 4
+      },
+      "unchangedCount": 5
+    },
+    "platforms": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 3,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 4
+    },
+    "mouse pointer": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 2
+    }
+  },
+  "summary": {
+    "unchanged": 11,
+    "moved": 0,
+    "changed": 3,
+    "deleted": 0,
+    "added": 1,
+    "commentsKept": 11,
+    "commentsLost": 0,
+    "commentsChanged": 0,
+    "commentsAdded": 4,
+    "idsPreservedInChanged": 1
+  }
+}

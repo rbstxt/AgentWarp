@@ -1,0 +1,257 @@
+{
+  "targets": {
+    "Stage": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "player": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "frS@wdhOzJq81AX3PEtx",
+          "opcode": "event_whenflagclicked"
+        },
+        {
+          "id": "j3eziD1e2,tUh6K^l%pf",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "Z!mdJ^L20-f=q]_70pV}",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "Yt{7~R5HQLmO$dUww)Gx",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "C2lJ=7y{Jr4?m8+44^;F",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "]Lfk0g89#zKe9`9;8Q$E",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "/mlGH`;s+@_#2fNpIU`z",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "!xS3J71RhS6f62|fQF91",
+          "opcode": "data_setvariableto"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 1240
+        },
+        {
+          "id": "$W",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 2304
+        },
+        {
+          "id": "$f",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 2504
+        },
+        {
+          "id": "$,#",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 3288
+        },
+        {
+          "id": "$~#",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 3816
+        },
+        {
+          "id": "$m#",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "$r#",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 568
+        },
+        {
+          "id": "$/%",
+          "opcode": "event_whenkeypressed",
+          "x": 0,
+          "y": 224
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [
+          {
+            "id": "/N(VNB?S$-{0gbOvr1q:",
+            "text": "this code needs the play game code and the change player x b"
+          },
+          {
+            "id": "j|v`wPCXUn.(+y-Ul=ze",
+            "text": "this makes everything run!"
+          },
+          {
+            "id": "z,xiu!+#M%50Izj#yQ0n",
+            "text": "this sets all the variables to 0"
+          },
+          {
+            "id": "xDY$RnLCqSYr[:+;QQfc",
+            "text": "this tells it to start"
+          },
+          {
+            "id": "H7|Mo1!gR[gMJ%eqjT;/",
+            "text": "this is the position "
+          },
+          {
+            "id": "Adei1SQ![]d(*H@S`HMV",
+            "text": "this is wall detection"
+          },
+          {
+            "id": "E(J(FqUtV6f9n*jaeYG3",
+            "text": "this is so it stays on top of the ground"
+          },
+          {
+            "id": "/[g`]IXpOR4fkCJVZYVb",
+            "text": "this makes it move and gives it gravity!"
+          }
+        ],
+        "changed": [],
+        "added": 12
+      },
+      "unchangedCount": 0
+    },
+    "platforms": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "Xf/iPft$KKK$`?+|`Aer",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "D+;ZpfG(pGF%n2%4;f6A",
+          "opcode": "event_whenbroadcastreceived"
+        },
+        {
+          "id": "$*3Jf}Xi3..];q6Mi~4$",
+          "opcode": "procedures_definition"
+        },
+        {
+          "id": "QQXNKD2((?Y@]z5YLm12",
+          "opcode": "looks_switchcostumeto"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 696
+        },
+        {
+          "id": "$]",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "$A",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 184
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [
+          {
+            "id": "KWU|KI]Mygj,g{c]45t!",
+            "text": "this makes it scroll"
+          },
+          {
+            "id": "a;I0$u!R%DM*Ic|MXEwo",
+            "text": "this makes the level show when its on the screen and hide wh"
+          },
+          {
+            "id": "X=|x/B%K!~!ama4HRLlI",
+            "text": "this is the position of the platforms"
+          }
+        ],
+        "changed": [],
+        "added": 3
+      },
+      "unchangedCount": 0
+    },
+    "mouse pointer": {
+      "moved": [],
+      "changed": [],
+      "deleted": [
+        {
+          "id": "mK}_,U@j3$vzmtungB4$",
+          "opcode": "event_whenflagclicked"
+        },
+        {
+          "id": "d4]MM?mQUUKee~U;4lkb",
+          "opcode": "control_start_as_clone"
+        }
+      ],
+      "added": [
+        {
+          "id": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0
+        },
+        {
+          "id": "$*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 304
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "PausedSign": {
+      "addedTarget": true
+    }
+  },
+  "summary": {
+    "unchanged": 0,
+    "moved": 0,
+    "changed": 0,
+    "deleted": 14,
+    "added": 13,
+    "commentsKept": 0,
+    "commentsLost": 11,
+    "commentsChanged": 0,
+    "commentsAdded": 15,
+    "idsPreservedInChanged": 0
+  }
+}

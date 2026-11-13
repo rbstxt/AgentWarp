@@ -1,0 +1,311 @@
+{
+  "file": "eval/runs/goboscript/L4/out.sb3",
+  "ok": true,
+  "frames": 150,
+  "fps": 30,
+  "virtualSeconds": 5,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "starfield",
+      "variables": {
+        "lives": 2,
+        "score": 1
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 230,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": false,
+      "x": 200,
+      "y": 230,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "enemy",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "GameOver",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "gameover",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 30,
+      "y": -140,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "player",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": true,
+      "x": 143,
+      "y": -72,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "enemy",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Enemy",
+      "isStage": false,
+      "isClone": true,
+      "x": 202,
+      "y": 52,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "enemy",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 18,
+      "y": 168,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 24,
+      "y": 60,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Bullet",
+      "isStage": false,
+      "isClone": true,
+      "x": 30,
+      "y": -48,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "bullet",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "Enemy": 2,
+    "Bullet": 3
+  },
+  "monitors": {},
+  "broadcasts": [],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 9,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 18,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 27,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 36,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 45,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 54,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 61,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 63,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 72,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 81,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 99,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 108,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 117,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 123,
+      "hat": "control_start_as_clone",
+      "target": "Enemy",
+      "fields": {}
+    },
+    {
+      "frame": 126,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 135,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    },
+    {
+      "frame": 144,
+      "hat": "control_start_as_clone",
+      "target": "Bullet",
+      "fields": {}
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Stage.variables.score": 1,
+    "Stage.variables.lives": 2,
+    "clones.Enemy": 2,
+    "clones.Bullet": 3
+  }
+}

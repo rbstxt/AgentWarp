@@ -1,0 +1,67 @@
+{
+  "file": "eval/runs/goboscript/L6b/out.sb3",
+  "ok": true,
+  "errors": [],
+  "warnings": [
+    {
+      "target": "NEXTだお",
+      "blockId": "$+",
+      "opcode": "looks_costume",
+      "message": "parent \"$%\" does not reference this block back"
+    },
+    {
+      "target": "NEXTだお",
+      "blockId": "$+",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": "$d#",
+      "opcode": "looks_costume",
+      "message": "parent \"$%#\" does not reference this block back"
+    },
+    {
+      "target": "いんとぅるえんぎね",
+      "blockId": "$d#",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "ステージ",
+      "blockId": "$.",
+      "opcode": "looks_costume",
+      "message": "parent \"$,\" does not reference this block back"
+    },
+    {
+      "target": "ステージ",
+      "blockId": "$.",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "海賊王になる男(((?",
+      "blockId": "$n+",
+      "opcode": "sound_sounds_menu",
+      "message": "parent \"$k+\" does not reference this block back"
+    },
+    {
+      "target": "海賊王になる男(((?",
+      "blockId": "$n+",
+      "opcode": "sound_sounds_menu",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    },
+    {
+      "target": "針",
+      "blockId": "$+",
+      "opcode": "looks_costume",
+      "message": "parent \"$(\" does not reference this block back"
+    },
+    {
+      "target": "針",
+      "blockId": "$+",
+      "opcode": "looks_costume",
+      "message": "orphan non-topLevel block (unreachable from any topLevel script)"
+    }
+  ]
+}

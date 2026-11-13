@@ -1,0 +1,52 @@
+{
+  "file": "eval/runs/hikkaku/L3/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [
+        {
+          "blockId": "1",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "4",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 64,
+          "y": 332,
+          "w": 224,
+          "h": 82
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "Cookie": {
+      "scripts": [
+        {
+          "blockId": "7",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 189,
+          "h": 120
+        },
+        {
+          "blockId": "b",
+          "opcode": "event_whenthisspriteclicked",
+          "x": 64,
+          "y": 332,
+          "w": 210,
+          "h": 336
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 0,
+  "scriptCount": 4,
+  "score": 100
+}

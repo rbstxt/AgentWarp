@@ -1,0 +1,141 @@
+{
+  "file": "eval/runs/hikkaku/L5/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [
+        {
+          "blockId": "d3",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "d5",
+          "opcode": "event_whenkeypressed",
+          "x": 20,
+          "y": 132,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "d7",
+          "opcode": "event_whenkeypressed",
+          "x": 20,
+          "y": 244,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "d9",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 20,
+          "y": 356,
+          "w": 245,
+          "h": 690
+        },
+        {
+          "blockId": "eb",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 20,
+          "y": 1076,
+          "w": 245,
+          "h": 690
+        }
+      ],
+      "comments": [
+        {
+          "id": "hikkaku-comment-3",
+          "blockId": null,
+          "x": 305,
+          "y": 20,
+          "w": 280,
+          "h": 60
+        }
+      ],
+      "overlaps": []
+    },
+    "Player": {
+      "scripts": [
+        {
+          "blockId": "1",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 1442,
+          "w": 273,
+          "h": 1062
+        },
+        {
+          "blockId": "3",
+          "opcode": "procedures_definition",
+          "x": 20,
+          "y": 20,
+          "w": 294,
+          "h": 1392
+        },
+        {
+          "blockId": "c9",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 20,
+          "y": 2534,
+          "w": 245,
+          "h": 196
+        },
+        {
+          "blockId": "ce",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 20,
+          "y": 2760,
+          "w": 245,
+          "h": 196
+        }
+      ],
+      "comments": [
+        {
+          "id": "hikkaku-comment-1",
+          "blockId": null,
+          "x": 354,
+          "y": 20,
+          "w": 280,
+          "h": 60
+        },
+        {
+          "id": "hikkaku-comment-2",
+          "blockId": null,
+          "x": 354,
+          "y": 110,
+          "w": 280,
+          "h": 60
+        }
+      ],
+      "overlaps": []
+    },
+    "Painter": {
+      "scripts": [
+        {
+          "blockId": "fd",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 259,
+          "h": 818
+        }
+      ],
+      "comments": [
+        {
+          "id": "hikkaku-comment-4",
+          "blockId": null,
+          "x": 319,
+          "y": 20,
+          "w": 280,
+          "h": 60
+        }
+      ],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 0,
+  "scriptCount": 10,
+  "score": 100
+}

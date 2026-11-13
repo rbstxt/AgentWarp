@@ -1,0 +1,363 @@
+{
+  "file": "eval/runs/agentic-scratch/L5/out.sb3",
+  "ok": true,
+  "frames": 900,
+  "fps": 30,
+  "virtualSeconds": 30,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {
+        "level": 1,
+        "scrollX": 65,
+        "goalX": 220,
+        "platforms": [
+          "-180 -160 120 20",
+          "-60 -160 120 20",
+          "60 -160 120 20",
+          "180 -160 120 20",
+          "-60 -60 120 20",
+          "60 30 120 20"
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 100,
+      "y": -135,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "player",
+      "variables": {
+        "worldX": 165,
+        "worldY": -135,
+        "velY": 0,
+        "onGround": 1,
+        "i": 7,
+        "S": "60 30 120 20",
+        "tok": "20",
+        "ch": "0",
+        "idx": 13,
+        "fld": 4,
+        "px": "60",
+        "py": "30",
+        "pw": "120",
+        "ph": "20",
+        "pen": 0.6999999999999886
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform1",
+      "isStage": false,
+      "isClone": false,
+      "x": -165,
+      "y": -160,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "platform",
+      "variables": {
+        "S": "-180 -160 120 20",
+        "tok": "2",
+        "ch": "2",
+        "idx": 16,
+        "fld": 4,
+        "px": "-180",
+        "py": "-160"
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform2",
+      "isStage": false,
+      "isClone": false,
+      "x": -95,
+      "y": -160,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "platform",
+      "variables": {
+        "S": "-60 -160 120 20",
+        "tok": "-",
+        "ch": "-",
+        "idx": 6,
+        "fld": 2,
+        "px": "-60",
+        "py": "-160"
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform3",
+      "isStage": false,
+      "isClone": false,
+      "x": 15,
+      "y": -160,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "platform",
+      "variables": {
+        "S": "60 -160 120 20",
+        "tok": "",
+        "ch": " ",
+        "idx": 4,
+        "fld": 2,
+        "px": "60",
+        "py": "-160"
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform4",
+      "isStage": false,
+      "isClone": false,
+      "x": 135,
+      "y": -160,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "platform",
+      "variables": {
+        "S": "180 -160 120 20",
+        "tok": "180",
+        "ch": "0",
+        "idx": 4,
+        "fld": 1,
+        "px": "180",
+        "py": "-160"
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform5",
+      "isStage": false,
+      "isClone": false,
+      "x": -105,
+      "y": -60,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "platform",
+      "variables": {
+        "S": "-60 -60 120 20",
+        "tok": "-60",
+        "ch": "0",
+        "idx": 4,
+        "fld": 1,
+        "px": "-60",
+        "py": "-60"
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform6",
+      "isStage": false,
+      "isClone": false,
+      "x": 55,
+      "y": 30,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "platform",
+      "variables": {
+        "S": "60 30 120 20",
+        "tok": "2",
+        "ch": "2",
+        "idx": 12,
+        "fld": 4,
+        "px": "60",
+        "py": "30"
+      },
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 0,
+      "name": "level1",
+      "target": null
+    },
+    {
+      "frame": 81,
+      "name": "level2",
+      "target": null
+    },
+    {
+      "frame": 166,
+      "name": "level1",
+      "target": null
+    },
+    {
+      "frame": 247,
+      "name": "level2",
+      "target": null
+    },
+    {
+      "frame": 332,
+      "name": "level1",
+      "target": null
+    },
+    {
+      "frame": 413,
+      "name": "level2",
+      "target": null
+    },
+    {
+      "frame": 498,
+      "name": "level1",
+      "target": null
+    },
+    {
+      "frame": 579,
+      "name": "level2",
+      "target": null
+    },
+    {
+      "frame": 664,
+      "name": "level1",
+      "target": null
+    },
+    {
+      "frame": 745,
+      "name": "level2",
+      "target": null
+    },
+    {
+      "frame": 830,
+      "name": "level1",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level1"
+      }
+    },
+    {
+      "frame": 81,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level2"
+      }
+    },
+    {
+      "frame": 166,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level1"
+      }
+    },
+    {
+      "frame": 247,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level2"
+      }
+    },
+    {
+      "frame": 332,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level1"
+      }
+    },
+    {
+      "frame": 413,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level2"
+      }
+    },
+    {
+      "frame": 498,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level1"
+      }
+    },
+    {
+      "frame": 579,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level2"
+      }
+    },
+    {
+      "frame": 664,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level1"
+      }
+    },
+    {
+      "frame": 745,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level2"
+      }
+    },
+    {
+      "frame": 830,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level1"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0
+}

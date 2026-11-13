@@ -1,0 +1,224 @@
+{
+  "fixture": "clones.sb3",
+  "editor": "https://turbowarp.org/editor",
+  "targets": [
+    {
+      "id": "C}^lb:*/|Yow|5]j_P#V",
+      "name": "Stage",
+      "isStage": true,
+      "scripts": [],
+      "blocks": [],
+      "comments": []
+    },
+    {
+      "id": "[P[5^*||aN[z{*rb#XV(",
+      "name": "Sprite1",
+      "isStage": false,
+      "scripts": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 240.328125,
+          "h": 184,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 260.328125,
+              "y": 204
+            }
+          },
+          "next": "b2",
+          "parent": null
+        },
+        {
+          "id": "b5",
+          "opcode": "control_start_as_clone",
+          "x": 20,
+          "y": 200,
+          "w": 182.31944274902344,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 200
+            },
+            "bottomRight": {
+              "x": 202.31944274902344,
+              "y": 304
+            }
+          },
+          "next": "b6",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 240.328125,
+          "h": 184,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 260.328125,
+              "y": 204
+            }
+          },
+          "next": "b2",
+          "parent": null
+        },
+        {
+          "id": "b5",
+          "opcode": "control_start_as_clone",
+          "x": 20,
+          "y": 200,
+          "w": 182.31944274902344,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 200
+            },
+            "bottomRight": {
+              "x": 202.31944274902344,
+              "y": 304
+            }
+          },
+          "next": "b6",
+          "parent": null
+        },
+        {
+          "id": "b2",
+          "opcode": "control_repeat",
+          "x": 20,
+          "y": 68,
+          "w": 240.328125,
+          "h": 136,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            },
+            "bottomRight": {
+              "x": 260.328125,
+              "y": 204
+            }
+          },
+          "next": null,
+          "parent": "b1"
+        },
+        {
+          "id": "b6",
+          "opcode": "looks_say",
+          "x": 20,
+          "y": 248,
+          "w": 118.3240737915039,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 248
+            },
+            "bottomRight": {
+              "x": 138.3240737915039,
+              "y": 304
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "TdGSuofATQ0!w]!(RZI]",
+          "opcode": "math_number",
+          "x": 83.140625,
+          "y": 76,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 83.140625,
+              "y": 76
+            },
+            "bottomRight": {
+              "x": 123.140625,
+              "y": 108
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "b3",
+          "opcode": "control_create_clone_of",
+          "x": 36,
+          "y": 116,
+          "w": 224.328125,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 36,
+              "y": 116
+            },
+            "bottomRight": {
+              "x": 260.328125,
+              "y": 172
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "=b=jd.s?M{qJ+|6~?A0c",
+          "opcode": "text",
+          "x": 68,
+          "y": 256,
+          "w": 62.324073791503906,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 68,
+              "y": 256
+            },
+            "bottomRight": {
+              "x": 130.3240737915039,
+              "y": 288
+            }
+          },
+          "next": null,
+          "parent": "b6"
+        },
+        {
+          "id": "b4",
+          "opcode": "control_create_clone_of_menu",
+          "x": 162,
+          "y": 124,
+          "w": 90.328125,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 162,
+              "y": 124
+            },
+            "bottomRight": {
+              "x": 252.328125,
+              "y": 156
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        }
+      ],
+      "comments": []
+    }
+  ]
+}

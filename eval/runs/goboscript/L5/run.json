@@ -1,0 +1,2264 @@
+{
+  "file": "eval/runs/goboscript/L5/out.sb3",
+  "ok": true,
+  "frames": 120,
+  "fps": 30,
+  "virtualSeconds": 4,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "blank",
+      "variables": {
+        "scrollX": -200,
+        "level": 1,
+        "platforms": [
+          0,
+          -150,
+          960,
+          20,
+          100,
+          -60,
+          120,
+          16,
+          -150,
+          10,
+          100,
+          16
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 36,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "player",
+      "variables": {
+        "collide:hw": 14,
+        "collide:qy": 10,
+        "collide:qw": 100,
+        "collide:hh": 18,
+        "collide:i": 13,
+        "collide:qh": 16,
+        "collide:py": 10,
+        "collide:pw": 100,
+        "collide:ph": 16,
+        "collide:j": 13,
+        "collide:qx": -150,
+        "collide:px": -150,
+        "WX": -200,
+        "WY": 36,
+        "onGround": 1,
+        "mx": 0,
+        "vy": 0
+      },
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 0,
+      "name": "level 1",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level 1"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "trace": [
+    {
+      "frame": 0,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 99.2,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 1,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 99.2,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 97.60000000000001,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 95.2,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 92,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 88,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 83.2,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 77.60000000000001,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 71.2,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 9,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 64,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 10,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 56,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 11,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 47.2,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 12,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 37.6,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 13,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 14,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 15,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 16,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 17,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 18,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 19,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 20,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 21,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 22,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 23,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 24,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 25,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 26,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 27,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 28,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 29,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 30,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 31,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 32,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 33,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 34,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 35,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 36,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 37,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 38,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 39,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 40,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 41,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 42,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 43,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 44,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 45,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 46,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 47,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 48,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 49,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 50,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 51,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 52,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 53,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 54,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 55,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 56,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 57,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 58,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 59,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 60,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 61,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 62,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 63,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 64,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 65,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 66,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 67,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 68,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 69,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 70,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 48,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 71,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 59.2,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 72,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 69.6,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 73,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 79.19999999999999,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 74,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 87.99999999999999,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 75,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 95.99999999999999,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 76,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 103.19999999999999,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 77,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 109.59999999999998,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 78,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 115.19999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 79,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 119.99999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 80,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 123.99999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 81,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 127.19999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 82,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 129.59999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 83,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 131.19999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 84,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 131.99999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 85,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 131.99999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 86,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 131.19999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 87,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 129.59999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 88,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 127.19999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 89,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 123.99999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 90,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 119.99999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 91,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 115.19999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 92,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 109.59999999999997,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 93,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 103.19999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 94,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 95.99999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 95,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 87.99999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 96,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 79.19999999999996,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 97,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 69.59999999999995,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 98,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 59.199999999999946,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 99,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 47.99999999999994,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 100,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 101,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 102,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 103,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 104,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 105,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 106,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 107,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 108,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 109,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 110,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 111,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 112,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 113,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 114,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 115,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 116,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 117,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 118,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    },
+    {
+      "frame": 119,
+      "targets": [
+        {
+          "name": "Player",
+          "isStage": false,
+          "isClone": false,
+          "x": 0,
+          "y": 36,
+          "direction": 90,
+          "size": 100,
+          "visible": true,
+          "costumeIndex": 0,
+          "costumeName": "player",
+          "bubble": null
+        }
+      ]
+    }
+  ]
+}

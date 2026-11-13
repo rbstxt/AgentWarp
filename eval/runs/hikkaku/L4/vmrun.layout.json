@@ -1,0 +1,120 @@
+{
+  "file": "eval/runs/hikkaku/L4/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [
+        {
+          "blockId": "1",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 189,
+          "h": 120
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "Player": {
+      "scripts": [
+        {
+          "blockId": "4",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 189,
+          "h": 388
+        },
+        {
+          "blockId": "10",
+          "opcode": "event_whenkeypressed",
+          "x": 64,
+          "y": 332,
+          "w": 189,
+          "h": 82
+        }
+      ],
+      "comments": [],
+      "overlaps": [
+        [
+          "script:4",
+          "script:10"
+        ]
+      ]
+    },
+    "Bullet": {
+      "scripts": [
+        {
+          "blockId": "13",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 180,
+          "h": 120
+        },
+        {
+          "blockId": "16",
+          "opcode": "control_start_as_clone",
+          "x": 64,
+          "y": 332,
+          "w": 231,
+          "h": 426
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "Enemy": {
+      "scripts": [
+        {
+          "blockId": "25",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 203,
+          "h": 260
+        },
+        {
+          "blockId": "2c",
+          "opcode": "control_start_as_clone",
+          "x": 64,
+          "y": 332,
+          "w": 273,
+          "h": 604
+        }
+      ],
+      "comments": [],
+      "overlaps": [
+        [
+          "script:25",
+          "script:2c"
+        ]
+      ]
+    },
+    "Banner": {
+      "scripts": [
+        {
+          "blockId": "46",
+          "opcode": "event_whenflagclicked",
+          "x": 64,
+          "y": 72,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "48",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 64,
+          "y": 332,
+          "w": 259,
+          "h": 234
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 2,
+  "scriptCount": 9,
+  "score": 70
+}

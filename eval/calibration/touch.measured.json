@@ -1,0 +1,352 @@
+{
+  "fixture": "touch.sb3",
+  "editor": "https://turbowarp.org/editor",
+  "targets": [
+    {
+      "id": "UNG883B;`CL[crrvKVSu",
+      "name": "Stage",
+      "isStage": true,
+      "scripts": [],
+      "blocks": [],
+      "comments": []
+    },
+    {
+      "id": "nz3ldjg=mc{l80aw=phz",
+      "name": "Chaser",
+      "isStage": false,
+      "scripts": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 390.2696762084961,
+          "h": 440,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 410.2696762084961,
+              "y": 460
+            }
+          },
+          "next": "b2",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 390.2696762084961,
+          "h": 440,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 410.2696762084961,
+              "y": 460
+            }
+          },
+          "next": "b2",
+          "parent": null
+        },
+        {
+          "id": "b2",
+          "opcode": "motion_gotoxy",
+          "x": 20,
+          "y": 68,
+          "w": 390.2696762084961,
+          "h": 392,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            },
+            "bottomRight": {
+              "x": 410.2696762084961,
+              "y": 460
+            }
+          },
+          "next": "b3",
+          "parent": "b1"
+        },
+        {
+          "id": "928nk-F/0*+^Q#UN!C7~",
+          "opcode": "math_number",
+          "x": 91.74073791503906,
+          "y": 76,
+          "w": 54.91666793823242,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 91.74073791503906,
+              "y": 76
+            },
+            "bottomRight": {
+              "x": 146.65740585327148,
+              "y": 108
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "3Z}}HB#ZI-lDF**yfC#=",
+          "opcode": "math_number",
+          "x": 175.41203498840332,
+          "y": 76,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 175.41203498840332,
+              "y": 76
+            },
+            "bottomRight": {
+              "x": 215.41203498840332,
+              "y": 108
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "b3",
+          "opcode": "motion_pointindirection",
+          "x": 20,
+          "y": 116,
+          "w": 390.2696762084961,
+          "h": 344,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            },
+            "bottomRight": {
+              "x": 410.2696762084961,
+              "y": 460
+            }
+          },
+          "next": "b4",
+          "parent": "b2"
+        },
+        {
+          "id": "4}WGYdZKZnO;=`(j]0=;",
+          "opcode": "math_number",
+          "x": 160.21295928955078,
+          "y": 124,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 160.21295928955078,
+              "y": 124
+            },
+            "bottomRight": {
+              "x": 200.21295928955078,
+              "y": 156
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "b4",
+          "opcode": "control_forever",
+          "x": 20,
+          "y": 164,
+          "w": 390.2696762084961,
+          "h": 296,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 164
+            },
+            "bottomRight": {
+              "x": 410.2696762084961,
+              "y": 460
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "b5",
+          "opcode": "control_if_else",
+          "x": 36,
+          "y": 212,
+          "w": 374.2696762084961,
+          "h": 224,
+          "rectangle": {
+            "topLeft": {
+              "x": 36,
+              "y": 212
+            },
+            "bottomRight": {
+              "x": 410.2696762084961,
+              "y": 436
+            }
+          },
+          "next": null,
+          "parent": "b4"
+        },
+        {
+          "id": "b6",
+          "opcode": "operator_not",
+          "x": 84,
+          "y": 216,
+          "w": 277.6759262084961,
+          "h": 48,
+          "rectangle": {
+            "topLeft": {
+              "x": 84,
+              "y": 216
+            },
+            "bottomRight": {
+              "x": 361.6759262084961,
+              "y": 264
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "b11",
+          "opcode": "looks_say",
+          "x": 52,
+          "y": 348,
+          "w": 96.37962913513184,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 52,
+              "y": 348
+            },
+            "bottomRight": {
+              "x": 148.37962913513184,
+              "y": 404
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "b10",
+          "opcode": "motion_movesteps",
+          "x": 52,
+          "y": 268,
+          "w": 153.25,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 52,
+              "y": 268
+            },
+            "bottomRight": {
+              "x": 205.25,
+              "y": 324
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "b8",
+          "opcode": "sensing_touchingobject",
+          "x": 136,
+          "y": 220,
+          "w": 217.6759262084961,
+          "h": 40,
+          "rectangle": {
+            "topLeft": {
+              "x": 136,
+              "y": 220
+            },
+            "bottomRight": {
+              "x": 353.6759262084961,
+              "y": 260
+            }
+          },
+          "next": null,
+          "parent": "b6"
+        },
+        {
+          "id": "3lRtA^j(((F`/`?%p%.r",
+          "opcode": "text",
+          "x": 100,
+          "y": 356,
+          "w": 40.379629135131836,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 100,
+              "y": 356
+            },
+            "bottomRight": {
+              "x": 140.37962913513184,
+              "y": 388
+            }
+          },
+          "next": null,
+          "parent": "b11"
+        },
+        {
+          "id": "Y)|nnwSXNxp+}oR!3##u",
+          "opcode": "math_number",
+          "x": 108.625,
+          "y": 276,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 108.625,
+              "y": 276
+            },
+            "bottomRight": {
+              "x": 148.625,
+              "y": 308
+            }
+          },
+          "next": null,
+          "parent": "b10"
+        },
+        {
+          "id": "b7",
+          "opcode": "sensing_touchingobjectmenu",
+          "x": 228.62963104248047,
+          "y": 224,
+          "w": 88.13425827026367,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 228.62963104248047,
+              "y": 224
+            },
+            "bottomRight": {
+              "x": 316.76388931274414,
+              "y": 256
+            }
+          },
+          "next": null,
+          "parent": "b8"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "7ZdUTu3h{q6-3Zvn]|_[",
+      "name": "Target",
+      "isStage": false,
+      "scripts": [],
+      "blocks": [],
+      "comments": []
+    }
+  ]
+}

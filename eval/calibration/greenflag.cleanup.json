@@ -1,0 +1,366 @@
+{
+  "fixture": "greenflag.sb3",
+  "editor": "https://turbowarp.org/editor",
+  "targets": [
+    {
+      "id": "s%Aqt!@i.cjF8s6+Pg{z",
+      "name": "Stage",
+      "isStage": true,
+      "scripts": [
+        {
+          "id": "b7",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 48,
+          "y": 64,
+          "w": 271.57233810424805,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            },
+            "bottomRight": {
+              "x": 319.57233810424805,
+              "y": 168
+            }
+          },
+          "next": "b8",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b7",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 48,
+          "y": 64,
+          "w": 271.57233810424805,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            },
+            "bottomRight": {
+              "x": 319.57233810424805,
+              "y": 168
+            }
+          },
+          "next": "b8",
+          "parent": null
+        },
+        {
+          "id": "b8",
+          "opcode": "looks_sayforsecs",
+          "x": 48,
+          "y": 112,
+          "w": 271.57233810424805,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            },
+            "bottomRight": {
+              "x": 319.57233810424805,
+              "y": 168
+            }
+          },
+          "next": null,
+          "parent": "b7"
+        },
+        {
+          "id": "|CqnFbBA3Nz9%F4]3GA4",
+          "opcode": "text",
+          "x": 96,
+          "y": 120,
+          "w": 68.5509262084961,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 96,
+              "y": 120
+            },
+            "bottomRight": {
+              "x": 164.5509262084961,
+              "y": 152
+            }
+          },
+          "next": null,
+          "parent": "b8"
+        },
+        {
+          "id": "p8eB(s1wldXn8@cG%=3p",
+          "opcode": "math_number",
+          "x": 200.71296310424805,
+          "y": 120,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 200.71296310424805,
+              "y": 120
+            },
+            "bottomRight": {
+              "x": 240.71296310424805,
+              "y": 152
+            }
+          },
+          "next": null,
+          "parent": "b8"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "jIt#w5DsbzVlH_h2=~?Z",
+      "name": "Sprite1",
+      "isStage": false,
+      "scripts": [
+        {
+          "id": "b2",
+          "opcode": "event_whenflagclicked",
+          "x": 48,
+          "y": 64,
+          "w": 267.12789154052734,
+          "h": 248,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            },
+            "bottomRight": {
+              "x": 315.12789154052734,
+              "y": 312
+            }
+          },
+          "next": "b3",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b2",
+          "opcode": "event_whenflagclicked",
+          "x": 48,
+          "y": 64,
+          "w": 267.12789154052734,
+          "h": 248,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            },
+            "bottomRight": {
+              "x": 315.12789154052734,
+              "y": 312
+            }
+          },
+          "next": "b3",
+          "parent": null
+        },
+        {
+          "id": "b3",
+          "opcode": "motion_gotoxy",
+          "x": 48,
+          "y": 112,
+          "w": 267.12789154052734,
+          "h": 200,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            },
+            "bottomRight": {
+              "x": 315.12789154052734,
+              "y": 312
+            }
+          },
+          "next": "b4",
+          "parent": "b2"
+        },
+        {
+          "id": "UwTdJ8^?((TQWV?UnWt4",
+          "opcode": "math_number",
+          "x": 119.74073791503906,
+          "y": 120,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 119.74073791503906,
+              "y": 120
+            },
+            "bottomRight": {
+              "x": 159.74073791503906,
+              "y": 152
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "Mf2=agB,BltAq/feYtC%",
+          "opcode": "math_number",
+          "x": 188.4953670501709,
+          "y": 120,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 188.4953670501709,
+              "y": 120
+            },
+            "bottomRight": {
+              "x": 228.4953670501709,
+              "y": 152
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "b4",
+          "opcode": "motion_movesteps",
+          "x": 48,
+          "y": 160,
+          "w": 267.12789154052734,
+          "h": 152,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 160
+            },
+            "bottomRight": {
+              "x": 315.12789154052734,
+              "y": 312
+            }
+          },
+          "next": "b5",
+          "parent": "b3"
+        },
+        {
+          "id": "pYY)?MXd+(^hd.4Sn*yx",
+          "opcode": "math_number",
+          "x": 104.625,
+          "y": 168,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 104.625,
+              "y": 168
+            },
+            "bottomRight": {
+              "x": 144.625,
+              "y": 200
+            }
+          },
+          "next": null,
+          "parent": "b4"
+        },
+        {
+          "id": "b5",
+          "opcode": "looks_sayforsecs",
+          "x": 48,
+          "y": 208,
+          "w": 267.12789154052734,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 208
+            },
+            "bottomRight": {
+              "x": 315.12789154052734,
+              "y": 312
+            }
+          },
+          "next": "b6",
+          "parent": "b4"
+        },
+        {
+          "id": "IWe`o2/AqB+04[/*WVVm",
+          "opcode": "text",
+          "x": 96,
+          "y": 216,
+          "w": 64.10647964477539,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 96,
+              "y": 216
+            },
+            "bottomRight": {
+              "x": 160.1064796447754,
+              "y": 248
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "HGcvcB:=7{;#[XN)c+5k",
+          "opcode": "math_number",
+          "x": 196.26851654052734,
+          "y": 216,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 196.26851654052734,
+              "y": 216
+            },
+            "bottomRight": {
+              "x": 236.26851654052734,
+              "y": 248
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "b6",
+          "opcode": "event_broadcast",
+          "x": 48,
+          "y": 256,
+          "w": 178.07986068725586,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 256
+            },
+            "bottomRight": {
+              "x": 226.07986068725586,
+              "y": 312
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "`IMZ6#!]-Tuo%;WF_vZL",
+          "opcode": "event_broadcast_menu",
+          "x": 138.71875,
+          "y": 264,
+          "w": 79.36111068725586,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 138.71875,
+              "y": 264
+            },
+            "bottomRight": {
+              "x": 218.07986068725586,
+              "y": 296
+            }
+          },
+          "next": null,
+          "parent": "b6"
+        }
+      ],
+      "comments": []
+    }
+  ]
+}

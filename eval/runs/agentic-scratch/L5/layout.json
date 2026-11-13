@@ -1,0 +1,333 @@
+{
+  "file": "eval/runs/agentic-scratch/L5/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [
+        {
+          "blockId": "b-6",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "b-8",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 300,
+          "w": 294,
+          "h": 386
+        },
+        {
+          "blockId": "b-i",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 700,
+          "w": 294,
+          "h": 386
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-b8",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        },
+        {
+          "id": "b-b9",
+          "blockId": null,
+          "x": 420,
+          "y": 290,
+          "w": 220,
+          "h": 100
+        },
+        {
+          "id": "b-ba",
+          "blockId": null,
+          "x": 420,
+          "y": 550,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": []
+    },
+    "Player": {
+      "scripts": [
+        {
+          "blockId": "b-17",
+          "opcode": "procedures_definition",
+          "x": 500,
+          "y": 0,
+          "w": 266,
+          "h": 1292
+        },
+        {
+          "blockId": "b-2e",
+          "opcode": "procedures_definition",
+          "x": 500,
+          "y": 900,
+          "w": 350,
+          "h": 1036
+        },
+        {
+          "blockId": "b-43",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 280,
+          "h": 1216
+        },
+        {
+          "blockId": "b-5a",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 20,
+          "y": 900,
+          "w": 245,
+          "h": 310
+        },
+        {
+          "blockId": "b-5i",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 20,
+          "y": 1150,
+          "w": 245,
+          "h": 310
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-bb",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        },
+        {
+          "id": "b-bc",
+          "blockId": null,
+          "x": 420,
+          "y": 290,
+          "w": 220,
+          "h": 100
+        },
+        {
+          "id": "b-bd",
+          "blockId": null,
+          "x": 420,
+          "y": 550,
+          "w": 220,
+          "h": 100
+        },
+        {
+          "id": "b-be",
+          "blockId": null,
+          "x": 420,
+          "y": 810,
+          "w": 220,
+          "h": 100
+        },
+        {
+          "id": "b-bf",
+          "blockId": null,
+          "x": 420,
+          "y": 1070,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": [
+        [
+          "script:b-17",
+          "script:b-2e"
+        ],
+        [
+          "script:b-17",
+          "comment:b-bb"
+        ],
+        [
+          "script:b-17",
+          "comment:b-bc"
+        ],
+        [
+          "script:b-17",
+          "comment:b-bd"
+        ],
+        [
+          "script:b-17",
+          "comment:b-be"
+        ],
+        [
+          "script:b-17",
+          "comment:b-bf"
+        ],
+        [
+          "script:b-2e",
+          "comment:b-be"
+        ],
+        [
+          "script:b-2e",
+          "comment:b-bf"
+        ],
+        [
+          "script:b-43",
+          "script:b-5a"
+        ],
+        [
+          "script:b-43",
+          "script:b-5i"
+        ],
+        [
+          "script:b-5a",
+          "script:b-5i"
+        ]
+      ]
+    },
+    "Platform1": {
+      "scripts": [
+        {
+          "blockId": "b-5x",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 294,
+          "h": 820
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-bg",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": []
+    },
+    "Platform2": {
+      "scripts": [
+        {
+          "blockId": "b-6u",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 294,
+          "h": 820
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-bh",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": []
+    },
+    "Platform3": {
+      "scripts": [
+        {
+          "blockId": "b-7r",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 294,
+          "h": 820
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-bi",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": []
+    },
+    "Platform4": {
+      "scripts": [
+        {
+          "blockId": "b-8o",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 294,
+          "h": 820
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-bj",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": []
+    },
+    "Platform5": {
+      "scripts": [
+        {
+          "blockId": "b-9l",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 294,
+          "h": 820
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-bk",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": []
+    },
+    "Platform6": {
+      "scripts": [
+        {
+          "blockId": "b-ai",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 294,
+          "h": 820
+        }
+      ],
+      "comments": [
+        {
+          "id": "b-bl",
+          "blockId": null,
+          "x": 420,
+          "y": 30,
+          "w": 220,
+          "h": 100
+        }
+      ],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 11,
+  "scriptCount": 14,
+  "score": 0
+}

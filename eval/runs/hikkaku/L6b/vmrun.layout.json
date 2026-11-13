@@ -1,0 +1,1116 @@
+{
+  "file": "eval/runs/hikkaku/L6b/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [
+        {
+          "blockId": "`5D]}Ux!_iiJ]3.o17S(",
+          "opcode": "event_whenflagclicked",
+          "x": 262,
+          "y": 258,
+          "w": 308,
+          "h": 158
+        },
+        {
+          "blockId": "L6b-time-hat",
+          "opcode": "event_whenflagclicked",
+          "x": 262,
+          "y": 500,
+          "w": 224,
+          "h": 260
+        },
+        {
+          "blockId": "L6b-reset-next",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 262,
+          "y": 800,
+          "w": 245,
+          "h": 82
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "くうはくすぷらいｔ": {
+      "scripts": [],
+      "comments": [],
+      "overlaps": []
+    },
+    "ステージ": {
+      "scripts": [
+        {
+          "blockId": "4a^.5|Gj.OEO[P;aYX?g",
+          "opcode": "event_whenflagclicked",
+          "x": -7,
+          "y": 129,
+          "w": 189,
+          "h": 120
+        },
+        {
+          "blockId": "/4;]0-.wG)$fHS1~fYMI",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 311,
+          "y": 310,
+          "w": 238,
+          "h": 184
+        },
+        {
+          "blockId": "9#Q;gdV:WBBpy|(t)(32",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 493,
+          "y": 584,
+          "w": 287,
+          "h": 184
+        },
+        {
+          "blockId": ":zQjuUj)F+Xg/MM97c*b",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 119,
+          "y": 452,
+          "w": 245,
+          "h": 120
+        },
+        {
+          "blockId": "gVmdcz]9uMAJV@{u^5ka",
+          "opcode": "event_whenflagclicked",
+          "x": -53,
+          "y": 493,
+          "w": 238,
+          "h": 120
+        },
+        {
+          "blockId": "jZXcOg6s=Z@2`kKL85oq",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 4,
+          "y": 661,
+          "w": 357,
+          "h": 540
+        },
+        {
+          "blockId": ")qeU@^VGxXW[j)tN-E$v",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -373,
+          "y": 502,
+          "w": 280,
+          "h": 196
+        }
+      ],
+      "comments": [],
+      "overlaps": [
+        [
+          "script:/4;]0-.wG)$fHS1~fYMI",
+          "script::zQjuUj)F+Xg/MM97c*b"
+        ],
+        [
+          "script::zQjuUj)F+Xg/MM97c*b",
+          "script:gVmdcz]9uMAJV@{u^5ka"
+        ]
+      ]
+    },
+    "いんとぅるえんぎね": {
+      "scripts": [
+        {
+          "blockId": "z=uU*a)~T-ro[{^P#52d",
+          "opcode": "motion_direction",
+          "x": 188,
+          "y": 500,
+          "w": 180,
+          "h": 30
+        },
+        {
+          "blockId": "-sCThWX3z8O;]QCYuQl}",
+          "opcode": "procedures_definition",
+          "x": -373,
+          "y": 743,
+          "w": 406,
+          "h": 374
+        },
+        {
+          "blockId": "D`6FR]{t];9k(C(GU3_o",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 1368,
+          "w": 280,
+          "h": 248
+        },
+        {
+          "blockId": "7NpBr#o?MpGa9Z6VgW,^",
+          "opcode": "procedures_definition",
+          "x": 354,
+          "y": 1109,
+          "w": 378,
+          "h": 374
+        },
+        {
+          "blockId": "sxk[,LU:!?.x=b8csC}z",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 1736,
+          "w": 371,
+          "h": 158
+        },
+        {
+          "blockId": "D0i=jCD_|_3Z-SAm~N3)",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 2000,
+          "w": 266,
+          "h": 82
+        },
+        {
+          "blockId": "}(R:A7P(+g~;O*Zd%[4?",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 425,
+          "y": 460,
+          "w": 301,
+          "h": 576
+        },
+        {
+          "blockId": "M!g0tj**oXK4?=ZM,1Gc",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -1026,
+          "y": -145,
+          "w": 280,
+          "h": 196
+        },
+        {
+          "blockId": "$#OVd?xOm5[LCB:XaDL0",
+          "opcode": "control_start_as_clone",
+          "x": -649,
+          "y": 866,
+          "w": 329,
+          "h": 526
+        },
+        {
+          "blockId": "kAIR]saBp`/mae}dMWfX",
+          "opcode": "procedures_call",
+          "x": -624,
+          "y": 1780,
+          "w": 180,
+          "h": 30
+        },
+        {
+          "blockId": "Z|W65hgUN=-E}nq%MQ=)",
+          "opcode": "procedures_definition",
+          "x": -2265,
+          "y": -839,
+          "w": 336,
+          "h": 538
+        },
+        {
+          "blockId": "PDKToTniZI{VEKRDqB;X",
+          "opcode": "control_start_as_clone",
+          "x": -735,
+          "y": 664,
+          "w": 329,
+          "h": 222
+        },
+        {
+          "blockId": "CP5-a_/.@TyX$hyHJ[-r",
+          "opcode": "control_start_as_clone",
+          "x": -892,
+          "y": 203,
+          "w": 329,
+          "h": 362
+        },
+        {
+          "blockId": "V{(9vvWPv?vSg|}YG!f]",
+          "opcode": "control_start_as_clone",
+          "x": -1280,
+          "y": -60,
+          "w": 441,
+          "h": 1086
+        },
+        {
+          "blockId": "*a6OXv:jOx^:LWv5aUvL",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -216,
+          "y": -96,
+          "w": 280,
+          "h": 564
+        },
+        {
+          "blockId": "E7R.^S3i3pr[da`QLvM?",
+          "opcode": "control_start_as_clone",
+          "x": -1377,
+          "y": 155,
+          "w": 441,
+          "h": 1276
+        },
+        {
+          "blockId": "E0R:kOU9nFL2Qg0.;dgw",
+          "opcode": "control_start_as_clone",
+          "x": -1704,
+          "y": 6,
+          "w": 413,
+          "h": 730
+        },
+        {
+          "blockId": "M3p]5d]2[^u8t/_W,R2B",
+          "opcode": "procedures_definition",
+          "x": -2641,
+          "y": -959,
+          "w": 350,
+          "h": 500
+        },
+        {
+          "blockId": "|Q[?HuH%u6j~Pt}ivD,@",
+          "opcode": "control_start_as_clone",
+          "x": -2170,
+          "y": 135,
+          "w": 413,
+          "h": 768
+        },
+        {
+          "blockId": "`SDil}vpH-9k.h;Awz=s",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -2611,
+          "y": -190,
+          "w": 280,
+          "h": 44
+        },
+        {
+          "blockId": "kYpnE^{EJU4hB983L~sG",
+          "opcode": "procedures_definition",
+          "x": -1520,
+          "y": -828,
+          "w": 399,
+          "h": 742
+        },
+        {
+          "blockId": "E}#8ww8/gX:6In2F(X`H",
+          "opcode": "control_start_as_clone",
+          "x": -677,
+          "y": -1329,
+          "w": 413,
+          "h": 1520
+        },
+        {
+          "blockId": "D^p!D:X2Z1uD9I{WgVr(",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -1902,
+          "y": -269,
+          "w": 280,
+          "h": 462
+        },
+        {
+          "blockId": "|7sxZ4+c_Jw`inBvVOlM",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -969,
+          "y": -704,
+          "w": 280,
+          "h": 44
+        },
+        {
+          "blockId": "?5EDlYa*|I}qkj*=%h=9",
+          "opcode": "control_start_as_clone",
+          "x": -1049,
+          "y": -1320,
+          "w": 329,
+          "h": 578
+        },
+        {
+          "blockId": "Wauu)1$SSB)2*.^ts^L_",
+          "opcode": "control_forever",
+          "x": -831,
+          "y": 144,
+          "w": 180,
+          "h": 94
+        },
+        {
+          "blockId": "3^HxZv6/uE7hsJ_OEwoC",
+          "opcode": "control_start_as_clone",
+          "x": -89,
+          "y": 523,
+          "w": 329,
+          "h": 184
+        },
+        {
+          "blockId": "L~Ke4}LYI59-uO%*rnS.",
+          "opcode": "control_start_as_clone",
+          "x": -89,
+          "y": 659,
+          "w": 329,
+          "h": 222
+        },
+        {
+          "blockId": "xMtqKcl7sH!+1nQUaADt",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 787,
+          "y": 588,
+          "w": 280,
+          "h": 82
+        },
+        {
+          "blockId": "{:$J8huX^/,}HmFM]Mqr",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 900,
+          "y": 1092,
+          "w": 280,
+          "h": 652
+        },
+        {
+          "blockId": "o5-C=1a!*@}(.=nO?Kk7",
+          "opcode": "operator_multiply",
+          "x": 56,
+          "y": 818,
+          "w": 196,
+          "h": 30
+        },
+        {
+          "blockId": "mmExu6ee#||aVa/tpTWW",
+          "opcode": "data_setvariableto",
+          "x": -23,
+          "y": 103,
+          "w": 203,
+          "h": 30
+        },
+        {
+          "blockId": "JL;JTVy5|sfEBq|lzrJv",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 292,
+          "y": 44,
+          "w": 280,
+          "h": 44
+        },
+        {
+          "blockId": "_!`=Wok!n,z-,8=m={/-",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -767,
+          "y": 192,
+          "w": 280,
+          "h": 500
+        },
+        {
+          "blockId": "pw`5pcTGekMyceVr:${E",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -118,
+          "y": -1387,
+          "w": 280,
+          "h": 538
+        },
+        {
+          "blockId": "*a,q%rzhL_^)nXb5k*U_",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 221,
+          "y": -553,
+          "w": 280,
+          "h": 1146
+        },
+        {
+          "blockId": "srTB[SOa%DyGGa/YG6[;",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 1323,
+          "y": 892,
+          "w": 280,
+          "h": 260
+        },
+        {
+          "blockId": "mD9^=H:aemOw#CTJ8SgR",
+          "opcode": "control_start_as_clone",
+          "x": 367,
+          "y": 1843,
+          "w": 336,
+          "h": 2392
+        },
+        {
+          "blockId": "`{I^uR0/HYk6!;LCdGZ8",
+          "opcode": "looks_switchcostumeto",
+          "x": 948,
+          "y": 1908,
+          "w": 301,
+          "h": 30
+        },
+        {
+          "blockId": "E90aL$sIw-?I!^eF78a4",
+          "opcode": "looks_switchcostumeto",
+          "x": 1024,
+          "y": 1799,
+          "w": 301,
+          "h": 68
+        },
+        {
+          "blockId": ":EglwB5EHIGi#RF7WjPD",
+          "opcode": "looks_switchcostumeto",
+          "x": 1316,
+          "y": 1804,
+          "w": 301,
+          "h": 68
+        },
+        {
+          "blockId": "n8u)2BNm}47WAMvxENG5",
+          "opcode": "looks_switchcostumeto",
+          "x": 948,
+          "y": 2004,
+          "w": 301,
+          "h": 68
+        },
+        {
+          "blockId": "6D~k9NLF!i]GHzQ[6;)~",
+          "opcode": "looks_switchcostumeto",
+          "x": 1090,
+          "y": 1950,
+          "w": 301,
+          "h": 68
+        },
+        {
+          "blockId": "HSz_8u,U.,#:sOlQ],C2",
+          "opcode": "looks_switchcostumeto",
+          "x": 1328,
+          "y": 1962,
+          "w": 301,
+          "h": 68
+        },
+        {
+          "blockId": "O+Vr/[?cOR|:G@l=Q@RH",
+          "opcode": "looks_switchcostumeto",
+          "x": 1159,
+          "y": 2351,
+          "w": 301,
+          "h": 30
+        },
+        {
+          "blockId": "L0n$h~yn=N;LJa7b4xg3",
+          "opcode": "procedures_call",
+          "x": 649,
+          "y": 2523,
+          "w": 180,
+          "h": 30
+        },
+        {
+          "blockId": "eUW)6ma~VBQ0TE7ybSma",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 1223,
+          "y": 2439,
+          "w": 280,
+          "h": 526
+        },
+        {
+          "blockId": "fA#Hcjuc?F1c@PF=Fq_[",
+          "opcode": "procedures_definition",
+          "x": 1111,
+          "y": 2208,
+          "w": 266,
+          "h": 44
+        },
+        {
+          "blockId": "~n.Dh;:Zq?~1[@pIwsO8",
+          "opcode": "data_setvariableto",
+          "x": 1536,
+          "y": 2274,
+          "w": 294,
+          "h": 68
+        },
+        {
+          "blockId": ",cPOL|;%N/Z1kEjyzWIB",
+          "opcode": "procedures_call",
+          "x": 852,
+          "y": 2292,
+          "w": 180,
+          "h": 30
+        },
+        {
+          "blockId": "@|oH9RP#i-ire8NPMWH9",
+          "opcode": "operator_divide",
+          "x": 944,
+          "y": 901,
+          "w": 252,
+          "h": 30
+        },
+        {
+          "blockId": "w%(buyfz]!?_5(2/`?G}",
+          "opcode": "control_start_as_clone",
+          "x": 1394,
+          "y": 652,
+          "w": 294,
+          "h": 324
+        },
+        {
+          "blockId": "(+{vNc07]-C{l:nB9giH",
+          "opcode": "operator_equals",
+          "x": 1012,
+          "y": 743,
+          "w": 266,
+          "h": 30
+        },
+        {
+          "blockId": "Y`x-f%N(biCh_3=X`mDr",
+          "opcode": "control_start_as_clone",
+          "x": -745,
+          "y": 958,
+          "w": 238,
+          "h": 210
+        },
+        {
+          "blockId": "+bR85t*W!wji9QvslP}O",
+          "opcode": "data_changevariableby",
+          "x": 415,
+          "y": -16,
+          "w": 371,
+          "h": 30
+        },
+        {
+          "blockId": "z-fU8-nrPK8M.%3ia,Gy",
+          "opcode": "procedures_definition",
+          "x": 30,
+          "y": -14,
+          "w": 385,
+          "h": 298
+        },
+        {
+          "blockId": "K43Q*U;ROl-W0RRI~emo",
+          "opcode": "procedures_definition",
+          "x": 1003,
+          "y": 2296,
+          "w": 266,
+          "h": 120
+        },
+        {
+          "blockId": "31l!sD}N?3ZFUDR0=v;I",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -156,
+          "y": -354,
+          "w": 287,
+          "h": 158
+        }
+      ],
+      "comments": [
+        {
+          "id": "p}HfgV:sLx?`b`r6S@E4",
+          "blockId": "##7){oSsszP`+PN~|89X",
+          "x": 181.36110715512876,
+          "y": -263.85185185185185,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "9Lf(qbW[m32HYV#1bLWE",
+          "blockId": "FF1q=ydH@wU[lPXvGyzE",
+          "x": 178.0972193965205,
+          "y": -48.148148148148124,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "qv1,.71!AkSdWR+ZZn`}",
+          "blockId": "!^-auUklnHr`Vp@#OgJ]",
+          "x": 173.6527749520761,
+          "y": 174.96296296296296,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "dXw^Dvp6{L.e0~QMWivg",
+          "blockId": "(9ix)GdIIK_LRaWKP3jo",
+          "x": 176.32638549804688,
+          "y": 404,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "ZhY_Q+9LKa@l?W43u%@9",
+          "blockId": "pQb97n=zDOW9ZBhqr)8q",
+          "x": 180.78240627712674,
+          "y": 627.1111111111111,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "Wkw(_KcKgJFNX/@R~HE4",
+          "blockId": "U*wePIB(9/|`f5SftWTV",
+          "x": 171.5925925925926,
+          "y": 856.148148148148,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "I1HV6Q;!px#:c99tZ]46",
+          "blockId": "rKkz2,{nxQ*mn0VY!*}#",
+          "x": 177.51851851851853,
+          "y": 1095.5555555555557,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "kkA6R:aYiHx$pvg3D5cX",
+          "blockId": "{[X*JAYzYtd^89[9LNA=",
+          "x": 172.7847216570819,
+          "y": 1340.8888888888887,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "O4=~+AN2B}yzF)vI3uIE",
+          "blockId": "^I05?8DL8y+}/dyGZ;{a",
+          "x": 3750.9280288837576,
+          "y": 794.3703703703703,
+          "w": 434.073974609375,
+          "h": 148.14813232421875
+        },
+        {
+          "id": "Zry~tH+ko0h-r^Ks-3g]",
+          "blockId": "BPNoBiL#=qwMmXvNu7h+",
+          "x": 181.2870330810547,
+          "y": -264,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "QjxzQ:*)oMRiyl6__M2,",
+          "blockId": "+B}aP@UeWy3TGuqRXT-*",
+          "x": 177.61573791503906,
+          "y": -48,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "=,6``]l2J+3Yvy]9-e-)",
+          "blockId": "NEyLaduYIRNjG8W`P^9d",
+          "x": 173.61573791503906,
+          "y": 175,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "[rF%tSaCKQBYt56C}u}6",
+          "blockId": "DfP4E~{D(v:@U*_aQ|oW",
+          "x": 176.32638549804688,
+          "y": 404,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": ")ede*9dYJ,5aVmdG1xZ]",
+          "blockId": "2zaypnV{9?}j]HV4)g6M",
+          "x": 180.67129516601562,
+          "y": 627,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "h=BXy=|vaIXF6|,@MwD1",
+          "blockId": "G-27dWb%SOy)R*4/hWA5",
+          "x": 172,
+          "y": 856,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "jwgD4c7go2.M{Jb_bP?7",
+          "blockId": "N?l_XY@rr}y3wHlJ5TQ3",
+          "x": 178,
+          "y": 1096,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "]s,fV2q1m|I6u9K0icBc",
+          "blockId": "7#MWtR.x/wq:XH@pa]f5",
+          "x": 172.7106475830078,
+          "y": 1341,
+          "w": 300.74072265625,
+          "h": 168.888916015625
+        }
+      ],
+      "overlaps": [
+        [
+          "script:z=uU*a)~T-ro[{^P#52d",
+          "script:3^HxZv6/uE7hsJ_OEwoC"
+        ],
+        [
+          "script:z=uU*a)~T-ro[{^P#52d",
+          "script:*a,q%rzhL_^)nXb5k*U_"
+        ],
+        [
+          "script:-sCThWX3z8O;]QCYuQl}",
+          "script:$#OVd?xOm5[LCB:XaDL0"
+        ],
+        [
+          "script:-sCThWX3z8O;]QCYuQl}",
+          "script:L~Ke4}LYI59-uO%*rnS."
+        ],
+        [
+          "script:sxk[,LU:!?.x=b8csC}z",
+          "script:mD9^=H:aemOw#CTJ8SgR"
+        ],
+        [
+          "script:}(R:A7P(+g~;O*Zd%[4?",
+          "script:*a,q%rzhL_^)nXb5k*U_"
+        ],
+        [
+          "script:M!g0tj**oXK4?=ZM,1Gc",
+          "script:V{(9vvWPv?vSg|}YG!f]"
+        ],
+        [
+          "script:$#OVd?xOm5[LCB:XaDL0",
+          "script:PDKToTniZI{VEKRDqB;X"
+        ],
+        [
+          "script:$#OVd?xOm5[LCB:XaDL0",
+          "script:Y`x-f%N(biCh_3=X`mDr"
+        ],
+        [
+          "script:PDKToTniZI{VEKRDqB;X",
+          "script:_!`=Wok!n,z-,8=m={/-"
+        ],
+        [
+          "script:CP5-a_/.@TyX$hyHJ[-r",
+          "script:V{(9vvWPv?vSg|}YG!f]"
+        ],
+        [
+          "script:CP5-a_/.@TyX$hyHJ[-r",
+          "script:Wauu)1$SSB)2*.^ts^L_"
+        ],
+        [
+          "script:CP5-a_/.@TyX$hyHJ[-r",
+          "script:_!`=Wok!n,z-,8=m={/-"
+        ],
+        [
+          "script:V{(9vvWPv?vSg|}YG!f]",
+          "script:E7R.^S3i3pr[da`QLvM?"
+        ],
+        [
+          "script:*a6OXv:jOx^:LWv5aUvL",
+          "script:mmExu6ee#||aVa/tpTWW"
+        ],
+        [
+          "script:*a6OXv:jOx^:LWv5aUvL",
+          "script:z-fU8-nrPK8M.%3ia,Gy"
+        ],
+        [
+          "script:E7R.^S3i3pr[da`QLvM?",
+          "script:E0R:kOU9nFL2Qg0.;dgw"
+        ],
+        [
+          "script:E0R:kOU9nFL2Qg0.;dgw",
+          "script:D^p!D:X2Z1uD9I{WgVr("
+        ],
+        [
+          "script:|Q[?HuH%u6j~Pt}ivD,@",
+          "script:D^p!D:X2Z1uD9I{WgVr("
+        ],
+        [
+          "script:E}#8ww8/gX:6In2F(X`H",
+          "script:Wauu)1$SSB)2*.^ts^L_"
+        ],
+        [
+          "script:E}#8ww8/gX:6In2F(X`H",
+          "script:_!`=Wok!n,z-,8=m={/-"
+        ],
+        [
+          "script:Wauu)1$SSB)2*.^ts^L_",
+          "script:_!`=Wok!n,z-,8=m={/-"
+        ],
+        [
+          "script:3^HxZv6/uE7hsJ_OEwoC",
+          "script:L~Ke4}LYI59-uO%*rnS."
+        ],
+        [
+          "script:3^HxZv6/uE7hsJ_OEwoC",
+          "script:*a,q%rzhL_^)nXb5k*U_"
+        ],
+        [
+          "script:L~Ke4}LYI59-uO%*rnS.",
+          "script:o5-C=1a!*@}(.=nO?Kk7"
+        ],
+        [
+          "script:mmExu6ee#||aVa/tpTWW",
+          "script:z-fU8-nrPK8M.%3ia,Gy"
+        ],
+        [
+          "script:JL;JTVy5|sfEBq|lzrJv",
+          "script:*a,q%rzhL_^)nXb5k*U_"
+        ],
+        [
+          "script:JL;JTVy5|sfEBq|lzrJv",
+          "script:z-fU8-nrPK8M.%3ia,Gy"
+        ],
+        [
+          "script:*a,q%rzhL_^)nXb5k*U_",
+          "script:+bR85t*W!wji9QvslP}O"
+        ],
+        [
+          "script:*a,q%rzhL_^)nXb5k*U_",
+          "script:z-fU8-nrPK8M.%3ia,Gy"
+        ],
+        [
+          "script:srTB[SOa%DyGGa/YG6[;",
+          "script:w%(buyfz]!?_5(2/`?G}"
+        ],
+        [
+          "script:mD9^=H:aemOw#CTJ8SgR",
+          "script:L0n$h~yn=N;LJa7b4xg3"
+        ],
+        [
+          "script:E90aL$sIw-?I!^eF78a4",
+          "script::EglwB5EHIGi#RF7WjPD"
+        ],
+        [
+          "script:n8u)2BNm}47WAMvxENG5",
+          "script:6D~k9NLF!i]GHzQ[6;)~"
+        ],
+        [
+          "script:6D~k9NLF!i]GHzQ[6;)~",
+          "script:HSz_8u,U.,#:sOlQ],C2"
+        ],
+        [
+          "script:O+Vr/[?cOR|:G@l=Q@RH",
+          "script:K43Q*U;ROl-W0RRI~emo"
+        ],
+        [
+          "script:,cPOL|;%N/Z1kEjyzWIB",
+          "script:K43Q*U;ROl-W0RRI~emo"
+        ],
+        [
+          "script:+bR85t*W!wji9QvslP}O",
+          "script:z-fU8-nrPK8M.%3ia,Gy"
+        ]
+      ]
+    },
+    "針": {
+      "scripts": [
+        {
+          "blockId": "rgeEqZ}rZ!DVkvUq,z}W",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 66,
+          "y": 73,
+          "w": 238,
+          "h": 222
+        },
+        {
+          "blockId": "tzZp9A0L}3pnK~?Qk/),",
+          "opcode": "event_whenflagclicked",
+          "x": 55,
+          "y": 335,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "%z(h4FbWFPo57Y3;4ZG(",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 253,
+          "y": 374,
+          "w": 287,
+          "h": 184
+        },
+        {
+          "blockId": "UcA*::zL0EH9wM/gTR#8",
+          "opcode": "data_setvariableto",
+          "x": 218,
+          "y": 708,
+          "w": 196,
+          "h": 30
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "NEXTだお": {
+      "scripts": [
+        {
+          "blockId": "5p%!+v1MWc~.%fbUe0Wr",
+          "opcode": "control_start_as_clone",
+          "x": 363,
+          "y": 1121,
+          "w": 308,
+          "h": 2064
+        },
+        {
+          "blockId": "iV^RP)YFE)^%xlpyy60k",
+          "opcode": "procedures_definition",
+          "x": 29,
+          "y": -73,
+          "w": 301,
+          "h": 120
+        },
+        {
+          "blockId": "D_3[X5yO.PKrK;4[W=p3",
+          "opcode": "motion_xposition",
+          "x": 477,
+          "y": 3118,
+          "w": 180,
+          "h": 30
+        },
+        {
+          "blockId": "M[~$*u!nZK5X@Y4JjO_!",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 67,
+          "y": 122,
+          "w": 245,
+          "h": 804
+        },
+        {
+          "blockId": "nOcQI]=^MQoF$E)_*y[0",
+          "opcode": "event_whenflagclicked",
+          "x": -186,
+          "y": 365,
+          "w": 308,
+          "h": 82
+        }
+      ],
+      "comments": [
+        {
+          "id": "-oqJnE_!i.:h?]}rWI1R",
+          "blockId": "L:p{tSK..|{TK08oVmJl",
+          "x": -166.3711149427626,
+          "y": 581.5945683232062,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "s@v85n9oL;-DFfuhjlY}",
+          "blockId": "50$N-8KseT^sQnn/JNe+",
+          "x": -120.88063727484803,
+          "y": 832.1370261863426,
+          "w": 200,
+          "h": 200
+        }
+      ],
+      "overlaps": [
+        [
+          "script:5p%!+v1MWc~.%fbUe0Wr",
+          "script:D_3[X5yO.PKrK;4[W=p3"
+        ],
+        [
+          "script:M[~$*u!nZK5X@Y4JjO_!",
+          "script:nOcQI]=^MQoF$E)_*y[0"
+        ]
+      ]
+    },
+    "スプライト1": {
+      "scripts": [
+        {
+          "blockId": "s#kv8_Cp!)sf,Eim`Dr*",
+          "opcode": "event_whenflagclicked",
+          "x": 107,
+          "y": 311,
+          "w": 301,
+          "h": 374
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "海賊王になる男(((?": {
+      "scripts": [
+        {
+          "blockId": "U2Q$[3?{f-6BD;I,ABj{",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 1148,
+          "y": 937,
+          "w": 469,
+          "h": 3556
+        },
+        {
+          "blockId": "e%FE?TJKrwo+@tL+I~8f",
+          "opcode": "event_whenflagclicked",
+          "x": -310,
+          "y": 366,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "=963F,_Xjg;HWH1~8]PP",
+          "opcode": "procedures_definition",
+          "x": -352,
+          "y": 1770,
+          "w": 266,
+          "h": 272
+        },
+        {
+          "blockId": "RLvp|[qg6oq]G0y*Im`U",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -428,
+          "y": 2689,
+          "w": 259,
+          "h": 120
+        },
+        {
+          "blockId": "YzbSKdl0sV$,0u,[o34U",
+          "opcode": "event_whenbroadcastreceived",
+          "x": -524,
+          "y": 2889,
+          "w": 217,
+          "h": 120
+        },
+        {
+          "blockId": "q:}.SgjBa=ARKIlfvF{$",
+          "opcode": "control_start_as_clone",
+          "x": -687,
+          "y": 3071,
+          "w": 301,
+          "h": 120
+        },
+        {
+          "blockId": "E*haDl(G9^bOZ9b[SO7N",
+          "opcode": "procedures_definition",
+          "x": 377,
+          "y": 3185,
+          "w": 301,
+          "h": 196
+        },
+        {
+          "blockId": "#f:4W)Q[FwL$-?Q,Vsb7",
+          "opcode": "control_start_as_clone",
+          "x": 331,
+          "y": 3904,
+          "w": 301,
+          "h": 298
+        },
+        {
+          "blockId": "zs_KpXL},c6/a)x.1hvT",
+          "opcode": "procedures_definition",
+          "x": -954,
+          "y": 2701,
+          "w": 266,
+          "h": 222
+        },
+        {
+          "blockId": "zQ5uufKD$gXSj(n[_%]n",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 904,
+          "y": 5184,
+          "w": 294,
+          "h": 286
+        },
+        {
+          "blockId": ":HdVJ~WA;/#BE|3VXR7*",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 554,
+          "y": 510,
+          "w": 315,
+          "h": 260
+        },
+        {
+          "blockId": "Gy0~y8_ijayw3h`P;1fk",
+          "opcode": "looks_switchcostumeto",
+          "x": -525,
+          "y": 1080,
+          "w": 301,
+          "h": 30
+        },
+        {
+          "blockId": "kWgtyjl@8xgjW`{W17s+",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 953,
+          "y": 4532,
+          "w": 238,
+          "h": 146
+        },
+        {
+          "blockId": ",ifh:ITqF1*NK^b;cl,E",
+          "opcode": "event_whenflagclicked",
+          "x": 32,
+          "y": 353,
+          "w": 196,
+          "h": 82
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 42,
+  "scriptCount": 92,
+  "score": 0
+}

@@ -1,0 +1,3796 @@
+{
+  "file": "eval/runs/raw-json/L6b/out.sb3",
+  "ok": true,
+  "frames": 200,
+  "fps": 30,
+  "virtualSeconds": 6.666666666666667,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "背景素材(ベクター)2",
+      "variables": {
+        "変数": 0,
+        "加速イージング": 263.9980978955375,
+        "しゃけ": 0.22667359117774302,
+        "ShakeDir": -0.030699503951265816,
+        "ShakeX": 0.19649116611407594,
+        "ShakeY": 0.05486131932684877,
+        "🎥 Dir": 0,
+        "🎥 X": 0,
+        "🎥 Y": 0,
+        "🎥 Z": "1",
+        "θ": 450,
+        "ステージ数": "1",
+        "TIME": 3,
+        "ステージのバグ解消": 0,
+        "☁ World record": "11.3",
+        "タイム": 6
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "くうはくすぷらいｔ",
+      "isStage": false,
+      "isClone": false,
+      "x": 36,
+      "y": 28,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "コスチューム1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "ステージ",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -0.0010704357695294705,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 0,
+      "visible": false,
+      "costumeIndex": 52,
+      "costumeName": "おおきさかんりよう()",
+      "variables": {
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 90,
+        "clone Z": "1",
+        "ID": "chev",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "針",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -0.0010704357695294705,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "NEXTだお",
+      "isStage": false,
+      "isClone": false,
+      "x": 365,
+      "y": 0.4281136117560891,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 8,
+      "costumeName": "👤",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "スプライト1",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "コスチューム4",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "海賊王になる男(((?",
+      "isStage": false,
+      "isClone": false,
+      "x": -150,
+      "y": 0,
+      "direction": 90,
+      "size": 65,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "x": 0,
+        "y": 0,
+        "k": 0,
+        "mgi": 0,
+        "hid": 0,
+        "h": 0,
+        "Clone": 0,
+        "I": 0,
+        "Intro: X": 0,
+        "sss": 0,
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 26,
+      "costumeName": "back",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 0,
+        "ID": "back",
+        "Cam Control?": "",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": "125",
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": "10",
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          "8",
+          "10",
+          "12",
+          "14",
+          "16",
+          "18",
+          "20"
+        ],
+        "おとはっめ": [
+          "3.33",
+          "4.29",
+          "5",
+          "5.74",
+          "6.3",
+          "6",
+          "7.1",
+          "",
+          "8.2",
+          "9.8",
+          "10.5"
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 9893815.143824944,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 10883196.658207439,
+        "ID": "chev",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": "125",
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 2368500.6833599196,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 2605350.7516959114,
+        "ID": "chev2",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": "125",
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 515454.7568379964,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 567000.232521796,
+        "ID": "chev",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": "125",
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 123395.77059653186,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 135735.34765618504,
+        "ID": "chev2",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": "125",
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 99.65745126092183,
+      "visible": true,
+      "costumeIndex": 18,
+      "costumeName": "text",
+      "variables": {
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 90,
+        "clone Z": 99.65745126092183,
+        "ID": "text",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": "125",
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 26854.514915082676,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 29539.966406590946,
+        "ID": "chev",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 6428.7573603364135,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 7071.633096370055,
+        "ID": "chev2",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 1399.0849085345717,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 1538.9933993880288,
+        "ID": "chev",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 334.92980349556,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 368.422783845116,
+        "ID": "chev2",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 72.89048368510306,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 80.17953205361337,
+        "ID": "chev",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 17.449402268886413,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 19.194342495775054,
+        "ID": "chev2",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "いんとぅるえんぎね",
+      "isStage": false,
+      "isClone": true,
+      "x": 0.19652053301846267,
+      "y": 0.054756030033410896,
+      "direction": 90.03069950395127,
+      "size": 3.7974983358324104,
+      "visible": true,
+      "costumeIndex": 53,
+      "costumeName": "コスチューム1",
+      "variables": {
+        "clone X": "",
+        "clone Y": "",
+        "clone Dir": 90,
+        "clone Z": 4.177248169415652,
+        "ID": "chev",
+        "Cam Control?": "1",
+        "Sw,type": "a",
+        "sw": 7897.469567994436,
+        "sw z": "100",
+        "Sw C": "115",
+        "Sw dir": "",
+        "cos": 1,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": "1",
+        "Rw C": "120",
+        "Rw siz": "200",
+        "Fw 明るさ": 0,
+        "Fw Color": 130,
+        "Fw type": "b",
+        "Fw": 20,
+        "(ﾟ∀ﾟ)": 10,
+        "A": "1",
+        "b": "1",
+        "Fwのためだけのリスト。": [
+          "2",
+          "4",
+          "6",
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20
+        ],
+        "おとはっめ": [
+          3.33,
+          4.29,
+          "5",
+          5.74,
+          6.3,
+          "6",
+          7.1,
+          "",
+          8.2,
+          9.8,
+          10.5
+        ]
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "海賊王になる男(((?",
+      "isStage": false,
+      "isClone": true,
+      "x": -150,
+      "y": 0,
+      "direction": 90,
+      "size": 55,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "コスチューム3",
+      "variables": {
+        "x": 0,
+        "y": 0,
+        "k": 0,
+        "mgi": 0,
+        "hid": 0,
+        "h": 0,
+        "Clone": 0,
+        "I": 0,
+        "Intro: X": 0,
+        "sss": 0,
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "海賊王になる男(((?",
+      "isStage": false,
+      "isClone": true,
+      "x": -150,
+      "y": 0,
+      "direction": 90,
+      "size": 57,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "コスチューム3",
+      "variables": {
+        "x": 0,
+        "y": 0,
+        "k": 0,
+        "mgi": 0,
+        "hid": 0,
+        "h": 0,
+        "Clone": 0,
+        "I": 0,
+        "Intro: X": 0,
+        "sss": 0,
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "海賊王になる男(((?",
+      "isStage": false,
+      "isClone": true,
+      "x": -150,
+      "y": 0,
+      "direction": 90,
+      "size": 59,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "コスチューム3",
+      "variables": {
+        "x": 0,
+        "y": 0,
+        "k": 0,
+        "mgi": 0,
+        "hid": 0,
+        "h": 0,
+        "Clone": 0,
+        "I": 0,
+        "Intro: X": 0,
+        "sss": 0,
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "海賊王になる男(((?",
+      "isStage": false,
+      "isClone": true,
+      "x": -150,
+      "y": 0,
+      "direction": 90,
+      "size": 61,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "コスチューム3",
+      "variables": {
+        "x": 0,
+        "y": 0,
+        "k": 0,
+        "mgi": 0,
+        "hid": 0,
+        "h": 0,
+        "Clone": 0,
+        "I": 0,
+        "Intro: X": 0,
+        "sss": 0,
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "海賊王になる男(((?",
+      "isStage": false,
+      "isClone": true,
+      "x": -150,
+      "y": 0,
+      "direction": 90,
+      "size": 63,
+      "visible": true,
+      "costumeIndex": 1,
+      "costumeName": "コスチューム3",
+      "variables": {
+        "x": 0,
+        "y": 0,
+        "k": 0,
+        "mgi": 0,
+        "hid": 0,
+        "h": 0,
+        "Clone": 0,
+        "I": 0,
+        "Intro: X": 0,
+        "sss": 0,
+        "clone X": 0,
+        "clone Y": 0,
+        "clone Dir": 0,
+        "clone Z": 0,
+        "ID": 0,
+        "Cam Control?": 0,
+        "Sw,type": 0,
+        "sw": 0,
+        "sw z": 0,
+        "Sw C": 0,
+        "Sw dir": 0,
+        "cos": 0,
+        "player.y": 0,
+        "player.xv": 0,
+        "player.yv": 0,
+        "player.x": 0,
+        "rw": 0,
+        "Rw C": 0,
+        "Rw siz": 0,
+        "Fw 明るさ": 0,
+        "Fw Color": 0,
+        "Fw type": 0,
+        "Fw": 0,
+        "(ﾟ∀ﾟ)": 0,
+        "A": 0,
+        "b": 0,
+        "Fwのためだけのリスト。": [],
+        "おとはっめ": []
+      },
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "いんとぅるえんぎね": 13,
+    "海賊王になる男(((?": 5
+  },
+  "monitors": {
+    "V=ZBnThh7_KaAv-(wS~h": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": "11.3",
+      "params": {
+        "VARIABLE": "☁ World record"
+      }
+    },
+    "jH_bBWhQIF|bt))(8w)n": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 141,
+      "params": {
+        "VARIABLE": "TIME"
+      }
+    },
+    "AWAjikan": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 6,
+      "params": {
+        "VARIABLE": "タイム"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 0,
+      "name": "Intro start",
+      "target": null
+    },
+    {
+      "frame": 60,
+      "name": "イントロ完",
+      "target": null
+    },
+    {
+      "frame": 90,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 91,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 92,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 93,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 94,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 95,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 96,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 97,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 98,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 99,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 100,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 101,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 102,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 103,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 104,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 105,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 106,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 107,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 108,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 109,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 110,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 111,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 112,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 113,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 114,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 115,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 116,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 117,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 118,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 119,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 120,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 121,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 122,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 123,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 124,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 125,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 126,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 127,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 128,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 129,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 130,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 131,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 132,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 133,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 134,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 135,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 136,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 137,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 138,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 139,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 140,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 141,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 142,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 143,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 144,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 145,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 146,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 147,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 148,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 149,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 150,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 151,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 152,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 153,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 154,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 155,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 156,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 157,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 158,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 159,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 160,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 161,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 162,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 163,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 164,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 165,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 166,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 167,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 168,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 169,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 170,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 171,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 172,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 173,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 174,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 175,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 176,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 177,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 178,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 179,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 180,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 181,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 182,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 183,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 184,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 185,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 186,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 187,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 188,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 189,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 190,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 191,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 192,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 193,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 194,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 195,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 196,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 197,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 198,
+      "name": "huhh0",
+      "target": null
+    },
+    {
+      "frame": 199,
+      "name": "huhh0",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "Intro start"
+      }
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 30,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 45,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 60,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "イントロ完"
+      }
+    },
+    {
+      "frame": 61,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 76,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 90,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 91,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 91,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 92,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 92,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 93,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 93,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 94,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 94,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 95,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 95,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 96,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 96,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 97,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 97,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 98,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 98,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 99,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 99,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 100,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 100,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 101,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 101,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 102,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 102,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 103,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 103,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 104,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 104,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 105,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 105,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 106,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 106,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 107,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 107,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 107,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 108,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 108,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 109,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 109,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 110,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 110,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 111,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 111,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 112,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 112,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 113,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 113,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 114,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 114,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 115,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 115,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 116,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 116,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 117,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 117,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 118,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 118,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 119,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 119,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 120,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 120,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 121,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 121,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 122,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 122,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 123,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 123,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 123,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 124,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 124,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 125,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 125,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 126,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 126,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 127,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 127,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 128,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 128,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 129,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 129,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 130,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 130,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 131,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 131,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 132,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 132,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 133,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 133,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 134,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 134,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 135,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 135,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 136,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 136,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 137,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 137,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 138,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 138,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 138,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 139,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 139,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 140,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 140,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 141,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 141,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 142,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 142,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 143,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 143,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 144,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 144,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 145,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 145,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 146,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 146,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 147,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 147,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 148,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 148,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 149,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 149,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 150,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 150,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 151,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 151,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 152,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 152,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 153,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 153,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 154,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 154,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 154,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 155,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 155,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 156,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 156,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 157,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 157,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 158,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 158,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 159,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 159,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 160,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 160,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 161,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 161,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 162,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 162,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 163,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 163,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 164,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 164,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 165,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 165,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 166,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 166,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 167,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 167,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 168,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 168,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 169,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 169,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 169,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 170,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 170,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 171,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 171,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 172,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 172,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 173,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 173,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 174,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 174,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 175,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 175,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 176,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 176,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 177,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 177,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 178,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 178,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 179,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 179,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 180,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 180,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 181,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 181,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 182,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 182,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 183,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 183,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 184,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 184,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 185,
+      "hat": "control_start_as_clone",
+      "target": "いんとぅるえんぎね",
+      "fields": {}
+    },
+    {
+      "frame": 185,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 185,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 186,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 186,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 187,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 187,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 188,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 188,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 189,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 189,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 190,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 190,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 191,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 191,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 192,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 192,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 193,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 193,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 194,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 194,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 195,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 195,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 196,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 196,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 197,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 197,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 198,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 198,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    },
+    {
+      "frame": 199,
+      "hat": "control_start_as_clone",
+      "target": "海賊王になる男(((?",
+      "fields": {}
+    },
+    {
+      "frame": 199,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "huhh0"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "probes": {
+    "Stage.variables.タイム": 6
+  }
+}

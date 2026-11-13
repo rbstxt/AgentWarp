@@ -1,0 +1,352 @@
+{
+  "fixture": "touch.sb3",
+  "editor": "https://turbowarp.org/editor",
+  "targets": [
+    {
+      "id": "UNG883B;`CL[crrvKVSu",
+      "name": "Stage",
+      "isStage": true,
+      "scripts": [],
+      "blocks": [],
+      "comments": []
+    },
+    {
+      "id": "nz3ldjg=mc{l80aw=phz",
+      "name": "Chaser",
+      "isStage": false,
+      "scripts": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 48,
+          "y": 64,
+          "w": 390.2696762084961,
+          "h": 440,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            },
+            "bottomRight": {
+              "x": 438.2696762084961,
+              "y": 504
+            }
+          },
+          "next": "b2",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 48,
+          "y": 64,
+          "w": 390.2696762084961,
+          "h": 440,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            },
+            "bottomRight": {
+              "x": 438.2696762084961,
+              "y": 504
+            }
+          },
+          "next": "b2",
+          "parent": null
+        },
+        {
+          "id": "b2",
+          "opcode": "motion_gotoxy",
+          "x": 48,
+          "y": 112,
+          "w": 390.2696762084961,
+          "h": 392,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            },
+            "bottomRight": {
+              "x": 438.2696762084961,
+              "y": 504
+            }
+          },
+          "next": "b3",
+          "parent": "b1"
+        },
+        {
+          "id": "928nk-F/0*+^Q#UN!C7~",
+          "opcode": "math_number",
+          "x": 119.74073791503906,
+          "y": 120,
+          "w": 54.91666793823242,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 119.74073791503906,
+              "y": 120
+            },
+            "bottomRight": {
+              "x": 174.65740585327148,
+              "y": 152
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "3Z}}HB#ZI-lDF**yfC#=",
+          "opcode": "math_number",
+          "x": 203.41203498840332,
+          "y": 120,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 203.41203498840332,
+              "y": 120
+            },
+            "bottomRight": {
+              "x": 243.41203498840332,
+              "y": 152
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "b3",
+          "opcode": "motion_pointindirection",
+          "x": 48,
+          "y": 160,
+          "w": 390.2696762084961,
+          "h": 344,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 160
+            },
+            "bottomRight": {
+              "x": 438.2696762084961,
+              "y": 504
+            }
+          },
+          "next": "b4",
+          "parent": "b2"
+        },
+        {
+          "id": "4}WGYdZKZnO;=`(j]0=;",
+          "opcode": "math_number",
+          "x": 188.21295928955078,
+          "y": 168,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 188.21295928955078,
+              "y": 168
+            },
+            "bottomRight": {
+              "x": 228.21295928955078,
+              "y": 200
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "b4",
+          "opcode": "control_forever",
+          "x": 48,
+          "y": 208,
+          "w": 390.2696762084961,
+          "h": 296,
+          "rectangle": {
+            "topLeft": {
+              "x": 48,
+              "y": 208
+            },
+            "bottomRight": {
+              "x": 438.2696762084961,
+              "y": 504
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "b5",
+          "opcode": "control_if_else",
+          "x": 64,
+          "y": 256,
+          "w": 374.2696762084961,
+          "h": 224,
+          "rectangle": {
+            "topLeft": {
+              "x": 64,
+              "y": 256
+            },
+            "bottomRight": {
+              "x": 438.2696762084961,
+              "y": 480
+            }
+          },
+          "next": null,
+          "parent": "b4"
+        },
+        {
+          "id": "b6",
+          "opcode": "operator_not",
+          "x": 112,
+          "y": 260,
+          "w": 277.6759262084961,
+          "h": 48,
+          "rectangle": {
+            "topLeft": {
+              "x": 112,
+              "y": 260
+            },
+            "bottomRight": {
+              "x": 389.6759262084961,
+              "y": 308
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "b11",
+          "opcode": "looks_say",
+          "x": 80,
+          "y": 392,
+          "w": 96.37962913513184,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 80,
+              "y": 392
+            },
+            "bottomRight": {
+              "x": 176.37962913513184,
+              "y": 448
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "b10",
+          "opcode": "motion_movesteps",
+          "x": 80,
+          "y": 312,
+          "w": 153.25,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 80,
+              "y": 312
+            },
+            "bottomRight": {
+              "x": 233.25,
+              "y": 368
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        },
+        {
+          "id": "b8",
+          "opcode": "sensing_touchingobject",
+          "x": 164,
+          "y": 264,
+          "w": 217.6759262084961,
+          "h": 40,
+          "rectangle": {
+            "topLeft": {
+              "x": 164,
+              "y": 264
+            },
+            "bottomRight": {
+              "x": 381.6759262084961,
+              "y": 304
+            }
+          },
+          "next": null,
+          "parent": "b6"
+        },
+        {
+          "id": "3lRtA^j(((F`/`?%p%.r",
+          "opcode": "text",
+          "x": 128,
+          "y": 400,
+          "w": 40.379629135131836,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 128,
+              "y": 400
+            },
+            "bottomRight": {
+              "x": 168.37962913513184,
+              "y": 432
+            }
+          },
+          "next": null,
+          "parent": "b11"
+        },
+        {
+          "id": "Y)|nnwSXNxp+}oR!3##u",
+          "opcode": "math_number",
+          "x": 136.625,
+          "y": 320,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 136.625,
+              "y": 320
+            },
+            "bottomRight": {
+              "x": 176.625,
+              "y": 352
+            }
+          },
+          "next": null,
+          "parent": "b10"
+        },
+        {
+          "id": "b7",
+          "opcode": "sensing_touchingobjectmenu",
+          "x": 256.62963104248047,
+          "y": 268,
+          "w": 88.13425827026367,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 256.62963104248047,
+              "y": 268
+            },
+            "bottomRight": {
+              "x": 344.76388931274414,
+              "y": 300
+            }
+          },
+          "next": null,
+          "parent": "b8"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": "7ZdUTu3h{q6-3Zvn]|_[",
+      "name": "Target",
+      "isStage": false,
+      "scripts": [],
+      "blocks": [],
+      "comments": []
+    }
+  ]
+}

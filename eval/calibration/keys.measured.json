@@ -1,0 +1,314 @@
+{
+  "fixture": "keys.sb3",
+  "editor": "https://turbowarp.org/editor",
+  "targets": [
+    {
+      "id": "6vP~(VXu5prWCG:enRgQ",
+      "name": "Stage",
+      "isStage": true,
+      "scripts": [],
+      "blocks": [],
+      "comments": []
+    },
+    {
+      "id": "]P6E5z+)AcnP9n{MXn~t",
+      "name": "Sprite1",
+      "isStage": false,
+      "scripts": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 364.33911895751953,
+          "h": 256,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 384.33911895751953,
+              "y": 276
+            }
+          },
+          "next": "b2",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b1",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 364.33911895751953,
+          "h": 256,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 384.33911895751953,
+              "y": 276
+            }
+          },
+          "next": "b2",
+          "parent": null
+        },
+        {
+          "id": "b2",
+          "opcode": "control_forever",
+          "x": 20,
+          "y": 68,
+          "w": 364.33911895751953,
+          "h": 208,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            },
+            "bottomRight": {
+              "x": 384.33911895751953,
+              "y": 276
+            }
+          },
+          "next": null,
+          "parent": "b1"
+        },
+        {
+          "id": "b3",
+          "opcode": "control_if",
+          "x": 36,
+          "y": 116,
+          "w": 348.33911895751953,
+          "h": 136,
+          "rectangle": {
+            "topLeft": {
+              "x": 36,
+              "y": 116
+            },
+            "bottomRight": {
+              "x": 384.33911895751953,
+              "y": 252
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "b4",
+          "opcode": "sensing_keypressed",
+          "x": 84,
+          "y": 120,
+          "w": 251.74536895751953,
+          "h": 40,
+          "rectangle": {
+            "topLeft": {
+              "x": 84,
+              "y": 120
+            },
+            "bottomRight": {
+              "x": 335.74536895751953,
+              "y": 160
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "b5",
+          "opcode": "motion_changexby",
+          "x": 52,
+          "y": 164,
+          "w": 154.11573791503906,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 52,
+              "y": 164
+            },
+            "bottomRight": {
+              "x": 206.11573791503906,
+              "y": 220
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        },
+        {
+          "id": "2Z:GK[3W-XLOuFfIKio)",
+          "opcode": "text",
+          "x": 137.796875,
+          "y": 124,
+          "w": 101.74536895751953,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 137.796875,
+              "y": 124
+            },
+            "bottomRight": {
+              "x": 239.54224395751953,
+              "y": 156
+            }
+          },
+          "next": null,
+          "parent": "b4"
+        },
+        {
+          "id": "O44Nq`aw={VDERsuuMl^",
+          "opcode": "math_number",
+          "x": 158.11573791503906,
+          "y": 172,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 158.11573791503906,
+              "y": 172
+            },
+            "bottomRight": {
+              "x": 198.11573791503906,
+              "y": 204
+            }
+          },
+          "next": null,
+          "parent": "b5"
+        }
+      ],
+      "comments": []
+    },
+    {
+      "id": ";rTMtf|kqwq^5._z^jRX",
+      "name": "Ball",
+      "isStage": false,
+      "scripts": [
+        {
+          "id": "b6",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 169.8472137451172,
+          "h": 224,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 189.8472137451172,
+              "y": 244
+            }
+          },
+          "next": "b7",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b6",
+          "opcode": "event_whenflagclicked",
+          "x": 20,
+          "y": 20,
+          "w": 169.8472137451172,
+          "h": 224,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 189.8472137451172,
+              "y": 244
+            }
+          },
+          "next": "b7",
+          "parent": null
+        },
+        {
+          "id": "b7",
+          "opcode": "control_forever",
+          "x": 20,
+          "y": 68,
+          "w": 169.8472137451172,
+          "h": 176,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            },
+            "bottomRight": {
+              "x": 189.8472137451172,
+              "y": 244
+            }
+          },
+          "next": null,
+          "parent": "b6"
+        },
+        {
+          "id": "b8",
+          "opcode": "motion_movesteps",
+          "x": 36,
+          "y": 116,
+          "w": 153.8472137451172,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 36,
+              "y": 116
+            },
+            "bottomRight": {
+              "x": 189.8472137451172,
+              "y": 220
+            }
+          },
+          "next": "b9",
+          "parent": "b7"
+        },
+        {
+          "id": "{7~D:nAd]v~}=Q]_83S!",
+          "opcode": "math_number",
+          "x": 92.625,
+          "y": 124,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 92.625,
+              "y": 124
+            },
+            "bottomRight": {
+              "x": 132.625,
+              "y": 156
+            }
+          },
+          "next": null,
+          "parent": "b8"
+        },
+        {
+          "id": "b9",
+          "opcode": "motion_ifonedgebounce",
+          "x": 36,
+          "y": 164,
+          "w": 153.8472137451172,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 36,
+              "y": 164
+            },
+            "bottomRight": {
+              "x": 189.8472137451172,
+              "y": 220
+            }
+          },
+          "next": null,
+          "parent": "b8"
+        }
+      ],
+      "comments": []
+    }
+  ]
+}

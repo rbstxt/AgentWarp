@@ -1,0 +1,6 @@
+layers = ["針", "いんとぅるえんぎね", "ステージ", "海賊王になる男(((?", "NEXTだお", "くうはくすぷらいｔ", "スプライト1"]
+bitmap_resolution = 2
+no_miscellaneous_limits = false
+no_sprite_fencing = false
+frame_interpolation = false
+high_quality_pen = false

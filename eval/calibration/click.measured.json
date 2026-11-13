@@ -1,0 +1,104 @@
+{
+  "fixture": "click.sb3",
+  "editor": "https://turbowarp.org/editor",
+  "targets": [
+    {
+      "id": "_`S6E_=PsDy7D+0,okJx",
+      "name": "Stage",
+      "isStage": true,
+      "scripts": [],
+      "blocks": [],
+      "comments": []
+    },
+    {
+      "id": "LF7Zy4/LX`-tQF1Uzxu#",
+      "name": "Cookie",
+      "isStage": false,
+      "scripts": [
+        {
+          "id": "b2",
+          "opcode": "event_whenthisspriteclicked",
+          "x": 20,
+          "y": 20,
+          "w": 235.5978012084961,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 255.5978012084961,
+              "y": 124
+            }
+          },
+          "next": "b3",
+          "parent": null
+        }
+      ],
+      "blocks": [
+        {
+          "id": "b2",
+          "opcode": "event_whenthisspriteclicked",
+          "x": 20,
+          "y": 20,
+          "w": 235.5978012084961,
+          "h": 104,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            },
+            "bottomRight": {
+              "x": 255.5978012084961,
+              "y": 124
+            }
+          },
+          "next": "b3",
+          "parent": null
+        },
+        {
+          "id": "b3",
+          "opcode": "data_changevariableby",
+          "x": 20,
+          "y": 68,
+          "w": 235.5978012084961,
+          "h": 56,
+          "rectangle": {
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            },
+            "bottomRight": {
+              "x": 255.5978012084961,
+              "y": 124
+            }
+          },
+          "next": null,
+          "parent": "b2"
+        },
+        {
+          "id": "@z]wYDc]*@|]e2AAgURK",
+          "opcode": "math_number",
+          "x": 207.5978012084961,
+          "y": 76,
+          "w": 40,
+          "h": 32,
+          "rectangle": {
+            "topLeft": {
+              "x": 207.5978012084961,
+              "y": 76
+            },
+            "bottomRight": {
+              "x": 247.5978012084961,
+              "y": 108
+            }
+          },
+          "next": null,
+          "parent": "b3"
+        }
+      ],
+      "comments": []
+    }
+  ]
+}

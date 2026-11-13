@@ -1,0 +1,133 @@
+{
+  "targets": {
+    "Stage": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [
+        {
+          "id": "AWAt-flag",
+          "opcode": "event_whenflagclicked",
+          "x": 262,
+          "y": 500
+        },
+        {
+          "id": "AWAr-hat",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 262,
+          "y": 760
+        }
+      ],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 2
+      },
+      "unchangedCount": 1
+    },
+    "くうはくすぷらいｔ": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "ステージ": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 7
+    },
+    "いんとぅるえんぎね": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 17,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 58
+    },
+    "針": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 4
+    },
+    "NEXTだお": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 2,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 5
+    },
+    "スプライト1": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 1
+    },
+    "海賊王になる男(((?": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 14
+    }
+  },
+  "summary": {
+    "unchanged": 90,
+    "moved": 0,
+    "changed": 0,
+    "deleted": 0,
+    "added": 2,
+    "commentsKept": 19,
+    "commentsLost": 0,
+    "commentsChanged": 0,
+    "commentsAdded": 2,
+    "idsPreservedInChanged": 0
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "file": "eval/runs/goboscript/L6/out.sb3",
+  "targets": {
+    "Stage": {
+      "scripts": [],
+      "comments": [],
+      "overlaps": []
+    },
+    "PausedSign": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 180,
+          "h": 362
+        }
+      ],
+      "comments": [
+        {
+          "id": "l6new4",
+          "blockId": null,
+          "x": 200,
+          "y": 0,
+          "w": 280,
+          "h": 80
+        }
+      ],
+      "overlaps": []
+    },
+    "mouse pointer": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 203,
+          "h": 184
+        },
+        {
+          "blockId": "$*",
+          "opcode": "control_start_as_clone",
+          "x": 0,
+          "y": 304,
+          "w": 180,
+          "h": 260
+        }
+      ],
+      "comments": [],
+      "overlaps": []
+    },
+    "platforms": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 696,
+          "w": 180,
+          "h": 222
+        },
+        {
+          "blockId": "$]",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 0,
+          "w": 231,
+          "h": 82
+        },
+        {
+          "blockId": "$A",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 184,
+          "w": 238,
+          "h": 348
+        }
+      ],
+      "comments": [
+        {
+          "id": "l6restored8",
+          "blockId": null,
+          "x": -210,
+          "y": 620,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored9",
+          "blockId": null,
+          "x": 594.75,
+          "y": 512,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored10",
+          "blockId": null,
+          "x": 339.79,
+          "y": 279,
+          "w": 200,
+          "h": 200
+        }
+      ],
+      "overlaps": []
+    },
+    "player": {
+      "scripts": [
+        {
+          "blockId": "$!",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 1240,
+          "w": 336,
+          "h": 732
+        },
+        {
+          "blockId": "$W",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 2304,
+          "w": 180,
+          "h": 82
+        },
+        {
+          "blockId": "$f",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 2504,
+          "w": 217,
+          "h": 196
+        },
+        {
+          "blockId": "$,#",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 3288,
+          "w": 203,
+          "h": 348
+        },
+        {
+          "blockId": "$~#",
+          "opcode": "procedures_definition",
+          "x": 0,
+          "y": 3816,
+          "w": 245,
+          "h": 502
+        },
+        {
+          "blockId": "$m#",
+          "opcode": "event_whenflagclicked",
+          "x": 0,
+          "y": 0,
+          "w": 238,
+          "h": 120
+        },
+        {
+          "blockId": "$r#",
+          "opcode": "event_whenbroadcastreceived",
+          "x": 0,
+          "y": 568,
+          "w": 266,
+          "h": 298
+        },
+        {
+          "blockId": "$/%",
+          "opcode": "event_whenkeypressed",
+          "x": 0,
+          "y": 224,
+          "w": 224,
+          "h": 184
+        }
+      ],
+      "comments": [
+        {
+          "id": "l6restored0",
+          "blockId": null,
+          "x": 637.78,
+          "y": -42,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored1",
+          "blockId": null,
+          "x": 280.56,
+          "y": -86.48,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored2",
+          "blockId": null,
+          "x": 1007.01,
+          "y": -220.19,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored3",
+          "blockId": null,
+          "x": 1394.37,
+          "y": -298.41,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored4",
+          "blockId": null,
+          "x": 1537.52,
+          "y": 46.7,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored5",
+          "blockId": null,
+          "x": 1228.61,
+          "y": 364.48,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored6",
+          "blockId": null,
+          "x": 382.01,
+          "y": 526.74,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6restored7",
+          "blockId": null,
+          "x": 586.97,
+          "y": 190,
+          "w": 200,
+          "h": 200
+        },
+        {
+          "id": "l6new0",
+          "blockId": null,
+          "x": 356,
+          "y": 1240,
+          "w": 280,
+          "h": 80
+        },
+        {
+          "id": "l6new1",
+          "blockId": null,
+          "x": 237,
+          "y": 2504,
+          "w": 280,
+          "h": 80
+        },
+        {
+          "id": "l6new2",
+          "blockId": null,
+          "x": 223,
+          "y": 3288,
+          "w": 280,
+          "h": 80
+        },
+        {
+          "id": "l6new3",
+          "blockId": null,
+          "x": 244,
+          "y": 224,
+          "w": 280,
+          "h": 80
+        }
+      ],
+      "overlaps": []
+    }
+  },
+  "overlapPairs": 0,
+  "scriptCount": 14,
+  "score": 100
+}

@@ -1,0 +1,7035 @@
+{
+  "method": "Fixture observations from getHeightWidth(). A terminal sample has no next block but may contain inputs or nested substacks; stack samples include the complete stack. Values are not default-input or isolated-block metrics.",
+  "opcodes": {
+    "event_whenthisspriteclicked": {
+      "occurrences": 1,
+      "terminalSamples": [],
+      "stackSamples": [
+        {
+          "w": 235.5978012084961,
+          "h": 104,
+          "fixture": "click"
+        }
+      ]
+    },
+    "data_changevariableby": {
+      "occurrences": 109,
+      "terminalSamples": [
+        {
+          "w": 235.5978012084961,
+          "h": 56,
+          "fixture": "click"
+        },
+        {
+          "w": 293.4542808532715,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 287.25057792663574,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 287.25057792663574,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 293.4542808532715,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 291.2690963745117,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 322.22743034362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 343.7245330810547,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 274.0839080810547,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 354.39583587646484,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 284.75521087646484,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 345.6365718841553,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 341.3912010192871,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 302.24131774902344,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 230.82928085327148,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 229.32465362548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 229.32465362548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 229.32465362548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 229.32465362548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 229.32465362548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 458.8339023590088,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "math_number": {
+      "occurrences": 634,
+      "terminalSamples": [
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "click"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "clones"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "keys"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "keys"
+        },
+        {
+          "w": 48.703125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48.703125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48.6898136138916,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 46.02777671813965,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48.703125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48.703125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 46.02777671813965,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "event_whenflagclicked": {
+      "occurrences": 39,
+      "terminalSamples": [
+        {
+          "w": 148.5,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 240.328125,
+          "h": 184,
+          "fixture": "clones"
+        },
+        {
+          "w": 267.12789154052734,
+          "h": 248,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 364.33911895751953,
+          "h": 256,
+          "fixture": "keys"
+        },
+        {
+          "w": 169.8472137451172,
+          "h": 224,
+          "fixture": "keys"
+        },
+        {
+          "w": 249.7858772277832,
+          "h": 152,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 307.6712951660156,
+          "h": 496,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 203.5040512084961,
+          "h": 152,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 203.5040512084961,
+          "h": 152,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 248.29571533203125,
+          "h": 200,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 248.29571533203125,
+          "h": 200,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 248.29571533203125,
+          "h": 200,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 248.29571533203125,
+          "h": 200,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 203.5040512084961,
+          "h": 152,
+          "fixture": "lightcube-134430880"
+        }
+      ]
+    },
+    "control_start_as_clone": {
+      "occurrences": 41,
+      "terminalSamples": [],
+      "stackSamples": [
+        {
+          "w": 182.31944274902344,
+          "h": 104,
+          "fixture": "clones"
+        },
+        {
+          "w": 325.4542808532715,
+          "h": 2216,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 297.19386291503906,
+          "h": 872,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 595.5925846099854,
+          "h": 3520,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 939.3512725830078,
+          "h": 2480,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 335.4299774169922,
+          "h": 3688,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 614.8964080810547,
+          "h": 1192,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 528.6111145019531,
+          "h": 3264,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 402.5434036254883,
+          "h": 2680,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 336.4311294555664,
+          "h": 3672,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 368.4311294555664,
+          "h": 1480,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 279.2175884246826,
+          "h": 344,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 326.5434036254883,
+          "h": 1112,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 587.6504669189453,
+          "h": 632,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 318.55960845947266,
+          "h": 744,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 386.5434036254883,
+          "h": 952,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 396.5329837799072,
+          "h": 2568,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 445.8564796447754,
+          "h": 912,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 594.34375,
+          "h": 1104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 400.8246536254883,
+          "h": 1496,
+          "fixture": "lightcube-134430880"
+        }
+      ]
+    },
+    "control_repeat": {
+      "occurrences": 114,
+      "terminalSamples": [
+        {
+          "w": 240.328125,
+          "h": 136,
+          "fixture": "clones"
+        },
+        {
+          "w": 215.171875,
+          "h": 136,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 160,
+          "h": 112,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 309.4542808532715,
+          "h": 232,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 160,
+          "h": 112,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 169.83795928955078,
+          "h": 136,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 169.83795928955078,
+          "h": 136,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 440.61978912353516,
+          "h": 192,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 371.9322853088379,
+          "h": 136,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 338.22743034362793,
+          "h": 232,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 191.49073791503906,
+          "h": 184,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 202.1620330810547,
+          "h": 184,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 160,
+          "h": 112,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 298.20427894592285,
+          "h": 184,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 298.20427894592285,
+          "h": 184,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 298.20427894592285,
+          "h": 184,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 304.4311294555664,
+          "h": 184,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 440.61978912353516,
+          "h": 144,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 451.4502296447754,
+          "h": 224,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 304.4311294555664,
+          "h": 280,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_say": {
+      "occurrences": 2,
+      "terminalSamples": [
+        {
+          "w": 118.3240737915039,
+          "h": 56,
+          "fixture": "clones"
+        },
+        {
+          "w": 96.37962913513184,
+          "h": 56,
+          "fixture": "touch"
+        }
+      ],
+      "stackSamples": []
+    },
+    "control_create_clone_of": {
+      "occurrences": 180,
+      "terminalSamples": [
+        {
+          "w": 224.328125,
+          "h": 56,
+          "fixture": "clones"
+        },
+        {
+          "w": 224.328125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 224.328125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 224.328125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 224.328125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 314.1481475830078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 314.1481475830078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 319.4722137451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 314.1481475830078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 319.4722137451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 283.31481170654297,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 288.0601806640625,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 272.94444274902344,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 314.1481475830078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 333.1064758300781,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 280.6759262084961,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 331.6481475830078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 333.1064758300781,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.2129592895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 319.4722137451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "text": {
+      "occurrences": 1339,
+      "terminalSamples": [
+        {
+          "w": 62.324073791503906,
+          "h": 32,
+          "fixture": "clones"
+        },
+        {
+          "w": 68.5509262084961,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 64.10647964477539,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 101.74536895751953,
+          "h": 32,
+          "fixture": "keys"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "control_create_clone_of_menu": {
+      "occurrences": 180,
+      "terminalSamples": [
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "clones"
+        },
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.328125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 180.1481475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "event_whenbroadcastreceived": {
+      "occurrences": 93,
+      "terminalSamples": [
+        {
+          "w": 243.8923568725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 243.8923568725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 243.8923568725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 271.57233810424805,
+          "h": 104,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 404.5098419189453,
+          "h": 320,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 255.74420928955078,
+          "h": 104,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 215.171875,
+          "h": 184,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 336.63946533203125,
+          "h": 248,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.7442092895508,
+          "h": 3992,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 249.2164306640625,
+          "h": 96,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 324.1932830810547,
+          "h": 96,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 398.94385719299316,
+          "h": 1456,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 398.94385719299316,
+          "h": 1504,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 255.71180725097656,
+          "h": 192,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 326.84664154052734,
+          "h": 320,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 387.9322853088379,
+          "h": 368,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 265.47164154052734,
+          "h": 344,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 265.47164154052734,
+          "h": 344,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 235.6053237915039,
+          "h": 96,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 390.6018524169922,
+          "h": 1008,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 279.2175884246826,
+          "h": 248,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 255.71180725097656,
+          "h": 192,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 319.4299774169922,
+          "h": 1192,
+          "fixture": "lightcube-134430880"
+        }
+      ]
+    },
+    "looks_sayforsecs": {
+      "occurrences": 2,
+      "terminalSamples": [
+        {
+          "w": 271.57233810424805,
+          "h": 56,
+          "fixture": "greenflag"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_gotoxy": {
+      "occurrences": 74,
+      "terminalSamples": [
+        {
+          "w": 194.52314376831055,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.52314376831055,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 194.52314376831055,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 188.4953670501709,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 188.4953670501709,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 188.4953670501709,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 599.290506362915,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 581.5127239227295,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 581.5127239227295,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 569.4571704864502,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 569.4571704864502,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 569.4571704864502,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 586.8367977142334,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 470.0474452972412,
+          "h": 64,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_movesteps": {
+      "occurrences": 3,
+      "terminalSamples": [
+        {
+          "w": 153.25,
+          "h": 56,
+          "fixture": "touch"
+        }
+      ],
+      "stackSamples": []
+    },
+    "event_broadcast": {
+      "occurrences": 38,
+      "terminalSamples": [
+        {
+          "w": 178.07986068725586,
+          "h": 56,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 167.7094898223877,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 217.7789306640625,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 207.40856170654297,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 207.40856170654297,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 225.20948791503906,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 187.87152862548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 224.30670928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 220.71875,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 212.4548568725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 186.3668975830078,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 167.7094898223877,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ]
+    },
+    "event_broadcast_menu": {
+      "occurrences": 43,
+      "terminalSamples": [
+        {
+          "w": 79.36111068725586,
+          "h": 32,
+          "fixture": "greenflag"
+        },
+        {
+          "w": 68.9907398223877,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 157.3240737915039,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 119.0601806640625,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 157.3240737915039,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.0370330810547,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 119.0601806640625,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 117,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 79.36111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 111.0740737915039,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 79.36111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 79.36111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 79.36111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 77,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 77,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 74.01388931274414,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 74.01388931274414,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 74.01388931274414,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 74.01388931274414,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 74.01388931274414,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "control_forever": {
+      "occurrences": 43,
+      "terminalSamples": [
+        {
+          "w": 364.33911895751953,
+          "h": 208,
+          "fixture": "keys"
+        },
+        {
+          "w": 169.8472137451172,
+          "h": 176,
+          "fixture": "keys"
+        },
+        {
+          "w": 382.2690887451172,
+          "h": 128,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 209.23610877990723,
+          "h": 128,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 344.0370330810547,
+          "h": 464,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 398.94385719299316,
+          "h": 1216,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 398.94385719299316,
+          "h": 1264,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 579.5925846099854,
+          "h": 1752,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 360.4311332702637,
+          "h": 528,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 390.6018524169922,
+          "h": 576,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 387.3379669189453,
+          "h": 560,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 297.1660842895508,
+          "h": 368,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 614.8964080810547,
+          "h": 680,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 512.6111145019531,
+          "h": 592,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 379.4589080810547,
+          "h": 272,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 386.5434036254883,
+          "h": 376,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 160,
+          "h": 128,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 160,
+          "h": 128,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 320.4311294555664,
+          "h": 432,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 320.4311294555664,
+          "h": 432,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 272.0092582702637,
+          "h": 128,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "control_if": {
+      "occurrences": 245,
+      "terminalSamples": [
+        {
+          "w": 348.33911895751953,
+          "h": 136,
+          "fixture": "keys"
+        },
+        {
+          "w": 325.4542808532715,
+          "h": 512,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 297.19386291503906,
+          "h": 144,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 382.94385719299316,
+          "h": 144,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 382.94385719299316,
+          "h": 144,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 326.84664154052734,
+          "h": 272,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 387.9322853088379,
+          "h": 320,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 547.5925846099854,
+          "h": 376,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 473.38251876831055,
+          "h": 368,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 330.1481475830078,
+          "h": 1056,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 359.44386291503906,
+          "h": 1192,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 349.1064758300781,
+          "h": 1824,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 349.1064758300781,
+          "h": 1056,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 359.44386291503906,
+          "h": 1000,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 359.44386291503906,
+          "h": 1192,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 335.4722137451172,
+          "h": 288,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 335.4722137451172,
+          "h": 672,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 347.6481475830078,
+          "h": 288,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 403.29166412353516,
+          "h": 2416,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 522.1209449768066,
+          "h": 152,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_keypressed": {
+      "occurrences": 40,
+      "terminalSamples": [
+        {
+          "w": 251.74536895751953,
+          "h": 40,
+          "fixture": "keys"
+        },
+        {
+          "w": 236.78125,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 257.23148345947266,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 204.45370388031006,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 261.3981475830078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 200.91203689575195,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.74536895751953,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 201.7916660308838,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 236.78125,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 257.23148345947266,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 204.45370388031006,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 236.78125,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 236.78125,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 236.78125,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 257.23148345947266,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 204.45370388031006,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 257.23148345947266,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 201.7916660308838,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 271.74536895751953,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 204.45370388031006,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_changexby": {
+      "occurrences": 58,
+      "terminalSamples": [
+        {
+          "w": 154.11573791503906,
+          "h": 56,
+          "fixture": "keys"
+        },
+        {
+          "w": 154.11573791503906,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.42591857910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.42591857910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.42591857910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.42591857910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.42591857910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.42591857910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 353.70369720458984,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 350.32869720458984,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 353.70369720458984,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 353.70369720458984,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 353.70369720458984,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 353.70369720458984,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 353.70369720458984,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_ifonedgebounce": {
+      "occurrences": 1,
+      "terminalSamples": [
+        {
+          "w": 153.8472137451172,
+          "h": 56,
+          "fixture": "keys"
+        }
+      ],
+      "stackSamples": []
+    },
+    "data_setvariableto": {
+      "occurrences": 341,
+      "terminalSamples": [
+        {
+          "w": 248.27256774902344,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 235.81886291503906,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 312.87904357910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 312.87904357910156,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 258.0642318725586,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 258.0642318725586,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 265.47164154052734,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 265.47164154052734,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 258.0642318725586,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 264.0954818725586,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.06886291503906,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.06886291503906,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.06886291503906,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 289.7771987915039,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 240.2633056640625,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 250.93460845947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 240.2633056640625,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 240.2633056640625,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 250.93460845947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 250.93460845947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 361.8142318725586,
+          "h": 120,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 223.96701431274414,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 269.6990737915039,
+          "h": 112,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 248.828125,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 227.23090362548828,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ]
+    },
+    "looks_switchbackdropto": {
+      "occurrences": 6,
+      "terminalSamples": [
+        {
+          "w": 245.94328689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 249.7858772277832,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 353.6053161621094,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "control_stop": {
+      "occurrences": 35,
+      "terminalSamples": [
+        {
+          "w": 115.515625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 115.515625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 115.515625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 115.515625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 171.82291412353516,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 171.82291412353516,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 171.82291412353516,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 171.82291412353516,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 171.82291412353516,
+          "h": 48,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_backdrops": {
+      "occurrences": 6,
+      "terminalSamples": [
+        {
+          "w": 79.66203689575195,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 79.66203689575195,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 83.5046272277832,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 71.0509262084961,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 82.90277862548828,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 187.32406616210938,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sound_setvolumeto": {
+      "occurrences": 3,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "math_whole_number": {
+      "occurrences": 103,
+      "terminalSamples": [
+        {
+          "w": 48.703125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sound_changevolumeby": {
+      "occurrences": 1,
+      "terminalSamples": [
+        {
+          "w": 199.171875,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sound_playuntildone": {
+      "occurrences": 5,
+      "terminalSamples": [
+        {
+          "w": 336.63946533203125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 366.2690887451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 413.71875,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "control_wait": {
+      "occurrences": 42,
+      "terminalSamples": [
+        {
+          "w": 166.859375,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 166.859375,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 171.10474586486816,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 171.10474586486816,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sound_sounds_menu": {
+      "occurrences": 24,
+      "terminalSamples": [
+        {
+          "w": 218.0879669189453,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 150.21759033203125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 179.8472137451172,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 144.84722137451172,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 144.84722137451172,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.58333206176758,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 126.74536895751953,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 83.48147964477539,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 146.0509262084961,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 132.69444274902344,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 142.74073791503906,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 166.16666412353516,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 164.3842544555664,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 135.37963104248047,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 135.37963104248047,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 78.75925827026367,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 116.42129516601562,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 181.60647583007812,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 141.28240203857422,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 131.2361068725586,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "math_positive_number": {
+      "occurrences": 42,
+      "terminalSamples": [
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 44.245370864868164,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 44.245370864868164,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 44.245370864868164,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "procedures_definition": {
+      "occurrences": 69,
+      "terminalSamples": [
+        {
+          "w": 160,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 290.0931701660156,
+          "h": 296,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 298.6961784362793,
+          "h": 344,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 172.4814796447754,
+          "h": 176,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 404.61573791503906,
+          "h": 344,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 285.35184478759766,
+          "h": 264,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 247.19444274902344,
+          "h": 176,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 344.0370330810547,
+          "h": 1648,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 298.6961784362793,
+          "h": 528,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 290.3981399536133,
+          "h": 384,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 217.78240394592285,
+          "h": 640,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 209.77314472198486,
+          "h": 640,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 199.4768524169922,
+          "h": 200,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.42129516601562,
+          "h": 200,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 440.61978912353516,
+          "h": 432,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 285.63368225097656,
+          "h": 872,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 335.4722137451172,
+          "h": 2448,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 366.88426208496094,
+          "h": 4120,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 349.1064758300781,
+          "h": 3984,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 363.6481475830078,
+          "h": 4912,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 349.1064758300781,
+          "h": 3792,
+          "fixture": "lightcube-134430880"
+        }
+      ]
+    },
+    "looks_setsizeto": {
+      "occurrences": 21,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "control_delete_this_clone": {
+      "occurrences": 88,
+      "terminalSamples": [
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.5509262084961,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "procedures_prototype": {
+      "occurrences": 69,
+      "terminalSamples": [
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 93.10648345947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 110.83333206176758,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 342.96759033203125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.25,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 185.54629516601562,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 152.0648193359375,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 153.56944274902344,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 160.07406616210938,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 138.15277862548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 138.15277862548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.82870483398438,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 159.7731475830078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 107.62036895751953,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_switchcostumeto": {
+      "occurrences": 141,
+      "terminalSamples": [
+        {
+          "w": 424.61978912353516,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 293.6620330810547,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 293.6620330810547,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 293.6620330810547,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 293.6620330810547,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 293.6620330810547,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 424.61978912353516,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 260.7685127258301,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 211.2546262741089,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 211.2546262741089,
+          "h": 104,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 207.41203355789185,
+          "h": 104,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 205.6296262741089,
+          "h": 104,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 216.30092239379883,
+          "h": 104,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 210.67592239379883,
+          "h": 104,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 206.81018161773682,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 305.3981399536133,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 262.27314376831055,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ]
+    },
+    "operator_equals": {
+      "occurrences": 246,
+      "terminalSamples": [
+        {
+          "w": 213.05381774902344,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 213.05381774902344,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 213.05381774902344,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 213.05381774902344,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 200.60011291503906,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 200.60011291503906,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 200.60011291503906,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 200.60011291503906,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 200.60011291503906,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 200.60011291503906,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 286.35010719299316,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 277.66029357910156,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 286.35010719299316,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 277.66029357910156,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 277.66029357910156,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 277.66029357910156,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 277.66029357910156,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 277.66029357910156,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 277.66029357910156,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 286.35010719299316,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 298.6880798339844,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "looks_show": {
+      "occurrences": 67,
+      "terminalSamples": [
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "argument_reporter_string_number": {
+      "occurrences": 92,
+      "terminalSamples": [
+        {
+          "w": 54.83333206176758,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 54.83333206176758,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 75.29629516601562,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 70.85185241699219,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 70.85185241699219,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 75.29629516601562,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 63.74536895751953,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 63.74536895751953,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 63.74536895751953,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 63.74536895751953,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 72.00925827026367,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 48,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_costume": {
+      "occurrences": 132,
+      "terminalSamples": [
+        {
+          "w": 88.85185241699219,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 125.58795928955078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 58.01851844787598,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 50.00925922393799,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 132.13888549804688,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 130.6342544555664,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 168.2731475830078,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 185.17129516601562,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 185.17129516601562,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 84.40740585327148,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "data_variable": {
+      "occurrences": 442,
+      "terminalSamples": [
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 103.44444274902344,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 101.3611068725586,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 61.70833206176758,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.70833206176758,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "looks_seteffectto": {
+      "occurrences": 65,
+      "terminalSamples": [
+        {
+          "w": 265.5868034362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 256.8836784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 463.356481552124,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_changeeffectby": {
+      "occurrences": 49,
+      "terminalSamples": [
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 355.9322853088379,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 282.6961784362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "procedures_call": {
+      "occurrences": 260,
+      "terminalSamples": [
+        {
+          "w": 93.10648345947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 93.10648345947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 93.10648345947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 153.56944274902344,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 160.07406616210938,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.25,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 152.0648193359375,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 138.15277862548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 138.15277862548828,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 154.69444274902344,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 154.69444274902344,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 393.70775413513184,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 154.98611068725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 305.3796272277832,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "motion_changeyby": {
+      "occurrences": 62,
+      "terminalSamples": [
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 363.1811294555664,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.14813995361328,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.14813995361328,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.14813995361328,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.14813995361328,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.14813995361328,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 221.14813995361328,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 159.86920928955078,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 349.74999237060547,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 349.74999237060547,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 349.74999237060547,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 349.74999237060547,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 153.83795928955078,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_nextcostume": {
+      "occurrences": 32,
+      "terminalSamples": [
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 116.4861068725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_hide": {
+      "occurrences": 51,
+      "terminalSamples": [
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 64,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_cleargraphiceffects": {
+      "occurrences": 4,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "data_deleteoflist": {
+      "occurrences": 35,
+      "terminalSamples": [
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 271.9942092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "math_integer": {
+      "occurrences": 103,
+      "terminalSamples": [
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 48.6898136138916,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_gotofrontback": {
+      "occurrences": 38,
+      "terminalSamples": [
+        {
+          "w": 182.24074172973633,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 184.0231475830078,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 182.24074172973633,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_turnright": {
+      "occurrences": 6,
+      "terminalSamples": [
+        {
+          "w": 193.23610877990723,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 201.92592239379883,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 193.23610877990723,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 201.23610877990723,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 357.6174716949463,
+          "h": 64,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_goto": {
+      "occurrences": 9,
+      "terminalSamples": [
+        {
+          "w": 146.34722137451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 146.34722137451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_goto_menu": {
+      "occurrences": 9,
+      "terminalSamples": [
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 84.10647964477539,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 84.10647964477539,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 84.10647964477539,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 150.19444274902344,
+          "h": 32,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_subtract": {
+      "occurrences": 37,
+      "terminalSamples": [
+        {
+          "w": 264.8559036254883,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 449.3796215057373,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 330.10358238220215,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 264.8559036254883,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 166.2714080810547,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 110.234375,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 168.7343692779541,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 142.24363327026367,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 314.89466857910156,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 382.79513359069824,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 1455.807285308838,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 138.50289344787598,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 118.234375,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 157.79861068725586,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.7297477722168,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 129.81307983398438,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 118.234375,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 118.234375,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 118.234375,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 155.64178085327148,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_costumenumbername": {
+      "occurrences": 30,
+      "terminalSamples": [
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.62152862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 178.93055725097656,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "control_if_else": {
+      "occurrences": 48,
+      "terminalSamples": [
+        {
+          "w": 563.5925846099854,
+          "h": 1680,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 463.7112216949463,
+          "h": 224,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 457.38251876831055,
+          "h": 224,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 457.68344497680664,
+          "h": 224,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 457.38251876831055,
+          "h": 224,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 349.6753463745117,
+          "h": 680,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 333.6753463745117,
+          "h": 416,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 371.8657417297363,
+          "h": 1328,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 355.8657417297363,
+          "h": 968,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 339.8657417297363,
+          "h": 608,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 375.4502296447754,
+          "h": 224,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 375.4502296447754,
+          "h": 224,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 375.4502296447754,
+          "h": 664,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 375.4502296447754,
+          "h": 664,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 377.6365718841553,
+          "h": 496,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 375.4502296447754,
+          "h": 216,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 524.546875,
+          "h": 360,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 349.6753463745117,
+          "h": 680,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 333.6753463745117,
+          "h": 416,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 371.8657417297363,
+          "h": 1136,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_changesizeby": {
+      "occurrences": 11,
+      "terminalSamples": [
+        {
+          "w": 180.60995483398438,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 174.57870483398438,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_sety": {
+      "occurrences": 8,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "motion_setx": {
+      "occurrences": 10,
+      "terminalSamples": [
+        {
+          "w": 118.83796310424805,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 124.8657398223877,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_of": {
+      "occurrences": 8,
+      "terminalSamples": [
+        {
+          "w": 251.48031997680664,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 251.17939376831055,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 251.48031997680664,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 251.48031997680664,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 251.17939376831055,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 251.17939376831055,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 251.48031997680664,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 251.17939376831055,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_add": {
+      "occurrences": 34,
+      "terminalSamples": [
+        {
+          "w": 167.66492652893066,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 452.7546215057373,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 333.47858238220215,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 167.66492652893066,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 177.05381774902344,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 507.85705757141113,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 513.181131362915,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 577.4976825714111,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 194.85011291503906,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 1459.182285308838,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 647.7320575714111,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 507.85705757141113,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 513.181131362915,
+          "h": 80,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 286.25578689575195,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 194.85011291503906,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 286.25578689575195,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 194.85011291503906,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 286.25578689575195,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 194.85011291503906,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 286.25578689575195,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_lt": {
+      "occurrences": 38,
+      "terminalSamples": [
+        {
+          "w": 367.1174716949463,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 360.78876876831055,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 205.0445556640625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 205.0445556640625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 215.71585845947266,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 215.71585845947266,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 186.9658546447754,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 197.4380760192871,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 197.4380760192871,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 211.97511100769043,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 276.0769691467285,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 171.25,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 171.25,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 175.49537086486816,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 175.49537086486816,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 175.49537086486816,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 175.49537086486816,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 175.49537086486816,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 175.49537086486816,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 214.63714790344238,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_of_object_menu": {
+      "occurrences": 8,
+      "terminalSamples": [
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_gt": {
+      "occurrences": 23,
+      "terminalSamples": [
+        {
+          "w": 361.08969497680664,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 360.78876876831055,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 192.99363136291504,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 205.0445556640625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 205.0445556640625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 215.71585845947266,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 215.71585845947266,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 254.63714790344238,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 254.63714790344238,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 186.9658546447754,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 186.9658546447754,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 254.63714790344238,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 254.63714790344238,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 213.05381774902344,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 214.3362216949463,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 235.87789154052734,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 235.87789154052734,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 235.87789154052734,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 171.3865737915039,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 191.26388931274414,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "data_addtolist": {
+      "occurrences": 399,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "looks_goforwardbackwardlayers": {
+      "occurrences": 11,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "control_wait_until": {
+      "occurrences": 25,
+      "terminalSamples": [
+        {
+          "w": 374.6018524169922,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 370.5434036254883,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 281.65451431274414,
+          "h": 64,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_glidesecstoxy": {
+      "occurrences": 25,
+      "terminalSamples": [
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 308.72685050964355,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 308.72685050964355,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 300.03703689575195,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_or": {
+      "occurrences": 78,
+      "terminalSamples": [
+        {
+          "w": 848.9606475830078,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 400.9178237915039,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 400.9178237915039,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 792.7164373397827,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 508.8101873397827,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 591.2037086486816,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 591.2037086486816,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 591.2037086486816,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 591.2037086486816,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 509.43518447875977,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 520.6620349884033,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 792.7164373397827,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 508.8101873397827,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 491.0567169189453,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 491.0567169189453,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 427.953125,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 427.953125,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 427.953125,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 848.9606475830078,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 400.9178237915039,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_touchingobject": {
+      "occurrences": 79,
+      "terminalSamples": [
+        {
+          "w": 197.65277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 197.65277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 197.65277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 346.42593002319336,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 197.65277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 346.42593002319336,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 197.65277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 346.42593002319336,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 197.65277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 346.42593002319336,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 278.8564796447754,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 220.15277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 220.15277862548828,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_and": {
+      "occurrences": 20,
+      "terminalSamples": [
+        {
+          "w": 425.52719497680664,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 525.6817092895508,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 838.028938293457,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 600.7974510192871,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 1027.666666984558,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 508.5057830810547,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 400.0625,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.0625,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 1645.8917818069458,
+          "h": 64,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.0625,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.359375,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.359375,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.359375,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.359375,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.0625,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 2076.3385496139526,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.0625,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 1263.417248725891,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 400.0625,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 495.45311737060547,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_touchingobjectmenu": {
+      "occurrences": 79,
+      "terminalSamples": [
+        {
+          "w": 68.11111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 68.11111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 68.11111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 216.88426208496094,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 68.11111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 216.88426208496094,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 68.11111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 216.88426208496094,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 68.11111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 216.88426208496094,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 149.31481170654297,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 90.61111068725586,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_divide": {
+      "occurrences": 42,
+      "terminalSamples": [
+        {
+          "w": 117.640625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 117.640625,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 137.6313648223877,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 133.38599395751953,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 129.8211784362793,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 336.3680534362793,
+          "h": 72,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 129.8211784362793,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 235.9120330810547,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 179.875,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 238.3749942779541,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 211.88425827026367,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 248.83506774902344,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 208.14351844787598,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 248.83506774902344,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 204.38136291503906,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 227.43923568725586,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 214.3703727722168,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 141.64988327026367,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 141.64988327026367,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 199.45370483398438,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 179.875,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "operator_not": {
+      "occurrences": 21,
+      "terminalSamples": [
+        {
+          "w": 852.7164373397827,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 651.2037086486816,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 651.2037086486816,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 338.8564796447754,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 265.0445556640625,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 275.71585845947266,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 301.20196533203125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 219.72048568725586,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 280.1527786254883,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 338.8564796447754,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 280.1527786254883,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 280.1527786254883,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 338.8564796447754,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 487.953125,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 859.9288215637207,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 1120.48148727417,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 247.5601863861084,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 301.7962989807129,
+          "h": 48,
+          "fixture": "scrolltutorial-378587848"
+        },
+        {
+          "w": 301.7962989807129,
+          "h": 48,
+          "fixture": "scrolltutorial-378587848"
+        },
+        {
+          "w": 301.7962989807129,
+          "h": 48,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_yposition": {
+      "occurrences": 17,
+      "terminalSamples": [
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.03703308105469,
+          "h": 40,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_round": {
+      "occurrences": 12,
+      "terminalSamples": [
+        {
+          "w": 144.3408546447754,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 196.8055534362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.7274284362793,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 126.56307983398438,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 145.84548568725586,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 126.56307983398438,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 126.56307983398438,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 137.234375,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 137.234375,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.32233428955078,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.0214080810547,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.0214080810547,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_xposition": {
+      "occurrences": 34,
+      "terminalSamples": [
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 96.33795928955078,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "control_repeat_until": {
+      "occurrences": 35,
+      "terminalSamples": [
+        {
+          "w": 342.203125,
+          "h": 416,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 474.3449058532715,
+          "h": 296,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 474.3449058532715,
+          "h": 296,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 439.95891189575195,
+          "h": 168,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 383.6307830810547,
+          "h": 168,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 383.6307830810547,
+          "h": 168,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 408.7962989807129,
+          "h": 456,
+          "fixture": "scrolltutorial-378587848"
+        },
+        {
+          "w": 271.36978912353516,
+          "h": 280,
+          "fixture": "scrolltutorial-378587848"
+        },
+        {
+          "w": 408.7962989807129,
+          "h": 360,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_keyoptions": {
+      "occurrences": 39,
+      "terminalSamples": [
+        {
+          "w": 86.78125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 107.23148345947266,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 54.45370388031006,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 111.39814758300781,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 50.91203689575195,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 121.74536895751953,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 51.79166603088379,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 86.78125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 107.23148345947266,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 54.45370388031006,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 86.78125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 86.78125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 86.78125,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 107.23148345947266,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 54.45370388031006,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 107.23148345947266,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 51.79166603088379,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 121.74536895751953,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 54.45370388031006,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 107.23148345947266,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sound_play": {
+      "occurrences": 20,
+      "terminalSamples": [
+        {
+          "w": 252.72222137451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 252.72222137451172,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 234.62036895751953,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 191.3564796447754,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 186.63425827026367,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 222.79166412353516,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_join": {
+      "occurrences": 8,
+      "terminalSamples": [
+        {
+          "w": 359.7962951660156,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 252.71759223937988,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.90277671813965,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 654.430549621582,
+          "h": 64,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 447.5416603088379,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 148.5,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.72684860229492,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 194.42592239379883,
+          "h": 48,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_random": {
+      "occurrences": 14,
+      "terminalSamples": [
+        {
+          "w": 227.296875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 249.34317016601562,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 249.34317016601562,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 227.296875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 249.34317016601562,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 249.34317016601562,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 227.296875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 227.296875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 227.296875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 227.296875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 255.5700225830078,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 231.54224586486816,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 250.90335655212402,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 227.296875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "data_itemoflist": {
+      "occurrences": 37,
+      "terminalSamples": [
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.3599510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.3599510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.3599510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.3599510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.3599510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.3599510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 266.3599510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 295.1099510192871,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_pointindirection": {
+      "occurrences": 7,
+      "terminalSamples": [
+        {
+          "w": 194.24073600769043,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "math_angle": {
+      "occurrences": 4,
+      "terminalSamples": [
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 46.02777671813965,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_turnleft": {
+      "occurrences": 1,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "data_hidevariable": {
+      "occurrences": 6,
+      "terminalSamples": [
+        {
+          "w": 198.52314376831055,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 276.5092544555664,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "data_showvariable": {
+      "occurrences": 5,
+      "terminalSamples": [
+        {
+          "w": 204.17129135131836,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 202.66666412353516,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_mousedown": {
+      "occurrences": 13,
+      "terminalSamples": [
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 144.046875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_multiply": {
+      "occurrences": 55,
+      "terminalSamples": [
+        {
+          "w": 199.7430534362793,
+          "h": 56,
+          "fixture": "lightcube-134430880"
+        },
+        {
+          "w": 170.49131774902344,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 131.07928276062012,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 168.06076431274414,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 217.82002067565918,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 426.24768257141113,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 431.57175636291504,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 170.49131774902344,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 217.82002067565918,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 324.31654930114746,
+          "h": 64,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 329.64062309265137,
+          "h": 64,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 495.88830757141113,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 715.4484920501709,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 710.124418258667,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 710.124418258667,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 715.4484920501709,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 170.49131774902344,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 324.31654930114746,
+          "h": 64,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 495.88830757141113,
+          "h": 72,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 375.45544052124023,
+          "h": 64,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 170.49131774902344,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "sensing_resettimer": {
+      "occurrences": 3,
+      "terminalSamples": [
+        {
+          "w": 94.859375,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_timer": {
+      "occurrences": 15,
+      "terminalSamples": [
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 61.640625,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_direction": {
+      "occurrences": 1,
+      "terminalSamples": [
+        {
+          "w": 88.62963104248047,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": [
+        {
+          "w": 88.62963104248047,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ]
+    },
+    "data_deletealloflist": {
+      "occurrences": 2,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "data_insertatlist": {
+      "occurrences": 21,
+      "terminalSamples": [
+        {
+          "w": 429.42939376831055,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 340.66550636291504,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "looks_size": {
+      "occurrences": 9,
+      "terminalSamples": [
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 53.074073791503906,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_contains": {
+      "occurrences": 1,
+      "terminalSamples": [
+        {
+          "w": 358.9907417297363,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "data_listcontainsitem": {
+      "occurrences": 1,
+      "terminalSamples": [
+        {
+          "w": 407.5185127258301,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "operator_mathop": {
+      "occurrences": 24,
+      "terminalSamples": [
+        {
+          "w": 250.1493034362793,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 255.4733772277832,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 310.07117652893066,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 304.74710273742676,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 304.74710273742676,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 310.07117652893066,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 250.1493034362793,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 250.1493034362793,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 250.1493034362793,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 255.4733772277832,
+          "h": 56,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 157.8969898223877,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.2210636138916,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 157.8969898223877,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.2210636138916,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 157.8969898223877,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.2210636138916,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 157.8969898223877,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.2210636138916,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 157.8969898223877,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 163.2210636138916,
+          "h": 48,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "motion_setrotationstyle": {
+      "occurrences": 1,
+      "terminalSamples": [],
+      "stackSamples": []
+    },
+    "sensing_mousey": {
+      "occurrences": 6,
+      "terminalSamples": [
+        {
+          "w": 86.546875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.546875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.546875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.546875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.546875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.546875,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_mousex": {
+      "occurrences": 4,
+      "terminalSamples": [
+        {
+          "w": 86.84375,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.84375,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.84375,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 86.84375,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "sensing_touchingcolor": {
+      "occurrences": 2,
+      "terminalSamples": [
+        {
+          "w": 211.34721755981445,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 211.34721755981445,
+          "h": 40,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "colour_picker": {
+      "occurrences": 2,
+      "terminalSamples": [
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        },
+        {
+          "w": 40,
+          "h": 32,
+          "fixture": "platformer-853110869"
+        }
+      ],
+      "stackSamples": []
+    },
+    "event_broadcastandwait": {
+      "occurrences": 5,
+      "terminalSamples": [
+        {
+          "w": 288.04398345947266,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        },
+        {
+          "w": 238.2523136138916,
+          "h": 56,
+          "fixture": "scrolltutorial-378587848"
+        }
+      ],
+      "stackSamples": []
+    }
+  },
+  "renderProbes": {
+    "shapes": {
+      "event_whenflagclicked": {
+        "width": 148.5,
+        "height": 56,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "motion_movesteps": {
+        "width": 161.25,
+        "height": 56,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "control_repeat": {
+        "width": 160,
+        "height": 112,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "control_if_else": {
+        "width": 160,
+        "height": 168,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "control_forever": {
+        "width": 160,
+        "height": 104,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "control_stop": {
+        "width": 115.515625,
+        "height": 48,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "operator_add": {
+        "width": 129.609375,
+        "height": 40,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "math_number": {
+        "width": 54.91203689575195,
+        "height": 40,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      },
+      "text": {
+        "width": 50.46759271621704,
+        "height": 40,
+        "note": "newBlock, empty inputs, no toolbox shadow XML"
+      }
+    },
+    "text": {
+      "font": "500 16px \"Helvetica Neue\", Helvetica, sans-serif",
+      "samples": {
+        "0": 8.912036895751953,
+        "i": 3.8657407760620117,
+        "iiiiiiiiii": 38.564815521240234,
+        "W": 15.115740776062012,
+        "WWWWWWWWWW": 151.04165649414062,
+        "0000000000": 88.98148345947266,
+        "move": 40.625,
+        "hello world": 80.9490737915039
+      }
+    }
+  }
+}

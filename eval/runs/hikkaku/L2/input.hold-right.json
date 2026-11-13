@@ -1,0 +1,4 @@
+[
+  { "frame": 0, "type": "keydown", "key": "ArrowRight" },
+  { "frame": 30, "type": "keyup", "key": "ArrowRight" }
+]
