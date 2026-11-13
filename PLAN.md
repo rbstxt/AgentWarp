@@ -34,8 +34,9 @@ No custom LLM loop: existing CLI agents are used via subscriptions (CLI/skill/MC
 - [x] P2c fresh-agent evaluation of the 3 formats → `ts` chosen (`docs/P3-DECISION.md`)
 - [x] P3 CLI: new/unpack/pack/check(validate+lint+tsc)/run/test/shot/tidy/layout/costumes/serve; skill `skill/agentwarp/`; sprite lifecycle, id minting, stable anchors; rendered runner `tools/render`
 - [x] P4 TurboWarp live bridge (`docs/P4-DESIGN.md`), web e2e verified; Desktop userscript not yet verified (needs user's OK to touch real profile)
-- [ ] P5 ACP side panel (injected, no fork; `docs/P5-DESIGN.md`): host + panel done, integration + real-agent e2e in progress
-- [ ] P6 long-horizon evaluation (`eval/P6-BRIEF.md`): new game + big refactor running
+- [x] P5 ACP side panel (injected client, no fork; `docs/P5-DESIGN.md`): Claude/Codex/OpenCode via ACP, real Claude e2e on turbowarp.org (`packages/bridge/e2e/REAL-AGENT.md`)
+- [x] P6 long-horizon evaluation (`eval/p6/`): new 3-stage game (12/12 tests) and Lightcube refactor (151 scripts untouched, 0 comments lost, 6/6 tests); friction fixed (glide virtual time, shot hang, probe shorthand, broadcast typing, tidy --dry-run)
+- [ ] TurboWarp Desktop: userscript install + verification (needs the user's OK to write into the real Desktop profile)
 
 Model split: basic implementation/eval = Muse Spark 1.3 (OpenCode Go); browser-driven work = Codex GPT-6.1 Terra;
 architecture/review = Claude.
