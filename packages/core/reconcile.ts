@@ -743,8 +743,16 @@ function reconcileSingle(ctx: RCtx, eNode: Block, baseId: string | null, parentI
         const baseNode = ctx.baseNodeById.get(baseId);
         const parentSame = (base.parent ?? null) === parentId;
         if (baseNode && irBlockEqual(eNode, baseNode) && parentSame) {
-            for (const id of collectReachable(ctx.baseBlocks, baseId)) {
+            const reach = collectReachable(ctx.baseBlocks, baseId);
+            for (const id of reach) {
                 if (!(id in ctx.out)) ctx.out[id] = cloneBase(ctx.baseBlocks[id]);
+            }
+            // irBlockEqual includes comments, so the subtree's attached comments are unchanged: carry them.
+            const reachSet = new Set(reach);
+            for (const [cid, c] of Object.entries<any>(ctx.baseComments)) {
+                if (typeof c?.blockId === 'string' && reachSet.has(c.blockId) && !(cid in ctx.outComments)) {
+                    ctx.outComments[cid] = cloneBase(c);
+                }
             }
             pairWalk(ctx, baseId, eNode);
             return baseId;
