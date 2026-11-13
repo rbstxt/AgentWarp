@@ -29,9 +29,11 @@ No custom LLM loop: existing CLI agents are used via subscriptions (CLI/skill/MC
 ## Phases
 - [x] P0 harness: `tools/vmrun` (validate / run / dump / layout metrics / diff)
 - [x] P1 evaluate existing tools with Muse Spark 1.3 as the test agent (goboscript, hikkaku, raw project.json / scratch MCPs) on the task ladder → friction reports (`eval/runs/*/REPORT.md`), TurboWarp calibration (`eval/calibration/`). Design: `docs/P2-DESIGN.md`
-- [ ] P2 text-format prototypes (2–3 candidates) with lossless round trip + layout + comments; evaluate with Muse on the same ladder
+- [x] P2a core: catalog (226 opcodes, en+ja), IR/extract/reconcile (byte-identical round trip), metrics (en+ja, holdout-validated), Clean up Plus replica, placeNew
+- [x] P2b formats: `formats/{scratchblocks,ts,sbpy}` (38/38 byte-identical round trip each), prototype CLI `bin/agentwarp`
+- [ ] P2c fresh-agent evaluation of the 3 formats (`eval/P2C-BRIEF.md`)
 - [ ] P3 pick format → `agentwarp` CLI (unpack/pack/check/run/test/screenshot/watch) + SKILL.md/AGENTS.md
-- [ ] P4 TurboWarp live bridge (watch → TurboWarp reload preserving editor state)
+- [ ] P4 TurboWarp live bridge (`docs/P4-DESIGN.md`): server (Muse) + browser client (Codex) in progress
 - [ ] P5 TurboWarp fork + ACP side panel
 - [ ] P6 long-horizon evaluation (multi-hour complex tasks), fix friction, docs
 
