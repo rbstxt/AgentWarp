@@ -1,0 +1,13 @@
+{
+  "name": "vmrun",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Headless Scratch verification harness (validate / run / layout)",
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "scratch-vm": "github:TurboWarp/scratch-vm#develop"
+  }
+}
