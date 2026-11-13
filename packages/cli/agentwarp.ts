@@ -271,6 +271,7 @@ interface TestScenario {
 interface TestExpectResult extends TestExpect {
     ok: boolean;
     actual: unknown;
+    hint?: string;
     /** file:line suspects that write the probed variable/list (best effort). */
     locations?: string[];
 }
@@ -431,6 +432,7 @@ async function runTestCommand(dir: string, pattern: string | undefined, json: bo
                             ? cmpTestValue(actual, e.op ?? '==', e.value)
                             : false;
                         const r: TestExpectResult = { ...e, ok, actual: actual ?? null };
+                        if (!ok && out.probeHints?.[e.probe]) r.hint = out.probeHints[e.probe];
                         if (!ok) {
                             const locs = probeWriters(project, e.probe, sourcemap, dir);
                             if (locs.length) r.locations = locs;
@@ -452,6 +454,7 @@ async function runTestCommand(dir: string, pattern: string | undefined, json: bo
             for (const e of r.expects) {
                 if (e.ok) continue;
                 process.stderr.write(`  [${e.at}] ${e.probe} ${e.op} ${fmtActual(e.value)} (actual: ${fmtActual(e.actual)})\n`);
+                if (e.hint) process.stderr.write(`    hint: ${e.hint}\n`);
                 for (const l of e.locations ?? []) process.stderr.write(`    written at ${l}\n`);
             }
         }

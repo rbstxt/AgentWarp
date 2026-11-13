@@ -8,7 +8,7 @@ import {loadSb3, saveSb3, assetName} from './lib/sb3.mjs';
 import {validateProject} from './lib/validate.mjs';
 import {layoutReport, cleanupLayout} from './lib/layout.mjs';
 import {diffProjects} from './lib/diff.mjs';
-import {FPS, FRAME_MS, buildDimsMap, createHeadlessVM, loadProjectHeadless, stepFrames, dumpState, resolveProbe, parseUntil, takeVmWarnings} from './lib/harness.mjs';
+import {FPS, FRAME_MS, buildDimsMap, createHeadlessVM, loadProjectHeadless, stepFrames, dumpState, resolveProbe, probeHint, parseUntil, takeVmWarnings} from './lib/harness.mjs';
 import {assetDims} from './lib/dims.mjs';
 
 function usageError(msg) {
@@ -147,7 +147,11 @@ async function cmdRun(file, positional, opts, multi) {
     if (traceNames.length > 0) out.trace = traced;
     if (multi.probe.length > 0) {
         out.probes = {};
-        for (const p of multi.probe) out.probes[p] = resolveProbe(out, p) ?? null;
+        for (const p of multi.probe) {
+            out.probes[p] = resolveProbe(out, p) ?? null;
+            const h = out.probes[p] === null ? probeHint(out, p) : null;
+            if (h) (out.probeHints ??= {})[p] = h;
+        }
     }
     emit(out);
     process.exit(0);

@@ -681,3 +681,37 @@ export function resolveProbe(state, expr) {
     }
     return cur;
 }
+
+/**
+ * Explain an unresolved probe: suggest target-prefixed / corrected paths that DO resolve.
+ * Returns a short hint string or null.
+ */
+export function probeHint(state, expr) {
+    if (resolveProbe(state, expr) !== undefined) return null;
+    const parts = String(expr).split('.');
+    const targets = (state?.targets ?? []).filter(t => t && !t.isClone);
+    const names = targets.map(t => t.name);
+    const ok = [];
+    // 1) missing target prefix: "bubble.text" -> "Sprite1.bubble.text"
+    for (const n of names) {
+        const cand = `${n}.${expr}`;
+        if (resolveProbe(state, cand) !== undefined) ok.push(cand);
+    }
+    // 2) variable/list without the "variables."/"lists." segment: "Sprite1.score" -> "Sprite1.variables.score"
+    if (parts.length >= 2 && names.includes(parts[0])) {
+        for (const seg of ['variables', 'lists']) {
+            const cand = [parts[0], seg, ...parts.slice(1)].join('.');
+            if (resolveProbe(state, cand) !== undefined) ok.push(cand);
+        }
+        // global variable read through a sprite: "Sprite1.score" -> "Stage.variables.score"
+        const stage = targets.find(t => t.isStage);
+        if (stage) for (const seg of ['variables', 'lists']) {
+            const cand = [stage.name, seg, ...parts.slice(1)].join('.');
+            if (resolveProbe(state, cand) !== undefined) ok.push(cand);
+        }
+    }
+    if (ok.length) return `did you mean ${[...new Set(ok)].slice(0, 3).map(s => `"${s}"`).join(' or ')}?`;
+    if (parts.length && !names.includes(parts[0]) && !(parts[0] in (state ?? {})))
+        return `"${parts[0]}" is not a target; targets: ${names.join(', ')}`;
+    return null;
+}
