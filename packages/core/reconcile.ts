@@ -26,7 +26,7 @@ const SHADOW_TAG: Record<string, number> = {
 export interface TargetDecls {
     /** Ordered declarations; duplicate names possible in messy human projects. */
     variables: Array<{ name: string; id: string; value: unknown; cloud?: boolean }>;
-    lists: Array<{ name: string; id: string; items: unknown[] }>;
+    lists: Array<{ name: string; id: string; items: unknown[]; raw?: unknown[] }>;
     /** Newly declared broadcasts for this target. */
     broadcasts: Array<{ name: string; id: string }>;
     costumes: Array<Record<string, any>>;
@@ -1485,7 +1485,7 @@ function buildCollections(
         variables[d.id] = d.cloud ? [d.name, d.value, true] : [d.name, d.value];
     }
     const lists: Record<string, unknown[]> = {};
-    for (const d of decls.lists) lists[d.id] = [d.name, ...d.items];
+    for (const d of decls.lists) lists[d.id] = d.raw ? [d.name, ...d.raw] : [d.name, d.items];
     // Broadcasts: base dict overlaid with target.json declarations.
     const broadcasts: Record<string, string> = { ...(baseTarget?.broadcasts ?? {}) };
     for (const { name, id } of decls.broadcasts) {

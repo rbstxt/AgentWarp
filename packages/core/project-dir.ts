@@ -75,7 +75,10 @@ function splitTargetForUnpack(
     targetJson.lists = [];
     for (const [id, v] of Object.entries<any>(lists ?? {})) {
         const arr = Array.isArray(v) ? v : [v];
-        targetJson.lists.push({ name: String(arr[0] ?? id), id, items: arr.slice(1) });
+        // sb3 list = [name, [item, …]] (+ rare extra trailing entries, kept for losslessness).
+        const entry: any = { name: String(arr[0] ?? id), id, items: Array.isArray(arr[1]) ? arr[1] : [] };
+        if (!Array.isArray(arr[1]) || arr.length > 2) entry.raw = arr.slice(1);
+        targetJson.lists.push(entry);
     }
     targetJson.broadcasts = [];
     for (const [id, bname] of Object.entries<any>(broadcasts ?? {})) {
@@ -223,7 +226,12 @@ async function readTargetDir(
         });
     }
     for (const v of Array.isArray(targetJson.lists) ? targetJson.lists : []) {
-        decls.lists.push({ name: String(v?.name ?? ''), id: String(v?.id ?? ''), items: Array.isArray(v?.items) ? v.items : [] });
+        decls.lists.push({
+            name: String(v?.name ?? ''),
+            id: String(v?.id ?? ''),
+            items: Array.isArray(v?.items) ? v.items : [],
+            ...(Array.isArray(v?.raw) ? { raw: v.raw } : {}),
+        });
     }
     for (const v of Array.isArray(targetJson.broadcasts) ? targetJson.broadcasts : []) {
         decls.broadcasts.push({ name: String(v?.name ?? ''), id: String(v?.id ?? '') });
