@@ -1,0 +1,628 @@
+{
+  "control_create_clone_of_menu": {
+    "CLONE_OPTION": {
+      "_myself_": "自分自身"
+    }
+  },
+  "control_stop": {
+    "STOP_OPTION": {
+      "all": "すべてを止める",
+      "other scripts in sprite": "スプライトの他のスクリプトを止める",
+      "this script": "このスクリプトを止める"
+    }
+  },
+  "data_addtolist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_changevariableby": {
+    "VARIABLE": {
+      "DELETE_VARIABLE_ID": "変数\"日本語の変数\"を削除",
+      "RENAME_VARIABLE_ID": "変数名を変更",
+      "createGlobalVariable": "すべてのスプライト用の変数「」を作成",
+      "createLocalVariable": "このスプライトのみの変数「」を作成",
+      "jvar": "日本語の変数"
+    }
+  },
+  "data_deletealloflist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_deleteoflist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_hidelist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_hidevariable": {
+    "VARIABLE": {
+      "DELETE_VARIABLE_ID": "変数\"日本語の変数\"を削除",
+      "RENAME_VARIABLE_ID": "変数名を変更",
+      "createGlobalVariable": "すべてのスプライト用の変数「」を作成",
+      "createLocalVariable": "このスプライトのみの変数「」を作成",
+      "jvar": "日本語の変数"
+    }
+  },
+  "data_insertatlist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_itemnumoflist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_itemoflist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_lengthoflist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_listcontainsitem": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_replaceitemoflist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_setvariableto": {
+    "VARIABLE": {
+      "DELETE_VARIABLE_ID": "変数\"日本語の変数\"を削除",
+      "RENAME_VARIABLE_ID": "変数名を変更",
+      "createGlobalVariable": "すべてのスプライト用の変数「」を作成",
+      "createLocalVariable": "このスプライトのみの変数「」を作成",
+      "jvar": "日本語の変数"
+    }
+  },
+  "data_showlist": {
+    "LIST": {
+      "DELETE_VARIABLE_ID": "リスト「日本語リスト」を削除する",
+      "RENAME_VARIABLE_ID": "リスト名を変更",
+      "createGlobalList": "すべてのスプライト用のリスト「」を作成",
+      "createLocalList": "このスプライトのみのリスト「」を作成",
+      "jlist": "日本語リスト"
+    }
+  },
+  "data_showvariable": {
+    "VARIABLE": {
+      "DELETE_VARIABLE_ID": "変数\"日本語の変数\"を削除",
+      "RENAME_VARIABLE_ID": "変数名を変更",
+      "createGlobalVariable": "すべてのスプライト用の変数「」を作成",
+      "createLocalVariable": "このスプライトのみの変数「」を作成",
+      "jvar": "日本語の変数"
+    }
+  },
+  "event_broadcast_menu": {
+    "BROADCAST_OPTION": {
+      "NEW_BROADCAST_MESSAGE_ID": "新しいメッセージ",
+      "RENAME_BROADCAST_MESSAGE_ID": "メッセージ名を変更",
+      "XQ$z:TJn0Gy!k*Nv[[Cz": "i",
+      "bc1": "done",
+      "createBroadcast": "メッセージ「」を作成",
+      "x6@#zb`LO?DY_2%_o_hm": "10"
+    }
+  },
+  "event_whenbackdropswitchesto": {
+    "BACKDROP": {
+      "backdrop1": "backdrop1"
+    }
+  },
+  "event_whenbroadcastreceived": {
+    "BROADCAST_OPTION": {
+      "NEW_BROADCAST_MESSAGE_ID": "新しいメッセージ",
+      "RENAME_BROADCAST_MESSAGE_ID": "メッセージ名を変更",
+      "XQ$z:TJn0Gy!k*Nv[[Cz": "i",
+      "bc1": "done",
+      "createBroadcast": "メッセージ「」を作成",
+      "x6@#zb`LO?DY_2%_o_hm": "10"
+    }
+  },
+  "event_whengreaterthan": {
+    "WHENGREATERTHANMENU": {
+      "LOUDNESS": "音量",
+      "TIMER": "タイマー"
+    }
+  },
+  "event_whenkeypressed": {
+    "KEY_OPTION": {
+      "0": "0",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "a": "a",
+      "any": "どれかの",
+      "b": "b",
+      "c": "c",
+      "d": "d",
+      "down arrow": "下向き矢印",
+      "e": "e",
+      "f": "f",
+      "g": "g",
+      "h": "h",
+      "i": "i",
+      "j": "j",
+      "k": "k",
+      "l": "l",
+      "left arrow": "左向き矢印",
+      "m": "m",
+      "n": "n",
+      "o": "o",
+      "p": "p",
+      "q": "q",
+      "r": "r",
+      "right arrow": "右向き矢印",
+      "s": "s",
+      "space": "スペース",
+      "t": "t",
+      "u": "u",
+      "up arrow": "上向き矢印",
+      "v": "v",
+      "w": "w",
+      "x": "x",
+      "y": "y",
+      "z": "z"
+    }
+  },
+  "looks_backdropnumbername": {
+    "NUMBER_NAME": {
+      "name": "名前",
+      "number": "番号"
+    }
+  },
+  "looks_backdrops": {
+    "BACKDROP": {
+      "backdrop1": "backdrop1",
+      "next backdrop": "次の背景",
+      "previous backdrop": "前の背景",
+      "random backdrop": "どれかの背景"
+    }
+  },
+  "looks_changeeffectby": {
+    "EFFECT": {
+      "BRIGHTNESS": "明るさ",
+      "COLOR": "色",
+      "FISHEYE": "魚眼レンズ",
+      "GHOST": "幽霊",
+      "MOSAIC": "モザイク",
+      "PIXELATE": "ピクセル化",
+      "WHIRL": "渦巻き"
+    }
+  },
+  "looks_costume": {
+    "COSTUME": {
+      "Sprite1-a": "Sprite1-a"
+    }
+  },
+  "looks_costumenumbername": {
+    "NUMBER_NAME": {
+      "name": "名前",
+      "number": "番号"
+    }
+  },
+  "looks_goforwardbackwardlayers": {
+    "FORWARD_BACKWARD": {
+      "backward": "奥に下げる",
+      "forward": "手前に出す"
+    }
+  },
+  "looks_gotofrontback": {
+    "FRONT_BACK": {
+      "back": "最背面",
+      "front": "最前面"
+    }
+  },
+  "looks_seteffectto": {
+    "EFFECT": {
+      "BRIGHTNESS": "明るさ",
+      "COLOR": "色",
+      "FISHEYE": "魚眼レンズ",
+      "GHOST": "幽霊",
+      "MOSAIC": "モザイク",
+      "PIXELATE": "ピクセル化",
+      "WHIRL": "渦巻き"
+    }
+  },
+  "makeymakey_menu_KEY": {
+    "KEY": {
+      "DOWN": "下向き矢印",
+      "LEFT": "左向き矢印",
+      "RIGHT": "右向き矢印",
+      "SPACE": "スペース",
+      "UP": "上向き矢印",
+      "a": "a",
+      "d": "d",
+      "f": "f",
+      "g": "g",
+      "s": "s",
+      "w": "w"
+    }
+  },
+  "makeymakey_menu_SEQUENCE": {
+    "SEQUENCE": {
+      "DOWN UP": "下 上",
+      "LEFT RIGHT": "左 右",
+      "LEFT UP RIGHT": "左 上 右",
+      "RIGHT LEFT": "右 左",
+      "RIGHT UP LEFT": "右 上 左",
+      "UP DOWN": "上 下",
+      "UP LEFT DOWN RIGHT": "上 左 下 右",
+      "UP RIGHT DOWN LEFT": "上 右 下 左",
+      "UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT": "上 上 下 下 左 右 左 右"
+    }
+  },
+  "motion_glideto_menu": {
+    "TO": {
+      "_mouse_": "マウスのポインター",
+      "_random_": "どこかの場所"
+    }
+  },
+  "motion_goto_menu": {
+    "TO": {
+      "_mouse_": "マウスのポインター",
+      "_random_": "どこかの場所"
+    }
+  },
+  "motion_pointtowards_menu": {
+    "TOWARDS": {
+      "_mouse_": "マウスのポインター",
+      "_random_": "どれかの向き"
+    }
+  },
+  "motion_setrotationstyle": {
+    "STYLE": {
+      "all around": "自由に回転",
+      "don't rotate": "回転しない",
+      "left-right": "左右のみ"
+    }
+  },
+  "music_menu_DRUM": {
+    "DRUM": {
+      "1": "(1) スネアドラム",
+      "2": "(2) バスドラム",
+      "3": "(3) サイドスティック",
+      "4": "(4) クラッシュシンバル",
+      "5": "(5) オープンハイハット",
+      "6": "(6) クローズハイハット",
+      "7": "(7) タンバリン",
+      "8": "(8) 手拍子",
+      "9": "(9) クラーベ",
+      "10": "(10) ウッドブロック",
+      "11": "(11) カウベル",
+      "12": "(12) トライアングル",
+      "13": "(13) ボンゴ",
+      "14": "(14) コンガ",
+      "15": "(15) カバサ",
+      "16": "(16) ギロ",
+      "17": "(17) ビブラスラップ",
+      "18": "(18) クイーカ"
+    }
+  },
+  "music_menu_INSTRUMENT": {
+    "INSTRUMENT": {
+      "1": "(1) ピアノ",
+      "2": "(2) 電子ピアノ",
+      "3": "(3) オルガン",
+      "4": "(4) ギター",
+      "5": "(5) エレキギター",
+      "6": "(6) ベース",
+      "7": "(7) ピチカート",
+      "8": "(8) チェロ",
+      "9": "(9) トロンボーン",
+      "10": "(10) クラリネット",
+      "11": "(11) サクソフォン",
+      "12": "(12) フルート",
+      "13": "(13) 木管フルート",
+      "14": "(14) バスーン",
+      "15": "(15) 合唱団",
+      "16": "(16) ビブラフォン",
+      "17": "(17) ミュージックボックス",
+      "18": "(18) スチールドラム",
+      "19": "(19) マリンバ",
+      "20": "(20) シンセリード",
+      "21": "(21) シンセパッド"
+    }
+  },
+  "operator_mathop": {
+    "OPERATOR": {
+      "10 ^": "10 ^",
+      "abs": "絶対値",
+      "acos": "acos",
+      "asin": "asin",
+      "atan": "atan",
+      "ceiling": "切り上げ",
+      "cos": "cos",
+      "e ^": "e ^",
+      "floor": "切り下げ",
+      "ln": "ln",
+      "log": "log",
+      "sin": "sin",
+      "sqrt": "平方根",
+      "tan": "tan"
+    }
+  },
+  "pen_menu_colorParam": {
+    "colorParam": {
+      "brightness": "明るさ",
+      "color": "色",
+      "saturation": "鮮やかさ",
+      "transparency": "透明度"
+    }
+  },
+  "sensing_current": {
+    "CURRENTMENU": {
+      "DATE": "日",
+      "DAYOFWEEK": "曜日",
+      "HOUR": "時",
+      "MINUTE": "分",
+      "MONTH": "月",
+      "SECOND": "秒",
+      "YEAR": "年"
+    }
+  },
+  "sensing_distancetomenu": {
+    "DISTANCETOMENU": {
+      "_mouse_": "マウスのポインター"
+    }
+  },
+  "sensing_keyoptions": {
+    "KEY_OPTION": {
+      "0": "0",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "a": "a",
+      "any": "どれかの",
+      "b": "b",
+      "c": "c",
+      "d": "d",
+      "down arrow": "下向き矢印",
+      "e": "e",
+      "f": "f",
+      "g": "g",
+      "h": "h",
+      "i": "i",
+      "j": "j",
+      "k": "k",
+      "l": "l",
+      "left arrow": "左向き矢印",
+      "m": "m",
+      "n": "n",
+      "o": "o",
+      "p": "p",
+      "q": "q",
+      "r": "r",
+      "right arrow": "右向き矢印",
+      "s": "s",
+      "space": "スペース",
+      "t": "t",
+      "u": "u",
+      "up arrow": "上向き矢印",
+      "v": "v",
+      "w": "w",
+      "x": "x",
+      "y": "y",
+      "z": "z"
+    }
+  },
+  "sensing_of": {
+    "PROPERTY": {
+      "costume #": "コスチューム #",
+      "costume name": "コスチューム名",
+      "direction": "向き",
+      "size": "大きさ",
+      "volume": "音量",
+      "x position": "x座標",
+      "y position": "y座標",
+      "日本語の変数": "日本語の変数"
+    }
+  },
+  "sensing_of_object_menu": {
+    "OBJECT": {
+      "_stage_": "ステージ"
+    }
+  },
+  "sensing_setdragmode": {
+    "DRAG_MODE": {
+      "draggable": "できる",
+      "not draggable": "できない"
+    }
+  },
+  "sensing_touchingobjectmenu": {
+    "TOUCHINGOBJECTMENU": {
+      "_edge_": "端",
+      "_mouse_": "マウスのポインター"
+    }
+  },
+  "sound_changeeffectby": {
+    "EFFECT": {
+      "PAN": "左右にパン",
+      "PITCH": "ピッチ"
+    }
+  },
+  "sound_seteffectto": {
+    "EFFECT": {
+      "PAN": "左右にパン",
+      "PITCH": "ピッチ"
+    }
+  },
+  "sound_sounds_menu": {
+    "SOUND_MENU": {
+      "": "",
+      "function t(){return(this&&this!==T&&this instanceof t?n:e).apply(o?i:this,arguments)}": "録音..."
+    }
+  },
+  "text2speech_menu_languages": {
+    "languages": {
+      "ar": "アラビア語",
+      "cy": "ウェールズ語",
+      "da": "デンマーク語",
+      "de": "ドイツ語",
+      "en": "英語",
+      "es": "スペイン語",
+      "es-419": "スペイン語（ラテンアメリカ）",
+      "fr": "フランス語",
+      "hi": "ヒンディー語",
+      "is": "アイスランド語",
+      "it": "イタリア語",
+      "ja": "日本語",
+      "ko": "韓国語",
+      "nb": "ノルウェー語",
+      "nl": "オランダ語",
+      "pl": "ポーランド語",
+      "pt": "ポルトガル語",
+      "pt-br": "ポルトガル語（ブラジル）",
+      "ro": "ルーマニア語",
+      "ru": "ロシア語",
+      "sv": "スウェーデン語",
+      "tr": "トルコ語",
+      "zh-cn": "中国語（北京語）"
+    }
+  },
+  "text2speech_menu_voices": {
+    "voices": {
+      "ALTO": "アルト",
+      "GIANT": "巨人",
+      "KITTEN": "子猫",
+      "SQUEAK": "ねずみ",
+      "TENOR": "テノール"
+    }
+  },
+  "translate_menu_languages": {
+    "languages": {
+      "am": "アムハラ語",
+      "ar": "アラビア語",
+      "az": "アゼルバイジャン語",
+      "bg": "ブルガリア語",
+      "ca": "カタルーニャ語",
+      "ckb": "クルド語（ソラニー）",
+      "cs": "チェコ語",
+      "cy": "ウェールズ語",
+      "da": "デンマーク語",
+      "de": "ドイツ語",
+      "el": "ギリシャ語",
+      "en": "英語",
+      "es": "スペイン語",
+      "et": "エストニア語",
+      "eu": "バスク語",
+      "fa": "ペルシャ語",
+      "fi": "フィンランド語",
+      "fr": "フランス語",
+      "ga": "アイルランド語",
+      "gd": "スコットランド ゲール語",
+      "gl": "ガリシア語",
+      "he": "ヘブライ語",
+      "hr": "クロアチア語",
+      "hu": "ハンガリー語",
+      "id": "インドネシア語",
+      "is": "アイスランド語",
+      "it": "イタリア語",
+      "ja": "日本語",
+      "ko": "韓国語",
+      "lt": "リトアニア語",
+      "lv": "ラトビア語",
+      "mi": "マオリ語",
+      "nb": "ノルウェー語",
+      "nl": "オランダ語",
+      "pl": "ポーランド語",
+      "pt": "ポルトガル語",
+      "ro": "ルーマニア語",
+      "ru": "ロシア語",
+      "sk": "スロバキア語",
+      "sl": "スロベニア語",
+      "sr": "セルビア語",
+      "sv": "スウェーデン語",
+      "th": "タイ語",
+      "tr": "トルコ語",
+      "uk": "ウクライナ語",
+      "vi": "ベトナム語",
+      "zh-cn": "中国語（簡体）",
+      "zh-tw": "中国語（繁体）",
+      "zu": "ズールー語"
+    }
+  },
+  "videoSensing_menu_ATTRIBUTE": {
+    "ATTRIBUTE": {
+      "direction": "向き",
+      "motion": "モーション"
+    }
+  },
+  "videoSensing_menu_SUBJECT": {
+    "SUBJECT": {
+      "Stage": "ステージ",
+      "this sprite": "スプライト"
+    }
+  },
+  "videoSensing_menu_VIDEO_STATE": {
+    "VIDEO_STATE": {
+      "off": "切",
+      "on": "入",
+      "on-flipped": "左右反転"
+    }
+  }
+}

@@ -23,6 +23,8 @@ import glyphData from './metrics/glyphs.json' with {type: 'json'};
 import labelWidths from './metrics/labels.json' with {type: 'json'};
 import pairCorr from './metrics/pairs.json' with {type: 'json'};
 import structureData from './metrics/structure.json' with {type: 'json'};
+import structureJaData from './metrics/structure-ja.json' with {type: 'json'};
+import optionsJaData from './metrics/options-ja.json' with {type: 'json'};
 import {getBlockSpec} from './catalog/index.ts';
 
 // --- renderer constants (block_render_svg_vertical.js) ---
@@ -89,7 +91,7 @@ const PAIRS = pairCorr as unknown as Record<string, number>;
 function glyphWidth(ch: string): number {
     if (ch === ' ' || ch === ' ') return GLYPHS.probes.space;
     return GLYPHS.ascii[ch] ?? GLYPHS.jp[ch] ?? GLYPHS.extra?.[ch] ??
-        GLYPHS.latin[ch] ?? (ch.charCodeAt(0) > 0x3000 ? GLYPHS.avgJp : GLYPHS.avgAscii);
+        GLYPHS.latin[ch] ?? (ch.charCodeAt(0) > 0x3000 ? 16 : GLYPHS.avgAscii);
 }
 
 /** Width of editor label text: exact memoized width when known, else sum of glyphs + pair kerning. */
@@ -208,6 +210,10 @@ interface StructInput {
 }
 interface StructOp {inputs: StructInput[]}
 const STRUCTURE = structureData as unknown as Record<string, StructOp>;
+const OPTIONS_JA = optionsJaData as Record<string, Record<string, Record<string, string>>>;
+const STRUCTURE_JA = structureJaData as unknown as Record<string, StructOp>;
+export type MetricsLocale = 'en' | 'ja';
+export interface MetricsOptions { locale?: MetricsLocale }
 
 const RIGHT_ALIGN_OPS = new Set(['control_repeat', 'control_repeat_until', 'control_while', 'control_forever']);
 
@@ -304,7 +310,7 @@ interface BlockPlan {
     inputs: InputPlan[];
 }
 
-function planBlock(blocks: Blocks, id: string | null, inline: {opcode: string; fields: Record<string, string>} | null, ): BlockPlan | null {
+function planBlock(blocks: Blocks, id: string | null, inline: {opcode: string; fields: Record<string, string>} | null, locale: MetricsLocale): BlockPlan | null {
     let opcode: string;
     let raw: JsonBlock | null = null;
     let inlineFields: Record<string, string> | null = null;
@@ -321,9 +327,9 @@ function planBlock(blocks: Blocks, id: string | null, inline: {opcode: string; f
     const spec = getBlockSpec(opcode);
     const shape = spec?.shape ?? 'stack';
     const isShadow = raw?.shadow ?? inline?.shadow ?? true;
-    const isExtension = !!spec?.extension;
+    const isExtension = !!spec?.extension && shape !== 'menu';
     const hasOutput = shape === 'reporter' || shape === 'boolean' || shape === 'menu' || shape === 'argument';
-    const outputShape = shape === 'boolean' ? OUTPUT_SHAPE_HEXAGONAL : OUTPUT_SHAPE_ROUND;
+    const outputShape = shape === 'boolean' || opcode === 'argument_reporter_boolean' ? OUTPUT_SHAPE_HEXAGONAL : OUTPUT_SHAPE_ROUND;
     let hasPrev = false;
     let hasNext = false;
     if (!hasOutput) {
@@ -367,6 +373,11 @@ function planBlock(blocks: Blocks, id: string | null, inline: {opcode: string; f
             : fieldValue(raw?.fields as Record<string, unknown> | undefined, name);
         if (rule === 'dropdown') {
             const fspec = getBlockSpec(opcode)?.fields.find(f => f.name === name);
+            if (locale === 'ja') {
+                const translated = OPTIONS_JA[opcode]?.[name]?.[stored];
+                if (translated !== undefined) return translated;
+            }
+            if (fspec?.dynamic === 'backdrops' || fspec?.dynamic === 'costumes') return stored;
             if (fspec?.options) {
                 for (const [label, value] of fspec.options) {
                     if (value === stored) return label;
@@ -442,7 +453,7 @@ function planBlock(blocks: Blocks, id: string | null, inline: {opcode: string; f
         return {opcode, isShadow: true, isExtension: false, hasPrev: true, hasNext: true, hasOutput: false, outputShape: OUTPUT_SHAPE_ROUND, inputs};
     }
 
-    const st = STRUCTURE[opcode];
+    const st = (locale === 'ja' ? STRUCTURE_JA[opcode] : undefined) ?? STRUCTURE[opcode] ?? (opcode === 'note' || opcode === 'argument_reporter_boolean' ? STRUCTURE_JA[opcode] : undefined);
     if (st) {
         for (const si of st.inputs) {
             const fields: InputPlan['fields'] = [];
@@ -456,7 +467,15 @@ function planBlock(blocks: Blocks, id: string | null, inline: {opcode: string; f
     } else {
         // Fallback for opcodes never observed in calibration: single-message
         // template parse; statement inputs (catalog kind stack) break rows.
-        fallbackInputs(spec, pushInput, fieldVal, (plan: InputPlan, name: string) => resolveChild(plan, name), inputs);
+        fallbackInputs(spec, pushInput, fieldVal, (plan: InputPlan, name: string) => resolveChild(plan, name), inputs, isShadow, locale);
+        // The VM prefixes extension messages with a 40px icon and 1px
+        // vertical separator. The renderer adds its normal field spacing.
+        if (isExtension && shape !== 'menu' && inputs.length > 0) {
+            inputs[0].fields.unshift(
+                {w: 40, h: 40, editable: false, bump: false},
+                {w: 1, h: 40, editable: false, bump: false},
+            );
+        }
     }
     if (callRet !== 0) {
         return {opcode, isShadow, isExtension: false, hasPrev: false, hasNext: false, hasOutput: true, outputShape: callRet === 2 ? OUTPUT_SHAPE_HEXAGONAL : OUTPUT_SHAPE_ROUND, inputs};
@@ -470,12 +489,14 @@ function fallbackInputs(
     fieldVal: (name: string, rule?: string) => string,
     resolveChild: (plan: InputPlan, name: string) => void,
     inputs: InputPlan[],
+    isShadow: boolean,
+    locale: MetricsLocale,
 ): void {
     if (!spec) {
         pushInput('unknown', DUMMY_INPUT, false, []);
         return;
     }
-    const tokens = spec.text.en.split(/(%\d+)/g).filter(t => t.length > 0);
+    const tokens = (locale === 'ja' ? spec.text.ja ?? spec.text.en : spec.text.en).split(/(%\d+)/g).filter(t => t.length > 0);
     let row: InputPlan['fields'] = [];
     let seen = 0;
     const flushDummy = () => {
@@ -493,10 +514,11 @@ function fallbackInputs(
             const fname = (arg as {field: string}).field;
             const fspec = spec.fields.find(f => f.name === fname);
             const kind = fspec?.kind ?? 'other';
-            const rule = kind === 'dropdown' || kind === 'broadcast' ? 'dropdown'
+            const rule = (kind === 'variable' || kind === 'list') && spec.shape === 'reporter' && spec.inputs.length === 0 && spec.text.en.trim() === '%1' ? 'getter'
+                : kind === 'dropdown' || kind === 'broadcast' ? 'dropdown'
                 : kind === 'variable' || kind === 'list' ? 'dropdown'
                 : kind === 'color' ? 'color' : kind === 'other' ? 'dropdown' : 'text';
-            row.push({w: fieldWidthOf(rule, fieldVal(fname, rule), false, true), h: FIELD_HEIGHT, editable: true, bump: true});
+            row.push({w: fieldWidthOf(rule, fieldVal(fname, rule), isShadow, true), h: FIELD_HEIGHT, editable: rule !== 'getter', bump: true});
         } else {
             const iname = (arg as {input: string}).input;
             const ispec = spec.inputs.find(i => i.name === iname);
@@ -583,8 +605,10 @@ export class Measurer {
     inlineSeq = 0;
     blocks: Blocks;
 
-    constructor(blocks: Blocks) {
+    locale: MetricsLocale;
+    constructor(blocks: Blocks, locale: MetricsLocale = 'en') {
         this.blocks = blocks;
+        this.locale = locale;
     }
 
     nodeOf(plan: BlockPlan, id: string | null, key: string): MeasuredNode {
@@ -621,7 +645,7 @@ export class Measurer {
         const key = id ?? `inline:${this.inlineSeq++}:${inline?.opcode}:${JSON.stringify(inline?.fields)}`;
         if (this.nodes.has(key)) return this.nodes.get(key) ?? null;
         if (!this.plans.has(key)) {
-            this.plans.set(key, planBlock(this.blocks, id, inline));
+            this.plans.set(key, planBlock(this.blocks, id, inline, this.locale));
         }
         const plan = this.plans.get(key);
         if (!plan) return null;
@@ -904,13 +928,21 @@ function assignPositions(node: MeasuredNode, x: number, y: number, out: Map<stri
 export function measureScript(
     blocks: Blocks,
     topId: string,
-    comments?: unknown,
+    options: MetricsOptions = {},
 ): ScriptMeasureDetailed {
-    void comments;
-    const measurer = new Measurer(blocks);
+    const measurer = new Measurer(blocks, options.locale ?? 'en');
     const top = measurer.measure(topId, null);
     const perBlock = new Map<string, BlockDetail>();
     if (top) assignPositions(top, 0, 0, perBlock, measurer);
+    // Without an explicit locale, keep English dimensions but expose a safe
+    // comment anchor for both supported editor languages.
+    if (!options.locale) {
+        const japanese = measureScript(blocks, topId, {locale: 'ja'});
+        for (const [id, d] of perBlock) {
+            const j = japanese.perBlock.get(id);
+            if (j) d.rw = Math.max(d.x + d.rw, j.x + j.rw) - d.x;
+        }
+    }
     return {
         width: top ? top.totalW : 0,
         height: top ? top.totalH : 0,

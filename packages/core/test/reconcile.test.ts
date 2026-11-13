@@ -258,7 +258,12 @@ test('edit: add a new attached comment is placed right of the script', async () 
             scripts,
             (s) => s.top?.opcode === 'event_whenflagclicked' && s.top?.next?.opcode === 'event_broadcastandwait',
         );
-        a8.top.comment = { text: 'agent note' };
+        // Attach to the first block of the script that has no comment yet (the hat already has one;
+        // replacing that text is an edit of the existing comment, tested separately).
+        let target: any = a8.top;
+        while (target && target.comment) target = target.next;
+        assert.ok(target, 'script has a block without comment');
+        target.comment = { text: 'agent note' };
         await savePlayer(dir, scripts);
         const out = join(dir, 'out.sb3');
         const r = await packDir(dir, out, irJson);
@@ -278,7 +283,7 @@ test('edit: add a new attached comment is placed right of the script', async () 
         const cid = placement.newCommentIds[0];
         const c = player.comments[cid];
         assert.equal(c.text, 'agent note');
-        assert.equal(c.blockId, a8.srcId);
+        assert.equal(c.blockId, target.srcId);
         const top = player.blocks[a8.srcId];
         assert.ok(c.x > top.x, `comment x ${c.x} should be right of script x ${top.x}`);
         checkPasses(out);

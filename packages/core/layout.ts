@@ -17,7 +17,7 @@
  * Run: node --test packages/core/test/ (from the repo root).
  */
 import {measureScript, measureComment, topLevelIds, isOrphanBlock} from './metrics.ts';
-import type {Blocks, BlockBox} from './metrics.ts';
+import type {Blocks, BlockBox, MetricsLocale} from './metrics.ts';
 
 export interface TargetLike {
     name?: string;
@@ -50,26 +50,31 @@ interface ScriptGeom {
     perBlock: Map<string, {x: number; y: number; rw: number; rh0: number}>;
 }
 
-function scriptGeoms(target: TargetLike): Map<string, ScriptGeom> {
+function scriptGeoms(target: TargetLike, locale: MetricsLocale | 'safe' = 'safe'): Map<string, ScriptGeom> {
     const out = new Map<string, ScriptGeom>();
     for (const id of topLevelIds(target.blocks)) {
         const raw = target.blocks[id] as {x?: unknown; y?: unknown} | undefined;
-        const m = measureScript(target.blocks, id);
+        const m = measureScript(target.blocks, id, {locale: locale === 'ja' ? 'ja' : 'en'});
+        const ja = locale === 'safe' ? measureScript(target.blocks, id, {locale: 'ja'}) : null;
         const x = Number(raw?.x);
         const y = Number(raw?.y);
         out.set(id, {
             id,
             x: Number.isFinite(x) ? x : 0,
             y: Number.isFinite(y) ? y : 0,
-            w: m.width,
-            h: m.height,
+            w: Math.max(m.width, ja?.width ?? 0),
+            h: Math.max(m.height, ja?.height ?? 0),
             rowsRW: 0,
             rowH0: 0,
             perBlock: new Map(),
         });
         const g = out.get(id)!;
         for (const [bid, d] of m.perBlock) {
-            g.perBlock.set(bid, {x: d.x, y: d.y, rw: (d as {rw?: number}).rw ?? 0, rh0: (d as {rh0?: number}).rh0 ?? 0});
+            const jd = ja?.perBlock.get(bid);
+            // Use the furthest right anchor in either language, including shifts
+            // of nested blocks caused by translated input order.
+            const right = Math.max(d.x + d.rw, jd ? jd.x + jd.rw : 0);
+            g.perBlock.set(bid, {x: d.x, y: d.y, rw: right - d.x, rh0: d.rh0});
         }
         const top = m.perBlock.get(id);
         g.rowsRW = (top as {rw?: number} | undefined)?.rw ?? 0;
@@ -110,8 +115,8 @@ export function attachedCommentPos(
  * every top-level block plus new positions for attached comments. Floating
  * workspace comments are untouched (as in the editor).
  */
-export function cleanUpPlus(target: TargetLike): PlacedBlocks {
-    const geoms = scriptGeoms(target);
+export function cleanUpPlus(target: TargetLike, options: {locale?: MetricsLocale} = {}): PlacedBlocks {
+    const geoms = scriptGeoms(target, options.locale ?? 'en');
     const blocks: PlacedBlocks['blocks'] = new Map();
     const comments: PlacedBlocks['comments'] = new Map();
     // 1. Attached comments: auto-position at CURRENT geometry; column widths
@@ -318,6 +323,7 @@ export function placeNew(
             const owner = g.perBlock.get(String(c.blockId));
             if (!owner) continue;
             const pos = attachedCommentPos(owner.x, owner.y, owner.rw, owner.rh0, !!c.minimized);
+            pos.x = Math.max(pos.x, g.w + (!!c.minimized ? 16 : 32));
             const {w, h} = measureComment(c);
             fp.comments.push({cid, dx: pos.x, dy: pos.y, w, h});
             fp.w = Math.max(fp.w, pos.x + w);
@@ -362,6 +368,23 @@ export function placeNew(
             cols.sort((a, b) => a.x - b.x);
         }
     }
+    // New workspace (floating) comments: same free-space search as a script.
+    for (const cid of newCommentIds) {
+        const c = target.comments?.[cid];
+        if (!c || typeof c !== 'object' || Array.isArray(c)) continue;
+        if (c.blockId !== null && c.blockId !== undefined) continue;
+        const {w, h} = measureComment(c);
+        const candidates: Array<{x: number; y: number; col?: Col}> = cols.map(col => ({x: col.anchorX, y: col.bottom + 72, col}));
+        let maxBottom = 64 - 72;
+        for (const b of occupied) maxBottom = Math.max(maxBottom, b.y + b.h);
+        candidates.push({x: 48, y: maxBottom + 72});
+        const pick = candidates.find(cand => fits({x: cand.x, y: cand.y, w, h})) ?? candidates[candidates.length - 1];
+        placed.comments.set(cid, {x: pick.x, y: pick.y});
+        occupied.push({x: pick.x, y: pick.y, w, h});
+        if (pick.col) {
+            pick.col.bottom = pick.y + h;
+        }
+    }
     // New attached comments on EXISTING scripts: Scratch's auto-position next to their block.
     for (const cid of newCommentIds) {
         if (placed.comments.has(cid)) continue;
@@ -373,6 +396,7 @@ export function placeNew(
         const owner = g?.perBlock.get(String(c.blockId));
         if (!g || !owner) continue;
         const pos = attachedCommentPos(g.x + owner.x, g.y + owner.y, owner.rw, owner.rh0, !!c.minimized);
+        pos.x = Math.max(pos.x, g.x + g.w + (!!c.minimized ? 16 : 32));
         placed.comments.set(cid, pos);
     }
     return placed;

@@ -567,7 +567,15 @@ function reconcileValue(
                             ? menu.fields[field][0]
                             : menu.fields[field]
                         : undefined;
-                    if (String(curVal ?? '') === einput.value) return [typeof baseTag === 'number' ? baseTag : 1, basePrimary];
+                    if (String(curVal ?? '') === einput.value) {
+                        // Reusing the id: the menu block itself must be emitted too.
+                        if (!ctx.out[basePrimary]) {
+                            const kept = cloneBase(menu);
+                            kept.parent = ownerId;
+                            ctx.out[basePrimary] = kept;
+                        }
+                        return [typeof baseTag === 'number' ? baseTag : 1, basePrimary];
+                    }
                     const fresh = cloneBase(menu);
                     if (field) fresh.fields[field] = [einput.value, null];
                     fresh.parent = ownerId;
@@ -1031,9 +1039,27 @@ function reconcileAttachedComment(
     scriptEstW: number,
     ownerY: number,
 ): string | undefined {
-    if (eComment?.srcId && ctx.baseComments[eComment.srcId] && baseId) {
-        const bc = ctx.baseComments[eComment.srcId];
-        if (bc.blockId === baseId) {
+    // Find the base comment this one continues: by srcId (ir-json), by anchor (text formats that print
+    // comment anchors), or as the unclaimed comment already attached to the same base block.
+    let matchId: string | undefined;
+    if (eComment && baseId) {
+        const free = (cid: string | undefined): boolean =>
+            !!cid && !!ctx.baseComments[cid] && !(cid in ctx.outComments) && ctx.baseComments[cid].blockId === baseId;
+        if (free(eComment.srcId)) matchId = eComment.srcId;
+        else if (eComment.anchor && free(ctx.anchorMap[eComment.anchor])) matchId = ctx.anchorMap[eComment.anchor];
+        else {
+            for (const [cid, bc] of Object.entries<any>(ctx.baseComments)) {
+                if (bc?.blockId === baseId && !(cid in ctx.outComments)) {
+                    matchId = cid;
+                    break;
+                }
+            }
+        }
+    }
+    if (eComment && matchId) {
+        eComment = { ...eComment, srcId: matchId };
+        const bc = ctx.baseComments[matchId];
+        {
             const minimized = eComment.minimized === true;
             if (bc.text === eComment.text && (bc.minimized === true) === minimized) {
                 ctx.outComments[eComment.srcId] = cloneBase(bc);
@@ -1289,6 +1315,7 @@ export function reconcileTarget(
         };
         if (c.loc) ctx.sourcemap[id] = c.loc;
         ctx.newCommentIds.push(id);
+        ctx.changed = true;
         cursor.y += 200 + 72;
     };
     for (const { script, baseId } of matched) {
