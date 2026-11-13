@@ -1,0 +1,1 @@
+{"fixture":"eval/runs/goboscript/L2/out.sb3","targets":[{"name":"Stage","scripts":[]},{"name":"Ball","scripts":[{"h":320,"id":"$!","opcode":"event_whenflagclicked","w":212.10416793823242}]},{"name":"Cat","scripts":[{"h":688,"id":"$!","opcode":"event_whenflagclicked","w":391.7387161254883}]}]}

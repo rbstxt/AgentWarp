@@ -1,0 +1,194 @@
+[
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "event_whenflagclicked",
+      "inputs": {},
+      "fields": {},
+      "srcId": "mK}_,U@j3$vzmtungB4$",
+      "next": {
+        "opcode": "looks_hide",
+        "inputs": {},
+        "fields": {},
+        "srcId": "nR,dqaWMHwrPiU|IL2P?",
+        "next": {
+          "opcode": "control_forever",
+          "inputs": {
+            "SUBSTACK": {
+              "kind": "stack",
+              "block": {
+                "opcode": "control_create_clone_of",
+                "inputs": {
+                  "CLONE_OPTION": {
+                    "kind": "menu",
+                    "value": "_myself_"
+                  }
+                },
+                "fields": {},
+                "srcId": "kA46fP-U|ZY|_%*]zfj6"
+              }
+            }
+          },
+          "fields": {},
+          "srcId": ",q:^JH8?1Pq=Q/#AD,3N"
+        }
+      }
+    },
+    "srcId": "mK}_,U@j3$vzmtungB4$",
+    "anchor": "a1"
+  },
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "control_start_as_clone",
+      "inputs": {},
+      "fields": {},
+      "srcId": "d4]MM?mQUUKee~U;4lkb",
+      "next": {
+        "opcode": "looks_show",
+        "inputs": {},
+        "fields": {},
+        "srcId": "W5cAyztt1j9/Te$HF2o8",
+        "next": {
+          "opcode": "motion_goto",
+          "inputs": {
+            "TO": {
+              "kind": "menu",
+              "value": "_mouse_"
+            }
+          },
+          "fields": {},
+          "srcId": "y7%LYHKYYfQr~EQ:vRvm",
+          "next": {
+            "opcode": "control_repeat",
+            "inputs": {
+              "TIMES": {
+                "kind": "literal",
+                "value": "10",
+                "litType": 6
+              },
+              "SUBSTACK": {
+                "kind": "stack",
+                "block": {
+                  "opcode": "looks_changesizeby",
+                  "inputs": {
+                    "CHANGE": {
+                      "kind": "literal",
+                      "value": "5",
+                      "litType": 4
+                    }
+                  },
+                  "fields": {},
+                  "srcId": "ezh^d{/E=;sk5MLRjQgb"
+                }
+              }
+            },
+            "fields": {},
+            "srcId": "-N~6[}v1Mx(K[~d.sjEg",
+            "next": {
+              "opcode": "control_delete_this_clone",
+              "inputs": {},
+              "fields": {},
+              "srcId": "p*`b.@bjLjO~^DqI:S_J"
+            }
+          }
+        }
+      }
+    },
+    "srcId": "d4]MM?mQUUKee~U;4lkb",
+    "anchor": "a2"
+  },
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "event_whenkeypressed",
+      "inputs": {},
+      "fields": {
+        "KEY_OPTION": {
+          "value": "1"
+        }
+      },
+      "comment": {
+        "text": "Holdout visual check 1"
+      },
+      "next": {
+        "opcode": "looks_sayforsecs",
+        "inputs": {
+          "MESSAGE": {
+            "kind": "literal",
+            "value": "New script 1",
+            "litType": 10
+          },
+          "SECS": {
+            "kind": "literal",
+            "value": 2,
+            "litType": 4
+          }
+        },
+        "fields": {}
+      }
+    }
+  },
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "event_whenkeypressed",
+      "inputs": {},
+      "fields": {
+        "KEY_OPTION": {
+          "value": "2"
+        }
+      },
+      "comment": {
+        "text": "Holdout visual check 2"
+      },
+      "next": {
+        "opcode": "looks_sayforsecs",
+        "inputs": {
+          "MESSAGE": {
+            "kind": "literal",
+            "value": "New script 2",
+            "litType": 10
+          },
+          "SECS": {
+            "kind": "literal",
+            "value": 2,
+            "litType": 4
+          }
+        },
+        "fields": {}
+      }
+    }
+  },
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "event_whenkeypressed",
+      "inputs": {},
+      "fields": {
+        "KEY_OPTION": {
+          "value": "3"
+        }
+      },
+      "comment": {
+        "text": "Holdout visual check 3"
+      },
+      "next": {
+        "opcode": "looks_sayforsecs",
+        "inputs": {
+          "MESSAGE": {
+            "kind": "literal",
+            "value": "New script 3",
+            "litType": 10
+          },
+          "SECS": {
+            "kind": "literal",
+            "value": 2,
+            "litType": 4
+          }
+        },
+        "fields": {}
+      }
+    }
+  }
+]

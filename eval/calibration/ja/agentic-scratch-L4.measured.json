@@ -1,0 +1,2036 @@
+{
+  "fixture": "eval/runs/agentic-scratch/L4/out.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "x3V#{x|Yaus0L*zd.zf}",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [
+        {
+          "h": 152,
+          "id": "b-3",
+          "next": "b-4",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.9490737915039,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 266.9490737915039,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 264,
+          "id": "b-6",
+          "next": "b-7",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 278.82696533203125,
+              "y": 514
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 250
+            }
+          },
+          "w": 278.82696533203125,
+          "x": 0,
+          "y": 250
+        },
+        {
+          "h": 104,
+          "id": "b-4",
+          "next": "b-5",
+          "opcode": "data_setvariableto",
+          "parent": "b-3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.9490737915039,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 48
+            }
+          },
+          "w": 266.9490737915039,
+          "x": 0,
+          "y": 48
+        },
+        {
+          "h": 216,
+          "id": "b-7",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b-6",
+          "rectangle": {
+            "bottomRight": {
+              "x": 278.82696533203125,
+              "y": 514
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 298
+            }
+          },
+          "w": 278.82696533203125,
+          "x": 0,
+          "y": 298
+        },
+        {
+          "h": 32,
+          "id": "s=7*URo8[EX9h]-OI!96",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 202.9490737915039,
+              "y": 88
+            },
+            "topLeft": {
+              "x": 162.9490737915039,
+              "y": 56
+            }
+          },
+          "w": 40,
+          "x": 162.9490737915039,
+          "y": 56
+        },
+        {
+          "h": 56,
+          "id": "b-5",
+          "next": null,
+          "opcode": "data_setvariableto",
+          "parent": "b-4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 259.21759033203125,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 96
+            }
+          },
+          "w": 259.21759033203125,
+          "x": 0,
+          "y": 96
+        },
+        {
+          "h": 144,
+          "id": "b-8",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "b-7",
+          "rectangle": {
+            "bottomRight": {
+              "x": 278.82696533203125,
+              "y": 490
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 346
+            }
+          },
+          "w": 262.82696533203125,
+          "x": 16,
+          "y": 346
+        },
+        {
+          "h": 32,
+          "id": "G=4@Dj*@pf9Gk*0;ED?Z",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 195.21759033203125,
+              "y": 136
+            },
+            "topLeft": {
+              "x": 155.21759033203125,
+              "y": 104
+            }
+          },
+          "w": 40,
+          "x": 155.21759033203125,
+          "y": 104
+        },
+        {
+          "h": 48,
+          "id": "b-9",
+          "next": null,
+          "opcode": "operator_lt",
+          "parent": "b-8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 230.82696533203125,
+              "y": 398
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 350
+            }
+          },
+          "w": 166.82696533203125,
+          "x": 64,
+          "y": 350
+        },
+        {
+          "h": 56,
+          "id": "b-a",
+          "next": null,
+          "opcode": "event_broadcast",
+          "parent": "b-8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 259.54166412353516,
+              "y": 458
+            },
+            "topLeft": {
+              "x": 32,
+              "y": 402
+            }
+          },
+          "w": 227.54166412353516,
+          "x": 32,
+          "y": 402
+        },
+        {
+          "h": 40,
+          "id": "F}q#JfimWP4AKUKxMSkF",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "b-9",
+          "rectangle": {
+            "bottomRight": {
+              "x": 145.21759033203125,
+              "y": 394
+            },
+            "topLeft": {
+              "x": 88,
+              "y": 354
+            }
+          },
+          "w": 57.21759033203125,
+          "x": 88,
+          "y": 354
+        },
+        {
+          "h": 32,
+          "id": "b:[q/c!qo:U4q,EK177;",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-9",
+          "rectangle": {
+            "bottomRight": {
+              "x": 210.82696533203125,
+              "y": 390
+            },
+            "topLeft": {
+              "x": 170.82696533203125,
+              "y": 358
+            }
+          },
+          "w": 40,
+          "x": 170.82696533203125,
+          "y": 358
+        },
+        {
+          "h": 32,
+          "id": "I-vkZ#ETc]-A4mfOH_Z7",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "b-a",
+          "rectangle": {
+            "bottomRight": {
+              "x": 195.54166412353516,
+              "y": 442
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 410
+            }
+          },
+          "w": 115.54166412353516,
+          "x": 80,
+          "y": 410
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 152,
+          "id": "b-3",
+          "next": "b-4",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.9490737915039,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 266.9490737915039,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 264,
+          "id": "b-6",
+          "next": "b-7",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 278.82696533203125,
+              "y": 514
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 250
+            }
+          },
+          "w": 278.82696533203125,
+          "x": 0,
+          "y": 250
+        }
+      ]
+    },
+    {
+      "id": "3eg4G~eo~|!7?{/:?URz",
+      "isStage": false,
+      "name": "Player",
+      "blocks": [
+        {
+          "h": 480,
+          "id": "b-b",
+          "next": "b-c",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 393.74536895751953,
+              "y": 500
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 104,
+          "id": "b-l",
+          "next": "b-m",
+          "opcode": "event_whenkeypressed",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 294.9467582702637,
+              "y": 554
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 450
+            }
+          },
+          "w": 274.9467582702637,
+          "x": 20,
+          "y": 450
+        },
+        {
+          "h": 432,
+          "id": "b-c",
+          "next": "b-d",
+          "opcode": "motion_gotoxy",
+          "parent": "b-b",
+          "rectangle": {
+            "bottomRight": {
+              "x": 393.74536895751953,
+              "y": 500
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 56,
+          "id": "b-m",
+          "next": null,
+          "opcode": "control_create_clone_of",
+          "parent": "b-l",
+          "rectangle": {
+            "bottomRight": {
+              "x": 294.9467582702637,
+              "y": 554
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 498
+            }
+          },
+          "w": 274.9467582702637,
+          "x": 20,
+          "y": 498
+        },
+        {
+          "h": 32,
+          "id": ")Mq_*`HaZ0D~LJweWUL9",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-c",
+          "rectangle": {
+            "bottomRight": {
+              "x": 132.59722137451172,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 92.59722137451172,
+          "y": 76
+        },
+        {
+          "h": 32,
+          "id": "WP3/FYh:rysY@%)i)/li",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-c",
+          "rectangle": {
+            "bottomRight": {
+              "x": 275.8287010192871,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 220.9120330810547,
+              "y": 76
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 220.9120330810547,
+          "y": 76
+        },
+        {
+          "h": 384,
+          "id": "b-d",
+          "next": "b-e",
+          "opcode": "looks_show",
+          "parent": "b-c",
+          "rectangle": {
+            "bottomRight": {
+              "x": 393.74536895751953,
+              "y": 500
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 32,
+          "id": "b-n",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "b-m",
+          "rectangle": {
+            "bottomRight": {
+              "x": 152.38425827026367,
+              "y": 538
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 506
+            }
+          },
+          "w": 84.38425827026367,
+          "x": 68,
+          "y": 506
+        },
+        {
+          "h": 336,
+          "id": "b-e",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b-d",
+          "rectangle": {
+            "bottomRight": {
+              "x": 393.74536895751953,
+              "y": 500
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 164
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 20,
+          "y": 164
+        },
+        {
+          "h": 264,
+          "id": "b-f",
+          "next": "b-i",
+          "opcode": "control_if",
+          "parent": "b-e",
+          "rectangle": {
+            "bottomRight": {
+              "x": 393.74536895751953,
+              "y": 476
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 212
+            }
+          },
+          "w": 357.74536895751953,
+          "x": 36,
+          "y": 212
+        },
+        {
+          "h": 40,
+          "id": "b-g",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "b-f",
+          "rectangle": {
+            "bottomRight": {
+              "x": 335.3981475830078,
+              "y": 256
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 216
+            }
+          },
+          "w": 251.3981475830078,
+          "x": 84,
+          "y": 216
+        },
+        {
+          "h": 56,
+          "id": "b-h",
+          "next": null,
+          "opcode": "motion_changexby",
+          "parent": "b-f",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.1284713745117,
+              "y": 316
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 260
+            }
+          },
+          "w": 208.12847137451172,
+          "x": 52,
+          "y": 260
+        },
+        {
+          "h": 136,
+          "id": "b-i",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "b-f",
+          "rectangle": {
+            "bottomRight": {
+              "x": 393.74536895751953,
+              "y": 476
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 340
+            }
+          },
+          "w": 357.74536895751953,
+          "x": 36,
+          "y": 340
+        },
+        {
+          "h": 32,
+          "id": "`NmWC8lidIU0ukee2%QQ",
+          "next": null,
+          "opcode": "text",
+          "parent": "b-g",
+          "rectangle": {
+            "bottomRight": {
+              "x": 195.3981475830078,
+              "y": 252
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 220
+            }
+          },
+          "w": 91.3981475830078,
+          "x": 104,
+          "y": 220
+        },
+        {
+          "h": 32,
+          "id": "*jBZCyY|~*Fzw#aaA}We",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-h",
+          "rectangle": {
+            "bottomRight": {
+              "x": 164.59722137451172,
+              "y": 300
+            },
+            "topLeft": {
+              "x": 124.59722137451172,
+              "y": 268
+            }
+          },
+          "w": 40,
+          "x": 124.59722137451172,
+          "y": 268
+        },
+        {
+          "h": 40,
+          "id": "b-j",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "b-i",
+          "rectangle": {
+            "bottomRight": {
+              "x": 345.74536895751953,
+              "y": 384
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 344
+            }
+          },
+          "w": 261.74536895751953,
+          "x": 84,
+          "y": 344
+        },
+        {
+          "h": 56,
+          "id": "b-k",
+          "next": null,
+          "opcode": "motion_changexby",
+          "parent": "b-i",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.1284713745117,
+              "y": 444
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 388
+            }
+          },
+          "w": 208.12847137451172,
+          "x": 52,
+          "y": 388
+        },
+        {
+          "h": 32,
+          "id": "P1Sv`)#6[w.x17wCZ22|",
+          "next": null,
+          "opcode": "text",
+          "parent": "b-j",
+          "rectangle": {
+            "bottomRight": {
+              "x": 205.74536895751953,
+              "y": 380
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 348
+            }
+          },
+          "w": 101.74536895751952,
+          "x": 104,
+          "y": 348
+        },
+        {
+          "h": 32,
+          "id": "fe:6GS|Vp2f%Cw1I}R7v",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-k",
+          "rectangle": {
+            "bottomRight": {
+              "x": 164.59722137451172,
+              "y": 428
+            },
+            "topLeft": {
+              "x": 124.59722137451172,
+              "y": 396
+            }
+          },
+          "w": 40,
+          "x": 124.59722137451172,
+          "y": 396
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 480,
+          "id": "b-b",
+          "next": "b-c",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 393.74536895751953,
+              "y": 500
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 104,
+          "id": "b-l",
+          "next": "b-m",
+          "opcode": "event_whenkeypressed",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 294.9467582702637,
+              "y": 554
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 450
+            }
+          },
+          "w": 274.9467582702637,
+          "x": 20,
+          "y": 450
+        }
+      ]
+    },
+    {
+      "id": "S?XKZBE;(L|I1:X}ufi`",
+      "isStage": false,
+      "name": "GameOver",
+      "blocks": [
+        {
+          "h": 104,
+          "id": "b-o",
+          "next": "b-p",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 160,
+              "y": 104
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 160,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 144,
+          "id": "b-q",
+          "next": "b-r",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.54166412353516,
+              "y": 444
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 300
+            }
+          },
+          "w": 267.54166412353516,
+          "x": 20,
+          "y": 300
+        },
+        {
+          "h": 56,
+          "id": "b-p",
+          "next": null,
+          "opcode": "looks_hide",
+          "parent": "b-o",
+          "rectangle": {
+            "bottomRight": {
+              "x": 64,
+              "y": 104
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 48
+            }
+          },
+          "w": 64,
+          "x": 0,
+          "y": 48
+        },
+        {
+          "h": 96,
+          "id": "b-r",
+          "next": "b-s",
+          "opcode": "looks_show",
+          "parent": "b-q",
+          "rectangle": {
+            "bottomRight": {
+              "x": 228.890625,
+              "y": 444
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 348
+            }
+          },
+          "w": 208.890625,
+          "x": 20,
+          "y": 348
+        },
+        {
+          "h": 48,
+          "id": "b-s",
+          "next": null,
+          "opcode": "control_stop",
+          "parent": "b-r",
+          "rectangle": {
+            "bottomRight": {
+              "x": 228.890625,
+              "y": 444
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 396
+            }
+          },
+          "w": 208.890625,
+          "x": 20,
+          "y": 396
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 104,
+          "id": "b-o",
+          "next": "b-p",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 160,
+              "y": 104
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 160,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 144,
+          "id": "b-q",
+          "next": "b-r",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.54166412353516,
+              "y": 444
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 300
+            }
+          },
+          "w": 267.54166412353516,
+          "x": 20,
+          "y": 300
+        }
+      ]
+    },
+    {
+      "id": "}(sz=Nr+Ul:MF=?IIG(v",
+      "isStage": false,
+      "name": "Bullet",
+      "blocks": [
+        {
+          "h": 104,
+          "id": "b-t",
+          "next": "b-u",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 160,
+              "y": 104
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 160,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 680,
+          "id": "b-v",
+          "next": "b-w",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 930
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 250
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 0,
+          "y": 250
+        },
+        {
+          "h": 56,
+          "id": "b-u",
+          "next": null,
+          "opcode": "looks_hide",
+          "parent": "b-t",
+          "rectangle": {
+            "bottomRight": {
+              "x": 64,
+              "y": 104
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 48
+            }
+          },
+          "w": 64,
+          "x": 0,
+          "y": 48
+        },
+        {
+          "h": 632,
+          "id": "b-w",
+          "next": "b-x",
+          "opcode": "looks_show",
+          "parent": "b-v",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 930
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 298
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 0,
+          "y": 298
+        },
+        {
+          "h": 584,
+          "id": "b-x",
+          "next": "b-z",
+          "opcode": "motion_goto",
+          "parent": "b-w",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 930
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 346
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 0,
+          "y": 346
+        },
+        {
+          "h": 32,
+          "id": "b-y",
+          "next": null,
+          "opcode": "motion_goto_menu",
+          "parent": "b-x",
+          "rectangle": {
+            "bottomRight": {
+              "x": 136.2731475830078,
+              "y": 386
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 354
+            }
+          },
+          "w": 88.27314758300781,
+          "x": 48,
+          "y": 354
+        },
+        {
+          "h": 536,
+          "id": "b-z",
+          "next": "b-10",
+          "opcode": "motion_sety",
+          "parent": "b-x",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 930
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 394
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 0,
+          "y": 394
+        },
+        {
+          "h": 32,
+          "id": "dl{I5x@ga3{-U0VZpN4e",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-z",
+          "rectangle": {
+            "bottomRight": {
+              "x": 127.23611068725586,
+              "y": 434
+            },
+            "topLeft": {
+              "x": 72.31944274902344,
+              "y": 402
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 72.31944274902344,
+          "y": 402
+        },
+        {
+          "h": 488,
+          "id": "b-10",
+          "next": "b-11",
+          "opcode": "motion_pointindirection",
+          "parent": "b-z",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 930
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 442
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 0,
+          "y": 442
+        },
+        {
+          "h": 32,
+          "id": "Vu`N2UQ1L|{laE4V.Qu)",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-10",
+          "rectangle": {
+            "bottomRight": {
+              "x": 88,
+              "y": 482
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 450
+            }
+          },
+          "w": 40,
+          "x": 48,
+          "y": 450
+        },
+        {
+          "h": 440,
+          "id": "b-11",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b-10",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 930
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 490
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 0,
+          "y": 490
+        },
+        {
+          "h": 368,
+          "id": "b-12",
+          "next": "b-13",
+          "opcode": "motion_movesteps",
+          "parent": "b-11",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 906
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 538
+            }
+          },
+          "w": 314.4803237915039,
+          "x": 16,
+          "y": 538
+        },
+        {
+          "h": 32,
+          "id": "j=n8yAPAg^.on5,=jAY#",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-12",
+          "rectangle": {
+            "bottomRight": {
+              "x": 104,
+              "y": 578
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 546
+            }
+          },
+          "w": 40,
+          "x": 64,
+          "y": 546
+        },
+        {
+          "h": 320,
+          "id": "b-13",
+          "next": "b-18",
+          "opcode": "control_if",
+          "parent": "b-12",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 906
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 586
+            }
+          },
+          "w": 314.4803237915039,
+          "x": 16,
+          "y": 586
+        },
+        {
+          "h": 40,
+          "id": "b-14",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "b-13",
+          "rectangle": {
+            "bottomRight": {
+              "x": 268.3981475830078,
+              "y": 630
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 590
+            }
+          },
+          "w": 204.3981475830078,
+          "x": 64,
+          "y": 590
+        },
+        {
+          "h": 96,
+          "id": "b-16",
+          "next": "b-17",
+          "opcode": "data_changevariableby",
+          "parent": "b-13",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 730
+            },
+            "topLeft": {
+              "x": 32,
+              "y": 634
+            }
+          },
+          "w": 298.4803237915039,
+          "x": 32,
+          "y": 634
+        },
+        {
+          "h": 144,
+          "id": "b-18",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "b-13",
+          "rectangle": {
+            "bottomRight": {
+              "x": 294.6232624053955,
+              "y": 906
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 762
+            }
+          },
+          "w": 278.6232624053955,
+          "x": 16,
+          "y": 762
+        },
+        {
+          "h": 32,
+          "id": "b-15",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "b-14",
+          "rectangle": {
+            "bottomRight": {
+              "x": 176.39351654052734,
+              "y": 626
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 594
+            }
+          },
+          "w": 92.39351654052734,
+          "x": 84,
+          "y": 594
+        },
+        {
+          "h": 32,
+          "id": "zM25Mv:u%(kXOQ4NaoZb",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-16",
+          "rectangle": {
+            "bottomRight": {
+              "x": 234.9490737915039,
+              "y": 674
+            },
+            "topLeft": {
+              "x": 194.9490737915039,
+              "y": 642
+            }
+          },
+          "w": 40,
+          "x": 194.9490737915039,
+          "y": 642
+        },
+        {
+          "h": 48,
+          "id": "b-17",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "b-16",
+          "rectangle": {
+            "bottomRight": {
+              "x": 222.5601806640625,
+              "y": 730
+            },
+            "topLeft": {
+              "x": 32,
+              "y": 682
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 32,
+          "y": 682
+        },
+        {
+          "h": 48,
+          "id": "b-19",
+          "next": null,
+          "opcode": "operator_gt",
+          "parent": "b-18",
+          "rectangle": {
+            "bottomRight": {
+              "x": 246.6232624053955,
+              "y": 814
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 766
+            }
+          },
+          "w": 182.6232624053955,
+          "x": 64,
+          "y": 766
+        },
+        {
+          "h": 48,
+          "id": "b-1b",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "b-18",
+          "rectangle": {
+            "bottomRight": {
+              "x": 222.5601806640625,
+              "y": 866
+            },
+            "topLeft": {
+              "x": 32,
+              "y": 818
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 32,
+          "y": 818
+        },
+        {
+          "h": 40,
+          "id": "b-1a",
+          "next": null,
+          "opcode": "motion_yposition",
+          "parent": "b-19",
+          "rectangle": {
+            "bottomRight": {
+              "x": 152.3240737915039,
+              "y": 810
+            },
+            "topLeft": {
+              "x": 88,
+              "y": 770
+            }
+          },
+          "w": 64.3240737915039,
+          "x": 88,
+          "y": 770
+        },
+        {
+          "h": 32,
+          "id": "c~*z7u/I0mZk;-^hd%5n",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-19",
+          "rectangle": {
+            "bottomRight": {
+              "x": 226.6232624053955,
+              "y": 806
+            },
+            "topLeft": {
+              "x": 177.9334487915039,
+              "y": 774
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 177.9334487915039,
+          "y": 774
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 104,
+          "id": "b-t",
+          "next": "b-u",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 160,
+              "y": 104
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 160,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 680,
+          "id": "b-v",
+          "next": "b-w",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.4803237915039,
+              "y": 930
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 250
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 0,
+          "y": 250
+        }
+      ]
+    },
+    {
+      "id": "zQZ/rh4RDNNEO%G[L}s:",
+      "isStage": false,
+      "name": "Enemy",
+      "blocks": [
+        {
+          "h": 272,
+          "id": "b-1c",
+          "next": "b-1d",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.5625,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 312.5625,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 584,
+          "id": "b-1i",
+          "next": "b-1j",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 529.2083282470703,
+              "y": 884
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 300
+            }
+          },
+          "w": 529.2083282470703,
+          "x": 0,
+          "y": 300
+        },
+        {
+          "h": 224,
+          "id": "b-1d",
+          "next": "b-1e",
+          "opcode": "looks_hide",
+          "parent": "b-1c",
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.5625,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 48
+            }
+          },
+          "w": 312.5625,
+          "x": 0,
+          "y": 48
+        },
+        {
+          "h": 536,
+          "id": "b-1j",
+          "next": "b-1k",
+          "opcode": "looks_show",
+          "parent": "b-1i",
+          "rectangle": {
+            "bottomRight": {
+              "x": 529.2083282470703,
+              "y": 884
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 348
+            }
+          },
+          "w": 529.2083282470703,
+          "x": 0,
+          "y": 348
+        },
+        {
+          "h": 176,
+          "id": "b-1e",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b-1d",
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.5625,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 96
+            }
+          },
+          "w": 312.5625,
+          "x": 0,
+          "y": 96
+        },
+        {
+          "h": 488,
+          "id": "b-1k",
+          "next": "b-1m",
+          "opcode": "motion_gotoxy",
+          "parent": "b-1j",
+          "rectangle": {
+            "bottomRight": {
+              "x": 529.2083282470703,
+              "y": 884
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 396
+            }
+          },
+          "w": 529.2083282470703,
+          "x": 0,
+          "y": 396
+        },
+        {
+          "h": 104,
+          "id": "b-1f",
+          "next": "b-1g",
+          "opcode": "control_wait",
+          "parent": "b-1e",
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.5625,
+              "y": 248
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 144
+            }
+          },
+          "w": 296.5625,
+          "x": 16,
+          "y": 144
+        },
+        {
+          "h": 40,
+          "id": "b-1l",
+          "next": null,
+          "opcode": "operator_random",
+          "parent": "b-1k",
+          "rectangle": {
+            "bottomRight": {
+              "x": 328.20370292663574,
+              "y": 440
+            },
+            "topLeft": {
+              "x": 72.59722137451172,
+              "y": 400
+            }
+          },
+          "w": 255.606481552124,
+          "x": 72.59722137451172,
+          "y": 400
+        },
+        {
+          "h": 32,
+          "id": "Q]^Cq0QFcOK9d;%Bsss=",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-1k",
+          "rectangle": {
+            "bottomRight": {
+              "x": 465.2083282470703,
+              "y": 436
+            },
+            "topLeft": {
+              "x": 416.5185146331787,
+              "y": 404
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 416.5185146331787,
+          "y": 404
+        },
+        {
+          "h": 440,
+          "id": "b-1m",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b-1k",
+          "rectangle": {
+            "bottomRight": {
+              "x": 322.74884033203125,
+              "y": 884
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 444
+            }
+          },
+          "w": 322.74884033203125,
+          "x": 0,
+          "y": 444
+        },
+        {
+          "h": 32,
+          "id": "w^hEoBO-kkqkFi|*l|1y",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-1f",
+          "rectangle": {
+            "bottomRight": {
+              "x": 104,
+              "y": 184
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 152
+            }
+          },
+          "w": 40,
+          "x": 64,
+          "y": 152
+        },
+        {
+          "h": 56,
+          "id": "b-1g",
+          "next": null,
+          "opcode": "control_create_clone_of",
+          "parent": "b-1f",
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.5625,
+              "y": 248
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 192
+            }
+          },
+          "w": 296.5625,
+          "x": 16,
+          "y": 192
+        },
+        {
+          "h": 32,
+          "id": "?J.[]VVdSq|O8NMLq~Xg",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-1l",
+          "rectangle": {
+            "bottomRight": {
+              "x": 131.51388931274414,
+              "y": 436
+            },
+            "topLeft": {
+              "x": 76.59722137451172,
+              "y": 404
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 76.59722137451172,
+          "y": 404
+        },
+        {
+          "h": 32,
+          "id": "@p5|8V^^Hr*i,jRmbsBX",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-1l",
+          "rectangle": {
+            "bottomRight": {
+              "x": 228.20370292663577,
+              "y": 436
+            },
+            "topLeft": {
+              "x": 179.51388931274414,
+              "y": 404
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 179.51388931274414,
+          "y": 404
+        },
+        {
+          "h": 368,
+          "id": "b-1n",
+          "next": "b-1o",
+          "opcode": "motion_changeyby",
+          "parent": "b-1m",
+          "rectangle": {
+            "bottomRight": {
+              "x": 322.74884033203125,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 492
+            }
+          },
+          "w": 306.74884033203125,
+          "x": 16,
+          "y": 492
+        },
+        {
+          "h": 32,
+          "id": "b-1h",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "b-1g",
+          "rectangle": {
+            "bottomRight": {
+              "x": 170,
+              "y": 232
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 200
+            }
+          },
+          "w": 106,
+          "x": 64,
+          "y": 200
+        },
+        {
+          "h": 32,
+          "id": "{sRx@SH@81#j92B~7o~J",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-1n",
+          "rectangle": {
+            "bottomRight": {
+              "x": 128.31944274902344,
+              "y": 532
+            },
+            "topLeft": {
+              "x": 88.31944274902344,
+              "y": 500
+            }
+          },
+          "w": 40,
+          "x": 88.31944274902344,
+          "y": 500
+        },
+        {
+          "h": 320,
+          "id": "b-1o",
+          "next": "b-1s",
+          "opcode": "control_if",
+          "parent": "b-1n",
+          "rectangle": {
+            "bottomRight": {
+              "x": 322.74884033203125,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 540
+            }
+          },
+          "w": 306.74884033203125,
+          "x": 16,
+          "y": 540
+        },
+        {
+          "h": 40,
+          "id": "b-1p",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "b-1o",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.38888931274414,
+              "y": 584
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 544
+            }
+          },
+          "w": 196.38888931274417,
+          "x": 64,
+          "y": 544
+        },
+        {
+          "h": 48,
+          "id": "b-1r",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "b-1o",
+          "rectangle": {
+            "bottomRight": {
+              "x": 222.5601806640625,
+              "y": 636
+            },
+            "topLeft": {
+              "x": 32,
+              "y": 588
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 32,
+          "y": 588
+        },
+        {
+          "h": 192,
+          "id": "b-1s",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "b-1o",
+          "rectangle": {
+            "bottomRight": {
+              "x": 322.74884033203125,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 16,
+              "y": 668
+            }
+          },
+          "w": 306.74884033203125,
+          "x": 16,
+          "y": 668
+        },
+        {
+          "h": 32,
+          "id": "b-1q",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "b-1p",
+          "rectangle": {
+            "bottomRight": {
+              "x": 168.38425827026367,
+              "y": 580
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 548
+            }
+          },
+          "w": 84.38425827026367,
+          "x": 84,
+          "y": 548
+        },
+        {
+          "h": 48,
+          "id": "b-1t",
+          "next": null,
+          "opcode": "operator_lt",
+          "parent": "b-1s",
+          "rectangle": {
+            "bottomRight": {
+              "x": 252.85011672973633,
+              "y": 720
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 672
+            }
+          },
+          "w": 188.85011672973633,
+          "x": 64,
+          "y": 672
+        },
+        {
+          "h": 96,
+          "id": "b-1v",
+          "next": "b-1w",
+          "opcode": "data_changevariableby",
+          "parent": "b-1s",
+          "rectangle": {
+            "bottomRight": {
+              "x": 322.74884033203125,
+              "y": 820
+            },
+            "topLeft": {
+              "x": 32,
+              "y": 724
+            }
+          },
+          "w": 290.74884033203125,
+          "x": 32,
+          "y": 724
+        },
+        {
+          "h": 40,
+          "id": "b-1u",
+          "next": null,
+          "opcode": "motion_yposition",
+          "parent": "b-1t",
+          "rectangle": {
+            "bottomRight": {
+              "x": 152.3240737915039,
+              "y": 716
+            },
+            "topLeft": {
+              "x": 88,
+              "y": 676
+            }
+          },
+          "w": 64.3240737915039,
+          "x": 88,
+          "y": 676
+        },
+        {
+          "h": 32,
+          "id": "Jb3NKmJJiJ^^?Lh@|)pb",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-1t",
+          "rectangle": {
+            "bottomRight": {
+              "x": 232.85011672973633,
+              "y": 712
+            },
+            "topLeft": {
+              "x": 177.9334487915039,
+              "y": 680
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 177.9334487915039,
+          "y": 680
+        },
+        {
+          "h": 32,
+          "id": "-tG5dlOQvKYC/`nra9ox",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b-1v",
+          "rectangle": {
+            "bottomRight": {
+              "x": 227.21759033203125,
+              "y": 764
+            },
+            "topLeft": {
+              "x": 187.21759033203125,
+              "y": 732
+            }
+          },
+          "w": 40,
+          "x": 187.21759033203125,
+          "y": 732
+        },
+        {
+          "h": 48,
+          "id": "b-1w",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "b-1v",
+          "rectangle": {
+            "bottomRight": {
+              "x": 222.5601806640625,
+              "y": 820
+            },
+            "topLeft": {
+              "x": 32,
+              "y": 772
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 32,
+          "y": 772
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 272,
+          "id": "b-1c",
+          "next": "b-1d",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.5625,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "w": 312.5625,
+          "x": 0,
+          "y": 0
+        },
+        {
+          "h": 584,
+          "id": "b-1i",
+          "next": "b-1j",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 529.2083282470703,
+              "y": 884
+            },
+            "topLeft": {
+              "x": 0,
+              "y": 300
+            }
+          },
+          "w": 529.2083282470703,
+          "x": 0,
+          "y": 300
+        }
+      ]
+    }
+  ]
+}

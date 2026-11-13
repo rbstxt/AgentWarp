@@ -1,0 +1,366 @@
+{
+  "fixture": "tools/vmrun/test-fixtures/greenflag.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "LmVMCqsEpHJeC~nuK!CA",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [
+        {
+          "h": 104,
+          "id": "b7",
+          "next": "b8",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 300.57870292663574,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 252.57870292663577,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 56,
+          "id": "b8",
+          "next": null,
+          "opcode": "looks_sayforsecs",
+          "parent": "b7",
+          "rectangle": {
+            "bottomRight": {
+              "x": 300.57870292663574,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 252.57870292663577,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 32,
+          "id": "g[z;?nHW2hBTUtR%39%}",
+          "next": null,
+          "opcode": "text",
+          "parent": "b8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 164.5509262084961,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 120
+            }
+          },
+          "w": 68.5509262084961,
+          "x": 96,
+          "y": 120
+        },
+        {
+          "h": 32,
+          "id": "e[Y(7X%H,DbJi]I5*DH4",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 236.56944465637207,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 196.56944465637207,
+              "y": 120
+            }
+          },
+          "w": 40,
+          "x": 196.56944465637207,
+          "y": 120
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 104,
+          "id": "b7",
+          "next": "b8",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 300.57870292663574,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 252.57870292663577,
+          "x": 48,
+          "y": 64
+        }
+      ]
+    },
+    {
+      "id": "7cG,M4LB%l9u-E@(Vo[X",
+      "isStage": false,
+      "name": "Sprite1",
+      "blocks": [
+        {
+          "h": 248,
+          "id": "b2",
+          "next": "b3",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 352.9120330810547,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 304.9120330810547,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 200,
+          "id": "b3",
+          "next": "b4",
+          "opcode": "motion_gotoxy",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 352.9120330810547,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 304.9120330810547,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 32,
+          "id": "9wu0z|`M5zzwSWf:f6y!",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 160.59722137451172,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 120.59722137451172,
+              "y": 120
+            }
+          },
+          "w": 40,
+          "x": 120.59722137451172,
+          "y": 120
+        },
+        {
+          "h": 32,
+          "id": "L3cJCy9@AB(eF%y(Uh8?",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.9120330810547,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 248.9120330810547,
+              "y": 120
+            }
+          },
+          "w": 40,
+          "x": 248.9120330810547,
+          "y": 120
+        },
+        {
+          "h": 152,
+          "id": "b4",
+          "next": "b5",
+          "opcode": "motion_movesteps",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 296.13425636291504,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 160
+            }
+          },
+          "w": 248.13425636291504,
+          "x": 48,
+          "y": 160
+        },
+        {
+          "h": 32,
+          "id": "Z3`Peh8#;vuLananbIV@",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 136,
+              "y": 200
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 168
+            }
+          },
+          "w": 40,
+          "x": 96,
+          "y": 168
+        },
+        {
+          "h": 104,
+          "id": "b5",
+          "next": "b6",
+          "opcode": "looks_sayforsecs",
+          "parent": "b4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 296.13425636291504,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 208
+            }
+          },
+          "w": 248.13425636291504,
+          "x": 48,
+          "y": 208
+        },
+        {
+          "h": 32,
+          "id": "ne3jZ8n`[cZsA![3`-@g",
+          "next": null,
+          "opcode": "text",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 160.1064796447754,
+              "y": 248
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 216
+            }
+          },
+          "w": 64.10647964477539,
+          "x": 96,
+          "y": 216
+        },
+        {
+          "h": 32,
+          "id": "CnJNJOj/3*bHZ0Vm=It:",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 232.12499809265137,
+              "y": 248
+            },
+            "topLeft": {
+              "x": 192.12499809265137,
+              "y": 216
+            }
+          },
+          "w": 40,
+          "x": 192.12499809265137,
+          "y": 216
+        },
+        {
+          "h": 56,
+          "id": "b6",
+          "next": null,
+          "opcode": "event_broadcast",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 239.36111068725583,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 256
+            }
+          },
+          "w": 191.36111068725583,
+          "x": 48,
+          "y": 256
+        },
+        {
+          "h": 32,
+          "id": "r:#4/fJY)Fx`#^)|3)7x",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "b6",
+          "rectangle": {
+            "bottomRight": {
+              "x": 175.36111068725586,
+              "y": 296
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 264
+            }
+          },
+          "w": 79.36111068725586,
+          "x": 96,
+          "y": 264
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 248,
+          "id": "b2",
+          "next": "b3",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 352.9120330810547,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 304.9120330810547,
+          "x": 48,
+          "y": 64
+        }
+      ]
+    }
+  ]
+}

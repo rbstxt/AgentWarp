@@ -1,0 +1,1 @@
+{"fixture":"eval/runs/agentic-scratch/L3/out.sb3","targets":[{"name":"Stage","scripts":[]},{"name":"Cookie","scripts":[{"h":200,"id":"b-2","opcode":"event_whenflagclicked","w":287.71875},{"h":480,"id":"b-8","opcode":"event_whenthisspriteclicked","w":271.1328125}]}]}

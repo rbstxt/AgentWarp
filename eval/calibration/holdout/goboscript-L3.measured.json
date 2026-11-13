@@ -1,0 +1,1 @@
+{"fixture":"eval/runs/goboscript/L3/out.sb3","targets":[{"name":"Stage","scripts":[{"h":200,"id":"$!","opcode":"event_whenflagclicked","w":278.81742095947266},{"h":104,"id":"$,","opcode":"event_whenbroadcastreceived","w":233.77112197875977}]},{"name":"Cookie","scripts":[{"h":432,"id":"$!","opcode":"event_whenthisspriteclicked","w":318.2662048339844}]}]}

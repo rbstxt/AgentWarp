@@ -1,0 +1,2566 @@
+{
+  "fixture": "eval/runs/raw-json/L4/out.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "wG{?Xgq-j^q{SKWjc@aO",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [
+        {
+          "h": 304,
+          "id": "flag",
+          "next": "s0",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 314.82696533203125,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 294.82696533203125,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 256,
+          "id": "s0",
+          "next": "l0",
+          "opcode": "data_setvariableto",
+          "parent": "flag",
+          "rectangle": {
+            "bottomRight": {
+              "x": 314.82696533203125,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 294.82696533203125,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 32,
+          "id": "8m!L5+6A)n^Foe-Gx*+e",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "s0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 222.9490737915039,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 182.9490737915039,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 182.9490737915039,
+          "y": 76
+        },
+        {
+          "h": 208,
+          "id": "l0",
+          "next": "wait0",
+          "opcode": "data_setvariableto",
+          "parent": "s0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 314.82696533203125,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 294.82696533203125,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 32,
+          "id": "+.]hLCR4LQRyAO=Q.!=]",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "l0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 215.21759033203125,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 175.21759033203125,
+              "y": 124
+            }
+          },
+          "w": 40,
+          "x": 175.21759033203125,
+          "y": 124
+        },
+        {
+          "h": 160,
+          "id": "wait0",
+          "next": "bdgame",
+          "opcode": "control_wait_until",
+          "parent": "l0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 314.82696533203125,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 164
+            }
+          },
+          "w": 294.82696533203125,
+          "x": 20,
+          "y": 164
+        },
+        {
+          "h": 48,
+          "id": "liv0",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "wait0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 234.82696533203125,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 168
+            }
+          },
+          "w": 166.82696533203125,
+          "x": 68,
+          "y": 168
+        },
+        {
+          "h": 104,
+          "id": "bdgame",
+          "next": "over",
+          "opcode": "looks_switchbackdropto",
+          "parent": "wait0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 263.54166412353516,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 220
+            }
+          },
+          "w": 243.54166412353516,
+          "x": 20,
+          "y": 220
+        },
+        {
+          "h": 40,
+          "id": "Ip*iue!CR8!rl^=i#gGM",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "liv0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 149.21759033203125,
+              "y": 212
+            },
+            "topLeft": {
+              "x": 92,
+              "y": 172
+            }
+          },
+          "w": 57.21759033203125,
+          "x": 92,
+          "y": 172
+        },
+        {
+          "h": 32,
+          "id": "sbj+1VD-iB}OXoHcFj^m",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "liv0",
+          "rectangle": {
+            "bottomRight": {
+              "x": 214.82696533203125,
+              "y": 208
+            },
+            "topLeft": {
+              "x": 174.82696533203125,
+              "y": 176
+            }
+          },
+          "w": 40,
+          "x": 174.82696533203125,
+          "y": 176
+        },
+        {
+          "h": 32,
+          "id": "bdgamemenu",
+          "next": null,
+          "opcode": "looks_backdrops",
+          "parent": "bdgame",
+          "rectangle": {
+            "bottomRight": {
+              "x": 199.54166412353516,
+              "y": 260
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 228
+            }
+          },
+          "w": 115.54166412353516,
+          "x": 84,
+          "y": 228
+        },
+        {
+          "h": 56,
+          "id": "over",
+          "next": null,
+          "opcode": "event_broadcast",
+          "parent": "bdgame",
+          "rectangle": {
+            "bottomRight": {
+              "x": 247.54166412353516,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 268
+            }
+          },
+          "w": 227.54166412353516,
+          "x": 20,
+          "y": 268
+        },
+        {
+          "h": 32,
+          "id": "_XzlWfvx0z^a(gU*LW,?",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "over",
+          "rectangle": {
+            "bottomRight": {
+              "x": 183.54166412353516,
+              "y": 308
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 276
+            }
+          },
+          "w": 115.54166412353516,
+          "x": 68,
+          "y": 276
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 120,
+          "id": "c1",
+          "minimized": false,
+          "width": 220,
+          "x": 20,
+          "y": 480
+        }
+      ],
+      "scripts": [
+        {
+          "h": 304,
+          "id": "flag",
+          "next": "s0",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 314.82696533203125,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 294.82696533203125,
+          "x": 20,
+          "y": 20
+        }
+      ]
+    },
+    {
+      "id": "mQ!f`m]g2w8tO#iNh7F|",
+      "isStage": false,
+      "name": "Player",
+      "blocks": [
+        {
+          "h": 840,
+          "id": "pflag",
+          "next": "phome",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 410,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 104,
+          "id": "ghat",
+          "next": "gsay",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.54166412353516,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 700
+            }
+          },
+          "w": 267.54166412353516,
+          "x": 20,
+          "y": 700
+        },
+        {
+          "h": 792,
+          "id": "phome",
+          "next": "pshow",
+          "opcode": "motion_gotoxy",
+          "parent": "pflag",
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 410,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 56,
+          "id": "gsay",
+          "next": null,
+          "opcode": "looks_say",
+          "parent": "ghat",
+          "rectangle": {
+            "bottomRight": {
+              "x": 237.31943893432617,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 748
+            }
+          },
+          "w": 217.31943893432617,
+          "x": 20,
+          "y": 748
+        },
+        {
+          "h": 32,
+          "id": "GCiGaLb?fa:{bWAlfg.@",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "phome",
+          "rectangle": {
+            "bottomRight": {
+              "x": 132.59722137451172,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 92.59722137451172,
+          "y": 76
+        },
+        {
+          "h": 32,
+          "id": "HgkD@!QX.+-!)SA3]]*n",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "phome",
+          "rectangle": {
+            "bottomRight": {
+              "x": 275.8287010192871,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 220.9120330810547,
+              "y": 76
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 220.9120330810547,
+          "y": 76
+        },
+        {
+          "h": 744,
+          "id": "pshow",
+          "next": "ploop",
+          "opcode": "looks_show",
+          "parent": "phome",
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 410,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 32,
+          "id": ",}X/RM)+s-iWsb/xJD@0",
+          "next": null,
+          "opcode": "text",
+          "parent": "gsay",
+          "rectangle": {
+            "bottomRight": {
+              "x": 173.3101806640625,
+              "y": 788
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 756
+            }
+          },
+          "w": 105.3101806640625,
+          "x": 68,
+          "y": 756
+        },
+        {
+          "h": 696,
+          "id": "ploop",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "pshow",
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 164
+            }
+          },
+          "w": 410,
+          "x": 20,
+          "y": 164
+        },
+        {
+          "h": 624,
+          "id": "pgate",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "ploop",
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 836
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 212
+            }
+          },
+          "w": 394,
+          "x": 36,
+          "y": 212
+        },
+        {
+          "h": 48,
+          "id": "palive",
+          "next": null,
+          "opcode": "operator_gt",
+          "parent": "pgate",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.82696533203125,
+              "y": 264
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 216
+            }
+          },
+          "w": 166.82696533203125,
+          "x": 84,
+          "y": 216
+        },
+        {
+          "h": 536,
+          "id": "pifL",
+          "next": "pifR",
+          "opcode": "control_if",
+          "parent": "pgate",
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 268
+            }
+          },
+          "w": 378,
+          "x": 52,
+          "y": 268
+        },
+        {
+          "h": 40,
+          "id": "}1O_ib2+X_f/C.q=vzn.",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "palive",
+          "rectangle": {
+            "bottomRight": {
+              "x": 165.21759033203125,
+              "y": 260
+            },
+            "topLeft": {
+              "x": 108,
+              "y": 220
+            }
+          },
+          "w": 57.21759033203125,
+          "x": 108,
+          "y": 220
+        },
+        {
+          "h": 32,
+          "id": "EuXt!V{ui37R~ryb)!5*",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "palive",
+          "rectangle": {
+            "bottomRight": {
+              "x": 230.82696533203125,
+              "y": 256
+            },
+            "topLeft": {
+              "x": 190.82696533203125,
+              "y": 224
+            }
+          },
+          "w": 40,
+          "x": 190.82696533203125,
+          "y": 224
+        },
+        {
+          "h": 40,
+          "id": "pkL",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "pifL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 382,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 100,
+              "y": 272
+            }
+          },
+          "w": 282,
+          "x": 100,
+          "y": 272
+        },
+        {
+          "h": 56,
+          "id": "pmL",
+          "next": null,
+          "opcode": "motion_changexby",
+          "parent": "pifL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 276.1284713745117,
+              "y": 372
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 316
+            }
+          },
+          "w": 208.12847137451172,
+          "x": 68,
+          "y": 316
+        },
+        {
+          "h": 408,
+          "id": "pifR",
+          "next": "pifS",
+          "opcode": "control_if",
+          "parent": "pifL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 396
+            }
+          },
+          "w": 378,
+          "x": 52,
+          "y": 396
+        },
+        {
+          "h": 32,
+          "id": "pkLmenu",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "pkL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242,
+              "y": 308
+            },
+            "topLeft": {
+              "x": 120,
+              "y": 276
+            }
+          },
+          "w": 122,
+          "x": 120,
+          "y": 276
+        },
+        {
+          "h": 32,
+          "id": "eLk0^A[Nj);UqHzVdU0-",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "pmL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 180.59722137451172,
+              "y": 356
+            },
+            "topLeft": {
+              "x": 140.59722137451172,
+              "y": 324
+            }
+          },
+          "w": 40,
+          "x": 140.59722137451172,
+          "y": 324
+        },
+        {
+          "h": 40,
+          "id": "pkR",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "pifR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 382,
+              "y": 440
+            },
+            "topLeft": {
+              "x": 100,
+              "y": 400
+            }
+          },
+          "w": 282,
+          "x": 100,
+          "y": 400
+        },
+        {
+          "h": 56,
+          "id": "pmR",
+          "next": null,
+          "opcode": "motion_changexby",
+          "parent": "pifR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 276.1284713745117,
+              "y": 500
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 444
+            }
+          },
+          "w": 208.12847137451172,
+          "x": 68,
+          "y": 444
+        },
+        {
+          "h": 280,
+          "id": "pifS",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "pifR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 410.96875,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 524
+            }
+          },
+          "w": 358.96875,
+          "x": 52,
+          "y": 524
+        },
+        {
+          "h": 32,
+          "id": "pkRmenu",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "pkR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242,
+              "y": 436
+            },
+            "topLeft": {
+              "x": 120,
+              "y": 404
+            }
+          },
+          "w": 122,
+          "x": 120,
+          "y": 404
+        },
+        {
+          "h": 32,
+          "id": "v(2_z8`/GzGAz.)!XDw2",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "pmR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 180.59722137451172,
+              "y": 484
+            },
+            "topLeft": {
+              "x": 140.59722137451172,
+              "y": 452
+            }
+          },
+          "w": 40,
+          "x": 140.59722137451172,
+          "y": 452
+        },
+        {
+          "h": 40,
+          "id": "pkS",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "pifS",
+          "rectangle": {
+            "bottomRight": {
+              "x": 362.96875,
+              "y": 568
+            },
+            "topLeft": {
+              "x": 100,
+              "y": 528
+            }
+          },
+          "w": 262.96875,
+          "x": 100,
+          "y": 528
+        },
+        {
+          "h": 200,
+          "id": "pfire",
+          "next": "psetx",
+          "opcode": "control_create_clone_of",
+          "parent": "pifS",
+          "rectangle": {
+            "bottomRight": {
+              "x": 352.12036895751953,
+              "y": 772
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 572
+            }
+          },
+          "w": 284.12036895751953,
+          "x": 68,
+          "y": 572
+        },
+        {
+          "h": 32,
+          "id": "pkSmenu",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "pkS",
+          "rectangle": {
+            "bottomRight": {
+              "x": 222.96875,
+              "y": 564
+            },
+            "topLeft": {
+              "x": 120,
+              "y": 532
+            }
+          },
+          "w": 102.96875,
+          "x": 120,
+          "y": 532
+        },
+        {
+          "h": 32,
+          "id": "pfiremenu",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "pfire",
+          "rectangle": {
+            "bottomRight": {
+              "x": 200.38425827026367,
+              "y": 612
+            },
+            "topLeft": {
+              "x": 116,
+              "y": 580
+            }
+          },
+          "w": 84.38425827026367,
+          "x": 116,
+          "y": 580
+        },
+        {
+          "h": 152,
+          "id": "psetx",
+          "next": "psety",
+          "opcode": "data_setvariableto",
+          "parent": "pfire",
+          "rectangle": {
+            "bottomRight": {
+              "x": 352.12036895751953,
+              "y": 772
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 620
+            }
+          },
+          "w": 284.12036895751953,
+          "x": 68,
+          "y": 620
+        },
+        {
+          "h": 40,
+          "id": "mx",
+          "next": null,
+          "opcode": "motion_xposition",
+          "parent": "psetx",
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.12036895751953,
+              "y": 664
+            },
+            "topLeft": {
+              "x": 223.51851654052737,
+              "y": 624
+            }
+          },
+          "w": 64.60185241699219,
+          "x": 223.51851654052737,
+          "y": 624
+        },
+        {
+          "h": 104,
+          "id": "psety",
+          "next": "pcool",
+          "opcode": "data_setvariableto",
+          "parent": "psetx",
+          "rectangle": {
+            "bottomRight": {
+              "x": 351.84259033203125,
+              "y": 772
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 668
+            }
+          },
+          "w": 283.84259033203125,
+          "x": 68,
+          "y": 668
+        },
+        {
+          "h": 40,
+          "id": "my",
+          "next": null,
+          "opcode": "motion_yposition",
+          "parent": "psety",
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.84259033203125,
+              "y": 712
+            },
+            "topLeft": {
+              "x": 223.51851654052737,
+              "y": 672
+            }
+          },
+          "w": 64.3240737915039,
+          "x": 223.51851654052737,
+          "y": 672
+        },
+        {
+          "h": 56,
+          "id": "pcool",
+          "next": null,
+          "opcode": "control_wait",
+          "parent": "psety",
+          "rectangle": {
+            "bottomRight": {
+              "x": 224.24537086486816,
+              "y": 772
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 716
+            }
+          },
+          "w": 156.24537086486816,
+          "x": 68,
+          "y": 716
+        },
+        {
+          "h": 32,
+          "id": "9Nq:+p`pg?u@1/;Ki-RX",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "pcool",
+          "rectangle": {
+            "bottomRight": {
+              "x": 160.24537086486816,
+              "y": 756
+            },
+            "topLeft": {
+              "x": 116,
+              "y": 724
+            }
+          },
+          "w": 44.24537086486816,
+          "x": 116,
+          "y": 724
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 120,
+          "id": "c1",
+          "minimized": false,
+          "width": 220,
+          "x": 20,
+          "y": 900
+        }
+      ],
+      "scripts": [
+        {
+          "h": 840,
+          "id": "pflag",
+          "next": "phome",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 430,
+              "y": 860
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 410,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 104,
+          "id": "ghat",
+          "next": "gsay",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.54166412353516,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 700
+            }
+          },
+          "w": 267.54166412353516,
+          "x": 20,
+          "y": 700
+        }
+      ]
+    },
+    {
+      "id": "[1.2RW1CirQ.;FiPUL2j",
+      "isStage": false,
+      "name": "Bullet",
+      "blocks": [
+        {
+          "h": 152,
+          "id": "bflag",
+          "next": "bhide",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 333.6018466949463,
+              "y": 172
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 720,
+          "id": "bstart",
+          "next": "bat",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 359.9490661621094,
+              "y": 940
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 220
+            }
+          },
+          "w": 339.9490661621094,
+          "x": 20,
+          "y": 220
+        },
+        {
+          "h": 104,
+          "id": "bhide",
+          "next": "bpark",
+          "opcode": "looks_hide",
+          "parent": "bflag",
+          "rectangle": {
+            "bottomRight": {
+              "x": 333.6018466949463,
+              "y": 172
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 672,
+          "id": "bat",
+          "next": "bdir",
+          "opcode": "motion_gotoxy",
+          "parent": "bstart",
+          "rectangle": {
+            "bottomRight": {
+              "x": 359.9490661621094,
+              "y": 940
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 268
+            }
+          },
+          "w": 339.9490661621094,
+          "x": 20,
+          "y": 268
+        },
+        {
+          "h": 56,
+          "id": "bpark",
+          "next": null,
+          "opcode": "motion_gotoxy",
+          "parent": "bhide",
+          "rectangle": {
+            "bottomRight": {
+              "x": 333.6018466949463,
+              "y": 172
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 40,
+          "id": "+G%@DA?NSO5wtQ}l[KG9",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "bat",
+          "rectangle": {
+            "bottomRight": {
+              "x": 150.11573791503906,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 272
+            }
+          },
+          "w": 57.518516540527344,
+          "x": 92.59722137451172,
+          "y": 272
+        },
+        {
+          "h": 40,
+          "id": "e!1;[Wp:2d{VoQKGq-9*",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "bat",
+          "rectangle": {
+            "bottomRight": {
+              "x": 295.9490661621094,
+              "y": 312
+            },
+            "topLeft": {
+              "x": 238.43054962158203,
+              "y": 272
+            }
+          },
+          "w": 57.518516540527344,
+          "x": 238.43054962158203,
+          "y": 272
+        },
+        {
+          "h": 624,
+          "id": "bdir",
+          "next": "bshow",
+          "opcode": "motion_pointindirection",
+          "parent": "bat",
+          "rectangle": {
+            "bottomRight": {
+              "x": 336.3981475830078,
+              "y": 940
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 316
+            }
+          },
+          "w": 316.3981475830078,
+          "x": 20,
+          "y": 316
+        },
+        {
+          "h": 32,
+          "id": "p2R7]3@-JXAxG?*(99Ac",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bpark",
+          "rectangle": {
+            "bottomRight": {
+              "x": 132.59722137451172,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 124
+            }
+          },
+          "w": 40,
+          "x": 92.59722137451172,
+          "y": 124
+        },
+        {
+          "h": 32,
+          "id": "|_Z7!+3`X=r+/]Y!p0fu",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bpark",
+          "rectangle": {
+            "bottomRight": {
+              "x": 269.6018466949463,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 220.9120330810547,
+              "y": 124
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 220.9120330810547,
+          "y": 124
+        },
+        {
+          "h": 32,
+          "id": "(Gx6_HqFX|P*e.Jo87sv",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bdir",
+          "rectangle": {
+            "bottomRight": {
+              "x": 108,
+              "y": 356
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 324
+            }
+          },
+          "w": 40,
+          "x": 68,
+          "y": 324
+        },
+        {
+          "h": 576,
+          "id": "bshow",
+          "next": "bloop",
+          "opcode": "looks_show",
+          "parent": "bdir",
+          "rectangle": {
+            "bottomRight": {
+              "x": 336.3981475830078,
+              "y": 940
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 364
+            }
+          },
+          "w": 316.3981475830078,
+          "x": 20,
+          "y": 364
+        },
+        {
+          "h": 528,
+          "id": "bloop",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "bshow",
+          "rectangle": {
+            "bottomRight": {
+              "x": 336.3981475830078,
+              "y": 940
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 412
+            }
+          },
+          "w": 316.3981475830078,
+          "x": 20,
+          "y": 412
+        },
+        {
+          "h": 456,
+          "id": "bmove",
+          "next": "bifE",
+          "opcode": "motion_movesteps",
+          "parent": "bloop",
+          "rectangle": {
+            "bottomRight": {
+              "x": 336.3981475830078,
+              "y": 916
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 460
+            }
+          },
+          "w": 300.3981475830078,
+          "x": 36,
+          "y": 460
+        },
+        {
+          "h": 32,
+          "id": "(9d#y(zfYySmt?h{Mq#p",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bmove",
+          "rectangle": {
+            "bottomRight": {
+              "x": 124,
+              "y": 500
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 468
+            }
+          },
+          "w": 40,
+          "x": 84,
+          "y": 468
+        },
+        {
+          "h": 408,
+          "id": "bifE",
+          "next": "bifT",
+          "opcode": "control_if",
+          "parent": "bmove",
+          "rectangle": {
+            "bottomRight": {
+              "x": 336.3981475830078,
+              "y": 916
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 508
+            }
+          },
+          "w": 300.3981475830078,
+          "x": 36,
+          "y": 508
+        },
+        {
+          "h": 40,
+          "id": "btE",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "bifE",
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.3981475830078,
+              "y": 552
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 512
+            }
+          },
+          "w": 204.3981475830078,
+          "x": 84,
+          "y": 512
+        },
+        {
+          "h": 48,
+          "id": "bdel",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "bifE",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242.5601806640625,
+              "y": 604
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 556
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 52,
+          "y": 556
+        },
+        {
+          "h": 280,
+          "id": "bifT",
+          "next": "bifG",
+          "opcode": "control_if",
+          "parent": "bifE",
+          "rectangle": {
+            "bottomRight": {
+              "x": 314.6232624053955,
+              "y": 916
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 636
+            }
+          },
+          "w": 278.6232624053955,
+          "x": 36,
+          "y": 636
+        },
+        {
+          "h": 32,
+          "id": "btEmenu",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "btE",
+          "rectangle": {
+            "bottomRight": {
+              "x": 196.39351654052737,
+              "y": 548
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 516
+            }
+          },
+          "w": 92.39351654052734,
+          "x": 104,
+          "y": 516
+        },
+        {
+          "h": 48,
+          "id": "bty",
+          "next": null,
+          "opcode": "operator_gt",
+          "parent": "bifT",
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.6232624053955,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 640
+            }
+          },
+          "w": 182.6232624053955,
+          "x": 84,
+          "y": 640
+        },
+        {
+          "h": 48,
+          "id": "bdel2",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "bifT",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242.5601806640625,
+              "y": 740
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 692
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 52,
+          "y": 692
+        },
+        {
+          "h": 144,
+          "id": "bifG",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "bifT",
+          "rectangle": {
+            "bottomRight": {
+              "x": 298.82696533203125,
+              "y": 916
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 772
+            }
+          },
+          "w": 262.82696533203125,
+          "x": 36,
+          "y": 772
+        },
+        {
+          "h": 40,
+          "id": "bmy",
+          "next": null,
+          "opcode": "motion_yposition",
+          "parent": "bty",
+          "rectangle": {
+            "bottomRight": {
+              "x": 172.3240737915039,
+              "y": 684
+            },
+            "topLeft": {
+              "x": 108,
+              "y": 644
+            }
+          },
+          "w": 64.3240737915039,
+          "x": 108,
+          "y": 644
+        },
+        {
+          "h": 32,
+          "id": "2A9}y1~fG5=xOMunT%u6",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bty",
+          "rectangle": {
+            "bottomRight": {
+              "x": 246.6232624053955,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 197.9334487915039,
+              "y": 648
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 197.9334487915039,
+          "y": 648
+        },
+        {
+          "h": 48,
+          "id": "bend",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "bifG",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.82696533203125,
+              "y": 824
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 776
+            }
+          },
+          "w": 166.82696533203125,
+          "x": 84,
+          "y": 776
+        },
+        {
+          "h": 48,
+          "id": "bdel3",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "bifG",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242.5601806640625,
+              "y": 876
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 828
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 52,
+          "y": 828
+        },
+        {
+          "h": 40,
+          "id": "jVB-4B?GlT)}(SBPkjMK",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "bend",
+          "rectangle": {
+            "bottomRight": {
+              "x": 165.21759033203125,
+              "y": 820
+            },
+            "topLeft": {
+              "x": 108,
+              "y": 780
+            }
+          },
+          "w": 57.21759033203125,
+          "x": 108,
+          "y": 780
+        },
+        {
+          "h": 32,
+          "id": "LR|D.[:aCzoLx3K5t]-}",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bend",
+          "rectangle": {
+            "bottomRight": {
+              "x": 230.82696533203125,
+              "y": 816
+            },
+            "topLeft": {
+              "x": 190.82696533203125,
+              "y": 784
+            }
+          },
+          "w": 40,
+          "x": 190.82696533203125,
+          "y": 784
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 120,
+          "id": "c1",
+          "minimized": false,
+          "width": 220,
+          "x": 20,
+          "y": 820
+        }
+      ],
+      "scripts": [
+        {
+          "h": 152,
+          "id": "bflag",
+          "next": "bhide",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 333.6018466949463,
+              "y": 172
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 720,
+          "id": "bstart",
+          "next": "bat",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 359.9490661621094,
+              "y": 940
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 220
+            }
+          },
+          "w": 339.9490661621094,
+          "x": 20,
+          "y": 220
+        }
+      ]
+    },
+    {
+      "id": "mr*;DU(b@tuN9g_er~V,",
+      "isStage": false,
+      "name": "Enemy",
+      "blocks": [
+        {
+          "h": 336,
+          "id": "eflag",
+          "next": "ehide",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.82696533203125,
+              "y": 356
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 326.82696533203125,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 768,
+          "id": "estart",
+          "next": "eat",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 549.2083282470703,
+              "y": 1028
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 260
+            }
+          },
+          "w": 529.2083282470703,
+          "x": 20,
+          "y": 260
+        },
+        {
+          "h": 288,
+          "id": "ehide",
+          "next": "epark",
+          "opcode": "looks_hide",
+          "parent": "eflag",
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.82696533203125,
+              "y": 356
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 326.82696533203125,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 720,
+          "id": "eat",
+          "next": "eshow",
+          "opcode": "motion_gotoxy",
+          "parent": "estart",
+          "rectangle": {
+            "bottomRight": {
+              "x": 549.2083282470703,
+              "y": 1028
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 308
+            }
+          },
+          "w": 529.2083282470703,
+          "x": 20,
+          "y": 308
+        },
+        {
+          "h": 240,
+          "id": "epark",
+          "next": "eloop",
+          "opcode": "motion_gotoxy",
+          "parent": "ehide",
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.82696533203125,
+              "y": 356
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 326.82696533203125,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 40,
+          "id": "erand",
+          "next": null,
+          "opcode": "operator_random",
+          "parent": "eat",
+          "rectangle": {
+            "bottomRight": {
+              "x": 348.20370292663574,
+              "y": 352
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 312
+            }
+          },
+          "w": 255.606481552124,
+          "x": 92.59722137451172,
+          "y": 312
+        },
+        {
+          "h": 32,
+          "id": "6gPi,:YrQAb`ZBAAq4iN",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "eat",
+          "rectangle": {
+            "bottomRight": {
+              "x": 485.2083282470703,
+              "y": 348
+            },
+            "topLeft": {
+              "x": 436.5185146331787,
+              "y": 316
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 436.5185146331787,
+          "y": 316
+        },
+        {
+          "h": 672,
+          "id": "eshow",
+          "next": "efall",
+          "opcode": "looks_show",
+          "parent": "eat",
+          "rectangle": {
+            "bottomRight": {
+              "x": 350.4803237915039,
+              "y": 1028
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 356
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 20,
+          "y": 356
+        },
+        {
+          "h": 32,
+          "id": "C6Eyt-~ZU!l3X2%HMI`j",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "epark",
+          "rectangle": {
+            "bottomRight": {
+              "x": 132.59722137451172,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 124
+            }
+          },
+          "w": 40,
+          "x": 92.59722137451172,
+          "y": 124
+        },
+        {
+          "h": 32,
+          "id": "#0]h!j;L%cWGUnls3:H5",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "epark",
+          "rectangle": {
+            "bottomRight": {
+              "x": 269.6018466949463,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 220.9120330810547,
+              "y": 124
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 220.9120330810547,
+          "y": 124
+        },
+        {
+          "h": 192,
+          "id": "eloop",
+          "next": null,
+          "opcode": "control_repeat_until",
+          "parent": "epark",
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.82696533203125,
+              "y": 356
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 164
+            }
+          },
+          "w": 326.82696533203125,
+          "x": 20,
+          "y": 164
+        },
+        {
+          "h": 32,
+          "id": "Zmjwpq=aPx=H81~!GR|/",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "erand",
+          "rectangle": {
+            "bottomRight": {
+              "x": 151.51388931274414,
+              "y": 348
+            },
+            "topLeft": {
+              "x": 96.59722137451172,
+              "y": 316
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 96.59722137451172,
+          "y": 316
+        },
+        {
+          "h": 32,
+          "id": "Q/1LVSdGR8|zB[V9-6?{",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "erand",
+          "rectangle": {
+            "bottomRight": {
+              "x": 248.20370292663577,
+              "y": 348
+            },
+            "topLeft": {
+              "x": 199.51388931274417,
+              "y": 316
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 199.51388931274417,
+          "y": 316
+        },
+        {
+          "h": 624,
+          "id": "efall",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "eshow",
+          "rectangle": {
+            "bottomRight": {
+              "x": 350.4803237915039,
+              "y": 1028
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 404
+            }
+          },
+          "w": 330.4803237915039,
+          "x": 20,
+          "y": 404
+        },
+        {
+          "h": 104,
+          "id": "ewait",
+          "next": "espawn",
+          "opcode": "control_wait",
+          "parent": "eloop",
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.5625,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 220
+            }
+          },
+          "w": 296.5625,
+          "x": 36,
+          "y": 220
+        },
+        {
+          "h": 48,
+          "id": "euntil",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "eloop",
+          "rectangle": {
+            "bottomRight": {
+              "x": 234.82696533203125,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 168
+            }
+          },
+          "w": 166.82696533203125,
+          "x": 68,
+          "y": 168
+        },
+        {
+          "h": 552,
+          "id": "edy",
+          "next": "eifB",
+          "opcode": "motion_changeyby",
+          "parent": "efall",
+          "rectangle": {
+            "bottomRight": {
+              "x": 350.4803237915039,
+              "y": 1004
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 452
+            }
+          },
+          "w": 314.4803237915039,
+          "x": 36,
+          "y": 452
+        },
+        {
+          "h": 32,
+          "id": "tH`Yvfq5{y{RZBlqpiUt",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "ewait",
+          "rectangle": {
+            "bottomRight": {
+              "x": 124,
+              "y": 260
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 228
+            }
+          },
+          "w": 40,
+          "x": 84,
+          "y": 228
+        },
+        {
+          "h": 56,
+          "id": "espawn",
+          "next": null,
+          "opcode": "control_create_clone_of",
+          "parent": "ewait",
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.5625,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 268
+            }
+          },
+          "w": 296.5625,
+          "x": 36,
+          "y": 268
+        },
+        {
+          "h": 40,
+          "id": "_l36Xx2KODmmL8lOFS?l",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "euntil",
+          "rectangle": {
+            "bottomRight": {
+              "x": 149.21759033203125,
+              "y": 212
+            },
+            "topLeft": {
+              "x": 92,
+              "y": 172
+            }
+          },
+          "w": 57.21759033203125,
+          "x": 92,
+          "y": 172
+        },
+        {
+          "h": 32,
+          "id": "mDi};ksUbv9Kj_?9Tz^H",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "euntil",
+          "rectangle": {
+            "bottomRight": {
+              "x": 214.82696533203125,
+              "y": 208
+            },
+            "topLeft": {
+              "x": 174.82696533203125,
+              "y": 176
+            }
+          },
+          "w": 40,
+          "x": 174.82696533203125,
+          "y": 176
+        },
+        {
+          "h": 32,
+          "id": "xu}q}wmtE4xg;a=IWDyu",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "edy",
+          "rectangle": {
+            "bottomRight": {
+              "x": 148.31944274902344,
+              "y": 492
+            },
+            "topLeft": {
+              "x": 108.31944274902344,
+              "y": 460
+            }
+          },
+          "w": 40,
+          "x": 108.31944274902344,
+          "y": 460
+        },
+        {
+          "h": 504,
+          "id": "eifB",
+          "next": "eifD",
+          "opcode": "control_if",
+          "parent": "edy",
+          "rectangle": {
+            "bottomRight": {
+              "x": 350.4803237915039,
+              "y": 1004
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 500
+            }
+          },
+          "w": 314.4803237915039,
+          "x": 36,
+          "y": 500
+        },
+        {
+          "h": 32,
+          "id": "espawnmenu",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "espawn",
+          "rectangle": {
+            "bottomRight": {
+              "x": 190,
+              "y": 308
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 276
+            }
+          },
+          "w": 106,
+          "x": 84,
+          "y": 276
+        },
+        {
+          "h": 40,
+          "id": "etB",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "eifB",
+          "rectangle": {
+            "bottomRight": {
+              "x": 280.38888931274414,
+              "y": 544
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 504
+            }
+          },
+          "w": 196.38888931274417,
+          "x": 84,
+          "y": 504
+        },
+        {
+          "h": 96,
+          "id": "ehit",
+          "next": "ehitdel",
+          "opcode": "data_changevariableby",
+          "parent": "eifB",
+          "rectangle": {
+            "bottomRight": {
+              "x": 350.4803237915039,
+              "y": 644
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 548
+            }
+          },
+          "w": 298.4803237915039,
+          "x": 52,
+          "y": 548
+        },
+        {
+          "h": 328,
+          "id": "eifD",
+          "next": "eifG",
+          "opcode": "control_if",
+          "parent": "eifB",
+          "rectangle": {
+            "bottomRight": {
+              "x": 342.74884033203125,
+              "y": 1004
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 676
+            }
+          },
+          "w": 306.74884033203125,
+          "x": 36,
+          "y": 676
+        },
+        {
+          "h": 32,
+          "id": "etBmenu",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "etB",
+          "rectangle": {
+            "bottomRight": {
+              "x": 188.38425827026367,
+              "y": 540
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 508
+            }
+          },
+          "w": 84.38425827026367,
+          "x": 104,
+          "y": 508
+        },
+        {
+          "h": 32,
+          "id": "QZWK-3U4%gN;rF*4~(b`",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "ehit",
+          "rectangle": {
+            "bottomRight": {
+              "x": 254.9490737915039,
+              "y": 588
+            },
+            "topLeft": {
+              "x": 214.9490737915039,
+              "y": 556
+            }
+          },
+          "w": 40,
+          "x": 214.9490737915039,
+          "y": 556
+        },
+        {
+          "h": 48,
+          "id": "ehitdel",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "ehit",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242.5601806640625,
+              "y": 644
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 596
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 52,
+          "y": 596
+        },
+        {
+          "h": 48,
+          "id": "eylow",
+          "next": null,
+          "opcode": "operator_lt",
+          "parent": "eifD",
+          "rectangle": {
+            "bottomRight": {
+              "x": 272.8501167297363,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 680
+            }
+          },
+          "w": 188.85011672973633,
+          "x": 84,
+          "y": 680
+        },
+        {
+          "h": 96,
+          "id": "ehurt",
+          "next": "ehurtdel",
+          "opcode": "data_changevariableby",
+          "parent": "eifD",
+          "rectangle": {
+            "bottomRight": {
+              "x": 342.74884033203125,
+              "y": 828
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 732
+            }
+          },
+          "w": 290.74884033203125,
+          "x": 52,
+          "y": 732
+        },
+        {
+          "h": 144,
+          "id": "eifG",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "eifD",
+          "rectangle": {
+            "bottomRight": {
+              "x": 298.82696533203125,
+              "y": 1004
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 860
+            }
+          },
+          "w": 262.82696533203125,
+          "x": 36,
+          "y": 860
+        },
+        {
+          "h": 40,
+          "id": "emy",
+          "next": null,
+          "opcode": "motion_yposition",
+          "parent": "eylow",
+          "rectangle": {
+            "bottomRight": {
+              "x": 172.3240737915039,
+              "y": 724
+            },
+            "topLeft": {
+              "x": 108,
+              "y": 684
+            }
+          },
+          "w": 64.3240737915039,
+          "x": 108,
+          "y": 684
+        },
+        {
+          "h": 32,
+          "id": "}xe?iH%[;3VRq+fqdW._",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "eylow",
+          "rectangle": {
+            "bottomRight": {
+              "x": 252.85011672973633,
+              "y": 720
+            },
+            "topLeft": {
+              "x": 197.9334487915039,
+              "y": 688
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 197.9334487915039,
+          "y": 688
+        },
+        {
+          "h": 32,
+          "id": "PZFteOjFg()Gcw?d;YNn",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "ehurt",
+          "rectangle": {
+            "bottomRight": {
+              "x": 247.21759033203125,
+              "y": 772
+            },
+            "topLeft": {
+              "x": 207.21759033203125,
+              "y": 740
+            }
+          },
+          "w": 40,
+          "x": 207.21759033203125,
+          "y": 740
+        },
+        {
+          "h": 48,
+          "id": "ehurtdel",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "ehurt",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242.5601806640625,
+              "y": 828
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 780
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 52,
+          "y": 780
+        },
+        {
+          "h": 48,
+          "id": "eend",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "eifG",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.82696533203125,
+              "y": 912
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 864
+            }
+          },
+          "w": 166.82696533203125,
+          "x": 84,
+          "y": 864
+        },
+        {
+          "h": 48,
+          "id": "egdel",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "eifG",
+          "rectangle": {
+            "bottomRight": {
+              "x": 242.5601806640625,
+              "y": 964
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 916
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 52,
+          "y": 916
+        },
+        {
+          "h": 40,
+          "id": "%Q{baKw~8*BwhC{.4.X`",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "eend",
+          "rectangle": {
+            "bottomRight": {
+              "x": 165.21759033203125,
+              "y": 908
+            },
+            "topLeft": {
+              "x": 108,
+              "y": 868
+            }
+          },
+          "w": 57.21759033203125,
+          "x": 108,
+          "y": 868
+        },
+        {
+          "h": 32,
+          "id": "5*XQEGh8UF~{|8d!n`=R",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "eend",
+          "rectangle": {
+            "bottomRight": {
+              "x": 230.82696533203125,
+              "y": 904
+            },
+            "topLeft": {
+              "x": 190.82696533203125,
+              "y": 872
+            }
+          },
+          "w": 40,
+          "x": 190.82696533203125,
+          "y": 872
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 120,
+          "id": "c1",
+          "minimized": false,
+          "width": 220,
+          "x": 20,
+          "y": 900
+        }
+      ],
+      "scripts": [
+        {
+          "h": 336,
+          "id": "eflag",
+          "next": "ehide",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.82696533203125,
+              "y": 356
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 326.82696533203125,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 768,
+          "id": "estart",
+          "next": "eat",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 549.2083282470703,
+              "y": 1028
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 260
+            }
+          },
+          "w": 529.2083282470703,
+          "x": 20,
+          "y": 260
+        }
+      ]
+    }
+  ]
+}

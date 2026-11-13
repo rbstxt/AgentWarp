@@ -7,7 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const file = process.argv[2];
 if (!file) throw Error('Usage: node tools/calibrate/measure.mjs <sb3>');
 const name = path.basename(file, '.sb3');
-const out = path.join(root, 'eval/calibration');
+const out = process.env.CALIBRATE_OUT || path.join(root, 'eval/calibration');
 await mkdir(out, {recursive:true});
 const browser = await chromium.launch({headless:true, args:['--no-sandbox']});
 try {
@@ -31,11 +31,14 @@ try {
    return {scripts:w.getTopBlocks(false).map(block), blocks:w.getAllBlocks(false).map(block),comments};
   };
   phases.measured.push({...t,...await page.evaluate(collect)});
+  if (process.env.MEASURE_ONLY) continue;
   await page.evaluate(()=>ScratchBlocks.getMainWorkspace().cleanUp());
   await page.waitForTimeout(350);
   phases.cleanup.push({...t,...await page.evaluate(collect)});
  }
- for(const phase of Object.keys(phases)) await writeFile(path.join(out,`${name}.${phase}.json`),JSON.stringify({fixture:path.basename(file),editor:page.url(),targets:phases[phase]},null,2)+'\n');
+ for(const phase of Object.keys(phases).filter(p=>!process.env.MEASURE_ONLY || p==='measured')) await writeFile(path.join(out,`${name}.${phase}.json`),JSON.stringify({fixture:path.basename(file),editor:page.url(),targets:phases[phase]},null,2)+'\n');
+ if (!process.env.MEASURE_ONLY) {
  const bytes=await page.evaluate(async()=>{const b=await vm.saveProjectSb3();const a=new Uint8Array(await b.arrayBuffer());let s='';for(let i=0;i<a.length;i+=32768)s+=String.fromCharCode(...a.subarray(i,i+32768));return btoa(s)});
  await writeFile(path.join(out,`${name}.cleanup.sb3`),Buffer.from(bytes,'base64'));
+ }
 } finally { await browser.close(); }

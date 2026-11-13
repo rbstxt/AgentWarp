@@ -1,0 +1,1 @@
+{"fixture":"eval/runs/agentic-scratch/L2/out.sb3","targets":[{"name":"Stage","scripts":[]},{"name":"Sprite1","scripts":[{"h":432,"id":"b-0","opcode":"event_whenflagclicked","w":364.33130645751953}]},{"name":"Ball","scripts":[{"h":320,"id":"b-9","opcode":"event_whenflagclicked","w":188.4921875}]}]}

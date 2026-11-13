@@ -16,3 +16,12 @@ Regeneration is network-dependent (live editor) except `extract-structure.py`,
 which is offline. `glyphs.mjs` preserves the existing `extra` map when
 re-run. See `eval/calibration/README.md` for the ground-truth data these are
 validated against (`packages/core/test/metrics.test.ts`).
+
+Japanese calibration uses `structure-ja.json` and `options-ja.json`, captured from
+actual Japanese editor blocks. `glyphs.json` includes browser measurements for
+kana, CJK characters and full-width punctuation from the catalog. Pass
+`{locale: 'ja'}` as the third argument to `measureScript` to select Japanese;
+`{locale: 'en'}` selects English. With no explicit locale, dimensions are
+English and comment anchors use the larger English/Japanese right edge. The
+Clean up Plus API accepts `{locale: 'en' | 'ja'}` and defaults to English;
+new placement reserves the larger dimensions and comment extent in both.

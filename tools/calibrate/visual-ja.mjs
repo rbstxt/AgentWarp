@@ -1,0 +1,4 @@
+import {execFileSync} from 'node:child_process';import {readFileSync} from 'node:fs';
+const base=readFileSync('eval/calibration/holdout/scroll-after.sb3').toString('base64');
+const js=`(async()=>{const b=Uint8Array.from(atob(${JSON.stringify(base)}),c=>c.charCodeAt(0));await vm.loadProject(b.buffer);await new Promise(r=>setTimeout(r,600));vm.setEditingTarget(vm.runtime.targets.find(t=>t.getName()==='mouse pointer').id);await new Promise(r=>setTimeout(r,600));const w=ScratchBlocks.getMainWorkspace(); return {methods:Object.keys(Object.getPrototypeOf(w)).filter(k=>/zoom|fit/i.test(k)),scale:w.scale,metrics:w.getMetrics()}})()`;
+const r=JSON.parse(execFileSync('agent-browser',['--session','calibration-ja','eval','--stdin','--json'],{input:js,encoding:'utf8',maxBuffer:10000000}));console.log(JSON.stringify(r.data?.result));

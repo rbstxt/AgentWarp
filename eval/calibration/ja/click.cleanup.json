@@ -1,0 +1,104 @@
+{
+  "fixture": "tools/vmrun/test-fixtures/click.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "[kX0DyTK3)Lj?Oa:jgf(",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    },
+    {
+      "id": "4e)gf6U]A13udi6Rdo,[",
+      "isStage": false,
+      "name": "Cookie",
+      "blocks": [
+        {
+          "h": 104,
+          "id": "b2",
+          "next": "b3",
+          "opcode": "event_whenthisspriteclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.4803237915039,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 298.4803237915039,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 56,
+          "id": "b3",
+          "next": null,
+          "opcode": "data_changevariableby",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.4803237915039,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 298.4803237915039,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 32,
+          "id": "[%wzVzKHGq}(M?A2?2+#",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.9490737915039,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 210.9490737915039,
+              "y": 120
+            }
+          },
+          "w": 40,
+          "x": 210.9490737915039,
+          "y": 120
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 104,
+          "id": "b2",
+          "next": "b3",
+          "opcode": "event_whenthisspriteclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 346.4803237915039,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 298.4803237915039,
+          "x": 48,
+          "y": 64
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "fixture": "tools/vmrun/test-fixtures/clones.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "sWOm)~_*+v3roy#_@~Tq",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    },
+    {
+      "id": "mQR_KOaTvNTJrZz{=a_l",
+      "isStage": false,
+      "name": "Sprite1",
+      "blocks": [
+        {
+          "h": 184,
+          "id": "b1",
+          "next": "b2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.5625,
+              "y": 204
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 312.5625,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 104,
+          "id": "b5",
+          "next": "b6",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 194.3333320617676,
+              "y": 304
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 200
+            }
+          },
+          "w": 174.33333206176758,
+          "x": 20,
+          "y": 200
+        },
+        {
+          "h": 136,
+          "id": "b2",
+          "next": null,
+          "opcode": "control_repeat",
+          "parent": "b1",
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.5625,
+              "y": 204
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 312.5625,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 56,
+          "id": "b6",
+          "next": null,
+          "opcode": "looks_say",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 194.3333320617676,
+              "y": 304
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 248
+            }
+          },
+          "w": 174.33333206176758,
+          "x": 20,
+          "y": 248
+        },
+        {
+          "h": 32,
+          "id": "W0y^}y:l2~a2n/O+cOuk",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 108,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 68,
+          "y": 76
+        },
+        {
+          "h": 56,
+          "id": "b3",
+          "next": null,
+          "opcode": "control_create_clone_of",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.5625,
+              "y": 172
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 116
+            }
+          },
+          "w": 296.5625,
+          "x": 36,
+          "y": 116
+        },
+        {
+          "h": 32,
+          "id": "Sk=*`=V6lvq3``j`G))t",
+          "next": null,
+          "opcode": "text",
+          "parent": "b6",
+          "rectangle": {
+            "bottomRight": {
+              "x": 130.3240737915039,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 256
+            }
+          },
+          "w": 62.324073791503906,
+          "x": 68,
+          "y": 256
+        },
+        {
+          "h": 32,
+          "id": "b4",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 190,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 124
+            }
+          },
+          "w": 106,
+          "x": 84,
+          "y": 124
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 184,
+          "id": "b1",
+          "next": "b2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.5625,
+              "y": 204
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 312.5625,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 104,
+          "id": "b5",
+          "next": "b6",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 194.3333320617676,
+              "y": 304
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 200
+            }
+          },
+          "w": 174.33333206176758,
+          "x": 20,
+          "y": 200
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "total": {
+    "n": 313,
+    "heightExact": 312,
+    "widthMean": 5.67524779871249,
+    "widthMax": 57.0086784362793
+  },
+  "categories": {
+    "control": {
+      "n": 24,
+      "heightExact": 24,
+      "widthMean": 0.006329854329427083,
+      "widthMax": 0.02054595947265625
+    },
+    "data": {
+      "n": 21,
+      "heightExact": 21,
+      "widthMean": 2.017002923148019,
+      "widthMax": 41.99884796142578
+    },
+    "event": {
+      "n": 119,
+      "heightExact": 119,
+      "widthMean": 0.21828320447136373,
+      "widthMax": 19.45775604248047
+    },
+    "looks": {
+      "n": 24,
+      "heightExact": 24,
+      "widthMean": 2.2786459922790527,
+      "widthMax": 19.55150604248047
+    },
+    "makeymakey": {
+      "n": 2,
+      "heightExact": 2,
+      "widthMean": 36.97366714477539,
+      "widthMax": 36.984375
+    },
+    "motion": {
+      "n": 18,
+      "heightExact": 18,
+      "widthMean": 1.7862328423394098,
+      "widthMax": 16.013893127441406
+    },
+    "music": {
+      "n": 9,
+      "heightExact": 9,
+      "widthMean": 46.32349395751953,
+      "widthMax": 57.0086784362793
+    },
+    "operators": {
+      "n": 18,
+      "heightExact": 18,
+      "widthMean": 0.24942101372612846,
+      "widthMax": 4.375
+    },
+    "pen": {
+      "n": 13,
+      "heightExact": 13,
+      "widthMean": 53.74145155686598,
+      "widthMax": 57.002315521240234
+    },
+    "procedures": {
+      "n": 28,
+      "heightExact": 27,
+      "widthMean": 0.64020722252982,
+      "widthMax": 13.575809478759766
+    },
+    "sensing": {
+      "n": 19,
+      "heightExact": 19,
+      "widthMean": 0.857791499087685,
+      "widthMax": 16.038772583007812
+    },
+    "sound": {
+      "n": 9,
+      "heightExact": 9,
+      "widthMean": 0.020383199055989582,
+      "widthMax": 0.0625
+    },
+    "text2speech": {
+      "n": 3,
+      "heightExact": 3,
+      "widthMean": 43.63329251607259,
+      "widthMax": 56.971641540527344
+    },
+    "translate": {
+      "n": 2,
+      "heightExact": 2,
+      "widthMean": 46.96585655212402,
+      "widthMax": 56.971641540527344
+    },
+    "videoSensing": {
+      "n": 4,
+      "heightExact": 4,
+      "widthMean": 41.95051956176758,
+      "widthMax": 56.92765808105469
+    }
+  },
+  "missing": [
+    "raw-json-L6.measured.json player K+=Y^S]LQB{thdK4|N7^ data_variable"
+  ],
+  "invalid": [
+    "raw-json-L6.measured.json player Yt{7~R5HQLmO$dUww)Gx procedures_definition: editor returned zero size",
+    "raw-json-L6.measured.json player AWAgate control_if: editor returned non-root",
+    "raw-json-L6.measured.json player :;94X9m|GM(r!o3fnE)/ control_if: editor returned non-root",
+    "raw-json-L6.measured.json player L7Lj%l@aG1P7Xv3L|D,0 control_if: editor returned non-root",
+    "raw-json-L6.measured.json player CD,N)g9ENIPub,dOGTUQ control_if: editor returned non-root",
+    "raw-json-L6.measured.json player AWAedge operator_and: editor returned non-root",
+    "raw-json-L6.measured.json player AWAenot operator_not: editor returned non-root"
+  ],
+  "worst": [
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b127",
+      "opcode": "music_getTempo",
+      "category": "music",
+      "widthError": 57.0086784362793,
+      "heightError": 0,
+      "actual": [
+        132.4305534362793,
+        48
+      ],
+      "predicted": [
+        75.421875,
+        48
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b160",
+      "opcode": "pen_clear",
+      "category": "pen",
+      "widthError": 57.002315521240234,
+      "heightError": 0,
+      "actual": [
+        134.68981552124023,
+        64
+      ],
+      "predicted": [
+        77.6875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b134",
+      "opcode": "music_restForBeats",
+      "category": "music",
+      "widthError": 57.00173759460449,
+      "heightError": 0,
+      "actual": [
+        235.8611125946045,
+        64
+      ],
+      "predicted": [
+        178.859375,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b162",
+      "opcode": "pen_penDown",
+      "category": "pen",
+      "widthError": 56.99884033203125,
+      "heightError": 0,
+      "actual": [
+        146.21759033203125,
+        64
+      ],
+      "predicted": [
+        89.21875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b163",
+      "opcode": "pen_penUp",
+      "category": "pen",
+      "widthError": 56.97627258300781,
+      "heightError": 0,
+      "actual": [
+        124.27314758300781,
+        64
+      ],
+      "predicted": [
+        67.296875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b215",
+      "opcode": "text2speech_speakAndWait",
+      "category": "text2speech",
+      "widthError": 56.971641540527344,
+      "heightError": 0,
+      "actual": [
+        182.76851654052734,
+        64
+      ],
+      "predicted": [
+        125.796875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b217",
+      "opcode": "translate_getViewerLanguage",
+      "category": "translate",
+      "widthError": 56.971641540527344,
+      "heightError": 0,
+      "actual": [
+        152.89351654052734,
+        48
+      ],
+      "predicted": [
+        95.921875,
+        48
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b136",
+      "opcode": "music_setTempo",
+      "category": "music",
+      "widthError": 56.96990203857422,
+      "heightError": 0,
+      "actual": [
+        214.65740203857422,
+        64
+      ],
+      "predicted": [
+        157.6875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b165",
+      "opcode": "pen_setPenColorToColor",
+      "category": "pen",
+      "widthError": 56.957176208496094,
+      "heightError": 0,
+      "actual": [
+        236.9259262084961,
+        64
+      ],
+      "predicted": [
+        179.96875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b166",
+      "opcode": "pen_setPenHueToNumber",
+      "category": "pen",
+      "widthError": 56.957176208496094,
+      "heightError": 0,
+      "actual": [
+        236.9259262084961,
+        64
+      ],
+      "predicted": [
+        179.96875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b131",
+      "opcode": "music_midiSetInstrument",
+      "category": "music",
+      "widthError": 56.94444274902344,
+      "heightError": 0,
+      "actual": [
+        246.06944274902344,
+        64
+      ],
+      "predicted": [
+        189.125,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b168",
+      "opcode": "pen_setPenSizeTo",
+      "category": "pen",
+      "widthError": 56.94386291503906,
+      "heightError": 0,
+      "actual": [
+        228.61573791503906,
+        64
+      ],
+      "predicted": [
+        171.671875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b126",
+      "opcode": "music_changeTempo",
+      "category": "music",
+      "widthError": 56.9351806640625,
+      "heightError": 0,
+      "actual": [
+        249.9351806640625,
+        64
+      ],
+      "predicted": [
+        193,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b222",
+      "opcode": "videoSensing_setVideoTransparency",
+      "category": "videoSensing",
+      "widthError": 56.92765808105469,
+      "heightError": 0,
+      "actual": [
+        308.6620330810547,
+        64
+      ],
+      "predicted": [
+        251.734375,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b167",
+      "opcode": "pen_setPenShadeToNumber",
+      "category": "pen",
+      "widthError": 56.923606872558594,
+      "heightError": 0,
+      "actual": [
+        244.6111068725586,
+        64
+      ],
+      "predicted": [
+        187.6875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b157",
+      "opcode": "pen_changePenHueBy",
+      "category": "pen",
+      "widthError": 56.922454833984375,
+      "heightError": 0,
+      "actual": [
+        272.2037048339844,
+        64
+      ],
+      "predicted": [
+        215.28125,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b225",
+      "opcode": "videoSensing_whenMotionGreaterThan",
+      "category": "videoSensing",
+      "widthError": 56.91551208496094,
+      "heightError": 0,
+      "actual": [
+        275.25926208496094,
+        56
+      ],
+      "predicted": [
+        218.34375,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b159",
+      "opcode": "pen_changePenSizeBy",
+      "category": "pen",
+      "widthError": 56.90913391113281,
+      "heightError": 0,
+      "actual": [
+        263.8935089111328,
+        64
+      ],
+      "predicted": [
+        206.984375,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b158",
+      "opcode": "pen_changePenShadeBy",
+      "category": "pen",
+      "widthError": 56.888885498046875,
+      "heightError": 0,
+      "actual": [
+        279.8888854980469,
+        64
+      ],
+      "predicted": [
+        223,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b169",
+      "opcode": "pen_stamp",
+      "category": "pen",
+      "widthError": 55.22685241699219,
+      "heightError": 0,
+      "actual": [
+        119.22685241699219,
+        64
+      ],
+      "predicted": [
+        64,
+        64
+      ]
+    }
+  ]
+}

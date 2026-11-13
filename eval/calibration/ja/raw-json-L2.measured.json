@@ -1,0 +1,794 @@
+{
+  "fixture": "eval/runs/raw-json/L2/out.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "*@G*Pe%OjYfA[zl::3UO",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    },
+    {
+      "id": "!Gk~TVEfsSO9aF=S3XYO",
+      "isStage": false,
+      "name": "Sprite1",
+      "blocks": [
+        {
+          "h": 688,
+          "id": "flag",
+          "next": "home",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 708
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 394,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 640,
+          "id": "home",
+          "next": "loop",
+          "opcode": "motion_gotoxy",
+          "parent": "flag",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 708
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 394,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 32,
+          "id": "4sJg4hua0`[kubQ**@@S",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "home",
+          "rectangle": {
+            "bottomRight": {
+              "x": 132.59722137451172,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 92.59722137451172,
+          "y": 76
+        },
+        {
+          "h": 32,
+          "id": "G,G5u+3h9:RSzt.+bW{k",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "home",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.9120330810547,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 220.9120330810547,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 220.9120330810547,
+          "y": 76
+        },
+        {
+          "h": 592,
+          "id": "loop",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "home",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 708
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 394,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 520,
+          "id": "ifR",
+          "next": "ifL",
+          "opcode": "control_if",
+          "parent": "loop",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 684
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 164
+            }
+          },
+          "w": 378,
+          "x": 36,
+          "y": 164
+        },
+        {
+          "h": 40,
+          "id": "kR",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "ifR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 366,
+              "y": 208
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 168
+            }
+          },
+          "w": 282,
+          "x": 84,
+          "y": 168
+        },
+        {
+          "h": 56,
+          "id": "mR",
+          "next": null,
+          "opcode": "motion_changexby",
+          "parent": "ifR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.1284713745117,
+              "y": 268
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 212
+            }
+          },
+          "w": 208.12847137451172,
+          "x": 52,
+          "y": 212
+        },
+        {
+          "h": 392,
+          "id": "ifL",
+          "next": "ifU",
+          "opcode": "control_if",
+          "parent": "ifR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 684
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 292
+            }
+          },
+          "w": 378,
+          "x": 36,
+          "y": 292
+        },
+        {
+          "h": 32,
+          "id": "kRmenu",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "kR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 226,
+              "y": 204
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 172
+            }
+          },
+          "w": 122,
+          "x": 104,
+          "y": 172
+        },
+        {
+          "h": 32,
+          "id": "y:I3jL(ep7D0J#m4UKiJ",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "mR",
+          "rectangle": {
+            "bottomRight": {
+              "x": 164.59722137451172,
+              "y": 252
+            },
+            "topLeft": {
+              "x": 124.59722137451172,
+              "y": 220
+            }
+          },
+          "w": 40,
+          "x": 124.59722137451172,
+          "y": 220
+        },
+        {
+          "h": 40,
+          "id": "kL",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "ifL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 366,
+              "y": 336
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 296
+            }
+          },
+          "w": 282,
+          "x": 84,
+          "y": 296
+        },
+        {
+          "h": 56,
+          "id": "mL",
+          "next": null,
+          "opcode": "motion_changexby",
+          "parent": "ifL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.1284713745117,
+              "y": 396
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 340
+            }
+          },
+          "w": 208.12847137451172,
+          "x": 52,
+          "y": 340
+        },
+        {
+          "h": 264,
+          "id": "ifU",
+          "next": "ifD",
+          "opcode": "control_if",
+          "parent": "ifL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 684
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 420
+            }
+          },
+          "w": 378,
+          "x": 36,
+          "y": 420
+        },
+        {
+          "h": 32,
+          "id": "kLmenu",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "kL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 226,
+              "y": 332
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 300
+            }
+          },
+          "w": 122,
+          "x": 104,
+          "y": 300
+        },
+        {
+          "h": 32,
+          "id": "WHw8bD:S[qn-sRa91U(w",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "mL",
+          "rectangle": {
+            "bottomRight": {
+              "x": 164.59722137451172,
+              "y": 380
+            },
+            "topLeft": {
+              "x": 124.59722137451172,
+              "y": 348
+            }
+          },
+          "w": 40,
+          "x": 124.59722137451172,
+          "y": 348
+        },
+        {
+          "h": 40,
+          "id": "kU",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "ifU",
+          "rectangle": {
+            "bottomRight": {
+              "x": 366,
+              "y": 464
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 424
+            }
+          },
+          "w": 282,
+          "x": 84,
+          "y": 424
+        },
+        {
+          "h": 56,
+          "id": "mU",
+          "next": null,
+          "opcode": "motion_changeyby",
+          "parent": "ifU",
+          "rectangle": {
+            "bottomRight": {
+              "x": 259.85069274902344,
+              "y": 524
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 468
+            }
+          },
+          "w": 207.85069274902344,
+          "x": 52,
+          "y": 468
+        },
+        {
+          "h": 136,
+          "id": "ifD",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "ifU",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 684
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 548
+            }
+          },
+          "w": 378,
+          "x": 36,
+          "y": 548
+        },
+        {
+          "h": 32,
+          "id": "kUmenu",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "kU",
+          "rectangle": {
+            "bottomRight": {
+              "x": 226,
+              "y": 460
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 428
+            }
+          },
+          "w": 122,
+          "x": 104,
+          "y": 428
+        },
+        {
+          "h": 32,
+          "id": "]x)ner{b_.M@kWTXz7j`",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "mU",
+          "rectangle": {
+            "bottomRight": {
+              "x": 164.31944274902344,
+              "y": 508
+            },
+            "topLeft": {
+              "x": 124.31944274902344,
+              "y": 476
+            }
+          },
+          "w": 40,
+          "x": 124.31944274902344,
+          "y": 476
+        },
+        {
+          "h": 40,
+          "id": "kD",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "ifD",
+          "rectangle": {
+            "bottomRight": {
+              "x": 366,
+              "y": 592
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 552
+            }
+          },
+          "w": 282,
+          "x": 84,
+          "y": 552
+        },
+        {
+          "h": 56,
+          "id": "mD",
+          "next": null,
+          "opcode": "motion_changeyby",
+          "parent": "ifD",
+          "rectangle": {
+            "bottomRight": {
+              "x": 259.85069274902344,
+              "y": 652
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 596
+            }
+          },
+          "w": 207.85069274902344,
+          "x": 52,
+          "y": 596
+        },
+        {
+          "h": 32,
+          "id": "kDmenu",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "kD",
+          "rectangle": {
+            "bottomRight": {
+              "x": 226,
+              "y": 588
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 556
+            }
+          },
+          "w": 122,
+          "x": 104,
+          "y": 556
+        },
+        {
+          "h": 32,
+          "id": "[s8,Ajx{X9cSya,%oW6-",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "mD",
+          "rectangle": {
+            "bottomRight": {
+              "x": 164.31944274902344,
+              "y": 636
+            },
+            "topLeft": {
+              "x": 124.31944274902344,
+              "y": 604
+            }
+          },
+          "w": 40,
+          "x": 124.31944274902344,
+          "y": 604
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 120,
+          "id": "c1",
+          "minimized": false,
+          "width": 220,
+          "x": 20,
+          "y": 600
+        }
+      ],
+      "scripts": [
+        {
+          "h": 688,
+          "id": "flag",
+          "next": "home",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 414,
+              "y": 708
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 394,
+          "x": 20,
+          "y": 20
+        }
+      ]
+    },
+    {
+      "id": "w7+}}Mc[xK+B2BW8?rwM",
+      "isStage": false,
+      "name": "Ball",
+      "blocks": [
+        {
+          "h": 320,
+          "id": "bflag",
+          "next": "bhome",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 339.8287010192871,
+              "y": 340
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 319.8287010192871,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 272,
+          "id": "bhome",
+          "next": "bpoint",
+          "opcode": "motion_gotoxy",
+          "parent": "bflag",
+          "rectangle": {
+            "bottomRight": {
+              "x": 339.8287010192871,
+              "y": 340
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 319.8287010192871,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 32,
+          "id": ";.yefu_`?4i#(:Y3zD!`",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bhome",
+          "rectangle": {
+            "bottomRight": {
+              "x": 147.51388931274414,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 76
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 92.59722137451172,
+          "y": 76
+        },
+        {
+          "h": 32,
+          "id": "~Q%1],0QcwvgbX!-jex0",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bhome",
+          "rectangle": {
+            "bottomRight": {
+              "x": 275.8287010192871,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 235.8287010192871,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 235.8287010192871,
+          "y": 76
+        },
+        {
+          "h": 224,
+          "id": "bpoint",
+          "next": "bloop",
+          "opcode": "motion_pointindirection",
+          "parent": "bhome",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.00926208496094,
+              "y": 340
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 240.00926208496097,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 32,
+          "id": "z2J%o6=}V`J/qHA(y1m_",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bpoint",
+          "rectangle": {
+            "bottomRight": {
+              "x": 108,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 124
+            }
+          },
+          "w": 40,
+          "x": 68,
+          "y": 124
+        },
+        {
+          "h": 176,
+          "id": "bloop",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "bpoint",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.00926208496094,
+              "y": 340
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 164
+            }
+          },
+          "w": 240.00926208496097,
+          "x": 20,
+          "y": 164
+        },
+        {
+          "h": 104,
+          "id": "bmove",
+          "next": "bbounce",
+          "opcode": "motion_movesteps",
+          "parent": "bloop",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.00926208496094,
+              "y": 316
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 212
+            }
+          },
+          "w": 224.00926208496097,
+          "x": 36,
+          "y": 212
+        },
+        {
+          "h": 32,
+          "id": "M(QQQNT^`fs(lx|:I+}w",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "bmove",
+          "rectangle": {
+            "bottomRight": {
+              "x": 124,
+              "y": 252
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 220
+            }
+          },
+          "w": 40,
+          "x": 84,
+          "y": 220
+        },
+        {
+          "h": 56,
+          "id": "bbounce",
+          "next": null,
+          "opcode": "motion_ifonedgebounce",
+          "parent": "bmove",
+          "rectangle": {
+            "bottomRight": {
+              "x": 260.00926208496094,
+              "y": 316
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 260
+            }
+          },
+          "w": 224.00926208496097,
+          "x": 36,
+          "y": 260
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 120,
+          "id": "c1",
+          "minimized": false,
+          "width": 220,
+          "x": 20,
+          "y": 300
+        }
+      ],
+      "scripts": [
+        {
+          "h": 320,
+          "id": "bflag",
+          "next": "bhome",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 339.8287010192871,
+              "y": 340
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 319.8287010192871,
+          "x": 20,
+          "y": 20
+        }
+      ]
+    }
+  ]
+}

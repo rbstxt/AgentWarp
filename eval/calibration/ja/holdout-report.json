@@ -1,0 +1,447 @@
+{
+  "total": {
+    "n": 318,
+    "heightExact": 317,
+    "widthMean": 0.20298995911700188,
+    "widthMax": 4.395254135131836
+  },
+  "categories": {
+    "control": {
+      "n": 24,
+      "heightExact": 24,
+      "widthMean": 0.16994412740071616,
+      "widthMax": 1.109375
+    },
+    "data": {
+      "n": 22,
+      "heightExact": 22,
+      "widthMean": 0.10642788626930931,
+      "widthMax": 1.1053390502929688
+    },
+    "event": {
+      "n": 120,
+      "heightExact": 120,
+      "widthMean": 0.12616651058196926,
+      "widthMax": 3.047454833984375
+    },
+    "looks": {
+      "n": 24,
+      "heightExact": 24,
+      "widthMean": 0.23709956804911533,
+      "widthMax": 0.9328689575195312
+    },
+    "makeymakey": {
+      "n": 2,
+      "heightExact": 2,
+      "widthMean": 1.5196762084960938,
+      "widthMax": 3.03125
+    },
+    "motion": {
+      "n": 18,
+      "heightExact": 18,
+      "widthMean": 0.18049112955729324,
+      "widthMax": 0.46527862548828125
+    },
+    "music": {
+      "n": 9,
+      "heightExact": 9,
+      "widthMean": 0.8841963873969311,
+      "widthMax": 2.8952598571777344
+    },
+    "operators": {
+      "n": 18,
+      "heightExact": 18,
+      "widthMean": 0.24774932861327967,
+      "widthMax": 4.395254135131836
+    },
+    "pen": {
+      "n": 13,
+      "heightExact": 13,
+      "widthMean": 0.19480074368990385,
+      "widthMax": 0.6296310424804688
+    },
+    "procedures": {
+      "n": 31,
+      "heightExact": 30,
+      "widthMean": 0.028860645909463207,
+      "widthMax": 0.4120330810546875
+    },
+    "sensing": {
+      "n": 19,
+      "heightExact": 19,
+      "widthMean": 0.3636388276752673,
+      "widthMax": 3.03125
+    },
+    "sound": {
+      "n": 9,
+      "heightExact": 9,
+      "widthMean": 0.5212834676106771,
+      "widthMax": 1.59375
+    },
+    "text2speech": {
+      "n": 3,
+      "heightExact": 3,
+      "widthMean": 0.3202158610026042,
+      "widthMax": 0.9259262084960938
+    },
+    "translate": {
+      "n": 2,
+      "heightExact": 2,
+      "widthMean": 1.285879135131836,
+      "widthMax": 2.5578689575195312
+    },
+    "videoSensing": {
+      "n": 4,
+      "heightExact": 4,
+      "widthMean": 0.008682727813720703,
+      "widthMax": 0.023149490356445312
+    }
+  },
+  "missing": [],
+  "invalid": [],
+  "quirks": [
+    "raw-json-L6.measured.json player Yt{7~R5HQLmO$dUww)Gx: root absent from editor"
+  ],
+  "worst": [
+    {
+      "file": "raw-json-L5.measured.json",
+      "target": "Player",
+      "id": "def",
+      "opcode": "procedures_definition",
+      "category": "procedures",
+      "widthError": 0,
+      "heightError": 8,
+      "actual": [
+        1753.09375,
+        1136
+      ],
+      "predicted": [
+        1753.09375,
+        1144
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b144",
+      "opcode": "operator_join",
+      "category": "operators",
+      "widthError": 4.395254135131836,
+      "heightError": 0,
+      "actual": [
+        184.50462913513184,
+        40
+      ],
+      "predicted": [
+        180.109375,
+        40
+      ]
+    },
+    {
+      "file": "hikkaku-L5.measured.json",
+      "target": "Player",
+      "id": "1",
+      "opcode": "event_whenflagclicked",
+      "category": "event",
+      "widthError": 3.047454833984375,
+      "heightError": 0,
+      "actual": [
+        646.3744201660156,
+        1376
+      ],
+      "predicted": [
+        649.421875,
+        1376
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b50",
+      "opcode": "event_whenkeypressed",
+      "category": "event",
+      "widthError": 3.03125,
+      "heightError": 0,
+      "actual": [
+        270.96875,
+        56
+      ],
+      "predicted": [
+        274,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b93",
+      "opcode": "makeymakey_whenMakeyKeyPressed",
+      "category": "makeymakey",
+      "widthError": 3.03125,
+      "heightError": 0,
+      "actual": [
+        327.96875,
+        56
+      ],
+      "predicted": [
+        331,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b183",
+      "opcode": "sensing_keypressed",
+      "category": "sensing",
+      "widthError": 3.03125,
+      "heightError": 0,
+      "actual": [
+        262.96875,
+        40
+      ],
+      "predicted": [
+        266,
+        40
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b135",
+      "opcode": "music_setInstrument",
+      "category": "music",
+      "widthError": 2.8952598571777344,
+      "heightError": 0,
+      "actual": [
+        294.37036514282227,
+        64
+      ],
+      "predicted": [
+        297.265625,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b216",
+      "opcode": "translate_getTranslate",
+      "category": "translate",
+      "widthError": 2.5578689575195312,
+      "heightError": 0,
+      "actual": [
+        381.75463104248047,
+        48
+      ],
+      "predicted": [
+        384.3125,
+        48
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b130",
+      "opcode": "music_midiPlayDrumForBeats",
+      "category": "music",
+      "widthError": 2.056138992309627,
+      "heightError": 0,
+      "actual": [
+        452.3657360076904,
+        64
+      ],
+      "predicted": [
+        454.421875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b132",
+      "opcode": "music_playDrumForBeats",
+      "category": "music",
+      "widthError": 2.056138992309627,
+      "heightError": 0,
+      "actual": [
+        452.3657360076904,
+        64
+      ],
+      "predicted": [
+        454.421875,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b208",
+      "opcode": "sound_stopallsounds",
+      "category": "sound",
+      "widthError": 1.59375,
+      "heightError": 0,
+      "actual": [
+        158.40625,
+        56
+      ],
+      "predicted": [
+        160,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b19",
+      "opcode": "control_stop",
+      "category": "control",
+      "widthError": 1.109375,
+      "heightError": 0,
+      "actual": [
+        208.890625,
+        48
+      ],
+      "predicted": [
+        210,
+        48
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b25",
+      "opcode": "data_deletealloflist",
+      "category": "data",
+      "widthError": 1.1053390502929688,
+      "heightError": 0,
+      "actual": [
+        344.42591094970703,
+        56
+      ],
+      "predicted": [
+        345.53125,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b200",
+      "opcode": "sound_changeeffectby",
+      "category": "sound",
+      "widthError": 1.09375,
+      "heightError": 0,
+      "actual": [
+        352.90625,
+        56
+      ],
+      "predicted": [
+        354,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b199",
+      "opcode": "sensing_username",
+      "category": "sensing",
+      "widthError": 0.953125,
+      "heightError": 0,
+      "actual": [
+        103.046875,
+        40
+      ],
+      "predicted": [
+        104,
+        40
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b86",
+      "opcode": "looks_switchbackdroptoandwait",
+      "category": "looks",
+      "widthError": 0.9328689575195312,
+      "heightError": 0,
+      "actual": [
+        300.05150604248047,
+        56
+      ],
+      "predicted": [
+        300.984375,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b214",
+      "opcode": "text2speech_setVoice",
+      "category": "text2speech",
+      "widthError": 0.9259262084960938,
+      "heightError": 0,
+      "actual": [
+        258.0740737915039,
+        64
+      ],
+      "predicted": [
+        259,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b176",
+      "opcode": "sensing_askandwait",
+      "category": "sensing",
+      "widthError": 0.7008132934570312,
+      "heightError": 0,
+      "actual": [
+        323.93981170654297,
+        56
+      ],
+      "predicted": [
+        324.640625,
+        56
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b162",
+      "opcode": "pen_penDown",
+      "category": "pen",
+      "widthError": 0.6296310424804688,
+      "heightError": 0,
+      "actual": [
+        168.37036895751953,
+        64
+      ],
+      "predicted": [
+        169,
+        64
+      ]
+    },
+    {
+      "file": "allblocks.measured.json",
+      "target": "Sprite1",
+      "id": "b192",
+      "opcode": "sensing_resettimer",
+      "category": "sensing",
+      "widthError": 0.625,
+      "heightError": 0,
+      "actual": [
+        159.375,
+        56
+      ],
+      "predicted": [
+        160,
+        56
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "fixture": "tools/vmrun/test-fixtures/keys.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "7+Vgygt/4:`;K+q5Et0q",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    },
+    {
+      "id": "fLYIFftI#t5t:dhPGRm=",
+      "isStage": false,
+      "name": "Sprite1",
+      "blocks": [
+        {
+          "h": 256,
+          "id": "b1",
+          "next": "b2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 421.74536895751953,
+              "y": 320
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 208,
+          "id": "b2",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b1",
+          "rectangle": {
+            "bottomRight": {
+              "x": 421.74536895751953,
+              "y": 320
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 136,
+          "id": "b3",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 421.74536895751953,
+              "y": 296
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 160
+            }
+          },
+          "w": 357.74536895751953,
+          "x": 64,
+          "y": 160
+        },
+        {
+          "h": 40,
+          "id": "b4",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 373.74536895751953,
+              "y": 204
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 164
+            }
+          },
+          "w": 261.74536895751953,
+          "x": 112,
+          "y": 164
+        },
+        {
+          "h": 56,
+          "id": "b5",
+          "next": null,
+          "opcode": "motion_changexby",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.1284713745117,
+              "y": 264
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 208
+            }
+          },
+          "w": 208.12847137451172,
+          "x": 80,
+          "y": 208
+        },
+        {
+          "h": 32,
+          "id": "rJKXy7jz+}KjoJNrKNvR",
+          "next": null,
+          "opcode": "text",
+          "parent": "b4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 233.74536895751953,
+              "y": 200
+            },
+            "topLeft": {
+              "x": 132,
+              "y": 168
+            }
+          },
+          "w": 101.74536895751952,
+          "x": 132,
+          "y": 168
+        },
+        {
+          "h": 32,
+          "id": "~w5*oBRbrfnYTIVmE%u^",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 192.59722137451172,
+              "y": 248
+            },
+            "topLeft": {
+              "x": 152.59722137451172,
+              "y": 216
+            }
+          },
+          "w": 40,
+          "x": 152.59722137451172,
+          "y": 216
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 256,
+          "id": "b1",
+          "next": "b2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 421.74536895751953,
+              "y": 320
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 373.74536895751953,
+          "x": 48,
+          "y": 64
+        }
+      ]
+    },
+    {
+      "id": "C45WJfG%qXLL+g,#DVo4",
+      "isStage": false,
+      "name": "Ball",
+      "blocks": [
+        {
+          "h": 224,
+          "id": "b6",
+          "next": "b7",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.00926208496094,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 240.00926208496097,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 176,
+          "id": "b7",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b6",
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.00926208496094,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 240.00926208496097,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 104,
+          "id": "b8",
+          "next": "b9",
+          "opcode": "motion_movesteps",
+          "parent": "b7",
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.00926208496094,
+              "y": 264
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 160
+            }
+          },
+          "w": 224.00926208496097,
+          "x": 64,
+          "y": 160
+        },
+        {
+          "h": 32,
+          "id": "IOb:+:(VBjvPr_U:T[vy",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 152,
+              "y": 200
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 168
+            }
+          },
+          "w": 40,
+          "x": 112,
+          "y": 168
+        },
+        {
+          "h": 56,
+          "id": "b9",
+          "next": null,
+          "opcode": "motion_ifonedgebounce",
+          "parent": "b8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.00926208496094,
+              "y": 264
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 208
+            }
+          },
+          "w": 224.00926208496097,
+          "x": 64,
+          "y": 208
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 224,
+          "id": "b6",
+          "next": "b7",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 288.00926208496094,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 240.00926208496097,
+          "x": 48,
+          "y": 64
+        }
+      ]
+    }
+  ]
+}

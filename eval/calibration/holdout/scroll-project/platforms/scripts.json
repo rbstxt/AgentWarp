@@ -1,0 +1,375 @@
+[
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "event_whenbroadcastreceived",
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": {
+          "value": "Setup"
+        }
+      },
+      "srcId": "D+;ZpfG(pGF%n2%4;f6A",
+      "next": {
+        "opcode": "data_setvariableto",
+        "inputs": {
+          "VALUE": {
+            "kind": "literal",
+            "value": "0",
+            "litType": 10
+          }
+        },
+        "fields": {
+          "VARIABLE": {
+            "value": "x"
+          }
+        },
+        "srcId": "|AMAO(hu=7?Q*(67$NjY",
+        "next": {
+          "opcode": "data_setvariableto",
+          "inputs": {
+            "VALUE": {
+              "kind": "literal",
+              "value": "0",
+              "litType": 10
+            }
+          },
+          "fields": {
+            "VARIABLE": {
+              "value": "y"
+            }
+          },
+          "srcId": ":6BF$,@Uh*tuc9eFyA(=",
+          "next": {
+            "opcode": "looks_switchcostumeto",
+            "inputs": {
+              "COSTUME": {
+                "kind": "menu",
+                "value": "level 1 2"
+              }
+            },
+            "fields": {},
+            "srcId": "gR?RmD?Rtt(8Uz@?J.vS",
+            "next": {
+              "opcode": "control_create_clone_of",
+              "inputs": {
+                "CLONE_OPTION": {
+                  "kind": "menu",
+                  "value": "_myself_"
+                }
+              },
+              "fields": {},
+              "srcId": "[n6el74J?%6-D{6Xv2~P",
+              "next": {
+                "opcode": "data_setvariableto",
+                "inputs": {
+                  "VALUE": {
+                    "kind": "literal",
+                    "value": "360",
+                    "litType": 10
+                  }
+                },
+                "fields": {
+                  "VARIABLE": {
+                    "value": "x"
+                  }
+                },
+                "srcId": ":?[S)OL6~HseDDk03z^D",
+                "next": {
+                  "opcode": "control_create_clone_of",
+                  "inputs": {
+                    "CLONE_OPTION": {
+                      "kind": "menu",
+                      "value": "_myself_"
+                    }
+                  },
+                  "fields": {},
+                  "srcId": "TvR.S%2F:,HOo~59qmH6",
+                  "comment": {
+                    "text": "this makes it scroll",
+                    "srcId": "KWU|KI]Mygj,g{c]45t!",
+                    "anchor": "c1"
+                  },
+                  "next": {
+                    "opcode": "data_setvariableto",
+                    "inputs": {
+                      "VALUE": {
+                        "kind": "literal",
+                        "value": "360",
+                        "litType": 10
+                      }
+                    },
+                    "fields": {
+                      "VARIABLE": {
+                        "value": "x"
+                      }
+                    },
+                    "srcId": "k)qt`xRzcSszGAUSVoUC",
+                    "next": {
+                      "opcode": "looks_switchcostumeto",
+                      "inputs": {
+                        "COSTUME": {
+                          "kind": "menu",
+                          "value": "level 1 3"
+                        }
+                      },
+                      "fields": {},
+                      "srcId": "kr4$hS;t=fKXvj_M4(`I"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "srcId": "D+;ZpfG(pGF%n2%4;f6A",
+    "anchor": "a1"
+  },
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "looks_switchcostumeto",
+      "inputs": {
+        "COSTUME": {
+          "kind": "menu",
+          "value": "level 1 3"
+        }
+      },
+      "fields": {},
+      "srcId": "QQXNKD2((?Y@]z5YLm12"
+    },
+    "srcId": "QQXNKD2((?Y@]z5YLm12",
+    "anchor": "a2"
+  },
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "event_whenbroadcastreceived",
+      "inputs": {},
+      "fields": {
+        "BROADCAST_OPTION": {
+          "value": "tick"
+        }
+      },
+      "srcId": "Xf/iPft$KKK$`?+|`Aer",
+      "next": {
+        "opcode": "procedures_call",
+        "inputs": {
+          "x": {
+            "kind": "block",
+            "block": {
+              "opcode": "operator_subtract",
+              "inputs": {
+                "NUM1": {
+                  "kind": "var",
+                  "name": "x"
+                },
+                "NUM2": {
+                  "kind": "var",
+                  "name": "SCROLL X"
+                }
+              },
+              "fields": {},
+              "srcId": "Q]D~CftPdJ})R4XC:NC7"
+            }
+          },
+          "y": {
+            "kind": "block",
+            "block": {
+              "opcode": "operator_subtract",
+              "inputs": {
+                "NUM1": {
+                  "kind": "var",
+                  "name": "y"
+                },
+                "NUM2": {
+                  "kind": "var",
+                  "name": "SCROLL Y"
+                }
+              },
+              "fields": {},
+              "srcId": "KfL;URS)~K3EZ:57P]h+"
+            }
+          }
+        },
+        "fields": {},
+        "srcId": "oJ*tuc?.eD2itCe1~ROp",
+        "proc": {
+          "proccode": "position %s %s",
+          "argumentnames": [],
+          "argumentdefaults": [],
+          "warp": false
+        },
+        "comment": {
+          "text": "this is the position of the platforms",
+          "srcId": "X=|x/B%K!~!ama4HRLlI",
+          "anchor": "c2"
+        }
+      }
+    },
+    "srcId": "Xf/iPft$KKK$`?+|`Aer",
+    "anchor": "a3"
+  },
+  {
+    "kind": "stack",
+    "top": {
+      "opcode": "procedures_definition",
+      "inputs": {},
+      "fields": {},
+      "proc": {
+        "proccode": "position %s %s",
+        "argumentnames": [
+          "x",
+          "y"
+        ],
+        "argumentdefaults": [
+          "",
+          ""
+        ],
+        "warp": false
+      },
+      "srcId": "$*3Jf}Xi3..];q6Mi~4$",
+      "next": {
+        "opcode": "motion_gotoxy",
+        "inputs": {
+          "X": {
+            "kind": "block",
+            "block": {
+              "opcode": "argument_reporter_string_number",
+              "inputs": {},
+              "fields": {
+                "VALUE": {
+                  "value": "x"
+                }
+              },
+              "srcId": "9kp1YK]hIRN{l3x(5Y*O"
+            }
+          },
+          "Y": {
+            "kind": "block",
+            "block": {
+              "opcode": "argument_reporter_string_number",
+              "inputs": {},
+              "fields": {
+                "VALUE": {
+                  "value": "y"
+                }
+              },
+              "srcId": "Trjt=_*}eFs{LfvyZFG0"
+            }
+          }
+        },
+        "fields": {},
+        "srcId": "IempvQ*eFWDk3IkVydqX",
+        "comment": {
+          "text": "this makes the level show when its on the screen and hide when its off",
+          "srcId": "a;I0$u!R%DM*Ic|MXEwo",
+          "anchor": "c3"
+        },
+        "next": {
+          "opcode": "control_if_else",
+          "inputs": {
+            "CONDITION": {
+              "kind": "block",
+              "block": {
+                "opcode": "operator_and",
+                "inputs": {
+                  "OPERAND1": {
+                    "kind": "block",
+                    "block": {
+                      "opcode": "operator_equals",
+                      "inputs": {
+                        "OPERAND1": {
+                          "kind": "block",
+                          "block": {
+                            "opcode": "argument_reporter_string_number",
+                            "inputs": {},
+                            "fields": {
+                              "VALUE": {
+                                "value": "x"
+                              }
+                            },
+                            "srcId": "qwEF5$z.Q(4vT`*{;)(8"
+                          }
+                        },
+                        "OPERAND2": {
+                          "kind": "block",
+                          "block": {
+                            "opcode": "motion_xposition",
+                            "inputs": {},
+                            "fields": {},
+                            "srcId": "~ZPQt!^5J,HfJ-Vs#!Dv"
+                          }
+                        }
+                      },
+                      "fields": {},
+                      "srcId": "Nov0@h5F0e@-JMMTlA;c"
+                    }
+                  },
+                  "OPERAND2": {
+                    "kind": "block",
+                    "block": {
+                      "opcode": "operator_equals",
+                      "inputs": {
+                        "OPERAND1": {
+                          "kind": "block",
+                          "block": {
+                            "opcode": "argument_reporter_string_number",
+                            "inputs": {},
+                            "fields": {
+                              "VALUE": {
+                                "value": "y"
+                              }
+                            },
+                            "srcId": "7=]J,-.p293]O)[sXkOz"
+                          }
+                        },
+                        "OPERAND2": {
+                          "kind": "block",
+                          "block": {
+                            "opcode": "motion_yposition",
+                            "inputs": {},
+                            "fields": {},
+                            "srcId": "T}JBT@Iu#+*;$/+$`B;k"
+                          }
+                        }
+                      },
+                      "fields": {},
+                      "srcId": "H;n]Kxo)-p:nDFB!)5d2"
+                    }
+                  }
+                },
+                "fields": {},
+                "srcId": "6zCgcU;4q]Q=aSgNy5wc"
+              }
+            },
+            "SUBSTACK": {
+              "kind": "stack",
+              "block": {
+                "opcode": "looks_show",
+                "inputs": {},
+                "fields": {},
+                "srcId": "ckUR5NJ/v{)d~3xuOcWO"
+              }
+            },
+            "SUBSTACK2": {
+              "kind": "stack",
+              "block": {
+                "opcode": "looks_hide",
+                "inputs": {},
+                "fields": {},
+                "srcId": "MH^bzj|%JTh@K~]~OXVr"
+              }
+            }
+          },
+          "fields": {},
+          "srcId": "XanxwcjIwStt%sq2Hm~J"
+        }
+      }
+    },
+    "srcId": "$*3Jf}Xi3..];q6Mi~4$",
+    "anchor": "a4"
+  }
+]

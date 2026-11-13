@@ -1,0 +1,746 @@
+{
+  "fixture": "eval/runs/hikkaku/L3/out.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "L)Zg;6Bf,~8fVx^#4|Li",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [
+        {
+          "h": 104,
+          "id": "1",
+          "next": "3",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 251.49536895751953,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 203.49536895751953,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 104,
+          "id": "4",
+          "next": "6",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 267.5092582702637,
+              "y": 344
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 240
+            }
+          },
+          "w": 219.50925827026367,
+          "x": 48,
+          "y": 240
+        },
+        {
+          "h": 56,
+          "id": "3",
+          "next": null,
+          "opcode": "looks_switchbackdropto",
+          "parent": "1",
+          "rectangle": {
+            "bottomRight": {
+              "x": 251.49536895751953,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 203.49536895751953,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 56,
+          "id": "6",
+          "next": null,
+          "opcode": "looks_switchbackdropto",
+          "parent": "4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 243.50925827026367,
+              "y": 344
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 288
+            }
+          },
+          "w": 195.50925827026367,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "h": 32,
+          "id": "2",
+          "next": null,
+          "opcode": "looks_backdrops",
+          "parent": "3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 187.49536895751953,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 120
+            }
+          },
+          "w": 75.49536895751953,
+          "x": 112,
+          "y": 120
+        },
+        {
+          "h": 32,
+          "id": "5",
+          "next": null,
+          "opcode": "looks_backdrops",
+          "parent": "6",
+          "rectangle": {
+            "bottomRight": {
+              "x": 179.50925827026367,
+              "y": 328
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 296
+            }
+          },
+          "w": 67.50925827026367,
+          "x": 112,
+          "y": 296
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 104,
+          "id": "1",
+          "next": "3",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 251.49536895751953,
+              "y": 168
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 203.49536895751953,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 104,
+          "id": "4",
+          "next": "6",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 267.5092582702637,
+              "y": 344
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 240
+            }
+          },
+          "w": 219.50925827026367,
+          "x": 48,
+          "y": 240
+        }
+      ]
+    },
+    {
+      "id": "{0F^mPavW}vYdMPnICmL",
+      "isStage": false,
+      "name": "Cookie",
+      "blocks": [
+        {
+          "h": 152,
+          "id": "7",
+          "next": "8",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.43981552124023,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 282.43981552124023,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 440,
+          "id": "b",
+          "next": "c",
+          "opcode": "event_whenthisspriteclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 288
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "h": 104,
+          "id": "8",
+          "next": "a",
+          "opcode": "data_setvariableto",
+          "parent": "7",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.43981552124023,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 282.43981552124023,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 392,
+          "id": "c",
+          "next": "e",
+          "opcode": "data_changevariableby",
+          "parent": "b",
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 336
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 336
+        },
+        {
+          "h": 32,
+          "id": "pW5P3tiP88Hus^+Nnu]G",
+          "next": null,
+          "opcode": "text",
+          "parent": "8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.9490737915039,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 210.9490737915039,
+              "y": 120
+            }
+          },
+          "w": 40,
+          "x": 210.9490737915039,
+          "y": 120
+        },
+        {
+          "h": 56,
+          "id": "a",
+          "next": null,
+          "opcode": "looks_switchcostumeto",
+          "parent": "8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.43981552124023,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 160
+            }
+          },
+          "w": 282.43981552124023,
+          "x": 48,
+          "y": 160
+        },
+        {
+          "h": 32,
+          "id": "_CsIfpU}TYqSH3u7^1Ke",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "c",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.9490737915039,
+              "y": 376
+            },
+            "topLeft": {
+              "x": 210.9490737915039,
+              "y": 344
+            }
+          },
+          "w": 40,
+          "x": 210.9490737915039,
+          "y": 344
+        },
+        {
+          "h": 344,
+          "id": "e",
+          "next": "10",
+          "opcode": "sound_play",
+          "parent": "c",
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 384
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 384
+        },
+        {
+          "h": 32,
+          "id": "9",
+          "next": null,
+          "opcode": "looks_costume",
+          "parent": "a",
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.43981552124023,
+              "y": 200
+            },
+            "topLeft": {
+              "x": 175.20370483398438,
+              "y": 168
+            }
+          },
+          "w": 91.23611068725586,
+          "x": 175.20370483398438,
+          "y": 168
+        },
+        {
+          "h": 32,
+          "id": "d",
+          "next": null,
+          "opcode": "sound_sounds_menu",
+          "parent": "e",
+          "rectangle": {
+            "bottomRight": {
+              "x": 167.0509262084961,
+              "y": 424
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 392
+            }
+          },
+          "w": 71.0509262084961,
+          "x": 96,
+          "y": 392
+        },
+        {
+          "h": 296,
+          "id": "10",
+          "next": "11",
+          "opcode": "looks_switchcostumeto",
+          "parent": "e",
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 432
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 432
+        },
+        {
+          "h": 32,
+          "id": "f",
+          "next": null,
+          "opcode": "looks_costume",
+          "parent": "10",
+          "rectangle": {
+            "bottomRight": {
+              "x": 276.5092582702637,
+              "y": 472
+            },
+            "topLeft": {
+              "x": 175.20370483398438,
+              "y": 440
+            }
+          },
+          "w": 101.3055534362793,
+          "x": 175.20370483398438,
+          "y": 440
+        },
+        {
+          "h": 248,
+          "id": "11",
+          "next": "13",
+          "opcode": "control_wait",
+          "parent": "10",
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 480
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 480
+        },
+        {
+          "h": 32,
+          "id": "pLN]e3x6Xc[txM=PK2wR",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "11",
+          "rectangle": {
+            "bottomRight": {
+              "x": 140.24537086486816,
+              "y": 520
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 488
+            }
+          },
+          "w": 44.24537086486816,
+          "x": 96,
+          "y": 488
+        },
+        {
+          "h": 200,
+          "id": "13",
+          "next": "1a",
+          "opcode": "looks_switchcostumeto",
+          "parent": "11",
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 528
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 528
+        },
+        {
+          "h": 32,
+          "id": "12",
+          "next": null,
+          "opcode": "looks_costume",
+          "parent": "13",
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.43981552124023,
+              "y": 568
+            },
+            "topLeft": {
+              "x": 175.20370483398438,
+              "y": 536
+            }
+          },
+          "w": 91.23611068725586,
+          "x": 175.20370483398438,
+          "y": 536
+        },
+        {
+          "h": 152,
+          "id": "1a",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "13",
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 576
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 576
+        },
+        {
+          "h": 56,
+          "id": "18",
+          "next": null,
+          "opcode": "operator_or",
+          "parent": "1a",
+          "rectangle": {
+            "bottomRight": {
+              "x": 525.1168975830078,
+              "y": 636
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 580
+            }
+          },
+          "w": 429.1168975830078,
+          "x": 96,
+          "y": 580
+        },
+        {
+          "h": 56,
+          "id": "19",
+          "next": null,
+          "opcode": "event_broadcast",
+          "parent": "1a",
+          "rectangle": {
+            "bottomRight": {
+              "x": 243.50925827026367,
+              "y": 696
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 640
+            }
+          },
+          "w": 179.50925827026367,
+          "x": 64,
+          "y": 640
+        },
+        {
+          "h": 48,
+          "id": "15",
+          "next": null,
+          "opcode": "operator_gt",
+          "parent": "18",
+          "rectangle": {
+            "bottomRight": {
+              "x": 278.5584487915039,
+              "y": 632
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 584
+            }
+          },
+          "w": 174.5584487915039,
+          "x": 104,
+          "y": 584
+        },
+        {
+          "h": 48,
+          "id": "17",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "18",
+          "rectangle": {
+            "bottomRight": {
+              "x": 517.1168975830078,
+              "y": 632
+            },
+            "topLeft": {
+              "x": 342.5584487915039,
+              "y": 584
+            }
+          },
+          "w": 174.5584487915039,
+          "x": 342.5584487915039,
+          "y": 584
+        },
+        {
+          "h": 32,
+          "id": "1D/-4l]eN~rlbZ3EAA`i",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "19",
+          "rectangle": {
+            "bottomRight": {
+              "x": 179.50925827026367,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 648
+            }
+          },
+          "w": 67.50925827026367,
+          "x": 112,
+          "y": 648
+        },
+        {
+          "h": 40,
+          "id": "14",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "15",
+          "rectangle": {
+            "bottomRight": {
+              "x": 192.9490737915039,
+              "y": 628
+            },
+            "topLeft": {
+              "x": 128,
+              "y": 588
+            }
+          },
+          "w": 64.9490737915039,
+          "x": 128,
+          "y": 588
+        },
+        {
+          "h": 32,
+          "id": "Foz6Vup%P)]1B9_~CLo=",
+          "next": null,
+          "opcode": "text",
+          "parent": "15",
+          "rectangle": {
+            "bottomRight": {
+              "x": 258.5584487915039,
+              "y": 624
+            },
+            "topLeft": {
+              "x": 218.5584487915039,
+              "y": 592
+            }
+          },
+          "w": 40,
+          "x": 218.5584487915039,
+          "y": 592
+        },
+        {
+          "h": 40,
+          "id": "16",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "17",
+          "rectangle": {
+            "bottomRight": {
+              "x": 431.5075225830078,
+              "y": 628
+            },
+            "topLeft": {
+              "x": 366.5584487915039,
+              "y": 588
+            }
+          },
+          "w": 64.9490737915039,
+          "x": 366.5584487915039,
+          "y": 588
+        },
+        {
+          "h": 32,
+          "id": "Uix}CI!SH^9fCWi|.lK|",
+          "next": null,
+          "opcode": "text",
+          "parent": "17",
+          "rectangle": {
+            "bottomRight": {
+              "x": 497.1168975830078,
+              "y": 624
+            },
+            "topLeft": {
+              "x": 457.1168975830078,
+              "y": 592
+            }
+          },
+          "w": 40,
+          "x": 457.1168975830078,
+          "y": 592
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 152,
+          "id": "7",
+          "next": "8",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 330.43981552124023,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 282.43981552124023,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 440,
+          "id": "b",
+          "next": "c",
+          "opcode": "event_whenthisspriteclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 573.1168975830078,
+              "y": 728
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 288
+            }
+          },
+          "w": 525.1168975830078,
+          "x": 48,
+          "y": 288
+        }
+      ]
+    }
+  ]
+}

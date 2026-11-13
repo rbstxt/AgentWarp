@@ -1,0 +1,224 @@
+{
+  "fixture": "eval/runs/hikkaku/L1/out.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "(uFTLM7bF[sVi{V:KWkD",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    },
+    {
+      "id": "fA:h}!aG=VztFm#H;,Zg",
+      "isStage": false,
+      "name": "Sprite1",
+      "blocks": [
+        {
+          "h": 200,
+          "id": "1",
+          "next": "2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 368.9120330810547,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 72
+            }
+          },
+          "w": 304.9120330810547,
+          "x": 64,
+          "y": 72
+        },
+        {
+          "h": 152,
+          "id": "2",
+          "next": "3",
+          "opcode": "motion_gotoxy",
+          "parent": "1",
+          "rectangle": {
+            "bottomRight": {
+              "x": 368.9120330810547,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 120
+            }
+          },
+          "w": 304.9120330810547,
+          "x": 64,
+          "y": 120
+        },
+        {
+          "h": 32,
+          "id": ";lR=DikCA*k{tNs``Q~S",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 176.59722137451172,
+              "y": 160
+            },
+            "topLeft": {
+              "x": 136.59722137451172,
+              "y": 128
+            }
+          },
+          "w": 40,
+          "x": 136.59722137451172,
+          "y": 128
+        },
+        {
+          "h": 32,
+          "id": "dg*+^sSr{}-5p;gW}0f7",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 304.9120330810547,
+              "y": 160
+            },
+            "topLeft": {
+              "x": 264.9120330810547,
+              "y": 128
+            }
+          },
+          "w": 40,
+          "x": 264.9120330810547,
+          "y": 128
+        },
+        {
+          "h": 104,
+          "id": "3",
+          "next": "4",
+          "opcode": "motion_movesteps",
+          "parent": "2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.13425636291504,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 168
+            }
+          },
+          "w": 248.13425636291504,
+          "x": 64,
+          "y": 168
+        },
+        {
+          "h": 32,
+          "id": "MqMLofF.Rw9]kT}6jkz^",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 152,
+              "y": 208
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 176
+            }
+          },
+          "w": 40,
+          "x": 112,
+          "y": 176
+        },
+        {
+          "h": 56,
+          "id": "4",
+          "next": null,
+          "opcode": "looks_sayforsecs",
+          "parent": "3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.13425636291504,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 216
+            }
+          },
+          "w": 248.13425636291504,
+          "x": 64,
+          "y": 216
+        },
+        {
+          "h": 32,
+          "id": "rXTtyUCAlU(Iv_|v3f:S",
+          "next": null,
+          "opcode": "text",
+          "parent": "4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 176.1064796447754,
+              "y": 256
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 224
+            }
+          },
+          "w": 64.10647964477539,
+          "x": 112,
+          "y": 224
+        },
+        {
+          "h": 32,
+          "id": "L0zCb%,Wt2e?PqIL*n%C",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 248.12499809265137,
+              "y": 256
+            },
+            "topLeft": {
+              "x": 208.12499809265137,
+              "y": 224
+            }
+          },
+          "w": 40,
+          "x": 208.12499809265137,
+          "y": 224
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 200,
+          "id": "1",
+          "next": "2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 368.9120330810547,
+              "y": 272
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 72
+            }
+          },
+          "w": 304.9120330810547,
+          "x": 64,
+          "y": 72
+        }
+      ]
+    }
+  ]
+}

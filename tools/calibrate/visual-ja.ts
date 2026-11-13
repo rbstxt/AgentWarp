@@ -1,0 +1,10 @@
+import {readSb3Json} from '../../packages/core/test/zip.ts';
+import {placeNew} from '../../packages/core/layout.ts';
+import {writeFileSync} from 'node:fs';
+const p = readSb3Json('eval/calibration/holdout/scroll-after.sb3') as any;
+const t = p.targets.find((x:any) => x.name === 'mouse pointer');
+const ids = Object.keys(t.comments);
+const placed = placeNew(t, [], ids);
+for (const [id,pos] of placed.comments) Object.assign(t.comments[id],pos);
+if (placed.comments.size !== ids.length) throw Error('missing comment placement');
+writeFileSync('/tmp/agentwarp-scroll-project.json', JSON.stringify(p));

@@ -1,0 +1,1 @@
+{"fixture":"eval/runs/raw-json/L3/out.sb3","targets":[{"name":"Stage","scripts":[{"h":304,"id":"flag","opcode":"event_whenflagclicked","w":287.71875}]},{"name":"Cookie","scripts":[{"h":296,"id":"click","opcode":"event_whenthisspriteclicked","w":319.1458282470703}]}]}

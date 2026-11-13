@@ -1,0 +1,352 @@
+{
+  "fixture": "tools/vmrun/test-fixtures/touch.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "@y#=hDZ3q_0AGM/z6sP[",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    },
+    {
+      "id": "]OoX33(p,+Yd]RPF,bc6",
+      "isStage": false,
+      "name": "Chaser",
+      "blocks": [
+        {
+          "h": 440,
+          "id": "b1",
+          "next": "b2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 432.13888931274414,
+              "y": 460
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 412.13888931274414,
+          "x": 20,
+          "y": 20
+        },
+        {
+          "h": 392,
+          "id": "b2",
+          "next": "b3",
+          "opcode": "motion_gotoxy",
+          "parent": "b1",
+          "rectangle": {
+            "bottomRight": {
+              "x": 432.13888931274414,
+              "y": 460
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 68
+            }
+          },
+          "w": 412.13888931274414,
+          "x": 20,
+          "y": 68
+        },
+        {
+          "h": 32,
+          "id": "toapc=hB?,%2`XCrI|Aw",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 147.51388931274414,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 92.59722137451172,
+              "y": 76
+            }
+          },
+          "w": 54.91666793823242,
+          "x": 92.59722137451172,
+          "y": 76
+        },
+        {
+          "h": 32,
+          "id": "*5|%SN(T%O)-yo[RvVPm",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 275.8287010192871,
+              "y": 108
+            },
+            "topLeft": {
+              "x": 235.8287010192871,
+              "y": 76
+            }
+          },
+          "w": 40,
+          "x": 235.8287010192871,
+          "y": 76
+        },
+        {
+          "h": 344,
+          "id": "b3",
+          "next": "b4",
+          "opcode": "motion_pointindirection",
+          "parent": "b2",
+          "rectangle": {
+            "bottomRight": {
+              "x": 432.13888931274414,
+              "y": 460
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 116
+            }
+          },
+          "w": 412.13888931274414,
+          "x": 20,
+          "y": 116
+        },
+        {
+          "h": 32,
+          "id": "2Pj]l#I`NTyzzQihN*)r",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 108,
+              "y": 156
+            },
+            "topLeft": {
+              "x": 68,
+              "y": 124
+            }
+          },
+          "w": 40,
+          "x": 68,
+          "y": 124
+        },
+        {
+          "h": 296,
+          "id": "b4",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "b3",
+          "rectangle": {
+            "bottomRight": {
+              "x": 432.13888931274414,
+              "y": 460
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 164
+            }
+          },
+          "w": 412.13888931274414,
+          "x": 20,
+          "y": 164
+        },
+        {
+          "h": 224,
+          "id": "b5",
+          "next": null,
+          "opcode": "control_if_else",
+          "parent": "b4",
+          "rectangle": {
+            "bottomRight": {
+              "x": 432.13888931274414,
+              "y": 436
+            },
+            "topLeft": {
+              "x": 36,
+              "y": 212
+            }
+          },
+          "w": 396.13888931274414,
+          "x": 36,
+          "y": 212
+        },
+        {
+          "h": 48,
+          "id": "b6",
+          "next": null,
+          "opcode": "operator_not",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 384.13888931274414,
+              "y": 264
+            },
+            "topLeft": {
+              "x": 84,
+              "y": 216
+            }
+          },
+          "w": 300.13888931274414,
+          "x": 84,
+          "y": 216
+        },
+        {
+          "h": 56,
+          "id": "b11",
+          "next": null,
+          "opcode": "looks_say",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 204.3888874053955,
+              "y": 404
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 348
+            }
+          },
+          "w": 152.3888874053955,
+          "x": 52,
+          "y": 348
+        },
+        {
+          "h": 56,
+          "id": "b10",
+          "next": null,
+          "opcode": "motion_movesteps",
+          "parent": "b5",
+          "rectangle": {
+            "bottomRight": {
+              "x": 219.54166412353516,
+              "y": 324
+            },
+            "topLeft": {
+              "x": 52,
+              "y": 268
+            }
+          },
+          "w": 167.54166412353516,
+          "x": 52,
+          "y": 268
+        },
+        {
+          "h": 40,
+          "id": "b8",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "b6",
+          "rectangle": {
+            "bottomRight": {
+              "x": 292.13888931274414,
+              "y": 260
+            },
+            "topLeft": {
+              "x": 92,
+              "y": 220
+            }
+          },
+          "w": 200.13888931274417,
+          "x": 92,
+          "y": 220
+        },
+        {
+          "h": 32,
+          "id": "EP.ZuiDW-zVe_x?k[!)~",
+          "next": null,
+          "opcode": "text",
+          "parent": "b11",
+          "rectangle": {
+            "bottomRight": {
+              "x": 140.37962913513184,
+              "y": 388
+            },
+            "topLeft": {
+              "x": 100,
+              "y": 356
+            }
+          },
+          "w": 40.37962913513184,
+          "x": 100,
+          "y": 356
+        },
+        {
+          "h": 32,
+          "id": "gTBrAMX^sFU0Dds[IRi7",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "b10",
+          "rectangle": {
+            "bottomRight": {
+              "x": 140,
+              "y": 308
+            },
+            "topLeft": {
+              "x": 100,
+              "y": 276
+            }
+          },
+          "w": 40,
+          "x": 100,
+          "y": 276
+        },
+        {
+          "h": 32,
+          "id": "b7",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "b8",
+          "rectangle": {
+            "bottomRight": {
+              "x": 200.13425827026367,
+              "y": 256
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 224
+            }
+          },
+          "w": 88.13425827026367,
+          "x": 112,
+          "y": 224
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 440,
+          "id": "b1",
+          "next": "b2",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 432.13888931274414,
+              "y": 460
+            },
+            "topLeft": {
+              "x": 20,
+              "y": 20
+            }
+          },
+          "w": 412.13888931274414,
+          "x": 20,
+          "y": 20
+        }
+      ]
+    },
+    {
+      "id": "_`{{%Eash)jL[YoKCgEP",
+      "isStage": false,
+      "name": "Target",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    }
+  ]
+}

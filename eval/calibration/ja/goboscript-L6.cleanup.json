@@ -1,0 +1,5061 @@
+{
+  "fixture": "eval/runs/goboscript/L6/out.sb3",
+  "editor": "https://turbowarp.org/editor?locale=ja",
+  "targets": [
+    {
+      "id": "~libtiyj2Ny(;Z-reC~r",
+      "isStage": true,
+      "name": "Stage",
+      "blocks": [],
+      "comments": [],
+      "scripts": []
+    },
+    {
+      "id": "(/lfGyrU|o9s=}n#fG%8",
+      "isStage": false,
+      "name": "PausedSign",
+      "blocks": [
+        {
+          "h": 488,
+          "id": "$!",
+          "next": "$#",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 361.6018466949463,
+              "y": 552
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 440,
+          "id": "$#",
+          "next": "$%",
+          "opcode": "looks_hide",
+          "parent": "$!",
+          "rectangle": {
+            "bottomRight": {
+              "x": 361.6018466949463,
+              "y": 552
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 392,
+          "id": "$%",
+          "next": "$(",
+          "opcode": "motion_gotoxy",
+          "parent": "$#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 361.6018466949463,
+              "y": 552
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 160
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 48,
+          "y": 160
+        },
+        {
+          "h": 32,
+          "id": "-+=uHbip.wBr,YOSaCr_",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 160.59722137451172,
+              "y": 200
+            },
+            "topLeft": {
+              "x": 120.59722137451172,
+              "y": 168
+            }
+          },
+          "w": 40,
+          "x": 120.59722137451172,
+          "y": 168
+        },
+        {
+          "h": 32,
+          "id": "%uCv#:J}]kI-XZX?vMlO",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 297.6018466949463,
+              "y": 200
+            },
+            "topLeft": {
+              "x": 248.9120330810547,
+              "y": 168
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 248.9120330810547,
+          "y": 168
+        },
+        {
+          "h": 344,
+          "id": "$(",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 348.44733810424805,
+              "y": 552
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 208
+            }
+          },
+          "w": 300.44733810424805,
+          "x": 48,
+          "y": 208
+        },
+        {
+          "h": 272,
+          "id": "$+",
+          "next": "$,",
+          "opcode": "control_if_else",
+          "parent": "$(",
+          "rectangle": {
+            "bottomRight": {
+              "x": 348.44733810424805,
+              "y": 528
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 256
+            }
+          },
+          "w": 284.44733810424805,
+          "x": 64,
+          "y": 256
+        },
+        {
+          "h": 48,
+          "id": "$-",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "$+",
+          "rectangle": {
+            "bottomRight": {
+              "x": 300.44733810424805,
+              "y": 308
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 260
+            }
+          },
+          "w": 188.44733810424805,
+          "x": 112,
+          "y": 260
+        },
+        {
+          "h": 56,
+          "id": "$.",
+          "next": null,
+          "opcode": "looks_show",
+          "parent": "$+",
+          "rectangle": {
+            "bottomRight": {
+              "x": 160.00463104248047,
+              "y": 368
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 312
+            }
+          },
+          "w": 80.00463104248047,
+          "x": 80,
+          "y": 312
+        },
+        {
+          "h": 56,
+          "id": "$/",
+          "next": null,
+          "opcode": "looks_hide",
+          "parent": "$+",
+          "rectangle": {
+            "bottomRight": {
+              "x": 144,
+              "y": 448
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 392
+            }
+          },
+          "w": 64,
+          "x": 80,
+          "y": 392
+        },
+        {
+          "h": 56,
+          "id": "$,",
+          "next": null,
+          "opcode": "control_wait",
+          "parent": "$+",
+          "rectangle": {
+            "bottomRight": {
+              "x": 220.24537086486816,
+              "y": 528
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 472
+            }
+          },
+          "w": 156.24537086486816,
+          "x": 64,
+          "y": 472
+        },
+        {
+          "h": 40,
+          "id": "12m_^Z]ZYC+#-bhr~SjM",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 214.83796310424805,
+              "y": 304
+            },
+            "topLeft": {
+              "x": 136,
+              "y": 264
+            }
+          },
+          "w": 78.83796310424805,
+          "x": 136,
+          "y": 264
+        },
+        {
+          "h": 32,
+          "id": "[1/2gc.Q2yr0bN%?wV0z",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 280.44733810424805,
+              "y": 300
+            },
+            "topLeft": {
+              "x": 240.44733810424805,
+              "y": 268
+            }
+          },
+          "w": 40,
+          "x": 240.44733810424805,
+          "y": 268
+        },
+        {
+          "h": 32,
+          "id": "0:`IguOn%6rh|zhvy@N-",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$,",
+          "rectangle": {
+            "bottomRight": {
+              "x": 156.24537086486816,
+              "y": 512
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 480
+            }
+          },
+          "w": 44.24537086486816,
+          "x": 112,
+          "y": 480
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 80,
+          "id": "l6new4",
+          "minimized": false,
+          "width": 280,
+          "x": 200,
+          "y": 0
+        }
+      ],
+      "scripts": [
+        {
+          "h": 488,
+          "id": "$!",
+          "next": "$#",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 361.6018466949463,
+              "y": 552
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 313.6018466949463,
+          "x": 48,
+          "y": 64
+        }
+      ]
+    },
+    {
+      "id": "%21B,La1^s8E6a{v9:]K",
+      "isStage": false,
+      "name": "mouse pointer",
+      "blocks": [
+        {
+          "h": 224,
+          "id": "$!",
+          "next": "$#",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 360.5625,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 312.5625,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 320,
+          "id": "$*",
+          "next": "$+",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 345.55093002319336,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 360
+            }
+          },
+          "w": 297.55093002319336,
+          "x": 48,
+          "y": 360
+        },
+        {
+          "h": 176,
+          "id": "$#",
+          "next": "$%",
+          "opcode": "looks_hide",
+          "parent": "$!",
+          "rectangle": {
+            "bottomRight": {
+              "x": 360.5625,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 312.5625,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 272,
+          "id": "$+",
+          "next": "$,",
+          "opcode": "looks_show",
+          "parent": "$*",
+          "rectangle": {
+            "bottomRight": {
+              "x": 345.55093002319336,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 408
+            }
+          },
+          "w": 297.55093002319336,
+          "x": 48,
+          "y": 408
+        },
+        {
+          "h": 128,
+          "id": "$%",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "$#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 360.5625,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 160
+            }
+          },
+          "w": 312.5625,
+          "x": 48,
+          "y": 160
+        },
+        {
+          "h": 224,
+          "id": "$,",
+          "next": "$-",
+          "opcode": "motion_goto",
+          "parent": "$+",
+          "rectangle": {
+            "bottomRight": {
+              "x": 345.55093002319336,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 456
+            }
+          },
+          "w": 297.55093002319336,
+          "x": 48,
+          "y": 456
+        },
+        {
+          "h": 56,
+          "id": "$(",
+          "next": null,
+          "opcode": "control_create_clone_of",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 360.5625,
+              "y": 264
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 208
+            }
+          },
+          "w": 296.5625,
+          "x": 64,
+          "y": 208
+        },
+        {
+          "h": 32,
+          "id": "$.",
+          "next": null,
+          "opcode": "motion_goto_menu",
+          "parent": "$,",
+          "rectangle": {
+            "bottomRight": {
+              "x": 281.5416717529297,
+              "y": 496
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 464
+            }
+          },
+          "w": 185.5416717529297,
+          "x": 96,
+          "y": 464
+        },
+        {
+          "h": 176,
+          "id": "$-",
+          "next": "$/",
+          "opcode": "control_repeat",
+          "parent": "$,",
+          "rectangle": {
+            "bottomRight": {
+              "x": 279.53588104248047,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 504
+            }
+          },
+          "w": 231.53588104248047,
+          "x": 48,
+          "y": 504
+        },
+        {
+          "h": 32,
+          "id": "$)",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "$(",
+          "rectangle": {
+            "bottomRight": {
+              "x": 218,
+              "y": 248
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 216
+            }
+          },
+          "w": 106,
+          "x": 112,
+          "y": 216
+        },
+        {
+          "h": 32,
+          "id": "H!CNvAT|fZ2Vuza)[^Mz",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 136,
+              "y": 544
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 512
+            }
+          },
+          "w": 40,
+          "x": 96,
+          "y": 512
+        },
+        {
+          "h": 56,
+          "id": "$;",
+          "next": null,
+          "opcode": "looks_changesizeby",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 279.53588104248047,
+              "y": 608
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 552
+            }
+          },
+          "w": 215.53588104248047,
+          "x": 64,
+          "y": 552
+        },
+        {
+          "h": 48,
+          "id": "$/",
+          "next": null,
+          "opcode": "control_delete_this_clone",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 238.5601806640625,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 632
+            }
+          },
+          "w": 190.5601806640625,
+          "x": 48,
+          "y": 632
+        },
+        {
+          "h": 32,
+          "id": ",iX}9Q.G.[sGX^);{p*i",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$;",
+          "rectangle": {
+            "bottomRight": {
+              "x": 184.00463104248047,
+              "y": 592
+            },
+            "topLeft": {
+              "x": 144.00463104248047,
+              "y": 560
+            }
+          },
+          "w": 40,
+          "x": 144.00463104248047,
+          "y": 560
+        }
+      ],
+      "comments": [],
+      "scripts": [
+        {
+          "h": 224,
+          "id": "$!",
+          "next": "$#",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 360.5625,
+              "y": 288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 312.5625,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 320,
+          "id": "$*",
+          "next": "$+",
+          "opcode": "control_start_as_clone",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 345.55093002319336,
+              "y": 680
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 360
+            }
+          },
+          "w": 297.55093002319336,
+          "x": 48,
+          "y": 360
+        }
+      ]
+    },
+    {
+      "id": "Dibg!FH?9F)?UCR]|v.!",
+      "isStage": false,
+      "name": "platforms",
+      "blocks": [
+        {
+          "h": 344,
+          "id": "$!",
+          "next": "$%",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 580.1446762084961,
+              "y": 1104
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 760
+            }
+          },
+          "w": 532.1446762084961,
+          "x": 48,
+          "y": 760
+        },
+        {
+          "h": 112,
+          "id": "$]",
+          "next": "$^",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 494.41319465637207,
+              "y": 176
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 446.41319465637207,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 440,
+          "id": "$A",
+          "next": "$B",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 248
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 248
+        },
+        {
+          "h": 56,
+          "id": "$#",
+          "next": null,
+          "opcode": "procedures_prototype",
+          "parent": "$!",
+          "rectangle": {
+            "bottomRight": {
+              "x": 321.5509281158447,
+              "y": 816
+            },
+            "topLeft": {
+              "x": 96.01388931274414,
+              "y": 760
+            }
+          },
+          "w": 225.5370388031006,
+          "x": 96.01388931274414,
+          "y": 760
+        },
+        {
+          "h": 280,
+          "id": "$%",
+          "next": "$*",
+          "opcode": "motion_gotoxy",
+          "parent": "$!",
+          "rectangle": {
+            "bottomRight": {
+              "x": 580.1446762084961,
+              "y": 1104
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 824
+            }
+          },
+          "w": 532.1446762084961,
+          "x": 48,
+          "y": 824
+        },
+        {
+          "h": 64,
+          "id": "$^",
+          "next": null,
+          "opcode": "procedures_call",
+          "parent": "$]",
+          "rectangle": {
+            "bottomRight": {
+              "x": 494.41319465637207,
+              "y": 176
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 446.41319465637207,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 392,
+          "id": "$B",
+          "next": "$C",
+          "opcode": "data_setvariableto",
+          "parent": "$A",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 296
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 296
+        },
+        {
+          "h": 40,
+          "id": "$(",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 236.7962989807129,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 188.7962989807129,
+              "y": 764
+            }
+          },
+          "w": 48,
+          "x": 188.7962989807129,
+          "y": 764
+        },
+        {
+          "h": 40,
+          "id": "$)",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 313.5509281158447,
+              "y": 804
+            },
+            "topLeft": {
+              "x": 265.5509281158447,
+              "y": 764
+            }
+          },
+          "w": 48,
+          "x": 265.5509281158447,
+          "y": 764
+        },
+        {
+          "h": 40,
+          "id": "$+",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 168.59722137451172,
+              "y": 868
+            },
+            "topLeft": {
+              "x": 120.59722137451172,
+              "y": 828
+            }
+          },
+          "w": 48,
+          "x": 120.59722137451172,
+          "y": 828
+        },
+        {
+          "h": 40,
+          "id": "$,",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 304.9120330810547,
+              "y": 868
+            },
+            "topLeft": {
+              "x": 256.9120330810547,
+              "y": 828
+            }
+          },
+          "w": 48,
+          "x": 256.9120330810547,
+          "y": 828
+        },
+        {
+          "h": 232,
+          "id": "$*",
+          "next": null,
+          "opcode": "control_if_else",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 580.1446762084961,
+              "y": 1104
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 872
+            }
+          },
+          "w": 532.1446762084961,
+          "x": 48,
+          "y": 872
+        },
+        {
+          "h": 48,
+          "id": "$_",
+          "next": null,
+          "opcode": "operator_subtract",
+          "parent": "$^",
+          "rectangle": {
+            "bottomRight": {
+              "x": 299.359375,
+              "y": 164
+            },
+            "topLeft": {
+              "x": 140.78240966796875,
+              "y": 116
+            }
+          },
+          "w": 158.57696533203125,
+          "x": 140.78240966796875,
+          "y": 116
+        },
+        {
+          "h": 48,
+          "id": "$`",
+          "next": null,
+          "opcode": "operator_subtract",
+          "parent": "$^",
+          "rectangle": {
+            "bottomRight": {
+              "x": 486.41319465637207,
+              "y": 164
+            },
+            "topLeft": {
+              "x": 328.11400413513184,
+              "y": 116
+            }
+          },
+          "w": 158.29919052124023,
+          "x": 328.11400413513184,
+          "y": 116
+        },
+        {
+          "h": 32,
+          "id": "u:6uA^k?^aL_9lBY98%s",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$B",
+          "rectangle": {
+            "bottomRight": {
+              "x": 218.61111068725583,
+              "y": 336
+            },
+            "topLeft": {
+              "x": 178.61111068725586,
+              "y": 304
+            }
+          },
+          "w": 40,
+          "x": 178.61111068725586,
+          "y": 304
+        },
+        {
+          "h": 344,
+          "id": "$C",
+          "next": "$E",
+          "opcode": "data_setvariableto",
+          "parent": "$B",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 344
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 344
+        },
+        {
+          "h": 56,
+          "id": "$-",
+          "next": null,
+          "opcode": "operator_and",
+          "parent": "$*",
+          "rectangle": {
+            "bottomRight": {
+              "x": 532.1446762084961,
+              "y": 932
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 876
+            }
+          },
+          "w": 436.1446762084961,
+          "x": 96,
+          "y": 876
+        },
+        {
+          "h": 56,
+          "id": "$.",
+          "next": null,
+          "opcode": "looks_show",
+          "parent": "$*",
+          "rectangle": {
+            "bottomRight": {
+              "x": 144.00463104248047,
+              "y": 992
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 936
+            }
+          },
+          "w": 80.00463104248047,
+          "x": 64,
+          "y": 936
+        },
+        {
+          "h": 56,
+          "id": "$/",
+          "next": null,
+          "opcode": "looks_hide",
+          "parent": "$*",
+          "rectangle": {
+            "bottomRight": {
+              "x": 128,
+              "y": 1072
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 1016
+            }
+          },
+          "w": 64,
+          "x": 64,
+          "y": 1016
+        },
+        {
+          "h": 40,
+          "id": "T0wuF,YMv-kDQbb9BL.q",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$_",
+          "rectangle": {
+            "bottomRight": {
+              "x": 192.78240966796875,
+              "y": 160
+            },
+            "topLeft": {
+              "x": 144.78240966796875,
+              "y": 120
+            }
+          },
+          "w": 48,
+          "x": 144.78240966796875,
+          "y": 120
+        },
+        {
+          "h": 40,
+          "id": ".J#gp#wrqr5(goWXxUxC",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$_",
+          "rectangle": {
+            "bottomRight": {
+              "x": 295.359375,
+              "y": 160
+            },
+            "topLeft": {
+              "x": 215.01678466796875,
+              "y": 120
+            }
+          },
+          "w": 80.34259033203125,
+          "x": 215.01678466796875,
+          "y": 120
+        },
+        {
+          "h": 40,
+          "id": "26AZ3_A3b5/=s-y;yB/I",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$`",
+          "rectangle": {
+            "bottomRight": {
+              "x": 380.11400413513184,
+              "y": 160
+            },
+            "topLeft": {
+              "x": 332.11400413513184,
+              "y": 120
+            }
+          },
+          "w": 48,
+          "x": 332.11400413513184,
+          "y": 120
+        },
+        {
+          "h": 40,
+          "id": "9rE=@=Xf)8:mX_d=R}Io",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$`",
+          "rectangle": {
+            "bottomRight": {
+              "x": 482.41319465637207,
+              "y": 160
+            },
+            "topLeft": {
+              "x": 402.34837913513184,
+              "y": 120
+            }
+          },
+          "w": 80.06481552124023,
+          "x": 402.34837913513184,
+          "y": 120
+        },
+        {
+          "h": 32,
+          "id": "EEax0dF84C0_~[m37zdf",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$C",
+          "rectangle": {
+            "bottomRight": {
+              "x": 218.31018543243408,
+              "y": 384
+            },
+            "topLeft": {
+              "x": 178.31018543243408,
+              "y": 352
+            }
+          },
+          "w": 40,
+          "x": 178.31018543243408,
+          "y": 352
+        },
+        {
+          "h": 296,
+          "id": "$E",
+          "next": "$G",
+          "opcode": "looks_switchcostumeto",
+          "parent": "$C",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 392
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 392
+        },
+        {
+          "h": 48,
+          "id": "$:",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 290.2112274169922,
+              "y": 928
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 880
+            }
+          },
+          "w": 186.2112274169922,
+          "x": 104,
+          "y": 880
+        },
+        {
+          "h": 48,
+          "id": "$;",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 524.1446762084961,
+              "y": 928
+            },
+            "topLeft": {
+              "x": 338.2112274169922,
+              "y": 880
+            }
+          },
+          "w": 185.9334487915039,
+          "x": 338.2112274169922,
+          "y": 880
+        },
+        {
+          "h": 32,
+          "id": "$I",
+          "next": null,
+          "opcode": "looks_costume",
+          "parent": "$E",
+          "rectangle": {
+            "bottomRight": {
+              "x": 277.71296310424805,
+              "y": 432
+            },
+            "topLeft": {
+              "x": 175.20370483398438,
+              "y": 400
+            }
+          },
+          "w": 102.50925827026369,
+          "x": 175.20370483398438,
+          "y": 400
+        },
+        {
+          "h": 248,
+          "id": "$G",
+          "next": "$J",
+          "opcode": "control_create_clone_of",
+          "parent": "$E",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 440
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 440
+        },
+        {
+          "h": 40,
+          "id": "$=",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$:",
+          "rectangle": {
+            "bottomRight": {
+              "x": 176,
+              "y": 924
+            },
+            "topLeft": {
+              "x": 128,
+              "y": 884
+            }
+          },
+          "w": 48,
+          "x": 128,
+          "y": 884
+        },
+        {
+          "h": 40,
+          "id": "$?",
+          "next": null,
+          "opcode": "motion_xposition",
+          "parent": "$:",
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.2112274169922,
+              "y": 924
+            },
+            "topLeft": {
+              "x": 201.609375,
+              "y": 884
+            }
+          },
+          "w": 64.60185241699219,
+          "x": 201.609375,
+          "y": 884
+        },
+        {
+          "h": 40,
+          "id": "$@",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$;",
+          "rectangle": {
+            "bottomRight": {
+              "x": 410.2112274169922,
+              "y": 924
+            },
+            "topLeft": {
+              "x": 362.2112274169922,
+              "y": 884
+            }
+          },
+          "w": 48,
+          "x": 362.2112274169922,
+          "y": 884
+        },
+        {
+          "h": 40,
+          "id": "$[",
+          "next": null,
+          "opcode": "motion_yposition",
+          "parent": "$;",
+          "rectangle": {
+            "bottomRight": {
+              "x": 500.1446762084961,
+              "y": 924
+            },
+            "topLeft": {
+              "x": 435.8206024169922,
+              "y": 884
+            }
+          },
+          "w": 64.3240737915039,
+          "x": 435.8206024169922,
+          "y": 884
+        },
+        {
+          "h": 32,
+          "id": "$K",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "$G",
+          "rectangle": {
+            "bottomRight": {
+              "x": 202,
+              "y": 480
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 448
+            }
+          },
+          "w": 106,
+          "x": 96,
+          "y": 448
+        },
+        {
+          "h": 200,
+          "id": "$J",
+          "next": "$L",
+          "opcode": "data_setvariableto",
+          "parent": "$G",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 488
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 488
+        },
+        {
+          "h": 32,
+          "id": "x4E}3iDd9*g(SL(2vbxw",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$J",
+          "rectangle": {
+            "bottomRight": {
+              "x": 227.30092430114743,
+              "y": 528
+            },
+            "topLeft": {
+              "x": 178.61111068725586,
+              "y": 496
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 178.61111068725586,
+          "y": 496
+        },
+        {
+          "h": 152,
+          "id": "$L",
+          "next": "$N",
+          "opcode": "control_create_clone_of",
+          "parent": "$J",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 536
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 536
+        },
+        {
+          "h": 32,
+          "id": "$O",
+          "next": null,
+          "opcode": "control_create_clone_of_menu",
+          "parent": "$L",
+          "rectangle": {
+            "bottomRight": {
+              "x": 202,
+              "y": 576
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 544
+            }
+          },
+          "w": 106,
+          "x": 96,
+          "y": 544
+        },
+        {
+          "h": 104,
+          "id": "$N",
+          "next": "$P",
+          "opcode": "data_setvariableto",
+          "parent": "$L",
+          "rectangle": {
+            "bottomRight": {
+              "x": 341.71296310424805,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 584
+            }
+          },
+          "w": 293.71296310424805,
+          "x": 48,
+          "y": 584
+        },
+        {
+          "h": 32,
+          "id": "J[Y`V5eXtJe{H-SD@jqg",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$N",
+          "rectangle": {
+            "bottomRight": {
+              "x": 227.30092430114743,
+              "y": 624
+            },
+            "topLeft": {
+              "x": 178.61111068725586,
+              "y": 592
+            }
+          },
+          "w": 48.6898136138916,
+          "x": 178.61111068725586,
+          "y": 592
+        },
+        {
+          "h": 56,
+          "id": "$P",
+          "next": null,
+          "opcode": "looks_switchcostumeto",
+          "parent": "$N",
+          "rectangle": {
+            "bottomRight": {
+              "x": 341.71296310424805,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 632
+            }
+          },
+          "w": 293.71296310424805,
+          "x": 48,
+          "y": 632
+        },
+        {
+          "h": 32,
+          "id": "$S",
+          "next": null,
+          "opcode": "looks_costume",
+          "parent": "$P",
+          "rectangle": {
+            "bottomRight": {
+              "x": 277.71296310424805,
+              "y": 672
+            },
+            "topLeft": {
+              "x": 175.20370483398438,
+              "y": 640
+            }
+          },
+          "w": 102.50925827026369,
+          "x": 175.20370483398438,
+          "y": 640
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored8",
+          "minimized": false,
+          "width": 200,
+          "x": -210,
+          "y": 620
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored9",
+          "minimized": false,
+          "width": 200,
+          "x": 594,
+          "y": 512
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored10",
+          "minimized": false,
+          "width": 200,
+          "x": 339,
+          "y": 279
+        }
+      ],
+      "scripts": [
+        {
+          "h": 344,
+          "id": "$!",
+          "next": "$%",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 580.1446762084961,
+              "y": 1104
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 760
+            }
+          },
+          "w": 532.1446762084961,
+          "x": 48,
+          "y": 760
+        },
+        {
+          "h": 112,
+          "id": "$]",
+          "next": "$^",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 494.41319465637207,
+              "y": 176
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 446.41319465637207,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 440,
+          "id": "$A",
+          "next": "$B",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.5625,
+              "y": 688
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 248
+            }
+          },
+          "w": 296.5625,
+          "x": 48,
+          "y": 248
+        }
+      ]
+    },
+    {
+      "id": "DAa3rxqOSk@gg:5WCXO!",
+      "isStage": false,
+      "name": "player",
+      "blocks": [
+        {
+          "h": 992,
+          "id": "$!",
+          "next": "$%",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 442,
+              "y": 2288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 1296
+            }
+          },
+          "w": 394,
+          "x": 48,
+          "y": 1296
+        },
+        {
+          "h": 128,
+          "id": "$W",
+          "next": "$Y",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 589.7881889343262,
+              "y": 2488
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2360
+            }
+          },
+          "w": 541.7881889343262,
+          "x": 48,
+          "y": 2360
+        },
+        {
+          "h": 712,
+          "id": "$f",
+          "next": "$h",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 532.2592620849609,
+              "y": 3272
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2560
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 48,
+          "y": 2560
+        },
+        {
+          "h": 456,
+          "id": "$,#",
+          "next": "$.#",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 335.96759033203125,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3344
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 48,
+          "y": 3344
+        },
+        {
+          "h": 960,
+          "id": "$~#",
+          "next": "$B#",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4832
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3872
+            }
+          },
+          "w": 500.25926208496094,
+          "x": 48,
+          "y": 3872
+        },
+        {
+          "h": 152,
+          "id": "$m#",
+          "next": "$n#",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 326.01273345947266,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 278.01273345947266,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 592,
+          "id": "$r#",
+          "next": "$s#",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1224
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 632
+            }
+          },
+          "w": 322.34259033203125,
+          "x": 48,
+          "y": 632
+        },
+        {
+          "h": 272,
+          "id": "$/%",
+          "next": "$:%",
+          "opcode": "event_whenkeypressed",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.83796310424805,
+              "y": 560
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 288
+            }
+          },
+          "w": 296.83796310424805,
+          "x": 48,
+          "y": 288
+        },
+        {
+          "h": 56,
+          "id": "$#",
+          "next": null,
+          "opcode": "procedures_prototype",
+          "parent": "$!",
+          "rectangle": {
+            "bottomRight": {
+              "x": 160.01388931274414,
+              "y": 1352
+            },
+            "topLeft": {
+              "x": 96.01388931274414,
+              "y": 1296
+            }
+          },
+          "w": 64,
+          "x": 96.01388931274414,
+          "y": 1296
+        },
+        {
+          "h": 928,
+          "id": "$%",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "$!",
+          "rectangle": {
+            "bottomRight": {
+              "x": 442,
+              "y": 2288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 1360
+            }
+          },
+          "w": 394,
+          "x": 48,
+          "y": 1360
+        },
+        {
+          "h": 56,
+          "id": "$X",
+          "next": null,
+          "opcode": "procedures_prototype",
+          "parent": "$W",
+          "rectangle": {
+            "bottomRight": {
+              "x": 171.29629516601562,
+              "y": 2416
+            },
+            "topLeft": {
+              "x": 96.01388931274414,
+              "y": 2360
+            }
+          },
+          "w": 75.28240585327148,
+          "x": 96.01388931274414,
+          "y": 2360
+        },
+        {
+          "h": 64,
+          "id": "$Y",
+          "next": null,
+          "opcode": "motion_gotoxy",
+          "parent": "$W",
+          "rectangle": {
+            "bottomRight": {
+              "x": 589.7881889343262,
+              "y": 2488
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2424
+            }
+          },
+          "w": 541.7881889343262,
+          "x": 48,
+          "y": 2424
+        },
+        {
+          "h": 56,
+          "id": "$g",
+          "next": null,
+          "opcode": "procedures_prototype",
+          "parent": "$f",
+          "rectangle": {
+            "bottomRight": {
+              "x": 343.82406997680664,
+              "y": 2616
+            },
+            "topLeft": {
+              "x": 96.01388931274414,
+              "y": 2560
+            }
+          },
+          "w": 247.8101806640625,
+          "x": 96.01388931274414,
+          "y": 2560
+        },
+        {
+          "h": 648,
+          "id": "$h",
+          "next": "$j",
+          "opcode": "data_changevariableby",
+          "parent": "$f",
+          "rectangle": {
+            "bottomRight": {
+              "x": 532.2592620849609,
+              "y": 3272
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2624
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 48,
+          "y": 2624
+        },
+        {
+          "h": 56,
+          "id": "$-#",
+          "next": null,
+          "opcode": "procedures_prototype",
+          "parent": "$,#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 179.90740585327148,
+              "y": 3400
+            },
+            "topLeft": {
+              "x": 96.01388931274414,
+              "y": 3344
+            }
+          },
+          "w": 83.89351654052734,
+          "x": 96.01388931274414,
+          "y": 3344
+        },
+        {
+          "h": 392,
+          "id": "$.#",
+          "next": "$/#",
+          "opcode": "data_setvariableto",
+          "parent": "$,#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 335.96759033203125,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3408
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 48,
+          "y": 3408
+        },
+        {
+          "h": 56,
+          "id": "$A#",
+          "next": null,
+          "opcode": "procedures_prototype",
+          "parent": "$~#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.402774810791,
+              "y": 3928
+            },
+            "topLeft": {
+              "x": 96.01388931274414,
+              "y": 3872
+            }
+          },
+          "w": 248.38888549804688,
+          "x": 96.01388931274414,
+          "y": 3872
+        },
+        {
+          "h": 896,
+          "id": "$B#",
+          "next": "$D#",
+          "opcode": "data_changevariableby",
+          "parent": "$~#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4832
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3936
+            }
+          },
+          "w": 500.25926208496094,
+          "x": 48,
+          "y": 3936
+        },
+        {
+          "h": 104,
+          "id": "$n#",
+          "next": "$o#",
+          "opcode": "event_broadcastandwait",
+          "parent": "$m#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 326.01273345947266,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 112
+            }
+          },
+          "w": 278.01273345947266,
+          "x": 48,
+          "y": 112
+        },
+        {
+          "h": 544,
+          "id": "$s#",
+          "next": "$t#",
+          "opcode": "data_setvariableto",
+          "parent": "$r#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1224
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 680
+            }
+          },
+          "w": 322.34259033203125,
+          "x": 48,
+          "y": 680
+        },
+        {
+          "h": 224,
+          "id": "$:%",
+          "next": null,
+          "opcode": "control_if_else",
+          "parent": "$/%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.83796310424805,
+              "y": 560
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 336
+            }
+          },
+          "w": 296.83796310424805,
+          "x": 48,
+          "y": 336
+        },
+        {
+          "h": 48,
+          "id": "$(",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 284.44733810424805,
+              "y": 1412
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 1364
+            }
+          },
+          "w": 188.44733810424805,
+          "x": 96,
+          "y": 1364
+        },
+        {
+          "h": 840,
+          "id": "$)",
+          "next": "$-",
+          "opcode": "control_if",
+          "parent": "$%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 442,
+              "y": 2256
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 1416
+            }
+          },
+          "w": 378,
+          "x": 64,
+          "y": 1416
+        },
+        {
+          "h": 48,
+          "id": "$Z",
+          "next": null,
+          "opcode": "operator_subtract",
+          "parent": "$Y",
+          "rectangle": {
+            "bottomRight": {
+              "x": 279.17418670654297,
+              "y": 2476
+            },
+            "topLeft": {
+              "x": 120.59722137451172,
+              "y": 2428
+            }
+          },
+          "w": 158.57696533203125,
+          "x": 120.59722137451172,
+          "y": 2428
+        },
+        {
+          "h": 48,
+          "id": "$a",
+          "next": null,
+          "opcode": "operator_subtract",
+          "parent": "$Y",
+          "rectangle": {
+            "bottomRight": {
+              "x": 525.7881889343262,
+              "y": 2476
+            },
+            "topLeft": {
+              "x": 367.48899841308594,
+              "y": 2428
+            }
+          },
+          "w": 158.29919052124023,
+          "x": 367.48899841308594,
+          "y": 2428
+        },
+        {
+          "h": 40,
+          "id": "$i",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$g",
+          "rectangle": {
+            "bottomRight": {
+              "x": 335.82406997680664,
+              "y": 2604
+            },
+            "topLeft": {
+              "x": 287.82406997680664,
+              "y": 2564
+            }
+          },
+          "w": 48,
+          "x": 287.82406997680664,
+          "y": 2564
+        },
+        {
+          "h": 40,
+          "id": "$k",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$h",
+          "rectangle": {
+            "bottomRight": {
+              "x": 226.31018543243408,
+              "y": 2668
+            },
+            "topLeft": {
+              "x": 178.31018543243408,
+              "y": 2628
+            }
+          },
+          "w": 48,
+          "x": 178.31018543243408,
+          "y": 2628
+        },
+        {
+          "h": 600,
+          "id": "$j",
+          "next": "$l",
+          "opcode": "data_changevariableby",
+          "parent": "$h",
+          "rectangle": {
+            "bottomRight": {
+              "x": 532.2592620849609,
+              "y": 3272
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2672
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 48,
+          "y": 2672
+        },
+        {
+          "h": 32,
+          "id": "~Dd-w8=R04=VUYt2mNAV",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$.#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 218.61111068725583,
+              "y": 3448
+            },
+            "topLeft": {
+              "x": 178.61111068725586,
+              "y": 3416
+            }
+          },
+          "w": 40,
+          "x": 178.61111068725586,
+          "y": 3416
+        },
+        {
+          "h": 344,
+          "id": "$/#",
+          "next": "$;#",
+          "opcode": "data_setvariableto",
+          "parent": "$.#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 335.96759033203125,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3456
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 48,
+          "y": 3456
+        },
+        {
+          "h": 40,
+          "id": "$C#",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$A#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 336.402774810791,
+              "y": 3916
+            },
+            "topLeft": {
+              "x": 288.402774810791,
+              "y": 3876
+            }
+          },
+          "w": 48,
+          "x": 288.402774810791,
+          "y": 3876
+        },
+        {
+          "h": 40,
+          "id": "$E#",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$B#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 226.61111068725583,
+              "y": 3980
+            },
+            "topLeft": {
+              "x": 178.61111068725586,
+              "y": 3940
+            }
+          },
+          "w": 48,
+          "x": 178.61111068725586,
+          "y": 3940
+        },
+        {
+          "h": 848,
+          "id": "$D#",
+          "next": "$F#",
+          "opcode": "procedures_call",
+          "parent": "$B#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4832
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3984
+            }
+          },
+          "w": 500.25926208496094,
+          "x": 48,
+          "y": 3984
+        },
+        {
+          "h": 32,
+          "id": "07Nlg/n%xL6-N{-;X3Us",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "$n#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 211.54166412353516,
+              "y": 152
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 120
+            }
+          },
+          "w": 115.54166412353516,
+          "x": 96,
+          "y": 120
+        },
+        {
+          "h": 56,
+          "id": "$o#",
+          "next": null,
+          "opcode": "event_broadcastandwait",
+          "parent": "$n#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 326.01273345947266,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 160
+            }
+          },
+          "w": 278.01273345947266,
+          "x": 48,
+          "y": 160
+        },
+        {
+          "h": 32,
+          "id": "7YM~~=x06D{2EUe:2Lvs",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$s#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 243.81944274902344,
+              "y": 720
+            },
+            "topLeft": {
+              "x": 203.81944274902344,
+              "y": 688
+            }
+          },
+          "w": 40,
+          "x": 203.81944274902344,
+          "y": 688
+        },
+        {
+          "h": 496,
+          "id": "$t#",
+          "next": null,
+          "opcode": "control_forever",
+          "parent": "$s#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1224
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 728
+            }
+          },
+          "w": 322.34259033203125,
+          "x": 48,
+          "y": 728
+        },
+        {
+          "h": 48,
+          "id": "$;%",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "$:%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 284.44733810424805,
+              "y": 388
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 340
+            }
+          },
+          "w": 188.44733810424805,
+          "x": 96,
+          "y": 340
+        },
+        {
+          "h": 56,
+          "id": "$=%",
+          "next": null,
+          "opcode": "data_setvariableto",
+          "parent": "$:%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.83796310424805,
+              "y": 448
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 392
+            }
+          },
+          "w": 280.83796310424805,
+          "x": 64,
+          "y": 392
+        },
+        {
+          "h": 56,
+          "id": "$?%",
+          "next": null,
+          "opcode": "data_setvariableto",
+          "parent": "$:%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.83796310424805,
+              "y": 528
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 472
+            }
+          },
+          "w": 280.83796310424805,
+          "x": 64,
+          "y": 472
+        },
+        {
+          "h": 40,
+          "id": ";OXI:Z:ICI@Je9;gBD!/",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$(",
+          "rectangle": {
+            "bottomRight": {
+              "x": 198.83796310424805,
+              "y": 1408
+            },
+            "topLeft": {
+              "x": 120,
+              "y": 1368
+            }
+          },
+          "w": 78.83796310424805,
+          "x": 120,
+          "y": 1368
+        },
+        {
+          "h": 32,
+          "id": "0*Ck@6uYk3o~#mqj8Fvy",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$(",
+          "rectangle": {
+            "bottomRight": {
+              "x": 264.44733810424805,
+              "y": 1404
+            },
+            "topLeft": {
+              "x": 224.44733810424805,
+              "y": 1372
+            }
+          },
+          "w": 40,
+          "x": 224.44733810424805,
+          "y": 1372
+        },
+        {
+          "h": 40,
+          "id": "$.",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "$)",
+          "rectangle": {
+            "bottomRight": {
+              "x": 394,
+              "y": 1460
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 1420
+            }
+          },
+          "w": 282,
+          "x": 112,
+          "y": 1420
+        },
+        {
+          "h": 56,
+          "id": "$/",
+          "next": null,
+          "opcode": "procedures_call",
+          "parent": "$)",
+          "rectangle": {
+            "bottomRight": {
+              "x": 320.3888854980469,
+              "y": 1520
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 1464
+            }
+          },
+          "w": 240.38888549804688,
+          "x": 80,
+          "y": 1464
+        },
+        {
+          "h": 712,
+          "id": "$-",
+          "next": "$@",
+          "opcode": "control_if",
+          "parent": "$)",
+          "rectangle": {
+            "bottomRight": {
+              "x": 442,
+              "y": 2256
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 1544
+            }
+          },
+          "w": 378,
+          "x": 64,
+          "y": 1544
+        },
+        {
+          "h": 40,
+          "id": "w*.!R);E1I%2@[k|DvPw",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$Z",
+          "rectangle": {
+            "bottomRight": {
+              "x": 172.59722137451172,
+              "y": 2472
+            },
+            "topLeft": {
+              "x": 124.59722137451172,
+              "y": 2432
+            }
+          },
+          "w": 48,
+          "x": 124.59722137451172,
+          "y": 2432
+        },
+        {
+          "h": 40,
+          "id": "`CiwI%d6~7B3aAdBzGhO",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$Z",
+          "rectangle": {
+            "bottomRight": {
+              "x": 275.17418670654297,
+              "y": 2472
+            },
+            "topLeft": {
+              "x": 194.83159637451172,
+              "y": 2432
+            }
+          },
+          "w": 80.34259033203125,
+          "x": 194.83159637451172,
+          "y": 2432
+        },
+        {
+          "h": 40,
+          "id": "eU#.2,d(*Q.m)Q.F|{(c",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$a",
+          "rectangle": {
+            "bottomRight": {
+              "x": 419.48899841308594,
+              "y": 2472
+            },
+            "topLeft": {
+              "x": 371.48899841308594,
+              "y": 2432
+            }
+          },
+          "w": 48,
+          "x": 371.48899841308594,
+          "y": 2432
+        },
+        {
+          "h": 40,
+          "id": "YUfSaBLewHT-Awoaaj%q",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$a",
+          "rectangle": {
+            "bottomRight": {
+              "x": 521.7881889343262,
+              "y": 2472
+            },
+            "topLeft": {
+              "x": 441.72337341308594,
+              "y": 2432
+            }
+          },
+          "w": 80.06481552124023,
+          "x": 441.72337341308594,
+          "y": 2432
+        },
+        {
+          "h": 32,
+          "id": "QF)_S4Mh`BW3T#7Yai,x",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$j",
+          "rectangle": {
+            "bottomRight": {
+              "x": 249.44444274902344,
+              "y": 2712
+            },
+            "topLeft": {
+              "x": 209.44444274902344,
+              "y": 2680
+            }
+          },
+          "w": 40,
+          "x": 209.44444274902344,
+          "y": 2680
+        },
+        {
+          "h": 552,
+          "id": "$l",
+          "next": "$n",
+          "opcode": "procedures_call",
+          "parent": "$j",
+          "rectangle": {
+            "bottomRight": {
+              "x": 532.2592620849609,
+              "y": 3272
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2720
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 48,
+          "y": 2720
+        },
+        {
+          "h": 32,
+          "id": "(0-?u/f|IccCCE-W,m^W",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$/#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 218.31018543243408,
+              "y": 3496
+            },
+            "topLeft": {
+              "x": 178.31018543243408,
+              "y": 3464
+            }
+          },
+          "w": 40,
+          "x": 178.31018543243408,
+          "y": 3464
+        },
+        {
+          "h": 296,
+          "id": "$;#",
+          "next": "$?#",
+          "opcode": "data_setvariableto",
+          "parent": "$/#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 335.96759033203125,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3504
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 48,
+          "y": 3504
+        },
+        {
+          "h": 800,
+          "id": "$F#",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "$D#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4832
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 4032
+            }
+          },
+          "w": 500.25926208496094,
+          "x": 48,
+          "y": 4032
+        },
+        {
+          "h": 32,
+          "id": "AvapG.bALTtoSBpm~bBN",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "$o#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 214.48148345947263,
+              "y": 200
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 168
+            }
+          },
+          "w": 118.48148345947266,
+          "x": 96,
+          "y": 168
+        },
+        {
+          "h": 424,
+          "id": "$v#",
+          "next": "$w#",
+          "opcode": "event_broadcastandwait",
+          "parent": "$t#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1200
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 776
+            }
+          },
+          "w": 306.34259033203125,
+          "x": 64,
+          "y": 776
+        },
+        {
+          "h": 40,
+          "id": "bv(vpQJ_i]xS5ACJR;Z#",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$;%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 198.83796310424805,
+              "y": 384
+            },
+            "topLeft": {
+              "x": 120,
+              "y": 344
+            }
+          },
+          "w": 78.83796310424805,
+          "x": 120,
+          "y": 344
+        },
+        {
+          "h": 32,
+          "id": "MN|X.S89;D@W~IY7:-E]",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$;%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 264.44733810424805,
+              "y": 380
+            },
+            "topLeft": {
+              "x": 224.44733810424805,
+              "y": 348
+            }
+          },
+          "w": 40,
+          "x": 224.44733810424805,
+          "y": 348
+        },
+        {
+          "h": 32,
+          "id": "sTFZ`V;udlQlY|1Cy7q4",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$=%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 280.83796310424805,
+              "y": 432
+            },
+            "topLeft": {
+              "x": 240.83796310424805,
+              "y": 400
+            }
+          },
+          "w": 40,
+          "x": 240.83796310424805,
+          "y": 400
+        },
+        {
+          "h": 32,
+          "id": "lTqW:nX8Wk8f0/,JmL`Y",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$?%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 280.83796310424805,
+              "y": 512
+            },
+            "topLeft": {
+              "x": 240.83796310424805,
+              "y": 480
+            }
+          },
+          "w": 40,
+          "x": 240.83796310424805,
+          "y": 480
+        },
+        {
+          "h": 32,
+          "id": "$=",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "$.",
+          "rectangle": {
+            "bottomRight": {
+              "x": 254,
+              "y": 1456
+            },
+            "topLeft": {
+              "x": 132,
+              "y": 1424
+            }
+          },
+          "w": 122,
+          "x": 132,
+          "y": 1424
+        },
+        {
+          "h": 32,
+          "id": "km6MYBwI|?Nf=[0E9,ZN",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$/",
+          "rectangle": {
+            "bottomRight": {
+              "x": 312.3888854980469,
+              "y": 1504
+            },
+            "topLeft": {
+              "x": 272.3888854980469,
+              "y": 1472
+            }
+          },
+          "w": 40,
+          "x": 272.3888854980469,
+          "y": 1472
+        },
+        {
+          "h": 40,
+          "id": "$[",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 394,
+              "y": 1588
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 1548
+            }
+          },
+          "w": 282,
+          "x": 112,
+          "y": 1548
+        },
+        {
+          "h": 56,
+          "id": "$]",
+          "next": null,
+          "opcode": "procedures_call",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 326.4201354980469,
+              "y": 1648
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 1592
+            }
+          },
+          "w": 246.42013549804688,
+          "x": 80,
+          "y": 1592
+        },
+        {
+          "h": 584,
+          "id": "$@",
+          "next": "$|",
+          "opcode": "control_if_else",
+          "parent": "$-",
+          "rectangle": {
+            "bottomRight": {
+              "x": 442,
+              "y": 2256
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 1672
+            }
+          },
+          "w": 378,
+          "x": 64,
+          "y": 1672
+        },
+        {
+          "h": 504,
+          "id": "$n",
+          "next": null,
+          "opcode": "control_repeat_until",
+          "parent": "$l",
+          "rectangle": {
+            "bottomRight": {
+              "x": 532.2592620849609,
+              "y": 3272
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2768
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 48,
+          "y": 2768
+        },
+        {
+          "h": 32,
+          "id": "/!}ji*~1H[SzFyV7Y=Do",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$;#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 271.96759033203125,
+              "y": 3544
+            },
+            "topLeft": {
+              "x": 231.96759033203125,
+              "y": 3512
+            }
+          },
+          "w": 40,
+          "x": 231.96759033203125,
+          "y": 3512
+        },
+        {
+          "h": 248,
+          "id": "$?#",
+          "next": "$[#",
+          "opcode": "data_setvariableto",
+          "parent": "$;#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.6805534362793,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3552
+            }
+          },
+          "w": 284.6805534362793,
+          "x": 48,
+          "y": 3552
+        },
+        {
+          "h": 40,
+          "id": "$G#",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "$F#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 320.25926208496094,
+              "y": 4076
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 4036
+            }
+          },
+          "w": 224.25926208496097,
+          "x": 96,
+          "y": 4036
+        },
+        {
+          "h": 720,
+          "id": "$H#",
+          "next": "$L#",
+          "opcode": "control_repeat",
+          "parent": "$F#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4800
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 4080
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 64,
+          "y": 4080
+        },
+        {
+          "h": 32,
+          "id": "25c0H=/n+Axj)c@]W(#n",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "$v#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 196.7083320617676,
+              "y": 816
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 784
+            }
+          },
+          "w": 84.70833206176758,
+          "x": 112,
+          "y": 784
+        },
+        {
+          "h": 376,
+          "id": "$w#",
+          "next": "$y#",
+          "opcode": "event_broadcastandwait",
+          "parent": "$v#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1200
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 824
+            }
+          },
+          "w": 306.34259033203125,
+          "x": 64,
+          "y": 824
+        },
+        {
+          "h": 32,
+          "id": "$`",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "$[",
+          "rectangle": {
+            "bottomRight": {
+              "x": 254,
+              "y": 1584
+            },
+            "topLeft": {
+              "x": 132,
+              "y": 1552
+            }
+          },
+          "w": 122,
+          "x": 132,
+          "y": 1552
+        },
+        {
+          "h": 32,
+          "id": ":02=iq@qBzR3qqb)BLf3",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$]",
+          "rectangle": {
+            "bottomRight": {
+              "x": 318.4201354980469,
+              "y": 1632
+            },
+            "topLeft": {
+              "x": 272.3888854980469,
+              "y": 1600
+            }
+          },
+          "w": 46.03125,
+          "x": 272.3888854980469,
+          "y": 1600
+        },
+        {
+          "h": 40,
+          "id": "$}",
+          "next": null,
+          "opcode": "sensing_keypressed",
+          "parent": "$@",
+          "rectangle": {
+            "bottomRight": {
+              "x": 394,
+              "y": 1716
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 1676
+            }
+          },
+          "w": 282,
+          "x": 112,
+          "y": 1676
+        },
+        {
+          "h": 328,
+          "id": "$~",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "$@",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414.5775451660156,
+              "y": 2048
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 1720
+            }
+          },
+          "w": 334.5775451660156,
+          "x": 80,
+          "y": 1720
+        },
+        {
+          "h": 56,
+          "id": "$A",
+          "next": null,
+          "opcode": "data_setvariableto",
+          "parent": "$@",
+          "rectangle": {
+            "bottomRight": {
+              "x": 364.6805534362793,
+              "y": 2128
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 2072
+            }
+          },
+          "w": 284.6805534362793,
+          "x": 80,
+          "y": 2072
+        },
+        {
+          "h": 104,
+          "id": "$|",
+          "next": "$T",
+          "opcode": "data_changevariableby",
+          "parent": "$@",
+          "rectangle": {
+            "bottomRight": {
+              "x": 383.4988403320313,
+              "y": 2256
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 2152
+            }
+          },
+          "w": 319.49884033203125,
+          "x": 64,
+          "y": 2152
+        },
+        {
+          "h": 48,
+          "id": "$o",
+          "next": null,
+          "opcode": "operator_not",
+          "parent": "$n",
+          "rectangle": {
+            "bottomRight": {
+              "x": 420.25926208496094,
+              "y": 2820
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 2772
+            }
+          },
+          "w": 324.25926208496094,
+          "x": 96,
+          "y": 2772
+        },
+        {
+          "h": 416,
+          "id": "$p",
+          "next": "$t",
+          "opcode": "control_if_else",
+          "parent": "$n",
+          "rectangle": {
+            "bottomRight": {
+              "x": 351.96759033203125,
+              "y": 3240
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 2824
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 64,
+          "y": 2824
+        },
+        {
+          "h": 32,
+          "id": "(5pjqdh.~zmxL~(75xF{",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$?#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 249.44444274902344,
+              "y": 3592
+            },
+            "topLeft": {
+              "x": 209.44444274902344,
+              "y": 3560
+            }
+          },
+          "w": 40,
+          "x": 209.44444274902344,
+          "y": 3560
+        },
+        {
+          "h": 200,
+          "id": "$[#",
+          "next": "$^#",
+          "opcode": "data_setvariableto",
+          "parent": "$?#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.6805534362793,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3600
+            }
+          },
+          "w": 284.6805534362793,
+          "x": 48,
+          "y": 3600
+        },
+        {
+          "h": 32,
+          "id": "$K#",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "$G#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 228.25463104248047,
+              "y": 4072
+            },
+            "topLeft": {
+              "x": 116,
+              "y": 4040
+            }
+          },
+          "w": 112.25463104248048,
+          "x": 116,
+          "y": 4040
+        },
+        {
+          "h": 32,
+          "id": "];{ju+c]kpNjK6+AXBJS",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$H#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 152,
+              "y": 4120
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 4088
+            }
+          },
+          "w": 40,
+          "x": 112,
+          "y": 4088
+        },
+        {
+          "h": 240,
+          "id": "$N#",
+          "next": "$O#",
+          "opcode": "data_changevariableby",
+          "parent": "$H#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 500.25926208496094,
+              "y": 4368
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 4128
+            }
+          },
+          "w": 420.25926208496094,
+          "x": 80,
+          "y": 4128
+        },
+        {
+          "h": 408,
+          "id": "$L#",
+          "next": "$X#",
+          "opcode": "data_changevariableby",
+          "parent": "$H#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4800
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 4392
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 64,
+          "y": 4392
+        },
+        {
+          "h": 32,
+          "id": "}_sZP0D6Aar(gb3=hc*Z",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "$w#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 197.56481552124023,
+              "y": 864
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 832
+            }
+          },
+          "w": 85.56481552124023,
+          "x": 112,
+          "y": 832
+        },
+        {
+          "h": 328,
+          "id": "$y#",
+          "next": "$!%",
+          "opcode": "procedures_call",
+          "parent": "$w#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1200
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 872
+            }
+          },
+          "w": 306.34259033203125,
+          "x": 64,
+          "y": 872
+        },
+        {
+          "h": 32,
+          "id": "$C",
+          "next": null,
+          "opcode": "sensing_keyoptions",
+          "parent": "$}",
+          "rectangle": {
+            "bottomRight": {
+              "x": 254,
+              "y": 1712
+            },
+            "topLeft": {
+              "x": 132,
+              "y": 1680
+            }
+          },
+          "w": 122,
+          "x": 132,
+          "y": 1680
+        },
+        {
+          "h": 48,
+          "id": "$D",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "$~",
+          "rectangle": {
+            "bottomRight": {
+              "x": 320.2899284362793,
+              "y": 1772
+            },
+            "topLeft": {
+              "x": 128,
+              "y": 1724
+            }
+          },
+          "w": 192.2899284362793,
+          "x": 128,
+          "y": 1724
+        },
+        {
+          "h": 240,
+          "id": "$E",
+          "next": "$I",
+          "opcode": "control_if",
+          "parent": "$~",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414.5775451660156,
+              "y": 2016
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 1776
+            }
+          },
+          "w": 318.5775451660156,
+          "x": 96,
+          "y": 1776
+        },
+        {
+          "h": 32,
+          "id": "{aUhTH`#E#emfR[=~p0B",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$A",
+          "rectangle": {
+            "bottomRight": {
+              "x": 300.6805534362793,
+              "y": 2112
+            },
+            "topLeft": {
+              "x": 260.6805534362793,
+              "y": 2080
+            }
+          },
+          "w": 40,
+          "x": 260.6805534362793,
+          "y": 2080
+        },
+        {
+          "h": 32,
+          "id": "B=@(_+!RI0Rx}BvI0X7v",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$|",
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.96759033203125,
+              "y": 2192
+            },
+            "topLeft": {
+              "x": 247.96759033203125,
+              "y": 2160
+            }
+          },
+          "w": 40,
+          "x": 247.96759033203125,
+          "y": 2160
+        },
+        {
+          "h": 56,
+          "id": "$T",
+          "next": null,
+          "opcode": "procedures_call",
+          "parent": "$|",
+          "rectangle": {
+            "bottomRight": {
+              "x": 349.77777099609375,
+              "y": 2256
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 2200
+            }
+          },
+          "w": 285.77777099609375,
+          "x": 64,
+          "y": 2200
+        },
+        {
+          "h": 40,
+          "id": "$q",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "$o",
+          "rectangle": {
+            "bottomRight": {
+              "x": 328.25926208496094,
+              "y": 2816
+            },
+            "topLeft": {
+              "x": 104,
+              "y": 2776
+            }
+          },
+          "w": 224.25926208496097,
+          "x": 104,
+          "y": 2776
+        },
+        {
+          "h": 48,
+          "id": "$u",
+          "next": null,
+          "opcode": "operator_gt",
+          "parent": "$p",
+          "rectangle": {
+            "bottomRight": {
+              "x": 269.609375,
+              "y": 2876
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 2828
+            }
+          },
+          "w": 157.609375,
+          "x": 112,
+          "y": 2828
+        },
+        {
+          "h": 56,
+          "id": "$v",
+          "next": null,
+          "opcode": "data_changevariableby",
+          "parent": "$p",
+          "rectangle": {
+            "bottomRight": {
+              "x": 345.8414354324341,
+              "y": 2936
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 2880
+            }
+          },
+          "w": 265.8414354324341,
+          "x": 80,
+          "y": 2880
+        },
+        {
+          "h": 152,
+          "id": "$w",
+          "next": "$!#",
+          "opcode": "data_changevariableby",
+          "parent": "$p",
+          "rectangle": {
+            "bottomRight": {
+              "x": 351.0462951660156,
+              "y": 3112
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 2960
+            }
+          },
+          "w": 271.0462951660156,
+          "x": 80,
+          "y": 2960
+        },
+        {
+          "h": 104,
+          "id": "$t",
+          "next": "$*#",
+          "opcode": "procedures_call",
+          "parent": "$p",
+          "rectangle": {
+            "bottomRight": {
+              "x": 351.96759033203125,
+              "y": 3240
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 3136
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 64,
+          "y": 3136
+        },
+        {
+          "h": 32,
+          "id": "B}.4o0v/lK,AmM7gc4WY",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$[#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 255.0462951660156,
+              "y": 3640
+            },
+            "topLeft": {
+              "x": 215.0462951660156,
+              "y": 3608
+            }
+          },
+          "w": 40,
+          "x": 215.0462951660156,
+          "y": 3608
+        },
+        {
+          "h": 152,
+          "id": "$^#",
+          "next": "$`#",
+          "opcode": "data_setvariableto",
+          "parent": "$[#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 332.6805534362793,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3648
+            }
+          },
+          "w": 284.6805534362793,
+          "x": 48,
+          "y": 3648
+        },
+        {
+          "h": 32,
+          "id": "KiY|mq0fMZ=`kIIv0|s:",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$N#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.31018543243408,
+              "y": 4168
+            },
+            "topLeft": {
+              "x": 210.31018543243408,
+              "y": 4136
+            }
+          },
+          "w": 40,
+          "x": 210.31018543243408,
+          "y": 4136
+        },
+        {
+          "h": 192,
+          "id": "$O#",
+          "next": "$Q#",
+          "opcode": "procedures_call",
+          "parent": "$N#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 500.25926208496094,
+              "y": 4368
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 4176
+            }
+          },
+          "w": 420.25926208496094,
+          "x": 80,
+          "y": 4176
+        },
+        {
+          "h": 32,
+          "id": "9A=1*tUYhacafamP0}w#",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$L#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 240.33796215057373,
+              "y": 4432
+            },
+            "topLeft": {
+              "x": 194.31018543243408,
+              "y": 4400
+            }
+          },
+          "w": 46.02777671813965,
+          "x": 194.31018543243408,
+          "y": 4400
+        },
+        {
+          "h": 360,
+          "id": "$X#",
+          "next": null,
+          "opcode": "control_repeat_until",
+          "parent": "$L#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4800
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 4440
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 64,
+          "y": 4440
+        },
+        {
+          "h": 280,
+          "id": "$!%",
+          "next": null,
+          "opcode": "control_repeat_until",
+          "parent": "$y#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1200
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 920
+            }
+          },
+          "w": 306.34259033203125,
+          "x": 64,
+          "y": 920
+        },
+        {
+          "h": 40,
+          "id": "U0fyQxe4zd+1vOSQ)mbx",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$D",
+          "rectangle": {
+            "bottomRight": {
+              "x": 234.6805534362793,
+              "y": 1768
+            },
+            "topLeft": {
+              "x": 152,
+              "y": 1728
+            }
+          },
+          "w": 82.6805534362793,
+          "x": 152,
+          "y": 1728
+        },
+        {
+          "h": 32,
+          "id": "{9P,/,Er}[8RC/(c1]C)",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$D",
+          "rectangle": {
+            "bottomRight": {
+              "x": 300.2899284362793,
+              "y": 1764
+            },
+            "topLeft": {
+              "x": 260.2899284362793,
+              "y": 1732
+            }
+          },
+          "w": 40,
+          "x": 260.2899284362793,
+          "y": 1732
+        },
+        {
+          "h": 48,
+          "id": "$J",
+          "next": null,
+          "opcode": "operator_lt",
+          "parent": "$E",
+          "rectangle": {
+            "bottomRight": {
+              "x": 322.6556701660156,
+              "y": 1828
+            },
+            "topLeft": {
+              "x": 144,
+              "y": 1780
+            }
+          },
+          "w": 178.65567016601562,
+          "x": 144,
+          "y": 1780
+        },
+        {
+          "h": 104,
+          "id": "$K",
+          "next": "$O",
+          "opcode": "data_setvariableto",
+          "parent": "$E",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414.5775451660156,
+              "y": 1936
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 1832
+            }
+          },
+          "w": 302.5775451660156,
+          "x": 112,
+          "y": 1832
+        },
+        {
+          "h": 56,
+          "id": "$I",
+          "next": null,
+          "opcode": "data_setvariableto",
+          "parent": "$E",
+          "rectangle": {
+            "bottomRight": {
+              "x": 380.6805534362793,
+              "y": 2016
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 1960
+            }
+          },
+          "w": 284.6805534362793,
+          "x": 96,
+          "y": 1960
+        },
+        {
+          "h": 40,
+          "id": "GS8B8(n,y,@k(c53CrvN",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$T",
+          "rectangle": {
+            "bottomRight": {
+              "x": 341.77777099609375,
+              "y": 2244
+            },
+            "topLeft": {
+              "x": 255.8101806640625,
+              "y": 2204
+            }
+          },
+          "w": 85.96759033203125,
+          "x": 255.8101806640625,
+          "y": 2204
+        },
+        {
+          "h": 32,
+          "id": "$s",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "$q",
+          "rectangle": {
+            "bottomRight": {
+              "x": 236.25463104248047,
+              "y": 2812
+            },
+            "topLeft": {
+              "x": 124,
+              "y": 2780
+            }
+          },
+          "w": 112.25463104248048,
+          "x": 124,
+          "y": 2780
+        },
+        {
+          "h": 40,
+          "id": "$x",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$u",
+          "rectangle": {
+            "bottomRight": {
+              "x": 184,
+              "y": 2872
+            },
+            "topLeft": {
+              "x": 136,
+              "y": 2832
+            }
+          },
+          "w": 48,
+          "x": 136,
+          "y": 2832
+        },
+        {
+          "h": 32,
+          "id": "av21lUC5]QpDUUgT`~Of",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$u",
+          "rectangle": {
+            "bottomRight": {
+              "x": 249.609375,
+              "y": 2868
+            },
+            "topLeft": {
+              "x": 209.609375,
+              "y": 2836
+            }
+          },
+          "w": 40,
+          "x": 209.609375,
+          "y": 2836
+        },
+        {
+          "h": 32,
+          "id": "!OwZ^}glYb}B[v+,DYgf",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$v",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.31018543243408,
+              "y": 2920
+            },
+            "topLeft": {
+              "x": 210.31018543243408,
+              "y": 2888
+            }
+          },
+          "w": 40,
+          "x": 210.31018543243408,
+          "y": 2888
+        },
+        {
+          "h": 32,
+          "id": "+d367xmJQ|89x(}5J5_5",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$w",
+          "rectangle": {
+            "bottomRight": {
+              "x": 250.31018543243408,
+              "y": 3000
+            },
+            "topLeft": {
+              "x": 210.31018543243408,
+              "y": 2968
+            }
+          },
+          "w": 40,
+          "x": 210.31018543243408,
+          "y": 2968
+        },
+        {
+          "h": 104,
+          "id": "$!#",
+          "next": "$%#",
+          "opcode": "data_setvariableto",
+          "parent": "$w",
+          "rectangle": {
+            "bottomRight": {
+              "x": 351.0462951660156,
+              "y": 3112
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 3008
+            }
+          },
+          "w": 271.0462951660156,
+          "x": 80,
+          "y": 3008
+        },
+        {
+          "h": 56,
+          "id": "$*#",
+          "next": null,
+          "opcode": "data_setvariableto",
+          "parent": "$t",
+          "rectangle": {
+            "bottomRight": {
+              "x": 351.96759033203125,
+              "y": 3240
+            },
+            "topLeft": {
+              "x": 64,
+              "y": 3184
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 64,
+          "y": 3184
+        },
+        {
+          "h": 32,
+          "id": "_N2rz]k3e9Kz@@BrP3RU",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$^#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 268.6805534362793,
+              "y": 3688
+            },
+            "topLeft": {
+              "x": 228.6805534362793,
+              "y": 3656
+            }
+          },
+          "w": 40,
+          "x": 228.6805534362793,
+          "y": 3656
+        },
+        {
+          "h": 104,
+          "id": "$`#",
+          "next": "$|#",
+          "opcode": "data_setvariableto",
+          "parent": "$^#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 328.83796310424805,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3696
+            }
+          },
+          "w": 280.83796310424805,
+          "x": 48,
+          "y": 3696
+        },
+        {
+          "h": 144,
+          "id": "$Q#",
+          "next": null,
+          "opcode": "control_if",
+          "parent": "$O#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 500.25926208496094,
+              "y": 4368
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 4224
+            }
+          },
+          "w": 420.25926208496094,
+          "x": 80,
+          "y": 4224
+        },
+        {
+          "h": 48,
+          "id": "$Z#",
+          "next": null,
+          "opcode": "operator_not",
+          "parent": "$X#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 436.25926208496094,
+              "y": 4492
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 4444
+            }
+          },
+          "w": 324.25926208496094,
+          "x": 112,
+          "y": 4444
+        },
+        {
+          "h": 272,
+          "id": "$a#",
+          "next": "$e#",
+          "opcode": "control_if_else",
+          "parent": "$X#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 362.14236068725586,
+              "y": 4768
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 4496
+            }
+          },
+          "w": 282.14236068725586,
+          "x": 80,
+          "y": 4496
+        },
+        {
+          "h": 40,
+          "id": "$#%",
+          "next": null,
+          "opcode": "operator_equals",
+          "parent": "$!%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 257.609375,
+              "y": 964
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 924
+            }
+          },
+          "w": 145.609375,
+          "x": 112,
+          "y": 924
+        },
+        {
+          "h": 200,
+          "id": "$%%",
+          "next": "$*%",
+          "opcode": "procedures_call",
+          "parent": "$!%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1168
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 968
+            }
+          },
+          "w": 290.34259033203125,
+          "x": 80,
+          "y": 968
+        },
+        {
+          "h": 40,
+          "id": "2nD?HI^p,Q9ya:9TqsT|",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$J",
+          "rectangle": {
+            "bottomRight": {
+              "x": 237.0462951660156,
+              "y": 1824
+            },
+            "topLeft": {
+              "x": 168,
+              "y": 1784
+            }
+          },
+          "w": 69.04629516601562,
+          "x": 168,
+          "y": 1784
+        },
+        {
+          "h": 32,
+          "id": "L7Aem,j~7~(g_EoT^woL",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$J",
+          "rectangle": {
+            "bottomRight": {
+              "x": 302.6556701660156,
+              "y": 1820
+            },
+            "topLeft": {
+              "x": 262.6556701660156,
+              "y": 1788
+            }
+          },
+          "w": 40,
+          "x": 262.6556701660156,
+          "y": 1788
+        },
+        {
+          "h": 32,
+          "id": "ReL+Qp!Wy|0-9BM8Eh:r",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$K",
+          "rectangle": {
+            "bottomRight": {
+              "x": 349.12499809265137,
+              "y": 1872
+            },
+            "topLeft": {
+              "x": 295.96759033203125,
+              "y": 1840
+            }
+          },
+          "w": 53.15740776062012,
+          "x": 295.96759033203125,
+          "y": 1840
+        },
+        {
+          "h": 56,
+          "id": "$O",
+          "next": null,
+          "opcode": "data_changevariableby",
+          "parent": "$K",
+          "rectangle": {
+            "bottomRight": {
+              "x": 414.5775451660156,
+              "y": 1936
+            },
+            "topLeft": {
+              "x": 112,
+              "y": 1880
+            }
+          },
+          "w": 302.5775451660156,
+          "x": 112,
+          "y": 1880
+        },
+        {
+          "h": 32,
+          "id": "DW1!Iy#_ICfQm[+DNVxC",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$I",
+          "rectangle": {
+            "bottomRight": {
+              "x": 316.6805534362793,
+              "y": 2000
+            },
+            "topLeft": {
+              "x": 276.6805534362793,
+              "y": 1968
+            }
+          },
+          "w": 40,
+          "x": 276.6805534362793,
+          "y": 1968
+        },
+        {
+          "h": 32,
+          "id": "hSQ@(kLAC_0?v2p5f;/e",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$!#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 281.44444274902344,
+              "y": 3048
+            },
+            "topLeft": {
+              "x": 241.44444274902344,
+              "y": 3016
+            }
+          },
+          "w": 40,
+          "x": 241.44444274902344,
+          "y": 3016
+        },
+        {
+          "h": 56,
+          "id": "$%#",
+          "next": null,
+          "opcode": "data_setvariableto",
+          "parent": "$!#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 351.0462951660156,
+              "y": 3112
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 3056
+            }
+          },
+          "w": 271.0462951660156,
+          "x": 80,
+          "y": 3056
+        },
+        {
+          "h": 32,
+          "id": "Dn,n,(U7I|tCF`KoDg6%",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$*#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.96759033203125,
+              "y": 3224
+            },
+            "topLeft": {
+              "x": 247.96759033203125,
+              "y": 3192
+            }
+          },
+          "w": 40,
+          "x": 247.96759033203125,
+          "y": 3192
+        },
+        {
+          "h": 32,
+          "id": "[~74@)R0jcmjArpq~3g}",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$`#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 264.83796310424805,
+              "y": 3736
+            },
+            "topLeft": {
+              "x": 224.83796310424805,
+              "y": 3704
+            }
+          },
+          "w": 40,
+          "x": 224.83796310424805,
+          "y": 3704
+        },
+        {
+          "h": 56,
+          "id": "$|#",
+          "next": null,
+          "opcode": "looks_show",
+          "parent": "$`#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 128.00463104248047,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3744
+            }
+          },
+          "w": 80.00463104248047,
+          "x": 48,
+          "y": 3744
+        },
+        {
+          "h": 48,
+          "id": "$R#",
+          "next": null,
+          "opcode": "operator_not",
+          "parent": "$Q#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 452.25926208496094,
+              "y": 4276
+            },
+            "topLeft": {
+              "x": 128,
+              "y": 4228
+            }
+          },
+          "w": 324.25926208496094,
+          "x": 128,
+          "y": 4228
+        },
+        {
+          "h": 48,
+          "id": "$S#",
+          "next": null,
+          "opcode": "control_stop",
+          "parent": "$Q#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.0185089111328,
+              "y": 4328
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 4280
+            }
+          },
+          "w": 274.0185089111328,
+          "x": 96,
+          "y": 4280
+        },
+        {
+          "h": 40,
+          "id": "$b#",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "$Z#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.25926208496094,
+              "y": 4488
+            },
+            "topLeft": {
+              "x": 120,
+              "y": 4448
+            }
+          },
+          "w": 224.25926208496097,
+          "x": 120,
+          "y": 4448
+        },
+        {
+          "h": 48,
+          "id": "$f#",
+          "next": null,
+          "opcode": "operator_gt",
+          "parent": "$a#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 285.609375,
+              "y": 4548
+            },
+            "topLeft": {
+              "x": 128,
+              "y": 4500
+            }
+          },
+          "w": 157.609375,
+          "x": 128,
+          "y": 4500
+        },
+        {
+          "h": 56,
+          "id": "$g#",
+          "next": null,
+          "opcode": "data_changevariableby",
+          "parent": "$a#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 362.14236068725586,
+              "y": 4608
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 4552
+            }
+          },
+          "w": 266.14236068725586,
+          "x": 96,
+          "y": 4552
+        },
+        {
+          "h": 56,
+          "id": "$h#",
+          "next": null,
+          "opcode": "data_changevariableby",
+          "parent": "$a#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 362.14236068725586,
+              "y": 4688
+            },
+            "topLeft": {
+              "x": 96,
+              "y": 4632
+            }
+          },
+          "w": 266.14236068725586,
+          "x": 96,
+          "y": 4632
+        },
+        {
+          "h": 56,
+          "id": "$e#",
+          "next": null,
+          "opcode": "procedures_call",
+          "parent": "$a#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 155.28240585327148,
+              "y": 4768
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 4712
+            }
+          },
+          "w": 75.28240585327148,
+          "x": 80,
+          "y": 4712
+        },
+        {
+          "h": 32,
+          "id": "n4thU5UK_!*vXn1Fr/u3",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$#%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 172,
+              "y": 960
+            },
+            "topLeft": {
+              "x": 132,
+              "y": 928
+            }
+          },
+          "w": 40,
+          "x": 132,
+          "y": 928
+        },
+        {
+          "h": 32,
+          "id": "(t#BaejvxM^91uMGP|f_",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$#%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 237.609375,
+              "y": 960
+            },
+            "topLeft": {
+              "x": 197.609375,
+              "y": 928
+            }
+          },
+          "w": 40,
+          "x": 197.609375,
+          "y": 928
+        },
+        {
+          "h": 152,
+          "id": "$*%",
+          "next": "$+%",
+          "opcode": "data_setvariableto",
+          "parent": "$%%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1168
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 1016
+            }
+          },
+          "w": 290.34259033203125,
+          "x": 80,
+          "y": 1016
+        },
+        {
+          "h": 32,
+          "id": "uN]lm)W?9C-=et=1v#zK",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$O",
+          "rectangle": {
+            "bottomRight": {
+              "x": 319.0462951660156,
+              "y": 1920
+            },
+            "topLeft": {
+              "x": 279.0462951660156,
+              "y": 1888
+            }
+          },
+          "w": 40,
+          "x": 279.0462951660156,
+          "y": 1888
+        },
+        {
+          "h": 32,
+          "id": ".bb!Bt*cbV)wL=lRcO=2",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$%#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 287.0462951660156,
+              "y": 3096
+            },
+            "topLeft": {
+              "x": 247.0462951660156,
+              "y": 3064
+            }
+          },
+          "w": 40,
+          "x": 247.0462951660156,
+          "y": 3064
+        },
+        {
+          "h": 40,
+          "id": "$U#",
+          "next": null,
+          "opcode": "sensing_touchingobject",
+          "parent": "$R#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 360.25926208496094,
+              "y": 4272
+            },
+            "topLeft": {
+              "x": 136,
+              "y": 4232
+            }
+          },
+          "w": 224.25926208496097,
+          "x": 136,
+          "y": 4232
+        },
+        {
+          "h": 32,
+          "id": "$d#",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "$b#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 252.25463104248047,
+              "y": 4484
+            },
+            "topLeft": {
+              "x": 140,
+              "y": 4452
+            }
+          },
+          "w": 112.25463104248048,
+          "x": 140,
+          "y": 4452
+        },
+        {
+          "h": 40,
+          "id": "$i#",
+          "next": null,
+          "opcode": "argument_reporter_string_number",
+          "parent": "$f#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 200,
+              "y": 4544
+            },
+            "topLeft": {
+              "x": 152,
+              "y": 4504
+            }
+          },
+          "w": 48,
+          "x": 152,
+          "y": 4504
+        },
+        {
+          "h": 32,
+          "id": "KbZ0S3j^47B?1M4@rgxG",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$f#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 265.609375,
+              "y": 4540
+            },
+            "topLeft": {
+              "x": 225.609375,
+              "y": 4508
+            }
+          },
+          "w": 40,
+          "x": 225.609375,
+          "y": 4508
+        },
+        {
+          "h": 32,
+          "id": "uqbLgMib+0ql_A5@K5VP",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$g#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.61111068725586,
+              "y": 4592
+            },
+            "topLeft": {
+              "x": 226.61111068725583,
+              "y": 4560
+            }
+          },
+          "w": 40,
+          "x": 226.61111068725583,
+          "y": 4560
+        },
+        {
+          "h": 32,
+          "id": "PI0hi};~87X=QMT?@LH5",
+          "next": null,
+          "opcode": "math_number",
+          "parent": "$h#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 266.61111068725586,
+              "y": 4672
+            },
+            "topLeft": {
+              "x": 226.61111068725583,
+              "y": 4640
+            }
+          },
+          "w": 40,
+          "x": 226.61111068725583,
+          "y": 4640
+        },
+        {
+          "h": 40,
+          "id": "#O2%,C*%BL1t=SMxS@oc",
+          "next": null,
+          "opcode": "data_variable",
+          "parent": "$*%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 306.34259033203125,
+              "y": 1060
+            },
+            "topLeft": {
+              "x": 258.34259033203125,
+              "y": 1020
+            }
+          },
+          "w": 48,
+          "x": 258.34259033203125,
+          "y": 1020
+        },
+        {
+          "h": 104,
+          "id": "$+%",
+          "next": "$-%",
+          "opcode": "procedures_call",
+          "parent": "$*%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 308.2210636138916,
+              "y": 1168
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 1064
+            }
+          },
+          "w": 228.2210636138916,
+          "x": 80,
+          "y": 1064
+        },
+        {
+          "h": 32,
+          "id": "$W#",
+          "next": null,
+          "opcode": "sensing_touchingobjectmenu",
+          "parent": "$U#",
+          "rectangle": {
+            "bottomRight": {
+              "x": 268.25463104248047,
+              "y": 4268
+            },
+            "topLeft": {
+              "x": 156,
+              "y": 4236
+            }
+          },
+          "w": 112.25463104248048,
+          "x": 156,
+          "y": 4236
+        },
+        {
+          "h": 56,
+          "id": "$-%",
+          "next": null,
+          "opcode": "event_broadcastandwait",
+          "parent": "$+%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 308.2210636138916,
+              "y": 1168
+            },
+            "topLeft": {
+              "x": 80,
+              "y": 1112
+            }
+          },
+          "w": 228.2210636138916,
+          "x": 80,
+          "y": 1112
+        },
+        {
+          "h": 32,
+          "id": "W0vq3~/?:d{eAx{nVtK~",
+          "next": null,
+          "opcode": "event_broadcast_menu",
+          "parent": "$-%",
+          "rectangle": {
+            "bottomRight": {
+              "x": 196.6898136138916,
+              "y": 1152
+            },
+            "topLeft": {
+              "x": 128,
+              "y": 1120
+            }
+          },
+          "w": 68.6898136138916,
+          "x": 128,
+          "y": 1120
+        }
+      ],
+      "comments": [
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored0",
+          "minimized": false,
+          "width": 200,
+          "x": 637,
+          "y": -42
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored1",
+          "minimized": false,
+          "width": 200,
+          "x": 280,
+          "y": -86
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored2",
+          "minimized": false,
+          "width": 200,
+          "x": 1007,
+          "y": -220
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored3",
+          "minimized": false,
+          "width": 200,
+          "x": 1394,
+          "y": -298
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored4",
+          "minimized": false,
+          "width": 200,
+          "x": 1537,
+          "y": 46
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored5",
+          "minimized": false,
+          "width": 200,
+          "x": 1228,
+          "y": 364
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored6",
+          "minimized": false,
+          "width": 200,
+          "x": 382,
+          "y": 526
+        },
+        {
+          "blockId": null,
+          "height": 200,
+          "id": "l6restored7",
+          "minimized": false,
+          "width": 200,
+          "x": 586,
+          "y": 190
+        },
+        {
+          "blockId": null,
+          "height": 80,
+          "id": "l6new0",
+          "minimized": false,
+          "width": 280,
+          "x": 356,
+          "y": 1240
+        },
+        {
+          "blockId": null,
+          "height": 80,
+          "id": "l6new1",
+          "minimized": false,
+          "width": 280,
+          "x": 237,
+          "y": 2504
+        },
+        {
+          "blockId": null,
+          "height": 80,
+          "id": "l6new2",
+          "minimized": false,
+          "width": 280,
+          "x": 223,
+          "y": 3288
+        },
+        {
+          "blockId": null,
+          "height": 80,
+          "id": "l6new3",
+          "minimized": false,
+          "width": 280,
+          "x": 244,
+          "y": 224
+        }
+      ],
+      "scripts": [
+        {
+          "h": 992,
+          "id": "$!",
+          "next": "$%",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 442,
+              "y": 2288
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 1296
+            }
+          },
+          "w": 394,
+          "x": 48,
+          "y": 1296
+        },
+        {
+          "h": 128,
+          "id": "$W",
+          "next": "$Y",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 589.7881889343262,
+              "y": 2488
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2360
+            }
+          },
+          "w": 541.7881889343262,
+          "x": 48,
+          "y": 2360
+        },
+        {
+          "h": 712,
+          "id": "$f",
+          "next": "$h",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 532.2592620849609,
+              "y": 3272
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 2560
+            }
+          },
+          "w": 484.25926208496094,
+          "x": 48,
+          "y": 2560
+        },
+        {
+          "h": 456,
+          "id": "$,#",
+          "next": "$.#",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 335.96759033203125,
+              "y": 3800
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3344
+            }
+          },
+          "w": 287.96759033203125,
+          "x": 48,
+          "y": 3344
+        },
+        {
+          "h": 960,
+          "id": "$~#",
+          "next": "$B#",
+          "opcode": "procedures_definition",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 548.2592620849609,
+              "y": 4832
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 3872
+            }
+          },
+          "w": 500.25926208496094,
+          "x": 48,
+          "y": 3872
+        },
+        {
+          "h": 152,
+          "id": "$m#",
+          "next": "$n#",
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 326.01273345947266,
+              "y": 216
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 64
+            }
+          },
+          "w": 278.01273345947266,
+          "x": 48,
+          "y": 64
+        },
+        {
+          "h": 592,
+          "id": "$r#",
+          "next": "$s#",
+          "opcode": "event_whenbroadcastreceived",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 370.3425903320313,
+              "y": 1224
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 632
+            }
+          },
+          "w": 322.34259033203125,
+          "x": 48,
+          "y": 632
+        },
+        {
+          "h": 272,
+          "id": "$/%",
+          "next": "$:%",
+          "opcode": "event_whenkeypressed",
+          "parent": null,
+          "rectangle": {
+            "bottomRight": {
+              "x": 344.83796310424805,
+              "y": 560
+            },
+            "topLeft": {
+              "x": 48,
+              "y": 288
+            }
+          },
+          "w": 296.83796310424805,
+          "x": 48,
+          "y": 288
+        }
+      ]
+    }
+  ]
+}
