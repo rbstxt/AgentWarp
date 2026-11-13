@@ -33,7 +33,7 @@ export interface AcpHostOptions {
 }
 
 export interface AcpHost {
-  handle(msg: unknown): Promise<void>;
+  handle(msg: unknown, reply?: (msg: object) => void): Promise<void>;
   dispose(): Promise<void>;
 }
 
@@ -61,6 +61,7 @@ interface SessionState {
   active: ActiveSession;
   turnRunning: boolean;
   pump: Promise<void>;
+  configOptions: ActiveSession['newSessionResponse']['configOptions'];
 }
 
 /** Build the `[TurboWarp] …` context line prepended to prompts (docs/P5-DESIGN.md). */
@@ -78,7 +79,7 @@ export function formatEditorContext(context: unknown): string {
   if (target || scripts) {
     parts.push(`editing: ${target || "?"}${scripts ? ` (${scripts})` : ""}`);
   }
-  const selected = str(c.selectedBlock ?? c.selected);
+  const selected = str(c.selectedBlock ?? c.selected ?? c.selectedBlockId);
   const loc = str(c.selectedLocation ?? c.location ?? c.anchor);
   if (selected || loc) {
     parts.push(`selected: ${selected || "?"}${loc ? ` (${loc})` : ""}`);
@@ -335,6 +336,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           if (disposed) return;
           const msg = await sess.active.nextUpdate();
           if (msg.kind === "session_update") {
+            if (msg.update.sessionUpdate === 'config_option_update') sess.configOptions = msg.update.configOptions;
             void appendTranscript(projectDir, sess.sessionId, {
               kind: "update",
               update: msg.update,
@@ -386,11 +388,11 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     try {
       const active = await conn.agent.buildSession(projectDir).start();
       const sessionId = active.sessionId;
-      const sess: SessionState = { sessionId, agentId: def.id, active, turnRunning: false, pump: Promise.resolve() };
+      const sess: SessionState = { sessionId, agentId: def.id, active, turnRunning: false, pump: Promise.resolve(), configOptions: active.newSessionResponse.configOptions };
       sessions.set(sessionId, sess);
       conn.sessions.add(sessionId);
       startPump(sess);
-      emit({ type: "acp/session", sessionId, agentId: def.id });
+      emit({ type: "acp/session", sessionId, agentId: def.id, configOptions: sess.configOptions });
     } catch (e) {
       emit({ type: "acp/error", message: `session/new failed for ${agentId}: ${(e as Error)?.message}` });
     }
@@ -461,18 +463,19 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     }
   }
 
-  async function doHistory(sessionId: string): Promise<void> {
+  async function doHistory(sessionId: string, reply: (msg: object) => void): Promise<void> {
+    const session = findSession(sessionId);
     const entries = await readTranscript(projectDir, sessionId);
     if (!entries) {
-      emit({ type: "acp/error", sessionId, message: `no transcript for session ${sessionId}` });
+      reply({ type: "acp/error", sessionId, message: `no transcript for session ${sessionId}` });
       return;
     }
     for (const entry of entries) {
       const e = entry as { kind?: string; update?: unknown; stopReason?: string };
       if (e.kind === "update") {
-        emit({ type: "acp/update", sessionId, update: e.update });
+        reply({ type: "acp/update", sessionId, update: e.update });
       } else if (e.kind === "user") {
-        emit({
+        reply({
           type: "acp/update",
           sessionId,
           update: {
@@ -481,13 +484,14 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           },
         });
       } else if (e.kind === "done") {
-        emit({ type: "acp/done", sessionId, stopReason: e.stopReason });
+        reply({ type: "acp/done", sessionId, stopReason: e.stopReason });
       }
       // permission-auto entries are host-internal; skip them on replay.
     }
+    if (session) reply({ type: "acp/config", sessionId, configOptions: session.configOptions });
   }
 
-  async function handle(msg: unknown): Promise<void> {
+  async function handle(msg: unknown, reply: (msg: object) => void = emit): Promise<void> {
     if (disposed) return;
     const m = msg as { type?: string } | null;
     if (!m || typeof m !== "object" || typeof m.type !== "string") {
@@ -500,7 +504,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
         case "acp/agents": {
           const defs = await agents();
           const list: AgentStatus[] = await detectAll(defs);
-          emit({ type: "acp/agents", list });
+          reply({ type: "acp/agents", list });
           break;
         }
         case "acp/start":
@@ -523,8 +527,18 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           );
           break;
         case "acp/history":
-          await doHistory(String(full.sessionId ?? ""));
+          await doHistory(String(full.sessionId ?? ""), reply);
           break;
+        case "acp/set-config": {
+          const sess = findSession(String(full.sessionId ?? ""));
+          if (!sess) throw new Error(`unknown session: ${full.sessionId}`);
+          const conn = conns.get(sess.agentId);
+          if (!conn || conn.dead) throw new Error(`agent ${sess.agentId} is not running`);
+          const result = await conn.agent.request('session/set_config_option', { sessionId: sess.sessionId, configId: String(full.optionId ?? ""), value: String(full.value ?? "") });
+          sess.configOptions = result.configOptions;
+          emit({ type: "acp/config", sessionId: sess.sessionId, configOptions: result.configOptions });
+          break;
+        }
         default:
           log(`acp: ignoring unknown message type ${m.type}`);
       }

@@ -32,7 +32,7 @@ const host = createAcpHost({
   permissionTimeoutMs: 10 * 60 * 1000, // panel reply timeout → treated as reject
   agents: undefined, // test hook: fixed registry, skips on-disk config
 });
-await host.handle(JSON.parse(wsMessage)); // client→server acp/* messages
+await host.handle(JSON.parse(wsMessage), reply => ws.send(JSON.stringify(reply))); // client→server acp/* messages
 await host.dispose(); // kills agent processes, unblocks pending permissions
 ```
 
@@ -48,6 +48,7 @@ project; sessions and transcripts survive panel reloads (not bridge restarts).
 | `acp/prompt` | `sessionId`, `text`, `context?` | prepends the `[TurboWarp] …` context line and calls `session/prompt`. Non-blocking: updates arrive via `acp/update`, completion via `acp/done`. Errors if a turn is already running. |
 | `acp/cancel` | `sessionId` | sends `session/cancel`; the turn ends with `acp/done {stopReason: "cancelled"}`. |
 | `acp/permission` | `requestId`, `optionId` | answers a pending `acp/permission-request`. Unknown `optionId` → treated as reject. `allow_always` / `reject_always` kinds are remembered per session+tool. |
+| `acp/set-config` | `sessionId`, `optionId`, `value` | calls `session/set_config_option` and broadcasts `acp/config` with the updated options. |
 | `acp/history` | `sessionId` | replays the transcript as `acp/update…` + `acp/done` (user prompts as `user_message_chunk`). Unknown session → `acp/error`. |
 
 `context` is a free-form object; known keys: `editingTarget`/`target`,
@@ -58,7 +59,7 @@ Example: `[TurboWarp] editing: player (player/scripts.ts) · selected: a3 tick (
 ### Server → client (`send`)
 
 `acp/agents {list: [{id, label, command, args, available, note?}]}`,
-`acp/session {sessionId, agentId}`, `acp/update {sessionId, update}` (raw ACP
+`acp/session {sessionId, agentId, configOptions?}`, `acp/config {sessionId, configOptions}`, `acp/update {sessionId, update}` (raw ACP
 `session/update`, incl. thoughts, tool calls, plans),
 `acp/permission-request {requestId, sessionId, toolCall, options}`,
 `acp/done {sessionId, stopReason}`, `acp/error {sessionId?, message}`.
@@ -109,10 +110,7 @@ support `session/load`, but the host does not resume — replay is display-only)
   tools. Only `session/request_permission` is implemented.
 - One ACP connection per agent per project; multiple sessions per agent share
   it. `dispose()` on server shutdown.
-- Model/auth selection is the agent's business: e.g. opencode picks its default
-  model (project `opencode.json` overrides it; per-session switching would need
-  `session/set_config_option`, not yet exposed — the `configOptions` from
-  `session/new` are currently dropped, see `acp/session`).
+- Agent-advertised session configuration options are sent to the panel and can be changed using `acp/set-config`. Authentication remains the agent's responsibility.
 - `session/cancel` is an ACP **notification**; cancellation is cooperative —
   `acp/done` still arrives and reports the real `stopReason`.
 

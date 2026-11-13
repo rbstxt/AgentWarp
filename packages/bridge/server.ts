@@ -44,6 +44,7 @@ import { hashTextDir, snapshotSigs } from './text-hash.ts';
 import { collectAssetFiles, packTextAgainstBase, readTextState } from './pack-text.ts';
 import { reunpackText } from './unpack-safe.ts';
 import { buildMerge } from './merge.ts';
+import { createAcpHost } from '../acp/src/index.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const FORMATS = ['ts', 'sbpy', 'scratchblocks', 'ir-json'];
@@ -143,6 +144,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             }
         }
     };
+    const acp = createAcpHost({ projectDir: dir, send: broadcast, log });
     const sendStatus = (s: Omit<StatusMsg, 'type'>): void => {
         const key = JSON.stringify(s);
         if (key === lastStatusKey) return;
@@ -404,7 +406,11 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             } catch {
                 return;
             }
-            if (msg?.type === 'hello') {
+            if (typeof msg?.type === 'string' && msg.type.startsWith('acp/')) {
+                void acp.handle(msg, (reply) => {
+                    if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(reply));
+                }).catch((e) => log(`acp error: ${(e as Error)?.message}`));
+            } else if (msg?.type === 'hello') {
                 try {
                     ws.send(JSON.stringify({ type: 'hello', rev, name }));
                 } catch {
@@ -499,6 +505,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
         getRev: () => rev,
         close: async () => {
             closed = true;
+            await acp.dispose();
             if (debounceTimer) clearTimeout(debounceTimer);
             for (const t of timers) clearTimeout(t);
             timers.clear();

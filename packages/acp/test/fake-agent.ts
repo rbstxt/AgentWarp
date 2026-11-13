@@ -31,8 +31,10 @@ app.onRequest("initialize", async () => {
 app.onRequest("session/new", async (ctx) => {
   sessionSeq += 1;
   void ctx.params.cwd;
-  return { sessionId: `${sessionPrefix}-${sessionSeq}` };
+  return { sessionId: `${sessionPrefix}-${sessionSeq}`, configOptions: [{ id: 'model', name: 'Model', category: 'model', type: 'select' as const, currentValue: 'fast', options: [{ value: 'fast', name: 'Fast' }, { value: 'smart', name: 'Smart' }] }] };
 });
+
+app.onRequest('session/set_config_option', async (ctx) => ({ configOptions: [{ id: ctx.params.configId, name: 'Model', category: 'model', type: 'select' as const, currentValue: String(ctx.params.value), options: [{ value: 'fast', name: 'Fast' }, { value: 'smart', name: 'Smart' }] }] }));
 
 app.onNotification("session/cancel", async (ctx) => {
   void ctx.params.sessionId;

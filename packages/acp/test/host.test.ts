@@ -106,6 +106,21 @@ describe("registry", () => {
 });
 
 describe("start/prompt/stream", () => {
+  it('exposes and changes configuration, and directs history to the requester', async () => {
+    const f = await fixture();
+    try {
+      const sessionId = await startAndPrompt(f);
+      await waitFor(f.sent, m => m.type === 'acp/done');
+      equal(f.sent.find(m => m.type === 'acp/session')?.configOptions[0].currentValue, 'fast');
+      await f.host.handle({ type: 'acp/set-config', sessionId, optionId: 'model', value: 'smart' });
+      equal(f.sent.find(m => m.type === 'acp/config')?.configOptions[0].currentValue, 'smart');
+      const before = f.sent.length; const replies: Sent = [];
+      await f.host.handle({ type: 'acp/history', sessionId }, m => replies.push(m as Record<string, any>));
+      equal(f.sent.length, before);
+      ok(replies.some(m => m.type === 'acp/update'));
+      equal(replies.find(m => m.type === 'acp/config')?.configOptions[0].currentValue, 'smart');
+    } finally { await f.host.dispose(); }
+  });
   it("streams chunks, tool calls and done; persists transcript", async () => {
     const f = await fixture();
     try {
