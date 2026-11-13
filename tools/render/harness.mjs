@@ -12,7 +12,8 @@
 //
 // Randomness: Math.random is replaced with a seeded mulberry32 PRNG for the
 // duration of a run (seed configurable, default 1).
-
+import Timer from 'scratch-vm/src/util/timer.js';
+import Cast from 'scratch-vm/src/util/cast.js';
 
 
 export const FPS = 30;
@@ -82,6 +83,44 @@ function patchSaySecs(vm) {
     };
     runtime._primitives.looks_sayforsecs = mkSecs('say');
     runtime._primitives.looks_thinkforsecs = mkSecs('think');
+}
+
+// Match vmrun's virtual-time glide for both interpreted and compiled threads.
+function patchGlide(runtime) {
+    const motion = runtime.ext_scratch3_motion;
+    const virtualGlide = function (args, util) {
+        const nowObj = util.nowObj ?? {now: () => util.runtime.currentMSecs};
+        if (util.stackFrame.timer) {
+            const timeElapsed = util.stackFrame.timer.timeElapsed();
+            if (timeElapsed < util.stackFrame.duration * 1000) {
+                const frac = timeElapsed / (util.stackFrame.duration * 1000);
+                const dx = frac * (util.stackFrame.endX - util.stackFrame.startX);
+                const dy = frac * (util.stackFrame.endY - util.stackFrame.startY);
+                util.target.setXY(util.stackFrame.startX + dx, util.stackFrame.startY + dy);
+                util.yield();
+            } else {
+                util.target.setXY(util.stackFrame.endX, util.stackFrame.endY);
+            }
+        } else {
+            util.stackFrame.timer = new Timer(nowObj);
+            util.stackFrame.timer.start();
+            util.stackFrame.duration = Cast.toNumber(args.SECS);
+            util.stackFrame.startX = util.target.x;
+            util.stackFrame.startY = util.target.y;
+            util.stackFrame.endX = Cast.toNumber(args.X);
+            util.stackFrame.endY = Cast.toNumber(args.Y);
+            if (util.stackFrame.duration <= 0) {
+                util.target.setXY(util.stackFrame.endX, util.stackFrame.endY);
+                return;
+            }
+            util.yield();
+        }
+    };
+    runtime._primitives.motion_glidesecstoxy = virtualGlide;
+    runtime._primitives.motion_glideto = function (args, util) {
+        const targetXY = motion.getTargetXY(args.TO, util);
+        if (targetXY) virtualGlide({SECS: args.SECS, X: targetXY[0], Y: targetXY[1]}, util);
+    };
 }
 
 // ---------------------------------------------------------------------------
@@ -166,6 +205,7 @@ export function createRenderedVM(vm, seed = 1) {
     vm.runtime.currentMSecs = clock.now;
     Math.random = mulberry32(seed);
     patchSaySecs(vm);
+    patchGlide(vm.runtime);
     patchBubbleRedraw(vm);
     return {vm, clock};
 }
@@ -249,14 +289,14 @@ function untilSatisfied(current, op, expected) {
  * onFrame(frame, vm) called after each step (for trace/say polling).
  * until: null or {probe, op, value} (see parseUntil); when set, stepping
  *   stops early once the probe satisfies the condition.
- * Returns {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until}
- * (until is null when no condition was given, else {met, frame, value}).
+ * maxMs: optional real-time frame budget for slowFrames diagnostics.
+ * Returns {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until, slowFrames}.
  * Timelines are capped at MAX_TIMELINE entries (prefix kept, overflow
  * counted) so pathological projects (clone/broadcast spam) cannot produce
  * unbounded output.
  */
 const MAX_TIMELINE = 20000;
-export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, until = null) {
+export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, until = null, maxMs = null) {
     const sorted = [...inputs].sort((a, b) => a.frame - b.frame);
     let cursor = 0;
     const timeline = [];
@@ -328,6 +368,7 @@ export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, u
     beginWarningCapture();
     let framesRun = 0;
     let untilState = until ? {met: false, frame: null, value: undefined} : null;
+    const slowFrames = maxMs === null || maxMs === undefined ? null : [];
     try {
     for (let f = 0; f < totalFrames; f++) {
         currentFrame = f;
@@ -378,7 +419,12 @@ export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, u
             }
         }
         clock.now += FRAME_MS;
+        const stepStart = slowFrames === null ? 0 : performance.now();
         vm.runtime._step();
+        if (slowFrames !== null) {
+            const dt = performance.now() - stepStart;
+            if (dt > maxMs) slowFrames.push({frame: f, ms: Math.round(dt * 1000) / 1000});
+        }
         pollBubbles(f);
         if (onFrame) await onFrame(f, vm);
         framesRun = f + 1;
@@ -399,7 +445,7 @@ export async function stepFrames(vm, clock, totalFrames, inputs = [], onFrame, u
         untilState = {met: false, frame: null, value: resolveProbe(state, until.probe) ?? null};
     }
     vm.runtime.startHats = origStartHats;
-    return {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until: untilState};
+    return {timeline, sayEvents, hatsDropped, sayDropped, framesRun, until: untilState, slowFrames};
 }
 
 /** Resolve a dot-path probe against the state object (numeric parts index arrays).
@@ -424,7 +470,45 @@ export function resolveProbe(state, expr) {
             if (found === undefined) return undefined;
             cur = found;
         } else if (typeof cur === 'object' && p in cur) cur = cur[p];
-        else return undefined;
+        else if (cur && typeof cur === 'object' && 'variables' in cur && 'lists' in cur) {
+            if (cur.variables && p in cur.variables) cur = cur.variables[p];
+            else if (cur.lists && p in cur.lists) cur = cur.lists[p];
+            else return undefined;
+        } else return undefined;
     }
     return cur;
+}
+
+/**
+ * Explain an unresolved probe: suggest target-prefixed / corrected paths that DO resolve.
+ * Returns a short hint string or null.
+ */
+export function probeHint(state, expr) {
+    if (resolveProbe(state, expr) !== undefined) return null;
+    const parts = String(expr).split('.');
+    const targets = (state?.targets ?? []).filter(t => t && !t.isClone);
+    const names = targets.map(t => t.name);
+    const ok = [];
+    // 1) missing target prefix: "bubble.text" -> "Sprite1.bubble.text"
+    for (const n of names) {
+        const cand = `${n}.${expr}`;
+        if (resolveProbe(state, cand) !== undefined) ok.push(cand);
+    }
+    // 2) variable/list without the "variables."/"lists." segment: "Sprite1.score" -> "Sprite1.variables.score"
+    if (parts.length >= 2 && names.includes(parts[0])) {
+        for (const seg of ['variables', 'lists']) {
+            const cand = [parts[0], seg, ...parts.slice(1)].join('.');
+            if (resolveProbe(state, cand) !== undefined) ok.push(cand);
+        }
+        // global variable read through a sprite: "Sprite1.score" -> "Stage.variables.score"
+        const stage = targets.find(t => t.isStage);
+        if (stage) for (const seg of ['variables', 'lists']) {
+            const cand = [stage.name, seg, ...parts.slice(1)].join('.');
+            if (resolveProbe(state, cand) !== undefined) ok.push(cand);
+        }
+    }
+    if (ok.length) return `did you mean ${[...new Set(ok)].slice(0, 3).map(s => `"${s}"`).join(' or ')}?`;
+    if (parts.length && !names.includes(parts[0]) && !(parts[0] in (state ?? {})))
+        return `"${parts[0]}" is not a target; targets: ${names.join(', ')}`;
+    return null;
 }
