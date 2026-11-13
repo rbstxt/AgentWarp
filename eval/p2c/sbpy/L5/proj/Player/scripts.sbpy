@@ -1,0 +1,85 @@
+# Custom block: move by (dx, dy) then resolve against every platform rect
+# of the current level. Runs without screen refresh so one call = one step.
+define "collide dx %n dy %n" (dx, dy) [warp]:
+    data_setvariableto(VARIABLE="wx", VALUE=operator_add(NUM1=var("wx"), NUM2=arg("dx")))
+    data_setvariableto(VARIABLE="wy", VALUE=operator_add(NUM1=var("wy"), NUM2=arg("dy")))
+    control_if_else(CONDITION=operator_equals(OPERAND1=arg("dy"), OPERAND2="0")):
+        # X pass: push out sideways, never touch grounded.
+        data_setvariableto(VARIABLE="i", VALUE="1")
+        control_repeat(TIMES=data_lengthoflist(LIST="level1")):
+            control_if_else(CONDITION=operator_equals(OPERAND1=var("level"), OPERAND2="1")):
+                data_setvariableto(VARIABLE="code", VALUE=data_itemoflist(INDEX=var("i"), LIST="level1"))
+            else:
+                data_setvariableto(VARIABLE="code", VALUE=data_itemoflist(INDEX=var("i"), LIST="level2"))
+            data_setvariableto(VARIABLE="t", VALUE=operator_mathop(OPERATOR="floor", NUM=operator_divide(NUM1=var("code"), NUM2=1000)))
+            data_setvariableto(VARIABLE="px", VALUE=operator_subtract(NUM1=operator_mathop(OPERATOR="floor", NUM=operator_divide(NUM1=var("t"), NUM2=1000)), NUM2=500))
+            data_setvariableto(VARIABLE="py", VALUE=operator_subtract(NUM1=operator_mod(NUM1=var("t"), NUM2=1000), NUM2=500))
+            control_if(CONDITION=operator_and(OPERAND1=operator_gt(OPERAND1=operator_add(NUM1=var("wx"), NUM2=15), OPERAND2=operator_subtract(NUM1=var("px"), NUM2=50)), OPERAND2=operator_and(OPERAND1=operator_lt(OPERAND1=operator_subtract(NUM1=var("wx"), NUM2=15), OPERAND2=operator_add(NUM1=var("px"), NUM2=50)), OPERAND2=operator_and(OPERAND1=operator_gt(OPERAND1=operator_add(NUM1=var("wy"), NUM2=18), OPERAND2=operator_subtract(NUM1=var("py"), NUM2=20)), OPERAND2=operator_lt(OPERAND1=operator_subtract(NUM1=var("wy"), NUM2=18), OPERAND2=var("py")))))):
+                control_if_else(CONDITION=operator_gt(OPERAND1=arg("dx"), OPERAND2="0")):
+                    data_setvariableto(VARIABLE="wx", VALUE=operator_subtract(NUM1=operator_subtract(NUM1=var("px"), NUM2=50), NUM2=15))
+                else:
+                    data_setvariableto(VARIABLE="wx", VALUE=operator_add(NUM1=operator_add(NUM1=var("px"), NUM2=50), NUM2=15))
+            data_setvariableto(VARIABLE="i", VALUE=operator_add(NUM1=var("i"), NUM2=1))
+    else:
+        # Y pass: land on top (grounded) or bonk the underside.
+        data_setvariableto(VARIABLE="grounded", VALUE="0")
+        data_setvariableto(VARIABLE="i", VALUE="1")
+        control_repeat(TIMES=data_lengthoflist(LIST="level1")):
+            control_if_else(CONDITION=operator_equals(OPERAND1=var("level"), OPERAND2="1")):
+                data_setvariableto(VARIABLE="code", VALUE=data_itemoflist(INDEX=var("i"), LIST="level1"))
+            else:
+                data_setvariableto(VARIABLE="code", VALUE=data_itemoflist(INDEX=var("i"), LIST="level2"))
+            data_setvariableto(VARIABLE="t", VALUE=operator_mathop(OPERATOR="floor", NUM=operator_divide(NUM1=var("code"), NUM2=1000)))
+            data_setvariableto(VARIABLE="px", VALUE=operator_subtract(NUM1=operator_mathop(OPERATOR="floor", NUM=operator_divide(NUM1=var("t"), NUM2=1000)), NUM2=500))
+            data_setvariableto(VARIABLE="py", VALUE=operator_subtract(NUM1=operator_mod(NUM1=var("t"), NUM2=1000), NUM2=500))
+            control_if(CONDITION=operator_and(OPERAND1=operator_gt(OPERAND1=operator_add(NUM1=var("wx"), NUM2=15), OPERAND2=operator_subtract(NUM1=var("px"), NUM2=50)), OPERAND2=operator_and(OPERAND1=operator_lt(OPERAND1=operator_subtract(NUM1=var("wx"), NUM2=15), OPERAND2=operator_add(NUM1=var("px"), NUM2=50)), OPERAND2=operator_and(OPERAND1=operator_gt(OPERAND1=operator_add(NUM1=var("wy"), NUM2=18), OPERAND2=operator_subtract(NUM1=var("py"), NUM2=20)), OPERAND2=operator_lt(OPERAND1=operator_subtract(NUM1=var("wy"), NUM2=18), OPERAND2=var("py")))))):
+                control_if_else(CONDITION=operator_lt(OPERAND1=arg("dy"), OPERAND2="0")):
+                    data_setvariableto(VARIABLE="wy", VALUE=operator_add(NUM1=var("py"), NUM2=18))
+                    data_setvariableto(VARIABLE="vy", VALUE="0")
+                    data_setvariableto(VARIABLE="grounded", VALUE="1")
+                else:
+                    data_setvariableto(VARIABLE="wy", VALUE=operator_subtract(NUM1=operator_subtract(NUM1=var("py"), NUM2=20), NUM2=18))
+                    data_setvariableto(VARIABLE="vy", VALUE="0")
+            data_setvariableto(VARIABLE="i", VALUE=operator_add(NUM1=var("i"), NUM2=1))
+
+# Main loop: world-space physics (wx, wy), then draw at screen coords.
+event_whenflagclicked():
+    data_setvariableto(VARIABLE="wx", VALUE="-200")
+    data_setvariableto(VARIABLE="wy", VALUE="30")
+    data_setvariableto(VARIABLE="vy", VALUE="0")
+    control_forever():
+        control_if_else(CONDITION=sensing_keypressed(KEY_OPTION="left arrow")):
+            data_setvariableto(VARIABLE="vx", VALUE="-5")
+        else:
+            control_if_else(CONDITION=sensing_keypressed(KEY_OPTION="right arrow")):
+                data_setvariableto(VARIABLE="vx", VALUE="5")
+            else:
+                data_setvariableto(VARIABLE="vx", VALUE="0")
+        call("collide dx %n dy %n", dx=var("vx"), dy=0)
+        data_setvariableto(VARIABLE="vy", VALUE=operator_subtract(NUM1=var("vy"), NUM2=0.8))
+        control_if(CONDITION=operator_lt(OPERAND1=var("vy"), OPERAND2="-15")):
+            data_setvariableto(VARIABLE="vy", VALUE="-15")
+        call("collide dx %n dy %n", dx=0, dy=var("vy"))
+        control_if(CONDITION=operator_and(OPERAND1=sensing_keypressed(KEY_OPTION="up arrow"), OPERAND2=operator_equals(OPERAND1=var("grounded"), OPERAND2="1"))):
+            data_setvariableto(VARIABLE="vy", VALUE="13")
+        # Camera follows the player; screen x = world x - cameraX.
+        data_setvariableto(VARIABLE="cameraX", VALUE=var("wx"))
+        motion_gotoxy(X=operator_subtract(NUM1=var("wx"), NUM2=var("cameraX")), Y=var("wy"))
+        # Past the end of level 1: switch levels by broadcast.
+        control_if(CONDITION=operator_and(OPERAND1=operator_equals(OPERAND1=var("level"), OPERAND2="1"), OPERAND2=operator_gt(OPERAND1=var("wx"), OPERAND2="190"))):
+            event_broadcast(BROADCAST_INPUT=broadcast("level2"))
+        # End of level 2: stop at the wall and celebrate.
+        control_if(CONDITION=operator_and(OPERAND1=operator_equals(OPERAND1=var("level"), OPERAND2="2"), OPERAND2=operator_gt(OPERAND1=var("wx"), OPERAND2="200"))):
+            data_setvariableto(VARIABLE="wx", VALUE="200")
+            looks_say(MESSAGE="You win!")
+        # Fell into a pit: respawn at the level start.
+        control_if(CONDITION=operator_lt(OPERAND1=var("wy"), OPERAND2="-250")):
+            data_setvariableto(VARIABLE="wx", VALUE="-200")
+            data_setvariableto(VARIABLE="wy", VALUE="30")
+            data_setvariableto(VARIABLE="vy", VALUE="0")
+
+# Level 2 starts back at the left edge with no momentum.
+event_whenbroadcastreceived(BROADCAST_OPTION="level2"):
+    data_setvariableto(VARIABLE="wx", VALUE="-200")
+    data_setvariableto(VARIABLE="wy", VALUE="30")
+    data_setvariableto(VARIABLE="vy", VALUE="0")

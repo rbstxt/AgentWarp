@@ -7,6 +7,7 @@
 //   agentwarp check [dir]                       parse + reconcile + structural check, errors with file:line
 //   agentwarp run [dir] [vmrun run options…]    pack, then run headless (see tools/vmrun/README.md)
 //   agentwarp layout [dir]                      overlap report of the packed project
+//   agentwarp serve [dir] [--port N]            live-sync bridge for TurboWarp (see docs/P4-DESIGN.md)
 //
 // Formats: ts | sbpy | scratchblocks | ir-json   (stored in <dir>/.agentwarp/format)
 import {execFileSync} from 'node:child_process';
@@ -168,8 +169,20 @@ async function main() {
             process.stdout.write(JSON.stringify({overlapPairs: report}, null, 2) + '\n');
             return;
         }
+        case 'serve': {
+            const dir = resolve(pos[0] ?? '.');
+            let port: number | undefined;
+            for (let i = 0; i < rest.length; i++) {
+                if (rest[i] === '--port') port = Number(rest[++i]);
+            }
+            const {startServe} = await import('../bridge/server.ts');
+            const h = await startServe(dir, port != null && Number.isFinite(port) ? {port} : {});
+            process.stdout.write(`bridge ${h.url}\n`);
+            await new Promise(() => undefined); // run until killed
+            return;
+        }
         default:
-            die('usage: agentwarp <new|unpack|pack|check|run|layout> …  (see packages/cli/agentwarp.ts header)');
+            die('usage: agentwarp <new|unpack|pack|check|run|layout|serve> …  (see packages/cli/agentwarp.ts header)');
     }
 }
 

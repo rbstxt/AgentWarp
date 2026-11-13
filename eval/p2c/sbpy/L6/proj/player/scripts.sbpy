@@ -1,0 +1,107 @@
+@a1
+event_whenbroadcastreceived(BROADCAST_OPTION="play game"):
+    data_setvariableto(VARIABLE="LEVEL", VALUE="1")
+    control_forever():
+        event_broadcastandwait(BROADCAST_INPUT=broadcast("Reset"))  # this makes everything run!
+        event_broadcastandwait(BROADCAST_INPUT=broadcast("Setup"))
+        call("game on")
+        control_repeat_until():
+            control_if_else(CONDITION=operator_equals(OPERAND1=var("paused"), OPERAND2="1")):
+                # Pause: freeze the world and show PAUSED until P is pressed again.
+                looks_say(MESSAGE="PAUSED")
+                data_setvariableto(VARIABLE="was paused", VALUE="1")
+            else:
+                control_if(CONDITION=operator_equals(OPERAND1=var("was paused"), OPERAND2="1")):
+                    # Clearing the bubble on unpause so gameplay resumes clean.
+                    looks_say(MESSAGE="")
+                    data_setvariableto(VARIABLE="was paused", VALUE="0")
+                call("tick")
+            data_setvariableto(VARIABLE="SCROLL X", VALUE=var("x"))
+            call("position")
+            event_broadcastandwait(BROADCAST_INPUT=broadcast("tick"))
+
+@a2
+define "change player y by %s" (sy):
+    data_changevariableby(VARIABLE="y", VALUE=arg("sy"))  # this is so it stays on top of the ground
+    data_changevariableby(VARIABLE="in air", VALUE="1")
+    call("position")
+    control_repeat_until(CONDITION=operator_not(OPERAND=sensing_touchingobject(TOUCHINGOBJECTMENU="platforms"))):
+        control_if_else(CONDITION=operator_gt(OPERAND1=arg("sy"), OPERAND2="0")):
+            data_changevariableby(VARIABLE="y", VALUE="-1")
+        else:
+            data_changevariableby(VARIABLE="y", VALUE="1")
+            data_setvariableto(VARIABLE="in air", VALUE="0")
+            # Landed: the single double jump recharges here.
+            data_setvariableto(VARIABLE="jumps", VALUE="0")
+        call("position")
+        data_setvariableto(VARIABLE="speed y", VALUE="0")
+
+@a3
+define "tick" () [warp]:
+    control_if(CONDITION=sensing_keypressed(KEY_OPTION="right arrow")):
+        call("change player x by %s", sx="10")
+    raw "control_if":
+        input CONDITION:
+            raw "sensing_keypressed":  # this code needs the play game code and the change player x by sx code to work
+                input KEY_OPTION = "left arrow"
+        stack SUBSTACK:
+            call("change player x by %s", sx="-10")
+    control_if(CONDITION=sensing_keypressed(KEY_OPTION="up arrow")):
+        # Jump is 1.5x higher now (21, was 17).
+        control_if(CONDITION=operator_lt(OPERAND1=var("in air"), OPERAND2="4")):
+            data_setvariableto(VARIABLE="speed y", VALUE="21")  # this makes it move and gives it gravity!
+    # One extra mid-air jump per leap.
+    control_if(CONDITION=operator_and(OPERAND1=sensing_keypressed(KEY_OPTION="up arrow"), OPERAND2=operator_and(OPERAND1=operator_not(OPERAND=operator_lt(OPERAND1=var("in air"), OPERAND2="4")), OPERAND2=operator_lt(OPERAND1=var("jumps"), OPERAND2="1")))):
+        data_setvariableto(VARIABLE="jumps", VALUE="1")
+        data_setvariableto(VARIABLE="speed y", VALUE="21")
+    data_changevariableby(VARIABLE="speed y", VALUE="-2")
+    call("change player y by %s", sy=var("speed y"))
+
+@a4
+define "game on" ():
+    data_setvariableto(VARIABLE="x", VALUE="0")  # this sets all the variables to 0
+    data_setvariableto(VARIABLE="y", VALUE="0")
+    data_setvariableto(VARIABLE="speed y", VALUE="0")
+    data_setvariableto(VARIABLE="in air", VALUE="0")
+    # Fresh run: pause off and the double jump charged.
+    data_setvariableto(VARIABLE="paused", VALUE="0")
+    data_setvariableto(VARIABLE="was paused", VALUE="0")
+    data_setvariableto(VARIABLE="jumps", VALUE="0")
+    looks_show()
+
+@a5
+define "change player x by %s" (sx):
+    data_changevariableby(VARIABLE="x", VALUE=arg("sx"))
+    call("position")
+    control_if(CONDITION=sensing_touchingobject(TOUCHINGOBJECTMENU="platforms")):  # this is wall detection
+        control_repeat(TIMES="16"):
+            data_changevariableby(VARIABLE="y", VALUE="1")
+            call("position")
+            control_if(CONDITION=operator_not(OPERAND=sensing_touchingobject(TOUCHINGOBJECTMENU="platforms"))):
+                control_stop(STOP_OPTION="this script", mutation={"tagName": "mutation", "children": [], "hasnext": "false"})
+        data_changevariableby(VARIABLE="y", VALUE="-16")
+        control_repeat_until(CONDITION=operator_not(OPERAND=sensing_touchingobject(TOUCHINGOBJECTMENU="platforms"))):
+            control_if_else(CONDITION=operator_gt(OPERAND1=arg("sx"), OPERAND2="0")):
+                data_changevariableby(VARIABLE="x", VALUE="-1")
+            else:
+                data_changevariableby(VARIABLE="x", VALUE="1")
+            call("position")
+
+@a6
+data_setvariableto(VARIABLE="speed y", VALUE="0")
+
+@a7
+define "position" ():  # this is the position 
+    motion_gotoxy(X=operator_subtract(NUM1=var("x"), NUM2=var("SCROLL X")), Y=operator_subtract(NUM1=var("y"), NUM2=var("SCROLL Y")))
+
+@a8
+event_whenflagclicked():  # this tells it to start
+    event_broadcastandwait(BROADCAST_INPUT=broadcast("green flag"))
+    event_broadcastandwait(BROADCAST_INPUT=broadcast("play game"))
+
+# P toggles pause: while paused the main loop skips tick so the player freezes.
+event_whenkeypressed(KEY_OPTION="p"):
+    control_if_else(CONDITION=operator_equals(OPERAND1=var("paused"), OPERAND2="1")):
+        data_setvariableto(VARIABLE="paused", VALUE="0")
+    else:
+        data_setvariableto(VARIABLE="paused", VALUE="1")

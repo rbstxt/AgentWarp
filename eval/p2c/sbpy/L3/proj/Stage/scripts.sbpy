@@ -1,0 +1,7 @@
+event_whenflagclicked():
+    data_setvariableto(VARIABLE="score", VALUE="0")
+    looks_switchbackdropto(BACKDROP="backdrop1")
+    control_repeat_until(CONDITION=operator_equals(OPERAND1=var("score"), OPERAND2="10")):
+        pass
+    looks_switchbackdropto(BACKDROP="win")
+    event_broadcast(BROADCAST_INPUT=broadcast("win"))

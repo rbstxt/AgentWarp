@@ -1,0 +1,116 @@
+{
+  "targets": {
+    "Stage": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "player": {
+      "moved": [],
+      "changed": [
+        {
+          "id": "j3eziD1e2,tUh6K^l%pf",
+          "opcode": "event_whenbroadcastreceived",
+          "moved": false,
+          "blockIdsKept": "11/11"
+        },
+        {
+          "id": "Z!mdJ^L20-f=q]_70pV}",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "7/7"
+        },
+        {
+          "id": "Yt{7~R5HQLmO$dUww)Gx",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "15/18"
+        },
+        {
+          "id": "C2lJ=7y{Jr4?m8+44^;F",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "19/19"
+        }
+      ],
+      "deleted": [],
+      "added": [
+        {
+          "id": "!thOZM~5ShU/B)r;,Ty%",
+          "opcode": "event_whenkeypressed",
+          "x": -43,
+          "y": 1238
+        }
+      ],
+      "comments": {
+        "kept": 5,
+        "lost": [],
+        "changed": [
+          {
+            "id": "/N(VNB?S$-{0gbOvr1q:",
+            "reason": "new id",
+            "text": "this code needs the play game code and t"
+          },
+          {
+            "id": "z,xiu!+#M%50Izj#yQ0n",
+            "reason": "new id",
+            "text": "this sets all the variables to 0"
+          },
+          {
+            "id": "/[g`]IXpOR4fkCJVZYVb",
+            "reason": "new id",
+            "text": "this makes it move and gives it gravity!"
+          }
+        ],
+        "added": 10
+      },
+      "unchangedCount": 4
+    },
+    "platforms": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 3,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 4
+    },
+    "mouse pointer": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 2
+    }
+  },
+  "summary": {
+    "unchanged": 10,
+    "moved": 0,
+    "changed": 4,
+    "deleted": 0,
+    "added": 1,
+    "commentsKept": 8,
+    "commentsLost": 0,
+    "commentsChanged": 3,
+    "commentsAdded": 10,
+    "idsPreservedInChanged": 0.96
+  }
+}

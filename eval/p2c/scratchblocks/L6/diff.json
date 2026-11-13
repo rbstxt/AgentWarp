@@ -1,0 +1,105 @@
+{
+  "targets": {
+    "Stage": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 0
+    },
+    "player": {
+      "moved": [],
+      "changed": [
+        {
+          "id": "j3eziD1e2,tUh6K^l%pf",
+          "opcode": "event_whenbroadcastreceived",
+          "moved": false,
+          "blockIdsKept": "11/11"
+        },
+        {
+          "id": "Yt{7~R5HQLmO$dUww)Gx",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "16/18"
+        },
+        {
+          "id": "C2lJ=7y{Jr4?m8+44^;F",
+          "opcode": "procedures_definition",
+          "moved": false,
+          "blockIdsKept": "19/19"
+        }
+      ],
+      "deleted": [],
+      "added": [
+        {
+          "id": "]B!FN:8miAxbgfv~cHr;",
+          "opcode": "event_whenkeypressed",
+          "x": -43,
+          "y": 1238
+        }
+      ],
+      "comments": {
+        "kept": 6,
+        "lost": [
+          {
+            "id": "/[g`]IXpOR4fkCJVZYVb",
+            "text": "this makes it move and gives it gravity!"
+          }
+        ],
+        "changed": [
+          {
+            "id": "/N(VNB?S$-{0gbOvr1q:",
+            "reason": "new id",
+            "text": "this code needs the play game code and t"
+          }
+        ],
+        "added": 6
+      },
+      "unchangedCount": 5
+    },
+    "platforms": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 3,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 4
+    },
+    "mouse pointer": {
+      "moved": [],
+      "changed": [],
+      "deleted": [],
+      "added": [],
+      "comments": {
+        "kept": 0,
+        "lost": [],
+        "changed": [],
+        "added": 0
+      },
+      "unchangedCount": 2
+    }
+  },
+  "summary": {
+    "unchanged": 11,
+    "moved": 0,
+    "changed": 3,
+    "deleted": 0,
+    "added": 1,
+    "commentsKept": 9,
+    "commentsLost": 1,
+    "commentsChanged": 1,
+    "commentsAdded": 6,
+    "idsPreservedInChanged": 0.96
+  }
+}

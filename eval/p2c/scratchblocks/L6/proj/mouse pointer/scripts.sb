@@ -1,0 +1,15 @@
+@a1
+when clicked
+hide
+forever
+  create clone of [myself v]
+end
+
+@a2
+when I start as a clone
+show
+go to [mouse-pointer v]
+repeat ("10")
+  change size by ("5")
+end
+delete this clone

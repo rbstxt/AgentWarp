@@ -1,0 +1,70 @@
+@a1
+when I receive [イントロ完 v]
+wait ("1") seconds
+reset timer
+set [TIME v] to ["0"]
+repeat until <(ステージ数) = ["20"]>
+  repeat until <["1"] < (timer)>
+    if <(ステージ数) = ["20"]> then
+      stop [this script v] :: {"tagName":"mutation","children":[],"hasnext":"false"}
+    end
+  end
+  change [TIME v] by ("1")
+  reset timer
+end
+
+@a2
+when clicked
+set [ステージ数 v] to ["1"]
+hide
+
+@a3
+when I receive [次のステージ v]
+wait ("1") seconds
+change [ステージ数 v] by ("1")
+set [タイム v] to ["0"] // タイム restarts when the stage advances
+
+@a4
+when clicked
+hide variable [☁ World record v]
+hide variable [TIME v]
+
+@a5
+when I receive [イントロ完 v]
+wait ("1") seconds
+forever
+  if <(ステージ数) = ["20"]> then
+    if <(TIME) < (☁ World record)> then
+      set [☁ World record v] to (TIME)
+    end
+    wait ("1") seconds
+    show variable [☁ World record v]
+    show variable [TIME v]
+    stop [this script v] :: {"tagName":"mutation","children":[],"hasnext":"false"}
+  else
+    hide variable [TIME v]
+    hide variable [☁ World record v]
+  end
+end
+
+@a6
+when I receive [イントロ完 v]
+show
+forever
+  switch costume to (ステージ数)
+end
+
+@a7
+when I receive [イントロ完 v]
+go to x: ("0") y: ("-75")
+repeat ("50")
+  change y by ((("0") - (y position)) / ("5"))
+end
+
+when I receive [イントロ完 v] // タイム counts seconds since start, resets every stage
+set [タイム v] to ["0"]
+show variable [タイム v]
+repeat until <(ステージ数) = ["20"]>
+  wait ("1") seconds
+  change [タイム v] by ("1")
+end

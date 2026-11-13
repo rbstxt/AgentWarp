@@ -1,0 +1,197 @@
+@a1
+define 残像
+set [ghost v] effect to ("0")
+repeat ("5")
+  change [ghost v] effect by ("20")
+end
+delete this clone
+
+@a2
+switch costume to [コスチューム1 v]
+
+@a3
+when I receive [次! v]
+hide
+wait ("2.5") seconds
+
+@a4
+when I start as a clone
+switch costume to [コスチューム3 v]
+残像
+
+@a5
+when clicked
+hide
+
+@a6
+define 戻る
+broadcast [i v]
+start sound [Crunch v]
+go to x: ("-210") y: ("0")
+show
+set [x v] to ["0"]
+set [y v] to ["0"]
+
+@a7
+when I receive [すてーじかわった v]
+wait ("0.8") seconds
+!{"opcode":"procedures_call","inputs":{},"fields":{},"proc":{"proccode":"戻る(クリア)","argumentnames":[],"argumentdefaults":[],"warp":false}}
+
+@a8
+when clicked
+broadcast [Intro start v]
+
+@a9
+when I receive [イントロ完 v]
+set [ステージのバグ解消 v] to ["0"]
+set volume to ("100") %
+forever
+  wait ("1") seconds
+  play sound (pick random ("4") to ("9")) until done
+end
+
+@a10
+!{"opcode":"procedures_definition","inputs":{},"fields":{},"proc":{"proccode":"戻る(クリア)","argumentnames":[],"argumentdefaults":[],"warp":false}}
+set [ステージのバグ解消 v] to ["0"]
+go to x: ("-210") y: ("0")
+show
+switch costume to [コスチューム1 v]
+
+@a11
+when I start as a clone
+set [ghost v] effect to ("0")
+switch costume to [コスチューム3 v]
+repeat ("15")
+  change size by ("-2")
+  change [ghost v] effect by ("7")
+end
+delete this clone
+
+@a12
+when I receive [イントロ完 v]
+wait ("1") seconds
+go to x: ("-150") y: ("0")
+show
+set rotation style [left-right v]
+set [x v] to ["0"]
+set [y v] to ["0"]
+set size to ("65") %
+forever
+  if <<<key [w v] pressed?> or <key [up arrow v] pressed?>> or <<mouse down?> and <["0"] < (mouse y)>>> then
+    if <<<<key [w v] pressed?> or <key [up arrow v] pressed?>> and <<<key [d v] pressed?> or <key [right arrow v] pressed?>> or <<key [a v] pressed?> or <key [left arrow v] pressed?>>>> or <<mouse down?> and <["0"] < (mouse y)>>> then
+      switch costume to [コスチューム4 v]
+    else
+      switch costume to [コスチューム6 v]
+    end
+  else
+    switch costume to [コスチューム1 v]
+    if <<<key [a v] pressed?> or <key [left arrow v] pressed?>> or <<mouse down?> and <(mouse x) < ["0"]>>> then
+      switch costume to [コスチューム2 v]
+    else
+      if <<<key [d v] pressed?> or <key [right arrow v] pressed?>> or <<mouse down?> and <["0"] < (mouse x)>>> then
+        switch costume to [コスチューム2 v]
+      else
+        switch costume to [コスチューム1 v]
+      end
+    end
+  end
+  if <<<key [d v] pressed?> or <key [right arrow v] pressed?>> or <<mouse down?> and <["0"] < (mouse x)>>> then
+    point in direction ("90")
+    change [x v] by ("1.75")
+  end
+  if <<<key [a v] pressed?> or <key [left arrow v] pressed?>> or <<mouse down?> and <(mouse x) < ["0"]>>> then
+    change [x v] by ("-1.75")
+    point in direction ("-90")
+  end
+  set [x v] to ((x) * ("0.8"))
+  change x by (x)
+  if <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <>>> then
+    change y by ("1")
+    if <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <>>> then
+      change y by ("1")
+      if <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <>>> then
+        change y by ("1")
+        if <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <>>> then
+          change y by ("1")
+          if <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <>>> then
+            change y by ("1")
+            if <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <<touching [鍵穴 v] ?> or <touching [鍵穴2 v] ?>>>> then
+              change x by ((x) * ("-1"))
+              change y by ("-5")
+              if <<<<key [w v] pressed?> or <key [up arrow v] pressed?>> or <<mouse down?> and <["0"] < (mouse y)>>> and <not <touching [水 v] ?>>> then
+                start sound [壁キック v]
+                if <(x) > ["0"]> then
+                  set [x v] to ["-15"]
+                else
+                  set [x v] to ["15"]
+                end
+                set [y v] to ["15.5"]
+              else
+                set [x v] to ["0"]
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+  change [y v] by ("-1")
+  change y by (y)
+  if <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <<touching [鍵穴 v] ?> or <touching [鍵穴2 v] ?>>>> then
+    change y by ((y) * ("-1"))
+    set [y v] to ["0"]
+  end
+  if <<<key [w v] pressed?> or <key [up arrow v] pressed?>> or <<mouse down?> and <["0"] < (mouse y)>>> then
+    change y by ("-1")
+    if <<<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <<touching [鍵穴 v] ?> or <touching [鍵穴2 v] ?>>>> and <<<key [w v] pressed?> or <key [up arrow v] pressed?>> or <<mouse down?> and <["0"] < (mouse y)>>>> then
+      change [y v] by ("17")
+      start sound [ジャンプ3 v]
+    end
+    change y by ("1")
+  end
+  if <["240"] < (x position)> then
+    broadcast [次のステージ v]
+    go to x: ("-210") y: ("0")
+    set [ステージのバグ解消 v] to ["1"]
+    wait ("3") seconds
+    set [x v] to ["0"]
+    set [y v] to ["0"]
+  end
+  if <touching [ジャンプ台 v] ?> then
+    start sound [ジャンプ3 v]
+    set [y v] to ["20"]
+  end
+  if <<(y position) < ["-182"]> or <<touching [針 v] ?> or <<touching [敵キャラ v] ?> or <<touching [針\(特殊?\) v] ?> or <touching [動く針2 v] ?>>>>> then
+    if <touching [敵キャラ v] ?> then
+      if <touching color [#da4343] ?> then
+        if <touching color [#dd4848] ?> then
+          戻る
+        else
+        end
+      else
+        戻る
+      end
+    else
+      戻る
+    end
+  end
+  create clone of [myself v]
+  broadcast [huhh0 v]
+end
+
+@a13
+when I receive [huhh0 v]
+if <not <<touching [動くステージ v] ?> or <<touching [ステージ v] ?> or <<touching [鍵穴 v] ?> or <touching [鍵穴2 v] ?>>>>> then
+  change y by ("-1")
+end
+
+@a14
+when I receive [イントロ完 v]
+forever
+  wait until <touching [水 v] ?>
+  if <<key [up arrow v] pressed?> or <<mouse down?> and <["0"] < (mouse y)>>> then
+    set [y v] to ["5"]
+  else
+    set [y v] to ["-1.5"]
+  end
+end

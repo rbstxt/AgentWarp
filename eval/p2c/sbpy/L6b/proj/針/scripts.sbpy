@@ -1,0 +1,19 @@
+@a1
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    looks_show()
+    control_forever():
+        looks_switchcostumeto(COSTUME=var("ステージ数"))
+        looks_gotofrontback(FRONT_BACK="back")
+
+@a2
+event_whenflagclicked():
+    looks_hide()
+
+@a3
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    motion_gotoxy(X="0", Y="-75")
+    control_repeat(TIMES="50"):
+        motion_changeyby(DY=operator_divide(NUM1=operator_subtract(NUM1="0", NUM2=motion_yposition()), NUM2="5"))
+
+@a4
+data_setvariableto(VARIABLE="ステージ数", VALUE="19")

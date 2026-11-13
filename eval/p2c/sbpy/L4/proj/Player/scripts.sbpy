@@ -1,0 +1,18 @@
+event_whenflagclicked():
+    motion_gotoxy(X=0, Y=-120)
+    looks_show()
+    control_repeat_until(CONDITION=operator_lt(OPERAND1=var("lives"), OPERAND2="1")):
+        data_setvariableto(VARIABLE="ship x", VALUE=motion_xposition())
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="left arrow")):
+            motion_changexby(DX=-8)
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="right arrow")):
+            motion_changexby(DX=8)
+        control_if(CONDITION=operator_gt(OPERAND1=motion_xposition(), OPERAND2="220")):
+            motion_setx(X=220)
+        control_if(CONDITION=operator_lt(OPERAND1=motion_xposition(), OPERAND2="-220")):
+            motion_setx(X=-220)
+    looks_say(MESSAGE="Game Over")
+
+# Fire directly: the original stays parked off-stage; only clones fly.
+event_whenkeypressed(KEY_OPTION="space"):
+    control_create_clone_of(CLONE_OPTION="Bullet")

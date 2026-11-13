@@ -1,0 +1,10 @@
+event_whenflagclicked():
+    motion_gotoxy(X=300, Y=300)
+    looks_hide()
+
+control_start_as_clone():
+    motion_gotoxy(X=var("ship x"), Y=-100)
+    looks_show()
+    control_repeat_until(CONDITION=sensing_touchingobject(TOUCHINGOBJECTMENU="_edge_")):
+        motion_changeyby(DY=12)
+    control_delete_this_clone()

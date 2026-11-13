@@ -1,0 +1,72 @@
+{
+  "broadcasts": [
+    {
+      "id": "bc-level2",
+      "name": "level2"
+    }
+  ],
+  "costumes": [
+    {
+      "file": "costumes/backdrop1.svg",
+      "name": "backdrop1",
+      "rotationCenterX": 240,
+      "rotationCenterY": 180
+    }
+  ],
+  "currentCostume": 0,
+  "isStage": true,
+  "layerOrder": 0,
+  "lists": [
+    {
+      "id": "list-level1",
+      "items": [
+        [
+          "310420100",
+          "410420100",
+          "560420100",
+          "660480100"
+        ]
+      ],
+      "name": "level1"
+    },
+    {
+      "id": "list-level2",
+      "items": [
+        [
+          "310420100",
+          "440460100",
+          "570490100",
+          "680440100"
+        ]
+      ],
+      "name": "level2"
+    }
+  ],
+  "name": "Stage",
+  "sounds": [
+    {
+      "file": "sounds/pop.wav",
+      "format": "",
+      "name": "pop",
+      "rate": 48000,
+      "sampleCount": 1123
+    }
+  ],
+  "tempo": 60,
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "id": "var-level",
+      "name": "level",
+      "value": 1
+    },
+    {
+      "id": "var-cameraX",
+      "name": "cameraX",
+      "value": -200
+    }
+  ],
+  "videoState": "on",
+  "videoTransparency": 50,
+  "volume": 100
+}

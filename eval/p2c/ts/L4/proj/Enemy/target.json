@@ -1,0 +1,27 @@
+{
+  "name": "Enemy",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": true,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "bug",
+      "bitmapResolution": 1,
+      "rotationCenterX": 22,
+      "rotationCenterY": 22,
+      "file": "costumes/bug.svg"
+    }
+  ],
+  "sounds": []
+}

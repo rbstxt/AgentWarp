@@ -1,0 +1,63 @@
+{
+  "formatVersion": 1,
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "12.0.2-hotfix",
+    "agent": "Mozilla/5.0 (X11; CrOS x86_64 14541.0.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+  },
+  "extensions": [],
+  "monitors": [
+    {
+      "id": "V=ZBnThh7_KaAv-(wS~h",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "☁ World record"
+      },
+      "spriteName": null,
+      "value": "11.3",
+      "width": 0,
+      "height": 0,
+      "x": 134.1585693359375,
+      "y": 190.66442108154297,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "jH_bBWhQIF|bt))(8w)n",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "TIME"
+      },
+      "spriteName": null,
+      "value": 141,
+      "width": 0,
+      "height": 0,
+      "x": 195.81787109375,
+      "y": 169.44630432128906,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "mon-タイム",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "タイム"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": true
+    }
+  ],
+  "extraTopLevel": {}
+}

@@ -1,0 +1,6 @@
+event_whenthisspriteclicked():
+    data_changevariableby(VARIABLE="score", VALUE=1)
+    sound_play(SOUND_MENU="pop")
+    looks_switchcostumeto(COSTUME="pressed")
+    control_wait(DURATION=0.1)
+    looks_switchcostumeto(COSTUME="cookie")

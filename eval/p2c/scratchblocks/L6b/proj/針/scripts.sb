@@ -1,0 +1,21 @@
+@a1
+when I receive [イントロ完 v]
+show
+forever
+  switch costume to (ステージ数)
+  go to [back v] layer
+end
+
+@a2
+when clicked
+hide
+
+@a3
+when I receive [イントロ完 v]
+go to x: ("0") y: ("-75")
+repeat ("50")
+  change y by ((("0") - (y position)) / ("5"))
+end
+
+@a4
+set [ステージ数 v] to ["19"]

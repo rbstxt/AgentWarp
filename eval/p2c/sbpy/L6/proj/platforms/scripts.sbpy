@@ -1,0 +1,25 @@
+@a1
+event_whenbroadcastreceived(BROADCAST_OPTION="Setup"):
+    data_setvariableto(VARIABLE="x", VALUE="0")
+    data_setvariableto(VARIABLE="y", VALUE="0")
+    looks_switchcostumeto(COSTUME="level 1 2")
+    control_create_clone_of(CLONE_OPTION="_myself_")
+    data_setvariableto(VARIABLE="x", VALUE="360")
+    control_create_clone_of(CLONE_OPTION="_myself_")  # this makes it scroll
+    data_setvariableto(VARIABLE="x", VALUE="360")
+    looks_switchcostumeto(COSTUME="level 1 3")
+
+@a2
+looks_switchcostumeto(COSTUME="level 1 3")
+
+@a3
+event_whenbroadcastreceived(BROADCAST_OPTION="tick"):
+    call("position %s %s", x=operator_subtract(NUM1=var("x"), NUM2=var("SCROLL X")), y=operator_subtract(NUM1=var("y"), NUM2=var("SCROLL Y")))  # this is the position of the platforms
+
+@a4
+define "position %s %s" (x, y):
+    motion_gotoxy(X=arg("x"), Y=arg("y"))  # this makes the level show when its on the screen and hide when its off
+    control_if_else(CONDITION=operator_and(OPERAND1=operator_equals(OPERAND1=arg("x"), OPERAND2=motion_xposition()), OPERAND2=operator_equals(OPERAND1=arg("y"), OPERAND2=motion_yposition()))):
+        looks_show()
+    else:
+        looks_hide()

@@ -1,0 +1,35 @@
+{
+  "name": "くうはくすぷらいｔ",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 6,
+  "visible": true,
+  "x": 36,
+  "y": 28,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "コスチューム1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 0,
+      "rotationCenterY": 0,
+      "file": "costumes/コスチューム1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "ポップ",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/ポップ.wav"
+    }
+  ]
+}

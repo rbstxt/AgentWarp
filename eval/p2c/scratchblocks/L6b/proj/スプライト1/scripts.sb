@@ -1,0 +1,11 @@
+@a1
+when clicked
+go to x: ("0") y: ("0")
+switch costume to [コスチューム6 v]
+set size to ("100") %
+switch costume to [コスチューム4 v]
+forever
+  show
+  set [ghost v] effect to ("100")
+  go to [front v] layer
+end

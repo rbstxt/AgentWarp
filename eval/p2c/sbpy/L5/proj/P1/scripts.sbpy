@@ -1,0 +1,11 @@
+# Platform slot 1: draws rect 1 of the current level, scrolled by cameraX.
+event_whenflagclicked():
+    control_forever():
+        control_if_else(CONDITION=operator_equals(OPERAND1=var("level"), OPERAND2="1")):
+            data_setvariableto(VARIABLE="code", VALUE=data_itemoflist(INDEX=1, LIST="level1"))
+        else:
+            data_setvariableto(VARIABLE="code", VALUE=data_itemoflist(INDEX=1, LIST="level2"))
+        data_setvariableto(VARIABLE="t", VALUE=operator_mathop(OPERATOR="floor", NUM=operator_divide(NUM1=var("code"), NUM2=1000)))
+        data_setvariableto(VARIABLE="px", VALUE=operator_subtract(NUM1=operator_mathop(OPERATOR="floor", NUM=operator_divide(NUM1=var("t"), NUM2=1000)), NUM2=500))
+        data_setvariableto(VARIABLE="py", VALUE=operator_subtract(NUM1=operator_mod(NUM1=var("t"), NUM2=1000), NUM2=500))
+        motion_gotoxy(X=operator_subtract(NUM1=var("px"), NUM2=var("cameraX")), Y=operator_subtract(NUM1=var("py"), NUM2=10))

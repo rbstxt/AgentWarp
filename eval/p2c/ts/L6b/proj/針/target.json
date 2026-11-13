@@ -1,0 +1,310 @@
+{
+  "name": "針",
+  "isStage": false,
+  "currentCostume": 19,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": false,
+  "x": 0,
+  "y": -0.0010704357695294705,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "clone X",
+      "id": "Y-Eo|M/M^5?5;p;R8zMy",
+      "value": 0
+    },
+    {
+      "name": "clone Y",
+      "id": "P`jSe:,?J{Ww@P$TqfTL",
+      "value": 0
+    },
+    {
+      "name": "clone Dir",
+      "id": "6bNIpc{9K4R1u8M88Lm+",
+      "value": 0
+    },
+    {
+      "name": "clone Z",
+      "id": "bU{0+%!+shMGvRhlq,4`",
+      "value": 0
+    },
+    {
+      "name": "ID",
+      "id": "7m$*W]mh8TSn`v58oq:0",
+      "value": 0
+    },
+    {
+      "name": "Cam Control?",
+      "id": ")`EQ(YNT2kMmrIQTc(eY",
+      "value": 0
+    },
+    {
+      "name": "Sw,type",
+      "id": ",{+4@@pbtamdh[O!d,$+",
+      "value": 0
+    },
+    {
+      "name": "sw",
+      "id": "g)|OdQKyH{W0xIzTHIl9",
+      "value": 0
+    },
+    {
+      "name": "sw z",
+      "id": "iXeuaXK_8N;uN:%6#9Sb",
+      "value": 0
+    },
+    {
+      "name": "Sw C",
+      "id": "r~u{,#dK[N|[H):e;4=o",
+      "value": 0
+    },
+    {
+      "name": "Sw dir",
+      "id": "A7BO)5,#Pn_:NUpNOM,(",
+      "value": 0
+    },
+    {
+      "name": "cos",
+      "id": "`C8LmO}^yC~$%4OT2I]T",
+      "value": 0
+    },
+    {
+      "name": "player.y",
+      "id": "N+LTP%yD2Y+Jwx^0|P+f",
+      "value": 0
+    },
+    {
+      "name": "player.xv",
+      "id": "$rdZDWmD#*Bc6mPnj9bM",
+      "value": 0
+    },
+    {
+      "name": "player.yv",
+      "id": "#[!|d@(wheZx23ky+mey",
+      "value": 0
+    },
+    {
+      "name": "player.x",
+      "id": "%CPnDVICkH/#uyNbH;EC",
+      "value": 0
+    },
+    {
+      "name": "rw",
+      "id": "Uh[!JCvEwOxb6A{SE(T:",
+      "value": 0
+    },
+    {
+      "name": "Rw C",
+      "id": "L)#)Q(3L89h/IQ#/$sqt",
+      "value": 0
+    },
+    {
+      "name": "Rw siz",
+      "id": "FCpC53mwM;6t_+#gQiZP",
+      "value": 0
+    },
+    {
+      "name": "Fw 明るさ",
+      "id": ")kYK^!l:s{(O9$H;^B$+",
+      "value": 0
+    },
+    {
+      "name": "Fw Color",
+      "id": "{]#n4n*U0:d~cNZ158!c",
+      "value": 0
+    },
+    {
+      "name": "Fw type",
+      "id": "BV9+K-JgF(YUT$@$|+!0",
+      "value": 0
+    },
+    {
+      "name": "Fw",
+      "id": "5^vj[:kkh.y$iM!L{e2{",
+      "value": 0
+    },
+    {
+      "name": "(ﾟ∀ﾟ)",
+      "id": "wLh$+f7l/3c+SxVKN+2T",
+      "value": 0
+    },
+    {
+      "name": "A",
+      "id": "GR7kwP)JkvPj$D}o_L21",
+      "value": 0
+    },
+    {
+      "name": "b",
+      "id": "XNodB~5/83H=%7?E|Oj/",
+      "value": 0
+    }
+  ],
+  "lists": [
+    {
+      "name": "Fwのためだけのリスト。",
+      "id": "r[g8RtFRqdZv8vzQgCaL",
+      "items": []
+    },
+    {
+      "name": "おとはっめ",
+      "id": "6{vTJziCp;=(t{89{FHf",
+      "items": []
+    }
+  ],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "コスチューム1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.446504411621135,
+      "rotationCenterY": -24.94313333984374,
+      "file": "costumes/コスチューム1.svg"
+    },
+    {
+      "name": "コスチューム2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 114.6365441455078,
+      "rotationCenterY": 123.48791982177737,
+      "file": "costumes/コスチューム2.svg"
+    },
+    {
+      "name": "コスチューム3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 163.519635,
+      "rotationCenterY": 218.56357449155325,
+      "file": "costumes/コスチューム3.svg"
+    },
+    {
+      "name": "コスチューム4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 250.5142907373047,
+      "rotationCenterY": 192.90598021972656,
+      "file": "costumes/コスチューム4.svg"
+    },
+    {
+      "name": "コスチューム5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 101.53684694289689,
+      "rotationCenterY": 157.68567,
+      "file": "costumes/コスチューム5.svg"
+    },
+    {
+      "name": "コスチューム6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 175.26699000000002,
+      "rotationCenterY": 89.95518999999997,
+      "file": "costumes/コスチューム6.svg"
+    },
+    {
+      "name": "コスチューム7",
+      "bitmapResolution": 1,
+      "rotationCenterX": -25.16996776692696,
+      "rotationCenterY": 129.97971488281254,
+      "file": "costumes/コスチューム7.svg"
+    },
+    {
+      "name": "コスチューム8",
+      "bitmapResolution": 1,
+      "rotationCenterX": 171.441375,
+      "rotationCenterY": 151.544785,
+      "file": "costumes/コスチューム8.svg"
+    },
+    {
+      "name": "コスチューム9",
+      "bitmapResolution": 1,
+      "rotationCenterX": 279.9712876953125,
+      "rotationCenterY": 203.13607486328124,
+      "file": "costumes/コスチューム9.svg"
+    },
+    {
+      "name": "コスチューム10",
+      "bitmapResolution": 1,
+      "rotationCenterX": 93.41363455621294,
+      "rotationCenterY": 144.4814563313608,
+      "file": "costumes/コスチューム10.svg"
+    },
+    {
+      "name": "コスチューム11",
+      "bitmapResolution": 1,
+      "rotationCenterX": 112.505615,
+      "rotationCenterY": 95.74669913998883,
+      "file": "costumes/コスチューム11.svg"
+    },
+    {
+      "name": "コスチューム12",
+      "bitmapResolution": 1,
+      "rotationCenterX": 178.9107904624162,
+      "rotationCenterY": 177.79193251407264,
+      "file": "costumes/コスチューム12.svg"
+    },
+    {
+      "name": "コスチューム13",
+      "bitmapResolution": 1,
+      "rotationCenterX": 242.95331249272417,
+      "rotationCenterY": 156.65416957727015,
+      "file": "costumes/コスチューム13.svg"
+    },
+    {
+      "name": "コスチューム14",
+      "bitmapResolution": 1,
+      "rotationCenterX": 111.93537088810768,
+      "rotationCenterY": 115.57169434468494,
+      "file": "costumes/コスチューム14.svg"
+    },
+    {
+      "name": "コスチューム15",
+      "bitmapResolution": 1,
+      "rotationCenterX": 92.78593169921871,
+      "rotationCenterY": 186.13130219424252,
+      "file": "costumes/コスチューム15.svg"
+    },
+    {
+      "name": "コスチューム16",
+      "bitmapResolution": 1,
+      "rotationCenterX": -79.48936738032313,
+      "rotationCenterY": 18.423520512201293,
+      "file": "costumes/コスチューム16.svg"
+    },
+    {
+      "name": "コスチューム17",
+      "bitmapResolution": 1,
+      "rotationCenterX": 132.61657904296888,
+      "rotationCenterY": -83.03187519531252,
+      "file": "costumes/コスチューム17.svg"
+    },
+    {
+      "name": "コスチューム18",
+      "bitmapResolution": 1,
+      "rotationCenterX": 127.0245313671875,
+      "rotationCenterY": 124.15325,
+      "file": "costumes/コスチューム18.svg"
+    },
+    {
+      "name": "コスチューム19",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.446495,
+      "rotationCenterY": 117.39145053735476,
+      "file": "costumes/コスチューム19.svg"
+    },
+    {
+      "name": "コスチューム20",
+      "bitmapResolution": 1,
+      "rotationCenterX": 0,
+      "rotationCenterY": 0,
+      "file": "costumes/コスチューム20.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "ポップ",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/ポップ.wav"
+    }
+  ]
+}

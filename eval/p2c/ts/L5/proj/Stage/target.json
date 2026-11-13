@@ -1,0 +1,115 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "on",
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "name": "vy",
+      "id": "A.6A7(FJI}0tSiN0rQ+x",
+      "value": 0
+    },
+    {
+      "name": "onGround",
+      "id": "fN[Odt}|TUnu9vX0kPfd",
+      "value": 0
+    },
+    {
+      "name": "pwx",
+      "id": "Pf!S,C/K:)*o{?Va;vJ#",
+      "value": 0
+    },
+    {
+      "name": "camX",
+      "id": "g6Kd`|2b|7k2PtoIuk.D",
+      "value": 0
+    },
+    {
+      "name": "level",
+      "id": "^%]%3rp9(~AZMV%`6WtL",
+      "value": 0
+    },
+    {
+      "name": "pi",
+      "id": "n*[%ST|X6U-|1.iI(SIG",
+      "value": 0
+    },
+    {
+      "name": "rect",
+      "id": "df.DRAleDiWuP=~kk=/g",
+      "value": 0
+    },
+    {
+      "name": "pw",
+      "id": "*q4tSgn(jdeVL3n9)2iA",
+      "value": 0
+    },
+    {
+      "name": "pt",
+      "id": ";^^se|5{!F2F%Q:g/v0~",
+      "value": 0
+    },
+    {
+      "name": "ppy",
+      "id": "Dfg=f;e}w?Lyr,c[AmHG",
+      "value": 0
+    },
+    {
+      "name": "pcx",
+      "id": "f4e#bc6bTyGS5Y-^pYf}",
+      "value": 0
+    },
+    {
+      "name": "idx",
+      "id": "DV|aroumn++hL60@dr-i",
+      "value": 0
+    },
+    {
+      "name": "mdx",
+      "id": "!QVRRnF~6EJk|nb5EnEP",
+      "value": 0
+    },
+    {
+      "name": "goalX",
+      "id": "1pNdYTW40nX/V#c#l4-0",
+      "value": 0
+    },
+    {
+      "name": "goalY",
+      "id": "cR9nXn.6PkV0phE6U9!p",
+      "value": 0
+    }
+  ],
+  "lists": [
+    {
+      "name": "platforms",
+      "id": "[=Npd-82GAGTS4}lww6Z",
+      "items": [
+        []
+      ]
+    }
+  ],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "backdrop1",
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/backdrop1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

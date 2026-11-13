@@ -1,0 +1,150 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 1,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "on",
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "name": "変数",
+      "id": "`jEk@4|i[#Fk?(8x)AV.-my variable",
+      "value": 0
+    },
+    {
+      "name": "加速イージング",
+      "id": "@$=J::CY,1J)s|GpW%8E",
+      "value": 263.9980978955375
+    },
+    {
+      "name": "しゃけ",
+      "id": "1nt?)Sg8klK||Qh,e2ku",
+      "value": 0.22667359117774302
+    },
+    {
+      "name": "ShakeDir",
+      "id": "9TK4_{ZeCM|~4RV3-2{B",
+      "value": -0.030699503951265816
+    },
+    {
+      "name": "ShakeX",
+      "id": "/Njot$]W4tSw=hcwZg;g",
+      "value": 0.19649116611407594
+    },
+    {
+      "name": "ShakeY",
+      "id": "Ne{`gP$qT}AgNC*DHFxg",
+      "value": 0.05486131932684877
+    },
+    {
+      "name": "🎥 Dir",
+      "id": "OP|vDytI2{^k5O|O?uB}",
+      "value": "0"
+    },
+    {
+      "name": "🎥 X",
+      "id": "Rr(4[--hx+E-J|!{S?`d",
+      "value": "0"
+    },
+    {
+      "name": "🎥 Y",
+      "id": "yF8?Y%FBFa_G=z]j`E(+",
+      "value": "0"
+    },
+    {
+      "name": "🎥 Z",
+      "id": "X.Z@Y5Tnlw`|CMBU`(7A",
+      "value": "1"
+    },
+    {
+      "name": "θ",
+      "id": "v1y^ga_:4Jty)vjbV}Z5",
+      "value": 450
+    },
+    {
+      "name": "ステージ数",
+      "id": "f3=_(qCjIarhg?=yilje",
+      "value": "1"
+    },
+    {
+      "name": "TIME",
+      "id": "jH_bBWhQIF|bt))(8w)n",
+      "value": 141
+    },
+    {
+      "name": "ステージのバグ解消",
+      "id": "3n%hC,fpfB`6{Ngq3e.~",
+      "value": "1"
+    },
+    {
+      "name": "☁ World record",
+      "id": "V=ZBnThh7_KaAv-(wS~h",
+      "value": "11.3",
+      "cloud": true
+    },
+    {
+      "name": "タイム",
+      "id": "var-タイム",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [
+    {
+      "name": "Intro start",
+      "id": "e6@G,BXAHBYo{p@2nj%="
+    },
+    {
+      "name": "イントロ完",
+      "id": "-y-%nDHOC;tKh$@PWJSN"
+    },
+    {
+      "name": "次のステージ",
+      "id": "pjlItp5b*r{6m;P)J@1x"
+    },
+    {
+      "name": "huhh0",
+      "id": "(`Gx]RVnrIFkzpj@)de4"
+    },
+    {
+      "name": "i",
+      "id": "}Uu[JW3EUcq)iDs7!g8B"
+    },
+    {
+      "name": "すてーじかわった",
+      "id": "U[`eK%|o=/uH.W^/w]TD"
+    },
+    {
+      "name": "次!",
+      "id": "9_E?@W#*ItN^PNL^IIaF"
+    }
+  ],
+  "costumes": [
+    {
+      "name": "背景素材(ベクター)2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 369.7406833203125,
+      "rotationCenterY": 328.52522421875,
+      "file": "costumes/背景素材(ベクター)2.svg"
+    },
+    {
+      "name": "背景1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 527.6471008593751,
+      "rotationCenterY": 357.65663153012093,
+      "file": "costumes/背景1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "ポップ",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/ポップ.wav"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+when clicked
+set [score v] to (0)
+show variable [score v]
+switch costume to [cookie v]
+
+when this sprite clicked
+change [score v] by (1)
+start sound [pop v]
+switch costume to [pressed v]
+wait (0.1) seconds
+switch costume to [cookie v]
+if <(score) = (10)> then
+  switch backdrop to [win v]
+  broadcast [win v]
+end

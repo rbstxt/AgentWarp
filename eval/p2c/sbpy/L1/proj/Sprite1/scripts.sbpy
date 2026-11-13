@@ -1,0 +1,4 @@
+event_whenflagclicked():
+    motion_gotoxy(X=0, Y=0)
+    motion_movesteps(STEPS=10)
+    looks_sayforsecs(MESSAGE="Hello!", SECS=2)

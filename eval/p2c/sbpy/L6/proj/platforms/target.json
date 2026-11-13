@@ -1,0 +1,53 @@
+{
+  "name": "platforms",
+  "isStage": false,
+  "currentCostume": 1,
+  "volume": 100,
+  "layerOrder": 2,
+  "visible": true,
+  "x": 360,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "y",
+      "id": "^R7YIr(cM=5zG4AYsIRb",
+      "value": "0"
+    },
+    {
+      "name": "x",
+      "id": "TTw4Wf9SV[KR:tnaF~Uu",
+      "value": "360"
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "level 1 2",
+      "bitmapResolution": 2,
+      "rotationCenterX": 401,
+      "rotationCenterY": -153,
+      "file": "costumes/level 1 2.png"
+    },
+    {
+      "name": "level 1 3",
+      "bitmapResolution": 2,
+      "rotationCenterX": 480,
+      "rotationCenterY": 205,
+      "file": "costumes/level 1 3.png"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+when clicked
+go to x: (0) y: (0)
+point in direction (45)
+forever
+  move (5) steps
+  if on edge, bounce
+end

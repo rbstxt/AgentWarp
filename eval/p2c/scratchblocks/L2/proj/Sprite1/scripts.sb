@@ -1,0 +1,16 @@
+when clicked
+go to x: (0) y: (0)
+forever
+  if <key [left arrow v] pressed?> then
+    change x by (-5)
+  end
+  if <key [right arrow v] pressed?> then
+    change x by (5)
+  end
+  if <key [up arrow v] pressed?> then
+    change y by (5)
+  end
+  if <key [down arrow v] pressed?> then
+    change y by (-5)
+  end
+end

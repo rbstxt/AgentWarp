@@ -1,0 +1,65 @@
+@a1
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    control_wait(DURATION="1")
+    sensing_resettimer()
+    data_setvariableto(VARIABLE="TIME", VALUE="0")
+    control_repeat_until(CONDITION=operator_equals(OPERAND1=var("ステージ数"), OPERAND2="20")):
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="1", OPERAND2=sensing_timer())):
+            control_if(CONDITION=operator_equals(OPERAND1=var("ステージ数"), OPERAND2="20")):
+                control_stop(STOP_OPTION="this script", mutation={"tagName": "mutation", "children": [], "hasnext": "false"})
+        data_changevariableby(VARIABLE="TIME", VALUE="1")
+        sensing_resettimer()
+
+@a2
+event_whenflagclicked():
+    data_setvariableto(VARIABLE="ステージ数", VALUE="1")
+    looks_hide()
+
+@a3
+event_whenbroadcastreceived(BROADCAST_OPTION="次のステージ"):
+    control_wait(DURATION="1")
+    data_changevariableby(VARIABLE="ステージ数", VALUE="1")
+
+@a4
+event_whenflagclicked():
+    data_hidevariable(VARIABLE="☁ World record")
+    data_hidevariable(VARIABLE="TIME")
+
+@a5
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    control_wait(DURATION="1")
+    control_forever():
+        control_if_else(CONDITION=operator_equals(OPERAND1=var("ステージ数"), OPERAND2="20")):
+            control_if(CONDITION=operator_lt(OPERAND1=var("TIME"), OPERAND2=var("☁ World record"))):
+                data_setvariableto(VARIABLE="☁ World record", VALUE=var("TIME"))
+            control_wait(DURATION="1")
+            data_showvariable(VARIABLE="☁ World record")
+            data_showvariable(VARIABLE="TIME")
+            control_stop(STOP_OPTION="this script", mutation={"tagName": "mutation", "children": [], "hasnext": "false"})
+        else:
+            data_hidevariable(VARIABLE="TIME")
+            data_hidevariable(VARIABLE="☁ World record")
+
+@a6
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    looks_show()
+    control_forever():
+        looks_switchcostumeto(COSTUME=var("ステージ数"))
+
+@a7
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    motion_gotoxy(X="0", Y="-75")
+    control_repeat(TIMES="50"):
+        motion_changeyby(DY=operator_divide(NUM1=operator_subtract(NUM1="0", NUM2=motion_yposition()), NUM2="5"))
+
+# タイム (per-level seconds): counts up from green flag, shown as a monitor.
+event_whenflagclicked():
+    data_setvariableto(VARIABLE="タイム", VALUE="0")
+    data_showvariable(VARIABLE="タイム")
+    control_forever():
+        control_wait(DURATION="1")
+        data_changevariableby(VARIABLE="タイム", VALUE="1")
+
+# A new level starts over at 0 (TIME keeps the whole-run total instead).
+event_whenbroadcastreceived(BROADCAST_OPTION="次のステージ"):
+    data_setvariableto(VARIABLE="タイム", VALUE="0")

@@ -1,0 +1,42 @@
+{
+  "name": "Cookie",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": true,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "normal",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30,
+      "rotationCenterY": 30,
+      "file": "costumes/normal.svg"
+    },
+    {
+      "name": "pressed",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30,
+      "rotationCenterY": 30,
+      "file": "costumes/pressed.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

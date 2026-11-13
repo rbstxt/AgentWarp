@@ -1,0 +1,1 @@
+{"extensions":[],"extraTopLevel":{},"formatVersion":1,"meta":{"agent":"agentwarp","semver":"3.0.0","vm":"0.2.0"},"monitors":[{"height":0,"id":"var1","mode":"default","opcode":"data_variable","params":{"VARIABLE":"score"},"spriteName":null,"value":0,"visible":true,"width":0,"x":5,"y":5}]}

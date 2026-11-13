@@ -1,0 +1,10 @@
+@a1
+event_whenflagclicked():
+    motion_gotoxy(X="0", Y="0")
+    looks_switchcostumeto(COSTUME="コスチューム6")
+    looks_setsizeto(SIZE="100")
+    looks_switchcostumeto(COSTUME="コスチューム4")
+    control_forever():
+        looks_show()
+        looks_seteffectto(EFFECT="GHOST", VALUE="100")
+        looks_gotofrontback(FRONT_BACK="front")

@@ -1,0 +1,48 @@
+{
+  "name": "P4",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 4,
+  "visible": true,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "code",
+      "id": "var-code-P4",
+      "value": 0
+    },
+    {
+      "name": "t",
+      "id": "var-t-P4",
+      "value": 0
+    },
+    {
+      "name": "px",
+      "id": "var-px-P4",
+      "value": 0
+    },
+    {
+      "name": "py",
+      "id": "var-py-P4",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "slab",
+      "bitmapResolution": 1,
+      "rotationCenterX": 50,
+      "rotationCenterY": 10,
+      "file": "costumes/slab.svg"
+    }
+  ],
+  "sounds": []
+}

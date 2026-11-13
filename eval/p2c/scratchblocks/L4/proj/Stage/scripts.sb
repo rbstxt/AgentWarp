@@ -1,0 +1,3 @@
+when clicked
+set [score v] to (0)
+set [lives v] to (5)

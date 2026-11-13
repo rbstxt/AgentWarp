@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "0.2.0",
+    "agent": "agentwarp"
+  },
+  "extensions": [],
+  "monitors": [
+    {
+      "id": "mon-score",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "score"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": true
+    }
+  ],
+  "extraTopLevel": {}
+}

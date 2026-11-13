@@ -1,0 +1,4 @@
+when clicked
+go to x: (0) y: (0)
+move (10) steps
+say [Hello!] for (2) seconds

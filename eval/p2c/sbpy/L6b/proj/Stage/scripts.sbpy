@@ -1,0 +1,5 @@
+@a1
+event_whenflagclicked():
+    looks_switchbackdropto(BACKDROP="背景1")
+    control_wait(DURATION="3")
+    looks_switchbackdropto(BACKDROP="背景素材(ベクター)2")

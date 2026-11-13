@@ -1,0 +1,71 @@
+{
+  "name": "player",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": true,
+  "x": 0,
+  "y": -61,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "x",
+      "id": "e}K2KzM}~Wx=QxVE%]:7",
+      "value": "0"
+    },
+    {
+      "name": "y",
+      "id": "2;J9v16X3ngoE4=GVjKF",
+      "value": -61
+    },
+    {
+      "name": "speed y",
+      "id": "YC0v0C.8]lxc_ZL;lBjf",
+      "value": "0"
+    },
+    {
+      "name": "in air",
+      "id": "l7|8-%j-h?+BzBLoDw[b",
+      "value": "0"
+    },
+    {
+      "name": "paused",
+      "id": "|#sM=(c*~LoM`[SD=X:s",
+      "value": 0
+    },
+    {
+      "name": "jumps",
+      "id": "zpE?r^K}8lqv]s%JHgKQ",
+      "value": 1
+    },
+    {
+      "name": "upHeld",
+      "id": "SqX5ezj[kI;agIDHw{U|",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "costume1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 53,
+      "rotationCenterY": 3,
+      "file": "costumes/costume1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

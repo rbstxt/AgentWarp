@@ -1,0 +1,580 @@
+{
+  "name": "いんとぅるえんぎね",
+  "isStage": false,
+  "currentCostume": 52,
+  "volume": 100,
+  "layerOrder": 2,
+  "visible": false,
+  "x": 0,
+  "y": 0,
+  "size": 9.383095409240108,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [
+    {
+      "name": "clone X",
+      "id": "Y-Eo|M/M^5?5;p;R8zMy",
+      "value": ""
+    },
+    {
+      "name": "clone Y",
+      "id": "P`jSe:,?J{Ww@P$TqfTL",
+      "value": ""
+    },
+    {
+      "name": "clone Dir",
+      "id": "6bNIpc{9K4R1u8M88Lm+",
+      "value": "90"
+    },
+    {
+      "name": "clone Z",
+      "id": "bU{0+%!+shMGvRhlq,4`",
+      "value": "0"
+    },
+    {
+      "name": "ID",
+      "id": "7m$*W]mh8TSn`v58oq:0",
+      "value": "back"
+    },
+    {
+      "name": "Cam Control?",
+      "id": ")`EQ(YNT2kMmrIQTc(eY",
+      "value": ""
+    },
+    {
+      "name": "Sw,type",
+      "id": ",{+4@@pbtamdh[O!d,$+",
+      "value": "a"
+    },
+    {
+      "name": "sw",
+      "id": "g)|OdQKyH{W0xIzTHIl9",
+      "value": 7897.469567994436
+    },
+    {
+      "name": "sw z",
+      "id": "iXeuaXK_8N;uN:%6#9Sb",
+      "value": "100"
+    },
+    {
+      "name": "Sw C",
+      "id": "r~u{,#dK[N|[H):e;4=o",
+      "value": "115"
+    },
+    {
+      "name": "Sw dir",
+      "id": "A7BO)5,#Pn_:NUpNOM,(",
+      "value": ""
+    },
+    {
+      "name": "cos",
+      "id": "`C8LmO}^yC~$%4OT2I]T",
+      "value": 1
+    },
+    {
+      "name": "player.y",
+      "id": "N+LTP%yD2Y+Jwx^0|P+f",
+      "value": 0
+    },
+    {
+      "name": "player.xv",
+      "id": "$rdZDWmD#*Bc6mPnj9bM",
+      "value": 0
+    },
+    {
+      "name": "player.yv",
+      "id": "#[!|d@(wheZx23ky+mey",
+      "value": 0
+    },
+    {
+      "name": "player.y",
+      "id": "L7k*04f~9@ekS^z;Y^c,",
+      "value": 0
+    },
+    {
+      "name": "player.x",
+      "id": "%CPnDVICkH/#uyNbH;EC",
+      "value": 0
+    },
+    {
+      "name": "rw",
+      "id": "Uh[!JCvEwOxb6A{SE(T:",
+      "value": "1"
+    },
+    {
+      "name": "Rw C",
+      "id": "L)#)Q(3L89h/IQ#/$sqt",
+      "value": "120"
+    },
+    {
+      "name": "Rw siz",
+      "id": "FCpC53mwM;6t_+#gQiZP",
+      "value": "200"
+    },
+    {
+      "name": "Fw 明るさ",
+      "id": ")kYK^!l:s{(O9$H;^B$+",
+      "value": 0
+    },
+    {
+      "name": "Fw Color",
+      "id": "{]#n4n*U0:d~cNZ158!c",
+      "value": "125"
+    },
+    {
+      "name": "Fw type",
+      "id": "BV9+K-JgF(YUT$@$|+!0",
+      "value": "b"
+    },
+    {
+      "name": "Fw",
+      "id": "5^vj[:kkh.y$iM!L{e2{",
+      "value": 20
+    },
+    {
+      "name": "(ﾟ∀ﾟ)",
+      "id": "wLh$+f7l/3c+SxVKN+2T",
+      "value": "10"
+    },
+    {
+      "name": "A",
+      "id": "GR7kwP)JkvPj$D}o_L21",
+      "value": "1"
+    },
+    {
+      "name": "b",
+      "id": "XNodB~5/83H=%7?E|Oj/",
+      "value": "1"
+    }
+  ],
+  "lists": [
+    {
+      "name": "Fwのためだけのリスト。",
+      "id": "r[g8RtFRqdZv8vzQgCaL",
+      "items": [
+        [
+          "2",
+          "4",
+          "6",
+          "8",
+          "10",
+          "12",
+          "14",
+          "16",
+          "18",
+          "20"
+        ]
+      ]
+    },
+    {
+      "name": "おとはっめ",
+      "id": "6{vTJziCp;=(t{89{FHf",
+      "items": [
+        [
+          "3.33",
+          "4.29",
+          "5",
+          "5.74",
+          "6.3",
+          "6",
+          "7.1",
+          "",
+          "8.2",
+          "9.8",
+          "10.5"
+        ]
+      ]
+    }
+  ],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "Filler (Size)",
+      "bitmapResolution": 1,
+      "rotationCenterX": 0,
+      "rotationCenterY": 0,
+      "file": "costumes/Filler (Size).svg"
+    },
+    {
+      "name": "Filler (Movement)",
+      "bitmapResolution": 1,
+      "rotationCenterX": 594.5,
+      "rotationCenterY": 594.5,
+      "file": "costumes/Filler (Movement).svg"
+    },
+    {
+      "name": "le1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le1.svg"
+    },
+    {
+      "name": "le2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le2.svg"
+    },
+    {
+      "name": "le4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le4.svg"
+    },
+    {
+      "name": "le5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le5.svg"
+    },
+    {
+      "name": "le7",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le7.svg"
+    },
+    {
+      "name": "le8",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le8.svg"
+    },
+    {
+      "name": "le10",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le10.svg"
+    },
+    {
+      "name": "le11",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le11.svg"
+    },
+    {
+      "name": "le13",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le13.svg"
+    },
+    {
+      "name": "le14",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le14.svg"
+    },
+    {
+      "name": "le16",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le16.svg"
+    },
+    {
+      "name": "le17",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le17.svg"
+    },
+    {
+      "name": "le21",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100,
+      "rotationCenterY": 100,
+      "file": "costumes/le21.svg"
+    },
+    {
+      "name": "Screen",
+      "bitmapResolution": 2,
+      "rotationCenterX": 480,
+      "rotationCenterY": 360,
+      "file": "costumes/Screen.png"
+    },
+    {
+      "name": "Bar",
+      "bitmapResolution": 1,
+      "rotationCenterX": 704.604248046875,
+      "rotationCenterY": 754.8876953125,
+      "file": "costumes/Bar.svg"
+    },
+    {
+      "name": "Light",
+      "bitmapResolution": 2,
+      "rotationCenterX": 456,
+      "rotationCenterY": 360,
+      "file": "costumes/Light.png"
+    },
+    {
+      "name": "text",
+      "bitmapResolution": 1,
+      "rotationCenterX": 144.9318,
+      "rotationCenterY": 42.572509999999994,
+      "file": "costumes/text.svg"
+    },
+    {
+      "name": "g",
+      "bitmapResolution": 1,
+      "rotationCenterX": 25.74521999999999,
+      "rotationCenterY": 42.23685499999999,
+      "file": "costumes/g.svg"
+    },
+    {
+      "name": "o",
+      "bitmapResolution": 1,
+      "rotationCenterX": 25.204696903125836,
+      "rotationCenterY": 42.23685499999999,
+      "file": "costumes/o.svg"
+    },
+    {
+      "name": "r",
+      "bitmapResolution": 1,
+      "rotationCenterX": 24.811120000000074,
+      "rotationCenterY": 42.23686999999998,
+      "file": "costumes/r.svg"
+    },
+    {
+      "name": "i",
+      "bitmapResolution": 1,
+      "rotationCenterX": 12.05552000000003,
+      "rotationCenterY": 42.23685499999999,
+      "file": "costumes/i.svg"
+    },
+    {
+      "name": "r2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 24.822284999999994,
+      "rotationCenterY": 42.23686999999995,
+      "file": "costumes/r2.svg"
+    },
+    {
+      "name": "a",
+      "bitmapResolution": 1,
+      "rotationCenterX": 26.411382130614697,
+      "rotationCenterY": 42.23685499999999,
+      "file": "costumes/a.svg"
+    },
+    {
+      "name": "f",
+      "bitmapResolution": 1,
+      "rotationCenterX": 21.155720000000002,
+      "rotationCenterY": 42.23686000000001,
+      "file": "costumes/f.svg"
+    },
+    {
+      "name": "back",
+      "bitmapResolution": 1,
+      "rotationCenterX": 305.1033824045825,
+      "rotationCenterY": 196.64931392104944,
+      "file": "costumes/back.svg"
+    },
+    {
+      "name": "sw",
+      "bitmapResolution": 2,
+      "rotationCenterX": 152,
+      "rotationCenterY": 152,
+      "file": "costumes/sw.png"
+    },
+    {
+      "name": "1/2sw",
+      "bitmapResolution": 1,
+      "rotationCenterX": 77.0991002985869,
+      "rotationCenterY": 77.09910029858683,
+      "file": "costumes/1_2sw.svg"
+    },
+    {
+      "name": "Diamond 1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 135.76450198781714,
+      "rotationCenterY": 135.76450198781714,
+      "file": "costumes/Diamond 1.svg"
+    },
+    {
+      "name": "Diamond 2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 133.99673409417815,
+      "rotationCenterY": 133.99673409417812,
+      "file": "costumes/Diamond 2.svg"
+    },
+    {
+      "name": "Diamond 3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 132.2289692475728,
+      "rotationCenterY": 132.22896924757276,
+      "file": "costumes/Diamond 3.svg"
+    },
+    {
+      "name": "Diamond 4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 130.4611974480011,
+      "rotationCenterY": 130.46119744800106,
+      "file": "costumes/Diamond 4.svg"
+    },
+    {
+      "name": "Diamond 5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 128.693428695463,
+      "rotationCenterY": 128.69342869546296,
+      "file": "costumes/Diamond 5.svg"
+    },
+    {
+      "name": "Diamond 6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 126.92566174249663,
+      "rotationCenterY": 126.92566174249657,
+      "file": "costumes/Diamond 6.svg"
+    },
+    {
+      "name": "Diamond 7",
+      "bitmapResolution": 1,
+      "rotationCenterX": 125.1578990840258,
+      "rotationCenterY": 125.15789908402571,
+      "file": "costumes/Diamond 7.svg"
+    },
+    {
+      "name": "Diamond 8",
+      "bitmapResolution": 1,
+      "rotationCenterX": 123.39013213105946,
+      "rotationCenterY": 123.39013213105937,
+      "file": "costumes/Diamond 8.svg"
+    },
+    {
+      "name": "Diamond 9",
+      "bitmapResolution": 1,
+      "rotationCenterX": 121.6223655666559,
+      "rotationCenterY": 121.6223655666558,
+      "file": "costumes/Diamond 9.svg"
+    },
+    {
+      "name": "Diamond 10",
+      "bitmapResolution": 1,
+      "rotationCenterX": 119.85459204928594,
+      "rotationCenterY": 119.85459204928586,
+      "file": "costumes/Diamond 10.svg"
+    },
+    {
+      "name": "Diamond 11",
+      "bitmapResolution": 1,
+      "rotationCenterX": 118.08683157894966,
+      "rotationCenterY": 118.08683157894953,
+      "file": "costumes/Diamond 11.svg"
+    },
+    {
+      "name": "Diamond 12",
+      "bitmapResolution": 1,
+      "rotationCenterX": 116.319064155647,
+      "rotationCenterY": 116.31906415564686,
+      "file": "costumes/Diamond 12.svg"
+    },
+    {
+      "name": "Diamond 13",
+      "bitmapResolution": 1,
+      "rotationCenterX": 114.55129977937798,
+      "rotationCenterY": 114.55129977937781,
+      "file": "costumes/Diamond 13.svg"
+    },
+    {
+      "name": "Diamond 14",
+      "bitmapResolution": 1,
+      "rotationCenterX": 112.78352845014257,
+      "rotationCenterY": 112.7835284501424,
+      "file": "costumes/Diamond 14.svg"
+    },
+    {
+      "name": "Diamond 15",
+      "bitmapResolution": 1,
+      "rotationCenterX": 111.01576016794075,
+      "rotationCenterY": 111.0157601679406,
+      "file": "costumes/Diamond 15.svg"
+    },
+    {
+      "name": "Diamond 16",
+      "bitmapResolution": 1,
+      "rotationCenterX": 109.24799493277263,
+      "rotationCenterY": 109.24799493277244,
+      "file": "costumes/Diamond 16.svg"
+    },
+    {
+      "name": "Diamond 17",
+      "bitmapResolution": 1,
+      "rotationCenterX": 107.48023274463813,
+      "rotationCenterY": 107.48023274463792,
+      "file": "costumes/Diamond 17.svg"
+    },
+    {
+      "name": "Diamond 18",
+      "bitmapResolution": 1,
+      "rotationCenterX": 105.71246360353723,
+      "rotationCenterY": 105.712463603537,
+      "file": "costumes/Diamond 18.svg"
+    },
+    {
+      "name": "Diamond 19",
+      "bitmapResolution": 1,
+      "rotationCenterX": 103.94469750946999,
+      "rotationCenterY": 103.94469750946973,
+      "file": "costumes/Diamond 19.svg"
+    },
+    {
+      "name": "Diamond 20",
+      "bitmapResolution": 1,
+      "rotationCenterX": 102.17692446243638,
+      "rotationCenterY": 102.1769244624361,
+      "file": "costumes/Diamond 20.svg"
+    },
+    {
+      "name": "Diamond 21",
+      "bitmapResolution": 1,
+      "rotationCenterX": 101.46982463421622,
+      "rotationCenterY": 101.46982463421594,
+      "file": "costumes/Diamond 21.svg"
+    },
+    {
+      "name": "Diamond 22",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100.76271802480952,
+      "rotationCenterY": 100.76271802480922,
+      "file": "costumes/Diamond 22.svg"
+    },
+    {
+      "name": "Diamond 23",
+      "bitmapResolution": 1,
+      "rotationCenterX": 100.44451336386885,
+      "rotationCenterY": 100.44451336386854,
+      "file": "costumes/Diamond 23.svg"
+    },
+    {
+      "name": "おおきさかんりよう()",
+      "bitmapResolution": 1,
+      "rotationCenterX": 28.14516117680185,
+      "rotationCenterY": 26.64365967530034,
+      "file": "costumes/おおきさかんりよう().svg"
+    },
+    {
+      "name": "コスチューム1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 66.57505,
+      "rotationCenterY": 66.57505,
+      "file": "costumes/コスチューム1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "Catch Me (Wy Flip)",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 521237,
+      "file": "sounds/Catch Me (Wy Flip).wav"
+    }
+  ]
+}

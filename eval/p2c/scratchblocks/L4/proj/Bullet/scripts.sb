@@ -1,0 +1,14 @@
+when clicked
+go to x: (500) y: (500)
+hide
+
+when I start as a clone
+go to x: ([x position v] of [Player v]) y: (-130)
+show
+repeat until <touching [edge v]?>
+  change y by (10)
+  if <touching [Enemy v]?> then
+    delete this clone
+  end
+end
+delete this clone

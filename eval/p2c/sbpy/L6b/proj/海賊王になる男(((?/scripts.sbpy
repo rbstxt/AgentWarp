@@ -1,0 +1,168 @@
+@a1
+define "残像" ():
+    looks_seteffectto(EFFECT="GHOST", VALUE="0")
+    control_repeat(TIMES="5"):
+        looks_changeeffectby(EFFECT="GHOST", CHANGE="20")
+    control_delete_this_clone()
+
+@a2
+looks_switchcostumeto(COSTUME="コスチューム1")
+
+@a3
+event_whenbroadcastreceived(BROADCAST_OPTION="次!"):
+    looks_hide()
+    control_wait(DURATION="2.5")
+
+@a4
+control_start_as_clone():
+    looks_switchcostumeto(COSTUME="コスチューム3")
+    call("残像")
+
+@a5
+event_whenflagclicked():
+    looks_hide()
+
+@a6
+define "戻る" ():
+    event_broadcast(BROADCAST_INPUT=broadcast("i"))
+    sound_play(SOUND_MENU="Crunch")
+    motion_gotoxy(X="-210", Y="0")
+    looks_show()
+    data_setvariableto(VARIABLE="x", VALUE="0")
+    data_setvariableto(VARIABLE="y", VALUE="0")
+
+@a7
+event_whenbroadcastreceived(BROADCAST_OPTION="すてーじかわった"):
+    control_wait(DURATION="0.8")
+    call("戻る(クリア)")
+
+@a8
+event_whenflagclicked():
+    event_broadcast(BROADCAST_INPUT=broadcast("Intro start"))
+
+@a9
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    data_setvariableto(VARIABLE="ステージのバグ解消", VALUE="0")
+    sound_setvolumeto(VOLUME="100")
+    control_forever():
+        control_wait(DURATION="1")
+        sound_playuntildone(SOUND_MENU=operator_random(FROM="4", TO="9"))
+
+@a10
+define "戻る(クリア)" ():
+    data_setvariableto(VARIABLE="ステージのバグ解消", VALUE="0")
+    motion_gotoxy(X="-210", Y="0")
+    looks_show()
+    looks_switchcostumeto(COSTUME="コスチューム1")
+
+@a11
+control_start_as_clone():
+    looks_seteffectto(EFFECT="GHOST", VALUE="0")
+    looks_switchcostumeto(COSTUME="コスチューム3")
+    control_repeat(TIMES="15"):
+        looks_changesizeby(CHANGE="-2")
+        looks_changeeffectby(EFFECT="GHOST", CHANGE="7")
+    control_delete_this_clone()
+
+@a12
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    control_wait(DURATION="1")
+    motion_gotoxy(X="-150", Y="0")
+    looks_show()
+    motion_setrotationstyle(STYLE="left-right")
+    data_setvariableto(VARIABLE="x", VALUE="0")
+    data_setvariableto(VARIABLE="y", VALUE="0")
+    looks_setsizeto(SIZE="65")
+    control_forever():
+        control_if_else(CONDITION=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="w"), OPERAND2=sensing_keypressed(KEY_OPTION="up arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousey())))):
+            control_if_else(CONDITION=operator_or(OPERAND1=operator_and(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="w"), OPERAND2=sensing_keypressed(KEY_OPTION="up arrow")), OPERAND2=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="d"), OPERAND2=sensing_keypressed(KEY_OPTION="right arrow")), OPERAND2=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="a"), OPERAND2=sensing_keypressed(KEY_OPTION="left arrow")))), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousey())))):
+                looks_switchcostumeto(COSTUME="コスチューム4")
+            else:
+                looks_switchcostumeto(COSTUME="コスチューム6")
+        else:
+            looks_switchcostumeto(COSTUME="コスチューム1")
+            control_if_else(CONDITION=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="a"), OPERAND2=sensing_keypressed(KEY_OPTION="left arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1=sensing_mousex(), OPERAND2="0")))):
+                looks_switchcostumeto(COSTUME="コスチューム2")
+            else:
+                control_if_else(CONDITION=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="d"), OPERAND2=sensing_keypressed(KEY_OPTION="right arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousex())))):
+                    looks_switchcostumeto(COSTUME="コスチューム2")
+                else:
+                    looks_switchcostumeto(COSTUME="コスチューム1")
+        control_if(CONDITION=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="d"), OPERAND2=sensing_keypressed(KEY_OPTION="right arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousex())))):
+            motion_pointindirection(DIRECTION="90")
+            data_changevariableby(VARIABLE="x", VALUE="1.75")
+        control_if(CONDITION=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="a"), OPERAND2=sensing_keypressed(KEY_OPTION="left arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1=sensing_mousex(), OPERAND2="0")))):
+            data_changevariableby(VARIABLE="x", VALUE="-1.75")
+            motion_pointindirection(DIRECTION="-90")
+        data_setvariableto(VARIABLE="x", VALUE=operator_multiply(NUM1=var("x"), NUM2="0.8"))
+        motion_changexby(DX=var("x"))
+        control_if(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ")))):
+            motion_changeyby(DY="1")
+            control_if(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ")))):
+                motion_changeyby(DY="1")
+                control_if(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ")))):
+                    motion_changeyby(DY="1")
+                    control_if(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ")))):
+                        motion_changeyby(DY="1")
+                        control_if(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ")))):
+                            motion_changeyby(DY="1")
+                            control_if(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴"), OPERAND2=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴2"))))):
+                                motion_changexby(DX=operator_multiply(NUM1=var("x"), NUM2="-1"))
+                                motion_changeyby(DY="-5")
+                                control_if_else(CONDITION=operator_and(OPERAND1=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="w"), OPERAND2=sensing_keypressed(KEY_OPTION="up arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousey()))), OPERAND2=operator_not(OPERAND=sensing_touchingobject(TOUCHINGOBJECTMENU="水")))):
+                                    sound_play(SOUND_MENU="壁キック")
+                                    control_if_else(CONDITION=operator_gt(OPERAND1=var("x"), OPERAND2="0")):
+                                        data_setvariableto(VARIABLE="x", VALUE="-15")
+                                    else:
+                                        data_setvariableto(VARIABLE="x", VALUE="15")
+                                    data_setvariableto(VARIABLE="y", VALUE="15.5")
+                                else:
+                                    data_setvariableto(VARIABLE="x", VALUE="0")
+        data_changevariableby(VARIABLE="y", VALUE="-1")
+        motion_changeyby(DY=var("y"))
+        control_if(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴"), OPERAND2=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴2"))))):
+            motion_changeyby(DY=operator_multiply(NUM1=var("y"), NUM2="-1"))
+            data_setvariableto(VARIABLE="y", VALUE="0")
+        control_if(CONDITION=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="w"), OPERAND2=sensing_keypressed(KEY_OPTION="up arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousey())))):
+            motion_changeyby(DY="-1")
+            control_if(CONDITION=operator_and(OPERAND1=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴"), OPERAND2=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴2")))), OPERAND2=operator_or(OPERAND1=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="w"), OPERAND2=sensing_keypressed(KEY_OPTION="up arrow")), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousey()))))):
+                data_changevariableby(VARIABLE="y", VALUE="17")
+                sound_play(SOUND_MENU="ジャンプ3")
+            motion_changeyby(DY="1")
+        control_if(CONDITION=operator_lt(OPERAND1="240", OPERAND2=motion_xposition())):
+            event_broadcast(BROADCAST_INPUT=broadcast("次のステージ"))
+            motion_gotoxy(X="-210", Y="0")
+            data_setvariableto(VARIABLE="ステージのバグ解消", VALUE="1")
+            control_wait(DURATION="3")
+            data_setvariableto(VARIABLE="x", VALUE="0")
+            data_setvariableto(VARIABLE="y", VALUE="0")
+        control_if(CONDITION=sensing_touchingobject(TOUCHINGOBJECTMENU="ジャンプ台")):
+            sound_play(SOUND_MENU="ジャンプ3")
+            data_setvariableto(VARIABLE="y", VALUE="20")
+        control_if(CONDITION=operator_or(OPERAND1=operator_lt(OPERAND1=motion_yposition(), OPERAND2="-182"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="針"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="敵キャラ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="針(特殊?)"), OPERAND2=sensing_touchingobject(TOUCHINGOBJECTMENU="動く針2")))))):
+            control_if_else(CONDITION=sensing_touchingobject(TOUCHINGOBJECTMENU="敵キャラ")):
+                control_if_else(CONDITION=sensing_touchingcolor(COLOR="#da4343")):
+                    control_if_else(CONDITION=sensing_touchingcolor(COLOR="#dd4848")):
+                        call("戻る")
+                    else:
+                        pass
+                else:
+                    call("戻る")
+            else:
+                call("戻る")
+        control_create_clone_of(CLONE_OPTION="_myself_")
+        event_broadcast(BROADCAST_INPUT=broadcast("huhh0"))
+
+@a13
+event_whenbroadcastreceived(BROADCAST_OPTION="huhh0"):
+    control_if(CONDITION=operator_not(OPERAND=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="動くステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="ステージ"), OPERAND2=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴"), OPERAND2=sensing_touchingobject(TOUCHINGOBJECTMENU="鍵穴2")))))):
+        motion_changeyby(DY="-1")
+
+@a14
+event_whenbroadcastreceived(BROADCAST_OPTION="イントロ完"):
+    control_forever():
+        control_wait_until(CONDITION=sensing_touchingobject(TOUCHINGOBJECTMENU="水"))
+        control_if_else(CONDITION=operator_or(OPERAND1=sensing_keypressed(KEY_OPTION="up arrow"), OPERAND2=operator_and(OPERAND1=sensing_mousedown(), OPERAND2=operator_lt(OPERAND1="0", OPERAND2=sensing_mousey())))):
+            data_setvariableto(VARIABLE="y", VALUE="5")
+        else:
+            data_setvariableto(VARIABLE="y", VALUE="-1.5")

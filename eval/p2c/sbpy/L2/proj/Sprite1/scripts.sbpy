@@ -1,0 +1,11 @@
+event_whenflagclicked():
+    motion_gotoxy(X=0, Y=0)
+    control_forever():
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="left arrow")):
+            motion_changexby(DX=-5)
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="right arrow")):
+            motion_changexby(DX=5)
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="up arrow")):
+            motion_changeyby(DY=5)
+        control_if(CONDITION=sensing_keypressed(KEY_OPTION="down arrow")):
+            motion_changeyby(DY=-5)

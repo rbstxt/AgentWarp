@@ -1,0 +1,106 @@
+@a1
+when I receive [play game v]
+set [LEVEL v] to ["1"]
+forever
+  broadcast [Reset v] and wait // [c1] this makes everything run!
+  broadcast [Setup v] and wait
+  game on
+  repeat until <>
+    if <(paused) = ["0"]> then // pause: freeze the whole tick while paused
+      tick
+      set [SCROLL X v] to (x)
+      position
+    end
+    broadcast [tick v] and wait
+  end
+end
+
+@a2
+define change player y by (sy)
+change [y v] by (sy) // [c2] this is so it stays on top of the ground
+change [in air v] by ("1")
+position
+repeat until <not <touching [platforms v] ?>>
+  if <(sy) > ["0"]> then
+    change [y v] by ("-1")
+  else
+    change [y v] by ("1")
+    set [in air v] to ["0"]
+    set [jumps v] to ["0"] // double jump recharges on landing
+  end
+  position
+  set [speed y v] to ["0"]
+end
+
+@a3
+define tick :: warp
+if <key [right arrow v] pressed?> then
+  change player x by ["10"]
+end
+if <key [left arrow v] pressed?> then // this code needs the play game code and the change player x by sx code to work
+  change player x by ["-10"]
+end
+if <key [up arrow v] pressed?> then
+  if <(in air) < ["4"]> then
+    set [speed y v] to ["23"] // [c4] this makes it move and gives it gravity! 1.5x jump: was 17, now 23
+  else
+    if <(jumps) < ["1"]> then // double jump: one extra jump while airborne
+      set [speed y v] to ["23"]
+      change [jumps v] by ("1")
+    end
+  end
+end
+change [speed y v] by ("-2")
+change player y by (speed y)
+
+@a4
+define game on
+set [x v] to ["0"] // [c5] this sets all the variables to 0
+set [y v] to ["0"]
+set [speed y v] to ["0"]
+set [in air v] to ["0"]
+show
+
+@a5
+define change player x by (sx)
+change [x v] by (sx)
+position
+if <touching [platforms v] ?> then // [c6] this is wall detection
+  repeat ("16")
+    change [y v] by ("1")
+    position
+    if <not <touching [platforms v] ?>> then
+      stop [this script v] :: {"tagName":"mutation","children":[],"hasnext":"false"}
+    end
+  end
+  change [y v] by ("-16")
+  repeat until <not <touching [platforms v] ?>>
+    if <(sx) > ["0"]> then
+      change [x v] by ("-1")
+    else
+      change [x v] by ("1")
+    end
+    position
+  end
+end
+
+@a6
+set [speed y v] to ["0"]
+
+@a7
+define position // [c7] this is the position 
+go to x: ((x) - (SCROLL X)) y: ((y) - (SCROLL Y))
+
+@a8
+when clicked // [c8] this tells it to start
+broadcast [green flag v] and wait
+broadcast [play game v] and wait
+
+when [p v] key pressed // pause toggle: P freezes play and shows PAUSED
+if <(paused) = ["1"]> then
+  set [paused v] to ["0"]
+  say [""]
+else
+  set [paused v] to ["1"]
+  say [PAUSED]
+end

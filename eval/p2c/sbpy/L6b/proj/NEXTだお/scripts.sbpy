@@ -1,0 +1,94 @@
+@a1
+define "クローン %s" (名前):
+    looks_switchcostumeto(COSTUME=arg("名前"))
+    control_create_clone_of(CLONE_OPTION="_myself_")
+
+@a2
+event_whenbroadcastreceived(BROADCAST_OPTION="次のステージ"):
+    looks_hide()
+    sound_play(SOUND_MENU="High Whoosh")
+    call("クローン %s", 名前="1")
+    control_wait(DURATION="0.15")
+    call("クローン %s", 名前="2")
+    control_wait(DURATION="0.15")
+    call("クローン %s", 名前="3")
+    control_wait(DURATION="0.15")
+    call("クローン %s", 名前="next")
+    control_wait(DURATION="0.45")
+    call("クローン %s", 名前="5")
+    control_wait(DURATION="0.15")
+    # ⇧
+    call("クローン %s", 名前="6")  # この下に入れてください
+    sound_play(SOUND_MENU="Finger Snap")  # この音は共有後に追加したので、付けるかつけないかはあなた次第です！
+    control_wait(DURATION="0.15")
+    call("クローン %s", 名前="7")
+    call("クローン %s", 名前="☆")
+    call("クローン %s", 名前="♡")
+    call("クローン %s", 名前="👤")
+    looks_changeeffectby(EFFECT="COLOR", CHANGE="15")
+
+@a3
+event_whenflagclicked():
+    looks_seteffectto(EFFECT="COLOR", VALUE=operator_random(FROM="-200", TO="200"))
+
+@a4
+control_start_as_clone():
+    control_if(CONDITION=operator_or(OPERAND1=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="1"), OPERAND2=operator_or(OPERAND1=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="2"), OPERAND2=operator_or(OPERAND1=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="3"), OPERAND2=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="next"))))):
+        looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="0")
+        looks_gotofrontback(FRONT_BACK="front")
+        motion_setx(X="-465")
+        motion_sety(Y="0")
+        looks_show()
+        control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=motion_xposition()), OPERAND2="0")):
+            motion_changexby(DX=operator_divide(NUM1=operator_subtract(NUM1="0", NUM2=motion_xposition()), NUM2="4"))
+        control_wait(DURATION="0.9")
+        control_delete_this_clone()
+    control_if(CONDITION=operator_or(OPERAND1=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="4"), OPERAND2=operator_or(OPERAND1=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="5"), OPERAND2=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="6")))):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_changeeffectby(EFFECT="COLOR", CHANGE="10")
+        motion_setx(X="0")
+        motion_sety(Y="345")
+        looks_show()
+        control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=motion_yposition()), OPERAND2="0")):
+            motion_changeyby(DY=operator_divide(NUM1=operator_subtract(NUM1="0", NUM2=motion_yposition()), NUM2="4"))
+    control_if(CONDITION=operator_or(OPERAND1=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="☆"), OPERAND2=operator_or(OPERAND1=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="♡"), OPERAND2=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="👤")))):
+        looks_seteffectto(EFFECT="COLOR", VALUE="0")
+        looks_gotofrontback(FRONT_BACK="front")
+        motion_setx(X="0")
+        motion_sety(Y="345")
+        looks_show()
+        control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=motion_yposition()), OPERAND2="0")):
+            motion_changeyby(DY=operator_divide(NUM1=operator_subtract(NUM1="0", NUM2=motion_yposition()), NUM2="4"))
+    control_if(CONDITION=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="4")):
+        control_wait(DURATION="0.3")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="464", OPERAND2=motion_xposition())):
+            motion_changexby(DX=operator_add(NUM1="1", NUM2=operator_divide(NUM1=motion_xposition(), NUM2="3")))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="5")):
+        control_wait(DURATION="0.2")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="464", OPERAND2=motion_xposition())):
+            motion_changexby(DX=operator_add(NUM1="1", NUM2=operator_divide(NUM1=motion_xposition(), NUM2="3")))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="6")):
+        control_wait(DURATION="0.1")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="464", OPERAND2=motion_xposition())):
+            motion_changexby(DX=operator_add(NUM1="1", NUM2=operator_divide(NUM1=motion_xposition(), NUM2="3")))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="♡")):
+        control_wait(DURATION="0.2")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="319", OPERAND2=motion_xposition())):
+            motion_changexby(DX=operator_add(NUM1="1", NUM2=operator_divide(NUM1=motion_xposition(), NUM2="3")))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="👤")):
+        control_wait(DURATION="0.125")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="360", OPERAND2=motion_xposition())):
+            motion_changexby(DX=operator_add(NUM1="1", NUM2=operator_divide(NUM1=motion_xposition(), NUM2="3")))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="☆")):
+        control_wait(DURATION="0.2")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="185", OPERAND2=motion_xposition())):
+            motion_changexby(DX=operator_add(NUM1="1", NUM2=operator_divide(NUM1=motion_xposition(), NUM2="3")))
+        control_delete_this_clone()
+
+@a5
+motion_xposition()

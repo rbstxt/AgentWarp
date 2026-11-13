@@ -1,0 +1,27 @@
+{
+  "name": "Ball",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": true,
+  "x": 0,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "ball",
+      "bitmapResolution": 1,
+      "rotationCenterX": 20,
+      "rotationCenterY": 20,
+      "file": "costumes/ball.svg"
+    }
+  ],
+  "sounds": []
+}

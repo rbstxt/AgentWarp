@@ -1,0 +1,13 @@
+@a1
+event_whenflagclicked():
+    looks_hide()
+    control_forever():
+        control_create_clone_of(CLONE_OPTION="_myself_")
+
+@a2
+control_start_as_clone():
+    looks_show()
+    motion_goto(TO="_mouse_")
+    control_repeat(TIMES="10"):
+        looks_changesizeby(CHANGE="5")
+    control_delete_this_clone()

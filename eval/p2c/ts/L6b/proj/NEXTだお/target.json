@@ -1,0 +1,105 @@
+{
+  "name": "NEXTだお",
+  "isStage": false,
+  "currentCostume": 8,
+  "volume": 100,
+  "layerOrder": 5,
+  "visible": false,
+  "x": 365,
+  "y": 0.4281136117560891,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 248.241305,
+      "file": "costumes/1.svg"
+    },
+    {
+      "name": "2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 248.241315,
+      "file": "costumes/2.svg"
+    },
+    {
+      "name": "3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 248.241305,
+      "file": "costumes/3.svg"
+    },
+    {
+      "name": "next",
+      "bitmapResolution": 1,
+      "rotationCenterX": 126.4843058679964,
+      "rotationCenterY": 60.334019999999995,
+      "file": "costumes/next.svg"
+    },
+    {
+      "name": "4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/4.svg"
+    },
+    {
+      "name": "5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/5.svg"
+    },
+    {
+      "name": "6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 402.00734,
+      "rotationCenterY": 252.96064349849854,
+      "file": "costumes/6.svg"
+    },
+    {
+      "name": "♡",
+      "bitmapResolution": 1,
+      "rotationCenterX": 0,
+      "rotationCenterY": 0,
+      "file": "costumes/♡.svg"
+    },
+    {
+      "name": "👤",
+      "bitmapResolution": 1,
+      "rotationCenterX": 0,
+      "rotationCenterY": 0,
+      "file": "costumes/👤.svg"
+    },
+    {
+      "name": "☆",
+      "bitmapResolution": 1,
+      "rotationCenterX": 0,
+      "rotationCenterY": 0,
+      "file": "costumes/☆.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "High Whoosh",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 15484,
+      "file": "sounds/High Whoosh.wav"
+    },
+    {
+      "name": "Finger Snap",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 8642,
+      "file": "sounds/Finger Snap.wav"
+    }
+  ]
+}

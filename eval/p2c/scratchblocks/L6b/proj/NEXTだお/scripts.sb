@@ -1,0 +1,112 @@
+@a1
+define クローン (名前)
+switch costume to (名前)
+create clone of [myself v]
+
+@a2
+when I receive [次のステージ v]
+hide
+start sound [High Whoosh v]
+クローン ["1"]
+wait ("0.15") seconds
+クローン ["2"]
+wait ("0.15") seconds
+クローン ["3"]
+wait ("0.15") seconds
+クローン [next]
+wait ("0.45") seconds
+クローン ["5"]
+wait ("0.15") seconds
+クローン ["6"] // [c1] ⇧
+// この下に入れてください
+start sound [Finger Snap v] // [c2] この音は共有後に追加したので、付けるかつけないかはあなた次第です！
+wait ("0.15") seconds
+クローン ["7"]
+クローン [☆]
+クローン [♡]
+クローン [👤]
+change [color v] effect by ("15")
+
+@a3
+when clicked
+set [color v] effect to (pick random ("-200") to ("200"))
+
+@a4
+when I start as a clone
+if <<(costume [name v]) = ["1"]> or <<(costume [name v]) = ["2"]> or <<(costume [name v]) = ["3"]> or <(costume [name v]) = [next]>>>> then
+  set [brightness v] effect to ("0")
+  go to [front v] layer
+  set x to ("-465")
+  set y to ("0")
+  show
+  repeat until <(round (x position)) = ["0"]>
+    change x by ((("0") - (x position)) / ("4"))
+  end
+  wait ("0.9") seconds
+  delete this clone
+end
+if <<(costume [name v]) = ["4"]> or <<(costume [name v]) = ["5"]> or <(costume [name v]) = ["6"]>>> then
+  go to [front v] layer
+  change [color v] effect by ("10")
+  set x to ("0")
+  set y to ("345")
+  show
+  repeat until <(round (y position)) = ["0"]>
+    change y by ((("0") - (y position)) / ("4"))
+  end
+end
+if <<(costume [name v]) = [☆]> or <<(costume [name v]) = [♡]> or <(costume [name v]) = [👤]>>> then
+  set [color v] effect to ("0")
+  go to [front v] layer
+  set x to ("0")
+  set y to ("345")
+  show
+  repeat until <(round (y position)) = ["0"]>
+    change y by ((("0") - (y position)) / ("4"))
+  end
+end
+if <(costume [name v]) = ["4"]> then
+  wait ("0.3") seconds
+  repeat until <["464"] < (x position)>
+    change x by (("1") + ((x position) / ("3")))
+  end
+  delete this clone
+end
+if <(costume [name v]) = ["5"]> then
+  wait ("0.2") seconds
+  repeat until <["464"] < (x position)>
+    change x by (("1") + ((x position) / ("3")))
+  end
+  delete this clone
+end
+if <(costume [name v]) = ["6"]> then
+  wait ("0.1") seconds
+  repeat until <["464"] < (x position)>
+    change x by (("1") + ((x position) / ("3")))
+  end
+  delete this clone
+end
+if <(costume [name v]) = [♡]> then
+  wait ("0.2") seconds
+  repeat until <["319"] < (x position)>
+    change x by (("1") + ((x position) / ("3")))
+  end
+  delete this clone
+end
+if <(costume [name v]) = [👤]> then
+  wait ("0.125") seconds
+  repeat until <["360"] < (x position)>
+    change x by (("1") + ((x position) / ("3")))
+  end
+  delete this clone
+end
+if <(costume [name v]) = [☆]> then
+  wait ("0.2") seconds
+  repeat until <["185"] < (x position)>
+    change x by (("1") + ((x position) / ("3")))
+  end
+  delete this clone
+end
+
+@a5
+(x position)

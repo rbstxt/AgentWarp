@@ -1,0 +1,26 @@
+@a1
+when I receive [Setup v]
+set [x v] to ["0"]
+set [y v] to ["0"]
+switch costume to [level 1 2 v]
+create clone of [myself v]
+set [x v] to ["360"]
+create clone of [myself v] // [c1] this makes it scroll
+set [x v] to ["360"]
+switch costume to [level 1 3 v]
+
+@a2
+switch costume to [level 1 3 v]
+
+@a3
+when I receive [tick v]
+position ((x) - (SCROLL X)) ((y) - (SCROLL Y)) // [c2] this is the position of the platforms
+
+@a4
+define position (x) (y)
+go to x: (x :: args) y: (y :: args) // [c3] this makes the level show when its on the screen and hide when its off
+if <<(x :: args) = (x position)> and <(y :: args) = (y position)>> then
+  show
+else
+  hide
+end

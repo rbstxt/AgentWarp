@@ -1,0 +1,8 @@
+event_whenflagclicked():
+    data_setvariableto(VARIABLE="score", VALUE="0")
+    data_setvariableto(VARIABLE="lives", VALUE="3")
+
+# Wait for game over; loops in the sprites all exit on lives < 1.
+event_whenflagclicked():
+    control_repeat_until(CONDITION=operator_lt(OPERAND1=var("lives"), OPERAND2="1")):
+        pass

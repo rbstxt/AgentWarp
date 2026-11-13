@@ -1,0 +1,78 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "on",
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "name": "my variable",
+      "id": "`jEk@4|i[#Fk?(8x)AV.-my variable",
+      "value": 0
+    },
+    {
+      "name": "LEVEL",
+      "id": "cP}SB^tsZLS_.0%;3Cq)",
+      "value": "1"
+    },
+    {
+      "name": "EXIT",
+      "id": ".fyP5Z0PkL~~HQYmsm!v",
+      "value": "0"
+    },
+    {
+      "name": "SCROLL X",
+      "id": "(g`qOG[AJ))ryp%~]L,H",
+      "value": "0"
+    },
+    {
+      "name": "SCROLL Y",
+      "id": "a^|`buy${9mxlx@n6s%Z",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [
+    {
+      "name": "green flag",
+      "id": "jG-#Gjj?Ur@Rt9O-s1Wm"
+    },
+    {
+      "name": "play game",
+      "id": "0CEF:9a?ArE-[c:~P5@;"
+    },
+    {
+      "name": "Reset",
+      "id": "ePedK40Ul/cx#A;xfE5a"
+    },
+    {
+      "name": "Setup",
+      "id": "^_UNBVPU,L`0:*NP+Ll?"
+    },
+    {
+      "name": "tick",
+      "id": "b)/o^!9B6o/O5~.^0uKu"
+    }
+  ],
+  "costumes": [
+    {
+      "name": "backdrop1",
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/backdrop1.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

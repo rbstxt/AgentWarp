@@ -1,0 +1,5 @@
+@a1
+when clicked
+switch backdrop to [背景1 v]
+wait ("3") seconds
+switch backdrop to [背景素材\(ベクター\)2 v]

@@ -1,0 +1,338 @@
+{
+  "name": "海賊王になる男(((?",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 4,
+  "visible": false,
+  "x": -189.0000000000001,
+  "y": -61,
+  "size": 65,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "left-right",
+  "variables": [
+    {
+      "name": "x",
+      "id": ":rs!fC/$0~szFyN+eoR*",
+      "value": 9.556872110340797e-165
+    },
+    {
+      "name": "y",
+      "id": ";qEv.c.K_,+v*pFZj$kQ",
+      "value": "0"
+    },
+    {
+      "name": "k",
+      "id": "gCGgr)MrJ7ni]DObDvl0",
+      "value": 0
+    },
+    {
+      "name": "mgi",
+      "id": "t91(ib#HfPVfZp2^zL%9",
+      "value": 0
+    },
+    {
+      "name": "hid",
+      "id": "8gT;dQzM!gRDkMIL:9Ln",
+      "value": 0
+    },
+    {
+      "name": "h",
+      "id": "HT[;%I+|j|reg0lgYwsO",
+      "value": 0
+    },
+    {
+      "name": "Clone",
+      "id": ";opd_AyB8re/J?la_Y3a",
+      "value": 0
+    },
+    {
+      "name": "I",
+      "id": "_5;23MWelcgA;cSQQVX^",
+      "value": 0
+    },
+    {
+      "name": "Intro: X",
+      "id": ":eNI`JlZyM$^y!5NzcDR",
+      "value": 0
+    },
+    {
+      "name": "k",
+      "id": "j1L?V.tr{cSSTU{5vO2}",
+      "value": 0
+    },
+    {
+      "name": "mgi",
+      "id": ";q*QwXPfV;mvX1:BwhEb",
+      "value": 0
+    },
+    {
+      "name": "hid",
+      "id": "*Ljo%c?Ntm[ZAsm4~/T(",
+      "value": 0
+    },
+    {
+      "name": "h",
+      "id": "C7;q%lg;xLQPb?Izv;e~",
+      "value": 0
+    },
+    {
+      "name": "sss",
+      "id": "xU7)woG4?XB6KV(YQNZh",
+      "value": 0
+    },
+    {
+      "name": "clone X",
+      "id": "Y-Eo|M/M^5?5;p;R8zMy",
+      "value": 0
+    },
+    {
+      "name": "clone Y",
+      "id": "P`jSe:,?J{Ww@P$TqfTL",
+      "value": 0
+    },
+    {
+      "name": "clone Dir",
+      "id": "6bNIpc{9K4R1u8M88Lm+",
+      "value": 0
+    },
+    {
+      "name": "clone Z",
+      "id": "bU{0+%!+shMGvRhlq,4`",
+      "value": 0
+    },
+    {
+      "name": "ID",
+      "id": "7m$*W]mh8TSn`v58oq:0",
+      "value": 0
+    },
+    {
+      "name": "Cam Control?",
+      "id": ")`EQ(YNT2kMmrIQTc(eY",
+      "value": 0
+    },
+    {
+      "name": "Sw,type",
+      "id": ",{+4@@pbtamdh[O!d,$+",
+      "value": 0
+    },
+    {
+      "name": "sw",
+      "id": "g)|OdQKyH{W0xIzTHIl9",
+      "value": 0
+    },
+    {
+      "name": "sw z",
+      "id": "iXeuaXK_8N;uN:%6#9Sb",
+      "value": 0
+    },
+    {
+      "name": "Sw C",
+      "id": "r~u{,#dK[N|[H):e;4=o",
+      "value": 0
+    },
+    {
+      "name": "Sw dir",
+      "id": "A7BO)5,#Pn_:NUpNOM,(",
+      "value": 0
+    },
+    {
+      "name": "cos",
+      "id": "`C8LmO}^yC~$%4OT2I]T",
+      "value": 0
+    },
+    {
+      "name": "player.y",
+      "id": "N+LTP%yD2Y+Jwx^0|P+f",
+      "value": 0
+    },
+    {
+      "name": "player.xv",
+      "id": "$rdZDWmD#*Bc6mPnj9bM",
+      "value": 0
+    },
+    {
+      "name": "player.yv",
+      "id": "#[!|d@(wheZx23ky+mey",
+      "value": 0
+    },
+    {
+      "name": "player.x",
+      "id": "%CPnDVICkH/#uyNbH;EC",
+      "value": 0
+    },
+    {
+      "name": "rw",
+      "id": "Uh[!JCvEwOxb6A{SE(T:",
+      "value": 0
+    },
+    {
+      "name": "Rw C",
+      "id": "L)#)Q(3L89h/IQ#/$sqt",
+      "value": 0
+    },
+    {
+      "name": "Rw siz",
+      "id": "FCpC53mwM;6t_+#gQiZP",
+      "value": 0
+    },
+    {
+      "name": "Fw 明るさ",
+      "id": ")kYK^!l:s{(O9$H;^B$+",
+      "value": 0
+    },
+    {
+      "name": "Fw Color",
+      "id": "{]#n4n*U0:d~cNZ158!c",
+      "value": 0
+    },
+    {
+      "name": "Fw type",
+      "id": "BV9+K-JgF(YUT$@$|+!0",
+      "value": 0
+    },
+    {
+      "name": "Fw",
+      "id": "5^vj[:kkh.y$iM!L{e2{",
+      "value": 0
+    },
+    {
+      "name": "(ﾟ∀ﾟ)",
+      "id": "wLh$+f7l/3c+SxVKN+2T",
+      "value": 0
+    },
+    {
+      "name": "A",
+      "id": "GR7kwP)JkvPj$D}o_L21",
+      "value": 0
+    },
+    {
+      "name": "b",
+      "id": "XNodB~5/83H=%7?E|Oj/",
+      "value": 0
+    }
+  ],
+  "lists": [
+    {
+      "name": "Fwのためだけのリスト。",
+      "id": "r[g8RtFRqdZv8vzQgCaL",
+      "items": []
+    },
+    {
+      "name": "おとはっめ",
+      "id": "6{vTJziCp;=(t{89{FHf",
+      "items": []
+    }
+  ],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "コスチューム1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.552209999999945,
+      "rotationCenterY": 30.699609999999808,
+      "file": "costumes/コスチューム1.svg"
+    },
+    {
+      "name": "コスチューム3",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.552175000000148,
+      "rotationCenterY": 30.699594999999988,
+      "file": "costumes/コスチューム3.svg"
+    },
+    {
+      "name": "コスチューム4",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.552210000000002,
+      "rotationCenterY": 30.69960999999995,
+      "file": "costumes/コスチューム4.svg"
+    },
+    {
+      "name": "コスチューム6",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.552209999999945,
+      "rotationCenterY": 30.69960999999978,
+      "file": "costumes/コスチューム6.svg"
+    },
+    {
+      "name": "コスチューム2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.55221000000006,
+      "rotationCenterY": 30.69960999999998,
+      "file": "costumes/コスチューム2.svg"
+    },
+    {
+      "name": "コスチューム5",
+      "bitmapResolution": 1,
+      "rotationCenterX": 30.55221000000006,
+      "rotationCenterY": 30.69960999999995,
+      "file": "costumes/コスチューム5.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "Crunch",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 11060,
+      "file": "sounds/Crunch.wav"
+    },
+    {
+      "name": "壁キック",
+      "rate": 48000,
+      "sampleCount": 16169,
+      "file": "sounds/壁キック.wav"
+    },
+    {
+      "name": "ジャンプ2",
+      "rate": 48000,
+      "sampleCount": 29952,
+      "file": "sounds/ジャンプ2.mp3"
+    },
+    {
+      "name": "Nebula",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 9481869,
+      "file": "sounds/Nebula.wav"
+    },
+    {
+      "name": "Starship",
+      "rate": 48000,
+      "sampleCount": 12799582,
+      "file": "sounds/Starship.mp3"
+    },
+    {
+      "name": "PIKASONIC - Osaka Express ",
+      "rate": 48000,
+      "sampleCount": 9767757,
+      "file": "sounds/PIKASONIC - Osaka Express .mp3"
+    },
+    {
+      "name": "Vexento - Tevo ",
+      "rate": 22050,
+      "sampleCount": 5647945,
+      "file": "sounds/Vexento - Tevo .wav"
+    },
+    {
+      "name": "Vexento - Pixel Party",
+      "rate": 22050,
+      "sampleCount": 3725673,
+      "file": "sounds/Vexento - Pixel Party.wav"
+    },
+    {
+      "name": "Unlimited",
+      "rate": 48000,
+      "sampleCount": 13046595,
+      "file": "sounds/Unlimited.mp3"
+    },
+    {
+      "name": "ジャンプ3",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 13879,
+      "file": "sounds/ジャンプ3.wav"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+event_whenflagclicked():
+    motion_gotoxy(X=300, Y=300)
+    looks_hide()
+    control_repeat_until(CONDITION=operator_lt(OPERAND1=var("lives"), OPERAND2="1")):
+        control_create_clone_of(CLONE_OPTION="_myself_")
+        control_wait(DURATION=1)
+
+# Single kill path (avoids a bullet/enemy check race): only the enemy scores.
+control_start_as_clone():
+    looks_show()
+    motion_gotoxy(X=operator_random(FROM=-200, TO=200), Y=160)
+    control_repeat_until(CONDITION=operator_or(OPERAND1=sensing_touchingobject(TOUCHINGOBJECTMENU="Bullet"), OPERAND2=operator_lt(OPERAND1=motion_yposition(), OPERAND2="-140"))):
+        motion_changeyby(DY=-6)
+    control_if(CONDITION=sensing_touchingobject(TOUCHINGOBJECTMENU="Bullet")):
+        data_changevariableby(VARIABLE="score", VALUE="1")
+    control_if(CONDITION=operator_and(OPERAND1=operator_lt(OPERAND1=motion_yposition(), OPERAND2="-140"), OPERAND2=operator_gt(OPERAND1=var("lives"), OPERAND2="0"))):
+        data_changevariableby(VARIABLE="lives", VALUE=-1)
+    control_delete_this_clone()

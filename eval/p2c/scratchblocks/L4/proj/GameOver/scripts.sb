@@ -1,0 +1,7 @@
+when clicked
+go to x: (0) y: (0)
+hide
+
+when I receive [gameover v]
+show
+stop [all v]

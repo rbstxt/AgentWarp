@@ -1,0 +1,33 @@
+when clicked // camera + pen renderer: draw every platform rect offset by scrollX
+hide
+set pen size to (3)
+forever
+  erase all
+  set [scrollX v] to ([x position v] of [Player v])
+  set pen color to [#00cc66]
+  set [k v] to (1)
+  repeat ((length of [platforms v]) / (4))
+    parse rect (k)
+    set pen color to [#00cc66]
+    set [pl v] to (((rx) - ((rw) / (2))) - (scrollX))
+    set [pr v] to (((rx) + ((rw) / (2))) - (scrollX))
+    set [pb v] to ((ry) - ((rh) / (2)))
+    set [pt v] to ((ry) + ((rh) / (2)))
+    pen up
+    go to x: (pl) y: (pb)
+    pen down
+    go to x: (pr) y: (pb)
+    go to x: (pr) y: (pt)
+    go to x: (pl) y: (pt)
+    go to x: (pl) y: (pb)
+    pen up
+    change [k v] by (1)
+  end
+end
+
+define parse rect (k) :: warp // unpack platform quad k (same layout as Player)
+set [k4 v] to ((k) * (4))
+set [rx v] to (item ((k4) - (3)) of [platforms v])
+set [ry v] to (item ((k4) - (2)) of [platforms v])
+set [rw v] to (item ((k4) - (1)) of [platforms v])
+set [rh v] to (item (k4) of [platforms v])

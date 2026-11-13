@@ -1,0 +1,192 @@
+{
+  "formatVersion": 1,
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "0.2.0-prerelease.20200720182258",
+    "agent": "Mozilla/5.0 (X11; CrOS x86_64 13099.85.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.110 Safari/537.36"
+  },
+  "extensions": [],
+  "monitors": [
+    {
+      "id": "cP}SB^tsZLS_.0%;3Cq)",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "LEVEL"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "e}K2KzM}~Wx=QxVE%]:7",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "x"
+      },
+      "spriteName": "Sprite1",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "2;J9v16X3ngoE4=GVjKF",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "y"
+      },
+      "spriteName": "Sprite1",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": ".fyP5Z0PkL~~HQYmsm!v",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "EXIT"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "(g`qOG[AJ))ryp%~]L,H",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "SCROLL X"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "a^|`buy${9mxlx@n6s%Z",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "SCROLL Y"
+      },
+      "spriteName": null,
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 13,
+      "y": 46,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "^R7YIr(cM=5zG4AYsIRb",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "y"
+      },
+      "spriteName": "Sprite2",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "TTw4Wf9SV[KR:tnaF~Uu",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "x"
+      },
+      "spriteName": "Sprite2",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "YC0v0C.8]lxc_ZL;lBjf",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "speed y"
+      },
+      "spriteName": "Sprite1",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "l7|8-%j-h?+BzBLoDw[b",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "in air"
+      },
+      "spriteName": "Sprite1",
+      "value": 0,
+      "width": 0,
+      "height": 0,
+      "x": 5,
+      "y": 5,
+      "visible": false,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    }
+  ],
+  "extraTopLevel": {}
+}

@@ -1,0 +1,771 @@
+@a1
+define Rw (x) (y) (dir) (z) (c) :: warp
+set [Rw C v] to (c)
+set [Rw siz v] to (z)
+set [clone Dir v] to (dir)
+set [clone X v] to (x)
+set [clone Y v] to (y)
+set [Cam Control? v] to ["1"]
+set [ID v] to [rw]
+create clone of [myself v]
+set [clone X v] to ((x) + ("25"))
+set [clone Y v] to ((y) - ("15"))
+set [ID v] to [rw影]
+create clone of [myself v]
+
+@a2
+when I receive [Intro start v]
+
+@a3
+define Sw Type ("") x,y,dir (x) (y) (d) size (z) Color (c) :: {"argumentdefaults":["","","","","","","",""]} :: warp
+set [Sw C v] to (c)
+set [Sw,type v] to (:: args)
+set [clone X v] to (x)
+set [clone Y v] to (y)
+set [sw z v] to (z)
+set [Sw dir v] to (d)
+set [Cam Control? v] to ["1"]
+set [ID v] to [sw]
+create clone of [myself v]
+set [clone X v] to ((x) + ("25"))
+set [clone Y v] to ((y) - ("15"))
+set [ID v] to [sw影]
+create clone of [myself v]
+
+@a4
+when I start as a clone
+if <(ID) = [rw影]> then
+  go to [front v] layer
+  go [backward v] ("1") layers
+  set [brightness v] effect to ("-100")
+  set [ghost v] effect to ("50")
+  show
+  switch costume to [Filler \(Size\) v]
+  set [clone Z v] to ["0"]
+  switch costume to [Diamond 1 v]
+  repeat ("15")
+    change [clone Z v] by (((Rw siz) - (size)) / ("7"))
+    next costume
+  end
+  repeat ("7")
+    change [clone Z v] by (((Rw siz) - (size)) / ("4"))
+    next costume
+    change [ghost v] effect by ("1")
+  end
+  hide
+end
+
+@a5
+when I receive [Intro start v]
+delete all of [Fwのためだけのリスト。 v]
+insert ["2"] at ("1") of [Fwのためだけのリスト。 v]
+insert ["4"] at ("2") of [Fwのためだけのリスト。 v]
+insert ["6"] at ("3") of [Fwのためだけのリスト。 v]
+insert ["8"] at ("4") of [Fwのためだけのリスト。 v]
+insert ["10"] at ("5") of [Fwのためだけのリスト。 v]
+insert ["12"] at ("6") of [Fwのためだけのリスト。 v]
+insert ["14"] at ("7") of [Fwのためだけのリスト。 v]
+insert ["16"] at ("8") of [Fwのためだけのリスト。 v]
+insert ["18"] at ("9") of [Fwのためだけのリスト。 v]
+insert ["20"] at ("10") of [Fwのためだけのリスト。 v]
+
+@a6
+when I start as a clone
+if <(ID) = [rw]> then
+  set [color v] effect to (Rw C)
+  go to [front v] layer
+  set [ghost v] effect to ("0")
+  show
+  switch costume to [Filler \(Size\) v]
+  set [clone Z v] to ["0"]
+  switch costume to [Diamond 1 v]
+  repeat ("15")
+    change [clone Z v] by (((Rw siz) - (size)) / ("7"))
+    next costume
+  end
+  repeat ("7")
+    change [clone Z v] by (((Rw siz) - (size)) / ("4"))
+    next costume
+    change [ghost v] effect by ("1")
+  end
+  hide
+end
+
+@a7
+define Fw (x) (y) (z) (本数) (Color) type ("") :: {"argumentdefaults":["","","","","","",""]} :: warp
+set [clone Dir v] to ["0"]
+set [Fw Color v] to (Color)
+set [Fw type v] to (:: args)
+set [clone X v] to (x)
+set [clone Y v] to (y)
+set [clone Z v] to (z)
+set [Fw v] to ["0"]
+repeat (本数)
+  change [Fw v] by ("1")
+  change [clone Dir v] by (("360") / (本数))
+  Clone [fw] ["1"]
+end
+set [clone X v] to ((x) + ("25"))
+set [clone Y v] to ((y) - ("15"))
+repeat (本数)
+  change [Fw v] by ("1")
+  change [clone Dir v] by (("360") / (本数))
+  Clone [fw影] ["1"]
+end
+
+@a8
+when I start as a clone
+if <(ID) = [sw]> then
+  go to [front v] layer
+  if <(Sw,type) = [a]> then
+    set [color v] effect to (Sw C)
+    set [sw v] to ["10"]
+    set [clone Z v] to ["0"]
+    switch costume to [sw v]
+    set [fisheye v] effect to ("0")
+    repeat ("70")
+      set [sw v] to ((sw) * ("1.19"))
+      change [fisheye v] effect by (sw)
+      change [clone Z v] by (((sw z) - (size)) / ("5"))
+    end
+  end
+  if <(Sw,type) = [b]> then
+    set [color v] effect to (Sw C)
+    set [sw v] to ["10"]
+    set [clone Z v] to ["0"]
+    set [fisheye v] effect to ("0")
+    switch costume to [1/2sw v]
+    set [clone Dir v] to (Sw dir)
+    repeat ("70")
+      set [sw v] to ((sw) * ("1.19"))
+      change [fisheye v] effect by (sw)
+      change [clone Z v] by (((sw z) - (size)) / ("5"))
+    end
+  end
+  delete this clone
+end
+
+@a9
+when I start as a clone
+if <(ID) = [sw影]> then
+  if <(Sw,type) = [a]> then
+    set [color v] effect to (Sw C)
+    set [ghost v] effect to ("50")
+    set [brightness v] effect to ("-100")
+    set [sw v] to ["10"]
+    set [clone Z v] to ["0"]
+    set [cos v] to [sw]
+    switch costume to [sw v]
+    set [fisheye v] effect to ("0")
+    repeat ("70")
+      set [sw v] to ((sw) * ("1.19"))
+      change [fisheye v] effect by (sw)
+      change [clone Z v] by (((sw z) - (size)) / ("5"))
+    end
+  end
+  if <(Sw,type) = [b]> then
+    set [color v] effect to (Sw C)
+    set [ghost v] effect to ("50")
+    set [brightness v] effect to ("-100")
+    set [sw v] to ["10"]
+    set [clone Z v] to ["0"]
+    switch costume to [1/2sw v]
+    set [cos v] to [1/2sw]
+    set [fisheye v] effect to ("0")
+    set [clone Dir v] to (Sw dir)
+    repeat ("70")
+      set [sw v] to ((sw) * ("1.19"))
+      change [fisheye v] effect by (sw)
+      change [clone Z v] by (((sw z) - (size)) / ("5"))
+    end
+  end
+  delete this clone
+end
+
+@a10
+when I start as a clone
+if <(ID) = [fw影]> then
+  set [brightness v] effect to ("-100")
+  go to [front v] layer
+  go [backward v] (Fw) layers
+  switch costume to [le1 v]
+  change [ghost v] effect by ("50")
+  repeat ("10")
+    next costume
+  end
+  repeat ("2")
+    next costume
+    change [ghost v] effect by ("10")
+  end
+  delete this clone
+end
+
+@a11
+when I receive [Intro start v]
+
+@a12
+when I receive [Intro start v]
+Clone [back] [""]
+wait ["3"]
+Clone [text] ["1"]
+Fw [""] [""] ["200"] ["10"] ["130"] type [b]
+
+@a13
+forever
+  しゃけ ["12"] ["90"] [""] [""]
+end
+
+@a14
+when I start as a clone
+if <(ID) = [back]> then
+  set size to ("100") %
+  go to [back v] layer
+  switch costume to [back v]
+  set [ghost v] effect to ("100")
+  repeat ("50")
+    change [ghost v] effect by ("-2")
+  end
+end
+
+@a15
+when I start as a clone
+if <(ID) = [fw]> then
+  set [ghost v] effect to ("0")
+  go to [front v] layer
+  if <(Fw type) = [a]> then
+    set [color v] effect to (Fw Color)
+    switch costume to [le1 v]
+    repeat ("10")
+      next costume
+    end
+    repeat ("2")
+      next costume
+      change [ghost v] effect by ("10")
+    end
+    delete this clone
+  else
+    if <(Fw type) = [b]> then
+      if <[Fwのためだけのリスト。 v] contains (Fw) ?> then
+        set [brightness v] effect to ("100")
+        set [color v] effect to (Fw Color)
+        switch costume to [le1 v]
+        repeat ("10")
+          next costume
+        end
+        repeat ("2")
+          next costume
+          change [ghost v] effect by ("10")
+        end
+        delete this clone
+      else
+        set [brightness v] effect to ("0")
+        set [color v] effect to (Fw Color)
+        switch costume to [le1 v]
+        repeat ("10")
+          next costume
+        end
+        repeat ("2")
+          next costume
+          change [ghost v] effect by ("10")
+        end
+        delete this clone
+      end
+    else
+    end
+  end
+end
+
+@a16
+when I receive [Intro start v]
+delete all of [おとはっめ v]
+insert ["3.33"] at ("1") of [おとはっめ v]
+insert ["4.29"] at ("2") of [おとはっめ v]
+insert ["5"] at ("3") of [おとはっめ v]
+insert ["5.74"] at ("4") of [おとはっめ v]
+insert ["6.3"] at ("5") of [おとはっめ v]
+insert ["6"] at ("6") of [おとはっめ v]
+insert ["7.1"] at ("7") of [おとはっめ v]
+insert [""] at ("8") of [おとはっめ v]
+insert ["8.2"] at ("9") of [おとはっめ v]
+insert ["9.8"] at ("10") of [おとはっめ v]
+insert ["10.5"] at ("11") of [おとはっめ v]
+
+@a17
+when I start as a clone
+if <(ID) = [light]> then
+  set size to ("100") %
+  go to [front v] layer
+  switch costume to [Light v]
+end
+
+@a18
+when I start as a clone
+if <(ID) = [text]> then
+  go to [front v] layer
+  set [clone Z v] to ["0"]
+  switch costume to [text v]
+  repeat until <(round (clone Z)) = ["100"]>
+    change [clone Z v] by ((("100") - (clone Z)) / ("3"))
+  end
+  wait ["4"]
+  hide
+  wait ["4.5"]
+  show
+  wait ["10.5"]
+  ふぇどあ
+  delete this clone
+end
+
+@a19
+when I start as a clone
+if <(ID) = [text]> then
+  forever
+    go to [front v] layer
+  end
+end
+
+@a20
+Fw [""] [""] ["100"] ["14"] ["130"] type [b]
+
+@a21
+when I receive [Intro start v]
+wait (item ("1") of [おとはっめ v])
+しゃけ ["25"] ["90"] [""] [""]
+wait (item ("3") of [おとはっめ v])
+b
+しゃけ ["25"] ["90"] [""] [""]
+wait (item ("4") of [おとはっめ v])
+しゃけ ["25"] ["90"] [""] [""]
+wait (item ("7") of [おとはっめ v])
+Rw [""] [""] [""] ["100"] ["120"]
+Rw [""] [""] [""] ["200"] ["120"]
+しゃけ ["25"] ["90"] [""] [""]
+wait (item ("11") of [おとはっめ v])
+set [\(ﾟ∀ﾟ\) v] to ["30"]
+
+@a22
+when I receive [Intro start v]
+play sound [Catch Me \(Wy Flip\) v] until done
+wait ("2") seconds
+broadcast [イントロ完 v]
+
+@a23
+when I receive [Intro start v]
+wait ["1"]
+repeat ("8")
+  set [clone Y v] to ["0"]
+  set [clone Dir v] to ["90"]
+  set [clone Z v] to ["1"]
+  Clone [chev] ["1"]
+  wait ("0.5") seconds
+  set [clone X v] to ["0"]
+  set [clone Y v] to ["0"]
+  set [clone Dir v] to ["90"]
+  set [clone Z v] to ["1"]
+  Clone [chev2] ["1"]
+  wait ("0.5") seconds
+end
+
+@a24
+define しゃけ (たいむ) (°) (x) (y) :: {"argumentdefaults":["","","","","",""]}
+set [しゃけ v] to ["60"]
+repeat (たいむ)
+  change [しゃけ v] by ((("0") - (しゃけ)) / ("5"))
+  go to x: (((([sin v] of ((timer) * ("600"))) * ("0.9")) * (しゃけ)) + (x)) y: (((([cos v] of ((timer) * ("600"))) * ("0.9")) * (しゃけ)) + (y))
+  point in direction (((([sin v] of ((timer) * ("800"))) * ("1.5")) * ((しゃけ) / ("7"))) + (°))
+  set [ShakeDir v] to (((([sin v] of ((timer) * ("800"))) * ("1.5")) * ((しゃけ) / ("7"))) + ((°) - ("90")))
+  set [ShakeX v] to (((([sin v] of ((timer) * ("600"))) * ("0.9")) * (しゃけ)) + (x))
+  set [ShakeY v] to (((([cos v] of ((timer) * ("600"))) * ("0.9")) * (しゃけ)) + (y))
+end
+
+@a25
+(\(ﾟ∀ﾟ\))
+
+@a26
+define ふぇどあ
+set [加速イージング v] to ["5"]
+repeat ("35")
+  set [加速イージング v] to ((加速イージング) * ("1.12"))
+  change [clone Y v] by ((加速イージング) - ((加速イージング) * ("2.01")))
+  turn cw ((加速イージング) / ("3")) degrees
+end
+delete this clone
+
+@a27
+set [clone X v] to ["0"]
+
+@a28
+when I start as a clone
+if <(ID) = [chev]> then
+  switch costume to [コスチューム1 v]
+  repeat until <>
+    change [clone Z v] by (((\(ﾟ∀ﾟ\)) * (clone Z)) / ("100"))
+    set [clone Dir v] to ["90"]
+    set [clone X v] to [""]
+    set [clone Y v] to [""]
+  end
+end
+
+@a29
+when I start as a clone
+if <(ID) = [chev2]> then
+  switch costume to [コスチューム1 v]
+  set [brightness v] effect to ("90")
+  repeat until <>
+    change [clone Z v] by (((\(ﾟ∀ﾟ\)) * (clone Z)) / ("100"))
+    set [clone Dir v] to ["90"]
+    set [clone X v] to [""]
+    set [clone Y v] to [""]
+  end
+end
+
+@a30
+((\(ﾟ∀ﾟ\)) * (clone Z))
+
+@a31
+when I start as a clone
+show
+if <(Cam Control?) = ["1"]> then
+  forever
+    position (costume [name v])
+  end
+end
+
+@a32
+define Clone (ID) (CC?) :: warp
+set [Cam Control? v] to (CC?)
+set [ID v] to (ID :: args)
+create clone of [myself v]
+
+@a33
+define wait (time)
+wait until <(timer) > (time)>
+
+@a34
+when I receive [Intro start v]
+wait (item ("6") of [おとはっめ v])
+Rw ["-200"] [""] ["45"] ["50"] ["120"]
+Rw ["-100"] [""] ["45"] ["50"] ["120"]
+Rw [""] [""] ["45"] ["50"] ["120"]
+Rw ["100"] [""] ["45"] ["50"] ["120"]
+Rw ["200"] [""] ["45"] ["50"] ["120"]
+Rw ["-200"] ["100"] ["45"] ["50"] ["120"]
+Rw ["-100"] ["100"] ["45"] ["50"] ["120"]
+Rw [""] ["100"] ["45"] ["50"] ["120"]
+Rw ["100"] ["100"] ["45"] ["50"] ["120"]
+Rw ["200"] ["100"] ["45"] ["50"] ["120"]
+Rw ["-200"] ["200"] ["45"] ["50"] ["120"]
+Rw ["-100"] ["200"] ["45"] ["50"] ["120"]
+Rw [""] ["200"] ["45"] ["50"] ["120"]
+Rw ["100"] ["200"] ["45"] ["50"] ["120"]
+Rw ["200"] ["200"] ["45"] ["50"] ["120"]
+Rw ["-200"] ["-100"] ["45"] ["50"] ["120"]
+Rw ["-100"] ["-100"] ["45"] ["50"] ["120"]
+Rw [""] ["-100"] ["45"] ["50"] ["120"]
+Rw ["100"] ["-100"] ["45"] ["50"] ["120"]
+Rw ["200"] ["-100"] ["45"] ["50"] ["120"]
+Rw ["-200"] ["-200"] ["45"] ["50"] ["120"]
+Rw ["-100"] ["-200"] ["45"] ["50"] ["120"]
+Rw [""] ["-200"] ["45"] ["50"] ["120"]
+Rw ["100"] ["-200"] ["45"] ["50"] ["120"]
+Rw ["200"] ["-200"] ["45"] ["50"] ["120"]
+repeat until <(round (🎥 Dir)) = ["180"]>
+  change [🎥 Dir v] by ((("180") - (🎥 Dir)) / ("3"))
+end
+wait ("0") seconds
+repeat until <(round (🎥 Dir)) = ["360"]>
+  change [🎥 Dir v] by ((("360") - (🎥 Dir)) / ("2.5"))
+end
+
+@a35
+// [c2] FOR ALL SPRITES! This variables controls the direction of the "camera".
+
+@a36
+// [c3] FOR ALL SPRITES! This variable is used to change the direction of the camera (try changing the sliders)
+
+@a37
+// [c4] FOR ALL SPRITES! This variable is used to set the x position of the camera (try changing the sliders)
+
+@a38
+// [c5] FOR ALL SPRITES! This variables controls the x position of the "camera".
+
+@a39
+change [clone Dir v] by ((("150") - (clone Dir)) / ("37"))
+
+@a40
+when I receive [Intro start v]
+
+@a41
+// [c6] FOR ALL SPRITES! This variable is used to set the y position of the camera (try changing the sliders)
+
+@a42
+// [c7] FOR ALL SPRITES! This variables controls the y position of the "camera".
+
+@a43
+// [c8] FOR ALL SPRITES! This variable is used to set the Z position (size) of the camera (try changing the sliders)
+
+@a44
+// [c9] FOR ALL SPRITES! This variables controls the z position (size) of the "camera".
+
+@a45
+when I receive [Intro start v]
+switch costume to [おおきさかんりよう\(\) v]
+reset timer
+go to x: ("0") y: ("0")
+point in direction ("90")
+set size to ("0") %
+hide
+set [🎥 Dir v] to ["0"]
+set [🎥 X v] to ["0"]
+set [🎥 Y v] to ["0"]
+set [🎥 Z v] to ["1"]
+set [clone Dir v] to ["90"]
+set [clone X v] to [""]
+set [clone Y v] to [""]
+set [clone Z v] to ["0"]
+
+@a46
+(direction)
+
+@a47
+// [c10] FOR THIS SPRITE ONLY! This variable controls the direction of each INDIVIDUAL clone
+
+@a48
+// [c11] FOR THIS SPRITE ONLY! This variable is used to set the direction of each INDIVIDUAL clone.
+
+@a49
+// [c12] FOR THIS SPRITE ONLY! This variable controls the x position of each INDIVIDUAL clone
+
+@a50
+// [c13] FOR THIS SPRITE ONLY! This variable is used to set the x position of each INDIVIDUAL clone. Not according to the camera
+
+@a51
+// [c14] FOR THIS SPRITE ONLY! This variable is used to set the y position of each INDIVIDUAL clone. Not according to the camera
+
+@a52
+// [c15] FOR THIS SPRITE ONLY! This variable controls the y position of each INDIVIDUAL clone
+
+@a53
+define position ("") :: {"argumentdefaults":["",""]} :: warp
+if <(size) > ["100"]> then
+  switch costume to [Filler \(Size\) v]
+else
+  switch costume to [Screen v]
+end
+set size to ((clone Z) * (🎥 Z)) %
+switch costume to [Filler \(Movement\) v]
+point in direction ((clone Dir) - ((🎥 Dir) + (ShakeDir)))
+go to x: (((((clone X) + ((🎥 X) + (ShakeX))) * (🎥 Z)) * ([cos v] of ((🎥 Dir) + (ShakeDir)))) - ((((clone Y) + ((🎥 Y) + (ShakeY))) * (🎥 Z)) * ([sin v] of ((🎥 Dir) + (ShakeDir))))) y: (((((clone X) + ((🎥 X) + (ShakeX))) * (🎥 Z)) * ([sin v] of ((🎥 Dir) + (ShakeDir)))) + ((((clone Y) + ((🎥 Y) + (ShakeY))) * (🎥 Z)) * ([cos v] of ((🎥 Dir) + (ShakeDir))))) // [c1] This is the block that positions the clones. It uses some trigonometry, and I dont fully understand how it works, but you can view some of @MathMathMath's tutorials for more info
+switch costume to (:: args)
+
+@a54
+// [c16] FOR THIS SPRITE ONLY! This variable is used to set the z position (size) of each INDIVIDUAL clone. Not according to the camera
+
+@a55
+// [c17] FOR THIS SPRITE ONLY! This variable controls the z position (size) of each INDIVIDUAL clone. Unlike Camera Z, this value can from 0 to 100, not just 0 to 1
+
+@a56
+when I start as a clone
+show
+if <(ID) = [g]> then
+  go to [front v] layer
+  set size to ("100") %
+  switch costume to [g v]
+  go to x: ("-118") y: ("0")
+  Sw Type [a] x,y,dir (x position) ["50"] ["-90"] size ["50"] Color ["120"]
+  repeat until <["5"] < (timer)>
+    a
+    go to x: (([sin v] of (θ)) * ("-118")) y: (([cos v] of (θ)) * ("-118"))
+  end
+  delete this clone
+end
+if <(ID) = [o]> then
+  go to [front v] layer
+  set size to ("100") %
+  switch costume to [o v]
+  go to x: ("-76") y: ("0")
+  Sw Type [a] x,y,dir (x position) ["-50"] ["-90"] size ["50"] Color ["120"]
+  repeat until <["4.5"] < (timer)>
+    go to x: (([sin v] of (θ)) * ("-76")) y: (([cos v] of (θ)) * ("-76"))
+  end
+  delete this clone
+end
+if <(ID) = [r]> then
+  go to [front v] layer
+  set size to ("100") %
+  switch costume to [r v]
+  go to x: ("-31") y: ("")
+  Sw Type [a] x,y,dir (x position) ["50"] ["-90"] size ["50"] Color ["120"]
+  repeat until <["4.5"] < (timer)>
+    a
+    go to x: (([sin v] of (θ)) * ("-31")) y: (([cos v] of (θ)) * ("-31"))
+  end
+  delete this clone
+end
+if <(ID) = [i]> then
+  go to [front v] layer
+  set size to ("100") %
+  switch costume to [i v]
+  go to x: ("3") y: ("")
+  Sw Type [a] x,y,dir (x position) ["-50"] ["-90"] size ["50"] Color ["120"]
+  repeat until <["4.5"] < (timer)>
+    a
+    go to x: (([sin v] of (θ)) * ("3")) y: (([cos v] of (θ)) * ("3"))
+  end
+  delete this clone
+end
+if <(ID) = [r2]> then
+  go to [front v] layer
+  set size to ("100") %
+  switch costume to [r2 v]
+  go to x: ("40") y: ("")
+  Sw Type [a] x,y,dir (x position) ["50"] ["-90"] size ["50"] Color ["120"]
+  repeat until <["4.5"] < (timer)>
+    a
+    go to x: (([sin v] of (θ)) * ("40")) y: (([cos v] of (θ)) * ("40"))
+  end
+  delete this clone
+end
+if <(ID) = [a]> then
+  go to [front v] layer
+  set size to ("100") %
+  switch costume to [a v]
+  go to x: ("83") y: ("")
+  Sw Type [a] x,y,dir (x position) ["-50"] ["-90"] size ["50"] Color ["120"]
+  repeat until <["4.5"] < (timer)>
+    a
+    go to x: (([sin v] of (θ)) * ("83")) y: (([cos v] of (θ)) * ("83"))
+  end
+  delete this clone
+end
+if <(ID) = [f]> then
+  go to [front v] layer
+  set size to ("100") %
+  go to x: ("123") y: ("")
+  Sw Type [a] x,y,dir (x position) ["50"] ["-90"] size ["50"] Color ["120"]
+  switch costume to [f v]
+  repeat until <["4.5"] < (timer)>
+    a
+    go to x: (([sin v] of (θ)) * ("123")) y: (([cos v] of (θ)) * ("123"))
+  end
+  delete this clone
+end
+
+@a57
+when I receive [Intro start v]
+set [\(ﾟ∀ﾟ\) v] to ["10"]
+
+@a58
+when I receive [Intro start v]
+wait ["8"]
+Fw [""] [""] ["100"] ["10"] ["125"] type [b]
+repeat until <(round (🎥 X)) = ["180"]>
+  change [🎥 X v] by ((("180") - (🎥 X)) / ("4"))
+end
+Fw ["180"] [""] ["100"] ["10"] ["125"] type [b]
+repeat until <(round (🎥 X)) = ["-180"]>
+  change [🎥 X v] by ((("-180") - (🎥 X)) / ("4"))
+end
+Fw ["-180"] [""] ["100"] ["10"] ["125"] type [b]
+repeat until <(round (🎥 X)) = ["0"]>
+  change [🎥 X v] by ((("0") - (🎥 X)) / ("3"))
+end
+Sw Type [a] x,y,dir [""] [""] [""] size ["100"] Color ["115"]
+Sw Type [a] x,y,dir ["150"] [""] [""] size ["100"] Color ["130"]
+Sw Type [a] x,y,dir ["-150"] [""] [""] size ["100"] Color ["130"]
+Sw Type [a] x,y,dir [""] ["150"] [""] size ["100"] Color ["130"]
+Sw Type [a] x,y,dir ["150"] ["150"] [""] size ["100"] Color ["115"]
+Sw Type [a] x,y,dir ["-150"] ["150"] [""] size ["100"] Color ["115"]
+Sw Type [a] x,y,dir [""] ["-150"] [""] size ["100"] Color ["130"]
+Sw Type [a] x,y,dir ["150"] ["-150"] [""] size ["100"] Color ["115"]
+Sw Type [a] x,y,dir ["-150"] ["-150"] [""] size ["100"] Color ["115"]
+
+@a59
+Rw [""] [""] [""] ["200"] ["120"]
+
+@a60
+Clone [g] [""]
+
+@a61
+<(costume [name v]) = [text]>
+
+@a62
+(\(ﾟ∀ﾟ\))
+
+@a63
+((("10") - ("5")) / ("10"))
+
+@a64
+switch costume to [o v]
+go to x: ("-76") y: ("")
+
+@a65
+switch costume to [g v]
+
+@a66
+switch costume to [r2 v]
+go to x: ("40") y: ("")
+
+@a67
+switch costume to [i v]
+go to x: ("3") y: ("")
+
+@a68
+define a
+
+@a69
+define b
+Sw Type [a] x,y,dir [""] [""] ["90"] size ["100"] Color ["120"]
+Sw Type [a] x,y,dir [""] [""] ["90"] size ["200"] Color ["120"]
+
+@a70
+switch costume to [f v]
+
+@a71
+when I start as a clone
+wait ["10.4"]
+if <not <<<(costume [name v]) contains [le] ?> or <(costume [name v]) = [text]>> or <>>> then
+  repeat ("4")
+    change [brightness v] effect by ("25")
+    change [ghost v] effect by ("25")
+  end
+  delete this clone
+else
+end
+
+@a72
+when I receive [Intro start v]
+wait ["8"]
+set [🎥 Dir v] to ["0"]
+set [A v] to ["1"]
+repeat ("72")
+  change [🎥 Dir v] by ("5")
+end
+
+@a73
+switch costume to [r v]
+go to x: ("-31") y: ("")
+
+@a74
+switch costume to [a v]
+go to x: ("83") y: ("")
+
+@a75
+when I receive [Intro start v]
+set [b v] to ["1"]
+wait ["4"]
+set [θ v] to ["90"]
+Clone [g] [""]
+Clone [o] [""]
+Clone [r] [ ]
+Clone [i] [ ]
+Clone [r2] [ ]
+Clone [a] [ ]
+Clone [f] [ ]
+repeat ("18")
+  change [θ v] by ("20")
+end
+
+@a76
+set [b v] to ((b :: variables) * ("1.11"))
+turn cw (b :: variables) degrees

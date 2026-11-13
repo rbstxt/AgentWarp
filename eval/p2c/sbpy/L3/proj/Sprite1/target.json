@@ -1,0 +1,42 @@
+{
+  "name": "Sprite1",
+  "isStage": false,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 1,
+  "visible": false,
+  "x": 300,
+  "y": 0,
+  "size": 100,
+  "direction": 90,
+  "draggable": false,
+  "rotationStyle": "all around",
+  "variables": [],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "costume1",
+      "bitmapResolution": 1,
+      "rotationCenterX": 48,
+      "rotationCenterY": 50,
+      "file": "costumes/costume1.svg"
+    },
+    {
+      "name": "costume2",
+      "bitmapResolution": 1,
+      "rotationCenterX": 46,
+      "rotationCenterY": 53,
+      "file": "costumes/costume2.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "Meow",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 40682,
+      "file": "sounds/Meow.wav"
+    }
+  ]
+}

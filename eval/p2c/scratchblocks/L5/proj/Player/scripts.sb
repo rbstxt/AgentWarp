@@ -1,0 +1,95 @@
+when clicked // main loop: load level 1, then gravity + move + jump + goal check
+set [level v] to (0)
+broadcast [load1 v] and wait
+forever
+  if <key [left arrow v] pressed?> then
+    collide (-5) (0)
+  end
+  if <key [right arrow v] pressed?> then
+    collide (5) (0)
+  end
+  change [vy v] by (-1)
+  if <(vy) < (-15)> then
+    set [vy v] to (-15)
+  end
+  set [grounded v] to (0)
+  collide (0) (vy)
+  if <<key [space v] pressed?> and <(grounded) = (1)>> then
+    set [vy v] to (12)
+    set [grounded v] to (0)
+    wait until <not <key [space v] pressed?>>
+  end
+  if <touching [Goal v]?> then
+    if <(level) = (1)> then
+      broadcast [load2 v] and wait
+    else
+      broadcast [load1 v] and wait
+    end
+  end
+end
+
+when I receive [load1 v] // spawn for level 1: top middle, falling
+set [level v] to (1)
+go to x: (0) y: (60)
+set [vy v] to (0)
+
+when I receive [load2 v] // spawn for level 2: left side, falling
+set [level v] to (2)
+go to x: (-150) y: (60)
+set [vy v] to (0)
+
+define parse rect (k) :: warp // unpack platform quad k from flat list [x y w h]*
+set [k4 v] to ((k) * (4))
+set [rx v] to (item ((k4) - (3)) of [platforms v])
+set [ry v] to (item ((k4) - (2)) of [platforms v])
+set [rw v] to (item ((k4) - (1)) of [platforms v])
+set [rh v] to (item (k4) of [platforms v])
+
+define collide (dx) (dy) :: warp // move by dx,dy and push out of every platform rect
+if <not <(dx) = (0)>> then
+  change x by (dx)
+  set [k v] to (1)
+  repeat ((length of [platforms v]) / (4))
+    parse rect (k)
+    set [hw v] to (((rw) + (40)) / (2))
+    set [nhw v] to ((0) - (hw))
+    set [hv v] to (((rh) + (40)) / (2))
+    set [nhv v] to ((0) - (hv))
+    if <<((x position) - (rx)) < (hw)> and <((x position) - (rx)) > (nhw)>> then
+      if <<((y position) - (ry)) < (hv)> and <((y position) - (ry)) > (nhv)>> then
+        if <(dx) > (0)> then
+          set x to ((rx) - ((((rw) / (2))) + (20)))
+        else
+          set x to ((rx) + ((((rw) / (2))) + (20)))
+        end
+      end
+    end
+    change [k v] by (1)
+  end
+end
+if <not <(dy) = (0)>> then
+  change y by (dy)
+  set [k v] to (1)
+  repeat ((length of [platforms v]) / (4))
+    parse rect (k)
+    set [hw v] to (((rw) + (40)) / (2))
+    set [nhw v] to ((0) - (hw))
+    set [hv v] to (((rh) + (40)) / (2))
+    set [nhv v] to ((0) - (hv))
+    if <<((x position) - (rx)) < (hw)> and <((x position) - (rx)) > (nhw)>> then
+      if <<((y position) - (ry)) < (hv)> and <((y position) - (ry)) > (nhv)>> then
+        if <(dy) < (0)> then
+          set y to ((ry) + ((((rh) / (2))) + (20)))
+          set [vy v] to (0)
+          set [grounded v] to (1)
+        else
+          if <(dy) > (0)> then
+            set y to ((ry) - ((((rh) / (2))) - (20)))
+            set [vy v] to (0)
+          end
+        end
+      end
+    end
+    change [k v] by (1)
+  end
+end

@@ -1,0 +1,6 @@
+# Level state: picked by broadcast, read by Player and platforms.
+event_whenflagclicked():
+    data_setvariableto(VARIABLE="level", VALUE="1")
+
+event_whenbroadcastreceived(BROADCAST_OPTION="level2"):
+    data_setvariableto(VARIABLE="level", VALUE="2")

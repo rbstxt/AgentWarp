@@ -1,0 +1,10 @@
+when clicked // goal flag: hidden until a level positions it
+hide
+
+when I receive [load1 v] // end of level 1: touching me loads level 2
+go to x: (150) y: (-70)
+show
+
+when I receive [load2 v] // end of level 2: touching me loads level 1
+go to x: (100) y: (-70)
+show

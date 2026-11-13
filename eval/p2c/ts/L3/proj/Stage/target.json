@@ -1,0 +1,43 @@
+{
+  "name": "Stage",
+  "isStage": true,
+  "currentCostume": 0,
+  "volume": 100,
+  "layerOrder": 0,
+  "tempo": 60,
+  "videoTransparency": 50,
+  "videoState": "on",
+  "textToSpeechLanguage": null,
+  "variables": [
+    {
+      "name": "score",
+      "id": "(PU4MQ63(Pv8xD(s+}D7",
+      "value": 0
+    }
+  ],
+  "lists": [],
+  "broadcasts": [],
+  "costumes": [
+    {
+      "name": "backdrop1",
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/backdrop1.svg"
+    },
+    {
+      "name": "win",
+      "rotationCenterX": 240,
+      "rotationCenterY": 180,
+      "file": "costumes/win.svg"
+    }
+  ],
+  "sounds": [
+    {
+      "name": "pop",
+      "format": "",
+      "rate": 48000,
+      "sampleCount": 1123,
+      "file": "sounds/pop.wav"
+    }
+  ]
+}

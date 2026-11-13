@@ -1,0 +1,721 @@
+@a1
+define "Rw %s %s %s %s %s" (x, y, dir, z, c) [warp]:
+    data_setvariableto(VARIABLE="Rw C", VALUE=arg("c"))
+    data_setvariableto(VARIABLE="Rw siz", VALUE=arg("z"))
+    data_setvariableto(VARIABLE="clone Dir", VALUE=arg("dir"))
+    data_setvariableto(VARIABLE="clone X", VALUE=arg("x"))
+    data_setvariableto(VARIABLE="clone Y", VALUE=arg("y"))
+    data_setvariableto(VARIABLE="Cam Control?", VALUE="1")
+    data_setvariableto(VARIABLE="ID", VALUE="rw")
+    control_create_clone_of(CLONE_OPTION="_myself_")
+    data_setvariableto(VARIABLE="clone X", VALUE=operator_add(NUM1=arg("x"), NUM2="25"))
+    data_setvariableto(VARIABLE="clone Y", VALUE=operator_subtract(NUM1=arg("y"), NUM2="15"))
+    data_setvariableto(VARIABLE="ID", VALUE="rw影")
+    control_create_clone_of(CLONE_OPTION="_myself_")
+
+@a2
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    pass
+
+@a3
+define "Sw Type %s x,y,dir %s %s %s size %s Color %s" ("", x, y, d, z, c) [warp] defaults=["", "", "", "", "", "", "", ""]:
+    data_setvariableto(VARIABLE="Sw C", VALUE=arg("c"))
+    data_setvariableto(VARIABLE="Sw,type", VALUE=arg(""))
+    data_setvariableto(VARIABLE="clone X", VALUE=arg("x"))
+    data_setvariableto(VARIABLE="clone Y", VALUE=arg("y"))
+    data_setvariableto(VARIABLE="sw z", VALUE=arg("z"))
+    data_setvariableto(VARIABLE="Sw dir", VALUE=arg("d"))
+    data_setvariableto(VARIABLE="Cam Control?", VALUE="1")
+    data_setvariableto(VARIABLE="ID", VALUE="sw")
+    control_create_clone_of(CLONE_OPTION="_myself_")
+    data_setvariableto(VARIABLE="clone X", VALUE=operator_add(NUM1=arg("x"), NUM2="25"))
+    data_setvariableto(VARIABLE="clone Y", VALUE=operator_subtract(NUM1=arg("y"), NUM2="15"))
+    data_setvariableto(VARIABLE="ID", VALUE="sw影")
+    control_create_clone_of(CLONE_OPTION="_myself_")
+
+@a4
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="rw影")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_goforwardbackwardlayers(FORWARD_BACKWARD="backward", NUM="1")
+        looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="-100")
+        looks_seteffectto(EFFECT="GHOST", VALUE="50")
+        looks_show()
+        looks_switchcostumeto(COSTUME="Filler (Size)")
+        data_setvariableto(VARIABLE="clone Z", VALUE="0")
+        looks_switchcostumeto(COSTUME="Diamond 1")
+        control_repeat(TIMES="15"):
+            data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("Rw siz"), NUM2=looks_size()), NUM2="7"))
+            looks_nextcostume()
+        control_repeat(TIMES="7"):
+            data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("Rw siz"), NUM2=looks_size()), NUM2="4"))
+            looks_nextcostume()
+            looks_changeeffectby(EFFECT="GHOST", CHANGE="1")
+        looks_hide()
+
+@a5
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    data_deletealloflist(LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="2", INDEX="1", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="4", INDEX="2", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="6", INDEX="3", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="8", INDEX="4", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="10", INDEX="5", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="12", INDEX="6", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="14", INDEX="7", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="16", INDEX="8", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="18", INDEX="9", LIST="Fwのためだけのリスト。")
+    data_insertatlist(ITEM="20", INDEX="10", LIST="Fwのためだけのリスト。")
+
+@a6
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="rw")):
+        looks_seteffectto(EFFECT="COLOR", VALUE=var("Rw C"))
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_seteffectto(EFFECT="GHOST", VALUE="0")
+        looks_show()
+        looks_switchcostumeto(COSTUME="Filler (Size)")
+        data_setvariableto(VARIABLE="clone Z", VALUE="0")
+        looks_switchcostumeto(COSTUME="Diamond 1")
+        control_repeat(TIMES="15"):
+            data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("Rw siz"), NUM2=looks_size()), NUM2="7"))
+            looks_nextcostume()
+        control_repeat(TIMES="7"):
+            data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("Rw siz"), NUM2=looks_size()), NUM2="4"))
+            looks_nextcostume()
+            looks_changeeffectby(EFFECT="GHOST", CHANGE="1")
+        looks_hide()
+
+@a7
+define "Fw %s %s %s %s %s type %s" (x, y, z, 本数, Color, "") [warp] defaults=["", "", "", "", "", "", ""]:
+    data_setvariableto(VARIABLE="clone Dir", VALUE="0")
+    data_setvariableto(VARIABLE="Fw Color", VALUE=arg("Color"))
+    data_setvariableto(VARIABLE="Fw type", VALUE=arg(""))
+    data_setvariableto(VARIABLE="clone X", VALUE=arg("x"))
+    data_setvariableto(VARIABLE="clone Y", VALUE=arg("y"))
+    data_setvariableto(VARIABLE="clone Z", VALUE=arg("z"))
+    data_setvariableto(VARIABLE="Fw", VALUE="0")
+    control_repeat(TIMES=arg("本数")):
+        data_changevariableby(VARIABLE="Fw", VALUE="1")
+        data_changevariableby(VARIABLE="clone Dir", VALUE=operator_divide(NUM1="360", NUM2=arg("本数")))
+        call("Clone %s %s", ID="fw", CC?="1")
+    data_setvariableto(VARIABLE="clone X", VALUE=operator_add(NUM1=arg("x"), NUM2="25"))
+    data_setvariableto(VARIABLE="clone Y", VALUE=operator_subtract(NUM1=arg("y"), NUM2="15"))
+    control_repeat(TIMES=arg("本数")):
+        data_changevariableby(VARIABLE="Fw", VALUE="1")
+        data_changevariableby(VARIABLE="clone Dir", VALUE=operator_divide(NUM1="360", NUM2=arg("本数")))
+        call("Clone %s %s", ID="fw影", CC?="1")
+
+@a8
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="sw")):
+        looks_gotofrontback(FRONT_BACK="front")
+        control_if(CONDITION=operator_equals(OPERAND1=var("Sw,type"), OPERAND2="a")):
+            looks_seteffectto(EFFECT="COLOR", VALUE=var("Sw C"))
+            data_setvariableto(VARIABLE="sw", VALUE="10")
+            data_setvariableto(VARIABLE="clone Z", VALUE="0")
+            looks_switchcostumeto(COSTUME="sw")
+            looks_seteffectto(EFFECT="FISHEYE", VALUE="0")
+            control_repeat(TIMES="70"):
+                data_setvariableto(VARIABLE="sw", VALUE=operator_multiply(NUM1=var("sw"), NUM2="1.19"))
+                looks_changeeffectby(EFFECT="FISHEYE", CHANGE=var("sw"))
+                data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("sw z"), NUM2=looks_size()), NUM2="5"))
+        control_if(CONDITION=operator_equals(OPERAND1=var("Sw,type"), OPERAND2="b")):
+            looks_seteffectto(EFFECT="COLOR", VALUE=var("Sw C"))
+            data_setvariableto(VARIABLE="sw", VALUE="10")
+            data_setvariableto(VARIABLE="clone Z", VALUE="0")
+            looks_seteffectto(EFFECT="FISHEYE", VALUE="0")
+            looks_switchcostumeto(COSTUME="1/2sw")
+            data_setvariableto(VARIABLE="clone Dir", VALUE=var("Sw dir"))
+            control_repeat(TIMES="70"):
+                data_setvariableto(VARIABLE="sw", VALUE=operator_multiply(NUM1=var("sw"), NUM2="1.19"))
+                looks_changeeffectby(EFFECT="FISHEYE", CHANGE=var("sw"))
+                data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("sw z"), NUM2=looks_size()), NUM2="5"))
+        control_delete_this_clone()
+
+@a9
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="sw影")):
+        control_if(CONDITION=operator_equals(OPERAND1=var("Sw,type"), OPERAND2="a")):
+            looks_seteffectto(EFFECT="COLOR", VALUE=var("Sw C"))
+            looks_seteffectto(EFFECT="GHOST", VALUE="50")
+            looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="-100")
+            data_setvariableto(VARIABLE="sw", VALUE="10")
+            data_setvariableto(VARIABLE="clone Z", VALUE="0")
+            data_setvariableto(VARIABLE="cos", VALUE="sw")
+            looks_switchcostumeto(COSTUME="sw")
+            looks_seteffectto(EFFECT="FISHEYE", VALUE="0")
+            control_repeat(TIMES="70"):
+                data_setvariableto(VARIABLE="sw", VALUE=operator_multiply(NUM1=var("sw"), NUM2="1.19"))
+                looks_changeeffectby(EFFECT="FISHEYE", CHANGE=var("sw"))
+                data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("sw z"), NUM2=looks_size()), NUM2="5"))
+        control_if(CONDITION=operator_equals(OPERAND1=var("Sw,type"), OPERAND2="b")):
+            looks_seteffectto(EFFECT="COLOR", VALUE=var("Sw C"))
+            looks_seteffectto(EFFECT="GHOST", VALUE="50")
+            looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="-100")
+            data_setvariableto(VARIABLE="sw", VALUE="10")
+            data_setvariableto(VARIABLE="clone Z", VALUE="0")
+            looks_switchcostumeto(COSTUME="1/2sw")
+            data_setvariableto(VARIABLE="cos", VALUE="1/2sw")
+            looks_seteffectto(EFFECT="FISHEYE", VALUE="0")
+            data_setvariableto(VARIABLE="clone Dir", VALUE=var("Sw dir"))
+            control_repeat(TIMES="70"):
+                data_setvariableto(VARIABLE="sw", VALUE=operator_multiply(NUM1=var("sw"), NUM2="1.19"))
+                looks_changeeffectby(EFFECT="FISHEYE", CHANGE=var("sw"))
+                data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1=var("sw z"), NUM2=looks_size()), NUM2="5"))
+        control_delete_this_clone()
+
+@a10
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="fw影")):
+        looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="-100")
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_goforwardbackwardlayers(FORWARD_BACKWARD="backward", NUM=var("Fw"))
+        looks_switchcostumeto(COSTUME="le1")
+        looks_changeeffectby(EFFECT="GHOST", CHANGE="50")
+        control_repeat(TIMES="10"):
+            looks_nextcostume()
+        control_repeat(TIMES="2"):
+            looks_nextcostume()
+            looks_changeeffectby(EFFECT="GHOST", CHANGE="10")
+        control_delete_this_clone()
+
+@a11
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    pass
+
+@a12
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    call("Clone %s %s", ID="back", CC?="")
+    call("wait %s", time="3")
+    call("Clone %s %s", ID="text", CC?="1")
+    call("Fw %s %s %s %s %s type %s", x="", y="", z="200", 本数="10", Color="130", ="b")
+
+@a13
+control_forever():
+    call("しゃけ %s %s %s %s", たいむ="12", °="90", x="", y="")
+
+@a14
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="back")):
+        looks_setsizeto(SIZE="100")
+        looks_gotofrontback(FRONT_BACK="back")
+        looks_switchcostumeto(COSTUME="back")
+        looks_seteffectto(EFFECT="GHOST", VALUE="100")
+        control_repeat(TIMES="50"):
+            looks_changeeffectby(EFFECT="GHOST", CHANGE="-2")
+
+@a15
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="fw")):
+        looks_seteffectto(EFFECT="GHOST", VALUE="0")
+        looks_gotofrontback(FRONT_BACK="front")
+        control_if_else(CONDITION=operator_equals(OPERAND1=var("Fw type"), OPERAND2="a")):
+            looks_seteffectto(EFFECT="COLOR", VALUE=var("Fw Color"))
+            looks_switchcostumeto(COSTUME="le1")
+            control_repeat(TIMES="10"):
+                looks_nextcostume()
+            control_repeat(TIMES="2"):
+                looks_nextcostume()
+                looks_changeeffectby(EFFECT="GHOST", CHANGE="10")
+            control_delete_this_clone()
+        else:
+            control_if_else(CONDITION=operator_equals(OPERAND1=var("Fw type"), OPERAND2="b")):
+                control_if_else(CONDITION=data_listcontainsitem(LIST="Fwのためだけのリスト。", ITEM=var("Fw"))):
+                    looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="100")
+                    looks_seteffectto(EFFECT="COLOR", VALUE=var("Fw Color"))
+                    looks_switchcostumeto(COSTUME="le1")
+                    control_repeat(TIMES="10"):
+                        looks_nextcostume()
+                    control_repeat(TIMES="2"):
+                        looks_nextcostume()
+                        looks_changeeffectby(EFFECT="GHOST", CHANGE="10")
+                    control_delete_this_clone()
+                else:
+                    looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="0")
+                    looks_seteffectto(EFFECT="COLOR", VALUE=var("Fw Color"))
+                    looks_switchcostumeto(COSTUME="le1")
+                    control_repeat(TIMES="10"):
+                        looks_nextcostume()
+                    control_repeat(TIMES="2"):
+                        looks_nextcostume()
+                        looks_changeeffectby(EFFECT="GHOST", CHANGE="10")
+                    control_delete_this_clone()
+            else:
+                pass
+
+@a16
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    data_deletealloflist(LIST="おとはっめ")
+    data_insertatlist(ITEM="3.33", INDEX="1", LIST="おとはっめ")
+    data_insertatlist(ITEM="4.29", INDEX="2", LIST="おとはっめ")
+    data_insertatlist(ITEM="5", INDEX="3", LIST="おとはっめ")
+    data_insertatlist(ITEM="5.74", INDEX="4", LIST="おとはっめ")
+    data_insertatlist(ITEM="6.3", INDEX="5", LIST="おとはっめ")
+    data_insertatlist(ITEM="6", INDEX="6", LIST="おとはっめ")
+    data_insertatlist(ITEM="7.1", INDEX="7", LIST="おとはっめ")
+    data_insertatlist(ITEM="", INDEX="8", LIST="おとはっめ")
+    data_insertatlist(ITEM="8.2", INDEX="9", LIST="おとはっめ")
+    data_insertatlist(ITEM="9.8", INDEX="10", LIST="おとはっめ")
+    data_insertatlist(ITEM="10.5", INDEX="11", LIST="おとはっめ")
+
+@a17
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="light")):
+        looks_setsizeto(SIZE="100")
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_switchcostumeto(COSTUME="Light")
+
+@a18
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="text")):
+        looks_gotofrontback(FRONT_BACK="front")
+        data_setvariableto(VARIABLE="clone Z", VALUE="0")
+        looks_switchcostumeto(COSTUME="text")
+        control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=var("clone Z")), OPERAND2="100")):
+            data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_subtract(NUM1="100", NUM2=var("clone Z")), NUM2="3"))
+        call("wait %s", time="4")
+        looks_hide()
+        call("wait %s", time="4.5")
+        looks_show()
+        call("wait %s", time="10.5")
+        call("ふぇどあ")
+        control_delete_this_clone()
+
+@a19
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="text")):
+        control_forever():
+            looks_gotofrontback(FRONT_BACK="front")
+
+@a20
+call("Fw %s %s %s %s %s type %s", x="", y="", z="100", 本数="14", Color="130", ="b")
+
+@a21
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    call("wait %s", time=data_itemoflist(INDEX="1", LIST="おとはっめ"))
+    call("しゃけ %s %s %s %s", たいむ="25", °="90", x="", y="")
+    call("wait %s", time=data_itemoflist(INDEX="3", LIST="おとはっめ"))
+    call("b")
+    call("しゃけ %s %s %s %s", たいむ="25", °="90", x="", y="")
+    call("wait %s", time=data_itemoflist(INDEX="4", LIST="おとはっめ"))
+    call("しゃけ %s %s %s %s", たいむ="25", °="90", x="", y="")
+    call("wait %s", time=data_itemoflist(INDEX="7", LIST="おとはっめ"))
+    call("Rw %s %s %s %s %s", x="", y="", dir="", z="100", c="120")
+    call("Rw %s %s %s %s %s", x="", y="", dir="", z="200", c="120")
+    call("しゃけ %s %s %s %s", たいむ="25", °="90", x="", y="")
+    call("wait %s", time=data_itemoflist(INDEX="11", LIST="おとはっめ"))
+    data_setvariableto(VARIABLE="(ﾟ∀ﾟ)", VALUE="30")
+
+@a22
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    sound_playuntildone(SOUND_MENU="Catch Me (Wy Flip)")
+    control_wait(DURATION="2")
+    event_broadcast(BROADCAST_INPUT=broadcast("イントロ完"))
+
+@a23
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    call("wait %s", time="1")
+    control_repeat(TIMES="8"):
+        data_setvariableto(VARIABLE="clone Y", VALUE="0")
+        data_setvariableto(VARIABLE="clone Dir", VALUE="90")
+        data_setvariableto(VARIABLE="clone Z", VALUE="1")
+        call("Clone %s %s", ID="chev", CC?="1")
+        control_wait(DURATION="0.5")
+        data_setvariableto(VARIABLE="clone X", VALUE="0")
+        data_setvariableto(VARIABLE="clone Y", VALUE="0")
+        data_setvariableto(VARIABLE="clone Dir", VALUE="90")
+        data_setvariableto(VARIABLE="clone Z", VALUE="1")
+        call("Clone %s %s", ID="chev2", CC?="1")
+        control_wait(DURATION="0.5")
+
+@a24
+define "しゃけ %s %s %s %s" (たいむ, °, x, y) defaults=["", "", "", "", "", ""]:
+    data_setvariableto(VARIABLE="しゃけ", VALUE="60")
+    control_repeat(TIMES=arg("たいむ")):
+        data_changevariableby(VARIABLE="しゃけ", VALUE=operator_divide(NUM1=operator_subtract(NUM1="0", NUM2=var("しゃけ")), NUM2="5"))
+        motion_gotoxy(X=operator_add(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=operator_multiply(NUM1=sensing_timer(), NUM2="600")), NUM2="0.9"), NUM2=var("しゃけ")), NUM2=arg("x")), Y=operator_add(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=operator_multiply(NUM1=sensing_timer(), NUM2="600")), NUM2="0.9"), NUM2=var("しゃけ")), NUM2=arg("y")))
+        motion_pointindirection(DIRECTION=operator_add(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=operator_multiply(NUM1=sensing_timer(), NUM2="800")), NUM2="1.5"), NUM2=operator_divide(NUM1=var("しゃけ"), NUM2="7")), NUM2=arg("°")))
+        data_setvariableto(VARIABLE="ShakeDir", VALUE=operator_add(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=operator_multiply(NUM1=sensing_timer(), NUM2="800")), NUM2="1.5"), NUM2=operator_divide(NUM1=var("しゃけ"), NUM2="7")), NUM2=operator_subtract(NUM1=arg("°"), NUM2="90")))
+        data_setvariableto(VARIABLE="ShakeX", VALUE=operator_add(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=operator_multiply(NUM1=sensing_timer(), NUM2="600")), NUM2="0.9"), NUM2=var("しゃけ")), NUM2=arg("x")))
+        data_setvariableto(VARIABLE="ShakeY", VALUE=operator_add(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=operator_multiply(NUM1=sensing_timer(), NUM2="600")), NUM2="0.9"), NUM2=var("しゃけ")), NUM2=arg("y")))
+
+@a25
+var("(ﾟ∀ﾟ)")
+
+@a26
+define "ふぇどあ" ():
+    data_setvariableto(VARIABLE="加速イージング", VALUE="5")
+    control_repeat(TIMES="35"):
+        data_setvariableto(VARIABLE="加速イージング", VALUE=operator_multiply(NUM1=var("加速イージング"), NUM2="1.12"))
+        data_changevariableby(VARIABLE="clone Y", VALUE=operator_subtract(NUM1=var("加速イージング"), NUM2=operator_multiply(NUM1=var("加速イージング"), NUM2="2.01")))
+        motion_turnright(DEGREES=operator_divide(NUM1=var("加速イージング"), NUM2="3"))
+    control_delete_this_clone()
+
+@a27
+data_setvariableto(VARIABLE="clone X", VALUE="0")
+
+@a28
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="chev")):
+        looks_switchcostumeto(COSTUME="コスチューム1")
+        control_repeat_until():
+            data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_multiply(NUM1=var("(ﾟ∀ﾟ)"), NUM2=var("clone Z")), NUM2="100"))
+            data_setvariableto(VARIABLE="clone Dir", VALUE="90")
+            data_setvariableto(VARIABLE="clone X", VALUE="")
+            data_setvariableto(VARIABLE="clone Y", VALUE="")
+
+@a29
+control_start_as_clone():
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="chev2")):
+        looks_switchcostumeto(COSTUME="コスチューム1")
+        looks_seteffectto(EFFECT="BRIGHTNESS", VALUE="90")
+        control_repeat_until():
+            data_changevariableby(VARIABLE="clone Z", VALUE=operator_divide(NUM1=operator_multiply(NUM1=var("(ﾟ∀ﾟ)"), NUM2=var("clone Z")), NUM2="100"))
+            data_setvariableto(VARIABLE="clone Dir", VALUE="90")
+            data_setvariableto(VARIABLE="clone X", VALUE="")
+            data_setvariableto(VARIABLE="clone Y", VALUE="")
+
+@a30
+operator_multiply(NUM1=var("(ﾟ∀ﾟ)"), NUM2=var("clone Z"))
+
+@a31
+control_start_as_clone():
+    looks_show()
+    control_if(CONDITION=operator_equals(OPERAND1=var("Cam Control?"), OPERAND2="1")):
+        control_forever():
+            call("position %s", =looks_costumenumbername(NUMBER_NAME="name"))
+
+@a32
+define "Clone %s %s" (ID, CC?) [warp]:
+    data_setvariableto(VARIABLE="Cam Control?", VALUE=arg("CC?"))
+    data_setvariableto(VARIABLE="ID", VALUE=arg("ID"))
+    control_create_clone_of(CLONE_OPTION="_myself_")
+
+@a33
+define "wait %s" (time):
+    control_wait_until(CONDITION=operator_gt(OPERAND1=sensing_timer(), OPERAND2=arg("time")))
+
+@a34
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    call("wait %s", time=data_itemoflist(INDEX="6", LIST="おとはっめ"))
+    call("Rw %s %s %s %s %s", x="-200", y="", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-100", y="", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="", y="", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="100", y="", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="200", y="", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-200", y="100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-100", y="100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="", y="100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="100", y="100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="200", y="100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-200", y="200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-100", y="200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="", y="200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="100", y="200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="200", y="200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-200", y="-100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-100", y="-100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="", y="-100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="100", y="-100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="200", y="-100", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-200", y="-200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="-100", y="-200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="", y="-200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="100", y="-200", dir="45", z="50", c="120")
+    call("Rw %s %s %s %s %s", x="200", y="-200", dir="45", z="50", c="120")
+    control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=var("🎥 Dir")), OPERAND2="180")):
+        data_changevariableby(VARIABLE="🎥 Dir", VALUE=operator_divide(NUM1=operator_subtract(NUM1="180", NUM2=var("🎥 Dir")), NUM2="3"))
+    control_wait(DURATION="0")
+    control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=var("🎥 Dir")), OPERAND2="360")):
+        data_changevariableby(VARIABLE="🎥 Dir", VALUE=operator_divide(NUM1=operator_subtract(NUM1="360", NUM2=var("🎥 Dir")), NUM2="2.5"))
+
+@a35
+@c2
+# FOR ALL SPRITES! This variables controls the direction of the "camera".
+
+@a36
+@c3
+# FOR ALL SPRITES! This variable is used to change the direction of the camera (try changing the sliders)
+
+@a37
+@c4
+# FOR ALL SPRITES! This variable is used to set the x position of the camera (try changing the sliders)
+
+@a38
+@c5
+# FOR ALL SPRITES! This variables controls the x position of the "camera".
+
+@a39
+data_changevariableby(VARIABLE="clone Dir", VALUE=operator_divide(NUM1=operator_subtract(NUM1="150", NUM2=var("clone Dir")), NUM2="37"))
+
+@a40
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    pass
+
+@a41
+@c6
+# FOR ALL SPRITES! This variable is used to set the y position of the camera (try changing the sliders)
+
+@a42
+@c7
+# FOR ALL SPRITES! This variables controls the y position of the "camera".
+
+@a43
+@c8
+# FOR ALL SPRITES! This variable is used to set the Z position (size) of the camera (try changing the sliders)
+
+@a44
+@c9
+# FOR ALL SPRITES! This variables controls the z position (size) of the "camera".
+
+@a45
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    looks_switchcostumeto(COSTUME="おおきさかんりよう()")
+    sensing_resettimer()
+    motion_gotoxy(X="0", Y="0")
+    motion_pointindirection(DIRECTION="90")
+    looks_setsizeto(SIZE="0")
+    looks_hide()
+    data_setvariableto(VARIABLE="🎥 Dir", VALUE="0")
+    data_setvariableto(VARIABLE="🎥 X", VALUE="0")
+    data_setvariableto(VARIABLE="🎥 Y", VALUE="0")
+    data_setvariableto(VARIABLE="🎥 Z", VALUE="1")
+    data_setvariableto(VARIABLE="clone Dir", VALUE="90")
+    data_setvariableto(VARIABLE="clone X", VALUE="")
+    data_setvariableto(VARIABLE="clone Y", VALUE="")
+    data_setvariableto(VARIABLE="clone Z", VALUE="0")
+
+@a46
+motion_direction()
+
+@a47
+@c10
+# FOR THIS SPRITE ONLY! This variable controls the direction of each INDIVIDUAL clone
+
+@a48
+@c11
+# FOR THIS SPRITE ONLY! This variable is used to set the direction of each INDIVIDUAL clone.
+
+@a49
+@c12
+# FOR THIS SPRITE ONLY! This variable controls the x position of each INDIVIDUAL clone
+
+@a50
+@c13
+# FOR THIS SPRITE ONLY! This variable is used to set the x position of each INDIVIDUAL clone. Not according to the camera
+
+@a51
+@c14
+# FOR THIS SPRITE ONLY! This variable is used to set the y position of each INDIVIDUAL clone. Not according to the camera
+
+@a52
+@c15
+# FOR THIS SPRITE ONLY! This variable controls the y position of each INDIVIDUAL clone
+
+@a53
+define "position %s" ("") [warp] defaults=["", ""]:
+    control_if_else(CONDITION=operator_gt(OPERAND1=looks_size(), OPERAND2="100")):
+        looks_switchcostumeto(COSTUME="Filler (Size)")
+    else:
+        looks_switchcostumeto(COSTUME="Screen")
+    looks_setsizeto(SIZE=operator_multiply(NUM1=var("clone Z"), NUM2=var("🎥 Z")))
+    looks_switchcostumeto(COSTUME="Filler (Movement)")
+    motion_pointindirection(DIRECTION=operator_subtract(NUM1=var("clone Dir"), NUM2=operator_add(NUM1=var("🎥 Dir"), NUM2=var("ShakeDir"))))
+    motion_gotoxy(X=operator_subtract(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_add(NUM1=var("clone X"), NUM2=operator_add(NUM1=var("🎥 X"), NUM2=var("ShakeX"))), NUM2=var("🎥 Z")), NUM2=operator_mathop(OPERATOR="cos", NUM=operator_add(NUM1=var("🎥 Dir"), NUM2=var("ShakeDir")))), NUM2=operator_multiply(NUM1=operator_multiply(NUM1=operator_add(NUM1=var("clone Y"), NUM2=operator_add(NUM1=var("🎥 Y"), NUM2=var("ShakeY"))), NUM2=var("🎥 Z")), NUM2=operator_mathop(OPERATOR="sin", NUM=operator_add(NUM1=var("🎥 Dir"), NUM2=var("ShakeDir"))))), Y=operator_add(NUM1=operator_multiply(NUM1=operator_multiply(NUM1=operator_add(NUM1=var("clone X"), NUM2=operator_add(NUM1=var("🎥 X"), NUM2=var("ShakeX"))), NUM2=var("🎥 Z")), NUM2=operator_mathop(OPERATOR="sin", NUM=operator_add(NUM1=var("🎥 Dir"), NUM2=var("ShakeDir")))), NUM2=operator_multiply(NUM1=operator_multiply(NUM1=operator_add(NUM1=var("clone Y"), NUM2=operator_add(NUM1=var("🎥 Y"), NUM2=var("ShakeY"))), NUM2=var("🎥 Z")), NUM2=operator_mathop(OPERATOR="cos", NUM=operator_add(NUM1=var("🎥 Dir"), NUM2=var("ShakeDir"))))))  # This is the block that positions the clones. It uses some trigonometry, and I dont fully understand how it works, but you can view some of @MathMathMath's tutorials for more info
+    looks_switchcostumeto(COSTUME=arg(""))
+
+@a54
+@c16
+# FOR THIS SPRITE ONLY! This variable is used to set the z position (size) of each INDIVIDUAL clone. Not according to the camera
+
+@a55
+@c17
+# FOR THIS SPRITE ONLY! This variable controls the z position (size) of each INDIVIDUAL clone. Unlike Camera Z, this value can from 0 to 100, not just 0 to 1
+
+@a56
+control_start_as_clone():
+    looks_show()
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="g")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_setsizeto(SIZE="100")
+        looks_switchcostumeto(COSTUME="g")
+        motion_gotoxy(X="-118", Y="0")
+        call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x=motion_xposition(), y="50", d="-90", z="50", c="120")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="5", OPERAND2=sensing_timer())):
+            call("a")
+            motion_gotoxy(X=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=var("θ")), NUM2="-118"), Y=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=var("θ")), NUM2="-118"))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="o")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_setsizeto(SIZE="100")
+        looks_switchcostumeto(COSTUME="o")
+        motion_gotoxy(X="-76", Y="0")
+        call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x=motion_xposition(), y="-50", d="-90", z="50", c="120")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="4.5", OPERAND2=sensing_timer())):
+            motion_gotoxy(X=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=var("θ")), NUM2="-76"), Y=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=var("θ")), NUM2="-76"))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="r")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_setsizeto(SIZE="100")
+        looks_switchcostumeto(COSTUME="r")
+        motion_gotoxy(X="-31", Y="")
+        call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x=motion_xposition(), y="50", d="-90", z="50", c="120")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="4.5", OPERAND2=sensing_timer())):
+            call("a")
+            motion_gotoxy(X=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=var("θ")), NUM2="-31"), Y=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=var("θ")), NUM2="-31"))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="i")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_setsizeto(SIZE="100")
+        looks_switchcostumeto(COSTUME="i")
+        motion_gotoxy(X="3", Y="")
+        call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x=motion_xposition(), y="-50", d="-90", z="50", c="120")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="4.5", OPERAND2=sensing_timer())):
+            call("a")
+            motion_gotoxy(X=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=var("θ")), NUM2="3"), Y=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=var("θ")), NUM2="3"))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="r2")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_setsizeto(SIZE="100")
+        looks_switchcostumeto(COSTUME="r2")
+        motion_gotoxy(X="40", Y="")
+        call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x=motion_xposition(), y="50", d="-90", z="50", c="120")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="4.5", OPERAND2=sensing_timer())):
+            call("a")
+            motion_gotoxy(X=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=var("θ")), NUM2="40"), Y=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=var("θ")), NUM2="40"))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="a")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_setsizeto(SIZE="100")
+        looks_switchcostumeto(COSTUME="a")
+        motion_gotoxy(X="83", Y="")
+        call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x=motion_xposition(), y="-50", d="-90", z="50", c="120")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="4.5", OPERAND2=sensing_timer())):
+            call("a")
+            motion_gotoxy(X=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=var("θ")), NUM2="83"), Y=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=var("θ")), NUM2="83"))
+        control_delete_this_clone()
+    control_if(CONDITION=operator_equals(OPERAND1=var("ID"), OPERAND2="f")):
+        looks_gotofrontback(FRONT_BACK="front")
+        looks_setsizeto(SIZE="100")
+        motion_gotoxy(X="123", Y="")
+        call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x=motion_xposition(), y="50", d="-90", z="50", c="120")
+        looks_switchcostumeto(COSTUME="f")
+        control_repeat_until(CONDITION=operator_lt(OPERAND1="4.5", OPERAND2=sensing_timer())):
+            call("a")
+            motion_gotoxy(X=operator_multiply(NUM1=operator_mathop(OPERATOR="sin", NUM=var("θ")), NUM2="123"), Y=operator_multiply(NUM1=operator_mathop(OPERATOR="cos", NUM=var("θ")), NUM2="123"))
+        control_delete_this_clone()
+
+@a57
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    data_setvariableto(VARIABLE="(ﾟ∀ﾟ)", VALUE="10")
+
+@a58
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    call("wait %s", time="8")
+    call("Fw %s %s %s %s %s type %s", x="", y="", z="100", 本数="10", Color="125", ="b")
+    control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=var("🎥 X")), OPERAND2="180")):
+        data_changevariableby(VARIABLE="🎥 X", VALUE=operator_divide(NUM1=operator_subtract(NUM1="180", NUM2=var("🎥 X")), NUM2="4"))
+    call("Fw %s %s %s %s %s type %s", x="180", y="", z="100", 本数="10", Color="125", ="b")
+    control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=var("🎥 X")), OPERAND2="-180")):
+        data_changevariableby(VARIABLE="🎥 X", VALUE=operator_divide(NUM1=operator_subtract(NUM1="-180", NUM2=var("🎥 X")), NUM2="4"))
+    call("Fw %s %s %s %s %s type %s", x="-180", y="", z="100", 本数="10", Color="125", ="b")
+    control_repeat_until(CONDITION=operator_equals(OPERAND1=operator_round(NUM=var("🎥 X")), OPERAND2="0")):
+        data_changevariableby(VARIABLE="🎥 X", VALUE=operator_divide(NUM1=operator_subtract(NUM1="0", NUM2=var("🎥 X")), NUM2="3"))
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="", y="", d="", z="100", c="115")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="150", y="", d="", z="100", c="130")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="-150", y="", d="", z="100", c="130")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="", y="150", d="", z="100", c="130")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="150", y="150", d="", z="100", c="115")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="-150", y="150", d="", z="100", c="115")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="", y="-150", d="", z="100", c="130")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="150", y="-150", d="", z="100", c="115")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="-150", y="-150", d="", z="100", c="115")
+
+@a59
+call("Rw %s %s %s %s %s", x="", y="", dir="", z="200", c="120")
+
+@a60
+call("Clone %s %s", ID="g", CC?="")
+
+@a61
+operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="text")
+
+@a62
+var("(ﾟ∀ﾟ)")
+
+@a63
+operator_divide(NUM1=operator_subtract(NUM1="10", NUM2="5"), NUM2="10")
+
+@a64
+looks_switchcostumeto(COSTUME="o")
+motion_gotoxy(X="-76", Y="")
+
+@a65
+looks_switchcostumeto(COSTUME="g")
+
+@a66
+looks_switchcostumeto(COSTUME="r2")
+motion_gotoxy(X="40", Y="")
+
+@a67
+looks_switchcostumeto(COSTUME="i")
+motion_gotoxy(X="3", Y="")
+
+@a68
+define "a" ():
+    pass
+
+@a69
+define "b" ():
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="", y="", d="90", z="100", c="120")
+    call("Sw Type %s x,y,dir %s %s %s size %s Color %s", ="a", x="", y="", d="90", z="200", c="120")
+
+@a70
+looks_switchcostumeto(COSTUME="f")
+
+@a71
+control_start_as_clone():
+    call("wait %s", time="10.4")
+    control_if_else(CONDITION=operator_not(OPERAND=operator_or(OPERAND1=operator_or(OPERAND1=operator_contains(STRING1=looks_costumenumbername(NUMBER_NAME="name"), STRING2="le"), OPERAND2=operator_equals(OPERAND1=looks_costumenumbername(NUMBER_NAME="name"), OPERAND2="text"))))):
+        control_repeat(TIMES="4"):
+            looks_changeeffectby(EFFECT="BRIGHTNESS", CHANGE="25")
+            looks_changeeffectby(EFFECT="GHOST", CHANGE="25")
+        control_delete_this_clone()
+    else:
+        pass
+
+@a72
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    call("wait %s", time="8")
+    data_setvariableto(VARIABLE="🎥 Dir", VALUE="0")
+    data_setvariableto(VARIABLE="A", VALUE="1")
+    control_repeat(TIMES="72"):
+        data_changevariableby(VARIABLE="🎥 Dir", VALUE="5")
+
+@a73
+looks_switchcostumeto(COSTUME="r")
+motion_gotoxy(X="-31", Y="")
+
+@a74
+looks_switchcostumeto(COSTUME="a")
+motion_gotoxy(X="83", Y="")
+
+@a75
+event_whenbroadcastreceived(BROADCAST_OPTION="Intro start"):
+    data_setvariableto(VARIABLE="b", VALUE="1")
+    call("wait %s", time="4")
+    data_setvariableto(VARIABLE="θ", VALUE="90")
+    call("Clone %s %s", ID="g", CC?="")
+    call("Clone %s %s", ID="o", CC?="")
+    call("Clone %s %s", ID="r", CC?=" ")
+    call("Clone %s %s", ID="i", CC?=" ")
+    call("Clone %s %s", ID="r2", CC?=" ")
+    call("Clone %s %s", ID="a", CC?=" ")
+    call("Clone %s %s", ID="f", CC?=" ")
+    control_repeat(TIMES="18"):
+        data_changevariableby(VARIABLE="θ", VALUE="20")
+
+@a76
+data_setvariableto(VARIABLE="b", VALUE=operator_multiply(NUM1=var("b"), NUM2="1.11"))
+motion_turnright(DEGREES=var("b"))
