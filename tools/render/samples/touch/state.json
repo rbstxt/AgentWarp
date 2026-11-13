@@ -1,0 +1,100 @@
+{
+  "file": "tools/vmrun/test-fixtures/touch.sb3",
+  "ok": true,
+  "frames": 30,
+  "requestedFrames": 30,
+  "fps": 30,
+  "virtualSeconds": 1,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Chaser",
+      "isStage": false,
+      "isClone": false,
+      "x": 24,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Chaser-a",
+      "variables": {},
+      "lists": {},
+      "bubble": {
+        "type": "say",
+        "text": "hit"
+      }
+    },
+    {
+      "name": "Target",
+      "isStage": false,
+      "isClone": false,
+      "x": 100,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Target-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 5,
+      "name": "start",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 3,
+      "hat": "(click-missed)",
+      "target": "Sprite1",
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "start"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [
+    {
+      "frame": 29,
+      "target": "Chaser",
+      "type": "say",
+      "text": "hit"
+    }
+  ],
+  "sayDropped": 0,
+  "vmWarnings": []
+}

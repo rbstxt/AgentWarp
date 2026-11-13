@@ -1,0 +1,1 @@
+[{"frame":0,"type":"keydown","key":"right arrow"},{"frame":3,"type":"click","sprite":"Sprite1"},{"frame":5,"type":"broadcast","name":"start"},{"frame":10,"type":"answer","text":"Ada"},{"frame":15,"type":"keyup","key":"right arrow"}]

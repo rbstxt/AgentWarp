@@ -1,0 +1,84 @@
+{
+  "file": "tools/vmrun/test-fixtures/keys.sb3",
+  "ok": true,
+  "frames": 30,
+  "requestedFrames": 30,
+  "fps": 30,
+  "virtualSeconds": 1,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Sprite1",
+      "isStage": false,
+      "isClone": false,
+      "x": 75,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Sprite1-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Ball",
+      "isStage": false,
+      "isClone": false,
+      "x": 132.5,
+      "y": 7.34788079488412e-15,
+      "direction": -90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Ball-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 5,
+      "name": "start",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "start"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "vmWarnings": []
+}

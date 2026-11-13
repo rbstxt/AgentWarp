@@ -1,0 +1,85 @@
+{
+  "file": "tools/vmrun/test-fixtures/click.sb3",
+  "ok": true,
+  "frames": 30,
+  "requestedFrames": 30,
+  "fps": 30,
+  "virtualSeconds": 1,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Cookie",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Cookie-a",
+      "variables": {
+        "score": 0
+      },
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {},
+  "monitors": {
+    "var1": {
+      "opcode": "data_variable",
+      "spriteName": null,
+      "value": 0,
+      "params": {
+        "VARIABLE": "score"
+      }
+    }
+  },
+  "broadcasts": [
+    {
+      "frame": 5,
+      "name": "start",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 3,
+      "hat": "(click-missed)",
+      "target": "Sprite1",
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "start"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "vmWarnings": [
+    {
+      "message": "No audio engine present; cannot load sound asset:  5c49731fb924a59d3639120c2ded6fa8.wav",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "file": "tools/vmrun/test-fixtures/clones.sb3",
+  "ok": true,
+  "frames": 30,
+  "requestedFrames": 30,
+  "fps": 30,
+  "virtualSeconds": 1,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Sprite1",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Sprite1-a",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Sprite1",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Sprite1-a",
+      "variables": {},
+      "lists": {},
+      "bubble": {
+        "type": "say",
+        "text": "clone"
+      }
+    },
+    {
+      "name": "Sprite1",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Sprite1-a",
+      "variables": {},
+      "lists": {},
+      "bubble": {
+        "type": "say",
+        "text": "clone"
+      }
+    },
+    {
+      "name": "Sprite1",
+      "isStage": false,
+      "isClone": true,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "Sprite1-a",
+      "variables": {},
+      "lists": {},
+      "bubble": {
+        "type": "say",
+        "text": "clone"
+      }
+    }
+  ],
+  "clones": {
+    "Sprite1": 3
+  },
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 5,
+      "name": "start",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "control_start_as_clone",
+      "target": "Sprite1",
+      "fields": {}
+    },
+    {
+      "frame": 1,
+      "hat": "control_start_as_clone",
+      "target": "Sprite1",
+      "fields": {}
+    },
+    {
+      "frame": 2,
+      "hat": "control_start_as_clone",
+      "target": "Sprite1",
+      "fields": {}
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "start"
+      }
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [
+    {
+      "frame": 0,
+      "target": "Sprite1",
+      "type": "say",
+      "text": "clone"
+    },
+    {
+      "frame": 1,
+      "target": "Sprite1",
+      "type": "say",
+      "text": "clone"
+    },
+    {
+      "frame": 2,
+      "target": "Sprite1",
+      "type": "say",
+      "text": "clone"
+    }
+  ],
+  "sayDropped": 0,
+  "vmWarnings": []
+}

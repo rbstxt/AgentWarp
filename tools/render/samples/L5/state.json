@@ -1,0 +1,249 @@
+{
+  "file": "eval/p2c/ts/L5/out.sb3",
+  "ok": true,
+  "frames": 30,
+  "requestedFrames": 30,
+  "fps": 30,
+  "virtualSeconds": 1,
+  "targets": [
+    {
+      "name": "Stage",
+      "isStage": true,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "backdrop1",
+      "variables": {
+        "vy": 0,
+        "onGround": 1,
+        "pwx": 56,
+        "camX": 56,
+        "level": 1,
+        "pi": 3,
+        "rect": 400260120,
+        "pw": 120,
+        "pt": 400260,
+        "ppy": 60,
+        "pcx": 150,
+        "idx": 3,
+        "mdx": 0,
+        "goalX": 380,
+        "goalY": -60
+      },
+      "lists": {
+        "platforms": [
+          250100960,
+          100180120,
+          400260120
+        ]
+      },
+      "bubble": null
+    },
+    {
+      "name": "Sprite1",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Goal",
+      "isStage": false,
+      "isClone": false,
+      "x": 240,
+      "y": -60,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "flag",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": 0,
+      "direction": 90,
+      "size": 100,
+      "visible": false,
+      "costumeIndex": 0,
+      "costumeName": "block",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Player",
+      "isStage": false,
+      "isClone": false,
+      "x": 0,
+      "y": -100,
+      "direction": 90,
+      "size": 100,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "costume1",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform",
+      "isStage": false,
+      "isClone": true,
+      "x": 94,
+      "y": 60,
+      "direction": 90,
+      "size": 25,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "block",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform",
+      "isStage": false,
+      "isClone": true,
+      "x": 94,
+      "y": 60,
+      "direction": 90,
+      "size": 25,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "block",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    },
+    {
+      "name": "Platform",
+      "isStage": false,
+      "isClone": true,
+      "x": 94,
+      "y": 60,
+      "direction": 90,
+      "size": 25,
+      "visible": true,
+      "costumeIndex": 0,
+      "costumeName": "block",
+      "variables": {},
+      "lists": {},
+      "bubble": null
+    }
+  ],
+  "clones": {
+    "Platform": 3
+  },
+  "monitors": {},
+  "broadcasts": [
+    {
+      "frame": 0,
+      "name": "level1",
+      "target": null
+    },
+    {
+      "frame": 0,
+      "name": "clear",
+      "target": null
+    },
+    {
+      "frame": 5,
+      "name": "start",
+      "target": null
+    },
+    {
+      "frame": 9,
+      "name": "build",
+      "target": null
+    }
+  ],
+  "hats": [
+    {
+      "frame": 0,
+      "hat": "event_whenflagclicked",
+      "target": null,
+      "fields": {}
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "level1"
+      }
+    },
+    {
+      "frame": 0,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "clear"
+      }
+    },
+    {
+      "frame": 5,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "start"
+      }
+    },
+    {
+      "frame": 9,
+      "hat": "event_whenbroadcastreceived",
+      "target": null,
+      "fields": {
+        "BROADCAST_OPTION": "build"
+      }
+    },
+    {
+      "frame": 9,
+      "hat": "control_start_as_clone",
+      "target": "Platform",
+      "fields": {}
+    },
+    {
+      "frame": 12,
+      "hat": "control_start_as_clone",
+      "target": "Platform",
+      "fields": {}
+    },
+    {
+      "frame": 15,
+      "hat": "control_start_as_clone",
+      "target": "Platform",
+      "fields": {}
+    }
+  ],
+  "hatsDropped": 0,
+  "sayEvents": [],
+  "sayDropped": 0,
+  "vmWarnings": [
+    {
+      "message": "No audio engine present; cannot load sound asset:  83a9787d4cb6f3b7632b4ddfebf74367.wav",
+      "count": 1
+    },
+    {
+      "message": "No audio engine present; cannot load sound asset:  83c36d806dc92327b9e7049a565c6bff.wav",
+      "count": 1
+    }
+  ]
+}
