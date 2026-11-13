@@ -57,6 +57,27 @@ export function validateProject(project, files) {
         const stageVarIds = new Set(Object.keys(stage?.variables ?? {}));
         const stageListIds = new Set(Object.keys(stage?.lists ?? {}));
 
+        // Declaration shapes: the VM deserializer trusts these blindly
+        // (list.value = entry[1]; lengthOf reads .length), so a malformed
+        // entry passes load and crashes run. Fail fast here instead.
+        for (const [vid, v] of Object.entries(t.variables ?? {})) {
+            if (!Array.isArray(v) || v.length < 2 || v.length > 3 || typeof v[0] !== 'string') {
+                errors.push(err(tname, null, null,
+                    `variable id "${vid}" must be [name, value] (got ${JSON.stringify(v)?.slice(0, 80)})`));
+            }
+        }
+        for (const [lid, l] of Object.entries(t.lists ?? {})) {
+            if (!Array.isArray(l) || l.length !== 2 || typeof l[0] !== 'string' || !Array.isArray(l[1])) {
+                errors.push(err(tname, null, null,
+                    `list id "${lid}" must be [name, items-array] (got ${JSON.stringify(l)?.slice(0, 80)}); run crashes on malformed lists`));
+            }
+        }
+        for (const [bid, bname] of Object.entries(t.broadcasts ?? {})) {
+            if (typeof bname !== 'string') {
+                errors.push(err(tname, null, null, `broadcast id "${bid}" must map to a name string`));
+            }
+        }
+
         const blockIds = new Set(Object.keys(blocks));
         const reachable = new Set();
 

@@ -394,6 +394,51 @@ async function main() {
             'trace rows carry documented keys', row);
     }
 
+    // 22. check flags malformed variable/list declaration shapes (run would crash on them)
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const raw = await readFile(`${FIX}/greenflag.sb3`);
+        const zip = await JSZip.loadAsync(raw);
+        const proj = JSON.parse(await zip.file('project.json').async('string'));
+        const sprite = proj.targets.find(t => !t.isStage);
+        sprite.lists = {badlist: ['items']}; // missing items array: old packer bug shape
+        sprite.variables = {badvar: 'oops'}; // not a [name, value] pair
+        zip.file('project.json', JSON.stringify(proj));
+        await writeFile('/tmp/vmrun-test/badshapes.sb3', await zip.generateAsync({type: 'nodebuffer'}));
+        const r = await cliExpectFail('check', '/tmp/vmrun-test/badshapes.sb3');
+        assert(r.ok === false && r.errors.some(e => /list id "badlist" must be/.test(e.message)),
+            'malformed list shape fails check', r.errors);
+        assert(r.errors.some(e => /variable id "badvar" must be/.test(e.message)),
+            'malformed variable shape fails check', r.errors);
+    }
+
+    // 23. length of a valid empty list at green flag returns 0 (no crash)
+    {
+        const {default: JSZip} = await import('jszip');
+        const {readFile, writeFile} = await import('node:fs/promises');
+        const raw = await readFile(`${FIX}/greenflag.sb3`);
+        const zip = await JSZip.loadAsync(raw);
+        const proj = JSON.parse(await zip.file('project.json').async('string'));
+        const sprite = proj.targets.find(t => !t.isStage);
+        sprite.lists = {L1: ['empty', []]};
+        const ids = Object.keys(sprite.blocks);
+        const say = Object.values(sprite.blocks).find(b => !Array.isArray(b) && b.opcode === 'looks_sayforsecs');
+        const lenId = 'lenblock';
+        sprite.blocks[lenId] = {
+            opcode: 'data_lengthoflist', next: null, parent: say ? Object.keys(sprite.blocks).find(k => sprite.blocks[k] === say) : ids[0],
+            inputs: {}, fields: {LIST: ['empty', 'L1']}, shadow: false, topLevel: false,
+        };
+        if (say) say.inputs.MESSAGE = [2, lenId];
+        zip.file('project.json', JSON.stringify(proj));
+        await writeFile('/tmp/vmrun-test/emptylen.sb3', await zip.generateAsync({type: 'nodebuffer'}));
+        const chk = await cli('check', '/tmp/vmrun-test/emptylen.sb3');
+        assert(chk.ok === true, 'valid empty list passes check', chk);
+        const r = await cli('run', '/tmp/vmrun-test/emptylen.sb3', '--frames', '5');
+        const s = tgt(r, 'Sprite1');
+        assert(s.bubble?.text === '0', 'length of empty list says "0"', s.bubble);
+    }
+
     console.log(`\n${passed} passed, ${failed} failed`);
     if (failed > 0) {
         console.log('failures:', failures);
