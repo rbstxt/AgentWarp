@@ -46,6 +46,7 @@ import { reunpackText } from './unpack-safe.ts';
 import { buildMerge } from './merge.ts';
 import { createFsTurnStore } from './checkpoints.ts';
 import { createAcpHost } from '../acp/src/index.ts';
+import { projectFingerprint } from './fingerprint.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const FORMATS = ['ts', 'sbpy', 'scratchblocks', 'ir-json'];
@@ -55,6 +56,12 @@ export interface ServeOptions {
     port?: number;
     token?: string;
     name?: string;
+    /**
+     * The user opened another project in TurboWarp (File > New / Load / a file opened at startup):
+     * the editor posts it to POST /switch.sb3 and the owner (the CLI) moves to a new workspace.
+     * Without this hook the route answers 404.
+     */
+    onSwitch?: (sb3: Buffer, title: string) => void;
 }
 
 export interface BridgeHandle {
@@ -411,6 +418,43 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                 res.end(buf);
                 return;
             }
+            if (req.method === 'POST' && url.pathname === '/switch.sb3') {
+                if (!opts.onSwitch) {
+                    json(res, 404, { ok: false, message: 'project switching is not enabled for this bridge' });
+                    return;
+                }
+                const chunks: Buffer[] = [];
+                let size = 0;
+                for await (const c of req) {
+                    chunks.push(c as Buffer);
+                    size += (c as Buffer).length;
+                    if (size > 200 * 1024 * 1024) {
+                        json(res, 413, { ok: false, message: 'project too large' });
+                        return;
+                    }
+                }
+                const buf = Buffer.concat(chunks);
+                if (buf.length < 4 || buf[0] !== 0x50 || buf[1] !== 0x4b) {
+                    json(res, 400, { ok: false, message: 'not an sb3 (zip) file' });
+                    return;
+                }
+                const title = (url.searchParams.get('title') ?? '').slice(0, 200);
+                // The editor already holds this workspace's project (e.g. the exported sb3 reopened):
+                // keep syncing, no new workspace, no reload.
+                try {
+                    const incoming = await loadSb3Buffer(buf);
+                    if (projectFingerprint(incoming.project) === projectFingerprint(base)) {
+                        json(res, 200, { ok: true, same: true, rev });
+                        return;
+                    }
+                } catch {
+                    /* unreadable: let the switch path report it */
+                }
+                json(res, 200, { ok: true, switching: true });
+                log(`editor switched project (${title || 'untitled'}, ${buf.length} bytes)`);
+                later(0, () => opts.onSwitch!(buf, title));
+                return;
+            }
             if (req.method === 'POST' && url.pathname === '/editor.sb3') {
                 const chunks: Buffer[] = [];
                 let size = 0;
@@ -623,6 +667,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             }
             clients.clear();
             wss.close();
+            server.closeAllConnections();
             await new Promise<void>((r) => server.close(() => r()));
             try {
                 await rm(join(dir, '.agentwarp', 'serve.json'), { force: true });

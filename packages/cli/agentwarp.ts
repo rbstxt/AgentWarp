@@ -537,6 +537,46 @@ async function unpackProject(src: string, dir: string, name: string): Promise<Di
     return r.diagnostics;
 }
 
+/** Folder for a project the user opened in TurboWarp: reuse an identical one, never overwrite. */
+async function switchWorkspace(root: string, title: string, sb3: Buffer, format: string): Promise<string> {
+    const { loadSb3Buffer } = await import('../core/sb3.ts');
+    const incoming = await loadSb3Buffer(sb3);
+    let name = title.trim().replace(/\.sb3$/i, '').replace(/[\/\\:*?"<>|\u0000-\u001f]+/g, '-').replace(/^\.+/, '').trim().slice(0, 80);
+    if (!name || /^(project|untitled|プロジェクト)$/i.test(name)) {
+        const d = new Date();
+        const p2 = (n: number) => String(n).padStart(2, '0');
+        name = `project-${d.getFullYear()}${p2(d.getMonth() + 1)}${p2(d.getDate())}-${p2(d.getHours())}${p2(d.getMinutes())}`;
+    }
+    const same = async (candidate: string): Promise<boolean> => {
+        try {
+            const { projectFingerprint } = await import('../bridge/fingerprint.ts');
+            const base = JSON.parse(await readFile(join(candidate, '.agentwarp', 'base.json'), 'utf8'));
+            return projectFingerprint(base) === projectFingerprint(incoming.project);
+        } catch {
+            return false;
+        }
+    };
+    let candidate = join(root, name);
+    for (let i = 2; existsSync(candidate); i++) {
+        if (await same(candidate)) {
+            process.stdout.write(`reopened workspace ${candidate}\n`);
+            return candidate;
+        }
+        candidate = join(root, `${name}-${i}`);
+    }
+    const tmp = await mkdtemp(join(tmpdir(), 'agentwarp-switch-'));
+    try {
+        await writeFile(join(tmp, 'editor.sb3'), sb3);
+        await mkdir(candidate, { recursive: true });
+        const diags = await unpackProject(join(tmp, 'editor.sb3'), candidate, format);
+        printDiags(diags.filter((d) => d.severity === 'error'), candidate);
+    } finally {
+        await rm(tmp, { recursive: true, force: true });
+    }
+    process.stdout.write(`new workspace ${candidate} (from "${title || 'untitled'}")\n`);
+    return candidate;
+}
+
 async function main() {
     const [cmd, ...argv] = process.argv.slice(2);
     if (!cmd || cmd === 'help' || cmd === '--help' || cmd === '-h') {
@@ -770,19 +810,33 @@ async function main() {
                 }
                 process.stdout.write(`adopted the editor project into ${dir}\n`);
             }
+            // Serve loop: when the user opens another project in TurboWarp (File > New / Load / a file
+            // opened at startup), the editor posts it and we move to a new workspace folder next to
+            // the current one. The previous workspace stays on disk untouched.
             const { startServe } = await import('../bridge/server.ts');
-            let h;
-            try {
-                h = await startServe(dir, { port, token });
-            } catch (e) {
-                if ((e as NodeJS.ErrnoException)?.code === 'EADDRINUSE') {
-                    die(`serve: port ${port} is in use (another agentwarp serve?). Stop it or pass --port N.`);
+            const format = typeof opts.format === 'string' ? opts.format : 'ts';
+            let current = dir;
+            for (let first = true; ; first = false) {
+                let resolveSwitch!: (v: { sb3: Buffer; title: string }) => void;
+                const switched = new Promise<{ sb3: Buffer; title: string }>((r) => (resolveSwitch = r));
+                let h;
+                try {
+                    h = await startServe(current, { port, token, onSwitch: (sb3, title) => resolveSwitch({ sb3, title }) });
+                } catch (e) {
+                    if ((e as NodeJS.ErrnoException)?.code === 'EADDRINUSE') {
+                        die(`serve: port ${port} is in use (another agentwarp serve?). Stop it or pass --port N.`);
+                    }
+                    throw e;
                 }
-                throw e;
+                if (first) {
+                    process.stdout.write(`bridge ${h.url}\n`);
+                    process.stdout.write(`TurboWarp connect dialog: URL http://127.0.0.1:${h.port}  token ${h.token}\n`);
+                }
+                process.stdout.write(`serving ${current}\n`);
+                const { sb3, title } = await switched;
+                await h.close();
+                current = await switchWorkspace(dirname(current), title, sb3, format);
             }
-            process.stdout.write(`bridge ${h.url}\n`);
-            process.stdout.write(`TurboWarp connect dialog: URL http://127.0.0.1:${h.port}  token ${h.token}\n`);
-            await new Promise(() => undefined); // run until killed
             return;
         }
         default:

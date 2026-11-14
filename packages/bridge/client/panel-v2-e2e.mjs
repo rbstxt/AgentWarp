@@ -37,7 +37,7 @@ try {
   // Exercise the picker from the keyboard, including both columns and focus return.
   await input.focus();await page.keyboard.press('ControlOrMeta+Shift+M');
   const search=panel.getByRole('textbox',{name:locale==='ja'?'モデルを検索':'Search models'});
-  await search.waitFor();await search.fill('Mock model');await search.press('ArrowDown');
+  await search.waitFor();await search.fill('Mock model');await panel.getByRole('button',{name:'Mock model',exact:true}).waitFor();await search.press('ArrowDown');
   assert.equal(await panel.getByRole('button',{name:'Mock model',exact:true}).evaluate(el=>el.getRootNode().activeElement===el),true);
   await page.keyboard.press('ArrowRight');assert.equal(await panel.locator('.model-settings').evaluate(el=>el.contains(el.getRootNode().activeElement)),true);
   await page.keyboard.press('ArrowLeft');assert.equal(await panel.locator('.model-list').evaluate(el=>el.contains(el.getRootNode().activeElement)),true);
