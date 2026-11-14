@@ -746,14 +746,15 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     })();
   }
 
-  async function doOptions(agentId: string, reply: (msg: object) => void): Promise<void> {
+  async function doOptions(agentId: string, reply: (msg: object) => void, configOptions?: Array<{configId: string; value: string}>): Promise<void> {
     const def = (await agents()).find((d) => d.id === agentId);
     if (!def) throw new Error(`unknown agent: ${agentId}`);
     const conn = await ensureConn(def);
     const result = conn.caps?.sessionCapabilities?.options != null
-      ? await conn.agent.request("session/options", { cwd: projectDir })
-      : await conn.agent.request("session/new", { cwd: projectDir, mcpServers: [] });
-    reply({ type: "acp/options", agentId, configOptions: result.configOptions ?? [], modes: result.modes ?? modesOf(result.configOptions), promptCapabilities: conn.caps?.promptCapabilities });
+      ? await conn.agent.request("session/options", { cwd: projectDir, ...(configOptions?.length ? { configOptions } : {}) })
+      : await conn.agent.request("session/new", { cwd: projectDir, mcpServers: [], ...(configOptions?.length ? { configOptions } : {}) });
+    const optionsResult = result as { configOptions?: ActiveSession["newSessionResponse"]["configOptions"]; modes?: ActiveSession["newSessionResponse"]["modes"] };
+    reply({ type: "acp/options", agentId, configOptions: optionsResult.configOptions ?? [], modes: optionsResult.modes ?? modesOf(optionsResult.configOptions), promptCapabilities: conn.caps?.promptCapabilities });
   }
 
   async function doStart(agentId: string, configOptions?: Array<{configId: string; value: string}>): Promise<void> {
@@ -1125,7 +1126,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           break;
         }
         case "acp/options":
-          await doOptions(String(full.agentId ?? ""), reply);
+          await doOptions(String(full.agentId ?? ""), reply, Array.isArray(full.configOptions) ? full.configOptions.filter((x): x is {configId: string; value: string} => !!x && typeof x.configId === "string" && typeof x.value === "string") : undefined);
           break;
         case "acp/start":
           await doStart(String(full.agentId ?? ""), Array.isArray(full.configOptions) ? full.configOptions.filter((x): x is {configId: string; value: string} => !!x && typeof x.configId === "string" && typeof x.value === "string") : undefined);

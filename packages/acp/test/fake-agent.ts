@@ -50,7 +50,12 @@ function baseModes(): SessionModeState | null {
   return { currentModeId: 'build', availableModes: [{ id: 'build', name: 'Build' }, { id: 'plan', name: 'Plan', description: 'Plan first' }] };
 }
 
-if (process.env.FAKE_SUPPORT_OPTIONS === "1") app.onRequest("session/options", async () => ({ configOptions: baseConfigOptions(), modes: baseModes() }));
+if (process.env.FAKE_SUPPORT_OPTIONS === "1") app.onRequest("session/options", async (ctx) => {
+  const options = baseConfigOptions();
+  const params = ctx.params as typeof ctx.params & {configOptions?: Array<{configId:string; value:string}>};
+  for (const initial of params.configOptions ?? []) { const option = options.find(o => o.id === initial.configId); if (option) option.currentValue = initial.value; }
+  return {configOptions: options, modes: baseModes()};
+});
 
 app.onRequest("session/new", async (ctx) => {
   sessionSeq += 1;

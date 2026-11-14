@@ -115,6 +115,10 @@ describe("pre-session options", () => {
         equal(replies[0].type, "acp/options");
         equal(replies[0].configOptions[0].currentValue, "fast");
         equal(f.sent.some(m => m.type === "acp/session"), false);
+        const refreshed: Sent = [];
+        await f.host.handle({ type: "acp/options", agentId: "fake", configOptions: [{ configId: "model", value: "smart" }] }, m => refreshed.push(m as Record<string, any>));
+        // The SDK agent strips unknown session/options fields; session/new accepts them.
+        equal(refreshed[0].configOptions[0].currentValue, supportsOptions ? "fast" : "smart");
         await f.host.handle({ type: "acp/start", agentId: "fake", configOptions: [{ configId: "model", value: "smart" }] });
         equal(f.sent.find(m => m.type === "acp/session")?.configOptions[0].currentValue, "smart");
       } finally { await f.host.dispose(); }

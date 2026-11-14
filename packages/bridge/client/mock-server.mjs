@@ -48,8 +48,13 @@ export async function createMock({project, token = 'test-token', port = 0, rev =
         {id:'mode',name:'Mode',category:'mode',type:'select',currentValue:'agent',options:[{value:'agent',name:'Agent'},{value:'ask',name:'Ask'}]},
         {id:'speed',name:'Fast mode',category:'model_config',type:'select',currentValue:'off',options:[{value:'off',name:'Off'},{value:'on',name:'On'}]},
       ].map(o => ({...o,currentValue:initial.find(x=>x.configId===o.id)?.value ?? o.currentValue}));
-      if (msg.type === 'acp/agents') reply({type:'acp/agents',list:[{id:'mock',label:'Mock agent',available:true},{id:'missing',label:'Unavailable',available:false}]});
-      else if (msg.type === 'acp/options') reply({type:'acp/options',agentId:msg.agentId,promptCapabilities:{image:true},configOptions:configOptions()});
+      if (msg.type === 'acp/agents') reply({type:'acp/agents',list:[{id:'mock',label:'Mock agent',available:true},{id:'codex',label:'Codex',available:true},{id:'opencode',label:'OpenCode',available:true},{id:'missing',label:'Missing agent',available:false,reason:'Not installed'}]});
+      else if (msg.type === 'acp/options') {
+        const opts = configOptions(msg.configOptions);
+        if (msg.agentId === 'codex') { opts[0].options = [{value:'gpt-6.1-sol',name:'6.1 Sol',description:'Coding and everyday work'},{value:'gpt-5',name:'GPT-5'}]; opts[0].currentValue = msg.configOptions?.find(x=>x.configId==='model')?.value || 'gpt-6.1-sol'; opts[1].id='reasoning_effort'; opts[3].id='fast-mode'; }
+        if (msg.agentId === 'opencode') { opts[0].options = Array.from({length:1401},(_,i)=>({value:`provider${Math.floor(i/100)}/model-${i}`,name:`provider${Math.floor(i/100)}/Model ${i}`})); opts[0].currentValue = msg.configOptions?.find(x=>x.configId==='model')?.value || opts[0].options[0].value; }
+        reply({type:'acp/options',agentId:msg.agentId,promptCapabilities:{image:true},configOptions:opts});
+      }
       else if (msg.type === 'acp/start') { const sessionId = `mock-${++nextSession}`; sessions.set(sessionId,[]); reply({type:'acp/session',sessionId,agentId:msg.agentId,promptCapabilities:{image:true},modes:{currentModeId:'agent',availableModes:[{id:'agent',name:'Agent'},{id:'ask',name:'Ask'}]},configOptions:configOptions(msg.configOptions)}); }
       else if (msg.type === 'acp/sessions') reply({type:'acp/sessions',list:[...sessions.keys()].map(sessionId=>({sessionId,agentId:'mock',title:'Mock chat',updatedAt:new Date().toISOString(),turns:1}))});
       else if (msg.type === 'acp/load') { for (const event of sessions.get(msg.sessionId)||[]) reply(event); reply({type:'acp/session',sessionId:msg.sessionId,agentId:'mock',promptCapabilities:{image:true}}); }
