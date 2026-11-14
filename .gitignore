@@ -6,3 +6,5 @@ node_modules/
 eval/runs/**/build/
 eval/runs/**/dist/
 **/.agentwarp/build.sb3
+eval/runs/*/node_modules
+render-output/
