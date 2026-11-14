@@ -561,7 +561,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
       const text = String(d);
       conn.stderrTail = `${conn.stderrTail}${text}`.slice(-2000);
       for (const line of text.split("\n")) {
-        if (line.trim()) log(`[${def.id} stderr]`, line);
+        if (line.trim()) log(`[${def.id} stderr] ${line}`);
       }
     });
     child.on("exit", (code, signal) => {
@@ -1181,7 +1181,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           log(`acp: ignoring unknown message type ${m.type}`);
       }
     } catch (e) {
-      reply({ type: "acp/error", message: `${m.type} failed: ${(e as Error)?.message ?? e}` });
+      reply({ type: "acp/error", ...(m.type === "acp/options" ? { agentId: String(full.agentId ?? "") } : {}), message: `${m.type} failed: ${(e as Error)?.message ?? e}` });
     }
   }
 

@@ -34,13 +34,27 @@ try {
   await panel.getByRole('button',{name:locale==='ja'?'モデルを選択':'Choose model'}).waitFor();
   await page.waitForTimeout(200);
   const input=panel.locator('textarea');
+  // Exercise the picker from the keyboard, including both columns and focus return.
+  await input.focus();await page.keyboard.press('ControlOrMeta+Shift+M');
+  const search=panel.getByRole('textbox',{name:locale==='ja'?'モデルを検索':'Search models'});
+  await search.waitFor();await search.fill('Mock model');await search.press('ArrowDown');
+  assert.equal(await panel.getByRole('button',{name:'Mock model',exact:true}).evaluate(el=>el.getRootNode().activeElement===el),true);
+  await page.keyboard.press('ArrowRight');assert.equal(await panel.locator('.model-settings').evaluate(el=>el.contains(el.getRootNode().activeElement)),true);
+  await page.keyboard.press('ArrowLeft');assert.equal(await panel.locator('.model-list').evaluate(el=>el.contains(el.getRootNode().activeElement)),true);
+  await page.keyboard.press('Escape');await search.waitFor({state:'hidden'});
+  await panel.getByRole('button',{name:locale==='ja'?'モデルを選択':'Choose model'}).click();
+  await panel.locator('.model-group').filter({hasText:'Codex'}).waitFor();await panel.locator('.model-group').filter({hasText:'OpenCode'}).waitFor();
+  assert.equal(await panel.getByText('Not installed',{exact:true}).count(),1);
+  assert.ok(mock.acpMessages.some(m=>m.type==='acp/options'&&m.agentId==='codex'));
+  assert.ok(mock.acpMessages.some(m=>m.type==='acp/options'&&m.agentId==='opencode'));
+  await page.keyboard.press('Escape');
   const screenshotMatrix=async state=>{
    await page.setViewportSize({width:1920,height:900});
    for(const width of [300,600]){
     await page.waitForFunction(()=>document.querySelector('#agentwarp-panel').getBoundingClientRect().width === Number(localStorage.getItem('agentwarp.panel.width')));
     let current=await panel.evaluate(el=>el.getBoundingClientRect().width);
     await panel.locator('.resize').focus();
-    while(current!==width){const next=current+(current<width?20:-20);await page.keyboard.press(current<width?'ArrowLeft':'ArrowRight');await page.waitForFunction(w=>document.querySelector('#agentwarp-panel').getBoundingClientRect().width===w,next);current=next;}
+    while(current!==width){const next=current+(current<width?20:-20);await panel.locator('.resize').focus();await page.keyboard.press(current<width?'ArrowLeft':'ArrowRight');await page.waitForFunction(w=>document.querySelector('#agentwarp-panel').getBoundingClientRect().width===w,next);current=next;}
 
     for(const theme of ['light','dark']){
      if(theme==='dark') {await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click();await page.getByText(locale==='ja'?'ダークモードに切り替える':'Switch To Dark Mode',{exact:true}).click();}
@@ -103,7 +117,7 @@ try {
    for(let n=current;n!==width;n+=n<width?20:-20) await page.keyboard.press(n<width?'ArrowLeft':'ArrowRight');
    assert.ok(await page.locator('[class*=gui_flex-wrapper_]').first().evaluate(el=>el.getBoundingClientRect().width)>=856, 'editor must retain 856px');
    assert.equal(await panel.locator('.model-trigger').count(),1);
-   if(width===380) continue;
+   if(width===380) {assert.equal(await panel.locator('.model-trigger .provider-icon').isVisible(),true);continue;}
    for(const theme of ['light','dark']) {
     if(theme==='dark') { await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click(); await page.getByText(locale==='ja'?'ダークモードに切り替える':'Switch To Dark Mode',{exact:true}).click(); }
     await page.screenshot({path:join(root,'e2e-screens',`p7-changes-${locale}-${theme}-${width}.png`)});
