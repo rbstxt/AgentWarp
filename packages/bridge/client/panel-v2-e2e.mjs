@@ -34,14 +34,13 @@ try {
   await panel.getByRole('button',{name:locale==='ja'?'モデルを選択':'Choose model'}).waitFor();
   await page.waitForTimeout(200);
   const input=panel.locator('textarea');
-  // Exercise the picker from the keyboard, including both columns and focus return.
+  // Exercise search, keyboard navigation and focus return.
   await input.focus();await page.keyboard.press('ControlOrMeta+Shift+M');
   const search=panel.getByRole('textbox',{name:locale==='ja'?'モデルを検索':'Search models'});
   await search.waitFor();await search.fill('Mock model');await panel.getByRole('button',{name:'Mock model',exact:true}).waitFor();await search.press('ArrowDown');
   assert.equal(await panel.getByRole('button',{name:'Mock model',exact:true}).evaluate(el=>el.getRootNode().activeElement===el),true);
-  await page.keyboard.press('ArrowRight');assert.equal(await panel.locator('.model-settings').evaluate(el=>el.contains(el.getRootNode().activeElement)),true);
-  await page.keyboard.press('ArrowLeft');assert.equal(await panel.locator('.model-list').evaluate(el=>el.contains(el.getRootNode().activeElement)),true);
   await page.keyboard.press('Escape');await search.waitFor({state:'hidden'});
+  await panel.locator('.model-trigger').waitFor();await page.waitForFunction(()=>{const el=document.querySelector('#agentwarp-panel').shadowRoot.querySelector('.model-trigger');return el.getRootNode().activeElement===el});
   await panel.getByRole('button',{name:locale==='ja'?'モデルを選択':'Choose model'}).click();
   await panel.locator('.model-group').filter({hasText:'Codex'}).waitFor();await panel.locator('.model-group').filter({hasText:'OpenCode'}).waitFor();
   assert.equal(await panel.getByText('Not installed',{exact:true}).count(),1);
@@ -59,7 +58,8 @@ try {
     for(const theme of ['light','dark']){
      if(theme==='dark') {await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click();await page.getByText(locale==='ja'?'ダークモードに切り替える':'Switch To Dark Mode',{exact:true}).click();}
      if(state==='picker'){await panel.getByRole('button',{name:locale==='ja'?'モデルを選択':'Choose model'}).click();await panel.getByRole('button',{name:'Mock model',exact:true}).waitFor();}
-     await panel.screenshot({path:join(root,'e2e-screens',`p7-composer2-${state}-${locale}-${theme}-${width}.png`)});
+     await panel.screenshot({path:join(root,'e2e-screens',state==='picker'?`p8-picker-${locale}-${theme}-${width}.png`:`p7-composer2-${state}-${locale}-${theme}-${width}.png`)});
+     if(state==='picker'){await search.fill('provider1/model-1');await panel.getByRole('button',{name:'Model 100',exact:true}).waitFor();await panel.screenshot({path:join(root,'e2e-screens',`p8-picker-search-${locale}-${theme}-${width}.png`)});}
      if(state==='picker')await page.keyboard.press('Escape');
      if(theme==='dark') {await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click();await page.getByText(locale==='ja'?'ライトモードに切り替える':'Switch To Light Mode',{exact:true}).click();}
     }
