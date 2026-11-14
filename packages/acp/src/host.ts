@@ -11,7 +11,7 @@ import {
   type AgentCapabilities,
   type ClientConnection,
   type ClientContext,
-} from "@agentclientprotocol/sdk";
+} from "@agentclientprotocol/sdk/unstable";
 import {
   detectAll,
   loadAgentRegistry,
@@ -413,6 +413,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
 
   let registry: AgentDef[] | null = opts.agents ? [...opts.agents] : null;
   const conns = new Map<string, ConnState>();
+  const connecting = new Map<string, Promise<ConnState>>();
   const sessions = new Map<string, SessionState>();
   const pendingPerms = new Map<string, PendingPermission>();
   /** "always" decisions: `${sessionId}:${toolKey}` -> optionId */
@@ -510,6 +511,14 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
   }
 
   async function ensureConn(def: AgentDef): Promise<ConnState> {
+    const pending = connecting.get(def.id);
+    if (pending) return pending;
+    const promise = openConn(def);
+    connecting.set(def.id, promise);
+    try { return await promise; } finally { connecting.delete(def.id); }
+  }
+
+  async function openConn(def: AgentDef): Promise<ConnState> {
     const existing = conns.get(def.id);
     if (existing && !existing.dead) return existing;
 
@@ -737,7 +746,17 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     })();
   }
 
-  async function doStart(agentId: string): Promise<void> {
+  async function doOptions(agentId: string, reply: (msg: object) => void): Promise<void> {
+    const def = (await agents()).find((d) => d.id === agentId);
+    if (!def) throw new Error(`unknown agent: ${agentId}`);
+    const conn = await ensureConn(def);
+    const result = conn.caps?.sessionCapabilities?.options != null
+      ? await conn.agent.request("session/options", { cwd: projectDir })
+      : await conn.agent.request("session/new", { cwd: projectDir, mcpServers: [] });
+    reply({ type: "acp/options", agentId, configOptions: result.configOptions ?? [], modes: result.modes ?? modesOf(result.configOptions), promptCapabilities: conn.caps?.promptCapabilities });
+  }
+
+  async function doStart(agentId: string, configOptions?: Array<{configId: string; value: string}>): Promise<void> {
     const defs = await agents();
     const def = defs.find((d) => d.id === agentId);
     if (!def) {
@@ -756,7 +775,8 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
       return;
     }
     try {
-      const active = await conn.agent.buildSession(projectDir).start();
+      const response = await conn.agent.request("session/new", { cwd: projectDir, mcpServers: [], ...(configOptions?.length ? { configOptions } : {}) });
+      const active = (conn.agent as unknown as { attachSession: (r: unknown) => ActiveSession }).attachSession(response);
       const sessionId = active.sessionId;
       const sess: SessionState = { sessionId, agentId: def.id, active, turnRunning: false, currentTurn: null, liveTimer: null, pump: Promise.resolve(), configOptions: active.newSessionResponse.configOptions, modes: active.newSessionResponse.modes ?? modesOf(active.newSessionResponse.configOptions) };
       sessions.set(sessionId, sess);
@@ -1104,8 +1124,11 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           reply({ type: "acp/agents", list });
           break;
         }
+        case "acp/options":
+          await doOptions(String(full.agentId ?? ""), reply);
+          break;
         case "acp/start":
-          await doStart(String(full.agentId ?? ""));
+          await doStart(String(full.agentId ?? ""), Array.isArray(full.configOptions) ? full.configOptions.filter((x): x is {configId: string; value: string} => !!x && typeof x.configId === "string" && typeof x.value === "string") : undefined);
           break;
         case "acp/prompt":
           await doPrompt({
@@ -1157,7 +1180,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           log(`acp: ignoring unknown message type ${m.type}`);
       }
     } catch (e) {
-      emit({ type: "acp/error", message: `${m.type} failed: ${(e as Error)?.message ?? e}` });
+      reply({ type: "acp/error", message: `${m.type} failed: ${(e as Error)?.message ?? e}` });
     }
   }
 

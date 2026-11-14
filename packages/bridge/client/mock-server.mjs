@@ -42,11 +42,18 @@ export async function createMock({project, token = 'test-token', port = 0, rev =
       if (!msg.type?.startsWith('acp/')) return;
       acpMessages.push(msg);
       const reply = value => { if (ws.readyState === ws.OPEN) ws.send(JSON.stringify(value)); };
+      const configOptions = (initial = []) => [
+        {id:'model',name:'Model',category:'model',type:'select',currentValue:'mock',options:[{value:'mock',name:'Mock model'},{value:'opus',name:'Opus 5.5'}]},
+        {id:'effort',name:'Effort',category:'thought_level',type:'select',currentValue:'high',options:[{value:'low',name:'Low'},{value:'high',name:'High'}]},
+        {id:'mode',name:'Mode',category:'mode',type:'select',currentValue:'agent',options:[{value:'agent',name:'Agent'},{value:'ask',name:'Ask'}]},
+        {id:'speed',name:'Fast mode',category:'model_config',type:'select',currentValue:'off',options:[{value:'off',name:'Off'},{value:'on',name:'On'}]},
+      ].map(o => ({...o,currentValue:initial.find(x=>x.configId===o.id)?.value ?? o.currentValue}));
       if (msg.type === 'acp/agents') reply({type:'acp/agents',list:[{id:'mock',label:'Mock agent',available:true},{id:'missing',label:'Unavailable',available:false}]});
-      else if (msg.type === 'acp/start') { const sessionId = `mock-${++nextSession}`; sessions.set(sessionId,[]); reply({type:'acp/session',sessionId,agentId:msg.agentId,promptCapabilities:{image:true},modes:{currentModeId:'agent',availableModes:[{id:'agent',name:'Agent'},{id:'ask',name:'Ask'}]},configOptions:[{id:'model',name:'Model',type:'select',currentValue:'mock',options:[{value:'mock',name:'Mock model'}]}]}); }
+      else if (msg.type === 'acp/options') reply({type:'acp/options',agentId:msg.agentId,promptCapabilities:{image:true},configOptions:configOptions()});
+      else if (msg.type === 'acp/start') { const sessionId = `mock-${++nextSession}`; sessions.set(sessionId,[]); reply({type:'acp/session',sessionId,agentId:msg.agentId,promptCapabilities:{image:true},modes:{currentModeId:'agent',availableModes:[{id:'agent',name:'Agent'},{id:'ask',name:'Ask'}]},configOptions:configOptions(msg.configOptions)}); }
       else if (msg.type === 'acp/sessions') reply({type:'acp/sessions',list:[...sessions.keys()].map(sessionId=>({sessionId,agentId:'mock',title:'Mock chat',updatedAt:new Date().toISOString(),turns:1}))});
       else if (msg.type === 'acp/load') { for (const event of sessions.get(msg.sessionId)||[]) reply(event); reply({type:'acp/session',sessionId:msg.sessionId,agentId:'mock',promptCapabilities:{image:true}}); }
-      else if (msg.type === 'acp/set-config') reply({type:'acp/config',sessionId:msg.sessionId,configOptions:[{id:'model',name:'Model',type:'select',currentValue:msg.value,options:[{value:'mock',name:'Mock model'}]}]});
+      else if (msg.type === 'acp/set-config') reply({type:'acp/config',sessionId:msg.sessionId,configOptions:configOptions([{configId:msg.optionId,value:msg.value}])});
       else if (msg.type === 'acp/set-mode') reply({type:'acp/mode',sessionId:msg.sessionId,currentModeId:msg.modeId});
       else if (msg.type === 'acp/restore') { const snapshot = checkpoints.get(`${msg.sessionId}:${msg.turnId}`); if (snapshot) { push(snapshot); for (const client of clients) if (client.readyState === client.OPEN) client.send(JSON.stringify({type:'acp/restored',sessionId:msg.sessionId,turnId:msg.turnId,rev})); } }
       else if (msg.type === 'acp/history') { for (const event of sessions.get(msg.sessionId)||[]) reply(event); }

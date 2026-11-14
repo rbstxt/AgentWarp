@@ -16,7 +16,7 @@
  *   changed to moveSteps("25") during the turn, with time for a live diff.
  * FAKE_IMAGE_PATH: emit a completed tool call referencing this image.
  */
-import { agent, ndJsonStream, type ClientRequestParamsByMethod, type SessionConfigOption, type SessionModeState } from "@agentclientprotocol/sdk";
+import { agent, ndJsonStream, type ClientRequestParamsByMethod, type SessionConfigOption, type SessionModeState } from "@agentclientprotocol/sdk/unstable";
 import { Readable, Writable } from "node:stream";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -33,7 +33,7 @@ app.onRequest("initialize", async () => {
   const agentCapabilities: Record<string, unknown> = {};
   if (process.env.FAKE_PROMPT_CAPS === "image") agentCapabilities.promptCapabilities = { image: true };
   if (process.env.FAKE_SUPPORT_LOAD === "1") agentCapabilities.loadSession = true;
-  if (process.env.FAKE_SUPPORT_RESUME === "1") agentCapabilities.sessionCapabilities = { resume: {} };
+  if (process.env.FAKE_SUPPORT_RESUME === "1" || process.env.FAKE_SUPPORT_OPTIONS === "1") agentCapabilities.sessionCapabilities = { ...(process.env.FAKE_SUPPORT_RESUME === "1" ? { resume: {} } : {}), ...(process.env.FAKE_SUPPORT_OPTIONS === "1" ? { options: {} } : {}) };
   return { protocolVersion: 1 as const, agentCapabilities };
 });
 
@@ -41,7 +41,7 @@ const configBySession = new Map<string, SessionConfigOption[]>();
 
 function baseConfigOptions(): SessionConfigOption[] {
   return [
-    { id: 'model', name: 'Model', type: 'select' as const, currentValue: 'fast', options: [{ value: 'fast', name: 'Fast' }, { value: 'smart', name: 'Smart' }] },
+    { id: 'model', name: 'Model', ...(process.env.FAKE_CATEGORIZED === '1' ? { category: 'model' as const } : {}), type: 'select' as const, currentValue: 'fast', options: [{ value: 'fast', name: 'Fast' }, { value: 'smart', name: 'Smart' }] },
   ];
 }
 
@@ -50,11 +50,15 @@ function baseModes(): SessionModeState | null {
   return { currentModeId: 'build', availableModes: [{ id: 'build', name: 'Build' }, { id: 'plan', name: 'Plan', description: 'Plan first' }] };
 }
 
+if (process.env.FAKE_SUPPORT_OPTIONS === "1") app.onRequest("session/options", async () => ({ configOptions: baseConfigOptions(), modes: baseModes() }));
+
 app.onRequest("session/new", async (ctx) => {
   sessionSeq += 1;
   void ctx.params.cwd;
   const sessionId = `${sessionPrefix}-${sessionSeq}`;
-  configBySession.set(sessionId, baseConfigOptions());
+  const options = baseConfigOptions();
+  for (const initial of ctx.params.configOptions ?? []) { const option = options.find(o => o.id === initial.configId); if (option) option.currentValue = initial.value; }
+  configBySession.set(sessionId, options);
   return { sessionId, configOptions: configBySession.get(sessionId), modes: baseModes() };
 });
 

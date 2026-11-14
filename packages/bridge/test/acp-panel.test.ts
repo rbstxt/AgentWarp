@@ -130,6 +130,18 @@ function splitChunks(text: string): string[] {
     return chunks.map((c) => c.join('\n')).filter((c) => c.trim() !== '');
 }
 
+test('pre-session options and initial configuration cross the bridge', async () => {
+    const s = await setup({ FAKE_SUPPORT_OPTIONS: '1' });
+    try {
+        s.client.send({ type: 'acp/options', agentId: 'fake' });
+        await waitFor(() => !!s.client.find(m => m.type === 'acp/options'), 15000, 'options');
+        assert.equal(s.client.find(m => m.type === 'acp/options').configOptions[0].currentValue, 'fast');
+        s.client.send({ type: 'acp/start', agentId: 'fake', configOptions: [{ configId: 'model', value: 'smart' }] });
+        await waitFor(() => !!s.client.find(m => m.type === 'acp/session'), 15000, 'session');
+        assert.equal(s.client.find(m => m.type === 'acp/session').configOptions[0].currentValue, 'smart');
+    } finally { await teardown(s); }
+});
+
 test('checkpoint + restore round trip (text restored, editor gets a load)', async () => {
     const s = await setup();
     try {

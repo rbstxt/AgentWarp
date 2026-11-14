@@ -105,6 +105,23 @@ describe("registry", () => {
   });
 });
 
+describe("pre-session options", () => {
+  for (const supportsOptions of [true, false]) {
+    it(`discovers options ${supportsOptions ? "without creating a session" : "using the session fallback"} and applies initial values`, async () => {
+      const f = await fixture(supportsOptions ? { FAKE_SUPPORT_OPTIONS: "1" } : {});
+      try {
+        const replies: Sent = [];
+        await f.host.handle({ type: "acp/options", agentId: "fake" }, m => replies.push(m as Record<string, any>));
+        equal(replies[0].type, "acp/options");
+        equal(replies[0].configOptions[0].currentValue, "fast");
+        equal(f.sent.some(m => m.type === "acp/session"), false);
+        await f.host.handle({ type: "acp/start", agentId: "fake", configOptions: [{ configId: "model", value: "smart" }] });
+        equal(f.sent.find(m => m.type === "acp/session")?.configOptions[0].currentValue, "smart");
+      } finally { await f.host.dispose(); }
+    });
+  }
+});
+
 describe("start/prompt/stream", () => {
   it('exposes and changes configuration, and directs history to the requester', async () => {
     const f = await fixture();

@@ -24,9 +24,9 @@ try {
     if (locale === 'en') { await page.getByText('Settings',{exact:true}).first().click(); await page.getByText('Switch To Dark Mode',{exact:true}).click(); await page.waitForFunction(() => document.querySelector('#agentwarp-panel').shadowRoot.querySelector('.panel').classList.contains('dark')); }
     await page.locator('#agentwarp-toggle').click();
     assert.equal(await page.locator('#agentwarp-panel').evaluate(el => el.getBoundingClientRect().right),1440);
-    await page.locator('#agentwarp-panel').getByRole('button',{name:locale === 'ja' ? 'エージェント' : 'Agent',exact:true}).click(); await page.locator('#agentwarp-panel').getByRole('menuitem',{name:'Mock agent'}).click();
+    await page.locator('#agentwarp-panel').getByRole('button',{name:locale === 'ja' ? 'モデルを選択' : 'Choose model'}).waitFor();
     const input = page.locator('#agentwarp-panel textarea'); await input.waitFor({state:'visible'}); await input.waitFor({state:'visible'});
-    await page.waitForFunction(()=>window.__agentwarpClient?.rev != null); await page.waitForFunction(()=>!!localStorage.getItem('agentwarp.panel.session')); await input.fill('Make a change'); await input.press('Enter');
+    await page.waitForFunction(()=>window.__agentwarpClient?.rev != null); await input.fill('Make a change'); await input.press('Enter');
     await page.locator('#agentwarp-panel .permission button').first().waitFor();
     assert.equal(await page.locator('#agentwarp-panel .thought [data-slot=trace-collapsible-content]').isVisible(),false);
     assert.match(await page.locator('.entry.agent pre').innerText(),/const answer = 42/);

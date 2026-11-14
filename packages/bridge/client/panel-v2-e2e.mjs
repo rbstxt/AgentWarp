@@ -31,24 +31,44 @@ try {
   await page.locator('#agentwarp-toggle').waitFor({timeout:60000});await page.locator('#agentwarp-toggle').click();
   const panel=page.locator('#agentwarp-panel');
   await page.waitForFunction(()=>window.__agentwarpClient?.rev != null);
-  await panel.getByRole('button',{name:locale==='ja'?'エージェント':'Agent',exact:true}).click();
-  await panel.getByRole('menuitem',{name:'Mock agent'}).click();
-  await page.waitForFunction(()=>localStorage.getItem('agentwarp.panel.session'));
+  await panel.getByRole('button',{name:locale==='ja'?'モデルを選択':'Choose model'}).waitFor();
   await page.waitForTimeout(200);
   const input=panel.locator('textarea');
+  const screenshotMatrix=async state=>{
+   await page.setViewportSize({width:1920,height:900});
+   for(const width of [300,600]){
+    await page.waitForFunction(()=>document.querySelector('#agentwarp-panel').getBoundingClientRect().width === Number(localStorage.getItem('agentwarp.panel.width')));
+    let current=await panel.evaluate(el=>el.getBoundingClientRect().width);
+    await panel.locator('.resize').focus();
+    while(current!==width){const next=current+(current<width?20:-20);await page.keyboard.press(current<width?'ArrowLeft':'ArrowRight');await page.waitForFunction(w=>document.querySelector('#agentwarp-panel').getBoundingClientRect().width===w,next);current=next;}
+
+    for(const theme of ['light','dark']){
+     if(theme==='dark') {await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click();await page.getByText(locale==='ja'?'ダークモードに切り替える':'Switch To Dark Mode',{exact:true}).click();}
+     if(state==='picker'){await panel.getByRole('button',{name:locale==='ja'?'モデルを選択':'Choose model'}).click();await panel.getByRole('button',{name:'Mock model',exact:true}).waitFor();}
+     await panel.screenshot({path:join(root,'e2e-screens',`p7-composer2-${state}-${locale}-${theme}-${width}.png`)});
+     if(state==='picker')await page.keyboard.press('Escape');
+     if(theme==='dark') {await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click();await page.getByText(locale==='ja'?'ライトモードに切り替える':'Switch To Light Mode',{exact:true}).click();}
+    }
+   }
+   await page.setViewportSize({width:1280,height:900});
+  };
+  await screenshotMatrix('idle');
+  await input.fill('Make a change');await screenshotMatrix('typing');
+  await screenshotMatrix('picker');
   const setTheme=async theme=>{await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click();await page.getByText(theme==='dark'?(locale==='ja'?'ダークモードに切り替える':'Switch To Dark Mode'):(locale==='ja'?'ライトモードに切り替える':'Switch To Light Mode'),{exact:true}).click();};
   const capture=async name=>{await page.screenshot({path:join(root,'e2e-screens',`p7-composer-${name}-${locale}-light.png`)});await setTheme('dark');await page.screenshot({path:join(root,'e2e-screens',`p7-composer-${name}-${locale}-dark.png`)});await setTheme('light');};
   await input.fill('Make a change @Sprite');await panel.locator('.mention-menu').waitFor();
   await capture('mention');
   await input.press('ArrowDown');await input.press('ArrowUp');await input.press('Tab');
-  await panel.getByTitle(locale==='ja'?'ステージの画像を添付':'Attach stage snapshot').click();
-  assert.equal(await panel.locator('.thumbnail').count(),1);
+
   await input.press('Enter');
+  await screenshotMatrix('running');
   await input.fill('Queued first');await input.press('Enter');
   await input.fill('Queued second');await input.press('Enter');
-  assert.equal(await panel.locator('.queue button').count(),2);
+  assert.equal(await panel.locator('.queue-row').count(),2);
+  await screenshotMatrix('queued');
   await capture('queue');
-  await panel.locator('.queue button').last().click();await panel.locator('.queue button').last().click();
+  await panel.locator('.queue-row').last().getByTitle(locale==='ja'?'削除':'Remove').click();await panel.locator('.queue-row').last().getByTitle(locale==='ja'?'削除':'Remove').click();
 
   await panel.locator('.changes[data-final="false"]').waitFor({timeout:15000});
   await panel.getByRole('button',{name:locale==='ja'?'確認':'Review',exact:true}).click();
@@ -82,8 +102,7 @@ try {
    const current=Number(await page.evaluate(()=>localStorage.getItem('agentwarp.panel.width')));
    for(let n=current;n!==width;n+=n<width?20:-20) await page.keyboard.press(n<width?'ArrowLeft':'ArrowRight');
    assert.ok(await page.locator('[class*=gui_flex-wrapper_]').first().evaluate(el=>el.getBoundingClientRect().width)>=856, 'editor must retain 856px');
-   assert.equal(await panel.locator('.choice-trigger span').first().isVisible(),Math.min(width,1280-856)>480);
-   assert.equal(await panel.locator('.choice-trigger').evaluateAll(els=>els.every(el=>el.scrollWidth<=el.clientWidth)),true,'choice labels must not be truncated');
+   assert.equal(await panel.locator('.model-trigger').count(),1);
    if(width===380) continue;
    for(const theme of ['light','dark']) {
     if(theme==='dark') { await page.getByText(locale==='ja'?'設定':'Settings',{exact:true}).first().click(); await page.getByText(locale==='ja'?'ダークモードに切り替える':'Switch To Dark Mode',{exact:true}).click(); }
@@ -105,14 +124,14 @@ try {
   await page.waitForFunction(()=>!window.__agentwarpClient.loading && ScratchBlocks.getMainWorkspace().getAllBlocks().some(b=>b.type==='motion_movesteps'&&b.getInputTargetBlock('STEPS')?.getFieldValue('NUM')==='10'),null,{timeout:20000});
   assert.ok(mock.acpMessages.some(m=>m.type==='acp/permission'&&m.optionId==='allow'));
   assert.ok(mock.acpMessages.some(m=>m.type==='acp/prompt'&&m.context.editingTarget));
-  assert.ok(mock.acpMessages.some(m=>m.type==='acp/prompt'&&m.mentions?.some(x=>x.kind==='sprite')&&m.images?.[0]?.mimeType==='image/png'));
+  assert.ok(mock.acpMessages.some(m=>m.type==='acp/prompt'&&m.mentions?.some(x=>x.kind==='sprite')));
   const sessionId=JSON.parse(await page.evaluate(()=>localStorage.getItem('agentwarp.panel.session'))).sessionId;
   const received=()=>mock.acpMessages.filter(m=>m.sessionId===sessionId);
   const waitReceived=async pred=>{const end=Date.now()+15000;while(!pred()){if(Date.now()>end)throw Error('Timed out waiting for mock message');await new Promise(r=>setTimeout(r,50));}};
   await input.fill('Queue turn');await input.press('Enter');
   for(const text of ['First queued','Drop queued','Second queued']){await input.fill(text);await input.press('Enter');}
-  assert.equal(await panel.locator('.queue button').count(),3);
-  await panel.locator('.queue button').nth(1).click();
+  assert.equal(await panel.locator('.queue-row').count(),3);
+  await panel.locator('.queue-row').nth(1).getByTitle(locale==='ja'?'削除':'Remove').click();
   await panel.locator('.permission').waitFor();await panel.locator('.permission').press('Enter');
   await waitReceived(()=>received().some(m=>m.type==='acp/prompt'&&m.text==='First queued'));
   await panel.locator('.permission').waitFor();await panel.locator('.permission').press('Enter');
