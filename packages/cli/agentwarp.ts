@@ -15,7 +15,7 @@
 //   agentwarp layout [dir]                     overlap report of the packed project (JSON on stdout)
 //   agentwarp tidy [dir] [--target NAME]       Clean-up-Plus all (or one) target's layout in place
 //   agentwarp costumes [dir]                   collision sizes of every costume (JSON on stdout)
-//   agentwarp serve [dir] [--port N]           live-sync bridge for TurboWarp (see docs/P4-DESIGN.md)
+//   agentwarp serve [dir] [--port N] [--token T] live-sync bridge for TurboWarp (see docs/P4-DESIGN.md)
 //   agentwarp help | --help | -h
 //
 // Diagnostics always go to stderr; stdout carries only command results
@@ -52,7 +52,7 @@ const USAGE = `usage: agentwarp <command> [args]
   shot [dir] --frames N [--at f1,f2] [--input in.json] [--seed S] [--out DIR] [--gif]
                                  render the stage with the real renderer (PNG frames / GIF,
                                  pixel-accurate touching & pen); prints image paths + final state
-  serve [dir] [--port N]         live-sync bridge for TurboWarp
+  serve [dir] [--port N] [--token T]  live-sync bridge for TurboWarp (token also via AGENTWARP_TOKEN)
   help                           this text`;
 
 async function loadFormat(name: string): Promise<Format> {
@@ -723,8 +723,16 @@ async function main() {
             const dir = resolve(pos[0] ?? '.');
             const port = typeof opts.port === 'string' ? Number(opts.port) : undefined;
             const { startServe } = await import('../bridge/server.ts');
-            const h = await startServe(dir, port != null && Number.isFinite(port) ? { port } : {});
+            // A fixed token (--token or AGENTWARP_TOKEN) lets a TurboWarp Desktop
+            // userscript keep its saved connection across serve restarts.
+            const token = typeof opts.token === 'string' ? opts.token : process.env.AGENTWARP_TOKEN || undefined;
+            if (token != null && token.length < 16) die('serve: --token must be at least 16 characters');
+            const h = await startServe(dir, {
+                ...(port != null && Number.isFinite(port) ? { port } : {}),
+                ...(token ? { token } : {}),
+            });
             process.stdout.write(`bridge ${h.url}\n`);
+            process.stdout.write(`TurboWarp connect dialog: URL http://127.0.0.1:${h.port}  token ${h.token}\n`);
             await new Promise(() => undefined); // run until killed
             return;
         }

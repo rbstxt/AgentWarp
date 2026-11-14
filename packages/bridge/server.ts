@@ -113,6 +113,8 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
     };
     const name = opts.name ?? basename(dir);
     const token = opts.token ?? randomBytes(16).toString('hex');
+    // Revisions restart at 0 on every serve; clients reset their rev when this changes.
+    const session = randomBytes(8).toString('hex');
     const logs: string[] = [];
     const log = (msg: string): void => {
         logs.push(msg);
@@ -395,7 +397,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
         }
         clients.add(ws);
         try {
-            ws.send(JSON.stringify({ type: 'hello', rev, name }));
+            ws.send(JSON.stringify({ type: 'hello', rev, name, session }));
         } catch {
             /* ignore */
         }
@@ -412,7 +414,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                 }).catch((e) => log(`acp error: ${(e as Error)?.message}`));
             } else if (msg?.type === 'hello') {
                 try {
-                    ws.send(JSON.stringify({ type: 'hello', rev, name }));
+                    ws.send(JSON.stringify({ type: 'hello', rev, name, session }));
                 } catch {
                     /* ignore */
                 }

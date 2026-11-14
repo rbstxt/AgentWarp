@@ -170,11 +170,9 @@ function holderScalar(b: Block): string | number | null {
 
 function printBodyArrow(head: Block | undefined, scope: ProcScope, indent: string): string {
     if (!head) return '() => {}';
+    // Always one statement per line: agents (and the AGENTS.md examples) write
+    // multi-line bodies, so a one-line form made the bridge rewrite their text.
     const inner = printChain(head, indent + '  ', scope);
-    if (inner.length === 1 && !head.comment) {
-        const single = inner[0].replace(/;$/, '');
-        if (!single.includes('\n')) return `() => { ${single.trimStart()}; }`;
-    }
     return `() => {\n${inner.join('\n')}\n${indent}}`;
 }
 

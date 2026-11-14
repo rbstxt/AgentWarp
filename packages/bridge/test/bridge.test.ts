@@ -477,3 +477,31 @@ test('auth: missing token is rejected', async () => {
         await teardown(s);
     }
 });
+
+test('restart with a fixed token: same token works, new session id, rev restarts', async () => {
+    const s = await setup();
+    try {
+        const first = s.ed.hellos[0];
+        assert.match(String(first.session), /^[0-9a-f]{16}$/);
+        const token = 'fixed-token-for-desktop-0123456789';
+        s.ed.close();
+        await s.bridge.close();
+        const b1 = await startServe(s.dir, { token });
+        const e1 = new SimEditor(`ws://127.0.0.1:${b1.port}`, token);
+        await e1.connect();
+        const h1 = e1.hellos[0];
+        e1.close();
+        await b1.close();
+        const b2 = await startServe(s.dir, { token });
+        s.bridge = b2;
+        s.ed = new SimEditor(`ws://127.0.0.1:${b2.port}`, token);
+        await s.ed.connect();
+        const h2 = s.ed.hellos[0];
+        assert.equal(b2.token, token);
+        assert.equal(h2.rev, 0);
+        assert.notEqual(h1.session, h2.session, 'clients detect the restart via session');
+        assert.notEqual(first.session, h2.session);
+    } finally {
+        await teardown(s);
+    }
+});

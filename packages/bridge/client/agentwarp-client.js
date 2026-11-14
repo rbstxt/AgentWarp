@@ -103,9 +103,11 @@
   const tr = (en, jp) => ja() ? jp : en;
   let panel, panelToggle, agentSelect, configBar, messages, input, sendButton, stopButton, restoreStage = false;
   function resizeEditor() { window.dispatchEvent(new Event('resize')); workspace()?.resize?.(); }
+  // [small, large]. TurboWarp Desktop's hide-stage addon prepends a third button.
+  function stageToggles() { return [...document.querySelectorAll('[class*="stage-header_"] [class*="toggle-buttons_button_"]')].filter(b => !b.classList.contains('sa-hide-stage-button')).slice(-2); }
   function setOpen(open) {
     if (!panel) return;
-    const stageButtons = document.querySelectorAll('[class*="stage-header_"] [class*="toggle-buttons_button_"]');
+    const stageButtons = stageToggles();
     if (open && panel.hidden && stageButtons.length >= 2 && stageButtons[1].getAttribute('aria-pressed') === 'true') { restoreStage = true; stageButtons[0].click(); }
     if (!open && !panel.hidden && restoreStage) { if (stageButtons[0]?.getAttribute('aria-pressed') === 'true') stageButtons[1]?.click(); restoreStage = false; }
     panel.hidden = !open; panelToggle.setAttribute('aria-expanded', String(open));
@@ -207,7 +209,7 @@
   }
   function editorContext() {
     const selected = window.ScratchBlocks?.selected || window.ScratchBlocks?.common?.getSelected?.();
-    const stageButtons = document.querySelectorAll('[class*="stage-header_"] [class*="toggle-buttons_button_"]');
+    const stageButtons = stageToggles();
     return {editingTarget: vm.editingTarget?.getName?.(), selectedBlockId: selected?.id || null, stageSize: stageButtons.length >= 2 ? (stageButtons[0].getAttribute('aria-pressed') === 'true' ? 'small' : 'large') : undefined, running: vm.runtime.threads.some(t => !t.isKilled), rev: state.rev};
   }
   function submitPrompt() { const text = input.value.trim(); if (!text || input.disabled || panelState.composing) return; input.value = ''; renderUpdate({sessionUpdate:'user_message_chunk',content:{type:'text',text}}); panelState.running = true; updateControls(); send({type:'acp/prompt',sessionId:panelState.sessionId,text,context:editorContext()}); }
@@ -250,7 +252,7 @@
       if (gen !== generation) return;
       let msg; try { msg = JSON.parse(event.data); } catch (_) { return; }
       if (msg.type.startsWith('acp/')) handleAcp(msg);
-      else if (msg.type === 'hello' && Number.isInteger(msg.rev)) { if (state.rev !== msg.rev) enqueue(() => load(msg.rev)); }
+      else if (msg.type === 'hello' && Number.isInteger(msg.rev)) { if (msg.session && state.session && msg.session !== state.session) { state.rev = null; } if (msg.session) state.session = msg.session; if (state.rev !== msg.rev) enqueue(() => load(msg.rev)); }
       else if (msg.type === 'load' && Number.isInteger(msg.rev)) enqueue(() => load(msg.rev));
       else if (msg.type === 'status') { const detail = [msg.message, ...(msg.diagnostics || []).map(d => typeof d === 'string' ? d : `${d.file || ''}${d.line != null ? ':' + d.line : ''}${d.col != null ? ':' + d.col : ''}: ${d.message}`), ...(msg.conflicts || []).map(d => typeof d === 'string' ? d : JSON.stringify(d))].filter(Boolean).join('\n'); status(msg.ok === false || (msg.conflicts || []).length ? 'error' : 'connected', detail); }
     };

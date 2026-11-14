@@ -36,7 +36,7 @@ No custom LLM loop: existing CLI agents are used via subscriptions (CLI/skill/MC
 - [x] P4 TurboWarp live bridge (`docs/P4-DESIGN.md`), web e2e verified; Desktop userscript not yet verified (needs user's OK to touch real profile)
 - [x] P5 ACP side panel (injected client, no fork; `docs/P5-DESIGN.md`): Claude/Codex/OpenCode via ACP, real Claude e2e on turbowarp.org (`packages/bridge/e2e/REAL-AGENT.md`)
 - [x] P6 long-horizon evaluation (`eval/p6/`): new 3-stage game (12/12 tests) and Lightcube refactor (151 scripts untouched, 0 comments lost, 6/6 tests); friction fixed (glide virtual time, shot hang, probe shorthand, broadcast typing, tidy --dry-run)
-- [ ] TurboWarp Desktop: userscript install + verification (needs the user's OK to write into the real Desktop profile)
+- [x] TurboWarp Desktop 1.17.1: userscript installed in the real profile (user OK, 2026-11-14) and verified: sync both ways, panel + real Claude turn; fixed hide-stage button indexing, bridge-restart rev reset (hello.session), serve --token, ts one-line bodies
 
 Model split: basic implementation/eval = Muse Spark 1.3 (OpenCode Go); browser-driven work = Codex GPT-6.1 Terra;
 architecture/review = Claude.
