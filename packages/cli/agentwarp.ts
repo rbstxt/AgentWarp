@@ -25,7 +25,8 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { cp, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
+import { homedir, tmpdir } from 'node:os';
+import { randomBytes } from 'node:crypto';
 import { basename, dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { overlaps } from '../core/layout.ts';
@@ -52,7 +53,7 @@ const USAGE = `usage: agentwarp <command> [args]
   shot [dir] --frames N [--at f1,f2] [--input in.json] [--seed S] [--out DIR] [--gif]
                                  render the stage with the real renderer (PNG frames / GIF,
                                  pixel-accurate touching & pen); prints image paths + final state
-  serve [dir] [--port N] [--token T]  live-sync bridge for TurboWarp (token also via AGENTWARP_TOKEN)
+  serve [dir] [--port N] [--token T]  live-sync bridge for TurboWarp (default port 8765; token: --token, AGENTWARP_TOKEN, or ~/.config/agentwarp/token)
   help                           this text`;
 
 async function loadFormat(name: string): Promise<Format> {
@@ -721,16 +722,32 @@ async function main() {
         }
         case 'serve': {
             const dir = resolve(pos[0] ?? '.');
-            const port = typeof opts.port === 'string' ? Number(opts.port) : undefined;
+            // Stable defaults so a TurboWarp userscript's saved connection keeps working:
+            // port 8765 and a per-user token in ~/.config/agentwarp/token (created once, 0600).
+            const port = typeof opts.port === 'string' ? Number(opts.port) : 8765;
+            if (!Number.isInteger(port) || port < 0 || port > 65535) die('serve: --port must be 0-65535');
+            let token = typeof opts.token === 'string' ? opts.token : process.env.AGENTWARP_TOKEN || undefined;
+            if (token == null) {
+                const tokenFile = join(homedir(), '.config', 'agentwarp', 'token');
+                try {
+                    token = (await readFile(tokenFile, 'utf8')).trim();
+                } catch {
+                    token = randomBytes(16).toString('hex');
+                    await mkdir(dirname(tokenFile), { recursive: true });
+                    await writeFile(tokenFile, token + '\n', { mode: 0o600 });
+                }
+            }
+            if (token.length < 16) die('serve: --token must be at least 16 characters');
             const { startServe } = await import('../bridge/server.ts');
-            // A fixed token (--token or AGENTWARP_TOKEN) lets a TurboWarp Desktop
-            // userscript keep its saved connection across serve restarts.
-            const token = typeof opts.token === 'string' ? opts.token : process.env.AGENTWARP_TOKEN || undefined;
-            if (token != null && token.length < 16) die('serve: --token must be at least 16 characters');
-            const h = await startServe(dir, {
-                ...(port != null && Number.isFinite(port) ? { port } : {}),
-                ...(token ? { token } : {}),
-            });
+            let h;
+            try {
+                h = await startServe(dir, { port, token });
+            } catch (e) {
+                if ((e as NodeJS.ErrnoException)?.code === 'EADDRINUSE') {
+                    die(`serve: port ${port} is in use (another agentwarp serve?). Stop it or pass --port N.`);
+                }
+                throw e;
+            }
             process.stdout.write(`bridge ${h.url}\n`);
             process.stdout.write(`TurboWarp connect dialog: URL http://127.0.0.1:${h.port}  token ${h.token}\n`);
             await new Promise(() => undefined); // run until killed
