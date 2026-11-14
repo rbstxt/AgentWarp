@@ -4,7 +4,7 @@ import {pathToFileURL} from 'node:url';
 import {WebSocketServer} from 'ws';
 
 // Test-only mock. The control methods are deliberately not exposed over HTTP.
-export async function createMock({project, token = 'test-token', port = 0, rev = 1, changedProject, blockId = 'mock'} = {}) {
+export async function createMock({project, token = 'test-token', port = 0, rev = 1, changedProject, blockId = 'mock', agents} = {}) {
   let data = Buffer.isBuffer(project) ? project : await readFile(project);
   const posts = [], acks = [], clients = new Set(), acpMessages = [], sessions = new Map(), timers = new Set();
   let nextSession = 0, permissionSession; const checkpoints = new Map(), turns = new Map(), activeTurns = new Map(), changeFactories = new Map();
@@ -48,7 +48,7 @@ export async function createMock({project, token = 'test-token', port = 0, rev =
         {id:'mode',name:'Mode',category:'mode',type:'select',currentValue:'agent',options:[{value:'agent',name:'Agent'},{value:'ask',name:'Ask'}]},
         {id:'speed',name:'Fast mode',category:'model_config',type:'select',currentValue:'off',options:[{value:'off',name:'Off'},{value:'on',name:'On'}]},
       ].map(o => ({...o,currentValue:initial.find(x=>x.configId===o.id)?.value ?? o.currentValue}));
-      if (msg.type === 'acp/agents') reply({type:'acp/agents',list:[{id:'mock',label:'Mock agent',available:true},{id:'codex',label:'Codex',available:true},{id:'opencode',label:'OpenCode',available:true},{id:'missing',label:'Missing agent',available:false,reason:'Not installed'}]});
+      if (msg.type === 'acp/agents') reply({type:'acp/agents',list:result.agents || [{id:'mock',label:'Mock agent',available:true},{id:'codex',label:'Codex',available:true},{id:'opencode',label:'OpenCode',available:true},{id:'missing',label:'Missing agent',available:false,reason:'Not installed'}]});
       else if (msg.type === 'acp/options') {
         const opts = configOptions(msg.configOptions);
         if (msg.agentId === 'codex') { opts[0].options = [{value:'gpt-6.1-sol',name:'6.1 Sol',description:'Coding and everyday work'},{value:'gpt-5',name:'GPT-5'}]; opts[0].currentValue = msg.configOptions?.find(x=>x.configId==='model')?.value || 'gpt-6.1-sol'; opts[1].id='reasoning_effort'; opts[3].id='fast-mode'; }
@@ -89,11 +89,13 @@ export async function createMock({project, token = 'test-token', port = 0, rev =
     ws.on('close', () => clients.delete(ws));
   });
   await new Promise(resolve => server.listen(port, '127.0.0.1', resolve));
-  return {
+  const result = {
+    agents,
     port:server.address().port, token, posts, acks, acpMessages, get rev() { return rev; }, get project() { return data; },
     push,
     async close() { for (const timer of timers) clearTimeout(timer); for (const ws of clients) ws.terminate(); await new Promise(resolve => server.close(resolve)); wss.close(); }
   };
+  return result;
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const [project, port = '8765', token = 'test-token'] = process.argv.slice(2);
