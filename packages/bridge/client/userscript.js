@@ -67,7 +67,7 @@
     const token = encodeURIComponent(String(config.token));
     let res;
     try { res = await fetch(`${origin}/status?token=${token}`, {cache: 'no-store'}); }
-    catch (_) { setPill(t('AgentWarp: waiting for bridge…', 'AgentWarp：bridge を待機中…')); retry(); return; }
+    catch (_) { setPill(t('AgentWarp: bridge not running — run `agentwarp serve <folder>`', 'AgentWarp：bridge 未起動（agentwarp serve <フォルダ> を実行）')); retry(); return; }
     if (res.status === 401) { setPill(t('AgentWarp: wrong token', 'AgentWarp：トークンが違います')); showForm(t('The bridge rejected the token.', 'bridge がトークンを受け付けませんでした。')); return; }
     if (!res.ok) { setPill(t('AgentWarp: bridge error', 'AgentWarp：bridge エラー')); retry(); return; }
     window.AGENTWARP = {url: origin, token: String(config.token)};

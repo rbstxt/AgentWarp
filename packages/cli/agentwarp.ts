@@ -502,6 +502,41 @@ async function overlapWarnings(dir: string, packedSb3: string): Promise<Diagnost
     return out;
 }
 
+/** sb3 -> text project dir: unpack, format marker, ts types, project AGENTS.md/CLAUDE.md. */
+async function unpackProject(src: string, dir: string, name: string): Promise<Diagnostic[]> {
+    const format = await loadFormat(name);
+    const r = await unpackSb3(resolve(src), resolve(dir), format);
+    await writeFile(join(dir, '.agentwarp', 'format'), name + '\n');
+    if (name === 'ts') await tsTypes(resolve(dir));
+    // Project-level agent docs (P5: the bridge runs agents with
+    // cwd = project dir). Never overwrite the author's own files.
+    const agentsMd = join(resolve(dir), 'AGENTS.md');
+    if (!existsSync(agentsMd)) {
+        await writeFile(agentsMd,
+            `# ${basename(resolve(dir))} — agentwarp text project (format: ${name})\n` +
+            `\n` +
+            `This directory is a text mirror of a Scratch project. Edit the text files; the tool packs them\n` +
+            `back into an .sb3. Never hand-edit \`.agentwarp/\` (machine-managed).\n` +
+            `\n` +
+            `Tool: \`${join(ROOT, 'bin/agentwarp')}\` (call it \`agentwarp\` below; run from this directory).\n` +
+            `Read BEFORE editing:\n` +
+            `- Workflow guide: ${join(ROOT, 'skill/agentwarp/SKILL.md')}\n` +
+            `- Format reference (${name}): ${join(ROOT, 'formats', name, 'AGENTS.md')}\n` +
+            `\n` +
+            `Layout: \`Stage/\` + one dir per sprite (\`scripts.<ext>\`, \`target.json\`, \`costumes/\`, \`sounds/\`);\n` +
+            `project-wide \`agentwarp.json\` (extensions, monitors); \`tests/*.test.json\` (headless scenarios).\n` +
+            `\n` +
+            `Loop: edit → \`agentwarp check\` → \`agentwarp test\` / \`agentwarp run --until …\` → \`agentwarp shot\` to look → fix.\n` +
+            `Write a test for every feature. Keep diffs small; if a human has the project open in TurboWarp\n` +
+            `(\`agentwarp serve\`), files may be rewritten by the bridge — re-read before editing.\n`);
+    }
+    const claudeMd = join(resolve(dir), 'CLAUDE.md');
+    if (!existsSync(claudeMd)) {
+        await writeFile(claudeMd, `@AGENTS.md\n`);
+    }
+    return r.diagnostics;
+}
+
 async function main() {
     const [cmd, ...argv] = process.argv.slice(2);
     if (!cmd || cmd === 'help' || cmd === '--help' || cmd === '-h') {
@@ -515,38 +550,9 @@ async function main() {
             const [src, dir] = cmd === 'new' ? [TEMPLATE, pos[0]] : pos;
             if (!src || !dir) die(`usage: agentwarp ${cmd === 'new' ? 'new <dir>' : 'unpack <file.sb3> <dir>'} [--format F]`);
             const name = typeof opts.format === 'string' ? opts.format : 'ts';
-            const format = await loadFormat(name);
-            const r = await unpackSb3(resolve(src), resolve(dir), format);
-            await writeFile(join(dir, '.agentwarp', 'format'), name + '\n');
-            if (name === 'ts') await tsTypes(resolve(dir));
-            // Project-level agent docs (P5: the bridge runs agents with
-            // cwd = project dir). Never overwrite the author's own files.
-            const agentsMd = join(resolve(dir), 'AGENTS.md');
-            if (!existsSync(agentsMd)) {
-                await writeFile(agentsMd,
-                    `# ${basename(resolve(dir))} — agentwarp text project (format: ${name})\n` +
-                    `\n` +
-                    `This directory is a text mirror of a Scratch project. Edit the text files; the tool packs them\n` +
-                    `back into an .sb3. Never hand-edit \`.agentwarp/\` (machine-managed).\n` +
-                    `\n` +
-                    `Tool: \`${join(ROOT, 'bin/agentwarp')}\` (call it \`agentwarp\` below; run from this directory).\n` +
-                    `Read BEFORE editing:\n` +
-                    `- Workflow guide: ${join(ROOT, 'skill/agentwarp/SKILL.md')}\n` +
-                    `- Format reference (${name}): ${join(ROOT, 'formats', name, 'AGENTS.md')}\n` +
-                    `\n` +
-                    `Layout: \`Stage/\` + one dir per sprite (\`scripts.<ext>\`, \`target.json\`, \`costumes/\`, \`sounds/\`);\n` +
-                    `project-wide \`agentwarp.json\` (extensions, monitors); \`tests/*.test.json\` (headless scenarios).\n` +
-                    `\n` +
-                    `Loop: edit → \`agentwarp check\` → \`agentwarp test\` / \`agentwarp run --until …\` → \`agentwarp shot\` to look → fix.\n` +
-                    `Write a test for every feature. Keep diffs small; if a human has the project open in TurboWarp\n` +
-                    `(\`agentwarp serve\`), files may be rewritten by the bridge — re-read before editing.\n`);
-            }
-            const claudeMd = join(resolve(dir), 'CLAUDE.md');
-            if (!existsSync(claudeMd)) {
-                await writeFile(claudeMd, `@AGENTS.md\n`);
-            }
+            const diagnostics = await unpackProject(src, dir, name);
             printDiags(
-                r.diagnostics.filter((d) => d.severity === 'error'),
+                diagnostics.filter((d) => d.severity === 'error'),
                 dir,
             );
             process.stdout.write(`unpacked to ${dir} (format ${name})\n`);
@@ -738,6 +744,32 @@ async function main() {
                 }
             }
             if (token.length < 16) die('serve: --token must be at least 16 characters');
+            // Adopt mode: an empty/new dir takes the project currently open in TurboWarp (the editor
+            // sends it) instead of replacing the editor's project with an empty one.
+            if (!existsSync(join(dir, '.agentwarp', 'base.json'))) {
+                const entries = existsSync(dir) ? (await readdir(dir)).filter((e) => e !== '.DS_Store') : [];
+                if (entries.length > 0) die(`serve: ${dir} is not an agentwarp project and not empty. Use an empty folder (the project open in TurboWarp is adopted), or unpack/new first.`);
+                const { waitForAdopt } = await import('../bridge/adopt.ts');
+                process.stdout.write(`TurboWarp connect dialog: URL http://127.0.0.1:${port}  token ${token}\n`);
+                process.stdout.write(`waiting for TurboWarp: the project open in the editor will be saved into ${dir}\n`);
+                let sb3: Buffer;
+                try {
+                    sb3 = await waitForAdopt({ port, token, name: basename(dir) });
+                } catch (e) {
+                    if ((e as NodeJS.ErrnoException)?.code === 'EADDRINUSE') die(`serve: port ${port} is in use (another agentwarp serve?). Stop it or pass --port N.`);
+                    throw e;
+                }
+                const tmp = await mkdtemp(join(tmpdir(), 'agentwarp-adopt-'));
+                try {
+                    await writeFile(join(tmp, 'editor.sb3'), sb3);
+                    await mkdir(dir, { recursive: true });
+                    const diags = await unpackProject(join(tmp, 'editor.sb3'), dir, typeof opts.format === 'string' ? opts.format : 'ts');
+                    printDiags(diags.filter((d) => d.severity === 'error'), dir);
+                } finally {
+                    await rm(tmp, { recursive: true, force: true });
+                }
+                process.stdout.write(`adopted the editor project into ${dir}\n`);
+            }
             const { startServe } = await import('../bridge/server.ts');
             let h;
             try {

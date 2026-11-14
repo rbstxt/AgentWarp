@@ -62,6 +62,20 @@ export function startSync(mount: Mount) {
     if (!state.dirty || state.loading || !state.connected) return;
     timer = setTimeout(() => { if (dragging()) { schedule(); return; } enqueue(flush); }, 1000);
   }
+  // Adopt mode (serve on an empty folder): send the project open in the editor so it becomes the
+  // bridge project. Nothing is loaded back: the real bridge restarts with this exact project at rev 0.
+  async function adopt() {
+    status('syncing', 'Sending the open project to the bridge');
+    try {
+      const zip = vm._saveProjectZip();
+      zip.file('project.json', vm.toJSON(undefined, {allowOptimization:false}));
+      const blob = await zip.generateAsync({type:'blob', mimeType:'application/x.scratch.sb3'});
+      const response = await fetch(endpoint('/adopt.sb3'), {method:'POST', headers:{'Content-Type':'application/octet-stream'}, body:blob});
+      if (!response.ok) throw new Error(`Adopting the editor project failed: HTTP ${response.status}`);
+      state.rev = 0; state.session = undefined; state.dirty = false;
+      status('syncing', 'Project sent; waiting for the bridge');
+    } catch (error) { status('error', error instanceof Error ? error.message : String(error)); }
+  }
   async function flush() {
     if (!state.dirty || !state.connected || state.loading) return;
     if (dragging()) { schedule(); return; }
@@ -135,6 +149,7 @@ export function startSync(mount: Mount) {
       if (gen !== generation) return;
       let msg; try { msg = JSON.parse(event.data); } catch (_) { return; }
       if (msg.type.startsWith('acp/')) handleAcp(msg);
+      else if (msg.type === 'hello' && msg.adopt) { enqueue(adopt); }
       else if (msg.type === 'hello' && Number.isInteger(msg.rev)) { if (msg.session && state.session && msg.session !== state.session) { state.rev = null; } if (msg.session) state.session = msg.session; if (state.rev !== msg.rev) enqueue(() => load(msg.rev)); }
       else if (msg.type === 'load' && Number.isInteger(msg.rev)) enqueue(() => load(msg.rev));
       else if (msg.type === 'status') { const detail = [msg.message, ...(msg.diagnostics || []).map((d: any) => typeof d === 'string' ? d : `${d.file || ''}${d.line != null ? ':' + d.line : ''}${d.col != null ? ':' + d.col : ''}: ${d.message}`), ...(msg.conflicts || []).map((d: any) => typeof d === 'string' ? d : JSON.stringify(d))].filter(Boolean).join('\n'); status(msg.ok === false || (msg.conflicts || []).length ? 'error' : 'connected', detail); }
