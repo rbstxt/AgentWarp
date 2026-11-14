@@ -7,7 +7,7 @@
  *   GET  /status            -> {ok, adopt: true, name}
  *   GET  /client.js         -> the panel bundle (same files as the bridge)
  *   WS   /ws                -> {type: 'hello', adopt: true, rev: null, name}
- *   POST /adopt.sb3         -> body = editor sb3; resolves waitForAdopt with it
+ *   POST /adopt.sb3?title=&key= -> body = editor sb3; resolves waitForAdopt with it
  * Every request needs the token (query ?token= or header x-bridge-token).
  */
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
@@ -27,8 +27,16 @@ export interface AdoptOptions {
     log?: (line: string) => void;
 }
 
-/** Resolves with the editor's sb3 bytes once an editor posts its project. The port is free again on return. */
-export async function waitForAdopt(opts: AdoptOptions): Promise<Buffer> {
+export interface Adopted {
+    sb3: Buffer;
+    /** TurboWarp's project title (may be empty) */
+    title: string;
+    /** desktop app: path of the file open in the editor ('' for an unsaved project) */
+    key: string;
+}
+
+/** Resolves with the editor's project once an editor posts it. The port is free again on return. */
+export async function waitForAdopt(opts: AdoptOptions): Promise<Adopted> {
     const log = opts.log ?? ((line: string) => process.stderr.write(`[adopt] ${line}\n`));
     const authed = (req: IncomingMessage, url: URL): boolean =>
         url.searchParams.get('token') === opts.token || req.headers['x-bridge-token'] === opts.token;
@@ -36,8 +44,8 @@ export async function waitForAdopt(opts: AdoptOptions): Promise<Buffer> {
         res.writeHead(status, { 'content-type': 'application/json', 'cache-control': 'no-store' });
         res.end(JSON.stringify(body));
     };
-    let resolveDone!: (buf: Buffer) => void;
-    const done = new Promise<Buffer>((r) => (resolveDone = r));
+    let resolveDone!: (a: Adopted) => void;
+    const done = new Promise<Adopted>((r) => (resolveDone = r));
     const sockets = new Set<WebSocket>();
 
     const server = createServer(async (req, res) => {
@@ -72,7 +80,11 @@ export async function waitForAdopt(opts: AdoptOptions): Promise<Buffer> {
                 if (buf.length < 4 || buf[0] !== 0x50 || buf[1] !== 0x4b) { json(res, 400, { ok: false, message: 'not an sb3 (zip) file' }); return; }
                 json(res, 200, { ok: true, adopted: true });
                 log(`received the editor project (${buf.length} bytes)`);
-                resolveDone(buf);
+                resolveDone({
+                    sb3: buf,
+                    title: (url.searchParams.get('title') ?? '').slice(0, 200),
+                    key: (url.searchParams.get('key') ?? '').slice(0, 4096),
+                });
                 return;
             }
             json(res, 404, { ok: false, message: `adopt mode: unknown route ${url.pathname}` });
@@ -93,11 +105,11 @@ export async function waitForAdopt(opts: AdoptOptions): Promise<Buffer> {
         server.listen(opts.port, '127.0.0.1', () => ok());
     });
     log(`waiting for TurboWarp on http://127.0.0.1:${opts.port}: the project open in the editor will be adopted`);
-    const buf = await done;
+    const adopted = await done;
     // Free the port for the real bridge: drop sockets (clients reconnect), close the listener.
     for (const ws of sockets) { try { ws.terminate(); } catch { /* ignore */ } }
     wss.close();
     server.closeAllConnections();
     await new Promise<void>((ok) => server.close(() => ok()));
-    return buf;
+    return adopted;
 }

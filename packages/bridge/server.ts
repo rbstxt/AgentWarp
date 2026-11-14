@@ -61,7 +61,7 @@ export interface ServeOptions {
      * the editor posts it to POST /switch.sb3 and the owner (the CLI) moves to a new workspace.
      * Without this hook the route answers 404.
      */
-    onSwitch?: (sb3: Buffer, title: string) => void;
+    onSwitch?: (sb3: Buffer, title: string, key: string) => void;
 }
 
 export interface BridgeHandle {
@@ -439,6 +439,8 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                     return;
                 }
                 const title = (url.searchParams.get('title') ?? '').slice(0, 200);
+                // Desktop app: the opened file's path, so the app keeps one hidden mirror per file.
+                const key = (url.searchParams.get('key') ?? '').slice(0, 4096);
                 // The editor already holds this workspace's project (e.g. the exported sb3 reopened):
                 // keep syncing, no new workspace, no reload.
                 try {
@@ -452,7 +454,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                 }
                 json(res, 200, { ok: true, switching: true });
                 log(`editor switched project (${title || 'untitled'}, ${buf.length} bytes)`);
-                later(0, () => opts.onSwitch!(buf, title));
+                later(0, () => opts.onSwitch!(buf, title, key));
                 return;
             }
             if (req.method === 'POST' && url.pathname === '/editor.sb3') {

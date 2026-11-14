@@ -20,6 +20,9 @@ export function startSync(mount: Mount) {
   let timer: ReturnType<typeof setTimeout> | undefined, reconnectTimer: ReturnType<typeof setTimeout> | undefined;
   let reconnectDelay = 500, queue = Promise.resolve(), generation = 0;
   const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+  // AgentWarp desktop app (TurboWarp fork): the app runs the engine and hands us the connection;
+  // there is no connect dialog and no status pill (the panel shows the status).
+  const desktop: any = (window as any).AgentWarpDesktop;
   const workspace = () => window.ScratchBlocks && (window.ScratchBlocks.getMainWorkspace?.() || window.ScratchBlocks.mainWorkspace);
   const pill = document.createElement('button');
   pill.id = 'agentwarp-status'; pill.type = 'button';
@@ -30,7 +33,7 @@ export function startSync(mount: Mount) {
     pill.style.background = label === 'connected' ? '#277a50' : label === 'error' ? '#a13b32' : '#665a35';
     try { panelApi?.update?.(); } catch (_) {}
   }
-  function attachPill() { if (document.body && !pill.isConnected) document.body.appendChild(pill); }
+  function attachPill() { if (!desktop && document.body && !pill.isConnected) document.body.appendChild(pill); }
   attachPill();
   function normalize(value: any): Connection | null {
     if (!value || typeof value !== 'object') return null;
@@ -57,6 +60,14 @@ export function startSync(mount: Mount) {
     document.body.appendChild(box);
   }
   pill.onclick = dialog;
+  /** Title + (desktop app) path of the open file, sent along with adopt/switch so the engine picks the right mirror. */
+  async function projectMeta(url: URL) {
+    const field = document.querySelector('[class*="title-field"]') as HTMLInputElement | null;
+    url.searchParams.set('title', (field?.value || '').trim());
+    try { const key = await desktop?.projectKey?.(); if (typeof key === 'string' && key) url.searchParams.set('key', key); } catch (_) {}
+    return url.href;
+  }
+  let loadSeq = 0; // counts project loads (ours and the user's)
   function endpoint(path: string, rev?: number | null) { const u = new URL(path, config!.url); u.searchParams.set('token', config!.token); if (rev != null) u.searchParams.set('rev', String(rev)); return u.href; }
   function send(message: unknown) { if (socket && socket.readyState === WebSocket.OPEN) socket.send(JSON.stringify(message)); }
   function enqueue(fn: () => Promise<void>) { queue = queue.then(fn).catch(error => { status('error', error.message || String(error)); console.error('[AgentWarp]', error); }); return queue; }
@@ -70,13 +81,19 @@ export function startSync(mount: Mount) {
   // bridge project. Nothing is loaded back: the real bridge restarts with this exact project at rev 0.
   async function adopt() {
     status('syncing', 'Sending the open project to the bridge');
+    // The app opens a file just after start-up: let a load in progress finish first.
+    // (TurboWarp shows its loading screen while a project loads.)
+    if (desktop) { await sleep(600); for (let i = 0; i < 600 && document.querySelector('[class*="loader_background"]'); i++) await sleep(100); await sleep(300); }
+    const seq = loadSeq;
     try {
       const zip = vm._saveProjectZip();
       zip.file('project.json', vm.toJSON(undefined, {allowOptimization:false}));
       const blob = await zip.generateAsync({type:'blob', mimeType:'application/x.scratch.sb3'});
-      const response = await fetch(endpoint('/adopt.sb3'), {method:'POST', headers:{'Content-Type':'application/octet-stream'}, body:blob});
+      const response = await fetch(await projectMeta(new URL(endpoint('/adopt.sb3'))), {method:'POST', headers:{'Content-Type':'application/octet-stream'}, body:blob});
       if (!response.ok) throw new Error(`Adopting the editor project failed: HTTP ${response.status}`);
       state.rev = 0; state.session = undefined; state.dirty = false; state.synced = true;
+      // A project opened while we were sending: switch to it once the engine is up.
+      if (loadSeq !== seq) state.switchPending = true;
       status('syncing', 'Project sent; waiting for the bridge');
     } catch (error) { status('error', error instanceof Error ? error.message : String(error)); }
   }
@@ -96,14 +113,11 @@ export function startSync(mount: Mount) {
     clearTimeout(timer); state.dirty = false;
     status('syncing', 'Opening this project as a new workspace');
     await sleep(600); // TurboWarp sets the title (file name) just after the load finishes
-    const field = document.querySelector('[class*="title-field"]') as HTMLInputElement | null;
-    const title = (field?.value || '').trim();
     try {
       const zip = vm._saveProjectZip();
       zip.file('project.json', vm.toJSON(undefined, {allowOptimization:false}));
       const blob = await zip.generateAsync({type:'blob', mimeType:'application/x.scratch.sb3'});
-      const url = new URL(endpoint('/switch.sb3')); url.searchParams.set('title', title);
-      const response = await fetch(url.href, {method:'POST', headers:{'Content-Type':'application/octet-stream'}, body:blob});
+      const response = await fetch(await projectMeta(new URL(endpoint('/switch.sb3'))), {method:'POST', headers:{'Content-Type':'application/octet-stream'}, body:blob});
       if (response.status === 404 && firstRev != null) {
         // Older bridge without switching, at connect time: previous behaviour (load the workspace).
         state.switchPending = false; await load(firstRev); return;
@@ -219,7 +233,12 @@ export function startSync(mount: Mount) {
     try { panelApi = await mount({state, send, endpoint, workspace, getVM: () => vm, panelState, pill}); } catch (error) { console.error('[AgentWarp panel]', error); }
     vm.on('PROJECT_CHANGED', () => { if (!state.loading) { state.dirty = true; schedule(); } });
     // Our own loads set state.loading; any other load is the user opening a project.
-    vm.runtime.on('PROJECT_LOADED', () => { if (ownLoad || !state.synced || state.detached) return; clearTimeout(timer); state.dirty = false; if (state.connected) enqueue(switchProject); else state.switchPending = true; });
+    vm.runtime.on('PROJECT_LOADED', () => { loadSeq++; if (ownLoad || !state.synced || state.detached) return; clearTimeout(timer); state.dirty = false; if (state.connected) enqueue(switchProject); else state.switchPending = true; });
+    if (desktop) {
+      // The app starts the engine for this window; ask until it is ready.
+      for (;;) { try { config = normalize(await desktop.config()); } catch (_) { config = null; } if (config) break; status('syncing', 'Starting AgentWarp'); await sleep(500); }
+      changeConnection(config); return;
+    }
     config = normalize(window.AGENTWARP) || savedConfig();
     if (config) changeConnection(config); else { status('error', 'Configure the bridge connection'); dialog(); }
   }

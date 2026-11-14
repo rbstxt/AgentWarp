@@ -16,6 +16,7 @@
 //   agentwarp tidy [dir] [--target NAME]       Clean-up-Plus all (or one) target's layout in place
 //   agentwarp costumes [dir]                   collision sizes of every costume (JSON on stdout)
 //   agentwarp serve [dir] [--port N] [--token T] live-sync bridge for TurboWarp (see docs/P4-DESIGN.md)
+//   agentwarp app --root DIR --port N --token T  engine for the AgentWarp desktop app (hidden mirror per open file)
 //   agentwarp help | --help | -h
 //
 // Diagnostics always go to stderr; stdout carries only command results
@@ -23,10 +24,10 @@
 // and check --json). Formats: ts | sbpy | scratchblocks | ir-json
 // (stored in <dir>/.agentwarp/format).
 import { execFileSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
-import { cp, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { existsSync, readFileSync } from 'node:fs';
+import { cp, mkdir, mkdtemp, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises';
 import { homedir, tmpdir } from 'node:os';
-import { randomBytes } from 'node:crypto';
+import { createHash, randomBytes } from 'node:crypto';
 import { basename, dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { overlaps } from '../core/layout.ts';
@@ -54,6 +55,8 @@ const USAGE = `usage: agentwarp <command> [args]
                                  render the stage with the real renderer (PNG frames / GIF,
                                  pixel-accurate touching & pen); prints image paths + final state
   serve [dir] [--port N] [--token T]  live-sync bridge for TurboWarp (default port 8765; token: --token, AGENTWARP_TOKEN, or ~/.config/agentwarp/token)
+  app --root DIR --port N --token T   engine of the AgentWarp desktop app: the project open in the
+                                 editor gets a hidden text mirror under DIR (one per file); no workspace to manage
   help                           this text`;
 
 async function loadFormat(name: string): Promise<Format> {
@@ -537,6 +540,101 @@ async function unpackProject(src: string, dir: string, name: string): Promise<Di
     return r.diagnostics;
 }
 
+/** Does the text dir at `dir` hold the same project (fingerprint) as `project`? */
+async function dirHoldsProject(dir: string, project: unknown): Promise<boolean> {
+    try {
+        const { projectFingerprint } = await import('../bridge/fingerprint.ts');
+        const base = JSON.parse(await readFile(join(dir, '.agentwarp', 'base.json'), 'utf8'));
+        return projectFingerprint(base) === projectFingerprint(project);
+    } catch {
+        return false;
+    }
+}
+
+const safeName = (s: string): string =>
+    s.trim().replace(/\.sb3$/i, '').replace(/[\/\\:*?"<>|\u0000-\u001f]+/g, '-').replace(/^\.+/, '').trim().slice(0, 60);
+
+/**
+ * Desktop app: the hidden text mirror for the project open in the editor. One per saved file
+ * (keyed by its path) so reopening a file keeps its mirror (and the agent's history); unsaved
+ * projects get a fresh one. The mirror is a cache: the .sb3 the user saves is the real project,
+ * so a mirror that no longer matches its file is rebuilt from the editor's copy.
+ */
+async function mirrorFor(root: string, p: { sb3: Buffer; title: string; key: string }, format: string): Promise<string> {
+    const { loadSb3Buffer } = await import('../core/sb3.ts');
+    const incoming = await loadSb3Buffer(p.sb3);
+    let dir: string;
+    if (p.key) {
+        const hash = createHash('sha256').update(p.key).digest('hex').slice(0, 10);
+        const base = join(root, `${safeName(basename(p.key)) || 'project'}-${hash}`);
+        // The same file open in two windows: each engine gets its own mirror.
+        dir = base;
+        for (let i = 2; mirrorLockedByOther(dir); i++) dir = `${base}~${i}`;
+        if (existsSync(dir) && (await dirHoldsProject(dir, incoming.project))) {
+            await lockMirror(dir);
+            process.stdout.write(`mirror ${dir} (reused)\n`);
+            return dir;
+        }
+    } else {
+        const d = new Date();
+        const p2 = (n: number) => String(n).padStart(2, '0');
+        const stamp = `${d.getFullYear()}${p2(d.getMonth() + 1)}${p2(d.getDate())}-${p2(d.getHours())}${p2(d.getMinutes())}${p2(d.getSeconds())}`;
+        dir = join(root, `untitled-${stamp}-${randomBytes(2).toString('hex')}`);
+    }
+    await rm(dir, { recursive: true, force: true });
+    const tmp = await mkdtemp(join(tmpdir(), 'agentwarp-mirror-'));
+    try {
+        await writeFile(join(tmp, 'editor.sb3'), p.sb3);
+        await mkdir(dir, { recursive: true });
+        const diags = await unpackProject(join(tmp, 'editor.sb3'), dir, format);
+        printDiags(diags.filter((d) => d.severity === 'error'), dir);
+    } finally {
+        await rm(tmp, { recursive: true, force: true });
+    }
+    const where = p.key ? `the file ${p.key}` : `an unsaved project${p.title ? ` ("${p.title}")` : ''}`;
+    await writeFile(join(dir, 'AGENTS.md'), (await readFile(join(dir, 'AGENTS.md'), 'utf8')) +
+        `\n## Live in the AgentWarp editor\n` +
+        `This folder is the working copy of ${where}, open in the AgentWarp editor right now.\n` +
+        `Every edit you save here appears in the editor within about a second, and the user's edits in\n` +
+        `the editor are written back here. The user saves the .sb3 from the editor (File > Save);\n` +
+        `never create, export or overwrite .sb3 files yourself.\n`);
+    await lockMirror(dir);
+    process.stdout.write(`mirror ${dir} (new)\n`);
+    return dir;
+}
+
+/** Desktop app: a mirror in use by a running engine (another window) carries that engine's pid. */
+function mirrorLockedByOther(dir: string): boolean {
+    try {
+        const pid = Number(readFileSync(join(dir, '.agentwarp', 'engine.pid'), 'utf8'));
+        if (!Number.isInteger(pid) || pid === process.pid) return false;
+        process.kill(pid, 0);
+        return true;
+    } catch {
+        return false;
+    }
+}
+
+let lockedMirror: string | null = null;
+async function lockMirror(dir: string): Promise<void> {
+    if (lockedMirror && lockedMirror !== dir) await rm(join(lockedMirror, '.agentwarp', 'engine.pid'), { force: true });
+    await mkdir(join(dir, '.agentwarp'), { recursive: true });
+    await writeFile(join(dir, '.agentwarp', 'engine.pid'), String(process.pid));
+    lockedMirror = dir;
+}
+
+/** Desktop app: forget mirrors of unsaved projects after a week. */
+async function pruneMirrors(root: string): Promise<void> {
+    const weekAgo = Date.now() - 7 * 24 * 3600 * 1000;
+    for (const e of await readdir(root).catch(() => [] as string[])) {
+        if (!e.startsWith('untitled-')) continue;
+        const full = join(root, e);
+        try {
+            if ((await stat(full)).mtimeMs < weekAgo) await rm(full, { recursive: true, force: true });
+        } catch { /* ignore */ }
+    }
+}
+
 /** Folder for a project the user opened in TurboWarp: reuse an identical one, never overwrite. */
 async function switchWorkspace(root: string, title: string, sb3: Buffer, format: string): Promise<string> {
     const { loadSb3Buffer } = await import('../core/sb3.ts');
@@ -547,15 +645,7 @@ async function switchWorkspace(root: string, title: string, sb3: Buffer, format:
         const p2 = (n: number) => String(n).padStart(2, '0');
         name = `project-${d.getFullYear()}${p2(d.getMonth() + 1)}${p2(d.getDate())}-${p2(d.getHours())}${p2(d.getMinutes())}`;
     }
-    const same = async (candidate: string): Promise<boolean> => {
-        try {
-            const { projectFingerprint } = await import('../bridge/fingerprint.ts');
-            const base = JSON.parse(await readFile(join(candidate, '.agentwarp', 'base.json'), 'utf8'));
-            return projectFingerprint(base) === projectFingerprint(incoming.project);
-        } catch {
-            return false;
-        }
-    };
+    const same = (candidate: string): Promise<boolean> => dirHoldsProject(candidate, incoming.project);
     let candidate = join(root, name);
     for (let i = 2; existsSync(candidate); i++) {
         if (await same(candidate)) {
@@ -794,7 +884,7 @@ async function main() {
                 process.stdout.write(`waiting for TurboWarp: the project open in the editor will be saved into ${dir}\n`);
                 let sb3: Buffer;
                 try {
-                    sb3 = await waitForAdopt({ port, token, name: basename(dir) });
+                    sb3 = (await waitForAdopt({ port, token, name: basename(dir) })).sb3;
                 } catch (e) {
                     if ((e as NodeJS.ErrnoException)?.code === 'EADDRINUSE') die(`serve: port ${port} is in use (another agentwarp serve?). Stop it or pass --port N.`);
                     throw e;
@@ -838,6 +928,33 @@ async function main() {
                 current = await switchWorkspace(dirname(current), title, sb3, format);
             }
             return;
+        }
+        case 'app': {
+            // Engine of the AgentWarp desktop app (one per editor window, started by the app).
+            // There is no workspace for the user: whatever project is open in the editor gets a hidden
+            // text mirror under --root, and opening another project moves the engine to its mirror.
+            if (typeof opts.root !== 'string') die('app: --root DIR is required');
+            const root = resolve(opts.root);
+            const port = Number(opts.port);
+            if (!Number.isInteger(port) || port < 1 || port > 65535) die('app: --port must be 1-65535');
+            const token = typeof opts.token === 'string' ? opts.token : process.env.AGENTWARP_TOKEN ?? '';
+            if (token.length < 16) die('app: --token (or AGENTWARP_TOKEN) of at least 16 characters is required');
+            const format = typeof opts.format === 'string' ? opts.format : 'ts';
+            await mkdir(root, { recursive: true });
+            await pruneMirrors(root);
+            const { waitForAdopt } = await import('../bridge/adopt.ts');
+            const { startServe } = await import('../bridge/server.ts');
+            type Opened = { sb3: Buffer; title: string; key: string };
+            let next: Opened = await waitForAdopt({ port, token, name: 'AgentWarp' });
+            for (;;) {
+                const dir = await mirrorFor(root, next, format);
+                let resolveSwitch!: (v: Opened) => void;
+                const switched = new Promise<Opened>((r) => (resolveSwitch = r));
+                const h = await startServe(dir, { port, token, onSwitch: (sb3, title, key) => resolveSwitch({ sb3, title, key }) });
+                process.stdout.write(`serving ${dir}\n`);
+                next = await switched;
+                await h.close();
+            }
         }
         default:
             die(`unknown command "${cmd}"\n${USAGE}`);
