@@ -1,7 +1,7 @@
 import { spawn, type ChildProcess } from "node:child_process";
 import { realpathSync } from "node:fs";
 import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
-import { join, resolve } from "node:path";
+import { isAbsolute, join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { Readable, Writable } from "node:stream";
 import {
@@ -56,6 +56,7 @@ export interface ChangeScript {
   topBlockId: string;
   anchor?: string;
   label: string;
+  summary?: { opcode: string; fields: Record<string, string>; blockCount: number };
   scratchblocks: string;
   file: string;
   line?: number;
@@ -670,6 +671,19 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           if (disposed) return;
           const msg = await sess.active.nextUpdate();
           if (msg.kind === "session_update") {
+            // Preserve ACP locations and add a project-relative path for the
+            // panel's authenticated image endpoint, including for absolute paths.
+            if ((msg.update.sessionUpdate === 'tool_call' || msg.update.sessionUpdate === 'tool_call_update') && Array.isArray(msg.update.locations)) {
+              msg.update.locations = msg.update.locations.map((location) => {
+                const path = location.path;
+                if (typeof path !== 'string') return location;
+                let root = resolve(projectDir), file = isAbsolute(path) ? path : resolve(projectDir, path);
+                try { root = realpathSync(root); file = realpathSync(file); } catch { /* /file will reject missing paths */ }
+                const rel = relative(root, file);
+                return rel && rel !== '..' && !rel.startsWith('../') && !isAbsolute(rel)
+                  ? { ...location, agentwarpPath: rel } : location;
+              });
+            }
             if (msg.update.sessionUpdate === 'config_option_update') {
               sess.configOptions = msg.update.configOptions;
             } else if (msg.update.sessionUpdate === 'current_mode_update') {

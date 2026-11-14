@@ -70,6 +70,7 @@ try {
   await page.setViewportSize({width:1280,height:900});await page.waitForFunction(()=>!document.querySelector('#agentwarp-panel').classList.contains('aw-overlay'));
 
   await panel.locator('.block-preview svg').waitFor(); assert.match(await panel.locator('.block-preview').textContent(),/25/);
+  assert.match(await panel.locator('.script-header').innerText(),locale==='ja'?/緑の旗が押されたとき/:/when green flag clicked/);
   await page.waitForFunction(()=>!window.__agentwarpClient.loading);
   await page.evaluate(()=>vm.setEditingTarget(vm.runtime.targets.find(t=>t.isStage).id));
   const beforeScroll=await page.evaluate(()=>({x:ScratchBlocks.getMainWorkspace().scrollX,y:ScratchBlocks.getMainWorkspace().scrollY}));

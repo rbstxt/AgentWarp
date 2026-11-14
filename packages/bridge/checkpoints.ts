@@ -20,6 +20,7 @@ import { irScriptEqual } from '../core/reconcile.ts';
 import { packAgainst } from '../core/project-dir.ts';
 import type { Block, Format, Loc, Script } from '../core/ir.ts';
 import type { ChangeScript, ChangeTarget, TurnStore } from '../acp/src/index.ts';
+import { scratchblocks } from '../../formats/scratchblocks/index.ts';
 
 const MAX_PER_SESSION = 50;
 
@@ -271,12 +272,9 @@ export function createFsTurnStore(deps: FsTurnStoreDeps): TurnStore {
         ): Promise<ChangeScript> => {
             const entry = dirs.get(name) ?? name;
             const file = `${entry}/scripts.${format.ext}`;
-            const printed = format.print([script], {
-                targetName: name,
-                file,
-                targetJson: targetJsons.get(name),
-                isStage: target?.isStage === true,
-            });
+            const preview = scratchblocks.print([script], {
+                targetName: name, file, targetJson: targetJsons.get(name), isStage: target?.isStage === true,
+            }).replace(/^@[^\n]+\n/gm, '').replace(/^when clicked$/m, 'when green flag clicked');
             const loc = (script.srcId ? (sourcemap as Record<string, Loc>)[script.srcId] : undefined) as Loc | undefined;
             const anchor = script.srcId ? anchorsInv.get(script.srcId) : undefined;
             let line = typeof loc?.line === 'number' ? loc.line : undefined;
@@ -287,8 +285,9 @@ export function createFsTurnStore(deps: FsTurnStoreDeps): TurnStore {
                 status,
                 topBlockId: script.srcId ?? '',
                 ...(anchor ? { anchor } : {}),
-                label: oneLineLabel(script, printed),
-                scratchblocks: printed,
+                label: oneLineLabel(script, preview),
+                ...(script.top ? { summary: { opcode: script.top.opcode, fields: Object.fromEntries(Object.entries(script.top.fields).map(([key, field]) => [key, field.value])), blockCount: countBlocks(script.top) } } : {}),
+                scratchblocks: preview,
                 file: relFile(rootDir, loc?.file, file),
                 ...(line !== undefined ? { line } : {}),
             };

@@ -147,12 +147,6 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             }
         }
     };
-    const acp = createAcpHost({
-        projectDir: dir,
-        send: broadcast,
-        log,
-        turnStore: createFsTurnStore({ dir, format, getRev: () => rev, getBase: () => base }),
-    });
     const sendStatus = (s: Omit<StatusMsg, 'type'>): void => {
         const key = JSON.stringify(s);
         if (key === lastStatusKey) return;
@@ -175,6 +169,19 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
         });
     };
 
+    const store = createFsTurnStore({ dir, format, getRev: () => rev, getBase: () => base });
+    const acp = createAcpHost({
+        projectDir: dir,
+        send: broadcast,
+        log,
+        turnStore: {
+            ...store,
+            snapshot: (sessionId, turnId) => withLock(() => store.snapshot(sessionId, turnId)),
+            restore: (sessionId, turnId) => withLock(() => store.restore(sessionId, turnId)),
+            diff: (sessionId, turnId) => withLock(() => store.diff(sessionId, turnId)),
+        },
+    });
+
     // -- agent-edit cycle ----------------------------------------------------
     // skipSigs: per-file content sigs captured right before packing. Files
     // the agent touches afterwards are OURS to skip during re-unpack (never
@@ -187,10 +194,10 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             if (!assets.has(k)) assets.set(k, v);
         }
         rev += 1;
-        broadcast({ type: 'load', rev });
         const ru = await reunpackText(dir, format, base, baseText, assets, { skipChangedSince: skipSigs, prevAnchors: anchors });
         anchors = ru.anchors;
         lastTextHash = await hashTextDir(dir);
+        broadcast({ type: 'load', rev });
         sendStatus({ ok: true, rev, message: 'synced' });
         acp.onBaseUpdated();
         const raced = [...ru.skipped, ...ru.raced];
@@ -277,6 +284,11 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                 const ru = await reunpackText(dir, format, base, baseText, assets, { skipChangedSince: sigs, prevAnchors: anchors });
                 anchors = ru.anchors;
                 lastTextHash = await hashTextDir(dir);
+                // Rebuild the source map for scripts created in the editor. The
+                // unpack step writes text and anchors but does not write locations.
+                if (ru.skipped.length === 0 && ru.raced.length === 0) {
+                    await packTextAgainstBase(dir, format, base, baseText, anchors);
+                }
                 acp.onBaseUpdated();
                 if ([...ru.skipped, ...ru.raced].length > 0) {
                     // Agent wrote mid-unpack; their files are intact — adopt.

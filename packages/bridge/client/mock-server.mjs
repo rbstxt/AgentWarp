@@ -7,7 +7,7 @@ import {WebSocketServer} from 'ws';
 export async function createMock({project, token = 'test-token', port = 0, rev = 1, changedProject, blockId = 'mock'} = {}) {
   let data = Buffer.isBuffer(project) ? project : await readFile(project);
   const posts = [], acks = [], clients = new Set(), acpMessages = [], sessions = new Map(), timers = new Set();
-  let nextSession = 0, permissionSession; const checkpoints = new Map(), turns = new Map(), activeTurns = new Map();
+  let nextSession = 0, permissionSession; const checkpoints = new Map(), turns = new Map(), activeTurns = new Map(), changeFactories = new Map();
   const push = project => { data = Buffer.from(project); rev++; for (const client of clients) if (client.readyState === client.OPEN) client.send(JSON.stringify({type:'load', rev})); return rev; };
   const server = http.createServer(async (req, res) => {
     const origin = req.headers.origin;
@@ -45,16 +45,19 @@ export async function createMock({project, token = 'test-token', port = 0, rev =
       if (msg.type === 'acp/agents') reply({type:'acp/agents',list:[{id:'mock',label:'Mock agent',available:true},{id:'missing',label:'Unavailable',available:false}]});
       else if (msg.type === 'acp/start') { const sessionId = `mock-${++nextSession}`; sessions.set(sessionId,[]); reply({type:'acp/session',sessionId,agentId:msg.agentId,promptCapabilities:{image:true},modes:{currentModeId:'agent',availableModes:[{id:'agent',name:'Agent'},{id:'ask',name:'Ask'}]},configOptions:[{id:'model',name:'Model',type:'select',currentValue:'mock',options:[{value:'mock',name:'Mock model'}]}]}); }
       else if (msg.type === 'acp/sessions') reply({type:'acp/sessions',list:[...sessions.keys()].map(sessionId=>({sessionId,agentId:'mock',title:'Mock chat',updatedAt:new Date().toISOString(),turns:1}))});
-      else if (msg.type === 'acp/load') { reply({type:'acp/session',sessionId:msg.sessionId,agentId:'mock',promptCapabilities:{image:true}}); for (const event of sessions.get(msg.sessionId)||[]) reply(event); }
+      else if (msg.type === 'acp/load') { for (const event of sessions.get(msg.sessionId)||[]) reply(event); reply({type:'acp/session',sessionId:msg.sessionId,agentId:'mock',promptCapabilities:{image:true}}); }
+      else if (msg.type === 'acp/set-config') reply({type:'acp/config',sessionId:msg.sessionId,configOptions:[{id:'model',name:'Model',type:'select',currentValue:msg.value,options:[{value:'mock',name:'Mock model'}]}]});
       else if (msg.type === 'acp/set-mode') reply({type:'acp/mode',sessionId:msg.sessionId,currentModeId:msg.modeId});
-      else if (msg.type === 'acp/restore') { const snapshot = checkpoints.get(`${msg.sessionId}:${msg.turnId}`); if (snapshot) { push(snapshot); reply({type:'acp/restored',sessionId:msg.sessionId,turnId:msg.turnId,rev}); } }
-      else if (msg.type === 'acp/history') reply({type:'acp/history',sessionId:msg.sessionId,messages:sessions.get(msg.sessionId) || []});
+      else if (msg.type === 'acp/restore') { const snapshot = checkpoints.get(`${msg.sessionId}:${msg.turnId}`); if (snapshot) { push(snapshot); for (const client of clients) if (client.readyState === client.OPEN) client.send(JSON.stringify({type:'acp/restored',sessionId:msg.sessionId,turnId:msg.turnId,rev})); } }
+      else if (msg.type === 'acp/history') { for (const event of sessions.get(msg.sessionId)||[]) reply(event); }
+      else if (msg.type === 'acp/changes') { const final=activeTurns.get(msg.sessionId)!==msg.turnId; const change=changeFactories.get(`${msg.sessionId}:${msg.turnId}`); if(change) reply(change(final)); else reply({type:'acp/error',sessionId:msg.sessionId,message:'unknown checkpoint'}); }
       else if (msg.type === 'acp/prompt') {
         const history = sessions.get(msg.sessionId); if (!history) return; permissionSession = msg.sessionId;
         const record = update => { const event = {type:'acp/update',sessionId:msg.sessionId,update}; history.push(event); reply(event); };
         history.push({type:'acp/update',sessionId:msg.sessionId,update:{sessionUpdate:'user_message_chunk',content:{type:'text',text:msg.text}}});
         const turnId = `turn-${history.length}`; activeTurns.set(msg.sessionId, turnId); checkpoints.set(`${msg.sessionId}:${turnId}`, Buffer.from(data)); turns.set(msg.sessionId, turnId); reply({type:'acp/turn-start',sessionId:msg.sessionId,turnId,rev});
-        const change = final => ({type:'acp/changes',sessionId:msg.sessionId,turnId,final,targets:[{name:'Sprite1',isStage:false,scripts:[{status:'changed',topBlockId:blockId,anchor:'a1',label:'when green flag clicked',scratchblocks:final?'when green flag clicked\nmove (25) steps':'when green flag clicked\nmove (15) steps',file:'Sprite1/scripts.ts',line:1}]}]});
+        const change = final => ({type:'acp/changes',sessionId:msg.sessionId,turnId,final,targets:[{name:'Sprite1',isStage:false,scripts:[{status:'changed',topBlockId:blockId,anchor:'a1',label:'when green flag clicked · 2 blocks',summary:{opcode:'event_whenflagclicked',fields:{},blockCount:2},scratchblocks:final?'when green flag clicked\nmove (25) steps':'when green flag clicked\nmove (15) steps',file:'Sprite1/scripts.ts',line:1}]}]});
+        changeFactories.set(`${msg.sessionId}:${turnId}`,change);
         const steps = [
           () => { if (changedProject) push(changedProject); reply(change(false)); },
           () => record({sessionUpdate:'usage_update',used:2000,size:10000}),
@@ -69,7 +72,7 @@ export async function createMock({project, token = 'test-token', port = 0, rev =
           () => reply({type:'acp/permission-request',requestId:'permission-1',sessionId:msg.sessionId,toolCall:{title:'Run check'},options:[{optionId:'allow',kind:'allow_once',name:'Allow'},{optionId:'always',kind:'allow_always',name:'Always'},{optionId:'deny',kind:'reject_once',name:'Deny'}]})
         ];
         steps.forEach((step,i) => { const timer = setTimeout(() => { timers.delete(timer); if (activeTurns.get(msg.sessionId) === turnId) step(); }, 100*(i+1)); timers.add(timer); });
-      } else if (msg.type === 'acp/permission') { reply({type:'acp/done',sessionId:permissionSession,stopReason:'end_turn'}); reply({type:'acp/changes',sessionId:permissionSession,turnId:turns.get(permissionSession),final:true,targets:[{name:'Sprite1',scripts:[{status:'changed',topBlockId:blockId,label:'when green flag clicked',scratchblocks:'when green flag clicked\nmove (25) steps'}]}]}); } else if (msg.type === 'acp/cancel') { activeTurns.delete(msg.sessionId); reply({type:'acp/done',sessionId:msg.sessionId,stopReason:'cancelled'}); }
+      } else if (msg.type === 'acp/permission') { activeTurns.delete(permissionSession); reply({type:'acp/done',sessionId:permissionSession,stopReason:'end_turn'}); reply({type:'acp/changes',sessionId:permissionSession,turnId:turns.get(permissionSession),final:true,targets:[{name:'Sprite1',isStage:false,scripts:[{status:'changed',topBlockId:blockId,anchor:'a1',label:'when green flag clicked · 2 blocks',summary:{opcode:'event_whenflagclicked',fields:{},blockCount:2},scratchblocks:'when green flag clicked\nmove (25) steps',file:'Sprite1/scripts.ts',line:1}]}]}); } else if (msg.type === 'acp/cancel') { activeTurns.delete(msg.sessionId); reply({type:'acp/done',sessionId:msg.sessionId,stopReason:'cancelled'}); }
     } catch {} });
     ws.on('close', () => clients.delete(ws));
   });

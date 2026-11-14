@@ -113,6 +113,59 @@ taken before that turn (confirm dialog; warns that human edits made during the t
   chips, sent in order, removable).
 - Slash commands from `available_commands_update` appear in a `/` menu.
 
+### 4.5b Composer v2 — modelled on T3 Code (added 2026-11-14)
+
+Reference: T3 Code (github.com/pingdotgg/t3code, MIT; same stack — Base UI + Tailwind), files under
+`apps/web/src/components/chat/`: `ComposerSurface`, `ComposerControlsBar`, `ComposerFooterControls`,
+`ProviderModelPicker`, `ModelPickerContent`, `ComposerModelEffort`, `ComposerPrimaryActions`,
+`CompactComposerControlsMenu`, `QueuedRunsControl`, `ComposerBannerStack`, `ComposerCommandMenu`.
+Port patterns (and code where it fits, keeping the MIT notice in a `THIRD_PARTY_NOTICES` file); re-theme
+with our TurboWarp tokens. Principles to adopt:
+
+1. **Surface**: the composer is one rounded card (radius ~12px at our scale) with a hairline outline
+   (`--border`), soft shadow in light, inset highlight in dark. Notices (plan, changes, permission
+   waiting, errors) are **attached cards** stacked edge to edge on top of it in a fixed order
+   (machine status first, then what needs the user), so rows never trade places.
+2. **One trigger for agent + model + effort**: `[agent icon] Opus 5.5 · High ▾` in a single chip that
+   stays filled while its popup is open. Narrow widths hide the agent icon first, then drop the
+   effort word, then truncate — never wrap. Other controls that do not fit go into an overflow (…)
+   menu (container queries), not truncation.
+3. **Picker popup**: opens above the composer, docked; stays open until Esc/outside press. Left:
+   models grouped by agent (Claude / Codex / OpenCode; unavailable agents shown disabled with the
+   reason). Right: a docked **effort column** listing the selected model's reasoning levels as rows
+   (↑↓; picking a model moves focus to its levels); below the levels, other agent options (session
+   mode etc.) one row each, opening side menus. Footer: fast/speed toggles if offered, permissions
+   one menu deeper. Data: ACP `configOptions` (categories model / thought_level / mode) and
+   `modes`. Picking a model of a **different agent** starts a new chat with it (say so in the row:
+   "New chat").
+4. **Permissions chip**: icon + label of the current mode (e.g. Ask / Auto-edit / Plan), a segmented
+   horizontal radio inside its menu with a hover/focus preview of the mode's description; the chip
+   hides when the mode equals the user's default.
+5. **Primary action** at the far right morphs Send ↔ Stop; after Stop, the button that replaces it
+   ignores clicks for ~600 ms so double-clicking Stop never sends. While a turn runs, Enter queues
+   (default) — show the behaviour in the button tooltip.
+6. **Queued messages** render as pending message rows with a dashed edge and edit / remove / send
+   now controls; long queues show the first items + "N more".
+7. **Context strip** under the card (bare, muted): current sprite chip, sync state dot + text
+   ("Synced" / "Syncing…" / "Error"), and a selected-block chip when present.
+8. Keyboard: a shortcut opens the model picker (e.g. Ctrl/Cmd+Shift+M, verify no clash), Tab order
+   textarea → picker → mode → send; every control has a tooltip with its shortcut.
+
+**Model list before a session exists** (required — users must be able to pick a model first, as in T3
+Code). ACP config options look like `{id, name, description, category: "model" | "thought_level" |
+"mode" | …, type: "select", currentValue, options: [{value, name, description}]}` (verified in
+claude-agent-acp 0.107). The unstable "Session options" RFD lets a host ask an agent what a session
+*would* start with: `session/options` (advertised in the agent's session capabilities as `options`),
+and `session/new` accepts `configOptions: [{configId, value}]` as initial values. Protocol:
+client `acp/options {agentId}` → host spawns/initializes the agent if needed (no prompt, no tokens),
+calls `session/options` (fallback when unsupported: create the session eagerly and use its
+`configOptions`) → `acp/options {agentId, configOptions, modes?}`. Client `acp/start {agentId,
+configOptions?: [{configId, value}]}` passes the picked values to `session/new`. The panel requests
+options for the last-used agent on connect and for others when the picker opens; the trigger shows
+the last-used agent + model immediately, and the session starts lazily on first send.
+Classify options by `category` (model → model list, thought_level → effort column, mode → mode row,
+anything else → generic rows); never by id or name.
+
 ### 4.6 Workspace integration
 - Block context menu (right-click a block/script): "Ask agent about this" / 「エージェントに聞く」
   and "Fix with agent" / 「エージェントで直す」 → opens the panel with the script as a context chip

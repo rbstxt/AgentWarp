@@ -12,9 +12,14 @@
  *   <cwd>/player/scripts.ts). Set to /etc/passwd to exercise the ask path.
  * FAKE_TOOL_COMMAND: if set, the tool call is kind=execute with this command
  *   instead of a file edit (exercises the agentwarp-command auto-allow path).
+ * FAKE_EDIT_FILE: project-relative scripts file whose moveSteps("10") is
+ *   changed to moveSteps("25") during the turn, with time for a live diff.
+ * FAKE_IMAGE_PATH: emit a completed tool call referencing this image.
  */
 import { agent, ndJsonStream, type ClientRequestParamsByMethod, type SessionConfigOption, type SessionModeState } from "@agentclientprotocol/sdk";
 import { Readable, Writable } from "node:stream";
+import { readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
 
 const mode = process.env.FAKE_ACP_MODE ?? "normal";
 
@@ -216,6 +221,18 @@ app.onRequest("session/prompt", async (ctx) => {
     sessionId,
     update: { sessionUpdate: "tool_call", ...toolCall },
   });
+
+  if (process.env.FAKE_IMAGE_PATH) {
+    await ctx.client.notify("session/update", { sessionId, update: { sessionUpdate: "tool_call", toolCallId: "image-1", title: "View image", kind: "read", status: "completed", locations: [{ path: process.env.FAKE_IMAGE_PATH, line: 1 }] } });
+  }
+  if (process.env.FAKE_EDIT_FILE) {
+    const file = join(cwd, process.env.FAKE_EDIT_FILE);
+    const text = await readFile(file, "utf8");
+    const next = text.replace('moveSteps("10")', 'moveSteps("25")');
+    if (next === text) throw new Error("fake edit fixture missing moveSteps(10)");
+    await writeFile(file, next);
+    await new Promise((resolve) => setTimeout(resolve, 2500));
+  }
 
   const permParams: ClientRequestParamsByMethod["session/request_permission"] = {
     sessionId,
