@@ -31,7 +31,14 @@ OpenCode）をそのまま使います。
   TurboWarp のアクセント色とダークモードに追従します。
 - **エージェント向けの手順書**：`skill/agentwarp/SKILL.md`。`new`/`unpack` はプロジェクトに `AGENTS.md` / `CLAUDE.md` を書き出します。
 
-### セットアップ
+### いちばん簡単な使い方：AgentWarp アプリ
+
+TurboWarp にエージェントを組み込んだデスクトップアプリ
+[AgentWarp Desktop](https://github.com/rbstxt/AgentWarp-Desktop) を使えば、下のセットアップは不要です。
+Claude Code / Codex / OpenCode のどれかを入れてサインインしておき、アプリで `.sb3` を開いて右のパネルに頼むだけです
+（[インストール方法](https://github.com/rbstxt/AgentWarp-Desktop#インストール)）。
+
+### セットアップ（CLI・開発用）
 
 Node.js 26 以上（`.ts` を直接実行します）。依存は各パッケージで `npm ci`：
 
@@ -99,7 +106,13 @@ code. It ships no AI harness of its own: it uses the agents you already run on y
 - **Agent playbook**: `skill/agentwarp/SKILL.md`; `new`/`unpack` write `AGENTS.md` / `CLAUDE.md` into
   the project.
 
-### Setup
+### Easiest: the AgentWarp app
+
+[AgentWarp Desktop](https://github.com/rbstxt/AgentWarp-Desktop) is TurboWarp with the agent built in: install
+and sign in to Claude Code, Codex or OpenCode, open an `.sb3` in the app and ask the panel on the right
+([install guide](https://github.com/rbstxt/AgentWarp-Desktop#install)). No setup below needed.
+
+### Setup (CLI / development)
 
 Node.js 26+ (runs `.ts` directly). Install dependencies per package with `npm ci` (see the loop above).
 
