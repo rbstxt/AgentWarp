@@ -60,7 +60,15 @@ async function main() {
     if (!Array.isArray(inputs)) throw Error('--input must be a JSON array or {inputs: [...]}');
     const out = resolve(opts.out || 'render-output'); await mkdir(out,{recursive:true});
     const bundle = await build({entryPoints:[join(root,'browser.mjs')], bundle:true, write:false, platform:'browser', define:{global:'globalThis'}, format:'iife', logLevel:'silent', plugins:[{name:'fonts',setup(b){b.onResolve({filter:/^(worker-loader|.*tw-load-script-as-plain-text!)/},()=>({path:'unsupported',namespace:'unsupported'}));b.onLoad({filter:/.*/,namespace:'unsupported'},()=>({contents:'module.exports = class { constructor() { throw new Error("External extensions are unavailable") } }',loader:'js'}));b.onResolve({filter:/^base64-loader!/},a=>({path:resolve(a.resolveDir,a.path.slice(14)),namespace:'font-base64'}));b.onLoad({filter:/.*/,namespace:'font-base64'},async a=>({contents:`module.exports=${JSON.stringify((await readFile(a.path)).toString('base64'))}`,loader:'js'}));}}], loader:{'.mp3':'dataurl','.wav':'dataurl','.woff':'dataurl','.woff2':'dataurl','.ttf':'dataurl'}});
-    browser = await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
+    // Playwright's own Chromium when installed (development), else the user's Chrome / Edge
+    // (the AgentWarp desktop app ships no browser of its own).
+    const launchOptions = {headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']};
+    let lastError;
+    for (const channel of [undefined, 'chrome', 'msedge', 'chromium']) {
+      try { browser = await chromium.launch(channel ? {...launchOptions, channel} : launchOptions); break; }
+      catch (e) { lastError = e; }
+    }
+    if (!browser) throw new Error(`agentwarp shot needs Chromium: install Google Chrome, or run \`npx playwright install chromium\` (${String(lastError?.message || lastError).split('\n')[0]})`);
     let state;
     try {
         const page = await browser.newPage({viewport:{width:480,height:360},deviceScaleFactor:1});

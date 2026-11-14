@@ -14,6 +14,8 @@ import {
 } from "@agentclientprotocol/sdk/unstable";
 import {
   detectAll,
+  refreshCliStatus,
+  resolveLaunch,
   loadAgentRegistry,
   type AgentDef,
   type AgentStatus,
@@ -518,9 +520,11 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     try { return await promise; } finally { connecting.delete(def.id); }
   }
 
-  async function openConn(def: AgentDef): Promise<ConnState> {
-    const existing = conns.get(def.id);
+  async function openConn(registered: AgentDef): Promise<ConnState> {
+    const existing = conns.get(registered.id);
     if (existing && !existing.dead) return existing;
+    // Bundled adapter + the user's installed CLI when available (see resolveLaunch).
+    const def = await resolveLaunch(registered);
 
     let command = def.command;
     // Resolve relative command paths against the project dir.
@@ -1120,6 +1124,8 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     try {
       switch (m.type) {
         case "acp/agents": {
+          // {refresh: true}: the user just installed a CLI or signed in (onboarding "check again").
+          if (full.refresh === true) refreshCliStatus();
           const defs = await agents();
           const list: AgentStatus[] = await detectAll(defs);
           reply({ type: "acp/agents", list });

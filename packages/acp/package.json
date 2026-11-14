@@ -13,6 +13,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@agentclientprotocol/claude-agent-acp": "0.107.0",
+    "@agentclientprotocol/codex-acp": "2.6.0",
     "@agentclientprotocol/sdk": "^2.6.0"
   },
   "devDependencies": {

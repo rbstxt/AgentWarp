@@ -1,2 +1,7 @@
 #!/bin/sh
+# In the AgentWarp desktop app the engine sets AGENTWARP_NODE to its own Node (Electron's,
+# run with ELECTRON_RUN_AS_NODE=1), so agents can call this without a Node install.
+if [ -n "$AGENTWARP_NODE" ]; then
+  ELECTRON_RUN_AS_NODE=1 exec "$AGENTWARP_NODE" "$(dirname "$(realpath "$0")")/../packages/cli/agentwarp.ts" "$@"
+fi
 exec node "$(dirname "$(realpath "$0")")/../packages/cli/agentwarp.ts" "$@"

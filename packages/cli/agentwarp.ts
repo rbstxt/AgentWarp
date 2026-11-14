@@ -146,7 +146,8 @@ async function tsCheck(dir: string): Promise<Diagnostic[]> {
     if ((await readFile(join(dir, '.agentwarp', 'format'), 'utf8')).trim() !== 'ts') return out;
     await tsTypes(dir);
     const { readdir } = await import('node:fs/promises');
-    const tsc = join(ROOT, 'formats/ts/node_modules/.bin/tsc');
+    // Run tsc's JS entry on this Node (no `node` on PATH needed in the desktop app).
+    const tsc = join(ROOT, 'formats/ts/node_modules/typescript/bin/tsc');
     for (const e of await readdir(join(dir, '.agentwarp', 'types'))) {
         if (!e.endsWith('.d.ts')) continue;
         const dts = join(dir, '.agentwarp', 'types', e);
@@ -154,7 +155,7 @@ async function tsCheck(dir: string): Promise<Diagnostic[]> {
         const scripts = join(dir, tname, 'scripts.ts');
         if (!existsSync(scripts)) continue;
         try {
-            execFileSync(tsc, ['--noEmit', '--target', 'es2020', '--skipLibCheck', relative(dir, scripts), relative(dir, dts)], {
+            execFileSync(process.execPath, [tsc, '--noEmit', '--target', 'es2020', '--skipLibCheck', relative(dir, scripts), relative(dir, dts)], {
                 encoding: 'utf8',
                 cwd: dir,
             });
@@ -193,7 +194,7 @@ async function doPack(dir: string, out?: string): Promise<string> {
 /** Run vmrun, capturing its stdout JSON even on failure. */
 function vmrunJson(args: string[]): { res: any; code: number } {
     try {
-        const out = execFileSync('node', [VMRUN, ...args], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
+        const out = execFileSync(process.execPath, [VMRUN, ...args], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
         return { res: JSON.parse(out), code: 0 };
     } catch (e: any) {
         const out = String(e.stdout ?? '');
@@ -844,7 +845,7 @@ async function main() {
             if (!passthrough.includes('--frames')) passthrough.push('--frames', '30');
             try {
                 // stderr inherited: the renderer's progress lines (loading / frame k of N) show live.
-                const json = execFileSync('node', [join(ROOT, 'tools/render/cli.mjs'), 'shot', out, ...passthrough, '--out', outDir],
+                const json = execFileSync(process.execPath, [join(ROOT, 'tools/render/cli.mjs'), 'shot', out, ...passthrough, '--out', outDir],
                     {encoding: 'utf8', maxBuffer: 256 * 1024 * 1024, stdio: ['ignore', 'pipe', 'inherit']});
                 const {readdir} = await import('node:fs/promises');
                 const images = (await readdir(outDir)).filter(f => /\.(png|gif)$/.test(f)).sort().map(f => join(outDir, f));
@@ -940,6 +941,8 @@ async function main() {
             const token = typeof opts.token === 'string' ? opts.token : process.env.AGENTWARP_TOKEN ?? '';
             if (token.length < 16) die('app: --token (or AGENTWARP_TOKEN) of at least 16 characters is required');
             const format = typeof opts.format === 'string' ? opts.format : 'ts';
+            // Agents call bin/agentwarp: let it run on this same Node (Electron's in the desktop app).
+            process.env.AGENTWARP_NODE ??= process.execPath;
             await mkdir(root, { recursive: true });
             await pruneMirrors(root);
             const { waitForAdopt } = await import('../bridge/adopt.ts');

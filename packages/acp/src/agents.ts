@@ -1,4 +1,6 @@
+import { execFile } from "node:child_process";
 import { access, constants, readFile } from "node:fs/promises";
+import { createRequire } from "node:module";
 import { homedir } from "node:os";
 import { join, resolve } from "node:path";
 import { env, platform } from "node:process";
@@ -15,6 +17,128 @@ export interface AgentStatus extends AgentDef {
   /** true = launchable now; "unknown" = probably launchable but would need a download first; false = not available */
   available: boolean | "unknown";
   note?: string;
+  /** The vendor CLI this agent runs on (its install and sign-in are the user's), for onboarding. */
+  cli?: {
+    name: string;
+    path: string | null;
+    version?: string;
+    /** signed in with the CLI's own account (subscription or API key) */
+    auth: "authenticated" | "unauthenticated" | "unknown";
+    install: string;
+    login: string;
+    docs: string;
+  };
+}
+
+/** The CLIs behind the default agents. Agents use these CLIs and their sign-in, like T3 Code does. */
+export const AGENT_CLIS: Record<string, { name: string; bin: string; install: string; login: string; docs: string }> = {
+  claude: {
+    name: "Claude Code",
+    bin: "claude",
+    install: "npm install -g @anthropic-ai/claude-code@latest",
+    login: "claude auth login",
+    docs: "https://docs.claude.com/en/docs/claude-code/setup",
+  },
+  codex: {
+    name: "Codex CLI",
+    bin: "codex",
+    install: "npm install -g @openai/codex@latest",
+    login: "codex login",
+    docs: "https://developers.openai.com/codex/cli",
+  },
+  opencode: {
+    name: "OpenCode",
+    bin: "opencode",
+    install: "npm install -g opencode-ai@latest",
+    login: "opencode auth login",
+    docs: "https://opencode.ai/docs",
+  },
+};
+
+const require = createRequire(import.meta.url);
+
+/** The ACP adapter shipped with agentwarp (packages/acp dependencies), if installed. */
+function bundledAdapter(pkg: string): string | null {
+  try {
+    const manifest = require.resolve(`${pkg}/package.json`);
+    const json = require(manifest) as { bin?: string | Record<string, string> };
+    const bin = typeof json.bin === "string" ? json.bin : json.bin ? Object.values(json.bin)[0] : null;
+    return bin ? join(manifest, "..", bin) : null;
+  } catch {
+    return null;
+  }
+}
+
+function run(file: string, args: string[], timeout = 8000): Promise<{ code: number; stdout: string }> {
+  return new Promise((done) => {
+    execFile(file, args, { timeout, encoding: "utf8", env: { ...env, NO_COLOR: "1" } }, (error, stdout, stderr) => {
+      const code = error ? (typeof (error as { code?: unknown }).code === "number" ? (error as { code: number }).code : 1) : 0;
+      done({ code, stdout: `${stdout ?? ""}${stderr ?? ""}` });
+    });
+  });
+}
+
+/** Sign-in state of a vendor CLI, without starting a model turn. */
+async function cliAuth(id: string, path: string): Promise<"authenticated" | "unauthenticated" | "unknown"> {
+  if (id === "claude") {
+    const r = await run(path, ["auth", "status"]);
+    const m = r.stdout.match(/"loggedIn"\s*:\s*(true|false)/);
+    return m ? (m[1] === "true" ? "authenticated" : "unauthenticated") : "unknown";
+  }
+  if (id === "codex") {
+    const r = await run(path, ["login", "status"]);
+    if (r.code === 0 && /logged in/i.test(r.stdout)) return "authenticated";
+    return /not logged in/i.test(r.stdout) || r.code !== 0 ? "unauthenticated" : "unknown";
+  }
+  // OpenCode also runs free models without any sign-in.
+  return "unknown";
+}
+
+const cliCache = new Map<string, { at: number; value: AgentStatus["cli"] }>();
+
+async function cliStatus(id: string): Promise<AgentStatus["cli"]> {
+  const meta = AGENT_CLIS[id];
+  if (!meta) return undefined;
+  const hit = cliCache.get(id);
+  if (hit && Date.now() - hit.at < 30_000) return hit.value;
+  const path = await findOnPath(meta.bin);
+  let version: string | undefined;
+  let auth: "authenticated" | "unauthenticated" | "unknown" = "unknown";
+  if (path) {
+    const [v, a] = await Promise.all([run(path, ["--version"], 5000), cliAuth(id, path)]);
+    version = v.code === 0 ? v.stdout.trim().split("\n")[0]?.slice(0, 80) : undefined;
+    auth = a;
+  }
+  const value = { name: meta.name, path, version, auth, install: meta.install, login: meta.login, docs: meta.docs };
+  cliCache.set(id, { at: Date.now(), value });
+  return value;
+}
+
+/** Forget cached CLI checks (after the user installed or signed in). */
+export function refreshCliStatus(): void {
+  cliCache.clear();
+}
+
+/**
+ * How to start an agent. Claude and Codex run through the ACP adapter shipped with agentwarp on
+ * this Node (Electron's in the desktop app), pointed at the user's installed CLI, so they use the
+ * CLI's own sign-in and nothing is downloaded at first use. Falls back to the plain definition.
+ */
+export async function resolveLaunch(def: AgentDef): Promise<AgentDef> {
+  const pkg = npxPackageOf(def);
+  if (!pkg) return def;
+  const adapter = bundledAdapter(pkg);
+  if (!adapter) return def;
+  const extra: Record<string, string> = {};
+  if (def.id === "claude" || pkg.endsWith("claude-agent-acp")) {
+    const cli = await findOnPath("claude");
+    if (cli && !env.CLAUDE_CODE_EXECUTABLE) extra.CLAUDE_CODE_EXECUTABLE = cli;
+  }
+  if (def.id === "codex" || pkg.endsWith("codex-acp")) {
+    const cli = await findOnPath("codex");
+    if (cli && !env.CODEX_PATH) extra.CODEX_PATH = cli;
+  }
+  return { ...def, command: process.execPath, args: [adapter], env: { ...extra, ...(def.env ?? {}) } };
 }
 
 export const DEFAULT_AGENTS: AgentDef[] = [
@@ -110,25 +234,35 @@ async function npxCacheHas(pkg: string): Promise<boolean> {
 }
 
 export async function detectAvailability(def: AgentDef): Promise<AgentStatus> {
+  const isDefault = DEFAULT_AGENTS.some((d) => d.id === def.id && d.command === def.command && d.args.join(" ") === def.args.join(" "));
+  const cli = isDefault ? await cliStatus(def.id) : undefined;
+  if (cli) {
+    // Default agents need the vendor CLI (its sign-in is what the agent uses).
+    const pkg = npxPackageOf(def);
+    if (!cli.path) return { ...def, available: false, cli, note: `${cli.name} is not installed` };
+    if (pkg && bundledAdapter(pkg)) return { ...def, available: true, cli };
+    if (!pkg) return { ...def, available: true, cli };
+  }
+  const withCli = (s: AgentStatus): AgentStatus => (cli ? { ...s, cli } : s);
   const direct = await findOnPath(def.command);
   const pkg = npxPackageOf(def);
   const bin = adapterBinOf(def);
   if (pkg && bin) {
     // npx-based adapter.
     if ((await findOnPath(bin)) ?? (await npxCacheHas(pkg))) {
-      return { ...def, available: true };
+      return withCli({ ...def, available: true });
     }
     if (direct) {
-      return {
+      return withCli({
         ...def,
         available: "unknown",
         note: "npx is installed but the adapter package is not cached; first start will download it",
-      };
+      });
     }
-    return { ...def, available: false, note: "npx not found on PATH" };
+    return withCli({ ...def, available: false, note: "npx not found on PATH" });
   }
-  if (direct) return { ...def, available: true };
-  return { ...def, available: false, note: `${def.command} not found on PATH` };
+  if (direct) return withCli({ ...def, available: true });
+  return withCli({ ...def, available: false, note: `${def.command} not found on PATH` });
 }
 
 export async function detectAll(defs: AgentDef[]): Promise<AgentStatus[]> {
