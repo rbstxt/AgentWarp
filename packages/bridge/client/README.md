@@ -43,3 +43,9 @@ The real host sends history as a sequence of `acp/update` and `acp/done` message
 Run `node panel-e2e.mjs` for the ACP panel test. It uses fresh Playwright browser contexts, a loopback mock, and the live web editor, never a Desktop profile. It covers English dark mode, Japanese light mode, streaming, a diff, permissions, stop, history after reload, and IME composition. Screenshots are written to `e2e-screens/panel-*.png`.
 
 Session configuration selectors appear when the agent advertises options. Changes use `acp/set-config`; live session updates are broadcast to authenticated project sockets, while agent-list and history replies go only to the requester. The panel switches to the small stage when opened and restores the previous large stage on close if the user has not changed it.
+
+## Panel v2 development
+
+The panel source lives in `packages/panel`. Run `npm ci`, then `npm run build` in that directory to create `dist/agentwarp-client.js` and copy it to this directory for DevTools injection. `npm run dev` watches the source and rebuilds `dist`; run `npm run build` to refresh the DevTools copy. `userscript.js` is a small loader that reads the saved connection and loads the bundle from the bridge. The mock serves the bundle at `/client.js` and a test image at `/file?path=demo.png`.
+
+The v2 implementation is still incomplete; see `docs/P7-UI-REPORT.md` for implemented behavior and outstanding work. Run `node panel-v2-e2e.mjs` here for the currently covered live-editor interactions.
