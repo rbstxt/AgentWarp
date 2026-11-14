@@ -32,8 +32,8 @@
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { randomBytes } from 'node:crypto';
 import { watch, type FSWatcher } from 'node:fs';
-import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
-import { basename, dirname, join, relative, resolve, sep } from 'node:path';
+import { mkdir, readFile, readdir, realpath, rm, stat, writeFile } from 'node:fs/promises';
+import { basename, dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WebSocketServer, WebSocket } from 'ws';
 import JSZip from 'jszip';
@@ -44,6 +44,7 @@ import { hashTextDir, snapshotSigs } from './text-hash.ts';
 import { collectAssetFiles, packTextAgainstBase, readTextState } from './pack-text.ts';
 import { reunpackText } from './unpack-safe.ts';
 import { buildMerge } from './merge.ts';
+import { createFsTurnStore } from './checkpoints.ts';
 import { createAcpHost } from '../acp/src/index.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -146,7 +147,12 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             }
         }
     };
-    const acp = createAcpHost({ projectDir: dir, send: broadcast, log });
+    const acp = createAcpHost({
+        projectDir: dir,
+        send: broadcast,
+        log,
+        turnStore: createFsTurnStore({ dir, format, getRev: () => rev, getBase: () => base }),
+    });
     const sendStatus = (s: Omit<StatusMsg, 'type'>): void => {
         const key = JSON.stringify(s);
         if (key === lastStatusKey) return;
@@ -186,6 +192,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
         anchors = ru.anchors;
         lastTextHash = await hashTextDir(dir);
         sendStatus({ ok: true, rev, message: 'synced' });
+        acp.onBaseUpdated();
         const raced = [...ru.skipped, ...ru.raced];
         if (raced.length > 0) {
             // Agent writes landed inside our unpack window: their files are
@@ -270,6 +277,7 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
                 const ru = await reunpackText(dir, format, base, baseText, assets, { skipChangedSince: sigs, prevAnchors: anchors });
                 anchors = ru.anchors;
                 lastTextHash = await hashTextDir(dir);
+                acp.onBaseUpdated();
                 if ([...ru.skipped, ...ru.raced].length > 0) {
                     // Agent wrote mid-unpack; their files are intact — adopt.
                     later(0, () => {
@@ -334,6 +342,44 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
         res.end(JSON.stringify(obj));
     };
 
+    const IMAGE_TYPES: Record<string, string> = {
+        '.png': 'image/png',
+        '.gif': 'image/gif',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.svg': 'image/svg+xml',
+    };
+
+    /**
+     * Serve one project image for panel thumbnails (P7 §5: GET /file).
+     * Only image files whose real path is inside the project dir; rejects
+     * `..`, absolute paths and symlink escapes with null (→ 404).
+     */
+    const serveImageFile = async (root: string, rel: string): Promise<{ buf: Buffer; contentType: string } | null> => {
+        if (!rel || rel.includes('\0') || isAbsolute(rel) || rel.includes('\\')) return null;
+        if (rel.split('/').some((p) => p === '..' || p === '' || p === '.')) return null;
+        const dot = rel.lastIndexOf('.');
+        const ext = (dot >= 0 ? rel.slice(dot) : '').toLowerCase();
+        const contentType = IMAGE_TYPES[ext];
+        if (!contentType) return null;
+        let rootReal: string;
+        let fileReal: string;
+        try {
+            rootReal = await realpath(root);
+            fileReal = await realpath(join(root, rel));
+        } catch {
+            return null;
+        }
+        if (fileReal !== rootReal && !fileReal.startsWith(rootReal + sep)) return null;
+        try {
+            const st = await stat(fileReal);
+            if (!st.isFile()) return null;
+            return { buf: await readFile(fileReal), contentType };
+        } catch {
+            return null;
+        }
+    };
+
     const server = createServer(async (req, res) => {
         try {
             cors(req, res);
@@ -371,6 +417,43 @@ export async function startServe(dirArg: string, opts: ServeOptions = {}): Promi
             if (req.method === 'GET' && url.pathname === '/status') {
                 const h = await hashTextDir(dir);
                 json(res, 200, { ok: true, rev, name, format: formatName, clean: h === lastTextHash, textHash: h.slice(0, 12), log: logs.slice(-20) });
+                return;
+            }
+            if (req.method === 'GET' && url.pathname === '/client.js') {
+                // Panel bundle built by packages/panel (another agent); fall
+                // back to the plain sync client when it is not built yet.
+                let file = join(ROOT, 'packages', 'panel', 'dist', 'agentwarp-client.js');
+                try {
+                    await stat(file);
+                } catch {
+                    file = join(ROOT, 'packages', 'bridge', 'client', 'agentwarp-client.js');
+                }
+                let buf: Buffer;
+                try {
+                    buf = await readFile(file);
+                } catch {
+                    json(res, 404, { ok: false, message: 'panel bundle not available' });
+                    return;
+                }
+                res.writeHead(200, { 'content-type': 'text/javascript', 'cache-control': 'no-store' });
+                res.end(buf);
+                return;
+            }
+            if (req.method === 'GET' && url.pathname === '/file') {
+                const served = await serveImageFile(dir, url.searchParams.get('path') ?? '');
+                if (!served) {
+                    json(res, 404, { ok: false, message: 'not found' });
+                    return;
+                }
+                // Project SVGs come from untrusted sb3s: never let one run script on
+                // the bridge origin if it is opened directly (the URL carries the token).
+                res.writeHead(200, {
+                    'content-type': served.contentType,
+                    'cache-control': 'no-store',
+                    'content-security-policy': "default-src 'none'; style-src 'unsafe-inline'; sandbox",
+                    'x-content-type-options': 'nosniff',
+                });
+                res.end(served.buf);
                 return;
             }
             json(res, 404, { ok: false, message: `unknown route ${url.pathname}` });

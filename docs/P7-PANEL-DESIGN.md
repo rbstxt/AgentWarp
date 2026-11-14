@@ -137,12 +137,12 @@ Client → bridge:
 
 | type | fields | effect |
 |---|---|---|
-| `acp/prompt` (extended) | `sessionId, text, context, mentions?: Mention[], images?: {mimeType, data(base64)}[]` | host builds ACP prompt blocks: text, one `resource_link` per mention (file URI of `<Target>/scripts.ts`, with line range for script mentions), image blocks (only if the agent advertises image support; otherwise reply `acp/error`). Before forwarding, the host takes a **checkpoint** (§6) and emits `acp/turn-start`. |
+| `acp/prompt` (extended) | `sessionId, text, context, mentions?: Mention[], images?: {mimeType, data(base64)}[]` | host builds ACP prompt blocks: text, one `resource_link` per mention (file URI of the target's actual scripts file `<Target>/scripts.<ext>`, with a `#Lstart-Lend` fragment for the script's line range when the top block id resolves through the pack sourcemap), image blocks (only if the agent advertises image support; otherwise reply `acp/error`). Before forwarding, the host takes a **checkpoint** (§6) and emits `acp/turn-start`. |
 | `acp/sessions` | – | reply `acp/sessions {list: [{sessionId, agentId, title, updatedAt, turns}]}` for this project (from `.agentwarp/sessions/*.jsonl`), newest first. |
-| `acp/load` | `sessionId` | resume a past session: if the agent supports `session/load`/resume, attach to it (history replayed as `acp/update`s); otherwise replay the transcript read-only and say so in `acp/session {readOnly: true}`. |
+| `acp/load` | `sessionId` | resume a past session: if the agent supports `session/load`/resume, attach to it (`session/load` history arrives as `acp/update`s; for `session/resume` the host replays the saved transcript to the requester); otherwise replay the transcript read-only and say so in `acp/session {readOnly: true}`. |
 | `acp/set-mode` | `sessionId, modeId` | ACP `session/set_mode`; reply `acp/mode {sessionId, currentModeId}`. |
 | `acp/restore` | `sessionId, turnId` | restore the checkpoint taken before that turn (writes the snapshot back into the text dir → normal agent cycle → editor reloads). Reply `acp/restored {sessionId, turnId, rev}`. |
-| `acp/changes` | `sessionId, turnId` | (re)compute and reply the change summary for a turn. |
+| `acp/changes` | `sessionId, turnId` | (re)compute and reply the change summary for a turn (`final` is false while that turn is still running, true otherwise). |
 
 Bridge → client:
 
@@ -157,7 +157,7 @@ Bridge → client:
 
 HTTP additions (token required, same as existing endpoints):
 - `GET /client.js` — the built panel bundle (`packages/panel/dist/agentwarp-client.js`), `no-store`.
-- `GET /file?path=<rel>` — serves **only** image files (`.png .gif .jpg .svg`) whose real path is
+- `GET /file?path=<rel>` — serves **only** image files (`.png .gif .jpg .jpeg .svg`) whose real path is
   inside the project dir (for `shot` thumbnails). Anything else → 404.
 
 ## 6. Checkpoints
@@ -183,7 +183,8 @@ packages/bridge/client/
   agentwarp-client.js      kept = full single-file build (for devtools paste), generated
 ```
 
-Budget: bundle ≤ 600 KB minified (gz ≤ 200 KB); first paint of the panel ≤ 150 ms after load.
+Budget (revised 2026-11-14): bundle ≤ 1.2 MB minified (gz ≤ 350 KB) — it is served from localhost, so
+parse/first-paint time matters more than bytes; first paint of the panel ≤ 150 ms after load.
 
 ## 8. Verification
 

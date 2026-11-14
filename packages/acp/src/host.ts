@@ -1,10 +1,14 @@
 import { spawn, type ChildProcess } from "node:child_process";
 import { realpathSync } from "node:fs";
+import { mkdir, readdir, readFile, stat, writeFile } from "node:fs/promises";
+import { join, resolve } from "node:path";
+import { pathToFileURL } from "node:url";
 import { Readable, Writable } from "node:stream";
 import {
   client,
   ndJsonStream,
   type ActiveSession,
+  type AgentCapabilities,
   type ClientConnection,
   type ClientContext,
 } from "@agentclientprotocol/sdk";
@@ -30,11 +34,68 @@ export interface AcpHostOptions {
   permissionTimeoutMs?: number;
   /** Test hook: bypass the on-disk registry with a fixed agent list. */
   agents?: AgentDef[];
+  /**
+   * Checkpoint/change store for agent-panel turns (P7 §6). The bridge
+   * provides a filesystem implementation; without one, prompts still run
+   * but no turn-start/checkpoint/restore/changes messages are produced and
+   * acp/restore + acp/changes answer acp/error.
+   */
+  turnStore?: TurnStore;
+}
+
+/** A @-mention from the panel composer (P7 §5). */
+export interface Mention {
+  kind: string;
+  target: string;
+  name?: string;
+  topBlockId?: string;
+}
+
+export interface ChangeScript {
+  status: "added" | "changed" | "deleted";
+  topBlockId: string;
+  anchor?: string;
+  label: string;
+  scratchblocks: string;
+  file: string;
+  line?: number;
+}
+
+export interface ChangeTarget {
+  name: string;
+  isStage: boolean;
+  scripts: ChangeScript[];
+}
+
+/**
+ * Per-turn checkpoint + change-summary store. Implemented by the bridge
+ * (it owns rev, the base project and the text format); consumed here.
+ */
+export interface TurnStore {
+  /** Current bridge rev (recorded in checkpoints + turn-start). */
+  getRev(): number;
+  /** Snapshot the text state for a turn (plus the current rev). */
+  snapshot(sessionId: string, turnId: string): Promise<void>;
+  /**
+   * Write a snapshot back into the text dir (removing target dirs created
+   * after it). Resolves with the snapshot's rev; the bridge's normal agent
+   * cycle then packs + pushes. Rejects when the turn is unknown.
+   */
+  restore(sessionId: string, turnId: string): Promise<number>;
+  /** Diff a turn's checkpoint against the current base. */
+  diff(sessionId: string, turnId: string): Promise<ChangeTarget[]>;
 }
 
 export interface AcpHost {
   handle(msg: unknown, reply?: (msg: object) => void): Promise<void>;
   dispose(): Promise<void>;
+  /** True while the session has a turn in flight (used to refuse restore). */
+  isTurnRunning(sessionId: string): boolean;
+  /**
+   * Called by the bridge after it commits a new base (agent-edit cycle or
+   * editor POST). Emits debounced live acp/changes for running turns.
+   */
+  onBaseUpdated(): void;
 }
 
 interface PendingPermission {
@@ -53,6 +114,8 @@ interface ConnState {
   dead: boolean;
   stderrTail: string;
   sessions: Set<string>;
+  /** Agent's initialize capabilities (prompt caps, load/resume support). */
+  caps?: AgentCapabilities | null;
 }
 
 interface SessionState {
@@ -60,8 +123,251 @@ interface SessionState {
   agentId: string;
   active: ActiveSession;
   turnRunning: boolean;
+  /** Checkpoint turn id of the running turn (null when idle). */
+  currentTurn: string | null;
+  /** Pending debounced live-changes timer. */
+  liveTimer: ReturnType<typeof setTimeout> | null;
   pump: Promise<void>;
   configOptions: ActiveSession['newSessionResponse']['configOptions'];
+  modes: ActiveSession['newSessionResponse']['modes'];
+}
+
+/** Derive panel modes from v1 session config options (category "mode") as a fallback. */
+export function modesOf(configOptions: unknown): ActiveSession['newSessionResponse']['modes'] {
+  if (!Array.isArray(configOptions)) return undefined;
+  const opts = configOptions.filter((o) => o && typeof o === "object") as Array<Record<string, unknown>>;
+  const opt =
+    opts.find((o) => o.type === "select" && o.category === "mode") ??
+    opts.find((o) => o.type === "select" && ((o as { id?: unknown }).id === "mode"));
+  if (!opt || typeof (opt as { currentValue?: unknown }).currentValue !== "string") return undefined;
+  const availableModes: Array<{ id: string; name: string; description?: string }> = [];
+  const push = (v: unknown): void => {
+    if (!v || typeof v !== "object") return;
+    const r = v as Record<string, unknown>;
+    if (Array.isArray(r.options)) {
+      for (const sub of r.options) push(sub);
+      return;
+    }
+    if (typeof r.value !== "string") return;
+    const mode: { id: string; name: string; description?: string } = { id: r.value, name: typeof r.name === "string" ? r.name : r.value };
+    if (typeof r.description === "string" && r.description) mode.description = r.description;
+    availableModes.push(mode);
+  };
+  if (Array.isArray(opt.options)) for (const v of opt.options) push(v);
+  return {
+    currentModeId: (opt as { currentValue: string }).currentValue,
+    availableModes,
+  };
+}
+
+/** Find the on-disk directory entry for a target name (via target.json). */
+async function findTargetDir(projectDir: string, targetName: string): Promise<string | null> {
+  let entries;
+  try {
+    entries = await readdir(projectDir, { withFileTypes: true });
+  } catch {
+    return null;
+  }
+  for (const e of entries) {
+    if (!e.isDirectory() || e.name === ".agentwarp" || e.name.startsWith(".")) continue;
+    try {
+      const tj = JSON.parse(await readFile(join(projectDir, e.name, "target.json"), "utf8"));
+      if (tj?.name === targetName) return e.name;
+    } catch {
+      /* not a target dir */
+    }
+  }
+  return null;
+}
+
+/** Max sourcemap line of the script rooted at topId (for mention line ranges). */
+function scriptEndLine(project: unknown, topId: string, locs: Record<string, { line?: unknown }>): number | null {
+  const byId = new Map<string, any>();
+  for (const t of ((project as { targets?: unknown[] } | null)?.targets ?? [])) {
+    const blocks = (t as { blocks?: Record<string, any> } | null)?.blocks;
+    if (blocks && typeof blocks === "object") {
+      for (const [id, b] of Object.entries(blocks)) byId.set(id, b);
+    }
+  }
+  if (!byId.has(topId)) return null;
+  let max: number | null = null;
+  const seen = new Set<string>([topId]);
+  const stack = [topId];
+  while (stack.length > 0) {
+    const id = stack.pop() as string;
+    const line = locs[id]?.line;
+    if (typeof line === "number" && (max == null || line > max)) max = line;
+    const b = byId.get(id);
+    if (!b || typeof b !== "object" || Array.isArray(b)) continue;
+    if (typeof b.next === "string" && !seen.has(b.next)) {
+      seen.add(b.next);
+      stack.push(b.next);
+    }
+    for (const ival of Object.values<any>(b.inputs ?? {})) {
+      if (Array.isArray(ival) && typeof ival[1] === "string" && !seen.has(ival[1])) {
+        seen.add(ival[1]);
+        stack.push(ival[1]);
+      }
+    }
+  }
+  return max;
+}
+
+/**
+ * Build one ACP `resource_link` block per resolvable mention (P7 §5):
+ * the target's scripts file URI, with a `#Lstart-Lend` fragment for script
+ * mentions whose top block id resolves through the pack sourcemap.
+ * Unresolvable mentions (unknown target, no scripts file) are skipped.
+ */
+export async function mentionLinks(
+  projectDir: string,
+  mentions: Mention[],
+): Promise<Array<Record<string, unknown>>> {
+  let sourcemap: Record<string, { line?: unknown }> = {};
+  try {
+    sourcemap = JSON.parse(await readFile(join(projectDir, ".agentwarp", "sourcemap.json"), "utf8"));
+  } catch {
+    /* no sourcemap yet */
+  }
+  let base: unknown = null;
+  try {
+    base = JSON.parse(await readFile(join(projectDir, ".agentwarp", "base.json"), "utf8"));
+  } catch {
+    /* no base yet */
+  }
+  const out: Array<Record<string, unknown>> = [];
+  for (const m of mentions) {
+    if (!m || typeof m.target !== "string" || !m.target) continue;
+    const dirEntry = await findTargetDir(projectDir, m.target);
+    if (!dirEntry) continue;
+    let scriptsFile: string | null = null;
+    try {
+      const names = (await readdir(join(projectDir, dirEntry))).filter((n) => n.startsWith("scripts.")).sort();
+      scriptsFile = names[0] ?? null;
+    } catch {
+      /* unreadable */
+    }
+    if (!scriptsFile) continue;
+    const url = pathToFileURL(resolve(projectDir, dirEntry, scriptsFile));
+    const loc = m.topBlockId ? (sourcemap[m.topBlockId] as { line?: unknown } | undefined) : undefined;
+    if (loc && typeof loc.line === "number") {
+      const start = loc.line;
+      let end: number | null = null;
+      if (base && m.topBlockId) end = scriptEndLine(base, m.topBlockId, sourcemap);
+      url.hash = end != null && end >= start ? `#L${start}-L${end}` : `#L${start}`;
+    }
+    const label =
+      m.kind === "script" && m.topBlockId
+        ? `script ${m.name ?? m.topBlockId} in ${m.target}`
+        : `${m.kind || "context"} ${m.name ?? m.target}`;
+    out.push({
+      type: "resource_link",
+      uri: url.toString(),
+      name: `${dirEntry}/${scriptsFile}`,
+      title: label,
+    });
+  }
+  return out;
+}
+
+function sessionMetaPath(projectDir: string, sessionId: string): string {
+  const safe = sessionId.replace(/[^a-zA-Z0-9_-]/g, "_").slice(0, 128) || "session";
+  return join(projectDir, ".agentwarp", "sessions", `${safe}.meta.json`);
+}
+
+async function writeSessionMeta(projectDir: string, sessionId: string, agentId: string): Promise<void> {
+  try {
+    await mkdir(join(projectDir, ".agentwarp", "sessions"), { recursive: true });
+    await writeFile(
+      sessionMetaPath(projectDir, sessionId),
+      JSON.stringify({ agentId, startedAt: new Date().toISOString() }) + "\n",
+    );
+  } catch {
+    /* sessions list degrades to agentId "unknown" */
+  }
+}
+
+async function readSessionAgent(projectDir: string, sessionId: string): Promise<string | undefined> {
+  try {
+    const meta = JSON.parse(await readFile(sessionMetaPath(projectDir, sessionId), "utf8"));
+    return typeof meta?.agentId === "string" ? meta.agentId : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Strip the prepended `[TurboWarp] …` context block for title display. */
+function titleText(full: string): string {
+  let t = full;
+  if (t.startsWith("[TurboWarp]")) {
+    const i = t.indexOf("\n\n");
+    t = i >= 0 ? t.slice(i + 2) : "";
+  }
+  return t.replace(/\s+/g, " ").trim().slice(0, 80);
+}
+
+export interface SessionListEntry {
+  sessionId: string;
+  agentId: string;
+  title: string;
+  updatedAt: string;
+  turns: number;
+}
+
+/** Newest-first session list from `.agentwarp/sessions/*.jsonl` (P7 §5). */
+export async function listSessions(projectDir: string): Promise<SessionListEntry[]> {
+  let entries;
+  try {
+    entries = await readdir(join(projectDir, ".agentwarp", "sessions"));
+  } catch {
+    return [];
+  }
+  const out: SessionListEntry[] = [];
+  for (const e of entries) {
+    if (!e.endsWith(".jsonl")) continue;
+    const sessionId = e.slice(0, -".jsonl".length);
+    const file = join(projectDir, ".agentwarp", "sessions", e);
+    let lines: string[];
+    try {
+      lines = (await readFile(file, "utf8")).split("\n");
+    } catch {
+      continue;
+    }
+    let title: string | null = null;
+    let firstUser: string | null = null;
+    let turns = 0;
+    for (const line of lines) {
+      const t = line.trim();
+      if (!t) continue;
+      let parsed: any;
+      try {
+        parsed = JSON.parse(t);
+      } catch {
+        continue;
+      }
+      if (parsed?.kind === "update" && parsed?.update?.sessionUpdate === "session_info_update") {
+        if (typeof parsed.update.title === "string" && parsed.update.title) title = parsed.update.title;
+      } else if (parsed?.kind === "user") {
+        turns += 1;
+        if (firstUser == null && typeof parsed.text === "string") firstUser = parsed.text;
+      }
+    }
+    let updatedAt: string;
+    try {
+      updatedAt = (await stat(file)).mtime.toISOString();
+    } catch {
+      continue;
+    }
+    out.push({
+      sessionId,
+      agentId: (await readSessionAgent(projectDir, sessionId)) ?? "unknown",
+      title: title ?? titleText(firstUser ?? ""),
+      updatedAt,
+      turns,
+    });
+  }
+  out.sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : a.updatedAt > b.updatedAt ? -1 : 0));
+  return out;
 }
 
 /** Build the `[TurboWarp] …` context line prepended to prompts (docs/P5-DESIGN.md). */
@@ -102,6 +408,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
   const log: (...a: unknown[]) => void = opts.log ?? (() => undefined);
   const autoAllow = opts.autoAllow ?? true;
   const permissionTimeoutMs = opts.permissionTimeoutMs ?? 10 * 60 * 1000;
+  const turnStore = opts.turnStore;
 
   let registry: AgentDef[] | null = opts.agents ? [...opts.agents] : null;
   const conns = new Map<string, ConnState>();
@@ -110,6 +417,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
   /** "always" decisions: `${sessionId}:${toolKey}` -> optionId */
   const sticky = new Map<string, string>();
   let permSeq = 0;
+  let turnSeq = 0;
   let disposed = false;
 
   function emit(msg: object): void {
@@ -127,6 +435,31 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
 
   function findSession(sessionId: string): SessionState | undefined {
     return sessions.get(sessionId);
+  }
+
+  function isTurnRunning(sessionId: string): boolean {
+    return findSession(sessionId)?.turnRunning === true;
+  }
+
+  /** Bridge hook: a new base was committed; emit debounced live changes. */
+  function onBaseUpdated(): void {
+    if (!turnStore || disposed) return;
+    for (const sess of sessions.values()) {
+      if (!sess.turnRunning || !sess.currentTurn || sess.liveTimer) continue;
+      const turnId = sess.currentTurn;
+      sess.liveTimer = setTimeout(() => {
+        sess.liveTimer = null;
+        if (disposed || !sessions.has(sess.sessionId) || !sess.turnRunning || sess.currentTurn !== turnId) return;
+        void turnStore.diff(sess.sessionId, turnId).then(
+          (targets) => {
+            if (!disposed && sess.turnRunning && sess.currentTurn === turnId) {
+              emit({ type: "acp/changes", sessionId: sess.sessionId, turnId, final: false, targets });
+            }
+          },
+          (e) => log(`acp/changes (live) diff failed: ${(e as Error)?.message ?? e}`),
+        );
+      }, 1000);
+    }
   }
 
   function settlePermission(requestId: string, optionId: string | null): void {
@@ -307,11 +640,12 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     conn.agent = connection.agent;
 
     try {
-      await conn.agent.request("initialize", {
+      const initResp = await conn.agent.request("initialize", {
         protocolVersion: 1,
         clientCapabilities: { fs: {}, terminal: false },
         clientInfo: { name: "agentwarp-acp-host", version: HOST_VERSION },
       });
+      conn.caps = (initResp as { agentCapabilities?: AgentCapabilities })?.agentCapabilities ?? null;
     } catch (e) {
       const message = `agent ${def.id} initialize failed: ${(e as Error)?.message}${conn.stderrTail ? `: ${conn.stderrTail}` : ""}`;
       try {
@@ -336,7 +670,15 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           if (disposed) return;
           const msg = await sess.active.nextUpdate();
           if (msg.kind === "session_update") {
-            if (msg.update.sessionUpdate === 'config_option_update') sess.configOptions = msg.update.configOptions;
+            if (msg.update.sessionUpdate === 'config_option_update') {
+              sess.configOptions = msg.update.configOptions;
+            } else if (msg.update.sessionUpdate === 'current_mode_update') {
+              const currentModeId = (msg.update as { currentModeId?: unknown }).currentModeId;
+              if (typeof currentModeId === "string") {
+                sess.modes = { ...(sess.modes ?? { availableModes: [] }), currentModeId };
+                emit({ type: "acp/mode", sessionId: sess.sessionId, currentModeId });
+              }
+            }
             void appendTranscript(projectDir, sess.sessionId, {
               kind: "update",
               update: msg.update,
@@ -344,11 +686,25 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
             emit({ type: "acp/update", sessionId: sess.sessionId, update: msg.update });
           } else {
             sess.turnRunning = false;
+            const turnId = sess.currentTurn;
+            sess.currentTurn = null;
+            if (sess.liveTimer) {
+              clearTimeout(sess.liveTimer);
+              sess.liveTimer = null;
+            }
             void appendTranscript(projectDir, sess.sessionId, {
               kind: "done",
               stopReason: msg.stopReason,
             }).catch(() => undefined);
             emit({ type: "acp/done", sessionId: sess.sessionId, stopReason: msg.stopReason });
+            if (turnId && turnStore) {
+              try {
+                const targets = await turnStore.diff(sess.sessionId, turnId);
+                if (!disposed) emit({ type: "acp/changes", sessionId: sess.sessionId, turnId, final: true, targets });
+              } catch (e) {
+                log(`acp/changes (final) diff failed: ${(e as Error)?.message ?? e}`);
+              }
+            }
           }
         }
       } catch (e) {
@@ -388,11 +744,12 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     try {
       const active = await conn.agent.buildSession(projectDir).start();
       const sessionId = active.sessionId;
-      const sess: SessionState = { sessionId, agentId: def.id, active, turnRunning: false, pump: Promise.resolve(), configOptions: active.newSessionResponse.configOptions };
+      const sess: SessionState = { sessionId, agentId: def.id, active, turnRunning: false, currentTurn: null, liveTimer: null, pump: Promise.resolve(), configOptions: active.newSessionResponse.configOptions, modes: active.newSessionResponse.modes ?? modesOf(active.newSessionResponse.configOptions) };
       sessions.set(sessionId, sess);
       conn.sessions.add(sessionId);
       startPump(sess);
-      emit({ type: "acp/session", sessionId, agentId: def.id, configOptions: sess.configOptions });
+      await writeSessionMeta(projectDir, sessionId, def.id);
+      emit(sessionMessage(sess, conn));
     } catch (e) {
       emit({ type: "acp/error", message: `session/new failed for ${agentId}: ${(e as Error)?.message}` });
     }
@@ -402,6 +759,8 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     sessionId?: string;
     text?: string;
     context?: unknown;
+    mentions?: unknown;
+    images?: unknown;
   }): Promise<void> {
     const sess = msg.sessionId ? findSession(msg.sessionId) : undefined;
     if (!sess) {
@@ -417,16 +776,53 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
       emit({ type: "acp/error", sessionId: sess.sessionId, message: `agent ${sess.agentId} is not running` });
       return;
     }
+    const images = (Array.isArray(msg.images) ? msg.images : []).filter(
+      (i): i is { mimeType: string; data: string } =>
+        !!i && typeof i === "object" &&
+        typeof (i as { mimeType?: unknown }).mimeType === "string" &&
+        typeof (i as { data?: unknown }).data === "string",
+    );
+    if (images.length > 0 && !conn.caps?.promptCapabilities?.image) {
+      emit({
+        type: "acp/error",
+        sessionId: sess.sessionId,
+        message: "this agent does not support images (no promptCapabilities.image); remove the attachments and try again",
+      });
+      return;
+    }
     const contextLine = formatEditorContext(msg.context);
     const text = typeof msg.text === "string" ? msg.text : "";
     const full = contextLine ? `${contextLine}\n\n${text}` : text;
+    const mentions = Array.isArray(msg.mentions) ? (msg.mentions as Mention[]) : [];
+    let links: Array<Record<string, unknown>> = [];
+    try {
+      links = await mentionLinks(projectDir, mentions);
+    } catch (e) {
+      log(`mention links failed: ${(e as Error)?.message ?? e}`);
+    }
+    const blocks: Array<Record<string, unknown>> = [{ type: "text", text: full }, ...links];
+    for (const img of images) blocks.push({ type: "image", mimeType: img.mimeType, data: img.data });
+    turnSeq += 1;
+    const turnId = `t${Date.now().toString(36)}-${turnSeq}`;
+    if (turnStore) {
+      try {
+        await turnStore.snapshot(sess.sessionId, turnId);
+      } catch (e) {
+        emit({ type: "acp/error", sessionId: sess.sessionId, message: `checkpoint failed: ${(e as Error)?.message ?? e}` });
+        return;
+      }
+    }
     sess.turnRunning = true;
+    sess.currentTurn = turnStore ? turnId : null;
+    if (turnStore) {
+      emit({ type: "acp/turn-start", sessionId: sess.sessionId, turnId, rev: turnStore.getRev() });
+    }
     void appendTranscript(projectDir, sess.sessionId, { kind: "user", text: full }).catch(() => undefined);
     // Fire-and-forget: the pump loop observes updates + the final stop, so
     // handle() must stay responsive (e.g. permission replies arrive via
     // handle() while the turn is running).
     void sess.active
-      .prompt(full)
+      .prompt(blocks as Parameters<ActiveSession["prompt"]>[0])
       .then(
         () => undefined,
         (e: unknown) => {
@@ -435,6 +831,11 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           // double-reporting.
           if (disposed || !sessions.has(sess.sessionId)) return;
           sess.turnRunning = false;
+          sess.currentTurn = null;
+          if (sess.liveTimer) {
+            clearTimeout(sess.liveTimer);
+            sess.liveTimer = null;
+          }
           emit({
             type: "acp/error",
             sessionId: sess.sessionId,
@@ -463,13 +864,7 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     }
   }
 
-  async function doHistory(sessionId: string, reply: (msg: object) => void): Promise<void> {
-    const session = findSession(sessionId);
-    const entries = await readTranscript(projectDir, sessionId);
-    if (!entries) {
-      reply({ type: "acp/error", sessionId, message: `no transcript for session ${sessionId}` });
-      return;
-    }
+  async function replayEntries(sessionId: string, entries: unknown[], reply: (msg: object) => void): Promise<void> {
     for (const entry of entries) {
       const e = entry as { kind?: string; update?: unknown; stopReason?: string };
       if (e.kind === "update") {
@@ -488,7 +883,195 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
       }
       // permission-auto entries are host-internal; skip them on replay.
     }
+  }
+
+  async function doHistory(sessionId: string, reply: (msg: object) => void): Promise<void> {
+    const session = findSession(sessionId);
+    const entries = await readTranscript(projectDir, sessionId);
+    if (!entries) {
+      reply({ type: "acp/error", sessionId, message: `no transcript for session ${sessionId}` });
+      return;
+    }
+    await replayEntries(sessionId, entries, reply);
     if (session) reply({ type: "acp/config", sessionId, configOptions: session.configOptions });
+  }
+
+  function sessionMessage(sess: SessionState, conn: ConnState, extra?: Record<string, unknown>): Record<string, unknown> {
+    return {
+      type: "acp/session",
+      sessionId: sess.sessionId,
+      agentId: sess.agentId,
+      configOptions: sess.configOptions,
+      modes: sess.modes ?? undefined,
+      promptCapabilities: conn.caps?.promptCapabilities ?? undefined,
+      ...extra,
+    };
+  }
+
+  /** acp/load: resume a past session, or replay it read-only (P7 §5). */
+  async function doLoad(sessionId: string, reply: (msg: object) => void): Promise<void> {
+    const entries = await readTranscript(projectDir, sessionId);
+    if (!entries) {
+      reply({ type: "acp/error", sessionId, message: `no transcript for session ${sessionId}` });
+      return;
+    }
+    const live = findSession(sessionId);
+    if (live) {
+      const conn = conns.get(live.agentId);
+      await replayEntries(sessionId, entries, reply);
+      if (conn && !conn.dead) reply(sessionMessage(live, conn));
+      else reply({ type: "acp/session", sessionId, agentId: live.agentId, readOnly: true });
+      return;
+    }
+    const agentId = await readSessionAgent(projectDir, sessionId);
+    const def = agentId ? (await agents()).find((d) => d.id === agentId) : undefined;
+    if (!def) {
+      await replayEntries(sessionId, entries, reply);
+      reply({ type: "acp/session", sessionId, agentId: agentId ?? "unknown", readOnly: true });
+      return;
+    }
+    let conn: ConnState;
+    try {
+      conn = await ensureConn(def);
+    } catch (e) {
+      log(`acp/load: cannot start ${def.id}: ${(e as Error)?.message ?? e}`);
+      await replayEntries(sessionId, entries, reply);
+      reply({ type: "acp/session", sessionId, agentId: def.id, readOnly: true });
+      return;
+    }
+    if (conn.dead) {
+      await replayEntries(sessionId, entries, reply);
+      reply({ type: "acp/session", sessionId, agentId: def.id, readOnly: true });
+      return;
+    }
+    const caps = conn.caps;
+    const supportsLoad = caps?.loadSession === true;
+    const supportsResume = caps?.sessionCapabilities?.resume != null;
+    if (!supportsLoad && !supportsResume) {
+      await replayEntries(sessionId, entries, reply);
+      reply({ type: "acp/session", sessionId, agentId: def.id, readOnly: true });
+      return;
+    }
+    try {
+      let loaded: { modes?: SessionState["modes"]; configOptions?: SessionState["configOptions"] } | void;
+      if (supportsLoad) {
+        loaded = (await conn.agent.request("session/load", { sessionId, cwd: projectDir, mcpServers: [] })) as
+          | { modes?: SessionState["modes"]; configOptions?: SessionState["configOptions"] }
+          | void;
+      } else {
+        loaded = (await conn.agent.request("session/resume", { sessionId, cwd: projectDir })) as
+          | { modes?: SessionState["modes"]; configOptions?: SessionState["configOptions"] }
+          | void;
+      }
+      const active = (
+        conn.agent as unknown as {
+          attachSession: (r: unknown) => ActiveSession;
+        }
+      ).attachSession({
+        sessionId,
+        modes: loaded?.modes ?? null,
+        configOptions: loaded?.configOptions ?? null,
+      });
+      const sess: SessionState = {
+        sessionId,
+        agentId: def.id,
+        active,
+        turnRunning: false,
+        currentTurn: null,
+        liveTimer: null,
+        pump: Promise.resolve(),
+        configOptions: active.newSessionResponse.configOptions,
+        modes: active.newSessionResponse.modes ?? modesOf(active.newSessionResponse.configOptions),
+      };
+      sessions.set(sessionId, sess);
+      conn.sessions.add(sessionId);
+      startPump(sess);
+      // History arrives as acp/update: session/load replays it; for resume
+      // the agent sends no history, so replay the transcript to the requester.
+      if (!supportsLoad) await replayEntries(sessionId, entries, reply);
+      emit(sessionMessage(sess, conn));
+    } catch (e) {
+      log(`acp/load: session load/resume failed, read-only replay: ${(e as Error)?.message ?? e}`);
+      await replayEntries(sessionId, entries, reply);
+      reply({ type: "acp/session", sessionId, agentId: def.id, readOnly: true });
+    }
+  }
+
+  /** acp/restore: write a checkpoint back; the bridge cycle packs + pushes. */
+  async function doRestore(sessionId: string, turnId: string): Promise<void> {
+    const sess = findSession(sessionId);
+    if (sess?.turnRunning) {
+      emit({ type: "acp/error", sessionId, message: "cannot restore while a turn is running for this session" });
+      return;
+    }
+    if (!turnStore) {
+      emit({ type: "acp/error", sessionId, message: "checkpoints are not available" });
+      return;
+    }
+    if (!turnId) {
+      emit({ type: "acp/error", sessionId, message: "acp/restore needs a turnId" });
+      return;
+    }
+    try {
+      const rev = await turnStore.restore(sessionId, turnId);
+      emit({ type: "acp/restored", sessionId, turnId, rev });
+    } catch (e) {
+      emit({ type: "acp/error", sessionId, message: `restore failed: ${(e as Error)?.message ?? e}` });
+    }
+  }
+
+  /** acp/changes: (re)compute the change summary for a turn. */
+  async function doChanges(sessionId: string, turnId: string, reply: (msg: object) => void): Promise<void> {
+    if (!turnStore) {
+      reply({ type: "acp/error", sessionId, message: "checkpoints are not available" });
+      return;
+    }
+    if (!turnId) {
+      reply({ type: "acp/error", sessionId, message: "acp/changes needs a turnId" });
+      return;
+    }
+    try {
+      const targets = await turnStore.diff(sessionId, turnId);
+      const sess = findSession(sessionId);
+      reply({
+        type: "acp/changes",
+        sessionId,
+        turnId,
+        final: !(sess?.turnRunning && sess.currentTurn === turnId),
+        targets,
+      });
+    } catch (e) {
+      reply({ type: "acp/error", sessionId, message: `changes failed: ${(e as Error)?.message ?? e}` });
+    }
+  }
+
+  async function doSessions(reply: (msg: object) => void): Promise<void> {
+    reply({ type: "acp/sessions", list: await listSessions(projectDir) });
+  }
+
+  /** acp/set-mode: switch the session mode via ACP session/set_mode (P7 §5). */
+  async function doSetMode(sessionId: string, modeId: string): Promise<void> {
+    const sess = findSession(sessionId);
+    if (!sess) {
+      emit({ type: "acp/error", sessionId, message: `unknown session: ${sessionId}` });
+      return;
+    }
+    if (!modeId) {
+      emit({ type: "acp/error", sessionId, message: "acp/set-mode needs a modeId" });
+      return;
+    }
+    const conn = conns.get(sess.agentId);
+    if (!conn || conn.dead) {
+      emit({ type: "acp/error", sessionId, message: `agent ${sess.agentId} is not running` });
+      return;
+    }
+    try {
+      await conn.agent.request("session/set_mode", { sessionId: sess.sessionId, modeId });
+      sess.modes = { ...(sess.modes ?? { availableModes: [] }), currentModeId: modeId };
+      emit({ type: "acp/mode", sessionId: sess.sessionId, currentModeId: modeId });
+    } catch (e) {
+      emit({ type: "acp/error", sessionId, message: `set-mode failed: ${(e as Error)?.message ?? e}` });
+    }
   }
 
   async function handle(msg: unknown, reply: (msg: object) => void = emit): Promise<void> {
@@ -515,6 +1098,8 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
             sessionId: typeof full.sessionId === "string" ? full.sessionId : undefined,
             text: typeof full.text === "string" ? full.text : "",
             context: full.context,
+            mentions: full.mentions,
+            images: full.images,
           });
           break;
         case "acp/cancel":
@@ -539,17 +1124,38 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
           emit({ type: "acp/config", sessionId: sess.sessionId, configOptions: result.configOptions });
           break;
         }
+        case "acp/set-mode":
+          await doSetMode(String(full.sessionId ?? ""), String(full.modeId ?? ""));
+          break;
+        case "acp/sessions":
+          await doSessions(reply);
+          break;
+        case "acp/load":
+          await doLoad(String(full.sessionId ?? ""), reply);
+          break;
+        case "acp/restore":
+          await doRestore(String(full.sessionId ?? ""), String(full.turnId ?? ""));
+          break;
+        case "acp/changes":
+          await doChanges(String(full.sessionId ?? ""), String(full.turnId ?? ""), reply);
+          break;
         default:
           log(`acp: ignoring unknown message type ${m.type}`);
       }
     } catch (e) {
-      emit({ type: "acp/error", message: `acp/${m.type} failed: ${(e as Error)?.message ?? e}` });
+      emit({ type: "acp/error", message: `${m.type} failed: ${(e as Error)?.message ?? e}` });
     }
   }
 
   async function dispose(): Promise<void> {
     if (disposed) return;
     disposed = true;
+    for (const [, sess] of [...sessions]) {
+      if (sess.liveTimer) {
+        clearTimeout(sess.liveTimer);
+        sess.liveTimer = null;
+      }
+    }
     for (const [id] of [...pendingPerms]) settlePermission(id, null);
     for (const [, conn] of [...conns]) {
       try {
@@ -576,5 +1182,5 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
     sessions.clear();
   }
 
-  return { handle, dispose };
+  return { handle, dispose, isTurnRunning, onBaseUpdated };
 }

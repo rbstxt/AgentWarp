@@ -31,8 +31,11 @@ const host = createAcpHost({
   autoAllow: true, // default permission policy (default true)
   permissionTimeoutMs: 10 * 60 * 1000, // panel reply timeout → treated as reject
   agents: undefined, // test hook: fixed registry, skips on-disk config
+  turnStore: undefined, // checkpoints/change summaries (the bridge provides one)
 });
 await host.handle(JSON.parse(wsMessage), reply => ws.send(JSON.stringify(reply))); // client→server acp/* messages
+host.onBaseUpdated(); // after the bridge commits a new base (debounced live acp/changes)
+host.isTurnRunning(sessionId); // e.g. to refuse restores during a turn
 await host.dispose(); // kills agent processes, unblocks pending permissions
 ```
 
@@ -45,10 +48,15 @@ project; sessions and transcripts survive panel reloads (not bridge restarts).
 |---|---|---|
 | `acp/agents` | — | replies `acp/agents` |
 | `acp/start` | `agentId` | spawns (or reuses) the agent, `initialize`, `session/new` with `cwd = projectDir`; replies `acp/session`. Respawn after a crash happens here. |
-| `acp/prompt` | `sessionId`, `text`, `context?` | prepends the `[TurboWarp] …` context line and calls `session/prompt`. Non-blocking: updates arrive via `acp/update`, completion via `acp/done`. Errors if a turn is already running. |
+| `acp/prompt` | `sessionId`, `text`, `context?`, `mentions?`, `images?` | prepends the `[TurboWarp] …` context line, appends one `resource_link` block per resolvable mention (target scripts file, `#Lstart-Lend` for script mentions) and `image` blocks (only when the agent advertises `promptCapabilities.image`, else `acp/error`); snapshots a checkpoint and emits `acp/turn-start`; then calls `session/prompt`. Non-blocking: updates arrive via `acp/update`, completion via `acp/done` (+ final `acp/changes`). Errors if a turn is already running. |
 | `acp/cancel` | `sessionId` | sends `session/cancel`; the turn ends with `acp/done {stopReason: "cancelled"}`. |
 | `acp/permission` | `requestId`, `optionId` | answers a pending `acp/permission-request`. Unknown `optionId` → treated as reject. `allow_always` / `reject_always` kinds are remembered per session+tool. |
 | `acp/set-config` | `sessionId`, `optionId`, `value` | calls `session/set_config_option` and broadcasts `acp/config` with the updated options. |
+| `acp/set-mode` | `sessionId`, `modeId` | calls ACP `session/set_mode`; broadcasts `acp/mode {sessionId, currentModeId}` (the agent also reports mode switches via `current_mode_update`). |
+| `acp/sessions` | — | replies (requester only) `acp/sessions {list: [{sessionId, agentId, title, updatedAt, turns}]}` from `.agentwarp/sessions/*.jsonl` + `*.meta.json`, newest first. |
+| `acp/load` | `sessionId` | resume a past session: if the agent advertises `loadSession`/`sessionCapabilities.resume`, ensure the agent, `session/load` (history replays as `acp/update`s) or `session/resume` (transcript replayed to the requester), then broadcast live `acp/session`; otherwise replay the transcript to the requester and reply `acp/session {readOnly: true}`. |
+| `acp/restore` | `sessionId`, `turnId` | writes the checkpoint back (refused with `acp/error` while a turn runs); the bridge cycle then packs + pushes. Broadcasts `acp/restored {sessionId, turnId, rev}`. |
+| `acp/changes` | `sessionId`, `turnId` | replies (requester only) `acp/changes {sessionId, turnId, final, targets}` recomputed from the checkpoint diff. |
 | `acp/history` | `sessionId` | replays the transcript as `acp/update…` + `acp/done` (user prompts as `user_message_chunk`). Unknown session → `acp/error`. |
 
 `context` is a free-form object; known keys: `editingTarget`/`target`,
@@ -59,7 +67,10 @@ Example: `[TurboWarp] editing: player (player/scripts.ts) · selected: a3 tick (
 ### Server → client (`send`)
 
 `acp/agents {list: [{id, label, command, args, available, note?}]}`,
-`acp/session {sessionId, agentId, configOptions?}`, `acp/config {sessionId, configOptions}`, `acp/update {sessionId, update}` (raw ACP
+`acp/session {sessionId, agentId, configOptions?, modes?, promptCapabilities?, readOnly?}`,
+`acp/turn-start {sessionId, turnId, rev}`, `acp/changes {sessionId, turnId, final, targets}`,
+`acp/mode {sessionId, currentModeId}`, `acp/restored {sessionId, turnId, rev}`,
+`acp/config {sessionId, configOptions}`, `acp/update {sessionId, update}` (raw ACP
 `session/update`, incl. thoughts, tool calls, plans),
 `acp/permission-request {requestId, sessionId, toolCall, options}`,
 `acp/done {sessionId, stopReason}`, `acp/error {sessionId?, message}`.
