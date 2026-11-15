@@ -141,8 +141,9 @@ function isAgentwarpCommand(cmd: string, projectDir: string): boolean {
   rest = rest.replace(/^([A-Za-z_][A-Za-z0-9_]*=\S+\s+)+/, "");
   const word = firstWord(rest);
   if (!word) return false;
-  if (word === "agentwarp") return true;
-  if (word === "bin/agentwarp" || word.endsWith("/bin/agentwarp")) {
+  if (word === "agentwarp" || word === "agentwarp.cmd") return true;
+  // bin/agentwarp, or bin\agentwarp.cmd on Windows
+  if (/(^|[\\/])bin[\\/]agentwarp(\.cmd)?$/i.test(word)) {
     return insideDir(projectDir, isAbsolute(word) ? word : resolve(projectDir, word));
   }
   return false;

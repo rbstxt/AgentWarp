@@ -1,8 +1,8 @@
 import { execFile } from "node:child_process";
-import { access, constants, readFile } from "node:fs/promises";
+import { access, constants, readFile, readdir } from "node:fs/promises";
 import { createRequire } from "node:module";
 import { homedir } from "node:os";
-import { join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { env, platform } from "node:process";
 
 export interface AgentDef {
@@ -11,6 +11,8 @@ export interface AgentDef {
   command: string;
   args: string[];
   env?: Record<string, string>;
+  /** Windows: run through cmd.exe (npm installs CLIs as .cmd shims, which cannot be spawned directly). */
+  shell?: boolean;
 }
 
 export interface AgentStatus extends AgentDef {
@@ -69,9 +71,13 @@ function bundledAdapter(pkg: string): string | null {
   }
 }
 
+/** Windows: an npm .cmd / .bat shim, which only runs through cmd.exe. */
+export const isWindowsShim = (file: string): boolean => platform === "win32" && /\.(cmd|bat)$/i.test(file);
+
 function run(file: string, args: string[], timeout = 8000): Promise<{ code: number; stdout: string }> {
+  const shim = isWindowsShim(file);
   return new Promise((done) => {
-    execFile(file, args, { timeout, encoding: "utf8", env: { ...env, NO_COLOR: "1" } }, (error, stdout, stderr) => {
+    execFile(shim ? `"${file}"` : file, args, { timeout, encoding: "utf8", env: { ...env, NO_COLOR: "1" }, shell: shim || undefined }, (error, stdout, stderr) => {
       const code = error ? (typeof (error as { code?: unknown }).code === "number" ? (error as { code: number }).code : 1) : 0;
       done({ code, stdout: `${stdout ?? ""}${stderr ?? ""}` });
     });
@@ -120,25 +126,85 @@ export function refreshCliStatus(): void {
 }
 
 /**
+ * Windows: the program an npm .cmd shim starts (`"%dp0%\node_modules\…\cli.js" %*`), so it can be
+ * started without a shell. null when the shim does not name one.
+ */
+export async function shimTarget(file: string): Promise<string | null> {
+  if (!isWindowsShim(file)) return file;
+  try {
+    const text = await readFile(file, "utf8");
+    const hits = [...text.matchAll(/"%~?dp0%?\\([^"%]+?\.(?:exe|js|cjs|mjs))"/gi)];
+    const last = hits[hits.length - 1];
+    if (last) return join(dirname(file), last[1]);
+  } catch {
+    // unreadable shim
+  }
+  return null;
+}
+
+/** Find a file by name under dir (a few levels deep), e.g. codex.exe inside the @openai/codex package. */
+async function findFile(dir: string, name: string, depth = 6): Promise<string | null> {
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch {
+    return null;
+  }
+  for (const e of entries) if (e.isFile() && e.name.toLowerCase() === name) return join(dir, e.name);
+  if (depth <= 0) return null;
+  for (const e of entries) {
+    if (!e.isDirectory() || e.name === ".bin") continue;
+    const hit = await findFile(join(dir, e.name), name, depth - 1);
+    if (hit) return hit;
+  }
+  return null;
+}
+
+/**
+ * The installed vendor CLI as a program the ACP adapter can start itself: on Windows the npm shim
+ * is resolved to its .exe (or, for Claude Code, its .js, which the SDK runs with node).
+ */
+async function vendorExecutable(bin: "claude" | "codex"): Promise<string | null> {
+  const found = await findOnPath(bin);
+  if (!found || !isWindowsShim(found)) return found;
+  const target = await shimTarget(found);
+  if (target && /\.exe$/i.test(target)) return target;
+  if (bin === "claude" && target) return target;
+  // Codex's npm launcher is a .js that starts a native codex.exe shipped in the package.
+  const pkgRoot = target ? target.slice(0, target.toLowerCase().lastIndexOf("node_modules") + "node_modules".length) : join(dirname(found), "node_modules");
+  return (await findFile(join(pkgRoot, "@openai"), "codex.exe")) ?? null;
+}
+
+/**
  * How to start an agent. Claude and Codex run through the ACP adapter shipped with agentwarp on
  * this Node (Electron's in the desktop app), pointed at the user's installed CLI, so they use the
  * CLI's own sign-in and nothing is downloaded at first use. Falls back to the plain definition.
  */
 export async function resolveLaunch(def: AgentDef): Promise<AgentDef> {
   const pkg = npxPackageOf(def);
-  if (!pkg) return def;
+  if (!pkg) return windowsCommand(def);
   const adapter = bundledAdapter(pkg);
-  if (!adapter) return def;
+  if (!adapter) return windowsCommand(def);
   const extra: Record<string, string> = {};
   if (def.id === "claude" || pkg.endsWith("claude-agent-acp")) {
-    const cli = await findOnPath("claude");
+    const cli = await vendorExecutable("claude");
     if (cli && !env.CLAUDE_CODE_EXECUTABLE) extra.CLAUDE_CODE_EXECUTABLE = cli;
   }
   if (def.id === "codex" || pkg.endsWith("codex-acp")) {
-    const cli = await findOnPath("codex");
+    const cli = await vendorExecutable("codex");
     if (cli && !env.CODEX_PATH) extra.CODEX_PATH = cli;
   }
   return { ...def, command: process.execPath, args: [adapter], env: { ...extra, ...(def.env ?? {}) } };
+}
+
+/** Windows: a bare command (e.g. `opencode`) is an npm .cmd shim: start its .exe, else go through cmd.exe. */
+async function windowsCommand(def: AgentDef): Promise<AgentDef> {
+  if (platform !== "win32" || /[\\/]/.test(def.command)) return def;
+  const found = await findOnPath(def.command);
+  if (!found || !isWindowsShim(found)) return found ? { ...def, command: found } : def;
+  const target = await shimTarget(found);
+  if (target && /\.exe$/i.test(target)) return { ...def, command: target };
+  return { ...def, command: found, shell: true };
 }
 
 export const DEFAULT_AGENTS: AgentDef[] = [
@@ -194,8 +260,9 @@ export async function findOnPath(cmd: string): Promise<string | null> {
   }
   const pathEnv = env.PATH ?? "";
   const dirs = pathEnv.split(platform === "win32" ? ";" : ":");
+  // Windows: npm puts claude.cmd next to an extensionless sh script (for Git Bash) that cannot be spawned.
   const names =
-    platform === "win32" && !cmd.toLowerCase().endsWith(".exe") ? [cmd, `${cmd}.exe`, `${cmd}.cmd`] : [cmd];
+    platform === "win32" && !/\.(exe|cmd|bat)$/i.test(cmd) ? [`${cmd}.exe`, `${cmd}.cmd`, `${cmd}.bat`] : [cmd];
   for (const dir of dirs) {
     if (!dir) continue;
     for (const name of names) {

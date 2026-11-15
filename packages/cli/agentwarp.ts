@@ -522,7 +522,7 @@ async function unpackProject(src: string, dir: string, name: string): Promise<Di
             `This directory is a text mirror of a Scratch project. Edit the text files; the tool packs them\n` +
             `back into an .sb3. Never hand-edit \`.agentwarp/\` (machine-managed).\n` +
             `\n` +
-            `Tool: \`${join(ROOT, 'bin/agentwarp')}\` (call it \`agentwarp\` below; run from this directory).\n` +
+            `Tool: \`${process.platform === 'win32' ? join(ROOT, 'bin', 'agentwarp.cmd') : join(ROOT, 'bin/agentwarp')}\` (call it \`agentwarp\` below; run from this directory).\n` +
             `Read BEFORE editing:\n` +
             `- Workflow guide: ${join(ROOT, 'skill/agentwarp/SKILL.md')}\n` +
             `- Format reference (${name}): ${join(ROOT, 'formats', name, 'AGENTS.md')}\n` +

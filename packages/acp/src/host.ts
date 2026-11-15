@@ -535,10 +535,12 @@ export function createAcpHost(opts: AcpHostOptions): AcpHost {
 
     let child: ChildProcess;
     try {
-      child = spawn(command, def.args, {
+      // def.shell (Windows .cmd shims): cmd.exe joins the line, so quote the program path.
+      child = spawn(def.shell ? `"${command}"` : command, def.args, {
         cwd: projectDir,
         stdio: ["pipe", "pipe", "pipe"],
         env: { ...process.env, ...(def.env ?? {}) },
+        shell: def.shell || undefined,
       });
     } catch (e) {
       throw new Error(`failed to spawn ${def.id} (${command}): ${(e as Error)?.message}`);
