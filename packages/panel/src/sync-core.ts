@@ -5,6 +5,7 @@ export interface SyncState {
   /** the user opened another project while the bridge was unreachable */ switchPending?: boolean;
   /** the bridge cannot switch projects: stop syncing rather than overwrite the user's project */ detached?: boolean;
   /** a switch/adopt was sent; no uploads until the new bridge says hello */ switching?: boolean;
+  /** desktop app: the engine keeps stopping (details + log location from the app) */ engineError?: string;
   disconnect?: () => void;
 }
 type Connection = {url: string; token: string};
@@ -210,7 +211,7 @@ export function startSync(mount: Mount) {
     const u = new URL(endpoint('/ws')); u.protocol = u.protocol === 'https:' ? 'wss:' : 'ws:';
     try { socket = new WebSocket(u.href); } catch (error) { status('error', error instanceof Error ? error.message : String(error)); reconnectTimer = setTimeout(() => connect(gen), reconnectDelay); reconnectDelay = Math.min(reconnectDelay * 2, 15000); return; }
     const current = socket;
-    current.onopen = () => { if (gen !== generation) return; state.connected = true; reconnectDelay = 500; status('connected'); send({type:'hello', client:'turbowarp', version:'1'}); acpConnected(); schedule(); };
+    current.onopen = () => { if (gen !== generation) return; state.connected = true; state.engineError = undefined; reconnectDelay = 500; status('connected'); send({type:'hello', client:'turbowarp', version:'1'}); acpConnected(); schedule(); };
     current.onmessage = event => {
       if (gen !== generation) return;
       let msg; try { msg = JSON.parse(event.data); } catch (_) { return; }
@@ -223,8 +224,19 @@ export function startSync(mount: Mount) {
       else if (msg.type === 'load' && Number.isInteger(msg.rev)) enqueue(() => load(msg.rev));
       else if (msg.type === 'status') { const detail = [msg.message, ...(msg.diagnostics || []).map((d: any) => typeof d === 'string' ? d : `${d.file || ''}${d.line != null ? ':' + d.line : ''}${d.col != null ? ':' + d.col : ''}: ${d.message}`), ...(msg.conflicts || []).map((d: any) => typeof d === 'string' ? d : JSON.stringify(d))].filter(Boolean).join('\n'); status(msg.ok === false || (msg.conflicts || []).length ? 'error' : 'connected', detail); }
     };
-    current.onerror = () => { if (gen === generation) status('error', 'Bridge connection failed. Check URL, token, browser Local Network Access permission and CORS.'); };
-    current.onclose = () => { if (gen !== generation || state.stopped) return; state.connected = false; updateControls(); status('error', 'Disconnected; reconnecting'); reconnectTimer = setTimeout(() => connect(gen), reconnectDelay); reconnectDelay = Math.min(reconnectDelay * 2, 15000); };
+    current.onerror = () => { if (gen !== generation) return; if (desktop) checkEngine(); else status('error', 'Bridge connection failed. Check URL, token, browser Local Network Access permission and CORS.'); };
+    current.onclose = () => { if (gen !== generation || state.stopped) return; state.connected = false; updateControls(); if (desktop) checkEngine(); else status('error', 'Disconnected; reconnecting'); reconnectTimer = setTimeout(() => connect(gen), reconnectDelay); reconnectDelay = Math.min(reconnectDelay * (desktop ? 1.5 : 2), desktop ? 3000 : 15000); };
+  }
+  /** Desktop app: the engine is still starting, or the app reports it keeps stopping. */
+  function noteEngine(value: any) {
+    const error = value && typeof value.error === 'string' ? value.error : '';
+    if (error === (state.engineError || '')) return;
+    state.engineError = error || undefined;
+    if (error) status('error', error); else if (!state.connected) status('syncing', 'Starting AgentWarp');
+  }
+  function checkEngine() {
+    if (!state.engineError) status('syncing', 'Starting AgentWarp');
+    desktop.config().then(noteEngine, () => undefined);
   }
   async function start() {
     while (!window.vm || !window.vm.runtime || !document.body) await sleep(100);
@@ -236,7 +248,7 @@ export function startSync(mount: Mount) {
     vm.runtime.on('PROJECT_LOADED', () => { loadSeq++; if (ownLoad || !state.synced || state.detached) return; clearTimeout(timer); state.dirty = false; if (state.connected) enqueue(switchProject); else state.switchPending = true; });
     if (desktop) {
       // The app starts the engine for this window; ask until it is ready.
-      for (;;) { try { config = normalize(await desktop.config()); } catch (_) { config = null; } if (config) break; status('syncing', 'Starting AgentWarp'); await sleep(500); }
+      for (;;) { let value: any = null; try { value = await desktop.config(); } catch (_) {} config = normalize(value); noteEngine(value); if (config) break; if (!state.engineError) status('syncing', 'Starting AgentWarp'); await sleep(500); }
       changeConnection(config); return;
     }
     config = normalize(window.AGENTWARP) || savedConfig();

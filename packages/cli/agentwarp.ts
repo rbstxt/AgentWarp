@@ -943,6 +943,16 @@ async function main() {
             const format = typeof opts.format === 'string' ? opts.format : 'ts';
             // Agents call bin/agentwarp: let it run on this same Node (Electron's in the desktop app).
             process.env.AGENTWARP_NODE ??= process.execPath;
+            // The app went away without stopping us (crash, force quit): stop too, with the agents
+            // we started (the app runs us as the leader of our own process group).
+            const parent = Number(process.env.AGENTWARP_PARENT_PID);
+            if (parent > 1) {
+                setInterval(() => {
+                    if (process.ppid === parent) return;
+                    try { if (process.platform !== 'win32') process.kill(-process.pid, 'SIGTERM'); } catch {}
+                    process.exit(0);
+                }, 2000).unref();
+            }
             await mkdir(root, { recursive: true });
             await pruneMirrors(root);
             const { waitForAdopt } = await import('../bridge/adopt.ts');

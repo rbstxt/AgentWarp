@@ -1,0 +1,6 @@
+{
+  "name": "agentwarp",
+  "private": true,
+  "description": "Marks this tree as ES modules, so Node runs packages/cli/agentwarp.ts the same way wherever the folder sits (an enclosing \"type\": \"commonjs\" package.json would otherwise break it).",
+  "type": "module"
+}
