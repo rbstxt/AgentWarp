@@ -38,6 +38,7 @@ import { fileURLToPath } from 'node:url';
 import { WebSocketServer, WebSocket } from 'ws';
 import JSZip from 'jszip';
 import { loadSb3Buffer } from '../core/sb3.ts';
+import { importFile } from '../core/import-file.ts';
 import type { AnchorMap } from '../core/extract.ts';
 import type { Diagnostic, Format } from '../core/ir.ts';
 import { hashTextDir, snapshotSigs } from './text-hash.ts';
@@ -89,7 +90,7 @@ const verifyDelayMs = (): number => Number(process.env.AGENTWARP_BRIDGE_VERIFY_D
 
 async function loadFormat(name: string): Promise<Format> {
     if (!FORMATS.includes(name)) throw new Error(`unknown format "${name}" (choose: ${FORMATS.join(', ')})`);
-    const m: any = await import(join(ROOT, 'formats', name, 'index.ts'));
+    const m: any = await importFile(join(ROOT, 'formats', name, 'index.ts'));
     const f = m.default ?? m.format ?? Object.values(m).find((v: any) => v && typeof v === 'object' && 'print' in v && 'parse' in v);
     if (!f) throw new Error(`format "${name}" exports no Format`);
     return f as Format;
