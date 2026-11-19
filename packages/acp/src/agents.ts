@@ -172,8 +172,16 @@ async function vendorExecutable(bin: "claude" | "codex"): Promise<string | null>
   if (bin === "claude" && target) return target;
   // Codex's npm launcher is a .js that starts a native codex.exe shipped in the package.
   const pkgRoot = target ? target.slice(0, target.toLowerCase().lastIndexOf("node_modules") + "node_modules".length) : join(dirname(found), "node_modules");
-  return (await findFile(join(pkgRoot, "@openai"), "codex.exe")) ?? null;
+  return findCodexExe(pkgRoot);
 }
+
+/**
+ * codex.exe under a node_modules folder holding @openai/codex. npm -g nests the platform package
+ * inside the launcher's own node_modules, seven folders below @openai:
+ * `@openai/codex/node_modules/@openai/codex-win32-x64/vendor/x86_64-pc-windows-msvc/bin/codex.exe`.
+ */
+export const findCodexExe = (nodeModules: string): Promise<string | null> =>
+  findFile(join(nodeModules, "@openai"), "codex.exe", 8);
 
 /**
  * How to start an agent. Claude and Codex run through the ACP adapter shipped with agentwarp on
