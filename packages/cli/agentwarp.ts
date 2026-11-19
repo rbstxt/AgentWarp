@@ -33,6 +33,7 @@ import { fileURLToPath } from 'node:url';
 import { overlaps } from '../core/layout.ts';
 import { packDir, unpackSb3 } from '../core/project-dir.ts';
 import { loadSb3File, saveSb3File } from '../core/sb3.ts';
+import { importFile } from '../core/import-file.ts';
 import type { Diagnostic, Format } from '../core/ir.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -61,7 +62,7 @@ const USAGE = `usage: agentwarp <command> [args]
 
 async function loadFormat(name: string): Promise<Format> {
     if (!FORMATS.includes(name)) die(`unknown format "${name}" (choose: ${FORMATS.join(', ')})`);
-    const m: any = await import(join(ROOT, 'formats', name, 'index.ts'));
+    const m: any = await importFile(join(ROOT, 'formats', name, 'index.ts'));
     const f = m.default ?? m.format ?? Object.values(m).find((v: any) => v && typeof v === 'object' && 'print' in v && 'parse' in v);
     if (!f) die(`format "${name}" exports no Format`);
     return f as Format;
@@ -136,7 +137,7 @@ async function readSourcemap(dir: string): Promise<Record<string, { file: string
 
 /** ts format: regenerate .agentwarp/types/<Target>.d.ts (costume/sound/variable/broadcast name unions). */
 async function tsTypes(dir: string): Promise<void> {
-    const { generateDts } = await import(join(ROOT, 'formats/ts/index.ts'));
+    const { generateDts } = await importFile(join(ROOT, 'formats/ts/index.ts'));
     await generateDts(dir);
 }
 
